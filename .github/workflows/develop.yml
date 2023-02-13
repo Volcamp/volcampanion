@@ -1,18 +1,19 @@
-#on:
-#  push:
-#    branches:
-#      - develop
-#name: Linux_Container_Workflow
-#
-#jobs:
-#  build-and-deploy:
-#    runs-on: ubuntu-latest
-#    steps:
-#      # checkout the repo
-#      - name: 'Checkout GitHub Action'
-#        uses: actions/checkout@main
-#      - name: Branch name
-#        run: echo running on branch ${{ github.ref_name }}
+on:
+  push:
+    branches:
+      - develop
+      - main
+name: Linux_Container_Workflow
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # checkout the repo
+      - name: 'Checkout GitHub Action'
+        uses: actions/checkout@main
+      - name: Branch name
+        run: echo running on branch ${{ github.ref_name }}
 #      - name: Replace quarkus.mongodb.connection-string
 #        uses: nightstory/replace-env@v1
 #        with:
@@ -31,13 +32,13 @@
 #          input_file: './src/main/resources/application.properties'
 #        env:
 #          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
-#      - name: 'Build and push image'
-#        uses: azure/docker-login@v1
-#        with:
-#          login-server: follower.azurecr.io
-#          username: ${{ secrets.REGISTRY_USERNAME }}
-#          password: ${{ secrets.REGISTRY_PASSWORD }}
-#      - run: |
-#          mvn package -DskipTests
-#          docker build -f src/main/docker/Dockerfile.jvm -t follower.azurecr.io/weather-api:${{ github.ref_name }} .
-#          docker push follower.azurecr.io/weather-api:${{ github.ref_name }}
+      - name: 'Build and push image'
+        uses: azure/docker-login@v1
+        with:
+          login-server: ${{ secrets.REGISTRY_PATH }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+      - run: |
+          mvn package -DskipTests
+          docker build -f backend/src/main/docker/Dockerfile.jvm -t ${{ secrets.REGISTRY_PATH }}/volcampanion-api:${{ github.ref_name }} ./backend
+          docker push ${{ secrets.REGISTRY_PATH }}/volcampanion-api:${{ github.ref_name }}
