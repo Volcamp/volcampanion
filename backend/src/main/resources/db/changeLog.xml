@@ -1,0 +1,114 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="1" author="Volcamp">
+        <createTable tableName="users">
+            <column name="id"  type="bigint" autoIncrement="true" >
+                <constraints primaryKey="true" primaryKeyName="pk_user_id" />
+            </column>
+            <column name="biographie" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="VARCHAR(255)"/>
+            <column name="twitter" type="VARCHAR(255)"/>
+            <column name="nom" type="VARCHAR(255)"/>
+            <column name="role" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="Zafir" id="2">
+        <createTable tableName="conferences">
+            <column name="id" type="bigint" autoIncrement="true" >
+                <constraints primaryKey="true" primaryKeyName="pk_conference_id" />
+                />
+            </column>
+            <column name="nom" type="VARCHAR(255)"/>
+            <column name="date_debut" type="timestamp"/>
+            <column name="date_fin" type="timestamp"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="Zafir" id="3">
+        <createTable tableName="talks">
+            <column name="id" type="bigint" autoIncrement="true" >
+                <constraints primaryKey="true" primaryKeyName="pk_talk_id" />
+            </column>
+            <column name="titre" type="VARCHAR(255)"/>
+            <column name="langue" type="VARCHAR(255)"/>
+            <column name="niveau" type="VARCHAR(255)"/>
+            <column name="date" type="timestamp"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="theme" type="VARCHAR(255)"/>
+            <column name="nom_salle" type="VARCHAR(255)"/>
+            <column name="conf_id" type="bigint"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="talks" baseColumnNames="conf_id" constraintName="fk_talks_conference"
+                                 referencedTableName="conferences"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+    <changeSet id="4" author="">
+        <createTable tableName="feedbacks">
+            <column name="id" type="bigint" autoIncrement="true"  >
+                <constraints primaryKey="true" primaryKeyName="pk_feedback_id" />
+            </column>
+            <column name="content" type="varchar" />
+            <column name="user_id" type="bigint" >
+                <constraints nullable="false" />
+            </column>
+            <column name="talk_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="feedbacks" baseColumnNames="user_id" constraintName="fk_feedback_user"
+                                 referencedTableName="users"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="feedbacks" baseColumnNames="talk_id" constraintName="fk_feedback_talk"
+                                 referencedTableName="talks"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+    <changeSet id="5" author="">
+        <createTable tableName="user_fav_talks">
+            <column name="fk_talk"  type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="fk_user"  type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="user_fav_talks" baseColumnNames="fk_user" constraintName="fk_user_fav"
+                                 referencedTableName="users"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="user_fav_talks" baseColumnNames="fk_talk" constraintName="fk_talk_fav"
+                                 referencedTableName="talks"
+                                 referencedColumnNames="id"/>
+        <addPrimaryKey tableName="user_fav_talks" columnNames="fk_talk,fk_user"/>
+    </changeSet>
+    <changeSet id="6" author="x">
+        <addColumn tableName="users">
+            <column name="link_photo" type="VARCHAR(255)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="7" author="x">
+        <createTable tableName="user_speak_talk">
+            <column name="fk_talk" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fk_user" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="user_speak_talk" baseColumnNames="fk_talk" constraintName="fk_talk_speak" referencedTableName="talks"
+                                 referencedColumnNames="id" />
+        <addForeignKeyConstraint baseTableName="user_speak_talk" baseColumnNames="fk_user" constraintName="fk_user_speak"
+                                 referencedTableName="users"
+                                 referencedColumnNames="id"/>
+        <addPrimaryKey tableName="user_speak_talk" columnNames="fk_user,fk_talk"/>
+    </changeSet>
+</databaseChangeLog>
+

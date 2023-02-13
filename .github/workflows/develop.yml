@@ -1,0 +1,43 @@
+#on:
+#  push:
+#    branches:
+#      - develop
+#name: Linux_Container_Workflow
+#
+#jobs:
+#  build-and-deploy:
+#    runs-on: ubuntu-latest
+#    steps:
+#      # checkout the repo
+#      - name: 'Checkout GitHub Action'
+#        uses: actions/checkout@main
+#      - name: Branch name
+#        run: echo running on branch ${{ github.ref_name }}
+#      - name: Replace quarkus.mongodb.connection-string
+#        uses: nightstory/replace-env@v1
+#        with:
+#          input_file: './src/main/resources/application.properties'
+#        env:
+#          MONGODB_CONNECTION_STRING: ${{ secrets.DEV_MONGODB_CONNECTION_STRING }}
+#      - name: Replace quarkus.mongodb.connection-string
+#        uses: nightstory/replace-env@v1
+#        with:
+#          input_file: './src/main/resources/application.properties'
+#        env:
+#          MONGODB_DATABASE_NAME: 'weather'
+#      - name: Replace quarkus.mongodb.connection-string
+#        uses: nightstory/replace-env@v1
+#        with:
+#          input_file: './src/main/resources/application.properties'
+#        env:
+#          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+#      - name: 'Build and push image'
+#        uses: azure/docker-login@v1
+#        with:
+#          login-server: follower.azurecr.io
+#          username: ${{ secrets.REGISTRY_USERNAME }}
+#          password: ${{ secrets.REGISTRY_PASSWORD }}
+#      - run: |
+#          mvn package -DskipTests
+#          docker build -f src/main/docker/Dockerfile.jvm -t follower.azurecr.io/weather-api:${{ github.ref_name }} .
+#          docker push follower.azurecr.io/weather-api:${{ github.ref_name }}
