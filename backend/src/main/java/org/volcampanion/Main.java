@@ -17,7 +17,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
                 @Tag(name = "Feedbacks", description = "Feedback API."),
         },
         info = @Info(
-                title = "Volcampanion API",
+                title = "Volcampanion API (Made with love)",
                 version = "1.0.0",
                 contact = @Contact(
                         name = "API Support",
