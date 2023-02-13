@@ -39,6 +39,7 @@ jobs:
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
       - run: |
+          cd backend
           mvn package -DskipTests
-          docker build -f backend/src/main/docker/Dockerfile.jvm -t ${{ secrets.REGISTRY_PATH }}/volcampanion-api:${{ github.ref_name }} ./backend
+          docker build -f src/main/docker/Dockerfile.jvm -t ${{ secrets.REGISTRY_PATH }}/volcampanion-api:${{ github.ref_name }} .
           docker push ${{ secrets.REGISTRY_PATH }}/volcampanion-api:${{ github.ref_name }}
