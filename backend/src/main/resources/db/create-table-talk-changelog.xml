@@ -1,0 +1,62 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="camille.petitalot@volcamp.io" id="1">
+        <createTable tableName="talks">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="pk_talk_id"/>
+            </column>
+            <column name="title" type="VARCHAR(255)"/>
+            <column name="language" type="VARCHAR(255)"/>
+            <column name="level" type="VARCHAR(255)"/>
+            <column name="date" type="timestamp"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="format_id" type="bigint"/>
+            <column name="theme_id" type="bigint"/>
+            <column name="room_name" type="VARCHAR(255)"/>
+            <column name="conference_id" type="bigint"/>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="talks" baseColumnNames="conference_id"
+                                 constraintName="fk_talks_conference"
+                                 referencedTableName="conferences"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="talks" baseColumnNames="format_id" constraintName="fk_talks_format"
+                                 referencedTableName="talk_formats"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="talks" baseColumnNames="theme_id" constraintName="fk_talks_theme"
+                                 referencedTableName="talk_themes"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+    <changeSet id="2" author="camille.petitalot@volcamp.io">
+        <createTable tableName="user_favorite_talks">
+            <column name="talk_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="user_favorite_talks" baseColumnNames="talk_id"
+                                 constraintName="fk_talk_fav"
+                                 referencedTableName="talks"
+                                 referencedColumnNames="id"/>
+        <addPrimaryKey tableName="user_favorite_talks" columnNames="talk_id,user_id"/>
+    </changeSet>
+    <changeSet id="3" author="camille.petitalot@volcamp.io">
+        <createTable tableName="speakers_talk">
+            <column name="talk_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="user_id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="speakers_talk" baseColumnNames="talk_id"
+                                 constraintName="fk_talk_speak" referencedTableName="talks"
+                                 referencedColumnNames="id"/>
+        <addPrimaryKey tableName="speakers_talk" columnNames="user_id,talk_id"/>
+    </changeSet>
+</databaseChangeLog>
+

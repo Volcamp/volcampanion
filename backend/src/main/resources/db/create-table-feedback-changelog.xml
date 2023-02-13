@@ -1,0 +1,25 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="1" author="camille.petitalot@volcamp.io">
+        <createTable tableName="feedbacks">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" primaryKeyName="pk_feedback_id"/>
+            </column>
+            <column name="comment" type="VARCHAR(255)"/>
+            <column name="rating" type="smallint"/>
+            <column name="user_id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="talk_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <addForeignKeyConstraint baseTableName="feedbacks" baseColumnNames="talk_id" constraintName="fk_feedback_talk"
+                                 referencedTableName="talks"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>
+
