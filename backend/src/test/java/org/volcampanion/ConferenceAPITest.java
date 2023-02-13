@@ -2,15 +2,9 @@ package org.volcampanion;
 
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
-import org.jboss.resteasy.reactive.RestQuery;
 import org.junit.jupiter.api.Test;
 
-import javax.ws.rs.core.Response;
-import java.util.regex.Pattern;
-
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
 public class ConferenceAPITest {
@@ -31,11 +25,10 @@ public class ConferenceAPITest {
     }
 
 
-
     @Test
     public void getConference() {
         given()
-                .when().get("/api/conference/{id}","1")
+                .when().get("/api/conference/{id}", "1")
                 .then()
                 .statusCode(200);
     }
@@ -58,15 +51,16 @@ public class ConferenceAPITest {
                         "\"dateFin\":\"2052-07-16T10:00:00\",\n" +
                         "\"talkDTO\":[]\n" +
                         "}")
-                .when().put("/api/conference/{id}","1")
+                .when().put("/api/conference/{id}", "1")
                 .then()
                 .statusCode(204);//success but no return
 
     }
+
     @Test
     public void DeleteConference() {
         given()
-                .when().delete("/api/conference/{id}","1")
+                .when().delete("/api/conference/{id}", "1")
                 .then()
                 .statusCode(200);//success but no return
 

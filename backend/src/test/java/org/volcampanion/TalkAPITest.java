@@ -4,10 +4,7 @@ import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 
-import javax.ws.rs.PathParam;
-
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.containsString;
 
 @QuarkusTest
 public class TalkAPITest {
@@ -43,7 +40,7 @@ public class TalkAPITest {
     @Test
     public void getTalks() {
         given()
-                .when().get("/api/talks/{id}","21")
+                .when().get("/api/talks/{id}", "21")
                 .then()
                 .statusCode(200);
     }
@@ -77,7 +74,7 @@ public class TalkAPITest {
                         "        },\n" +
                         "        \"speakers\": []\n" +
                         "    }")
-                .when().put("/api/talks/{id}","22")
+                .when().put("/api/talks/{id}", "22")
                 .then()
                 .statusCode(200);
 
@@ -87,7 +84,7 @@ public class TalkAPITest {
     public void DeleteTalkAPITest() {
 
         given()
-                .when().delete("/api/talks/{id}",23)
+                .when().delete("/api/talks/{id}", 23)
                 .then()
                 .statusCode(200);//success but no return
 
