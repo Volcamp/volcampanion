@@ -1,8 +1,10 @@
 on:
   push:
     branches:
-      - develop
       - main
+      - develop
+    paths:
+      - backend/**
 name: Linux_Container_Workflow
 
 jobs:
@@ -14,24 +16,7 @@ jobs:
         uses: actions/checkout@main
       - name: Branch name
         run: echo running on branch ${{ github.ref_name }}
-#      - name: Replace quarkus.mongodb.connection-string
-#        uses: nightstory/replace-env@v1
-#        with:
-#          input_file: './src/main/resources/application.properties'
-#        env:
-#          MONGODB_CONNECTION_STRING: ${{ secrets.DEV_MONGODB_CONNECTION_STRING }}
-#      - name: Replace quarkus.mongodb.connection-string
-#        uses: nightstory/replace-env@v1
-#        with:
-#          input_file: './src/main/resources/application.properties'
-#        env:
-#          MONGODB_DATABASE_NAME: 'weather'
-#      - name: Replace quarkus.mongodb.connection-string
-#        uses: nightstory/replace-env@v1
-#        with:
-#          input_file: './src/main/resources/application.properties'
-#        env:
-#          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+      # Upgrade java version from 11 to 17
       - uses: actions/setup-java@v1
         with:
           java-version: 17
