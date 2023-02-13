@@ -32,6 +32,9 @@ jobs:
 #          input_file: './src/main/resources/application.properties'
 #        env:
 #          WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
+     - uses: actions/setup-java@v1
+        with:
+          java-version: 17
       - name: 'Build and push image'
         uses: azure/docker-login@v1
         with:
