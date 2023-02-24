@@ -11,11 +11,9 @@
             <column name="title" type="VARCHAR(255)"/>
             <column name="language" type="VARCHAR(255)"/>
             <column name="level" type="VARCHAR(255)"/>
-            <column name="date" type="timestamp"/>
-            <column name="description" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(2047)"/>
             <column name="format_id" type="bigint"/>
             <column name="theme_id" type="bigint"/>
-            <column name="room_name" type="VARCHAR(255)"/>
             <column name="conference_id" type="bigint"/>
         </createTable>
         <addForeignKeyConstraint baseTableName="talks" baseColumnNames="conference_id"
