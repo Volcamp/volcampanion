@@ -5,9 +5,9 @@ import lombok.experimental.Accessors;
 
 @Data
 @Accessors(chain = true)
-public class FeedbackDto {
+public class CreateRoomDTO {
     private Long id;
-    private String content;
-    private UserDto user;
-    private TalkDto talk;
+    private String name;
+    private String description;
+    private Integer capacity;
 }
