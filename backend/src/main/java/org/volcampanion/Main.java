@@ -10,14 +10,8 @@ import org.eclipse.microprofile.openapi.annotations.info.License;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
 @OpenAPIDefinition(
-        tags = {
-                @Tag(name = "Users", description = "User API."),
-                @Tag(name = "Talks", description = "Talk API."),
-                @Tag(name = "Conference", description = "Conference API."),
-                @Tag(name = "Feedbacks", description = "Feedback API."),
-        },
         info = @Info(
-                title = "Volcampanion API (Made with love)",
+                title = "Volcampanion API",
                 version = "1.0.0",
                 contact = @Contact(
                         name = "API Support",

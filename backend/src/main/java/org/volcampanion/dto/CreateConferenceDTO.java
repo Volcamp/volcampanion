@@ -1,15 +1,14 @@
 package org.volcampanion.dto;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Accessors(chain = true)
-@EqualsAndHashCode(callSuper = true)
-public class ConferenceDTO extends CreateConferenceDTO {
+public class CreateConferenceDTO {
     private Long id;
     private String name;
     private Date startDate;

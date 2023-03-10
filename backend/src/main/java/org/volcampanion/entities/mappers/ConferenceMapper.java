@@ -1,65 +1,22 @@
 package org.volcampanion.entities.mappers;
 
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.volcampanion.domain.Conference;
 import org.volcampanion.entities.ConferenceEntity;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import java.util.ArrayList;
 import java.util.List;
 
-@ApplicationScoped
-public class ConferenceMapper {
+@Mapper(componentModel = "cdi")
+public interface ConferenceMapper extends IMapper<Conference, ConferenceEntity> {
 
-    @Inject
-    ConferenceMapper confMapper;
+    Conference toDomain(ConferenceEntity entity);
 
-    @Inject
-    TalkMapper talkMapper;
-    public  Conference entityToDomain(ConferenceEntity entity){
-        Conference dom = new Conference();
-        dom.setId(entity.getId());
-        dom.setNom(entity.getNom());
-        dom.setId(entity.getId());
-        dom.setDebut(entity.getDateDebut());
-        dom.setDateFin(entity.getDateFin());
-       // talkMapper.listEntityToDomain(entity.getTalk());
-//        dom.setTalk(talkMapper.listEntityToDomain(entity.getTalk()));
-      /*  if(entity.getTalk()!=null){
-            dom.setTalk(talkMapper.listEntityToDomain(entity.getTalk()));
-        }*/
-        //dom.setFavedByUsers(talkDto);
-        return dom;
-    }
+    @Mapping(target = "talks", ignore = true)
+    ConferenceEntity toEntity(Conference domain);
 
-    public  ConferenceEntity domainToEntity(Conference conf){
-        ConferenceEntity entity = new ConferenceEntity();
-        entity.setId(conf.getId());
-        entity.setNom(conf.getNom());
-        entity.setDateDebut(conf.getDebut());
-        entity.setDateFin(conf.getDateFin());
-        //entity.setTalk(talkMapper.listDomainsToEntity(conf.getTalk()));
-        return entity;
-    }
+    List<Conference> toDomain(List<ConferenceEntity> entity);
 
-    public List<ConferenceEntity> listDomainToEntity(List<Conference> confs ){
-        List<ConferenceEntity> entityList=new ArrayList<>();
-        for (Conference dom : confs
-        )
-        {
-            entityList.add(domainToEntity(dom));
-        }
-        return entityList;
-    }
-
-    public List<Conference> listEntityToDomain(List<ConferenceEntity> entityList){
-        List<Conference> conferences=new ArrayList<>();
-        for (ConferenceEntity entity:entityList
-        ) {
-            conferences.add(entityToDomain(entity));
-        }
-        return conferences;
-    }
-
+    List<ConferenceEntity> toEntity(List<Conference> domain);
 
 }
