@@ -1,15 +1,16 @@
-version: '3.9'
+version: '3.3'
 services:
-  wareportingdb:
+  volcampaniondb:
     image: postgres:14.1-alpine
+    container_name: volcampaniondb
     ports:
       - '5434:5432'
     restart: always
     volumes:
       - db_volume:/var/lib/postgresql/data
     environment:
-      POSTGRES_USER: "localVolcampanionDB"
-      POSTGRES_PASSWORD: "localVolcampionDB"
+      POSTGRES_USER: "volcampanion"
+      POSTGRES_PASSWORD: "volcampanion"
       POSTGRES_DB: "volcamp"
 volumes:
   db_volume:
