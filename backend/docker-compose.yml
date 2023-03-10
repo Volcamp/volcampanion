@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  wareportingdb:
+    image: postgres:14.1-alpine
+    ports:
+      - '5434:5432'
+    restart: always
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "localVolcampanionDB"
+      POSTGRES_PASSWORD: "localVolcampionDB"
+      POSTGRES_DB: "volcamp"
+volumes:
+  db_volume:
+    driver: local
