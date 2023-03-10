@@ -15,7 +15,7 @@ public class RoomEntity {
     private Long id;
     private String name;
     private String description;
-    private Integer capacity;
+    private Short capacity;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "conference_id")
     private ConferenceEntity conference;
