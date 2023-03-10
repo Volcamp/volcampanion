@@ -13,5 +13,7 @@
              relativeToChangelogFile="true"/>
     <include file="create-table-feedback-changelog.xml" labels="bootstrap" author="camille.petitalot@volcamp.io"
              relativeToChangelogFile="true"/>
+    <include file="create-table-planning-changelog.xml" labels="bootstrap" author="mickael.gervais@volcamp.io"
+      relativeToChangelogFile="true"/>
 </databaseChangeLog>
 

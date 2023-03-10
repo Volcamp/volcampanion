@@ -1,0 +1,29 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+  <changeSet author="mickael.gervais@volcamp.io" id="1">
+    <createTable tableName="plannings">
+      <column name="room" type="bigint" autoIncrement="true">
+        <constraints primaryKey="true"
+          primaryKeyName="pk_planning_id"
+          foreignKeyName="fk_plannings_room"
+          referencedTableSchemaName="volcampanion"
+          referencedTableName="rooms"
+          referencedColumnNames="id"/>
+      </column>
+      <column name="talk" type="bigint" autoIncrement="true">
+        <constraints primaryKey="true" primaryKeyName="pk_planning_id"
+          foreignKeyName="fk_plannings_talks"
+          referencedTableSchemaName="volcampanion"
+          referencedTableName="talks"
+          referencedColumnNames="id"/>
+      </column>
+      <column name="schedule" type="timestamp">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+  </changeSet>
+</databaseChangeLog>
+
