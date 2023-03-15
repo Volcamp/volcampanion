@@ -11,6 +11,7 @@ import org.volcampanion.dto.RoomDTO;
 import org.volcampanion.service.ConferenceService;
 import org.volcampanion.service.RoomService;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
@@ -37,9 +38,10 @@ public class RoomController {
     @APIResponse(responseCode = "404", description = "Room not found")
     @APIResponse(responseCode = "200", description = "OK",
             content = @Content(mediaType = "application/json",
-                    schema = @Schema(implementation = RoomDTO.class)
+                    schema = @Schema(implementation = RoomDTO[].class)
             )
     )
+    @RolesAllowed("Admin")
     public List<RoomDTO> list() {
         return mapper.toDTO(service.list());
     }
