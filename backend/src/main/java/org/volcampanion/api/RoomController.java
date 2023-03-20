@@ -41,7 +41,6 @@ public class RoomController {
                     schema = @Schema(implementation = RoomDTO[].class)
             )
     )
-    @RolesAllowed("Admin")
     public List<RoomDTO> list() {
         return mapper.toDTO(service.list());
     }
@@ -66,18 +65,21 @@ public class RoomController {
 
     @DELETE
     @Path("/{id}")
+    @RolesAllowed(Constants.ADMIN_ROLE)
     public void delete(@PathParam("id") Long id) {
         service.deleteById(id);
     }
 
     @POST
     @Transactional
+    @RolesAllowed(Constants.ADMIN_ROLE)
     public CreateRoomDTO create(CreateRoomDTO dto) {
         return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
     }
 
     @PUT
     @Transactional
+    @RolesAllowed(Constants.ADMIN_ROLE)
     public RoomDTO update(CreateRoomDTO dto) {
         return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
     }
@@ -85,6 +87,7 @@ public class RoomController {
     @POST
     @Transactional
     @Path("/{roomId}/conference/{confId}")
+    @RolesAllowed(Constants.ADMIN_ROLE)
     public RoomDTO associateToConference(@PathParam("roomId") Long roomId, @PathParam("confId") Long confId) {
         var room = service.findById(roomId);
         if (room == null) {
@@ -98,6 +101,7 @@ public class RoomController {
     @DELETE
     @Transactional
     @Path("/{roomId}/conference/{confId}")
+    @RolesAllowed(Constants.ADMIN_ROLE)
     public RoomDTO dissociateFromConference(@PathParam("roomId") Long roomId, @PathParam("confId") Long confId) {
         var room = service.findById(roomId);
         if (room == null) {
