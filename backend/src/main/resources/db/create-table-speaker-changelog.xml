@@ -12,11 +12,18 @@
             <column name="email" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="password" type="VARCHAR(255)"/>
             <column name="twitter" type="VARCHAR(255)"/>
+            <column name="linkedin" type="VARCHAR(255)"/>
             <column name="name" type="VARCHAR(255)"/>
             <column name="photo_link" type="VARCHAR(255)"/>
+            <column name="conference_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
+        <addForeignKeyConstraint baseTableName="speakers" baseColumnNames="conference_id"
+                                 constraintName="fk_speakers_conference"
+                                 referencedTableName="conferences"
+                                 referencedColumnNames="id"/>
     </changeSet>
 </databaseChangeLog>
 
