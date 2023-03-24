@@ -2,9 +2,9 @@ package org.volcampanion.service;
 
 
 import org.volcampanion.domain.Room;
-import org.volcampanion.entities.RoomEntity;
-import org.volcampanion.entities.mappers.RoomMapper;
-import org.volcampanion.reposistories.RoomRepository;
+import org.volcampanion.entity.RoomEntity;
+import org.volcampanion.entity.mappers.RoomMapper;
+import org.volcampanion.repository.RoomRepository;
 
 import javax.inject.Singleton;
 

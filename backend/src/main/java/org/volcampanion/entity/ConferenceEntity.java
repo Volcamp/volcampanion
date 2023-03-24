@@ -1,4 +1,4 @@
-package org.volcampanion.entities;
+package org.volcampanion.entity;
 
 import lombok.Data;
 import lombok.experimental.Accessors;

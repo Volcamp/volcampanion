@@ -1,7 +1,7 @@
-package org.volcampanion.reposistories;
+package org.volcampanion.repository;
 
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
-import org.volcampanion.entities.ConferenceEntity;
+import org.volcampanion.entity.ConferenceEntity;
 
 import javax.enterprise.context.ApplicationScoped;
 

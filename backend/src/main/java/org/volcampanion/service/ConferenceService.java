@@ -1,9 +1,9 @@
 package org.volcampanion.service;
 
 import org.volcampanion.domain.Conference;
-import org.volcampanion.entities.ConferenceEntity;
-import org.volcampanion.entities.mappers.ConferenceMapper;
-import org.volcampanion.reposistories.ConferenceRepository;
+import org.volcampanion.entity.ConferenceEntity;
+import org.volcampanion.entity.mappers.ConferenceMapper;
+import org.volcampanion.repository.ConferenceRepository;
 
 import javax.inject.Singleton;
 

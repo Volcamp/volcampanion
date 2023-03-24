@@ -2,7 +2,7 @@ package org.volcampanion.service;
 
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import org.volcampanion.domain.IdentifiableDomain;
-import org.volcampanion.entities.mappers.IMapper;
+import org.volcampanion.entity.mappers.IMapper;
 
 import java.util.List;
 

@@ -1,9 +1,9 @@
-package org.volcampanion.entities.mappers;
+package org.volcampanion.entity.mappers;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.volcampanion.domain.Conference;
-import org.volcampanion.entities.ConferenceEntity;
+import org.volcampanion.entity.ConferenceEntity;
 
 import java.util.List;
 

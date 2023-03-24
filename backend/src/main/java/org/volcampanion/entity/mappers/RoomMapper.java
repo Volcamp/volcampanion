@@ -1,9 +1,9 @@
-package org.volcampanion.entities.mappers;
+package org.volcampanion.entity.mappers;
 
 
 import org.mapstruct.Mapper;
 import org.volcampanion.domain.Room;
-import org.volcampanion.entities.RoomEntity;
+import org.volcampanion.entity.RoomEntity;
 
 import java.util.List;
 

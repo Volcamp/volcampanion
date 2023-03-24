@@ -1,4 +1,4 @@
-package org.volcampanion.entities.mappers;
+package org.volcampanion.entity.mappers;
 
 import java.util.List;
 

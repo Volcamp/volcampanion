@@ -18,7 +18,8 @@
         <surefire-plugin.version>3.0.0-M7</surefire-plugin.version>
         <!-- Specify the version to be used -->
         <lombok.version>1.18.20</lombok.version>
-        <mapstruct.version>1.4.2.Final</mapstruct.version>
+        <mapstruct.version>1.5.3.Final</mapstruct.version>
+        <hypersistence.version>3.2.0</hypersistence.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -88,6 +89,11 @@
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
             <version>${mapstruct.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.hypersistence</groupId>
+            <artifactId>hypersistence-utils-hibernate-55</artifactId>
+            <version>${hypersistence.version}</version>
         </dependency>
     </dependencies>
     <build>

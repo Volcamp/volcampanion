@@ -1,9 +1,9 @@
 package org.volcampanion.service;
 
 import org.volcampanion.domain.Speaker;
-import org.volcampanion.entities.SpeakerEntity;
-import org.volcampanion.entities.mappers.SpeakerMapper;
-import org.volcampanion.reposistories.SpeakerRepository;
+import org.volcampanion.entity.SpeakerEntity;
+import org.volcampanion.entity.mappers.SpeakerMapper;
+import org.volcampanion.repository.SpeakerRepository;
 
 import javax.inject.Singleton;
 
