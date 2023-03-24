@@ -5,6 +5,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
+import org.volcampanion.api.validator.IdentifiableValidator;
 import org.volcampanion.domain.mappers.ConferenceMapper;
 import org.volcampanion.dto.ConferenceDTO;
 import org.volcampanion.dto.CreateConferenceDTO;

@@ -44,7 +44,7 @@ public class TalkFormatController {
 
     @GET
     @Path("/{id}")
-    @APIResponse(responseCode = "404", description = "Conference not found")
+    @APIResponse(responseCode = "404", description = "Talk format not found")
     @APIResponse(responseCode = "200", description = "OK",
             content = @Content(mediaType = "application/json",
                     schema = @Schema(implementation = TalkFormatDTO.class)

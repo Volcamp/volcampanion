@@ -42,7 +42,7 @@ public class TalkThemeController {
 
     @GET
     @Path("/{id}")
-    @APIResponse(responseCode = "404", description = "Conference not found")
+    @APIResponse(responseCode = "404", description = "Talk theme not found")
     @APIResponse(responseCode = "200", description = "OK",
             content = @Content(mediaType = "application/json",
                     schema = @Schema(implementation = TalkThemeDTO.class)

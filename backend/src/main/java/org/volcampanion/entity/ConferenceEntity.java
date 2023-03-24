@@ -21,7 +21,7 @@ public class ConferenceEntity {
     private Date startDate;
     @Column(name = "end_date")
     private Date endDate;
-    @OneToMany(mappedBy = "conferenceId")
+    @OneToMany(mappedBy = "conference")
     private List<TalkEntity> talks = new ArrayList<>();
 
 }

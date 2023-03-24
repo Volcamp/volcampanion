@@ -11,7 +11,4 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = true)
 public class ConferenceDTO extends CreateConferenceDTO {
     private Long id;
-    private String name;
-    private Date startDate;
-    private Date endDate;
 }

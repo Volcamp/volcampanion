@@ -19,8 +19,14 @@ public class TalkEntity {
     private String level;
     private String language;
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "theme_id")
+    private TalkThemeEntity theme;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "format_id")
+    private TalkFormatEntity format;
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "conference_id")
-    private ConferenceEntity conferenceId;
+    private ConferenceEntity conference;
     @ManyToMany(mappedBy = "talks")
     private List<SpeakerEntity> speakers;
 

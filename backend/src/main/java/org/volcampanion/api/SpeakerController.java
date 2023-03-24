@@ -5,12 +5,10 @@ import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
-import org.volcampanion.domain.Conference;
+import org.volcampanion.api.validator.IdentifiableValidator;
 import org.volcampanion.domain.mappers.SpeakerMapper;
 import org.volcampanion.dto.CreateSpeakerDTO;
 import org.volcampanion.dto.SpeakerDTO;
-import org.volcampanion.exception.BadRequestException;
-import org.volcampanion.exception.MandatoryParameterException;
 import org.volcampanion.exception.NotFoundException;
 import org.volcampanion.exception.dto.ErrorDTO;
 import org.volcampanion.service.ConferenceService;
@@ -21,7 +19,6 @@ import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
-import java.util.Objects;
 
 @Path("/speakers")
 @Produces(MediaType.APPLICATION_JSON)
@@ -37,6 +34,9 @@ public class SpeakerController {
 
     @Inject
     SpeakerMapper mapper;
+
+    @Inject
+    IdentifiableValidator identifiableValidator;
 
     @GET
     @APIResponse(responseCode = "200", description = "OK",
@@ -84,7 +84,9 @@ public class SpeakerController {
             )
     )
     public SpeakerDTO create(CreateSpeakerDTO dto) {
-        Conference conf = validateConference(dto);
+        var conf = identifiableValidator.validate(dto.getConference(),
+                "conference->id",
+                aLong -> conferenceService.findById(aLong));
 
         return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto).setConference(conf)));
     }
@@ -102,20 +104,10 @@ public class SpeakerController {
             )
     )
     public SpeakerDTO update(CreateSpeakerDTO dto) {
-        Conference conf = validateConference(dto);
+        var conf = identifiableValidator.validate(dto.getConference(),
+                "conference->id",
+                aLong -> conferenceService.findById(aLong));
         return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto).setConference(conf)));
-    }
-
-    private Conference validateConference(CreateSpeakerDTO dto) {
-        if (Objects.isNull(dto.getConferenceId())) {
-            throw new MandatoryParameterException("conferenceId");
-        }
-
-        Conference conf = conferenceService.findById(dto.getConferenceId());
-        if (Objects.isNull(conf)) {
-            throw new BadRequestException("Conference provided was not found");
-        }
-        return conf;
     }
 
 }

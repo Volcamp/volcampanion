@@ -9,7 +9,6 @@ import java.util.List;
 @Data
 @Accessors(chain = true)
 public class CreateConferenceDTO {
-    private Long id;
     private String name;
     private Date startDate;
     private Date endDate;
