@@ -47,14 +47,17 @@
             <column name="talk_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
-            <column name="user_id" type="VARCHAR(255)">
+            <column name="speaker_id" type="bigint">
                 <constraints nullable="false"/>
             </column>
         </createTable>
         <addForeignKeyConstraint baseTableName="speakers_talk" baseColumnNames="talk_id"
                                  constraintName="fk_talk_speak" referencedTableName="talks"
                                  referencedColumnNames="id"/>
-        <addPrimaryKey tableName="speakers_talk" columnNames="user_id,talk_id"/>
+        <addForeignKeyConstraint baseTableName="speakers_talk" baseColumnNames="speaker_id"
+                                 constraintName="fk_speaker_speak" referencedTableName="speakers"
+                                 referencedColumnNames="id"/>
+        <addPrimaryKey tableName="speakers_talk" columnNames="speaker_id,talk_id"/>
     </changeSet>
 </databaseChangeLog>
 

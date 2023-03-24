@@ -8,6 +8,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.volcampanion.domain.mappers.RoomMapper;
 import org.volcampanion.dto.CreateRoomDTO;
 import org.volcampanion.dto.RoomDTO;
+import org.volcampanion.exception.NotFoundException;
 import org.volcampanion.service.ConferenceService;
 import org.volcampanion.service.RoomService;
 

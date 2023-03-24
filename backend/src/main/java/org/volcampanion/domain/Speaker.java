@@ -1,0 +1,23 @@
+package org.volcampanion.domain;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Data
+@Accessors(chain = true)
+@EqualsAndHashCode(callSuper = true)
+public class Speaker extends IdentifiableDomain{
+    private String name;
+    private String email;
+    private String twitter;
+    private String linkedin;
+    private String biography;
+    private String photo;
+    private List<Talk> talks = new ArrayList<>();
+    private Conference conference;
+
+}

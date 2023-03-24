@@ -5,15 +5,11 @@ import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
-import org.volcampanion.domain.Room;
 import org.volcampanion.domain.mappers.ConferenceMapper;
-import org.volcampanion.domain.mappers.RoomMapper;
 import org.volcampanion.dto.ConferenceDTO;
 import org.volcampanion.dto.CreateConferenceDTO;
-import org.volcampanion.dto.CreateRoomDTO;
-import org.volcampanion.dto.RoomDTO;
+import org.volcampanion.exception.NotFoundException;
 import org.volcampanion.service.ConferenceService;
-import org.volcampanion.service.RoomService;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -77,7 +73,6 @@ public class ConferenceController {
     public ConferenceDTO update(CreateConferenceDTO dto) {
         return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
     }
-
 
 
 }
