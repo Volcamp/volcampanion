@@ -8,8 +8,8 @@ import java.util.List;
 
 public abstract class BaseService<Domain extends IdentifiableDomain, Entity> {
 
-    IMapper<Domain, Entity> mapper;
-    PanacheRepository<Entity> repository;
+    protected IMapper<Domain, Entity> mapper;
+    protected PanacheRepository<Entity> repository;
 
     protected BaseService(IMapper<Domain, Entity> mapper, PanacheRepository<Entity> repository) {
         this.mapper = mapper;

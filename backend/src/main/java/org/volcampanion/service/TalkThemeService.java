@@ -10,9 +10,6 @@ import javax.inject.Singleton;
 @Singleton
 public class TalkThemeService extends BaseService<TalkTheme, TalkThemeEntity> {
 
-    private TalkThemeRepository repository;
-    private TalkThemeMapper mapper;
-
     TalkThemeService(TalkThemeMapper mapper, TalkThemeRepository repository) {
         super(mapper, repository);
     }

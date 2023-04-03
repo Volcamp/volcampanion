@@ -8,6 +8,7 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.volcampanion.api.validator.IdentifiableValidator;
 import org.volcampanion.domain.Talk;
+import org.volcampanion.domain.TalkFilters;
 import org.volcampanion.domain.mappers.TalkMapper;
 import org.volcampanion.dto.CreateTalkDTO;
 import org.volcampanion.dto.TalkDTO;
@@ -25,6 +26,7 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @Tag(name = "Talks API")
+//@RolesAllowed("Admin")
 public class TalkController {
 
     @Inject
@@ -54,22 +56,26 @@ public class TalkController {
                     schema = @Schema(implementation = TalkDTO[].class)
             )
     )
-    //TODO handle front request filters
-    public List<TalkDTO> list() {
-        return mapper.toDTO(service.list());
+    @Tag(name = "Volcampanion App API")
+    @Tag(name = "Talks API")
+    public List<TalkDTO> list(@QueryParam("idConf") Long idConf) {
+        return mapper.toDTO(service.listWithFilters(new TalkFilters()
+                .setConferenceId(idConf))
+        );
     }
 
-
     @GET
-    @Path("/{id}")
+    @Path("/{idTalk}")
     @APIResponse(responseCode = "404", description = "Talk not found")
     @APIResponse(responseCode = "200", description = "OK",
             content = @Content(mediaType = "application/json",
                     schema = @Schema(implementation = TalkDTO.class)
             )
     )
-    public TalkDTO getById(@PathParam("id") Long id) {
-        var conf = service.findById(id);
+    @Tag(name = "Volcampanion App API")
+    @Tag(name = "Talks API")
+    public TalkDTO getTalkById(@PathParam("idTalk") Long idTalk) {
+        var conf = service.findById(idTalk);
         if (conf == null) {
             throw new NotFoundException();
         }
@@ -126,6 +132,5 @@ public class TalkController {
         }
         return talk;
     }
-
 
 }

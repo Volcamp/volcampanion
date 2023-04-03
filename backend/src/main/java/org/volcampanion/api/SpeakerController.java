@@ -6,6 +6,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.volcampanion.api.validator.IdentifiableValidator;
+import org.volcampanion.domain.SpeakerFilters;
 import org.volcampanion.domain.mappers.SpeakerMapper;
 import org.volcampanion.dto.CreateSpeakerDTO;
 import org.volcampanion.dto.SpeakerDTO;
@@ -44,8 +45,13 @@ public class SpeakerController {
                     schema = @Schema(implementation = SpeakerDTO[].class)
             )
     )
-    public List<SpeakerDTO> list() {
-        return mapper.toDTO(service.list());
+    @Tag(name = "Volcampanion App API")
+    @Tag(name = "Speakers API")
+    public List<SpeakerDTO> list(@QueryParam("idConf") Long idConf) {
+        return mapper.toDTO(service.listWithFilters(
+                new SpeakerFilters()
+                        .setConferenceId(idConf)
+        ));
     }
 
 
@@ -57,6 +63,8 @@ public class SpeakerController {
                     schema = @Schema(implementation = SpeakerDTO.class)
             )
     )
+    @Tag(name = "Volcampanion App API")
+    @Tag(name = "Speakers API")
     public SpeakerDTO getById(@PathParam("id") Long id) {
         var conf = service.findById(id);
         if (conf == null) {

@@ -10,9 +10,6 @@ import javax.inject.Singleton;
 @Singleton
 public class TalkFormatService extends BaseService<TalkFormat, TalkFormatEntity> {
 
-    private TalkFormatRepository repository;
-    private TalkFormatMapper mapper;
-
     TalkFormatService(TalkFormatMapper mapper, TalkFormatRepository repository) {
         super(mapper, repository);
     }

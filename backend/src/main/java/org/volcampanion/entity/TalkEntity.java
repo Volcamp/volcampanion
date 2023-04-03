@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -29,5 +30,6 @@ public class TalkEntity {
     private ConferenceEntity conference;
     @ManyToMany(mappedBy = "talks")
     private List<SpeakerEntity> speakers;
-
+    @OneToMany(mappedBy = "id.talk")
+    private List<UserFavoriteTalkEntity> favorites = new ArrayList<>();
 }
