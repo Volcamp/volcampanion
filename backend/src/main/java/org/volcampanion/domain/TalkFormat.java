@@ -8,6 +8,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class TalkFormat extends IdentifiableDomain {
     private String name;
+    private String type;
     private String description;
     private Duration duration;
 

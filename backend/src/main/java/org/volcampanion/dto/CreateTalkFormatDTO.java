@@ -9,6 +9,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class CreateTalkFormatDTO {
     private String name;
+    private String type;
     private String description;
     private ChronoUnit durationUnit;
     private Long durationTime;
