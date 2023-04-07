@@ -10,7 +10,17 @@ import org.volcampanion.domain.Planning;
 import org.volcampanion.entity.PlanningEntity;
 import org.volcampanion.util.mapping.TimestampMapper;
 
-@Mapper(componentModel = CDI, uses = TimestampMapper.class)
+@Mapper(componentModel = CDI,
+    uses = {
+        ConferenceMapper.class,
+        RoomMapper.class,
+        SpeakerMapper.class,
+        TalkMapper.class,
+        TalkFormatMapper.class,
+        TalkThemeMapper.class,
+        TimestampMapper.class
+    }
+)
 public interface PlanningMapper extends IMapper<Planning, PlanningEntity> {
 
   @Mapping(target = "room", source = "id.room")
