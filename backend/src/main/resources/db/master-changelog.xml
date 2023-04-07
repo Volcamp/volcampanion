@@ -3,17 +3,17 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
-    <include file="create-table-referentials-changelog.xml" labels="bootstrap" author="camille.petitalot@volcamp.io"
+    <include file="001-create-table-referentials-changelog.xml" labels="bootstrap" author="camille.petitalot@volcamp.io"
              relativeToChangelogFile="true"/>
-    <include file="create-table-conference-changelog.xml" labels="bootstrap" author="camille.petitalot@volcamp.io"
+    <include file="002-create-table-conference-changelog.xml" labels="bootstrap" author="camille.petitalot@volcamp.io"
              relativeToChangelogFile="true"/>
-    <include file="create-table-speaker-changelog.xml" labels="bootstrap" author="camille.petitalot@volcamp.io"
+    <include file="003-create-table-speaker-changelog.xml" labels="bootstrap" author="camille.petitalot@volcamp.io"
              relativeToChangelogFile="true"/>
-    <include file="create-table-talk-changelog.xml" labels="bootstrap" author="camille.petitalot@volcamp.io"
+    <include file="004-create-table-talk-changelog.xml" labels="bootstrap" author="camille.petitalot@volcamp.io"
              relativeToChangelogFile="true"/>
-    <include file="create-table-feedback-changelog.xml" labels="bootstrap" author="camille.petitalot@volcamp.io"
+    <include file="005-create-table-feedback-changelog.xml" labels="bootstrap" author="camille.petitalot@volcamp.io"
              relativeToChangelogFile="true"/>
-    <include file="create-table-planning-changelog.xml" labels="bootstrap" author="mickael.gervais@volcamp.io"
+    <include file="006-create-table-planning-changelog.xml" labels="bootstrap" author="mickael.gervais@volcamp.io"
       relativeToChangelogFile="true"/>
 </databaseChangeLog>
 
