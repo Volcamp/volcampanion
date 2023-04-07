@@ -21,7 +21,9 @@
   <include file="006-create-table-planning-changelog.xml" labels="bootstrap"
     author="mickael.gervais@volcamp.io"
     relativeToChangelogFile="true"/>
-  <include file="007-volcamp-data.xml" labels="bootstrap" author="mickael.gervais@volcamp.io"
+  <include file="007-volcamp-data.xml" labels="referential" author="mickael.gervais@volcamp.io"
+    relativeToChangelogFile="true"/>
+  <include file="008-volcamp-2022.xml" labels="Volcamp 2022" author="mickael.gervais@volcamp.io"
     relativeToChangelogFile="true"/>
 </databaseChangeLog>
 

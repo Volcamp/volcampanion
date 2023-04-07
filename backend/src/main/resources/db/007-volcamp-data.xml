@@ -74,6 +74,14 @@
       <column name="name" value="DISCOVERY"/>
       <column name="description" value="Découverte"/>
     </insert>
+    <insert tableName="talk_themes">
+      <column name="name" value="UX_UI"/>
+      <column name="description" value="UX/UI"/>
+    </insert>
+    <insert tableName="talk_themes">
+      <column name="name" value="PLENARY"/>
+      <column name="description" value="Plénière"/>
+    </insert>
   </changeSet>
 </databaseChangeLog>
 
