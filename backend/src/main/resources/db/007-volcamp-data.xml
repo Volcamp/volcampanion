@@ -1,0 +1,79 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+  <changeSet author="mickael.gervais@volcamp.io" id="1">
+    <comment>Insert Talk Formats</comment>
+    <insert tableName="talk_formats">
+      <column name="name" value="KEYNOTE_15M"/>
+      <column name="type" value="KEYNOTE"/>
+      <column name="description" value="Keynote"/>
+      <column name="duration" value="15 minutes"/>
+    </insert>
+    <insert tableName="talk_formats">
+      <column name="name" value="KEYNOTE_45M"/>
+      <column name="type" value="KEYNOTE"/>
+      <column name="description" value="Keynote"/>
+      <column name="duration" value="45 minutes"/>
+    </insert>
+    <insert tableName="talk_formats">
+      <column name="name" value="CONFERENCE_45MIN"/>
+      <column name="type" value="CONFERENCE"/>
+      <column name="description" value="Conference"/>
+      <column name="duration" value="45 minutes"/>
+    </insert>
+    <insert tableName="talk_formats">
+      <column name="name" value="WORKSHOP_1h45M"/>
+      <column name="type" value="WORKSHOP"/>
+      <column name="description" value="Workshop"/>
+      <column name="duration" value="1 hours 45 minutes"/>
+    </insert>
+    <insert tableName="talk_formats">
+      <column name="name" value="WORKSHOP_2H"/>
+      <column name="type" value="WORKSHOP"/>
+      <column name="description" value="Workshop"/>
+      <column name="duration" value="2 hours"/>
+    </insert>
+    <insert tableName="talk_formats">
+      <column name="name" value="REX_45M"/>
+      <column name="type" value="REX"/>
+      <column name="description" value="Rex"/>
+      <column name="duration" value="45 minutes"/>
+    </insert>
+    <insert tableName="talk_formats">
+      <column name="name" value="LIGHTNING_15M"/>
+      <column name="type" value="LIGHTNING"/>
+      <column name="description" value="Lightning"/>
+      <column name="duration" value="15 minutes"/>
+    </insert>
+  </changeSet>
+  <changeSet author="mickael.gervais@volcamp.io" id="2">
+    <comment>Insert Talk Themes</comment>
+    <insert tableName="talk_themes">
+      <column name="name" value="LANGUAGE_AND_FRAMEWORK"/>
+      <column name="description" value="Lang. &amp; Frameworks"/>
+    </insert>
+    <insert tableName="talk_themes">
+      <column name="name" value="BIGDATA_AND_AI"/>
+      <column name="description" value="Big Data &amp; AI"/>
+    </insert>
+    <insert tableName="talk_themes">
+      <column name="name" value="WEB_AND_MOBILE"/>
+      <column name="description" value="Web &amp; Mobile"/>
+    </insert>
+    <insert tableName="talk_themes">
+      <column name="name" value="DEVOPS_AND_CLOUD"/>
+      <column name="description" value="DevOps &amp; Cloud"/>
+    </insert>
+    <insert tableName="talk_themes">
+      <column name="name" value="ARCHI_PERF_AND_SECU"/>
+      <column name="description" value="Archi, Perf &amp; Secu"/>
+    </insert>
+    <insert tableName="talk_themes">
+      <column name="name" value="DISCOVERY"/>
+      <column name="description" value="Découverte"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>
+

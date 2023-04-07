@@ -1,19 +1,27 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
-    <include file="001-create-table-referentials-changelog.xml" labels="bootstrap" author="camille.petitalot@volcamp.io"
-             relativeToChangelogFile="true"/>
-    <include file="002-create-table-conference-changelog.xml" labels="bootstrap" author="camille.petitalot@volcamp.io"
-             relativeToChangelogFile="true"/>
-    <include file="003-create-table-speaker-changelog.xml" labels="bootstrap" author="camille.petitalot@volcamp.io"
-             relativeToChangelogFile="true"/>
-    <include file="004-create-table-talk-changelog.xml" labels="bootstrap" author="camille.petitalot@volcamp.io"
-             relativeToChangelogFile="true"/>
-    <include file="005-create-table-feedback-changelog.xml" labels="bootstrap" author="camille.petitalot@volcamp.io"
-             relativeToChangelogFile="true"/>
-    <include file="006-create-table-planning-changelog.xml" labels="bootstrap" author="mickael.gervais@volcamp.io"
-      relativeToChangelogFile="true"/>
+  <include file="001-create-table-referentials-changelog.xml" labels="bootstrap"
+    author="camille.petitalot@volcamp.io"
+    relativeToChangelogFile="true"/>
+  <include file="002-create-table-conference-changelog.xml" labels="bootstrap"
+    author="camille.petitalot@volcamp.io"
+    relativeToChangelogFile="true"/>
+  <include file="003-create-table-speaker-changelog.xml" labels="bootstrap"
+    author="camille.petitalot@volcamp.io"
+    relativeToChangelogFile="true"/>
+  <include file="004-create-table-talk-changelog.xml" labels="bootstrap"
+    author="camille.petitalot@volcamp.io"
+    relativeToChangelogFile="true"/>
+  <include file="005-create-table-feedback-changelog.xml" labels="bootstrap"
+    author="camille.petitalot@volcamp.io"
+    relativeToChangelogFile="true"/>
+  <include file="006-create-table-planning-changelog.xml" labels="bootstrap"
+    author="mickael.gervais@volcamp.io"
+    relativeToChangelogFile="true"/>
+  <include file="007-volcamp-data.xml" labels="bootstrap" author="mickael.gervais@volcamp.io"
+    relativeToChangelogFile="true"/>
 </databaseChangeLog>
 
