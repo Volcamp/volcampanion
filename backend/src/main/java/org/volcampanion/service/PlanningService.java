@@ -27,11 +27,11 @@ public class PlanningService {
   }
 
   public List<Planning> listByRoom(long room) {
-    return mapper.toDomain(repository.list("id.room_id", room));
+    return mapper.toDomain(repository.list("id.room.id", room));
   }
 
   public List<Planning> listByTalk(long talk) {
-    return mapper.toDomain(repository.list("id.talk_id", talk));
+    return mapper.toDomain(repository.list("id.talk.id", talk));
   }
 
   public void delete(Planning domain) {
