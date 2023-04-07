@@ -1,12 +1,11 @@
 package org.volcampanion.api.validator;
 
+import java.util.Objects;
+import java.util.function.Function;
+import javax.inject.Singleton;
 import org.volcampanion.dto.IdentifiableDTO;
 import org.volcampanion.exception.BadRequestException;
 import org.volcampanion.exception.MandatoryParameterException;
-
-import javax.inject.Singleton;
-import java.util.Objects;
-import java.util.function.Function;
 
 @Singleton
 public class IdentifiableValidator {

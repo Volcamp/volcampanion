@@ -1,13 +1,12 @@
 package org.volcampanion.exception;
 
-import lombok.extern.slf4j.Slf4j;
-import org.hibernate.exception.ConstraintViolationException;
-import org.volcampanion.exception.dto.ErrorDTO;
-
 import javax.persistence.PersistenceException;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
+import lombok.extern.slf4j.Slf4j;
+import org.hibernate.exception.ConstraintViolationException;
+import org.volcampanion.exception.dto.ErrorDTO;
 
 @Provider
 @Slf4j

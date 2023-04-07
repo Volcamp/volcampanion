@@ -1,12 +1,11 @@
 package org.volcampanion.service;
 
+import java.util.List;
+import javax.inject.Inject;
+import javax.inject.Singleton;
 import org.volcampanion.domain.UserFavoriteTalk;
 import org.volcampanion.entity.mappers.UserFavoriteTalkMapper;
 import org.volcampanion.repository.UserFavoriteTalkRepository;
-
-import javax.inject.Inject;
-import javax.inject.Singleton;
-import java.util.List;
 
 @Singleton
 public class UserFavoriteTalkService {

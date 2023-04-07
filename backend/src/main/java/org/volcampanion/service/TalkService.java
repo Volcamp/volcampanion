@@ -1,15 +1,14 @@
 package org.volcampanion.service;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.inject.Singleton;
 import org.apache.commons.lang3.StringUtils;
 import org.volcampanion.domain.Talk;
 import org.volcampanion.domain.TalkFilters;
 import org.volcampanion.entity.TalkEntity;
 import org.volcampanion.entity.mappers.TalkMapper;
 import org.volcampanion.repository.TalkRepository;
-
-import javax.inject.Singleton;
-import java.util.ArrayList;
-import java.util.List;
 
 @Singleton
 public class TalkService extends BaseService<Talk, TalkEntity> {

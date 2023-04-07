@@ -1,11 +1,10 @@
 package org.volcampanion.entity;
 
-import lombok.Data;
-import lombok.experimental.Accessors;
-
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import lombok.Data;
+import lombok.experimental.Accessors;
 
 @Entity
 @Data

@@ -1,12 +1,12 @@
 package org.volcampanion.entity;
 
-import io.hypersistence.utils.hibernate.type.interval.PostgreSQLIntervalType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import lombok.Data;
 import lombok.experimental.Accessors;
-import org.hibernate.annotations.TypeDef;
-
-import javax.persistence.*;
-import java.time.Duration;
 
 @Entity
 @Data

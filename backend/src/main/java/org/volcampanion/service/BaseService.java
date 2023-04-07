@@ -1,10 +1,9 @@
 package org.volcampanion.service;
 
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
+import java.util.List;
 import org.volcampanion.domain.IdentifiableDomain;
 import org.volcampanion.entity.mappers.IMapper;
-
-import java.util.List;
 
 public abstract class BaseService<Domain extends IdentifiableDomain, Entity> {
 

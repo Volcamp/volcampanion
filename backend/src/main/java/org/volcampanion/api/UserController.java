@@ -1,6 +1,22 @@
 package org.volcampanion.api;
 
 import io.quarkus.security.Authenticated;
+import java.util.List;
+import java.util.Objects;
+import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
+import javax.transaction.Transactional;
+import javax.ws.rs.BadRequestException;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import org.apache.commons.lang3.StringUtils;
 import org.eclipse.microprofile.jwt.Claims;
 import org.eclipse.microprofile.jwt.JsonWebToken;
@@ -18,15 +34,6 @@ import org.volcampanion.exception.MandatoryParameterException;
 import org.volcampanion.exception.dto.ErrorDTO;
 import org.volcampanion.service.TalkService;
 import org.volcampanion.service.UserFavoriteTalkService;
-
-import javax.enterprise.context.RequestScoped;
-import javax.inject.Inject;
-import javax.transaction.Transactional;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import java.util.List;
-import java.util.Objects;
 
 @Path("/users")
 @Produces(MediaType.APPLICATION_JSON)

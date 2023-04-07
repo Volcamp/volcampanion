@@ -1,9 +1,8 @@
 package org.volcampanion.domain;
 
+import java.time.Duration;
 import lombok.Data;
 import lombok.experimental.Accessors;
-
-import java.time.Duration;
 
 @Data
 @Accessors(chain = true)

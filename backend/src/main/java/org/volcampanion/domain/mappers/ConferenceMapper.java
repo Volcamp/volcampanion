@@ -2,16 +2,11 @@ package org.volcampanion.domain.mappers;
 
 import static org.mapstruct.MappingConstants.ComponentModel.CDI;
 
+import java.util.List;
 import org.mapstruct.Mapper;
-import org.mapstruct.MappingConstants.ComponentModel;
 import org.volcampanion.domain.Conference;
-import org.volcampanion.domain.Room;
 import org.volcampanion.dto.ConferenceDTO;
 import org.volcampanion.dto.CreateConferenceDTO;
-import org.volcampanion.dto.CreateRoomDTO;
-import org.volcampanion.dto.RoomDTO;
-
-import java.util.List;
 
 @Mapper(componentModel = CDI)
 public interface ConferenceMapper {

@@ -2,13 +2,12 @@ package org.volcampanion.domain.mappers;
 
 import static org.mapstruct.MappingConstants.ComponentModel.CDI;
 
+import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.volcampanion.domain.Speaker;
 import org.volcampanion.dto.CreateSpeakerDTO;
 import org.volcampanion.dto.SpeakerDTO;
-
-import java.util.List;
 
 @Mapper(componentModel = CDI)
 public interface SpeakerMapper {

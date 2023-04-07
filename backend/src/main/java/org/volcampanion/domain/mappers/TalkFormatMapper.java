@@ -2,12 +2,11 @@ package org.volcampanion.domain.mappers;
 
 import static org.mapstruct.MappingConstants.ComponentModel.CDI;
 
+import java.util.List;
 import org.mapstruct.Mapper;
 import org.volcampanion.domain.TalkFormat;
 import org.volcampanion.dto.CreateTalkFormatDTO;
 import org.volcampanion.dto.TalkFormatDTO;
-
-import java.util.List;
 
 @Mapper(componentModel = CDI)
 public interface TalkFormatMapper {

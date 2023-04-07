@@ -1,6 +1,20 @@
 package org.volcampanion.api;
 
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.inject.Inject;
+import javax.transaction.Transactional;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.MediaType;
 import org.apache.commons.collections4.CollectionUtils;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
@@ -13,14 +27,11 @@ import org.volcampanion.domain.mappers.TalkMapper;
 import org.volcampanion.dto.CreateTalkDTO;
 import org.volcampanion.dto.TalkDTO;
 import org.volcampanion.exception.NotFoundException;
-import org.volcampanion.service.*;
-
-import javax.inject.Inject;
-import javax.transaction.Transactional;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import java.util.ArrayList;
-import java.util.List;
+import org.volcampanion.service.ConferenceService;
+import org.volcampanion.service.SpeakerService;
+import org.volcampanion.service.TalkFormatService;
+import org.volcampanion.service.TalkService;
+import org.volcampanion.service.TalkThemeService;
 
 @Path("/talks")
 @Produces(MediaType.APPLICATION_JSON)

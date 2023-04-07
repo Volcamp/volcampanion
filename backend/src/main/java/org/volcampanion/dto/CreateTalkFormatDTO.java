@@ -1,10 +1,9 @@
 package org.volcampanion.dto;
 
-import lombok.Data;
-import lombok.experimental.Accessors;
-
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
+import lombok.Data;
+import lombok.experimental.Accessors;
 
 @Data
 @Accessors(chain = true)

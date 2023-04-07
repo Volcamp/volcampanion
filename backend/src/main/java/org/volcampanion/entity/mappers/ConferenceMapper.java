@@ -2,13 +2,11 @@ package org.volcampanion.entity.mappers;
 
 import static org.mapstruct.MappingConstants.ComponentModel.CDI;
 
-import org.mapstruct.InheritInverseConfiguration;
+import java.util.List;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.volcampanion.domain.Conference;
 import org.volcampanion.entity.ConferenceEntity;
-
-import java.util.List;
 
 @Mapper(componentModel = CDI)
 public interface ConferenceMapper extends IMapper<Conference, ConferenceEntity> {
