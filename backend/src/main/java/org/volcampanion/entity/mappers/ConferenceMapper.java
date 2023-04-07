@@ -1,5 +1,7 @@
 package org.volcampanion.entity.mappers;
 
+import static org.mapstruct.MappingConstants.ComponentModel.CDI;
+
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -8,7 +10,7 @@ import org.volcampanion.entity.ConferenceEntity;
 
 import java.util.List;
 
-@Mapper(componentModel = "cdi")
+@Mapper(componentModel = CDI)
 public interface ConferenceMapper extends IMapper<Conference, ConferenceEntity> {
 
     @Mapping(target = "talks", ignore = true)

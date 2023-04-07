@@ -1,5 +1,7 @@
 package org.volcampanion.domain.mappers;
 
+import static org.mapstruct.MappingConstants.ComponentModel.CDI;
+
 import java.util.List;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -7,7 +9,7 @@ import org.mapstruct.Mapping;
 import org.volcampanion.domain.Planning;
 import org.volcampanion.dto.PlanningDTO;
 
-@Mapper(componentModel = "cdi")
+@Mapper(componentModel = CDI)
 public interface PlanningMapper {
 
   @Mapping(target = "room", source = "room.id")

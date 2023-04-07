@@ -1,12 +1,14 @@
 package org.volcampanion.entity.mappers;
 
+import static org.mapstruct.MappingConstants.ComponentModel.CDI;
+
 import org.mapstruct.Mapper;
 import org.volcampanion.domain.Talk;
 import org.volcampanion.entity.TalkEntity;
 
 import java.util.List;
 
-@Mapper(componentModel = "cdi",
+@Mapper(componentModel = CDI,
         uses = {
                 TalkFormatMapper.class,
                 TalkThemeMapper.class,

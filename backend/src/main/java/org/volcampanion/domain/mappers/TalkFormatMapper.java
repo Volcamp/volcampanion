@@ -1,5 +1,7 @@
 package org.volcampanion.domain.mappers;
 
+import static org.mapstruct.MappingConstants.ComponentModel.CDI;
+
 import org.mapstruct.Mapper;
 import org.volcampanion.domain.TalkFormat;
 import org.volcampanion.dto.CreateTalkFormatDTO;
@@ -7,7 +9,7 @@ import org.volcampanion.dto.TalkFormatDTO;
 
 import java.util.List;
 
-@Mapper(componentModel = "cdi")
+@Mapper(componentModel = CDI)
 public interface TalkFormatMapper {
     TalkFormatDTO toDTO(TalkFormat domain);
 
