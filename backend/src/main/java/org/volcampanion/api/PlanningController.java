@@ -2,7 +2,9 @@ package org.volcampanion.api;
 
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+import static org.volcampanion.dto.IdentifiableDTO.of;
 
+import java.util.Collections;
 import java.util.List;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -37,28 +39,19 @@ public class PlanningController {
   PlanningMapper mapper;
 
   @GET
-  @APIResponse(responseCode = "200", description = "OK",
-      content = @Content(mediaType = "application/json",
-          schema = @Schema(implementation = PlanningDTO[].class)
-      )
-  )
+  @APIResponse(responseCode = "200", description = "OK", content = @Content(mediaType = "application/json", schema = @Schema(implementation = PlanningDTO[].class)))
   public List<PlanningDTO> list() {
     return mapper.toDTO(service.list());
   }
 
 
   @GET
-  @Path("/room/{room}/")
-  @APIResponse(responseCode = "404", description = "Plannings not found")
-  @APIResponse(responseCode = "200", description = "OK",
-      content = @Content(mediaType = "application/json",
-          schema = @Schema(implementation = PlanningDTO[].class)
-      )
-  )
+  @Path("/room/{room}")
+  @APIResponse(responseCode = "200", description = "OK", content = @Content(mediaType = "application/json", schema = @Schema(implementation = PlanningDTO[].class)))
   public List<PlanningDTO> getByRoom(@PathParam("room") Long room) {
     var plannings = service.listByRoom(room);
     if (plannings == null) {
-      throw new NotFoundException();
+      return Collections.emptyList();
     }
     return mapper.toDTO(plannings);
   }
@@ -66,15 +59,10 @@ public class PlanningController {
   @GET
   @Path("/room/{room}/talk/{talk}")
   @APIResponse(responseCode = "404", description = "Plannings not found")
-  @APIResponse(responseCode = "200", description = "OK",
-      content = @Content(mediaType = "application/json",
-          schema = @Schema(implementation = PlanningDTO.class)
-      )
-  )
+  @APIResponse(responseCode = "200", description = "OK", content = @Content(mediaType = "application/json", schema = @Schema(implementation = PlanningDTO.class)))
   public PlanningDTO getById(@PathParam("room") Long room, @PathParam("talk") Long talk) {
-    final PlanningDTO dto = new PlanningDTO()
-        .setRoom(room)
-        .setTalk(talk);
+    final PlanningDTO dto = new PlanningDTO().setRoom(of(room))
+        .setTalk(of(talk));
     Planning planning = mapper.toDomain(dto);
     planning = service.findById(planning);
     if (planning == null) {
@@ -84,13 +72,9 @@ public class PlanningController {
   }
 
   @GET
-  @Path("/talk/{talk}/")
+  @Path("/talk/{talk}")
   @APIResponse(responseCode = "404", description = "Plannings not found")
-  @APIResponse(responseCode = "200", description = "OK",
-      content = @Content(mediaType = "application/json",
-          schema = @Schema(implementation = PlanningDTO.class)
-      )
-  )
+  @APIResponse(responseCode = "200", description = "OK", content = @Content(mediaType = "application/json", schema = @Schema(implementation = PlanningDTO.class)))
   public List<PlanningDTO> getByTalk(@PathParam("talk") Long talk) {
     var plannings = service.listByTalk(talk);
     if (plannings == null) {
@@ -102,9 +86,8 @@ public class PlanningController {
   @DELETE
   @Path("/room/{room}/talk/{talk}")
   public void delete(@PathParam("room") Long room, @PathParam("talk") Long talk) {
-    final PlanningDTO dto = new PlanningDTO()
-        .setRoom(room)
-        .setTalk(talk);
+    final PlanningDTO dto = new PlanningDTO().setRoom(of(room))
+        .setTalk(of(talk));
     final Planning planning = mapper.toDomain(dto);
     service.delete(planning);
   }

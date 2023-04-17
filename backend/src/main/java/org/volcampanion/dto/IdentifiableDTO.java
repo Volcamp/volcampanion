@@ -7,4 +7,8 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class IdentifiableDTO {
     private Long id;
+
+    public static IdentifiableDTO of(Long id){
+        return new IdentifiableDTO().setId(id);
+    }
 }

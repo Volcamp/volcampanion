@@ -7,8 +7,8 @@ import lombok.experimental.Accessors;
 @Data
 @Accessors(chain = true)
 public class PlanningDTO {
-    private Long room;
-    private Long talk;
+    private IdentifiableDTO room;
+    private IdentifiableDTO talk;
     private LocalDateTime schedule;
 
 }
