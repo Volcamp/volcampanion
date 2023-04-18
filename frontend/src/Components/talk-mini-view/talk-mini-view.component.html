@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="sideIndicater" style="background:{{color}}">
+    <p>
+      {{type}}
+    </p>
+  </div>
+
+  <div class="mainItem">
+      <div class="lineContentContainer">
+        <h1>{{title}}</h1>
+        <h3 class="leftItem"> {{startDate.getHours()-2}}h{{startDate.getMinutes()}}-{{endDate.getHours()}}h{{endDate.getMinutes()}} </h3>
+      </div>
+
+
+        <h2 style="margin: 0; padding: 0;">
+          <span *ngFor="let speaker of speakers">{{speaker}}&nbsp;</span>
+        </h2>
+
+
+      <h2>{{conference}}</h2>
+    <div>
+      <button  mat-icon-button class="example-icon favorite-icon" aria-label="filter button">
+        <mat-icon matBadge="{{nbFavorite.toString()}}" matBadgeColor="warn">favorite</mat-icon>
+        <span class="cdk-visually-hidden">
+      </span>
+      </button>
+    </div>
+
+  </div>
+</div>
+

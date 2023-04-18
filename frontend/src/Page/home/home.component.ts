@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TALK_DATA} from "../../Data/Stub";
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent {
-
+  num=5
+  talks=TALK_DATA
 }

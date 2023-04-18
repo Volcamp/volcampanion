@@ -1,0 +1,3 @@
+<div *ngFor="let talk of talks">
+  <app-talk-mini-view type="{{talk.conference.id}}" title="{{talk.title}}" conference="{{talk.conference.id}}" [nbFavorite]=talk.id [speakers]=speakers />
+</div>

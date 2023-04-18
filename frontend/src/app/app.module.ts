@@ -13,30 +13,41 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import {TalkMiniViewComponent} from "../Components/talk-mini-view/talk-mini-view.component";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatCardModule} from "@angular/material/card";
+import {MatBadgeModule} from "@angular/material/badge";
+import {TalksListComponent} from "../Components/talks-list/talks-list.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     BottomNavBarComponent,
-    TopBarComponent
+    TopBarComponent,
+    TalkMiniViewComponent,
+    TalksListComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ServiceWorkerModule.register('ngsw-worker.js', {
-            enabled: !isDevMode(),
-            // Register the ServiceWorker as soon as the application is stable
-            // or after 30 seconds (whichever comes first).
-            registrationStrategy: 'registerWhenStable:30000'
-        }),
-        MatTabsModule,
-        MatIconModule,
-        MatButtonModule,
-        MatToolbarModule,
-        BrowserAnimationsModule,
-        MatProgressBarModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
+    MatTabsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule,
+    MatGridListModule,
+    MatCardModule,
+    MatBadgeModule,
+
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
