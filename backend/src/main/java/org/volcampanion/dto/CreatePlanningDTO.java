@@ -1,14 +1,15 @@
 package org.volcampanion.dto;
 
-import java.time.LocalDateTime;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import java.time.LocalDateTime;
+
 @Data
 @Accessors(chain = true)
-public class PlanningDTO {
-    private RoomDTO room;
-    private TalkDTO talk;
+public class CreatePlanningDTO {
+    private IdentifiableDTO room;
+    private IdentifiableDTO talk;
     private LocalDateTime schedule;
 
 }

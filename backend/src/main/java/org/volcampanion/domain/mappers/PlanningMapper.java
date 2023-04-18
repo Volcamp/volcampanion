@@ -1,19 +1,25 @@
 package org.volcampanion.domain.mappers;
 
-import static org.mapstruct.MappingConstants.ComponentModel.CDI;
-
-import java.util.List;
 import org.mapstruct.Mapper;
 import org.volcampanion.domain.Planning;
+import org.volcampanion.dto.CreatePlanningDTO;
 import org.volcampanion.dto.PlanningDTO;
 
-@Mapper(componentModel = CDI)
+import java.util.List;
+
+import static org.mapstruct.MappingConstants.ComponentModel.CDI;
+
+@Mapper(componentModel = CDI, uses = {
+        RoomMapper.class,
+        TalkMapper.class
+})
 public interface PlanningMapper {
 
-  PlanningDTO toDTO(Planning domain);
+    PlanningDTO toDTO(Planning domain);
 
-  Planning toDomain(PlanningDTO dto);
+    Planning toDomain(CreatePlanningDTO dto);
+    Planning toDomain(PlanningDTO dto);
 
-  List<PlanningDTO> toDTO(List<Planning> domain);
+    List<PlanningDTO> toDTO(List<Planning> domain);
 
 }

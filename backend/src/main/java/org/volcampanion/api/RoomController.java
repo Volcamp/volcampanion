@@ -79,7 +79,7 @@ public class RoomController {
 
     @POST
     @Transactional
-    @RolesAllowed(Constants.ADMIN_ROLE)
+//    @RolesAllowed(Constants.ADMIN_ROLE)
     public CreateRoomDTO create(CreateRoomDTO dto) {
         return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
     }
