@@ -1,30 +1,37 @@
-.sideIndicater
-  border-radius: 50px
-  text-orientation: mixed
-  writing-mode: vertical-rl
-  grid-area: b
-  align-content: center
-  justify-content: center
-  display: flex
-
-
-.mainItem
-  grid-area: a
-  width: fit-content
-
-.lineContentContainer
-  display: flex
-  justify-content: center
-  width: fit-content
-
-.leftItem
-  justify-self: end
-
 .container
   display: grid
-  grid-template-columns: repeat(100, 1fr)
-  grid-template-areas: "b s s a a a a a a"  "b s s a a a a a a"
-  width: 100%
+  gap: 10px
+
+.sideIndicater
+  display: flex
+  border-radius: 50px
+  justify-content: center
+  text-orientation: mixed
+  writing-mode: vertical-rl
+  grid-column: 1
+  grid-row: 1
+  padding : 5px
+  width: fit-content
+
+.mainItem
+  grid-column: 2 / 100
+  grid-row: 1
+  display: grid
+  gap: 10px
+
+.lineContentContainer
+  display: grid
+
+
+
+.leftItem
+  grid-row: 1
+  grid-column: 1
+
+.rightItem
+  grid-row: 1
+  grid-column: 50
+  width: fit-content
 
 h1,h2,h3
   font-weight: normal

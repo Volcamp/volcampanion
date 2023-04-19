@@ -1,3 +1,20 @@
-<div *ngFor="let talk of talks">
-  <app-talk-mini-view type="{{talk.conference.id}}" title="{{talk.title}}" conference="{{talk.conference.id}}" [nbFavorite]=talk.id [speakers]=speakers />
+<div *ngFor="let dic of  dictionaryViaLiteral |  keyvalue">
+  <p>{{dic.key.getDate()}} - {{dic.key.getMonth()+1}} - {{dic.key.getFullYear()}}</p>
+  <div *ngFor="let talkPlan of dic.value">
+    <div class="miniView">
+      <app-talk-mini-view [duration]="talkPlan.talk.format.duration"
+                          [startDate]="talkPlan.schedule"
+                          type="{{talkPlan.talk.theme.name}}"
+                          title="{{talkPlan.talk.title}}"
+                          hall="{{talkPlan.room.name}}"
+                          [nbFavorite]=talkPlan.room.capacity
+                          [speakers]=speakerNames(talkPlan.talk.speakers)  />
+      <mat-divider [inset]="true"></mat-divider>
+
+    </div>
+  </div>
+
 </div>
+
+
+

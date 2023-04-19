@@ -18,6 +18,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule} from "@angular/material/card";
 import {MatBadgeModule} from "@angular/material/badge";
 import {TalksListComponent} from "../Components/talks-list/talks-list.component";
+import {MatDividerModule} from "@angular/material/divider";
 
 @NgModule({
   declarations: [
@@ -28,26 +29,27 @@ import {TalksListComponent} from "../Components/talks-list/talks-list.component"
     TalkMiniViewComponent,
     TalksListComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    }),
-    MatTabsModule,
-    MatIconModule,
-    MatButtonModule,
-    MatToolbarModule,
-    BrowserAnimationsModule,
-    MatProgressBarModule,
-    MatGridListModule,
-    MatCardModule,
-    MatBadgeModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: !isDevMode(),
+            // Register the ServiceWorker as soon as the application is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerWhenStable:30000'
+        }),
+        MatTabsModule,
+        MatIconModule,
+        MatButtonModule,
+        MatToolbarModule,
+        BrowserAnimationsModule,
+        MatProgressBarModule,
+        MatGridListModule,
+        MatCardModule,
+        MatBadgeModule,
+        MatDividerModule,
 
-  ],
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

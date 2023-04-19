@@ -1,12 +1,16 @@
-import {Identifier} from "./Identifier";
+import {Conference} from "./Conference";
+import {Theme} from "./Theme";
+import {Format} from "./Format";
+import {Speaker} from "./Speaker";
 export interface Talk {
+  id: number;
   title: string;
   description: string;
   level: string;
   language: string;
-  theme:Identifier;
-  format: Identifier;
-  conference: Identifier;
-  speakers: Identifier[];
-  id: number;
+  conference: Conference;
+  theme: Theme;
+  format: Format;
+  speakers: Speaker[];
 }
+

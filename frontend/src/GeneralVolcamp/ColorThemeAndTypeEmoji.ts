@@ -19,3 +19,17 @@ export function getColorTheme(input: string): string  {
     return '#EEEEEE';
   }
 }
+
+export function getIconFormat(input: string): string  {
+  if (input.toLowerCase().includes('conférence')) {
+    return 'school';
+  } else if (input.toLowerCase().includes('rex') ) {
+    return 'cached';
+  } else if (input.toLowerCase().includes('workshop')) {
+    return 'science';
+  } else if (input.toLowerCase().includes('lightning') ) {
+    return 'speed';
+  } else {
+    return '';
+  }
+}
