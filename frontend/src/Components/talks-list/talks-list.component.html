@@ -1,5 +1,5 @@
 <div *ngFor="let dic of  dictionaryViaLiteral |  keyvalue">
-  <p>{{dic.key.getDate()}} - {{dic.key.getMonth()+1}} - {{dic.key.getFullYear()}}</p>
+  <h2 class="date">{{dic.key.getDate()}} / {{dic.key.getMonth()+1}} / {{dic.key.getFullYear()}}</h2>
   <div *ngFor="let talkPlan of dic.value">
     <div class="miniView">
       <app-talk-mini-view [duration]="talkPlan.talk.format.duration"
@@ -12,8 +12,8 @@
       <mat-divider [inset]="true"></mat-divider>
 
     </div>
-  </div>
 
+  </div>
 </div>
 
 
