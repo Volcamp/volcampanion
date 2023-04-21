@@ -1,48 +1,47 @@
 <div class="container">
-
-  <div class="sideIndicater" style="background:{{color}}">
-    <p>
-      {{type}}
-    </p>
-  </div>
-
-
-  <div class="mainItem">
-
-      <div class="lineContentContainer">
-        <h1 class="leftItem">{{title}}</h1>
-        <h3 class="rightItem"> {{startDate.getHours()}}h{{startDate.getMinutes()}} - {{endDate.getHours()}}h{{endDate.getMinutes()}} </h3>
-      </div>
-
-
-        <h2 style="margin: 0; padding: 0;">
-          {{speakersNames}}
-        </h2>
-
-
-        <h2>{{hall}}</h2>
-
-
-    <div class="lineContentContainer">
-      <div class="leftItem"  *ngIf="this.isConnected">
-        <button (click)="removeFavorite()" mat-icon-button color="warn" *ngIf="this.inFavorite">
-          <mat-icon svgIcon="favorite_checked" aria-hidden="false" aria-label="favorite checked icon"></mat-icon>
-        </button>
-
-        <button  (click)="addFavorite()" mat-icon-button color="warn" *ngIf="! this.inFavorite">
-          <mat-icon svgIcon="favorite_unchecked" aria-hidden="false" aria-label="favorite checked icon"></mat-icon>
-        </button>
-
-      </div>
-      <div class="rightItem">
-        <mat-icon matBadge="{{nbFavorite.toString()}}" matBadgeColor="warn">favorite</mat-icon>
-        <span class="cdk-visually-hidden"></span>
-      </div>
-
+    <div class="sideIndicater" style="background:{{color}}">
+      <p>
+        {{talkPlan.talk.theme.name}}
+      </p>
     </div>
 
+    <div class="mainItem">
+        <div class="lineContentContainer">
+          <h1 class="leftItem">{{talkPlan.talk.title}}</h1>
+          <h3 class="rightItem"> {{startDate.toLocaleTimeString('fr-FR').slice(0,5).replace(":","h")}} - {{endDate.toLocaleTimeString('fr-FR').slice(0,5).replace(":","h")}} </h3>
+        </div>
+          <h2 style="margin: 0; padding: 0;">
+            {{speakersNames}}
+          </h2>
+          <h2>{{talkPlan.room.name}}</h2>
+      <div class="lineContentContainer">
+
+        <div class="leftItem">
+          <mat-icon matBadge="{{talkPlan.room.capacity}}" matBadgeColor="warn">favorite</mat-icon>
+          <span class="cdk-visually-hidden"></span>
+        </div>
+
+        <div class="rightItem"  *ngIf="this.isConnected">
+          <button (click)="removeFavorite()" mat-icon-button color="warn" *ngIf="this.inFavorite">
+            <mat-icon svgIcon="favorite_checked" aria-hidden="false" aria-label="favorite checked icon"></mat-icon>
+          </button>
+
+          <button  (click)="addFavorite()" mat-icon-button color="warn" *ngIf="! this.inFavorite">
+            <mat-icon svgIcon="favorite_unchecked" aria-hidden="false" aria-label="favorite checked icon"></mat-icon>
+          </button>
+
+        </div>
+
+      </div>
+
+
+    </div>
+    <mat-divider [inset]="true"></mat-divider>
 
   </div>
 
-</div>
+
+
+
+
 

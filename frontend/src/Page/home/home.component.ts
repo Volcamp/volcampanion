@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import {TALK_DATA} from "../../Data/Stub";
+import {Component, Inject} from '@angular/core';
+import {DataService} from "../../Data/ServicesDatas/DataService";
+import {Plan} from "../../Data/DTO/Plan";
 
 @Component({
   selector: 'app-home',
@@ -8,5 +9,10 @@ import {TALK_DATA} from "../../Data/Stub";
 })
 export class HomeComponent {
   num=5
-  talks=TALK_DATA
+  plans:Plan[]
+
+  constructor( /*@Inject( DataService )*/ dataService: DataService ) {
+    this.plans=dataService.providePlansList()
+
+  }
 }

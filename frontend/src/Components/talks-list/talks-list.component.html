@@ -1,20 +1,19 @@
-<div *ngFor="let dic of  dictionaryViaLiteral |  keyvalue">
-  <h2 class="date">{{dic.key.getDate()}} / {{dic.key.getMonth()+1}} / {{dic.key.getFullYear()}}</h2>
-  <div *ngFor="let talkPlan of dic.value">
-    <div class="miniView">
-      <app-talk-mini-view [duration]="talkPlan.talk.format.duration"
-                          [startDate]="talkPlan.schedule"
-                          type="{{talkPlan.talk.theme.name}}"
-                          title="{{talkPlan.talk.title}}"
-                          hall="{{talkPlan.room.name}}"
-                          [nbFavorite]=talkPlan.room.capacity
-                          [speakers]=speakerNames(talkPlan.talk.speakers)  />
-      <mat-divider [inset]="true"></mat-divider>
+<div *ngFor="let plan of  plans " >
+  <div class="containerBig">
+   <div class="miniView content" *ngIf="planConv.isTalk(plan)">
+          <app-talk-mini-view [talkPlan]="$any(plan)"/>
+        </div>
 
-    </div>
+      <div class="miniView content" *ngIf="planConv.isBreak(plan)">
+        <app-break-mini-view [breakPlan]="$any(plan)"/>
+      </div>
 
+      <div class="miniView" *ngIf="planConv.isDivider(plan)">
+        <app-divider-mini-view [datePlan]="$any(plan)"/>
+      </div>
+
+      </div>
   </div>
-</div>
 
 
 

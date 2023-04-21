@@ -1,7 +1,14 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {TalkPlan} from "../../Data/DTO/TalkPlan";
-import {Speaker} from "../../Data/DTO/Speaker";
+import {AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2} from '@angular/core';
 import {compareSchedule} from "../../GeneralVolcamp/CompareTalkPlan";
+import {Plan} from "../../Data/DTO/Plan";
+import {PlanIdentifier} from "../../Data/DTO/PlanIdentifier";
+
+import {  ComponentRef, ViewChild, ViewContainerRef } from '@angular/core';
+import {TalkMiniViewComponent} from "../talk-mini-view/talk-mini-view.component";
+import {TYPE_DIVIDER_PLAN} from "../../Data/DTO/DividerPlan";
+import {DividerMiniViewComponent} from "../divider-mini-view/divider-mini-view.component";
+import {TYPE_BREAK_PLAN} from "../../Data/DTO/BreakPlan";
+import {BreakMiniViewComponent} from "../break-mini-view/break-mini-view.component";
 
 @Component({
   selector: 'app-talks-list',
@@ -9,33 +16,17 @@ import {compareSchedule} from "../../GeneralVolcamp/CompareTalkPlan";
   styleUrls: ['./talks-list.component.sass']
 })
 export class TalksListComponent implements OnInit{
-  @Input() talkPlans: TalkPlan[] =[] ;
 
-  dictionaryViaLiteral = new Map<Date, Array<TalkPlan>>;
+  @Input() plans: Plan[] =[] ;
+  planConv : PlanIdentifier=new PlanIdentifier();
+  container :ViewContainerRef
+  constructor(private elRef: ElementRef, private renderer: Renderer2) {
+    this.container = this.elRef.nativeElement;
 
-
-  speakerNames(speakers : Speaker[]) : string[]{
-    return speakers.map(speaker => speaker.name)
   }
 
   ngOnInit(): void {
-    let listToAdd : Array<TalkPlan>=new Array<TalkPlan>();
-    this.talkPlans.sort(compareSchedule)
-    let date : Date=this.talkPlans[0].schedule;
-
-    for(let i=0;i<this.talkPlans.length;i++) {
-      if(this.talkPlans[i].schedule.getFullYear()!=date.getFullYear() || (this.talkPlans[i].schedule.getDate()!=date.getDate() || this.talkPlans[i].schedule.getMonth()!=date.getMonth())  ){
-        this.dictionaryViaLiteral.set(date,listToAdd)
-        listToAdd=[]
-        listToAdd.push(this.talkPlans[i])
-        date=this.talkPlans[i].schedule
-      }
-      else{
-        listToAdd.push(this.talkPlans[i])
-      }
-      if(i+1==this.talkPlans.length){
-        this.dictionaryViaLiteral.set(date,listToAdd)
-      }
-    }
+    this.plans.sort(compareSchedule)
   }
+
 }

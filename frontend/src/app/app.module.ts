@@ -19,6 +19,10 @@ import {MatCardModule} from "@angular/material/card";
 import {MatBadgeModule} from "@angular/material/badge";
 import {TalksListComponent} from "../Components/talks-list/talks-list.component";
 import {MatDividerModule} from "@angular/material/divider";
+import {BreakMiniViewComponent} from "../Components/break-mini-view/break-mini-view.component";
+import {DividerMiniViewComponent} from "../Components/divider-mini-view/divider-mini-view.component";
+import {DataService} from "../Data/ServicesDatas/DataService";
+import {StubService} from "../Data/ServicesDatas/StubDatas/StubService";
 
 @NgModule({
   declarations: [
@@ -27,7 +31,9 @@ import {MatDividerModule} from "@angular/material/divider";
     BottomNavBarComponent,
     TopBarComponent,
     TalkMiniViewComponent,
-    TalksListComponent
+    TalksListComponent,
+    BreakMiniViewComponent,
+    DividerMiniViewComponent
   ],
     imports: [
         BrowserModule,
@@ -50,7 +56,10 @@ import {MatDividerModule} from "@angular/material/divider";
         MatDividerModule,
 
     ],
-  providers: [],
+  providers: [{
+    provide: DataService,
+    useClass: StubService // <--- Defining the swappable implementation.
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
