@@ -1,17 +1,12 @@
 package org.volcampanion.entity;
 
+import lombok.Data;
+import lombok.experimental.Accessors;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import lombok.Data;
-import lombok.experimental.Accessors;
 
 @Entity
 @Data
@@ -26,6 +21,8 @@ public class ConferenceEntity {
     private Date startDate;
     @Column(name = "end_date")
     private Date endDate;
+    @Column(name = "is_active")
+    private Boolean isActive;
     @OneToMany(mappedBy = "conference")
     private List<TalkEntity> talks = new ArrayList<>();
 

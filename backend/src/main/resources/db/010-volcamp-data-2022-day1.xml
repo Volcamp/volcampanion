@@ -1,0 +1,219 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+  <changeSet author="camille.petitalot@volcamp.io" id="1">
+    <comment>Insert talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Keynote - Soyons Fashion - Parlons de souveraineté technologique"/>
+      <column name="description"
+              value="Croyons-nous vraiment qu’avant 2024 nos algorithmes de recherche ou de reconnaissance d’images seront meilleurs que ceux de Google. Pensons-nous sérieusement que notre Cloud sera au niveau de celui d’AWS dans les prochains mois. Imaginons-nous vraiment que nous serons capables de rivaliser honnêtement avec les meilleurs mondiaux de la cyber-sécurité, de la crypto ou de la blockchain. Je propose dans cette Keynote d’être un peu sérieux et de réfléchir ensemble à ce concept d’indépendance ou de souveraineté et de décider ensemble des challenges accessibles et ambitieux."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+    </insert>
+    <insert tableName="talks">
+      <column name="title" value="Si on aidait le capitaine Némo à classifier les monstres marins ?"/>
+      <column name="description"
+              value="Intelligence Artificielle, Machine Learning, Deep Learning, … Ces termes on les entend tous les jours mais au final que représentent-ils et surtout comment développe-t-on des applications basées sur ces notions ? Durant ce talk nous vous ferons découvrir le monde de la data et comment il est, avec les bons outils, facile de se lancer dans l’aventure de l’analyse de données et de la classification. Ce talk permettra aux développeuses et développeurs de découvrir comment développer des applications apprenantes et montrera qu’il n’est pas nécessaire d’être un As du développement pour développer son propre algorithme de Machine Learning ou de Deep Learning. Nous vous montrerons comment créer votre premier Notebook avec JupyterLab afin de vous accompagner dans vos premiers pas. Ce sera l’occasion pour vous de plonger dans la découverte du monde sous-marin en développant un modèle permettant d’identifier et classifier les sons de mammifères marins. Pour finir, nous verrons ensemble, avec Streamlit, comment développer une application utilisant ce modèle."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+    </insert>
+    <insert tableName="talks">
+      <column name="title"
+              value="Comment j'ai développé le détecteur de deepfakes le plus puissant du monde pour 100€"/>
+      <column name="description"
+              value="Le site ThisPersonDoesNotExist.com est un générateur de faux visages ultra-réaliste basé sur les réseaux de neurones, fréquemment utilisé par les réseaux de bots pour créer de faux profils crédibles sur internet. À une époque où la désinformation et la manipulation de l’opinion passent par les réseaux sociaux, il est nécessaire de se doter d’outils pour repérer les fausses identités, notamment via leur photo de profil. Dans cette conférence, vous découvrirez une méthode permettant de détecter les images générées via ThisPersonDoesNotExist.com, avec une fiabilité de 100% et même un moyen de connaître l’heure exacte où la photo a été produite. Durant ce talk sans pré-requis, nous aborderons aussi les concepts de base du machine learning nécessaires au fonctionnement des réseaux GAN, et une technique pour générer soi-même des faux visages quasi indétectables."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+    </insert>
+    <insert tableName="talks">
+      <column name="title" value="Service Level 'Observability' - in Service Quality we Trust !"/>
+      <column name="description"
+              value="Dans cette talk, nous allons commencer par présenter un peu de théorie (25% du temps) sur les sujets d’Observabilité (et notamment en quoi c’est une évolution du monitoring) et introduirons les concepts clés de logs, metrics et traces. Nous présenterons les stacks typiques pour implémenter l’observabilité dans les architectures cloud natives, et présenterons de manière didactique l’écosystème open source Open Telemetry, et aiderons nos spectateurs à comprendre en quoi cette stack est vraiment disruptive, notamment parce qu’elle est en train de s’imposer comme un standard chez tous les éditeurs. Le reste de notre talk présentera des mises en application concrète de ces technos dans l’écosystème Michelin DDI, où nous montrerons comment dans ce contexte nous avons pu corréler logs, traces et métriques, dans l’objectif d’obtenir la meilleure vision de la qualité du service perçue par nos utilisateurs (business driven) et également de pouvoir communiquer en toute transparence et en temps réel cet état de santé."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+    </insert>
+    <insert tableName="talks">
+      <column name="title" value="Et si on essayait plutôt que de tout lancer par la fenêtre ?"/>
+      <column name="description"
+              value="Depuis quelques années le langage Java a emprunté plusieurs concepts issus de la programmation fonctionnelle, les Streams en sont le parfait exemple. Plus récemment, ce sont des fonctionnalités telles que les Records, le pattern matching ou les Sealed classes qui ont été ajouté au langage et que les développeurs Scala connaissent bien. Mais qu’en est-il de la gestion des erreurs ? Le système de gestion d’exceptions disponible en Java s’accompagne de plusieurs désavantages et il pose de nombreuses difficultés dans l’implémentation de nos Streams. C’est là qu’intervient Vavr et son Try ! L’objectif de ce Lightning sera de vous présenter le Try de Vavr comme alternative au système de gestion d’exceptions. A l’aide d’exemples concrets, nous verrons comment Vavr et son approche fonctionnelle peut nous aider à rédiger un code plus propre et plus pur tout en garantissant une gestion optimale des erreurs. Ce talk n’est pas une revue exhaustive de Vavr ni une tentative d’explication de ce qu’est une monade mais la présentation d’une approche différente pour gérer vos exceptions en Java !"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+    </insert>
+    <insert tableName="talks">
+      <column name="title" value="Faites décoller vos applications Android avec Jetpack Compose"/>
+      <column name="description"
+              value="Jusqu’à il n’y a pas si longtemps, construire une application native Android était un long chemin semé d’embûches avant d’arriver à quelque chose. Mais ça, c’était avant. Avec Jetpack Compose, boîte à outils écrite en Kotlin et sorti par Google en version stable en juillet 2021, on peut coder une application mobile Android en un temps record et de façon hyper intuitive. Pour le démontrer, nous allons utiliser Jetpack Compose et bâtir une application Android complète en partant d’un simple composant."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+    </insert>
+    <insert tableName="talks">
+      <column name="title" value="Le voyage du héros de l'IT"/>
+      <column name="description"
+              value="Saviez-vous que vous étiez un expert en histoires ? Pour preuve, vous êtes capable de prédire la scène suivante dans un film ou une série, voir même de deviner de suite qui est l’assassin! C’est tout à fait normal, car depuis notre plus jeune âge, nous sommes bercé d’histoires, de contes, de légendes, nous en avons intégré inconsciemment les mécaniques. Dans ce talk original et interactif, nous allons utiliser le concept du Voyage du héros pour raconter une histoire, inspirée directement de vos expériences, et vous montrer que vous avez tout ce qu’il faut pour raconter de belles histoires à votre tour."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="2" author="camille.petitalot@volcamp.io">
+    <comment>Insert Speakers</comment>
+    <insert tableName="speakers">
+      <column name="name" value="Stephane Messika"/>
+      <column name="email" value="stephane.messikar@volcamp.io"/>
+      <column name="biography"
+              value="Dans tout ce que je fais je cherche à m’amuser. En jouant au bridge, au golf, mais aussi en entamant une troisième carrière après la recherche puis le conseil. Avec l’envie forte de m’éclater;"/>
+      <column name="twitter" value="https://twitter.com/stephmessika"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/stephane-messika-b1b43350"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+    </insert>
+    <insert tableName="speakers">
+      <column name="name" value="Eléa Petton"/>
+      <column name="email" value="elea.pletton@volcamp.io"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+    </insert>
+    <insert tableName="speakers">
+      <column name="name" value="Stéphane Philippart"/>
+      <column name="email" value="stephane.philippart@volcamp.io"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+    </insert>
+    <insert tableName="speakers">
+      <column name="name" value="Mathis Hammel"/>
+      <column name="email" value="mathis.hammel@volcamp.io"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+    </insert>
+    <insert tableName="speakers">
+      <column name="name" value="Guillaume Hospital"/>
+      <column name="email" value="guillaume.hospital@volcamp.io"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+    </insert>
+    <insert tableName="speakers">
+      <column name="name" value="Guillaume Serre"/>
+      <column name="email" value="guillaume.serre@volcamp.io"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+    </insert>
+    <insert tableName="speakers">
+      <column name="name" value="Anthony Roux"/>
+      <column name="email" value="anthony.roux@volcamp.io"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+    </insert>
+    <insert tableName="speakers">
+      <column name="name" value="Gauthier Poulet"/>
+      <column name="email" value="gauthier.poulet@volcamp.io"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+    </insert>
+    <insert tableName="speakers">
+      <column name="name" value="Olivier Beautier"/>
+      <column name="email" value="olivier.beautier@volcamp.io"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="3" author="camille.petitalot@volcamp.io">
+    <comment>Link Speakers to their talks</comment>
+    <insert tableName="speakers_talk">
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Stephane Messika')"/>
+      <column name="talk_id"
+              valueComputed="(SELECT id FROM talks WHERE title = 'Keynote - Soyons Fashion - Parlons de souveraineté technologique')"/>
+    </insert>
+    <insert tableName="speakers_talk">
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Eléa Petton')"/>
+      <column name="talk_id"
+              valueComputed="(SELECT id FROM talks WHERE title = 'Si on aidait le capitaine Némo à classifier les monstres marins ?')"/>
+    </insert>
+    <insert tableName="speakers_talk">
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Stéphane Philippart')"/>
+      <column name="talk_id"
+              valueComputed="(SELECT id FROM talks WHERE title = 'Si on aidait le capitaine Némo à classifier les monstres marins ?')"/>
+    </insert>
+    <insert tableName="speakers_talk">
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Mathis Hammel')"/>
+      <column name="talk_id"
+              valueComputed="(SELECT id FROM talks WHERE title = 'Comment j''ai développé le détecteur de deepfakes le plus puissant du monde pour 100€')"/>
+    </insert>
+    <insert tableName="speakers_talk">
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Guillaume Hospital')"/>
+      <column name="talk_id"
+              valueComputed="(SELECT id FROM talks WHERE title = 'Service Level ''Observability'' - in Service Quality we Trust !')"/>
+    </insert>
+    <insert tableName="speakers_talk">
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Guillaume Serre')"/>
+      <column name="talk_id"
+              valueComputed="(SELECT id FROM talks WHERE title = 'Service Level ''Observability'' - in Service Quality we Trust !')"/>
+    </insert>
+    <insert tableName="speakers_talk">
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Anthony Roux')"/>
+      <column name="talk_id"
+              valueComputed="(SELECT id FROM talks WHERE title = 'Et si on essayait plutôt que de tout lancer par la fenêtre ?')"/>
+    </insert>
+    <insert tableName="speakers_talk">
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Gauthier Poulet')"/>
+      <column name="talk_id"
+              valueComputed="(SELECT id FROM talks WHERE title = 'Faites décoller vos applications Android avec Jetpack Compose')"/>
+    </insert>
+    <insert tableName="speakers_talk">
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Olivier Beautier')"/>
+      <column name="talk_id"
+              valueComputed="(SELECT id FROM talks WHERE title = 'Le voyage du héros de l''IT')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="4" author="camille.petitalot@volcamp.io">
+    <comment>Insert planning</comment>
+    <insert tableName="plannings">
+      <column name="talk_id"
+              valueComputed="(SELECT id FROM talks WHERE title = 'Keynote - Soyons Fashion - Parlons de souveraineté technologique')"/>
+      <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM')"/>
+      <column name="schedule" value="2022-10-13 10:15"/>
+    </insert>
+    <insert tableName="plannings">
+      <column name="talk_id"
+              valueComputed="(SELECT id FROM talks WHERE title = 'Si on aidait le capitaine Némo à classifier les monstres marins ?')"/>
+      <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'MEZZANINE')"/>
+      <column name="schedule" value="2022-10-13 10:15"/>
+    </insert>
+    <insert tableName="plannings">
+      <column name="talk_id"
+              valueComputed="(SELECT id FROM talks WHERE title = 'Comment j''ai développé le détecteur de deepfakes le plus puissant du monde pour 100€')"/>
+      <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM')"/>
+      <column name="schedule" value="2022-10-13 11:30"/>
+    </insert>
+    <insert tableName="plannings">
+      <column name="talk_id"
+              valueComputed="(SELECT id FROM talks WHERE title = 'Service Level ''Observability'' - in Service Quality we Trust !')"/>
+      <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'MEZZANINE')"/>
+      <column name="schedule" value="2022-10-13 11:30"/>
+    </insert>
+    <insert tableName="plannings">
+      <column name="talk_id"
+              valueComputed="(SELECT id FROM talks WHERE title = 'Et si on essayait plutôt que de tout lancer par la fenêtre ?')"/>
+      <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM')"/>
+      <column name="schedule" value="2022-10-13 12:30"/>
+    </insert>
+    <insert tableName="plannings">
+      <column name="talk_id"
+              valueComputed="(SELECT id FROM talks WHERE title = 'Faites décoller vos applications Android avec Jetpack Compose')"/>
+      <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM')"/>
+      <column name="schedule" value="2022-10-13 13:00"/>
+    </insert>
+    <insert tableName="plannings">
+      <column name="talk_id"
+              valueComputed="(SELECT id FROM talks WHERE title = 'Le voyage du héros de l''IT')"/>
+      <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM')"/>
+      <column name="schedule" value="2022-10-13 13:30"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>
+

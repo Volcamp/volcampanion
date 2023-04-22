@@ -1,7 +1,7 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
   <changeSet id="001" author="mickael.gervais@volcamp.io">
     <comment>Conference</comment>
@@ -9,6 +9,7 @@
       <column name="name" value="Volcamp 2022"/>
       <column name="start_date" value="2022-10-13"/>
       <column name="end_date" value="2022-10-14"/>
+      <column name="is_active" value="true"/>
     </insert>
   </changeSet>
   <changeSet id="002" author="mickael.gervais@volcamp.io">
@@ -65,7 +66,8 @@
     <comment>Talks</comment>
     <insert tableName="talks">
       <column name="title" value="L'intro Volcamp"/>
-      <column name="description" value="L’intro Volcamp 2022 par la team Geek&amp;Terrroir. Présentation de la conférence, du contenus, du programme et de nos sponsors."/>
+      <column name="description"
+              value="L’intro Volcamp 2022 par la team Geek&amp;Terrroir. Présentation de la conférence, du contenus, du programme et de nos sponsors."/>
       <column name="language" value="fr"/>
       <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_15M')"/>
       <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>

@@ -1,20 +1,6 @@
 package org.volcampanion.api;
 
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.inject.Inject;
-import javax.transaction.Transactional;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
-import javax.ws.rs.core.MediaType;
 import org.apache.commons.collections4.CollectionUtils;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
@@ -27,11 +13,14 @@ import org.volcampanion.domain.mappers.TalkMapper;
 import org.volcampanion.dto.CreateTalkDTO;
 import org.volcampanion.dto.TalkDTO;
 import org.volcampanion.exception.NotFoundException;
-import org.volcampanion.service.ConferenceService;
-import org.volcampanion.service.SpeakerService;
-import org.volcampanion.service.TalkFormatService;
-import org.volcampanion.service.TalkService;
-import org.volcampanion.service.TalkThemeService;
+import org.volcampanion.service.*;
+
+import javax.inject.Inject;
+import javax.transaction.Transactional;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import java.util.ArrayList;
+import java.util.List;
 
 @Path("/talks")
 @Produces(MediaType.APPLICATION_JSON)
@@ -67,7 +56,6 @@ public class TalkController {
                     schema = @Schema(implementation = TalkDTO[].class)
             )
     )
-    @Tag(name = "Volcampanion App API")
     @Tag(name = "Talks API")
     public List<TalkDTO> list(@QueryParam("idConf") Long idConf) {
         return mapper.toDTO(service.listWithFilters(new TalkFilters()
@@ -83,7 +71,6 @@ public class TalkController {
                     schema = @Schema(implementation = TalkDTO.class)
             )
     )
-    @Tag(name = "Volcampanion App API")
     @Tag(name = "Talks API")
     public TalkDTO getTalkById(@PathParam("idTalk") Long idTalk) {
         var conf = service.findById(idTalk);
@@ -115,13 +102,14 @@ public class TalkController {
     }
 
     private Talk populateTalkWithSubEntities(CreateTalkDTO dto) {
-        var theme = identifiableValidator.validate(dto.getTheme(),
-                "theme->id",
-                (aLong) -> talkThemeService.findById(aLong));
-
         var format = identifiableValidator.validate(dto.getFormat(),
                 "format->id",
                 (aLong) -> talkFormatService.findById(aLong));
+
+        var theme = identifiableValidator.validate(dto.getTheme(),
+                "theme->id",
+                (aLong) -> talkThemeService.findById(aLong),
+                false);
 
         var conf = identifiableValidator.validate(dto.getConference(),
                 "conference->id",

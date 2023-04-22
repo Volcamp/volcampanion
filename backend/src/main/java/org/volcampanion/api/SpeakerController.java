@@ -52,7 +52,6 @@ public class SpeakerController {
                     schema = @Schema(implementation = SpeakerDTO[].class)
             )
     )
-    @Tag(name = "Volcampanion App API")
     @Tag(name = "Speakers API")
     public List<SpeakerDTO> list(@QueryParam("idConf") Long idConf) {
         return mapper.toDTO(service.listWithFilters(
@@ -70,7 +69,6 @@ public class SpeakerController {
                     schema = @Schema(implementation = SpeakerDTO.class)
             )
     )
-    @Tag(name = "Volcampanion App API")
     @Tag(name = "Speakers API")
     public SpeakerDTO getById(@PathParam("id") Long id) {
         var conf = service.findById(id);

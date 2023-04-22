@@ -1,11 +1,12 @@
 package org.volcampanion.api.validator;
 
-import java.util.Objects;
-import java.util.function.Function;
-import javax.inject.Singleton;
 import org.volcampanion.dto.IdentifiableDTO;
 import org.volcampanion.exception.BadRequestException;
 import org.volcampanion.exception.MandatoryParameterException;
+
+import javax.inject.Singleton;
+import java.util.Objects;
+import java.util.function.Function;
 
 @Singleton
 public class IdentifiableValidator {
@@ -13,16 +14,30 @@ public class IdentifiableValidator {
     public static final String ID_PROVIDED_WAS_NOT_FOUND = "%s provided was not found";
 
     public <Domain> Domain validate(IdentifiableDTO dto,
-                                    String mandatoryPath,
+                                    String idPath,
                                     Function<Long, Domain> findByIdFunction) {
-        if (Objects.isNull(dto) || Objects.isNull(dto.getId())) {
-            throw new MandatoryParameterException(mandatoryPath);
+        return validate(dto, idPath, findByIdFunction, Boolean.TRUE);
+    }
+
+    public <Domain> Domain validate(IdentifiableDTO dto,
+                                    String idPath,
+                                    Function<Long, Domain> findByIdFunction,
+                                    Boolean isMandatory) {
+        if (isMandatory) {
+            if (Objects.isNull(dto) || Objects.isNull(dto.getId())) {
+                throw new MandatoryParameterException(idPath);
+            }
+            var res = findByIdFunction.apply(dto.getId());
+            if (Objects.isNull(res)) {
+                throw new BadRequestException(String.format(ID_PROVIDED_WAS_NOT_FOUND, idPath));
+            }
+            return res;
         }
 
-        var res = findByIdFunction.apply(dto.getId());
-        if (Objects.isNull(res)) {
-            throw new BadRequestException(String.format(ID_PROVIDED_WAS_NOT_FOUND, mandatoryPath));
+        if (!Objects.isNull(dto) && !Objects.isNull(dto.getId())) {
+            return findByIdFunction.apply(dto.getId());
         }
-        return res;
+
+        return null;
     }
 }

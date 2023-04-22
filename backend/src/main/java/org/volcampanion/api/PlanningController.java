@@ -91,6 +91,7 @@ public class PlanningController {
     @POST
     @Transactional
     public PlanningDTO create(CreatePlanningDTO dto) {
+        //TODO handle input id verif
         return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
     }
 

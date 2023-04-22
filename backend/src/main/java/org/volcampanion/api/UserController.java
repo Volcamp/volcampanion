@@ -38,7 +38,7 @@ import org.volcampanion.service.UserFavoriteTalkService;
 @Path("/users")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@Tag(name = "Volcampanion App API")
+@Tag(name = "User App API")
 @Authenticated
 @RequestScoped
 public class UserController {
