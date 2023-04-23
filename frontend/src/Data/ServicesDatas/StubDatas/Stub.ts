@@ -1,4 +1,4 @@
-import {Plan} from "../../DTO/Plan";
+import {Plan, PlanningType} from "../../DTO/Plan";
 import {Speaker} from "../../DTO/Speaker";
 import {TalkPlan} from "../../DTO/TalkPlan";
 import {BreakPlan} from "../../DTO/BreakPlan";
@@ -38,7 +38,7 @@ export const TALK_DATA: Plan[] = [
       },
       format: {
         name: "Lecture",
-        type: "REX",
+        type: PlanningType.REX,
         description: "A talk with slides and code examples",
         durationUnit: "MINUTES",
         durationTime: 45,
@@ -60,9 +60,9 @@ export const TALK_DATA: Plan[] = [
         }
       ]
     },
-    new Date('2022-03-03T12:15:00') ) ,
+    new Date('2022-03-03T12:15:00')),
   new TalkPlan(
-     {
+    {
       name: "Room B",
       description: "A large room with a projector and whiteboard",
       capacity: 50,
@@ -74,7 +74,7 @@ export const TALK_DATA: Plan[] = [
         id: 1
       }
     },
-     {
+    {
       id: 1,
       title: "Introduction to Angular",
       description: "Learn the basics of TypeScript",
@@ -90,7 +90,7 @@ export const TALK_DATA: Plan[] = [
       },
       format: {
         name: "Lecture",
-        type: "Workshop",
+        type: PlanningType.WORKSHOP,
         description: "A talk with slides and code examples",
         durationUnit: "MINUTES",
         durationTime: 60,
@@ -124,7 +124,7 @@ export const TALK_DATA: Plan[] = [
         }
       ]
     },
-   new Date('2022-03-03T13:15:00')),
+    new Date('2022-03-03T13:15:00')),
 
   new TalkPlan(
     {
@@ -155,7 +155,7 @@ export const TALK_DATA: Plan[] = [
       },
       format: {
         name: "Lecture",
-        type: "Lightning",
+        type: PlanningType.LIGHTNING,
         description: "A talk with slides and code examples",
         durationUnit: "MINUTES",
         durationTime: 80,
@@ -203,7 +203,7 @@ export const TALK_DATA: Plan[] = [
     },
     new Date('2022-10-10T09:40:00')),
   new TalkPlan(
-     {
+    {
       name: "Room C",
       description: "A large room with a projector and whiteboard",
       capacity: 50,
@@ -215,7 +215,7 @@ export const TALK_DATA: Plan[] = [
         id: 1
       }
     },
-     {
+    {
       id: 2,
       title: "Introduction to Java",
       description: "Learn the basics of Java",
@@ -231,7 +231,7 @@ export const TALK_DATA: Plan[] = [
       },
       format: {
         name: "Lecture",
-        type: "Lightning",
+        type: PlanningType.LIGHTNING,
         description: "A talk with slides and code examples",
         durationUnit: "MINUTES",
         durationTime: 80,
@@ -293,7 +293,7 @@ export const TALK_DATA: Plan[] = [
         id: 1
       }
     },
-     {
+    {
       id: 1,
       title: "Introduction to Java",
       description: "Learn the basics of Java",
@@ -309,7 +309,7 @@ export const TALK_DATA: Plan[] = [
       },
       format: {
         name: "Lecture",
-        type: "Lightning",
+        type: PlanningType.LIGHTNING,
         description: "A talk with slides and code examples",
         durationUnit: "MINUTES",
         durationTime: 80,
@@ -370,7 +370,7 @@ export const TALK_DATA: Plan[] = [
       },
       format: {
         name: "BREAK",
-        type: "BREAK",
+        type: PlanningType.BREAK,
         description: "string",
         durationUnit: "NANOS",
         durationTime: 0,
@@ -392,7 +392,7 @@ export const TALK_DATA: Plan[] = [
       },
       format: {
         name: "BREAK",
-        type: "BREAK",
+        type: PlanningType.BREAK,
         description: "string",
         durationUnit: "NANOS",
         durationTime: 15,
@@ -403,7 +403,6 @@ export const TALK_DATA: Plan[] = [
     new Date("2022-03-03T13:00:50")),
 
 ];
-
 
 
 const speakers: Speaker[] = [

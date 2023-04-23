@@ -1,9 +1,9 @@
-import { NgModule, isDevMode } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {isDevMode, NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {ServiceWorkerModule} from '@angular/service-worker';
 import {HomeComponent} from "../Page/home/home.component";
 import {BottomNavBarComponent} from "../Components/bottom-nav-bar/bottom-nav-bar.component";
 import {TopBarComponent} from "../Components/top-bar/top-bar.component";
@@ -11,7 +11,7 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatToolbarModule} from "@angular/material/toolbar";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {TalkMiniViewComponent} from "../Components/talk-mini-view/talk-mini-view.component";
 import {MatGridListModule} from "@angular/material/grid-list";

@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {getColorTheme} from "../../GeneralVolcamp/ColorThemeAndTypeEmoji"
-import {contanecationMot} from "../../GeneralVolcamp/contanecationMot"
+import {concatenate} from "../../GeneralVolcamp/Concatenate"
 import {Speaker} from "../../Data/DTO/Speaker";
 import {TalkPlan} from "../../Data/DTO/TalkPlan";
 import {Plan} from "../../Data/DTO/Plan";
@@ -33,7 +33,7 @@ export class TalkMiniViewComponent implements OnInit{
 
   ngOnInit(): void {
     this.color=getColorTheme(this.talkPlan.talk.theme.name)
-    this.speakersNames= contanecationMot(this.speakerNames(this.talkPlan.talk.speakers))
+    this.speakersNames= concatenate(this.speakerNames(this.talkPlan.talk.speakers))
     this.startDate=new Date(this.talkPlan.schedule)
 
     this.endDate=new Date(this.startDate.getTime() + this.talkPlan.talk.format.duration *60000)

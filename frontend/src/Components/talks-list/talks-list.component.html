@@ -1,19 +1,19 @@
-<div *ngFor="let plan of  plans " >
+<div *ngFor="let plan of  plans ">
   <div class="containerBig">
-   <div class="miniView content" *ngIf="planConv.isTalk(plan)">
-          <app-talk-mini-view [talkPlan]="$any(plan)"/>
-        </div>
+    <div class="miniView content" *ngIf="plan.getType() === BREAK">
+      <app-break-mini-view [breakPlan]="$any(plan)"/>
+    </div>
 
-      <div class="miniView content" *ngIf="planConv.isBreak(plan)">
-        <app-break-mini-view [breakPlan]="$any(plan)"/>
-      </div>
+    <div class="miniView" *ngIf="plan.getType() === DELIMITER_DAY">
+      <app-divider-mini-view [datePlan]="$any(plan)"/>
+    </div>
 
-      <div class="miniView" *ngIf="planConv.isDivider(plan)">
-        <app-divider-mini-view [datePlan]="$any(plan)"/>
-      </div>
+    <div class="miniView content" *ngIf="plan.getType() !== DELIMITER_DAY && plan.getType() !== BREAK">
+      <app-talk-mini-view [talkPlan]="$any(plan)"/>
+    </div>
 
-      </div>
   </div>
+</div>
 
 
 

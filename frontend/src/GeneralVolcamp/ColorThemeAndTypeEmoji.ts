@@ -1,3 +1,4 @@
+//FIXME refer to the swagger API for name matching https://volcamp-api-dev.azurewebsites.net/swagger-ui/#/Referential%20API/get_talk_themes
 export function getColorTheme(input: string): string  {
   if (input.toLowerCase().includes('plénière')) {
     return '#FC5A45';
@@ -30,7 +31,7 @@ export function getIconFormat(input: string): string  {
   } else if (input.toLowerCase().includes('lightning') ) {
     return 'speed';
   } else {
-    return '';
+    return ''; //FIXME maybe you could choose a default one rather than none
   }
 }
 

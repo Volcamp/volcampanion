@@ -1,20 +1,14 @@
-import {MiniTalk, Talk} from "./Talk";
-import {Room} from "./Room";
-import {Plan} from "./Plan";
-
-
-
-export const TYPE_DIVIDER_PLAN="divider"
+import {Plan, PlanningType} from "./Plan";
 
 export class DividerPlan implements Plan {
   schedule: Date;
 
-  constructor(schedule : Date) {
-    this.schedule=schedule
+  constructor(schedule: Date) {
+    this.schedule = schedule
   }
 
-  getType(): string {
-    return TYPE_DIVIDER_PLAN;
+  getType(): PlanningType {
+    return PlanningType.DELIMITER_DAY;
   }
 
 

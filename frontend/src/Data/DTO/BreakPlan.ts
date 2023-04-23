@@ -1,17 +1,16 @@
-import {Plan} from "./Plan";
+import {Plan, PlanningType} from "./Plan";
 import {MiniTalk} from "./Talk";
-
-export const TYPE_BREAK_PLAN="BREAK"
 
 export class BreakPlan implements Plan {
   break: MiniTalk;
   schedule: Date;
 
-  constructor(pause:MiniTalk,schedule : Date) {
-    this.break=pause
-    this.schedule=schedule
+  constructor(pause: MiniTalk, schedule: Date) {
+    this.break = pause
+    this.schedule = schedule
   }
-  getType(): string {
+
+  getType(): PlanningType {
     return this.break.format.type;
   }
 

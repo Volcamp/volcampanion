@@ -3,6 +3,7 @@ import {Theme} from "./Theme";
 import {Format} from "./Format";
 import {Speaker} from "./Speaker";
 
+//FIXME can be renamed to TalkTeaser maybe ? (Teaser instead of mini everywhere)
 export interface MiniTalk {
   id: number;
   title: string;
