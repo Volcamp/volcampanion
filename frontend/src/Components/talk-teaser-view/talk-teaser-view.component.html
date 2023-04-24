@@ -7,7 +7,13 @@
 
   <div class="mainItem">
     <div class="lineContentContainer">
-      <span class="leftItem f1">{{talkPlan.talk.title}}</span>
+      <div  class="leftItem" style="display: flex">
+        <span class="f1" >{{talkPlan.talk.title}}</span>
+        <div >
+          <mat-icon matBadge="{{talkPlan.room.capacity}}" matBadgeColor="warn">favorite</mat-icon>
+          <span class="cdk-visually-hidden"></span>
+        </div>
+      </div>
       <span class="rightItem f3"> {{startDate.toLocaleTimeString('fr-FR').slice(0, 5).replace(":", "h")}}
         - {{endDate.toLocaleTimeString('fr-FR').slice(0, 5).replace(":", "h")}} </span>
     </div>
@@ -17,18 +23,15 @@
     <span class="f2">{{talkPlan.room.name}}</span>
     <div class="lineContentContainer">
 
-      <div class="leftItem">
-        <mat-icon matBadge="{{talkPlan.room.capacity}}" matBadgeColor="warn">favorite</mat-icon>
-        <span class="cdk-visually-hidden"></span>
-      </div>
+
 
       <div class="rightItem" *ngIf="this.isConnected">
-        <button (click)="removeFavorite()" mat-icon-button color="warn" *ngIf="this.inFavorite">
+        <button (click)="removeFavorite()"  mat-fab color="warn" *ngIf="this.inFavorite">
           <mat-icon svgIcon="favorite_checked" aria-hidden="false" aria-label="favorite checked icon"></mat-icon>
         </button>
 
-        <button (click)="addFavorite()" mat-icon-button color="warn" *ngIf="! this.inFavorite">
-          <mat-icon svgIcon="favorite_unchecked" aria-hidden="false" aria-label="favorite checked icon"></mat-icon>
+        <button (click)="addFavorite()"  mat-fab color="warn" class="icon-Btn" *ngIf="! this.inFavorite">
+          <mat-icon svgIcon="favorite_unchecked" aria-hidden="false" aria-label="favorite checked icon" ></mat-icon>
         </button>
 
       </div>
