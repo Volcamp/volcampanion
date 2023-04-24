@@ -1,7 +1,6 @@
-import {Component, InjectionToken} from '@angular/core';
+import {Component} from '@angular/core';
 import {MatIconRegistry} from "@angular/material/icon";
 import {DomSanitizer} from "@angular/platform-browser";
-import {DataService} from "../Data/ServicesDatas/DataService";
 
 
 export const FAVORITE_CHECKED =

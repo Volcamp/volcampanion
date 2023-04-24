@@ -9,7 +9,6 @@ import {compareSchedule} from "../../GeneralVolcamp/CompareTalkPlan";
 })
 export class TalksListComponent   {
 
-  // Link enum values to local variables to be able to bind them in the view
   BREAK = PlanningType.BREAK;
   DELIMITER_DAY = PlanningType.DELIMITER_DAY;
 
