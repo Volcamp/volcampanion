@@ -13,14 +13,14 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
-import {TalkMiniViewComponent} from "../Components/talk-mini-view/talk-mini-view.component";
+import {TalkTeaserViewComponent} from "../Components/talk-teaser-view/talk-teaser-view.component";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule} from "@angular/material/card";
 import {MatBadgeModule} from "@angular/material/badge";
 import {TalksListComponent} from "../Components/talks-list/talks-list.component";
 import {MatDividerModule} from "@angular/material/divider";
-import {BreakMiniViewComponent} from "../Components/break-mini-view/break-mini-view.component";
-import {DividerMiniViewComponent} from "../Components/divider-mini-view/divider-mini-view.component";
+import {BreakTeaserViewComponent} from "../Components/break-teaser-view/break-teaser-view.component";
+import {DividerTeaserViewComponent} from "../Components/divider-teaser-view/divider-teaser-view.component";
 import {DataService} from "../Data/ServicesDatas/DataService";
 import {StubService} from "../Data/ServicesDatas/StubDatas/StubService";
 
@@ -30,36 +30,37 @@ import {StubService} from "../Data/ServicesDatas/StubDatas/StubService";
     HomeComponent,
     BottomNavBarComponent,
     TopBarComponent,
-    TalkMiniViewComponent,
+    TalkTeaserViewComponent,
     TalksListComponent,
-    BreakMiniViewComponent,
-    DividerMiniViewComponent
+    BreakTeaserViewComponent,
+    DividerTeaserViewComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ServiceWorkerModule.register('ngsw-worker.js', {
-            enabled: !isDevMode(),
-            // Register the ServiceWorker as soon as the application is stable
-            // or after 30 seconds (whichever comes first).
-            registrationStrategy: 'registerWhenStable:30000'
-        }),
-        MatTabsModule,
-        MatIconModule,
-        MatButtonModule,
-        MatToolbarModule,
-        BrowserAnimationsModule,
-        MatProgressBarModule,
-        MatGridListModule,
-        MatCardModule,
-        MatBadgeModule,
-        MatDividerModule,
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
+    MatTabsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule,
+    MatGridListModule,
+    MatCardModule,
+    MatBadgeModule,
+    MatDividerModule,
 
-    ],
+  ],
   providers: [{
     provide: DataService,
     useClass: StubService // <--- Defining the swappable implementation.
   }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -1,4 +1,4 @@
-import {PlanningType} from "./Plan";
+import {PlanningType} from "./Planning";
 
 export interface Format {
   id: number;

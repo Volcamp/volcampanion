@@ -19,8 +19,6 @@ export const FAVORITE_UNCHECKED =
 `;
 
 
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

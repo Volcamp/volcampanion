@@ -1,10 +1,10 @@
-import {Plan, PlanningType} from "../../DTO/Plan";
+import {Planning, PlanningType} from "../../DTO/Planning";
 import {Speaker} from "../../DTO/Speaker";
 import {TalkPlan} from "../../DTO/TalkPlan";
 import {BreakPlan} from "../../DTO/BreakPlan";
 import {DividerPlan} from "../../DTO/DividerPlan";
 
-export const TALK_DATA: Plan[] = [
+export const TALK_DATA: Planning[] = [
   new DividerPlan(new Date("2022-03-03T00:00:00")),
   new DividerPlan(new Date("2022-10-10T00:00:00")),
   new DividerPlan(new Date("2022-10-11T00:00:00")),

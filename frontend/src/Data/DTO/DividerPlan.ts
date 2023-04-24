@@ -1,6 +1,6 @@
-import {Plan, PlanningType} from "./Plan";
+import {Planning, PlanningType} from "./Planning";
 
-export class DividerPlan implements Plan {
+export class DividerPlan implements Planning {
   schedule: Date;
 
   constructor(schedule: Date) {
@@ -10,6 +10,4 @@ export class DividerPlan implements Plan {
   getType(): PlanningType {
     return PlanningType.DELIMITER_DAY;
   }
-
-
 }

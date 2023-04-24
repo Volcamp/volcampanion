@@ -1,11 +1,11 @@
-import {Plan, PlanningType} from "./Plan";
-import {MiniTalk} from "./Talk";
+import {Planning, PlanningType} from "./Planning";
+import {TalkTeaser} from "./Talk";
 
-export class BreakPlan implements Plan {
-  break: MiniTalk;
+export class BreakPlan implements Planning {
+  break: TalkTeaser;
   schedule: Date;
 
-  constructor(pause: MiniTalk, schedule: Date) {
+  constructor(pause: TalkTeaser, schedule: Date) {
     this.break = pause
     this.schedule = schedule
   }
@@ -13,6 +13,5 @@ export class BreakPlan implements Plan {
   getType(): PlanningType {
     return this.break.format.type;
   }
-
 
 }

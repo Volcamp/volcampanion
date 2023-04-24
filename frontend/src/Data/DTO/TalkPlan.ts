@@ -1,8 +1,8 @@
-import {Plan, PlanningType} from "./Plan";
+import {Planning, PlanningType} from "./Planning";
 import {Room} from "./Room";
 import {Talk} from "./Talk";
 
-export class TalkPlan implements Plan {
+export class TalkPlan implements Planning {
   room: Room;
   talk: Talk;
   schedule: Date;

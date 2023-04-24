@@ -1,6 +1,7 @@
-import {Component, Inject} from '@angular/core';
+import {Component} from '@angular/core';
 import {DataService} from "../../Data/ServicesDatas/DataService";
-import {Plan} from "../../Data/DTO/Plan";
+import {Planning} from "../../Data/DTO/Planning";
+import {compareSchedule} from "../../GeneralVolcamp/CompareTalkPlan";
 
 @Component({
   selector: 'app-home',
@@ -8,11 +9,11 @@ import {Plan} from "../../Data/DTO/Plan";
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent {
-  num=5
-  plans:Plan[]
+  num = 5
+  plans!: Planning[]
 
-  constructor( /*@Inject( DataService )*/ dataService: DataService ) {
-    this.plans=dataService.providePlansList()
+  constructor( /*@Inject( DataService )*/ dataService: DataService) {
+    dataService.providePlans().then((plans) => this.plans = plans.sort(compareSchedule))
 
   }
 }
