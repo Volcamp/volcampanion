@@ -1,6 +1,5 @@
 import {isDevMode, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
@@ -23,6 +22,10 @@ import {BreakTeaserViewComponent} from "../Components/break-teaser-view/break-te
 import {DividerTeaserViewComponent} from "../Components/divider-teaser-view/divider-teaser-view.component";
 import {DataService} from "../Data/ServicesDatas/DataService";
 import {StubService} from "../Data/ServicesDatas/StubDatas/StubService";
+import {SpeakerTeaserViewComponent} from "../Components/speaker-teaser-view/speaker-teaser-view.component";
+import {SpeakersListComponent} from "../Components/speakers-list/speakers-list.component";
+import {RouterModule} from "@angular/router";
+import {SpeakerPageComponent} from "../Page/speaker-page/speaker-page.component";
 
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import {StubService} from "../Data/ServicesDatas/StubDatas/StubService";
     TalkTeaserViewComponent,
     TalksListComponent,
     BreakTeaserViewComponent,
-    DividerTeaserViewComponent
+    DividerTeaserViewComponent,
+    SpeakerTeaserViewComponent,
+    SpeakersListComponent,
+    SpeakerPageComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +60,6 @@ import {StubService} from "../Data/ServicesDatas/StubDatas/StubService";
     MatCardModule,
     MatBadgeModule,
     MatDividerModule,
-
   ],
   providers: [{
     provide: DataService,

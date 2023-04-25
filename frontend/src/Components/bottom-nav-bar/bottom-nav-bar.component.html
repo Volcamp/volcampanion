@@ -5,12 +5,12 @@
       Favorites
     </button>
     <span class="volcamp-spacer"></span>
-    <button mat-button  class="example-icon" aria-label="session button">
+    <button [routerLink]="['/home']"  mat-button  class="example-icon" aria-label="session button">
       <mat-icon aria-hidden="false" aria-label="session icon" fontIcon="date_range"></mat-icon>
       Sessions
     </button>
     <span class="volcamp-spacer"></span>
-    <button mat-button class="example-icon" aria-label="speaker button">
+    <button [routerLink]="['/speakers']" mat-button class="example-icon" aria-label="speaker button">
       <mat-icon aria-hidden="false" aria-label="speaker icon" fontIcon="groups"></mat-icon>
       Speakers
     </button>

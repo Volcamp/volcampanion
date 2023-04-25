@@ -405,7 +405,7 @@ export const TALK_DATA: Planning[] = [
 ];
 
 
-const speakers: Speaker[] = [
+export const SPEAKER_DATA: Speaker[] = [
   {
     id: 1,
     name: 'John Smith',

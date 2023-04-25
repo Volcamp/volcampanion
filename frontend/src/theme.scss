@@ -1,5 +1,5 @@
 @use '@angular/material' as mat;
-
+//http://mcg.mbitson.com/#!?mcgpalette0=%233f51b5
 @include mat.core();
 
 $volcamp-palette-primary: (
@@ -100,6 +100,10 @@ $volcamp-palette-warn: (
     A700 : #000000,
   )
 );
+
+
+
+
 
 $volcamp-primary: mat.define-palette($volcamp-palette-primary);
 $volcamp-accent: mat.define-palette($volcamp-palette-accent);
