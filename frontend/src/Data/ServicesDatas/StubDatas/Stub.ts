@@ -413,7 +413,7 @@ export const SPEAKER_DATA: Speaker[] = [
     twitter: '@johnsmith',
     linkedin: 'linkedin.com/in/johnsmith',
     biography: 'John Smith is a software engineer with over 10 years of experience...',
-    photo: 'https://example.com/johnsmith.jpg',
+    photo: 'https://picsum.photos/1000/1000',
     conference: {
       id: 1,
       name: 'Tech Conference 2023',
@@ -428,7 +428,7 @@ export const SPEAKER_DATA: Speaker[] = [
     twitter: '@janedoe',
     linkedin: 'linkedin.com/in/janedoe',
     biography: 'Jane Doe is a UX designer with a passion for creating intuitive user interfaces...',
-    photo: 'https://example.com/janedoe.jpg',
+    photo: 'https://picsum.photos/1000/1000',
     conference: {
       id: 1,
       name: 'Tech Conference 2023',
@@ -443,7 +443,7 @@ export const SPEAKER_DATA: Speaker[] = [
     twitter: '@bobjohnson',
     linkedin: 'linkedin.com/in/bobjohnson',
     biography: 'Bob Johnson is a data scientist with expertise in machine learning and data analysis...',
-    photo: 'https://example.com/bobjohnson.jpg',
+    photo: 'https://picsum.photos/1000/1000',
     conference: {
       id: 1,
       name: 'Tech Conference 2023',
@@ -458,7 +458,7 @@ export const SPEAKER_DATA: Speaker[] = [
     twitter: '@sarahlee',
     linkedin: 'linkedin.com/in/sarahlee',
     biography: 'Sarah Lee is a software engineer and open-source enthusiast...',
-    photo: 'https://example.com/sarahlee.jpg',
+    photo: 'https://picsum.photos/1000/1000',
     conference: {
       id: 1,
       name: 'Tech Conference 2023',
@@ -473,7 +473,7 @@ export const SPEAKER_DATA: Speaker[] = [
     twitter: '@davidkim',
     linkedin: 'linkedin.com/in/davidkim',
     biography: 'David Kim is a cybersecurity expert with a focus on network security...',
-    photo: 'https://example.com/davidkim.jpg',
+    photo: 'https://picsum.photos/1000/1000',
     conference: {
       id: 1,
       name: 'Tech Conference 2023',
