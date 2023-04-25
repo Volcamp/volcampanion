@@ -1,5 +1,5 @@
-import {Component, DoCheck, OnChanges, SimpleChanges} from '@angular/core';
-import {Router} from "@angular/router";
+import {Component, DoCheck} from '@angular/core';
+import {HOME_ROUTE, SPEAKER_ROUTE} from "../../app/ConstRouterPath";
 
 @Component({
   selector: 'app-bottom-nav-bar',
@@ -7,19 +7,19 @@ import {Router} from "@angular/router";
   styleUrls: ['./bottom-nav-bar.component.sass']
 })
 
-export class BottomNavBarComponent implements DoCheck{
-  colorFav : string=""
-  colorSession : string=""
-  colorSpeakers : string=""
-
+export class BottomNavBarComponent implements DoCheck {
+  colorFav: string = ""
+  colorSession: string = ""
+  colorSpeakers: string = ""
+  selectedColor = "warn"
 
   ngDoCheck(): void {
-    this.colorFav =""
-    this.colorSession =""
-    this.colorSpeakers =""
-    if(location.pathname==='/home')
-      this.colorSession='warn'
-    if(location.pathname==='/speakers')
-      this.colorSpeakers='warn'
+    this.colorFav = ""
+    this.colorSession = ""
+    this.colorSpeakers = ""
+    if (location.pathname === "/" + HOME_ROUTE)
+      this.colorSession = this.selectedColor
+    if (location.pathname === "/" + SPEAKER_ROUTE)
+      this.colorSpeakers = this.selectedColor
   }
 }
