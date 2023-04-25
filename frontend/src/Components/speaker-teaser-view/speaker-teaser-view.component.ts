@@ -8,6 +8,4 @@ import {Speaker} from "../../Data/DTO/Speaker";
 })
 export class SpeakerTeaserViewComponent {
   @Input() speaker!: Speaker;
-
-
 }

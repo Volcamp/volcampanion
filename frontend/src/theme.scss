@@ -1,5 +1,6 @@
 @use '@angular/material' as mat;
-//http://mcg.mbitson.com/#!?mcgpalette0=%233f51b5
+// To generate a palette out of a color
+// http://mcg.mbitson.com/#!?mcgpalette0=%233f51b5
 @include mat.core();
 
 $volcamp-palette-primary: (

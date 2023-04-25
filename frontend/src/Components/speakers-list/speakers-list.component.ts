@@ -20,7 +20,6 @@ export class SpeakersListComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    console.log("hi")
     this.breakpoint = sizeNumber(event.target.innerWidth);
 
   }

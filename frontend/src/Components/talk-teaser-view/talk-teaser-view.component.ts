@@ -25,7 +25,9 @@ export class TalkTeaserViewComponent implements OnInit {
 
 
   speakerNames(speakers: Speaker[] | undefined): string[] {
-    if (speakers == undefined) return []
+    if (speakers == undefined){
+      return []
+    }
     return speakers.map(speaker => speaker.name)
   }
 

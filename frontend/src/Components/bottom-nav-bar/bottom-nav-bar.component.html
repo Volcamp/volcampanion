@@ -1,18 +1,18 @@
-<span>
+<div>
   <mat-toolbar >
-    <button mat-button class="example-icon" aria-label="favorite button">
+    <button  id="{{favoriteRoute}}" [routerLink]="[favoriteRoute]" mat-button class="example-icon" aria-label="favorite button" (click)="onClick($event)">
       <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite"></mat-icon>
       Favorites
     </button>
     <span class="volcamp-spacer"></span>
-    <button color="{{colorSession}}" [routerLink]="['/home']"  mat-button  class="example-icon" aria-label="session button">
+    <button id="{{homeRoute}}" [routerLink]="[homeRoute]"  mat-button  class="example-icon" aria-label="session button" (click)="onClick($event)">
       <mat-icon aria-hidden="false" aria-label="session icon" fontIcon="date_range"></mat-icon>
       Sessions
     </button>
     <span class="volcamp-spacer"></span>
-    <button color="{{colorSpeakers}}" [routerLink]="['/speakers']" mat-button class="example-icon" aria-label="speaker button">
+    <button id="{{speakerRoute}}" [routerLink]="[speakerRoute]"  mat-button class="example-icon" aria-label="speaker button" (click)="onClick($event)">
       <mat-icon aria-hidden="false" aria-label="speaker icon" fontIcon="groups"></mat-icon>
       Speakers
     </button>
   </mat-toolbar>
-</span>
+</div>
