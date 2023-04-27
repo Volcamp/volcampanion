@@ -15,6 +15,7 @@ public class Speaker extends IdentifiableDomain{
     private String twitter;
     private String linkedin;
     private String biography;
+    private String company;
     private String photo;
     private List<Talk> talks = new ArrayList<>();
     private Conference conference;

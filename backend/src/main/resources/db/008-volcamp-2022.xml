@@ -51,6 +51,7 @@
       <column name="email" value="aurelie.vache@volcamp.io"/>
       <column name="twitter" value="https://twitter.com/aurelievache"/>
       <column name="linkedin" value="https://www.linkedin.com/in/aurelievache"/>
+      <column name="company" value="DevRel"/>
       <column name="conference_id" valueSequenceCurrent="conferences_id_seq"/>
     </insert>
     <insert tableName="speakers">

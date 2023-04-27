@@ -28,6 +28,7 @@ public class SpeakerEntity {
     private String email;
     private String twitter;
     private String linkedin;
+    private String company;
     private String biography;
     @Column(name = "photo_link")
     private String photo;

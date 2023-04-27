@@ -79,6 +79,7 @@
               value="Dans tout ce que je fais je cherche à m’amuser. En jouant au bridge, au golf, mais aussi en entamant une troisième carrière après la recherche puis le conseil. Avec l’envie forte de m’éclater;"/>
       <column name="twitter" value="https://twitter.com/stephmessika"/>
       <column name="linkedin" value="https://www.linkedin.com/in/stephane-messika-b1b43350"/>
+      <column name="company" value="Cleyrop"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
     </insert>
     <insert tableName="speakers">

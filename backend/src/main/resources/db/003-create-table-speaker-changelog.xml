@@ -8,6 +8,7 @@
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" primaryKeyName="pk_speaker_id"/>
             </column>
+            <column name="company" type="VARCHAR(255)"/>
             <column name="biography" type="VARCHAR(255)"/>
             <column name="email" type="VARCHAR(255)">
                 <constraints nullable="false"/>
