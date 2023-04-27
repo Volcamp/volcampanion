@@ -6,11 +6,10 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.volcampanion.domain.Planning;
+import org.volcampanion.domain.PlanningFilters;
+import org.volcampanion.domain.SpeakerFilters;
 import org.volcampanion.domain.mappers.PlanningMapper;
-import org.volcampanion.dto.CreatePlanningDTO;
-import org.volcampanion.dto.PlanningDTO;
-import org.volcampanion.dto.RoomDTO;
-import org.volcampanion.dto.TalkDTO;
+import org.volcampanion.dto.*;
 import org.volcampanion.exception.NotFoundException;
 import org.volcampanion.service.PlanningService;
 
@@ -35,10 +34,19 @@ public class PlanningController {
     PlanningMapper mapper;
 
     @GET
-    @APIResponse(responseCode = "200", description = "OK", content = @Content(mediaType = "application/json", schema = @Schema(implementation = PlanningDTO[].class)))
-    public List<PlanningDTO> list() {
-        return mapper.toDTO(service.list());
+    @APIResponse(responseCode = "200", description = "OK",
+            content = @Content(mediaType = "application/json",
+                    schema = @Schema(implementation = PlanningDTO[].class)
+            )
+    )
+    @Tag(name = "Planning API")
+    public List<PlanningDTO> list(@QueryParam("idConf") Long idConf) {
+        return mapper.toDTO(service.listWithFilters(
+                new PlanningFilters()
+                        .setConferenceId(idConf)
+        ));
     }
+
 
 
     @GET
@@ -51,6 +59,7 @@ public class PlanningController {
         }
         return mapper.toDTO(plannings);
     }
+
 
     @GET
     @Path("/room/{room}/talk/{talk}")
