@@ -18,7 +18,6 @@ import org.volcampanion.entity.TalkEntity;
     })
 public interface TalkMapper extends IMapper<Talk, TalkEntity> {
 
-  @Mapping(target = "speakers", ignore = true)
   Talk toDomain(TalkEntity entity);
 
   @InheritInverseConfiguration
