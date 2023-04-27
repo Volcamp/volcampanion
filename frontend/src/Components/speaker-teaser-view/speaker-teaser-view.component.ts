@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Speaker} from "../../Data/DTO/Speaker";
+import {SocialMedia} from "../../GeneralVolcamp/SocialMedia";
 
 @Component({
   selector: 'app-speaker-teaser-view',
@@ -8,4 +9,8 @@ import {Speaker} from "../../Data/DTO/Speaker";
 })
 export class SpeakerTeaserViewComponent {
   @Input() speaker!: Speaker;
+  twitter = SocialMedia.TWITTER
+  linkedin = SocialMedia.LINKEDIN
+
+
 }

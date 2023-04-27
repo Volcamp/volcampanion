@@ -12,7 +12,7 @@ import {compareSchedule} from "../../GeneralVolcamp/CompareTalkPlan";
 export class SpeakerPageComponent {
   speakers!: Speaker[]
 
-  constructor( /*@Inject( DataService )*/ dataService: DataService) {
+  constructor( dataService: DataService) {
     dataService.provideSpeakers().then((speakers) => this.speakers = speakers)
 
   }

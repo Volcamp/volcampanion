@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {AppRootes, toRoot} from "../../app/AppRootes";
+import {AppRoUtes, toRoute} from "../../app/AppRoUtes";
 
 @Component({
   selector: 'app-bottom-nav-bar',
@@ -8,9 +8,9 @@ import {AppRootes, toRoot} from "../../app/AppRootes";
 })
 
 export class BottomNavBarComponent implements AfterViewInit{
-  homeRoute=toRoot(AppRootes.HOME_ROUTE)
-  speakerRoute=toRoot(AppRootes.SPEAKER_ROUTE)
-  favoriteRoute=toRoot(AppRootes.FAVORITE_ROUTE)
+  homeRoute=toRoute(AppRoUtes.HOME_ROUTE)
+  speakerRoute=toRoute(AppRoUtes.SPEAKER_ROUTE)
+  favoriteRoute=toRoute(AppRoUtes.FAVORITE_ROUTE)
   defaultRoot=this.homeRoute
 
   onClick(event: any) {

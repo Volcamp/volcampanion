@@ -1,10 +1,10 @@
-export enum AppRootes{
+export enum AppRoUtes{
   SPEAKER_ROUTE ="speakers",
   HOME_ROUTE ="home",
   FAVORITE_ROUTE="favorites"
 }
 
 
-export function toRoot(root : AppRootes) : string {
+export function toRoute(root : AppRoUtes) : string {
   return `/${root}`
 }
