@@ -13,7 +13,7 @@ export class HomeComponent {
   plans!: Planning[]
   speakers!: Speaker[]
 
-  constructor( /*@Inject( DataService )*/ dataService: DataService) {
+  constructor( dataService: DataService) {
     dataService.providePlans().then((plans) => this.plans = plans.sort(compareSchedule))
 
     dataService.provideSpeakers().then((speakers) => this.speakers = speakers)
