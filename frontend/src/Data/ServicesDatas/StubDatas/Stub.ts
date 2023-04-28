@@ -52,7 +52,7 @@ export const TALK_DATA: Planning[] = [
           twitter: "@johndoe",
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
-          photo: "https://example.com/johndoe.jpg",
+          photo: "https://picsum.photos/1000/1000",
           conference: {
             id: 1
           },
@@ -66,7 +66,7 @@ export const TALK_DATA: Planning[] = [
       name: "Room B",
       description: "A large room with a projector and whiteboard",
       capacity: 50,
-      id: 1,
+      id: 2,
       conference: {
         name: "Conference X",
         startDate: "2022-03-10",
@@ -75,7 +75,7 @@ export const TALK_DATA: Planning[] = [
       }
     },
     {
-      id: 1,
+      id: 2,
       title: "Introduction to Angular",
       description: "Learn the basics of TypeScript",
       level: "Beginner",
@@ -104,7 +104,7 @@ export const TALK_DATA: Planning[] = [
           twitter: "@johndoe",
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
-          photo: "https://example.com/johndoe.jpg",
+          photo: "https://picsum.photos/1000/1000",
           conference: {
             id: 1
           },
@@ -116,7 +116,7 @@ export const TALK_DATA: Planning[] = [
           twitter: "@johndoe",
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
-          photo: "https://example.com/johndoe.jpg",
+          photo: "https://picsum.photos/1000/1000",
           conference: {
             id: 1
           },
@@ -131,7 +131,7 @@ export const TALK_DATA: Planning[] = [
       name: "Room C",
       description: "A large room with a projector and whiteboard",
       capacity: 50,
-      id: 1,
+      id: 3,
       conference: {
         name: "Conference X",
         startDate: "2022-03-10",
@@ -140,7 +140,7 @@ export const TALK_DATA: Planning[] = [
       }
     },
     {
-      id: 1,
+      id: 3,
       title: "Introduction to Java",
       description: "Learn the basics of Java",
       level: "Beginner",
@@ -169,7 +169,7 @@ export const TALK_DATA: Planning[] = [
           twitter: "@johndoe",
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
-          photo: "https://example.com/johndoe.jpg",
+          photo: "https://picsum.photos/1000/1000",
           conference: {
             id: 1
           },
@@ -181,7 +181,7 @@ export const TALK_DATA: Planning[] = [
           twitter: "@johndoe",
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
-          photo: "https://example.com/johndoe.jpg",
+          photo: "https://picsum.photos/1000/1000",
           conference: {
             id: 1
           },
@@ -193,7 +193,7 @@ export const TALK_DATA: Planning[] = [
           twitter: "@johndoe",
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
-          photo: "https://example.com/johndoe.jpg",
+          photo: "https://picsum.photos/1000/1000",
           conference: {
             id: 1
           },
@@ -207,7 +207,7 @@ export const TALK_DATA: Planning[] = [
       name: "Room C",
       description: "A large room with a projector and whiteboard",
       capacity: 50,
-      id: 1,
+      id: 4,
       conference: {
         name: "Conference X",
         startDate: "2022-03-10",
@@ -216,7 +216,7 @@ export const TALK_DATA: Planning[] = [
       }
     },
     {
-      id: 2,
+      id: 4,
       title: "Introduction to Java",
       description: "Learn the basics of Java",
       level: "Beginner",
@@ -245,7 +245,7 @@ export const TALK_DATA: Planning[] = [
           twitter: "@johndoe",
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
-          photo: "https://example.com/johndoe.jpg",
+          photo: "https://picsum.photos/1000/1000",
           conference: {
             id: 1
           },
@@ -257,7 +257,7 @@ export const TALK_DATA: Planning[] = [
           twitter: "@johndoe",
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
-          photo: "https://example.com/johndoe.jpg",
+          photo: "https://picsum.photos/1000/1000",
           conference: {
             id: 1
           },
@@ -269,7 +269,7 @@ export const TALK_DATA: Planning[] = [
           twitter: "@johndoe",
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
-          photo: "https://example.com/johndoe.jpg",
+          photo: "https://picsum.photos/1000/1000",
           conference: {
             id: 1
           },
@@ -285,7 +285,7 @@ export const TALK_DATA: Planning[] = [
       name: "Room C",
       description: "A large room with a projector and whiteboard",
       capacity: 50,
-      id: 1,
+      id: 5,
       conference: {
         name: "Conference X",
         startDate: "2022-03-10",
@@ -294,7 +294,7 @@ export const TALK_DATA: Planning[] = [
       }
     },
     {
-      id: 1,
+      id: 5,
       title: "Introduction to Java",
       description: "Learn the basics of Java",
       level: "Beginner",
@@ -323,7 +323,7 @@ export const TALK_DATA: Planning[] = [
           twitter: "@johndoe",
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
-          photo: "https://example.com/johndoe.jpg",
+          photo: "https://picsum.photos/1000/1000",
           conference: {
             id: 1
           },
@@ -335,7 +335,7 @@ export const TALK_DATA: Planning[] = [
           twitter: "@johndoe",
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
-          photo: "https://example.com/johndoe.jpg",
+          photo: "https://picsum.photos/1000/1000",
           conference: {
             id: 1
           },
@@ -347,12 +347,96 @@ export const TALK_DATA: Planning[] = [
           twitter: "@johndoe",
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
-          photo: "https://example.com/johndoe.jpg",
+          photo: "https://picsum.photos/1000/1000",
           conference: {
             id: 1
           },
           id: 1
-        }
+        },
+        {
+          name: "Cheval Doe",
+          email: "johndoe@example.com",
+          twitter: "@johndoe",
+          linkedin: "https://www.linkedin.com/in/johndoe",
+          biography: "John is a software engineer with 10 years of experience",
+          photo: "https://picsum.photos/1000/1000",
+          conference: {
+            id: 1
+          },
+          id: 1
+        },
+        {
+          name: "Cheval Doe",
+          email: "johndoe@example.com",
+          twitter: "@johndoe",
+          linkedin: "https://www.linkedin.com/in/johndoe",
+          biography: "John is a software engineer with 10 years of experience",
+          photo: "https://picsum.photos/1000/1000",
+          conference: {
+            id: 1
+          },
+          id: 1
+        },
+        {
+          name: "Cheval Doe",
+          email: "johndoe@example.com",
+          twitter: "@johndoe",
+          linkedin: "https://www.linkedin.com/in/johndoe",
+          biography: "John is a software engineer with 10 years of experience",
+          photo: "https://picsum.photos/1000/1000",
+          conference: {
+            id: 1
+          },
+          id: 1
+        },
+        {
+          name: "Cheval Doe",
+          email: "johndoe@example.com",
+          twitter: "@johndoe",
+          linkedin: "https://www.linkedin.com/in/johndoe",
+          biography: "John is a software engineer with 10 years of experience",
+          photo: "https://picsum.photos/1000/1000",
+          conference: {
+            id: 1
+          },
+          id: 1
+        },
+        {
+          name: "Cheval Doe",
+          email: "johndoe@example.com",
+          twitter: "@johndoe",
+          linkedin: "https://www.linkedin.com/in/johndoe",
+          biography: "John is a software engineer with 10 years of experience",
+          photo: "https://picsum.photos/1000/1000",
+          conference: {
+            id: 1
+          },
+          id: 1
+        },
+        {
+          name: "Cheval Doe",
+          email: "johndoe@example.com",
+          twitter: "@johndoe",
+          linkedin: "https://www.linkedin.com/in/johndoe",
+          biography: "John is a software engineer with 10 years of experience",
+          photo: "https://picsum.photos/1000/1000",
+          conference: {
+            id: 1
+          },
+          id: 1
+        },
+        {
+          name: "Cheval Doe",
+          email: "johndoe@example.com",
+          twitter: "@johndoe",
+          linkedin: "https://www.linkedin.com/in/johndoe",
+          biography: "John is a software engineer with 10 years of experience",
+          photo: "https://picsum.photos/1000/1000",
+          conference: {
+            id: 1
+          },
+          id: 1
+        },
       ]
     },
     new Date('2022-10-11T22:40:00')
@@ -360,7 +444,7 @@ export const TALK_DATA: Planning[] = [
 
   new BreakPlan(
     {
-      id: 0,
+      id: 6,
       title: "Accueil et Croissants",
       description: "",
       level: "",
@@ -382,7 +466,7 @@ export const TALK_DATA: Planning[] = [
   ,
   new BreakPlan(
     {
-      id: 0,
+      id: 7,
       title: "Accueil et Croissants",
       description: "",
       level: "",

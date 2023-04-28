@@ -1,5 +1,6 @@
 import {isDevMode, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
@@ -26,6 +27,16 @@ import {SpeakerTeaserViewComponent} from "../Components/speaker-teaser-view/spea
 import {SpeakersListComponent} from "../Components/speakers-list/speakers-list.component";
 import {RouterModule} from "@angular/router";
 import {SpeakerPageComponent} from "../Page/speaker-page/speaker-page.component";
+import {SpeakerTeaserViewComponent} from "../Components/speaker-teaser-view/speaker-teaser-view.component";
+import {SpeakersListComponent} from "../Components/speakers-list/speakers-list.component";
+import {RouterModule} from "@angular/router";
+import {SpeakerPageComponent} from "../Page/speaker-page/speaker-page.component";
+import {AddFavoriteComponent} from "../Components/add-favorite/add-favorite.component";
+import {DetailTalkComponent} from "../Page/detail-talk/detail-talk.component";
+import {SpeakerPreviewComponent} from "../Components/speaker-preview/speaker-preview.component";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {DetailSpeakerComponent} from "../Page/detail-speaker/detail-speaker.component";
+import {DataParamService} from "../services/data-param.service";
 
 @NgModule({
   declarations: [
@@ -40,6 +51,14 @@ import {SpeakerPageComponent} from "../Page/speaker-page/speaker-page.component"
     SpeakerTeaserViewComponent,
     SpeakersListComponent,
     SpeakerPageComponent
+    DividerTeaserViewComponent,
+    SpeakerTeaserViewComponent,
+    SpeakersListComponent,
+    SpeakerPageComponent,
+    AddFavoriteComponent,
+    DetailTalkComponent,
+    SpeakerPreviewComponent,
+    DetailSpeakerComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +79,7 @@ import {SpeakerPageComponent} from "../Page/speaker-page/speaker-page.component"
     MatCardModule,
     MatBadgeModule,
     MatDividerModule,
+
   ],
   providers: [{
     provide: DataService,

@@ -11,6 +11,4 @@ export class SpeakerTeaserViewComponent {
   @Input() speaker!: Speaker;
   twitter = SocialMedia.TWITTER
   linkedin = SocialMedia.LINKEDIN
-
-
 }

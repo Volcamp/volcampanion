@@ -6,8 +6,18 @@
   z-index: 2
 
 .content
-  padding-top: 65px
-  padding-bottom: 65px
+  @media screen and (min-width: 240px) //Mobile devices
+       padding-top: 75px
+  @media screen and (min-width: 600px) //Mobile devices
+       padding-top: 75px
+  @media screen and (min-width: 768px) //iPads, Tablets
+       padding-top: 75px
+  @media screen and (min-width: 1024px) //Small screens, laptops
+       padding-top: 75px
+  @media screen and (min-width: 1200px) //Desktops, large screens
+      padding-top: 90px
+  padding-bottom: 70px
+
 
 
 .header

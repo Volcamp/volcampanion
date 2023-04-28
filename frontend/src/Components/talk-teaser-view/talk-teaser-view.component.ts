@@ -25,7 +25,7 @@ export class TalkTeaserViewComponent implements OnInit {
 
 
   speakerNames(speakers: Speaker[] | undefined): string[] {
-    if (speakers == undefined){
+    if (speakers == undefined) {
       return []
     }
     return speakers.map(speaker => speaker.name)
@@ -50,5 +50,9 @@ export class TalkTeaserViewComponent implements OnInit {
     this.talkPlan.room.capacity++
     this.inFavorite = true
 
+  }
+
+  onClick($event: number) {
+    this.talkPlan.room.capacity = $event
   }
 }

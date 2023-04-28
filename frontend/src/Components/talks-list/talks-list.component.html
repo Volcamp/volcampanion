@@ -8,7 +8,8 @@
       <app-divider-teaser-view [datePlan]="$any(plan)"/>
     </div>
 
-    <div class="miniView content contentPage" *ngIf="plan.getType() !== DELIMITER_DAY && plan.getType() !== BREAK">
+    <div (click)="navigate($any(plan))" class="miniView content contentPage"
+         *ngIf="plan.getType() !== DELIMITER_DAY && plan.getType() !== BREAK">
       <app-talk-teaser-view [talkPlan]="$any(plan)"/>
     </div>
   </div>

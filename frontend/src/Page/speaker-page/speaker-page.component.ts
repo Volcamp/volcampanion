@@ -1,8 +1,6 @@
-import { Component } from '@angular/core';
-import {Planning} from "../../Data/DTO/Planning";
+import {Component} from '@angular/core';
 import {Speaker} from "../../Data/DTO/Speaker";
 import {DataService} from "../../Data/ServicesDatas/DataService";
-import {compareSchedule} from "../../GeneralVolcamp/CompareTalkPlan";
 
 @Component({
   selector: 'app-speaker-page',
@@ -12,8 +10,7 @@ import {compareSchedule} from "../../GeneralVolcamp/CompareTalkPlan";
 export class SpeakerPageComponent {
   speakers!: Speaker[]
 
-  constructor( dataService: DataService) {
+  constructor(dataService: DataService) {
     dataService.provideSpeakers().then((speakers) => this.speakers = speakers)
-
   }
 }
