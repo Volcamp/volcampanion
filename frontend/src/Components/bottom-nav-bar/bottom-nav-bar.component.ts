@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 import {AppRoUtes, toRoute} from "../../app/AppRoUtes";
 
 @Component({
@@ -7,32 +7,34 @@ import {AppRoUtes, toRoute} from "../../app/AppRoUtes";
   styleUrls: ['./bottom-nav-bar.component.sass']
 })
 
-export class BottomNavBarComponent implements AfterViewInit{
-  homeRoute=toRoute(AppRoUtes.HOME_ROUTE)
-  speakerRoute=toRoute(AppRoUtes.SPEAKER_ROUTE)
-  favoriteRoute=toRoute(AppRoUtes.FAVORITE_ROUTE)
-  defaultRoot=this.homeRoute
+export class BottomNavBarComponent implements AfterViewInit {
+  homeRoute = toRoute(AppRoUtes.HOME_ROUTE)
+  speakerRoute = toRoute(AppRoUtes.SPEAKER_ROUTE)
+  favoriteRoute = toRoute(AppRoUtes.FAVORITE_ROUTE)
+  defaultRoot = this.homeRoute
 
   onClick(event: any) {
-    const buttons = document.querySelectorAll('button.example-icon');
+    const buttons = document.querySelectorAll(CLASS_BTN_NAME);
     buttons.forEach((button) => {
-      button.classList.remove('mat-flat-button', 'mat-warn');
+      button.classList.remove(CLASS_BTN_STYLE, CLASS_BTN_COLOR);
     });
 
     const clickedButton = event.currentTarget;
-    clickedButton.classList.add('mat-flat-button', 'mat-warn');
+    clickedButton.classList.add(CLASS_BTN_STYLE, CLASS_BTN_COLOR);
   }
 
   ngAfterViewInit(): void {
     console.log(location.pathname)
     let button = document.getElementById(location.pathname);
-    if(button==null ){
+    if (button == null) {
       button = document.getElementById(this.defaultRoot);
     }
-    button!.classList.add('mat-flat-button', 'mat-warn');
+    button!.classList.add(CLASS_BTN_STYLE, CLASS_BTN_COLOR);
 
 
   }
-
-
 }
+
+export const CLASS_BTN_NAME = 'button.iconBtn';
+export const CLASS_BTN_STYLE = 'mat-flat-button';
+export const CLASS_BTN_COLOR = 'mat-warn';
