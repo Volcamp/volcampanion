@@ -25,11 +25,6 @@ import {DataService} from "../Data/ServicesDatas/DataService";
 import {StubService} from "../Data/ServicesDatas/StubDatas/StubService";
 import {SpeakerTeaserViewComponent} from "../Components/speaker-teaser-view/speaker-teaser-view.component";
 import {SpeakersListComponent} from "../Components/speakers-list/speakers-list.component";
-import {RouterModule} from "@angular/router";
-import {SpeakerPageComponent} from "../Page/speaker-page/speaker-page.component";
-import {SpeakerTeaserViewComponent} from "../Components/speaker-teaser-view/speaker-teaser-view.component";
-import {SpeakersListComponent} from "../Components/speakers-list/speakers-list.component";
-import {RouterModule} from "@angular/router";
 import {SpeakerPageComponent} from "../Page/speaker-page/speaker-page.component";
 import {AddFavoriteComponent} from "../Components/add-favorite/add-favorite.component";
 import {DetailTalkComponent} from "../Page/detail-talk/detail-talk.component";
@@ -47,10 +42,6 @@ import {DataParamService} from "../services/data-param.service";
     TalkTeaserViewComponent,
     TalksListComponent,
     BreakTeaserViewComponent,
-    DividerTeaserViewComponent,
-    SpeakerTeaserViewComponent,
-    SpeakersListComponent,
-    SpeakerPageComponent
     DividerTeaserViewComponent,
     SpeakerTeaserViewComponent,
     SpeakersListComponent,
@@ -79,12 +70,14 @@ import {DataParamService} from "../services/data-param.service";
     MatCardModule,
     MatBadgeModule,
     MatDividerModule,
+    MatProgressSpinnerModule,
 
   ],
   providers: [{
     provide: DataService,
     useClass: StubService // <--- Defining the swappable implementation.
-  }],
+  },
+  DataParamService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
 import {Location} from "@angular/common";
-import {AppRootes, toRoot} from "../app/AppRootes";
 import {Speaker} from "../Data/DTO/Speaker";
 import {DataParamService} from "./data-param.service";
 import {TalkPlan} from "../Data/DTO/TalkPlan";
+import {AppRoutes, toRoute} from "../app/AppRoutes";
 
 @Injectable({
   providedIn: 'root'
@@ -38,12 +38,12 @@ export class NavigationService {
 
   goToSpeaker(speaker : Speaker) : void{
     this.dataParam.storageParam =speaker
-    this.goTo( toRoot(AppRootes.DETAIL_SPEAKER_ROUTE)+speaker.id );
+    this.goTo( toRoute(AppRoutes.DETAIL_SPEAKER_ROUTE)+speaker.id );
 
   }
 
   goToTalk(talkPlan : TalkPlan) : void{
     this.dataParam.storageParam =talkPlan
-    this.goTo( toRoot(AppRootes.DETAIL_TALK_ROUTE)+talkPlan.talk.id );
+    this.goTo( toRoute(AppRoutes.DETAIL_TALK_ROUTE)+talkPlan.talk.id );
   }
 }
