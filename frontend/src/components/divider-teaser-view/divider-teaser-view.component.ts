@@ -1,0 +1,20 @@
+import {Component, Input} from '@angular/core';
+import {DividerPlanning} from "../../data/dto/DividerPlanning";
+import {formatDate} from "../../general-volcamp/DateFunc";
+
+@Component({
+  selector: 'app-divider-teaser-view',
+  templateUrl: './divider-teaser-view.component.html',
+  styleUrls: ['./divider-teaser-view.component.sass']
+})
+export class DividerTeaserViewComponent {
+  @Input() dividerPlanning!: DividerPlanning;
+  startDate = new Date();
+
+  ngOnInit(): void {
+    this.startDate = new Date(this.dividerPlanning.schedule)
+  }
+  formatDate(date : Date){
+    return formatDate(date)
+  }
+}

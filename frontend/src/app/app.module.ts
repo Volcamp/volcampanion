@@ -3,34 +3,51 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
-import {HomeComponent} from "../Page/home/home.component";
-import {BottomNavBarComponent} from "../Components/bottom-nav-bar/bottom-nav-bar.component";
-import {TopBarComponent} from "../Components/top-bar/top-bar.component";
+import {HomeComponent} from "../page/home/home.component";
+import {BottomNavBarComponent} from "../components/bottom-nav-bar/bottom-nav-bar.component";
+import {TopBarComponent} from "../components/top-bar/top-bar.component";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
-import {TalkTeaserViewComponent} from "../Components/talk-teaser-view/talk-teaser-view.component";
+import {TalkTeaserViewComponent} from "../components/talk-teaser-view/talk-teaser-view.component";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule} from "@angular/material/card";
 import {MatBadgeModule} from "@angular/material/badge";
-import {TalksListComponent} from "../Components/talks-list/talks-list.component";
+import {TalksListComponent} from "../components/talks-list/talks-list.component";
 import {MatDividerModule} from "@angular/material/divider";
-import {BreakTeaserViewComponent} from "../Components/break-teaser-view/break-teaser-view.component";
-import {DividerTeaserViewComponent} from "../Components/divider-teaser-view/divider-teaser-view.component";
-import {DataService} from "../Data/ServicesDatas/DataService";
-import {StubService} from "../Data/ServicesDatas/StubDatas/StubService";
-import {SpeakerTeaserViewComponent} from "../Components/speaker-teaser-view/speaker-teaser-view.component";
-import {SpeakersListComponent} from "../Components/speakers-list/speakers-list.component";
-import {SpeakerPageComponent} from "../Page/speaker-page/speaker-page.component";
-import {AddFavoriteComponent} from "../Components/add-favorite/add-favorite.component";
-import {DetailTalkComponent} from "../Page/detail-talk/detail-talk.component";
-import {SpeakerPreviewComponent} from "../Components/speaker-preview/speaker-preview.component";
+import {BreakTeaserViewComponent} from "../components/break-teaser-view/break-teaser-view.component";
+import {DividerTeaserViewComponent} from "../components/divider-teaser-view/divider-teaser-view.component";
+import {DataService} from "../data/services-datas/DataService";
+import {SpeakerTeaserViewComponent} from "../components/speaker-teaser-view/speaker-teaser-view.component";
+import {SpeakersListComponent} from "../components/speakers-list/speakers-list.component";
+import {SpeakerPageComponent} from "../page/speaker-page/speaker-page.component";
+import {AddFavoriteComponent} from "../components/add-favorite/add-favorite.component";
+import {DetailTalkComponent} from "../page/detail-talk/detail-talk.component";
+import {SpeakerPreviewComponent} from "../components/speaker-preview/speaker-preview.component";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import {DetailSpeakerComponent} from "../Page/detail-speaker/detail-speaker.component";
+import {DetailSpeakerComponent} from "../page/detail-speaker/detail-speaker.component";
 import {DataParamService} from "../services/data-param.service";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {ApiPlanManager} from "../data/services-datas/api-datas/api-managers/ApiPlanManager";
+import {ApiSpeakerManager} from "../data/services-datas/api-datas/api-managers/ApiSpeakerManager";
+import {RequestManager} from "../data/services-datas/api-datas/api-general/RequestManager";
+import {EnvServiceProvider} from "../data/environments/EnvServiceFactory";
+import {TwitterBtnComponent} from "../components/twitter-btn/twitter-btn.component";
+import {LinkedinBtnComponent} from "../components/linkedin-btn/linkedin-btn.component";
+import {StubService} from "../data/services-datas/stub-datas/StubService";
+import {FilterMenuComponent} from "../components/filter-menu/filter-menu.component";
+import {MatBottomSheetModule} from "@angular/material/bottom-sheet";
+import {MatChipsModule} from "@angular/material/chips";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatNativeDateModule} from "@angular/material/core";
+import {ApiService} from "../data/services-datas/api-datas/ApiService";
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {FilterPlanningsService} from "../services/filter-plannings.service";
 
 @NgModule({
   declarations: [
@@ -48,35 +65,54 @@ import {DataParamService} from "../services/data-param.service";
     AddFavoriteComponent,
     DetailTalkComponent,
     SpeakerPreviewComponent,
-    DetailSpeakerComponent
+    DetailSpeakerComponent,
+    TwitterBtnComponent,
+    LinkedinBtnComponent,
+    FilterMenuComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    }),
-    MatTabsModule,
-    MatIconModule,
-    MatButtonModule,
-    MatToolbarModule,
-    BrowserAnimationsModule,
-    MatProgressBarModule,
-    MatGridListModule,
-    MatCardModule,
-    MatBadgeModule,
-    MatDividerModule,
-    MatProgressSpinnerModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: !isDevMode(),
+            // Register the ServiceWorker as soon as the application is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerWhenStable:30000'
+        }),
+        MatTabsModule,
+        MatIconModule,
+        MatButtonModule,
+        MatToolbarModule,
+        BrowserAnimationsModule,
+        MatProgressBarModule,
+        MatGridListModule,
+        MatCardModule,
+        MatBadgeModule,
+        MatDividerModule,
+        HttpClientModule,
+        MatProgressSpinnerModule,
+        MatBottomSheetModule,
+        MatChipsModule,
+        MatFormFieldModule,
+        MatDatepickerModule,
+        ReactiveFormsModule,
+        MatNativeDateModule,
+        MatCheckboxModule,
 
-  ],
+
+    ],
   providers: [{
     provide: DataService,
-    useClass: StubService // <--- Defining the swappable implementation.
+    useClass: ApiService // <--- Defining the swappable implementation.
   },
-    DataParamService],
+    HttpClient,
+    DataParamService,
+    ApiPlanManager,
+    ApiSpeakerManager,
+    RequestManager,
+    EnvServiceProvider,
+    FilterPlanningsService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

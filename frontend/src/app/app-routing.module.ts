@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {HomeComponent} from "../Page/home/home.component";
-import {SpeakerPageComponent} from "../Page/speaker-page/speaker-page.component";
+import {HomeComponent} from "../page/home/home.component";
+import {SpeakerPageComponent} from "../page/speaker-page/speaker-page.component";
 import {AppRoutes} from "./AppRoutes";
-import {DetailTalkComponent} from "../Page/detail-talk/detail-talk.component";
-import {DetailSpeakerComponent} from "../Page/detail-speaker/detail-speaker.component";
+import {DetailTalkComponent} from "../page/detail-talk/detail-talk.component";
+import {DetailSpeakerComponent} from "../page/detail-speaker/detail-speaker.component";
 
 const routes: Routes = [
   {component: HomeComponent, path: AppRoutes.HOME_ROUTE},

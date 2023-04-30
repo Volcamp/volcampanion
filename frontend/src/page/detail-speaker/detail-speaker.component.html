@@ -1,0 +1,21 @@
+<div class="centerContainer contentPage">
+  <div *ngIf="speaker!=null">
+    <div class="preview speakerpreviewContainer">
+      <img class="imagSpeaker" src="{{speaker.photo}}">
+      <span class="f1">{{speaker.name}}</span>
+    </div>
+    <div class="contentDetailSpeaker">
+      <span class="f4 centerLineContent"><mat-icon aria-hidden="false" color="accent" aria-label="speaker icon"
+                                                   fontIcon="business_center"></mat-icon>
+        {{speaker.company}}</span>
+      <div class="centerLineContent">
+        <app-linkedin-btn userId="{{speaker.linkedin}}" class="socialMediaSpeaker"/>
+        <app-twitter-btn userId="{{speaker.twitter}}" class="socialMediaSpeaker "/>
+      </div>
+      <span class="f4">{{speaker.biography}}</span>
+    </div>
+  </div>
+  <div *ngIf="speaker==null">
+    <mat-spinner></mat-spinner>
+  </div>
+</div>
