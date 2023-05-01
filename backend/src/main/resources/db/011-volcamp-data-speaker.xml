@@ -1,0 +1,927 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="rami.khedair@volcamp.io" id="3">
+        <comment>Insert Speakers</comment>
+        <insert tableName="speakers">
+            <column name="name" value="Anthony Le Goas"/>
+            <column name="email" value="Anthony.Goas@volcamp.io"/>
+            <column name="company" value="Svelte Society France"/>
+            <column name="biography" value='Web Developer &amp; directeur @Zenika Brest / Co-organisateur Svelte Society France + BrestJS + UX Design Brest'/>
+            <column name="twitter" value="anthony_legoas" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/3.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Anthony Pena"/>
+            <column name="email" value="Anthony.Pena@volcamp.io"/>
+            <column name="biography" value='Codeur et blogueur le jour et dévoreur de manga la nuit, vous me verrez souvent parler de Java, JavaScript, Typescript, Rust ou de test, parfois un peu (beaucoup) de jeux-vidéos ou de bricolage de console. '/>
+            <column name="twitter" value="_Anthony_Pena" />
+            <column name="linkedin" value=" " />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/10.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Anthony Roux"/>
+            <column name="email" value="Anthony.Roux@volcamp.io"/>
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/12.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+
+        <insert tableName="speakers">
+            <column name="name" value="Aurélie Vache"/>
+            <column name="email" value="Aurélie.Vache@volcamp.io"/>
+            <column name="company" value="OVHcloud"/>
+            <column name="biography" value='@GoogleDevExpert, 🐳@Docker Captain, CNCF Ambassador @duchessfr, @tlse_dasci & @rdvspeakers organizer Writer, sketchnoter & speaker Go lover'/>
+            <column name="twitter" value="aurelievache" />
+            <column name="linkedin" value="aurelievache" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/18.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Benjamin Dauvissat"/>
+            <column name="email" value="Benjamin.Dauvissat@volcamp.io"/>
+            <column name="biography" value='Curieux et passionné.
+Tombé par hasard sur Java en 2007, accro depuis.
+Un peu de DevOps et d’Elastic pour pimenter le tout.
+J’essaie de transmettre ce que j’ai appris avant d’être obsolète.'/>
+            <column name="twitter" value="bdauvissat" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/6.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Benjamin Marron"/>
+            <column name="email" value="Benjamin.Marron@volcamp.io"/>
+            <column name="biography" value='Gentleman coder since 1996.'/>
+            <column name="twitter" value="bmarron" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/47.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Clément Grégoire"/>
+            <column name="email" value="Clément.Grégoire@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Clément works at siliceum, a company he co-founded, where he helps his clients to reach their performance goals. Previously working in the games and embedded industries, he acquired hands-on knowledge on optimizations while releasing titles such as Microsoft Flight Simulator. With more than 8 years of a love-hate relationship with C++ and no fear of legacy code-bases, he also likes reverse-engineering old games in his spare-time.'/>
+            <column name="twitter" value="lectem" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/30.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Cédric Charière"/>
+            <column name="email" value="Cédric.Charière@volcamp.io"/>
+            <column name="company" value="siliceum "/>
+            <column name="biography" value='Je suis entré dans l’univers de l’informatique par la porte du graphisme et de la création de jeux vidéo. À 14 ans, j’assemblais mes premiers pixels pour mes premiers jeux vidéo. Photoshop et Illustrator furent mes premiers outils numériques.
+
+Depuis la découverte des arcanes du code et du web, je n’ai eu de cesse de multiplier les explorations multimédias et d’écumer les hackathons, startup weekends, Game Jam et autres week-ends créatifs.
+
+Diplômé de l’école d’ingénierie informatique ISIMA, je me suis spécialisé dans la conception d’applications atypiques (Web, Angular, Node.JS…). J’ai renforcé mes compétences théoriques par un parcours en thèse dans le domaine de la distribution du calcul (C++ && GPGPU).
+
+Mon crédo ? Hybrider les technologies pour proposer des usages innovants, du calcul scientifique aux interfaces web ultra dynamiques, pour des expériences multimédias simples d’utilisations et au plus proche de vos besoins.
+
+Aujourd’hui, j’ai l’immense chance d’être accompagné d’associés formidables au sein de l’aventure siliceum : une entreprise du numérique dédiée à la création de solutions web, multimédias et hautes performances.'/>
+
+            <column name="twitter" value="lectem" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/29" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Damien Cavaillès"/>
+            <column name="email" value="Damien.Cavaillès@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Damien Cavaillès peut être considéré comme un des développeurs incontournable quand on parle de sujets RHs. Son ambition est de chambouler le recrutement des développeurs. Selon lui “vu que le marché est tendu, il devrait être facile pour un dev de trouver par lui-même une entreprise où il sera heureux.” Issu de l’ISEN, il cofonde WeLoveDevs en 2015 et n’hésite pas à déconstruire l’imagerie du métier de développeur-peuse informatique pour la réconcilier avec le recrutement. . Novateur, inspiré et inspirant, il participe à de nombreuses conférences tech dans toute la France. Damien fédère par sa gentillesse, sa curiosité et son honnêteté qui, bien que parfois désarmante, permet de pointer le focal là où il est nécessaire de voir ce qui doit être mis en lumière.'/>
+            <column name="twitter" value="thedamfr" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/22.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Daniel Petisme"/>
+            <column name="email" value="Daniel.Petisme@volcamp.io"/>
+            <column name="company" value="confluentinc"/>
+            <column name="biography" value='Open Source Activist #jhipster #quarkus Customer Success Technical Architect @confluentinc
+
+Learning and sharing is all I can do.'/>
+            <column name="twitter" value="danielpetisme" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/61.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="David Aparicio"/>
+            <column name="email" value="David.Aparicio@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='
+Passionate engineer in Computer Science, graduated INSA Lyon 2014, after two years spent at UNICAMP in Brazil, actively participates in the community, through Meetups and conferences. His motto: “No developer is supposed to ignore security”.
+
+Ingénieur passionné en Informatique, diplômé INSA Lyon 2014, après deux années passées à UNICAMP au Brésil, participe activement à la communauté, à travers des Meetups et des conférences. Sa devise: « Nul développeur n’est censé ignorer la sécurité »'/>
+            <column name="twitter" value="dadideo" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/44.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Edouard Cattez"/>
+            <column name="email" value="Edouard.Cattez@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='
+Lead Devops FullStack ascendant Cloud Function, je suis simplement passionné par le web et son impact sur nos vies. Je passe également du temps à acculturer les équipes aux méthodologies craft (tdd, bdd, ddd, ça fait beaucoup de dd).'/>
+            <column name="twitter" value="ecattez" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/17.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Eléa Petton"/>
+            <column name="email" value=".@volcamp.io"/>
+            <column name="company" value="OVHcloud"/>
+            <column name="biography" value='Etudiante pendant cinq ans à l’école d’ingénieurs ISEN Brest, je suis diplômée en octobre 2022 en tant qu’ingénieur généraliste avec une coloration Intelligence Artificielle (IA).
+
+L’IA est un domaine qui me passionne et dans lequel je me spécialise en intégrant la TEAM AI Solutions d’OVHcloud depuis mai 2021, en stage, puis en alternance.
+
+Je travaille principalement sur deux produits d’OVHcloud dédiés à l’entraînement et à l’application d’IA : AI Training et AI Notebooks. Mon rôle est de rédiger des tutoriels sous différents formats pour les utilisateurs. En somme, je créée des notebooks et des petites applications en Python, je rédige des documentations et parfois même des articles de blog.'/>
+            <column name="twitter" value="EleaPetton" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/25.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+
+        <insert tableName="speakers">
+            <column name="name" value="Emilien Mottet"/>
+            <column name="email" value="Emilien.Mottet@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value=''/>
+            <column name="twitter" value="EmilienMottet" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/38.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Enguerran Chevalier"/>
+            <column name="email" value="Enguerran.Chevalier@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value=''/>
+            <column name="twitter" value="" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/39.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Fabien Martin"/>
+            <column name="email" value="Fabien.Martin@volcamp.io"/>
+            <column name="company" value="VMware Tanzu"/>
+            <column name="biography" value='Solution Engineer - VMware Tanzu'/>
+            <column name="twitter" value="beeNotice" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/11.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="François Teychene"/>
+            <column name="email" value=".@volcamp.io"/>
+            <column name="company" value="Startree"/>
+            <column name="biography" value='
+Cloud Developer @ Startree, meetup addict &amp; organizer @ Montpellier, SunnyTech team. Développeur couteau suisse pouvant intervenir du Javascript à la table de routage. Mes passions actuelles sont le Rust, le DevOps et le Scala en plus de vouloir mettre des conteneurs partout.'/>
+            <column name="twitter" value="fteychene" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/50.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Gabriel Quennesson"/>
+            <column name="email" value="Gabriel.Quennesson@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Kubernetes administrator IT Expert'/>
+            <column name="twitter" value="" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/52.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Gauthier François"/>
+            <column name="email" value="Gauthier.François@volcamp.io"/>
+            <column name="company" value="Doctolib"/>
+            <column name="biography" value='Je suis senior SRE chez Doctolib. Depuis 6 ans maintenant, mes collègues et moi-même maintenons la production en condition opérationnel.
+
+J’aime beaucoup l’observabilité et les rituels et l’organisation d’équipe.
+
+À coté de cela, je suis pongiste et je m’adonne à la domotique sur mon temps libre 😉.'/>
+            <column name="twitter" value="gnublin" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/62.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Gauthier Poulet"/>
+            <column name="email" value="Gauthier.Poulet@volcamp.io"/>
+            <column name="company" value="Gatling"/>
+            <column name="biography" value='
+Gauthier POULET est développeur chez Gatling.
+
+Développeur enthousiaste et passionné, Il s’intéresse à toutes les technologies “hype” que l’on peut trouver : Front-end, Back-end, Mobile, Automatisation, Cloud, etc.'/>
+            <column name="twitter" value="gauthier_poulet" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/53.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Gerard Paligot"/>
+            <column name="email" value="Gerard.Paligot@volcamp.io"/>
+            <column name="company" value="Devfest"/>
+            <column name="biography" value='
+Father of two kids, husband of an incredible wife and huge fan of Disney long before I had children. I’m a Google Developer Expert for Android since 2022 and Mobile Staff Engineer at Decathlon. I’m also member of GDG Lille (Android), FRAUG and one of the co-organizer of the Devfest Lille.'/>
+            <column name="twitter" value="GerardPaligot" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/51.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Guillaume Hospital"/>
+            <column name="email" value="Guillaume.Hospital@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value=''/>
+            <column name="twitter" value="tioumen" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/55.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Guillaume Serre"/>
+            <column name="email" value="Guillaume.Serre@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value=''/>
+            <column name="twitter" value="" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/54.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Hamza El Yaaqoubi"/>
+            <column name="email" value="Hamza.Yaaqoubi@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Je suis Tech Lead Java expérimenté avec une forte appétence pour le Clean Code, l’architecture, le Devops et le Cloud.
+
+J’adore aussi contribuer aux développements front et aux interactions avec le back.'/>
+            <column name="twitter" value="hamzaElyaaqoubi" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/8.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Idrissa Ndiyae"/>
+            <column name="email" value="Idrissa.Ndiyae@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='J’interviens dans des environnements industrialisés où je participe à la conception d’architectures data-driven. Ma passion réside dans la production d’un code industrialisé, fiable et évolutif, la mise en place de pipelines de traitement de données ainsi que la modélisation pour valoriser les données.'/>
+            <column name="twitter" value="" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/7.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Johann Rakotoharisoa"/>
+            <column name="email" value="Johann.Rakotoharisoa@volcamp.io"/>
+            <column name="company" value="Comet Meetings"/>
+            <column name="biography" value='Développeur web chez Comet Meetings, la startup qui propose de révolutionner l’experience de la réunion et du séminaire. Je suis passionné par tout ce qui permet de proposer la meilleure UX aux utilisateurs finaux. Ainsi que par tous les outils, méthodologie et pratique permettant d’améliorer l’expérience développeur.'/>
+            <column name="twitter" value="Joha2n" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/16.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Jonathan Hervault"/>
+            <column name="email" value="Jonathan.Hervault@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='TechLead expérimenté, je suis avant tout un développeur passionné.
+
+Issu d’une formation universitaire dans le domaine de l’Intelligence Artificielle, j’ai d’abord exercé en tant que freelance pour ensuite intégrer Michelin en 2019.
+
+Je me suis toujours senti en accord avec la vision DevOps (bien avant que le terme ne devienne à la mode). C’est pourquoi j’essaie d’intervenir dans toutes les phases des projets, de l’architecture au déploiement.
+
+Contrairement à l’idée habituellement véhiculée, j’estime que le métier de développeur est un métier éminemment créatif.
+
+Je me bats au quotidien pour vulgariser ma profession et expliquer les enjeux cachés derrière le bien-être des développeurs.'/>
+            <column name="twitter" value="" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/37.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+
+        <insert tableName="speakers">
+            <column name="name" value="Julien Cognet"/>
+            <column name="email" value="Julien.Cognet@volcamp.io"/>
+            <column name="company" value="CGI"/>
+            <column name="biography" value='Julien est directeur technique de l’agence de CGI Grenoble et compte plus de 19 années d’expérience dans la mise en œuvre de solutions applicatives et d’architecture de traitement de flux de données.
+
+Il a travaillé en particulier sur des projets IoT, Machine To Machine et manufacturing avec une technicité importante et des volumétries conséquentes de données et de traitements à réaliser. Il est sensible en particulier aux problématiques de scalabilité, performance et robustesse des systèmes mis en place.
+
+Son expérience lui permet ainsi d’accompagner ses clients à la fois dans les choix de solutions, la définition de l’architecture applicatives et techniques ainsi que dans sa mise en œuvre. Son passé de chef de projet en contexte international lui permet d’envisager tous les pans d’un projet au-delà des aspects techniques.
+
+Par ailleurs, en tant que directeur technique de l’agence de Grenoble, Julien pilote les missions de suivi et sécurisation des projets, de veille technologique, définitions de stratégie technique et d’animation de la population technique locale.'/>
+            <column name="twitter" value="jcognet1979" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/45.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Julien Ponge"/>
+            <column name="email" value="Julien.Ponge@volcamp.io"/>
+            <column name="company" value="Red Hat"/>
+            <column name="biography" value='I am a Principal Software Engineer at Red Hat.
+
+I am primarily working on reactive:
+
+the Eclipse Vert.x project, a resource-efficient toolkit for writing scalable and resilient event-driven micro-services on the JVM,
+Mutiny, an intuitive event-driven reactive programming library for Java,
+Quarkus, a Kubernetes Native Java stack tailored for OpenJDK HotSpot and GraalVM, crafted from the best of breed Java libraries and standards.
+I am the author of a book called “Vert.x in Action” at Manning Publications https://www.manning.com/books/vertx-in-action
+
+Before joining Red Hat, I was an Associate Professor in computer science and engineering at INSA Lyon and the CITI Laboratory where I have held various teaching, research, management and executive positions.'/>
+            <column name="twitter" value="jponge" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/23.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Julien Sulpis"/>
+            <column name="email" value="Julien.Sulpis@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Développeur front-end passionné, j’aime explorer les dernières technologies du web pour créer des applications aussi agréables à utiliser (UX/UI, performance, animations…) qu’à développer (DX, clean code).'/>
+            <column name="twitter" value="jsulpis" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/60.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Jérôme Masson"/>
+            <column name="email" value="Jérôme.Masson@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Je me définis comme un Kubernetes addict &amp; evangelist. Le landscape CNCF est un terrain de jeux qui est le parfait endroit pour un passionné comme moi. Ma carrière de consultant &amp; d’architecte m’a amené à côtoyer des environnements complexes tant sur le plan humain que sur le plan technique.'/>
+            <column name="twitter" value="sphinxgaiaone" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/59.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Karim Pinchon"/>
+            <column name="email" value="Karim.Pinchon@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Je suis développeur backend depuis une dizaine d’années, d’abord Java, puis PHP et un peu de Go dernièrement. J’ai travaillé dans des entreprises de tailles différentes : d’une boite de 400 personnes à une startup de 15 personnes, puis des “scale up” comme Lydia, Ornikar et maintenant Meero. Le partage de connaissance est pour moi fondamental dans l’approche de mon métier : j’aime participer à tout type de meetup/conférence. Je donne également depuis quelques années des cours de Web services à des étudiants de Master. J’ai une sensibilité particulière sur les sujets de sécurité, d’authentification (OAuth2, OpenIdConnect) et de signature électronique (PKI), puisque ce sont des sujets sur lesquelles j’ai travaillé pendant dix ans.'/>
+            <column name="twitter" value="kpn13" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/33.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Kevin Beaugrand"/>
+            <column name="email" value="Kevin.Beaugrand@volcamp.io"/>
+            <column name="company" value="Microsoft MVP Azure"/>
+            <column name="biography" value='☁️🤖Developer and craftsman in the field of information technology 🚀☕️ - Microsoft MVP Azure
+
+With more than 10 years of experience in software analysis and design in various industry sectors I have become an expert in implementing solutions based on .NET Azure Cloud and IoT technologies. I am also passionate about innovation, new technologies and technical challenges.'/>
+            <column name="twitter" value="kbeaugrand" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/41.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Kevin Davin"/>
+            <column name="email" value="Kevin.Davin@volcamp.io"/>
+            <column name="company" value="Google"/>
+            <column name="biography" value='Google Developer Expert on Google Cloud &amp; Kotlin, Gitlab Hero, I am above all passionate about tech, languages, infrastructure, and automation. Kotlin, Java, TypeScript are my day-to-day languages. I deploy all of those on the Google Kubernetes Engine with the GitLab’s Continuous Integration 🚀.
+
+Addict of agility and DevOps, some of my missions were to help teams to follow those philosophies. From code quality analysis to unit or end-to-end tests setup all the way to continuous deployment and operation, I try to follow a project from birth to production.
+
+I’m currently Software Engineer at Gradle and I’m working on Gradle Enterprise, the product which can improve the developer productivity by reducing its build and test time.'/>
+            <column name="twitter" value="davinkevin" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/57.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Lise Quesnel"/>
+            <column name="email" value="Lise.Quesnel@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Lise est développeuse web et Lead dev. Elle sait être moteur tant sur le plan humain que technique. Les bonnes pratiques de développement sont pour elle le ciment de tout projet. Elle porte également une attention toute particulière à l’expérience utilisateur. Grande curieuse, elle aime découvrir sans cesse de nouvelles choses.'/>
+            <column name="twitter" value="QuesnelLise" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/20.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Louis Tournayre"/>
+            <column name="email" value="Louis.Tournayre@volcamp.io"/>
+            <column name="company" value="Zenika"/>
+            <column name="biography" value='Formateur, développeur passionné et surtout Dev qui automatise l’ Ops @ Zenika Lyon. Mes sujets de cœur sont Dev côté backend, kubernetes, cloud, automatisation, …
+
+J’aime le partage et l’échange en tant que speaker et aussi en tant qu’organisateur de meetup (co-fondateur et co-organisateur du GDG Cloud IoT Lyon).'/>
+            <column name="twitter" value="_louidji" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/26.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Ludovic Cinquin"/>
+            <column name="email" value="Ludovic.Cinquin@volcamp.io"/>
+            <column name="company" value="OCTO"/>
+            <column name="biography" value='Ludovic Cinquin dirige le cabinet OCTO, filiale d’Accenture, spécialiste de l’agile et des new techs, qu’il a cofondé en 1998. Il est également le CTO d’Accenture France. En parallèle de ses activités de dirigeant, il accompagne les grands comptes dans le cadre de missions de conseil stratégique sur la transition digitale.
+
+En tant que conférencier et auteur, Ludovic décrypte les enjeux méthodologiques et culturels liés à l’adoption des technologies digitales dans les entreprises.
+
+Son dernier ouvrage “Devenir une entreprise Agile”, partage les recettes qu’OCTO a appliquées pour devenir un des précurseurs de l’agilité sur le marché français.'/>
+            <column name="twitter" value="lcinquin " />
+            <column name="linkedin" value="ludoviccinquin" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/67.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Maha Alsayasneh"/>
+            <column name="email" value="Maha.Alsayasneh@volcamp.io"/>
+            <column name="company" value="Elastic"/>
+            <column name="biography" value='I am a computer scientist with more than 10 years of experience in various fields ranging from web development to big data, including cloud computing and artificial intelligence. My experience combines technical and analytical aptitudes with problem-solving strengths to drive projects to on-time and high-quality completion.
+
+I also have a Ph.D. in optimizing the performance of multi-tier distributed systems.
+
+Currently, I am an Engineering Manager at Elastic. We are the leading platform for search-powered solutions.
+
+I love communicating and sharing knowledge with people ;) ( I also love sport and mountains ;) )
+
+My motto in life is LIVE + LOVE + LAUGH :)'/>
+            <column name="twitter" value="MahaALSayasneh" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/13.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Marc Chevaldonné"/>
+            <column name="email" value="Marc.Chevaldonné@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value=''/>
+            <column name="twitter" value="Code_1st" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/14.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Mathieu Mure"/>
+            <column name="email" value="Mathieu.Mure@volcamp.io"/>
+            <column name="company" value="Zenika"/>
+            <column name="biography" value='Consultant Web à Zenika le matin, CTO l’apès-midi, orga du LyonJS la nuit et speaker le reste du temps.
+
+Je ❤️ le web et je ❤️ encore plus lorsque je peux partager ce que j’aime.'/>
+            <column name="twitter" value="MathieuMure" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/9.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+
+        <insert tableName="speakers">
+            <column name="name" value="Mathieu Passenaud"/>
+            <column name="email" value="Mathieu.Passenaud@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Après 8 ans en tant que DevOps dans les univers du Cloud et de l’IOT, j’ai découvert la nécessité absolue de bien fait l’authentification sur les applications. Depuis 4 ans, j’ai décidé de ne faire que ça avec please-open.it. N’oublions jamais que nous faisons des logiciels pour des utilisateurs finaux, seul l’usage prime.'/>
+            <column name="twitter" value="mathieupassenau" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/65.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Mathis Hammel"/>
+            <column name="email" value="Mathis.Hammel@volcamp.io"/>
+            <column name="company" value="CodinGame"/>
+            <column name="biography" value='Mathis Hammel is a tech evangelist at CodinGame, a website specialized in mini-games to learn programming.
+
+He is a specialist and technical advisor in cybersecurity, machine learning, and algorithms. Mathis is passionate about technical challenges such as programming competitions and Capture The Flag, and holds several titles from national and international championships'/>
+            <column name="twitter" value="MathisHammel" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/19.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+
+        <insert tableName="speakers">
+            <column name="name" value="Nicolas Giraud"/>
+            <column name="email" value="Nicolas.Giraud@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Développeur passionné, Nicolas évolue depuis près de 15 ans essentiellement sur des projets Java (EE).
+
+Addict aux outils innovants et sensible aux pratiques agiles, c’est d’abord avec les notions de CD/CI qu’il aborde ces notions d’amélioration continue, puis plus récemment dans la mouvance DevOps, où il trouve refuge !
+
+C’est finalement dans un rôle de Tech lead (alias “couteau suisse”) qu’il intervient, et tente (parfois avec succès) de faciliter la vie de ses co-developpeurs dans l’esprit bienveillant du Software Crafter.'/>
+            <column name="twitter" value="nicgiro" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/43.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Nicolas Torion"/>
+            <column name="email" value="Nicolas.Torion@volcamp.io"/>
+            <column name="company" value="BearStudio"/>
+            <column name="biography" value='Je suis développeur full-stack au BearStudio, studio d’accompagnement pour porteurs de projet et de développement d’applications web et mobile basé à Rouen.
+
+https://www.bearstudio.fr/
+
+Et depuis peu j’ai rejoint l’organisation de Codeurs en Seine.'/>
+            <column name="twitter" value="NicoTotor" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/49.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Olivier Beautier"/>
+            <column name="email" value="Olivier.Beautier@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='I’m Olivier, DevRel at OVHCloud. I live in the very west of France, in Brest.
+
+I started my career at 18, in the Air Force, where for 8 years I was in charge of radar maintenance, then I spent a few years in a computer services company, and my last 15 years have been employed at Crédit Mutuel Arkéa.
+
+I started as a system administrator (Windows, Unix ♥️), then DBA (Oracle, MySQL, MSSQL, Sybase), then developer (Java, GWT, JEE, etc.), then Automation manager, then DevOps Architect / Evangelist.
+
+What I prefer is discovering activities, new technologies, trying them out, having fun with them and then sharing them!
+
+This is valid for my passions, such as improvisation theatre, electronic music production, surfing, poker, bowling, but also for my professional activities!'/>
+            <column name="twitter" value="raclepoulpe" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/21.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Olivier Leplus"/>
+            <column name="email" value="Olivier.Leplus@volcamp.io"/>
+            <column name="company" value="AWS"/>
+            <column name="biography" value='Developer Advocate at AWS and Google Developer Expert in Web Technologies. I love to share knowledge (and love) among developers and people in general.'/>
+            <column name="twitter" value="olivierleplus" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/35.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Patrice De Saint Steban"/>
+            <column name="email" value="Patrice.Steban@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Depuis presque 10 ans je me passionne pour le développement d’applications WEB et Mobile, en touchant à toutes les couches du Front au Back jusqu’à son déploiement sur le Cloud.
+
+J’ai travaillé sur des technologies très différentes, du PHP au JAVA et JAVASCRIPT, du GWT à Angular et React, de Google App Engine à NodeJS. Je m’intéresse maintenant à Flutter et Svelte.'/>
+            <column name="twitter" value="patoudss" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/4.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Philippe Charrière"/>
+            <column name="email" value="Philippe.Charrière@volcamp.io"/>
+            <column name="company" value="Bot.Garden"/>
+            <column name="biography" value='J’ai plusieurs vies professionnelles (en même temps)
+
+Senior Technical account manager pour GitLab 🦊
+
+“Boss” chez Bot.Garden (en fait j’ai monté ma boîte pour tenter de “transformer” quelques side projects) 🤖🌼
+
+Et le reste du temps, si je ne suis pas à la pêche ou avec ma famille, je code en JavaScript, Golo, Kotlin et Scala'/>
+            <column name="twitter" value="k33g_org" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/28.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Philippe Morisseau"/>
+            <column name="email" value="Philippe.Morisseau@volcamp.io"/>
+            <column name="company" value="onepoint"/>
+            <column name="biography" value='Co-responsable du centre d’excellence Microsoft dans la communauté Atlantique de onepoint, je coordonne une équipe de spécialistes sur les technologies Microsoft mais pas que…
+
+Nous apportons notre expertise et notre support à nos clients sur les thématiques :
+
+DevOps avec Azure DevOps,
+Cloud avec Azure,
+Modern Workspace avec Microsoft 365,
+Data.
+Nous concevons et nous réalisons aussi des solutions applicatives innovantes autour du cloud, du DevOps, du collaboratif et de la data.
+
+Avec plus de 15 ans d’expérience, moi-même, j’apporte mon savoir sur :
+
+l’architecture Cloud Azure,
+l’expertise FinOps Azure,
+l’expertise DevOps,
+l’architecture Data (ETL, Datahub),
+la conception et le développement d’application client lourd et web .net,
+l’agilité,
+le lean et
+l’exploitation d’infrastructure OnPremise.
+Enfin, je partage mes connaissances au travers de diverses formations autour du cloud Azure et du DevOps.'/>
+            <column name="twitter" value="" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/48.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Pierre-Marie Aubineau"/>
+            <column name="email" value="Pierre.Aubineau@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Je suis passionné par le développement et le game design. J’ai eu la chance d’avoir très jeune des ordinateurs entre les mains, et l’envie de m’en servir construire plein de choses ne m’a jamais quitté !
+
+Avant de rejoindre mon poste actuel de Consultant IT chez CGI, j’ai réalisé un jeu vidéo en indépendant et en solo, en m’occupant de tous les aspect : développement, game design, graphismes, son, et commercialisation…
+
+Au quotidien, je travaille sur des technos C# .NET, Java, Kafka, et dans mon temps libre, je fais la part belle aux jeux (de société comme jeux vidéo) et à la musique.
+
+Les domaines qui m’intéressent et me plaisent sont vastes, et je prends beaucoup de plaisir à partager et à échanger autour de la tech.
+
+J’ai d’ailleurs cherché à mutualiser mon expérience de création de jeux vidéo en écrivant des articles sur Game Code Club.'/>
+            <column name="twitter" value="" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/31.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Quentin Klein"/>
+            <column name="email" value=".@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Dev Android, puis Flutter, puis Lead Tech, j’ai une admiration pour les belles applications et les API bien faites.
+
+Au jour le jour, j’aime apprendre des autres et partager ce que j’apprends.
+
+Ha, et aussi j’aime challenger les organisations en place et défendre l’agilité !'/>
+            <column name="twitter" value="kleinquentin" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/66.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Rémi Verchère"/>
+            <column name="email" value="Rémi.Verchère@volcamp.io"/>
+            <column name="company" value="Ops"/>
+            <column name="biography" value='D’abord chez les Devs sur des solutions embarquées, j’ai au fur et à mesure des mes postes basculé chez les Ops sur des solutions d’infrastructure diverses et variées.
+
+Pendant plus de 10 ans j’ai donc bossé avec les Devs et les Ops, affichant une volonté de proposer des choix autour des solutions Open Source.
+
+Je suis maintenant consultant depuis plusieurs années, et apporte aux entreprises mon savoir-faire sur des sujets d’automatisation, observabilité et cloud native infrastructure, en tant qu’Ops au service des Devs.'/>
+            <column name="twitter" value="rverchere" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/63.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value=""/>
+            <column name="email" value=".@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value=''/>
+            <column name="twitter" value="" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Samuel Morel"/>
+            <column name="email" value="Samuel.Morel@volcamp.io"/>
+            <column name="company" value="Sopra Steria"/>
+            <column name="biography" value='Architecte Logiciel @ Sopra Steria depuis 2016, je suis un touche à tout ! Formateur, recruteur, manager, j’aime varier les plaisirs.
+
+L’industrialisation 🚀 a toujours été pour moi une approche séduisante, et dans mes différentes expériences, il y a toujours eu une partie d’automatisation 🤖 J’ai essentiellement travaillé dans des environnements Java, mais également plus récemment sur de l’Angular et bien sûr un peu de Devops 🛠 , surtout dans le cloud ☁ Adepte de la sécurité applicative, je suis attentif à toute l’actualité sécu 🔐 (riche en ce moment … 😱)
+
+En dehors du boulot, je fais pas mal de ski 🎿, du tennis 🎾, et beaucoup de VTT surtout en descente et en skatepark 🚵‍♀️
+
+Au plaisir de vous rencontrer 👋'/>
+            <column name="twitter" value="samuelmorel" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Sandrine Banas"/>
+            <column name="email" value="Sandrine.Banas@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Expert technique avec plus de 20 ans d’expérience. J’ai participé à de nombreux projets de sites internet, intranet ou extranet, avec de solides compétences techniques en analyse, architecture, conception et développement. Actuellement je travaille sur des projets Java (Microservices / Spring boot), Angular / Ionic et AWS. Je co-anime la communauté java de CGI où des présentations sont faites mensuellement. J’y fais des présentations sur divers sujets de veille technologique 3 ou 4 fois par an.'/>
+            <column name="twitter" value="cosjava" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/46.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Simon Maurin"/>
+            <column name="email" value="Simon.Maurin@volcamp.io"/>
+            <column name="company" value="leboncoin"/>
+            <column name="biography" value='Lead architect @leboncoin
+
+Centres d’intérêts : Socio-technical architecture / DDD / Craft / Data Engineering'/>
+            <column name="twitter" value="MaurinSimon" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/32.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Stephane Messika"/>
+            <column name="email" value="Stephane.Messika@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Dans tout ce que je fais je cherche à m’amuser. En jouant au bridge, au golf, mais aussi en entamant une troisième carrière après la recherche puis le conseil. Avec l’envie forte de m’éclater;'/>
+            <column name="twitter" value="stephmessika" />
+            <column name="linkedin" value="stephane-messika-b1b43350" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/68.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Stephanie Baltus-Bergamo"/>
+            <column name="email" value="Stephanie.Bergamo@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Dans la data depuis plus de 10 ans, j’ai commencé par de la business intelligence pour ensuite doucement migrer vers du data engineering,et un peu de développement backend.
+
+J’ai commencé ma carrière par 5 ans de consulting, et depuis 2013 je gravite autour des start-up scale-up. J’ai notamment travaillé chez Algolia, JobTeaser et leboncoin.
+
+Depuis fin 2020, je suis de retour chez leboncoin en tant que Lead Data Engineer, où je suis en charge de :
+
+designer et developper des services data internes ou publiques
+animer la communauté des data engineers
+diffuser les bonnes pratiques et faire grandir les plus juniors
+Je m’intéresse beaucoup à tout ce qui est software craftmanship et essaie de diffuser cette approche autour de moi, notamment dans notre communauté de data engineers.
+
+En dehors de la tech, je fais du triathlon, de la rando, de la moto et j’adore les Lego !'/>
+            <column name="twitter" value="steph_baltus" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/5.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Stéphane Philippart"/>
+            <column name="email" value="Stéphane.Philippart@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Développeur un jour, développeur toujours !
+
+Développeur Java depuis de nombreuses d’années, j’ai la joie de connaître le JDK 1.1, JEE, Struts, … et maintenant Spring (core, boot, batch), Angular, Groovy, …
+
+Après 14 années à être Architecte Logiciel j’ai pu me confronter à de nombreuses problématiques inhérentes aux systèmes d’information toujours complexes dans les grands groupes . Cela m’a permis aussi de basculer dans le mode de l’automatisation avec la mise place de chaînes de CI/CD basées sur les pipelines as code de Jenkins.
+
+J’accorde une grande importance dans l’approche humaine et notamment l’agilité (avec l’utilisation, dès que possible, du Framework SCRUM) mais aussi le DevOps. Deux notions qui me sont chères dans ma vision du métier de l’IT.
+
+Toujours dans le partage et les relations avec les développeurs je suis devenu DevRel au sein d’OVHcloud. Comme on peut le voir régulièrement dans ce métier, l’un de mes objectifs principal : rendre les développeuses et développeurs heureux.
+
+Je suis le co-créateur du Meetup TADx à Tours et met à jour un blog blog techno.'/>
+            <column name="twitter" value="OVHcloud" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/24.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Sylvain Combraque"/>
+            <column name="email" value="Sylvain.Combraque@volcamp.io"/>
+            <column name="company" value="Souin"/>
+            <column name="biography" value='Golang developer, creator of Souin and active contributor for Caddy, Træfik and API Platform'/>
+            <column name="twitter" value="Darkweak_dev" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/36.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Sébastien Oddo"/>
+            <column name="email" value="Sébastien.Oddo@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='French speaker from Bordeaux Technical Manager at IPPON Technologies Full-stack development engineer Specialized in front-end technologies and Angular Formula 1 fan!'/>
+            <column name="twitter" value="" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/56.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Thierry Chantier"/>
+            <column name="email" value="Thierry.Chantier@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Une passion née dans les lectures, le monde informatique et électronique m’a happé dès mon ZX Spectrum pour ne jamais me lâcher. Développeur de métier, du jeu vidéo au monde du master data management, j’ai aussi touché aux univers de la QA et de la mise en production.
+
+Comme une passion mérite toujours qu’on la transmette, j’ai fondé Mixteen pour essayer d’aider les enfants à appréhender le monde numérique. Cette envie de transmettre c’est aussi manifestée en m’amenant à prendre part à l’organisation de plusieurs MiXiT puis à cofonder le GDG Lyon. De manière parallèle, j’essaie de partager également par le biais d’articles sur mon blog et de vidéos sur ma chaîne YouTube.'/>
+            <column name="twitter" value="titimoby" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/27.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value=""/>
+            <column name="email" value=".@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value=''/>
+            <column name="twitter" value="" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Thomas Bellembois"/>
+            <column name="email" value="Thomas.Bellembois@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value=''/>
+            <column name="twitter" value="" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/15.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Thomas Rannou"/>
+            <column name="email" value="Thomas.Rannou@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Développeur puis architecte logiciel je m’intéresse aux technologies Microsoft et principalement à la plateforme cloud Azure. Je partage mes découvertes sur : thomasrannou.azurewebsites.net. MVP Azure 2021/2022'/>
+            <column name="twitter" value="thomas_rannou" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/42.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Yann Schepens"/>
+            <column name="email" value="Yann.Schepens@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Originellement développeur PHP, je suis devenu avec le temps expert technique, Architecte, Évangéliste, Coach technique (chef de projet si nécessaire) ; en résumé : Tech Lead.
+
+Mes domaines de prédilection ?
+
+La POO
+La qualité
+Le process DevOps
+Le coaching technique
+Le PHP'/>
+            <column name="twitter" value="YannSchepens" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/64.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="speakers">
+            <column name="name" value="Victor Gallet"/>
+            <column name="email" value="Victor.Gallet@volcamp.io"/>
+            <column name="company" value=""/>
+            <column name="biography" value='Consultant Java #Zenika ascendant craftman soupoudré d’ops'/>
+            <column name="twitter" value="GalletVictor" />
+            <column name="linkedin" value="vgallet" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/1.jpg" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+
+
+
+
+    </changeSet>
+</databaseChangeLog>
+
