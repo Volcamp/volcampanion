@@ -38,7 +38,7 @@
             <column name="name" value="Aurélie Vache"/>
             <column name="email" value="Aurélie.Vache@volcamp.io"/>
             <column name="company" value="OVHcloud"/>
-            <column name="biography" value='@GoogleDevExpert, 🐳@Docker Captain, CNCF Ambassador @duchessfr, @tlse_dasci & @rdvspeakers organizer Writer, sketchnoter & speaker Go lover'/>
+            <column name="biography" value='@GoogleDevExpert, 🐳@Docker Captain, CNCF Ambassador @duchessfr, @tlse_dasci &amp; @rdvspeakers organizer Writer, sketchnoter &amp; speaker Go lover'/>
             <column name="twitter" value="aurelievache" />
             <column name="linkedin" value="aurelievache" />
             <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/18.jpg" />
@@ -86,7 +86,7 @@ J’essaie de transmettre ce que j’ai appris avant d’être obsolète.'/>
 
 Depuis la découverte des arcanes du code et du web, je n’ai eu de cesse de multiplier les explorations multimédias et d’écumer les hackathons, startup weekends, Game Jam et autres week-ends créatifs.
 
-Diplômé de l’école d’ingénierie informatique ISIMA, je me suis spécialisé dans la conception d’applications atypiques (Web, Angular, Node.JS…). J’ai renforcé mes compétences théoriques par un parcours en thèse dans le domaine de la distribution du calcul (C++ && GPGPU).
+Diplômé de l’école d’ingénierie informatique ISIMA, je me suis spécialisé dans la conception d’applications atypiques (Web, Angular, Node.JS…). J’ai renforcé mes compétences théoriques par un parcours en thèse dans le domaine de la distribution du calcul (C++ &amp;&amp; GPGPU).
 
 Mon crédo ? Hybrider les technologies pour proposer des usages innovants, du calcul scientifique aux interfaces web ultra dynamiques, pour des expériences multimédias simples d’utilisations et au plus proche de vos besoins.
 
@@ -715,17 +715,6 @@ Je suis maintenant consultant depuis plusieurs années, et apporte aux entrepris
         </insert>
 
         <insert tableName="speakers">
-            <column name="name" value=""/>
-            <column name="email" value=".@volcamp.io"/>
-            <column name="company" value=""/>
-            <column name="biography" value=''/>
-            <column name="twitter" value="" />
-            <column name="linkedin" value="" />
-            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/.jpg" />
-            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
-        </insert>
-
-        <insert tableName="speakers">
             <column name="name" value="Samuel Morel"/>
             <column name="email" value="Samuel.Morel@volcamp.io"/>
             <column name="company" value="Sopra Steria"/>
@@ -738,7 +727,7 @@ En dehors du boulot, je fais pas mal de ski 🎿, du tennis 🎾, et beaucoup de
 Au plaisir de vous rencontrer 👋'/>
             <column name="twitter" value="samuelmorel" />
             <column name="linkedin" value="" />
-            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/.jpg" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/speakers/58.jpg" />
             <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
         </insert>
 

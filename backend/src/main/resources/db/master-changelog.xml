@@ -33,5 +33,8 @@
   <include file="010-volcamp-data-2022-day1.xml" labels="Volcamp 2022"
            author="camille.petitalot@volcamp.io"
            relativeToChangelogFile="true"/>
+  <include file="011-volcamp-data-speaker.xml" labels="Volcamp 2022"
+           author="rami.khedair@volcamp.io"
+           relativeToChangelogFile="true"/>
 </databaseChangeLog>
 
