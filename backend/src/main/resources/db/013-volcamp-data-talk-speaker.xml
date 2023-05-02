@@ -49,12 +49,11 @@
                     valueComputed="(SELECT id FROM talks WHERE title = 'Workshop Kafka Streams 101')"/>
         </insert>
 
-    <!--    <insert tableName="speakers_talk">
+        <insert tableName="speakers_talk">
             <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Mathis Hammel')"/>
             <column name="talk_id"
-                    valueComputed="(SELECT id FROM talks WHERE title = 'Comment j&apos;ai développé le détecteur de deepfakes le plus puissant du monde pour 100&#x20AC;')"/>
+                    valueComputed="(SELECT id FROM talks WHERE title = 'Comment j''ai développé le détecteur de deepfakes le plus puissant du monde pour 100&#x20AC;')"/>
         </insert>
--->
         <insert tableName="speakers_talk">
             <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Guillaume Serre')"/>
             <column name="talk_id"
@@ -79,11 +78,11 @@
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Anthony Roux')"/>
         </insert>
 
-     <!--   <insert tableName="speakers_talk">
+        <insert tableName="speakers_talk">
             <column name="talk_id"
-                    valueComputed="(SELECT id FROM talks WHERE title = 'Cargo ou comment étendre le tooling Rust à l'infini !')" />
+                    valueComputed="(SELECT id FROM talks WHERE title = 'Cargo ou comment étendre le tooling Rust à l''infini !')" />
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Anthony Pena')"/>
-        </insert>-->
+        </insert>
 
         <insert tableName="speakers_talk">
             <column name="talk_id"
@@ -97,12 +96,11 @@
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Johann Rakotoharisoa')"/>
         </insert>
 
-    <!--    <insert tableName="speakers_talk">
+        <insert tableName="speakers_talk">
             <column name="talk_id"
-                    valueComputed="(SELECT id FROM talks WHERE title = 'Le voyage du héros de l'IT')" />
+                    valueComputed="(SELECT id FROM talks WHERE title = 'Le voyage du héros de l''IT')" />
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Olivier Beautier')"/>
         </insert>
--->
         <insert tableName="speakers_talk">
             <column name="talk_id"
                     valueComputed="(SELECT id FROM talks WHERE title = 'Micro-frontends - investigations sur les usages, les contraintes et les solutions')" />
@@ -127,23 +125,22 @@
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Patrice De Saint Steban')"/>
         </insert>
 
-   <!--     <insert tableName="speakers_talk">
+        <insert tableName="speakers_talk">
             <column name="talk_id"
-                    valueComputed="(SELECT id FROM talks WHERE title = 'La grande démission - est-ce qu'on va tous changer de job en 2022 ?')" />
+                    valueComputed="(SELECT id FROM talks WHERE title = 'La grande démission - est-ce qu''on va tous changer de job en 2022 ?')" />
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Damien Cavaillès')"/>
         </insert>
--->
         <insert tableName="speakers_talk">
             <column name="talk_id"
                     valueComputed="(SELECT id FROM talks WHERE title = 'Developper des applications Kafka et Kafka Stream à la vitesse de la lumière avec Quarkus')" />
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Daniel Petisme')"/>
         </insert>
 
-     <!--   <insert tableName="speakers_talk">
+        <insert tableName="speakers_talk">
             <column name="talk_id"
-                    valueComputed="(SELECT id FROM talks WHERE title = 'Drogué à l'hexagone, Node JS ne m'a pas vraiment aidé à rester clean ... Mais NestJS pourrait-il me sauver ?')" />
+                    valueComputed="(SELECT id FROM talks WHERE title = 'Drogué à l''hexagone, Node JS ne m''a pas vraiment aidé à rester clean ... Mais NestJS pourrait-il me sauver ?')" />
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Nicolas Giraud')"/>
-        </insert>-->
+        </insert>
 
         <insert tableName="speakers_talk">
             <column name="talk_id"
@@ -183,7 +180,7 @@
 
         <insert tableName="speakers_talk">
             <column name="talk_id"
-                    valueComputed="(SELECT id FROM talks WHERE title = 'When &quot;The little three goldies&quot; play in the captain kubes zoo')" />
+                    valueComputed="(SELECT id FROM talks WHERE title = 'When &quot;The little three goldies&quot; play in the captain kube''s zoo')" />
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Jérôme Masson')"/>
         </insert>
 
@@ -193,23 +190,23 @@
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Julien Cognet')"/>
         </insert>
 
-<!--        <insert tableName="speakers_talk">
+        <insert tableName="speakers_talk">
             <column name="talk_id"
-                    valueComputed="(SELECT id FROM talks WHERE title = 'L'Apéro IoT')" />
+                    valueComputed="(SELECT id FROM talks WHERE title = 'L''Apéro IoT')" />
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Philippe Charrière')"/>
         </insert>
 
         <insert tableName="speakers_talk">
             <column name="talk_id"
-                    valueComputed="(SELECT id FROM talks WHERE title = 'L'Apéro IoT')" />
+                    valueComputed="(SELECT id FROM talks WHERE title = 'L''Apéro IoT')" />
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Thierry Chantier')"/>
         </insert>
 
         <insert tableName="speakers_talk">
             <column name="talk_id"
-                    valueComputed="(SELECT id FROM talks WHERE title = 'L'Apéro IoT')" />
+                    valueComputed="(SELECT id FROM talks WHERE title = 'L''Apéro IoT')" />
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Louis Tournayre')"/>
-        </insert>-->
+        </insert>
 
 
         <insert tableName="speakers_talk">
@@ -279,31 +276,29 @@
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Gauthier François')"/>
         </insert>
 
-<!--        <insert tableName="speakers_talk">-->
-<!--            <column name="talk_id"-->
-<!--                    valueComputed="(SELECT id FROM talks WHERE title = 'GitOps, Continuous Delivery et environnements - Comment éviter l'enfer ?!')" />-->
-<!--          <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Philippe Morisseau')"/>-->
-<!--        </insert>-->
-
-<!--
         <insert tableName="speakers_talk">
             <column name="talk_id"
-                    valueComputed="(SELECT id FROM talks WHERE title = 'Et si les meilleurs Dockerfile étaient ceux que l&apos;on n&apos;écrit pas')" />
+                    valueComputed="(SELECT id FROM talks WHERE title = 'GitOps, Continuous Delivery et environnements - Comment éviter l''enfer ?!')" />
+          <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Philippe Morisseau')"/>
+        </insert>
+
+        <insert tableName="speakers_talk">
+            <column name="talk_id"
+                    valueComputed="(SELECT id FROM talks WHERE title = 'Et si les meilleurs Dockerfile étaient ceux que l''on n''écrit pas')" />
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Fabien Martin')"/>
         </insert>
--->
 
-        <!--<insert tableName="speakers_talk">
+        <insert tableName="speakers_talk">
             <column name="talk_id"
-                    valueComputed="(SELECT id FROM talks WHERE title = 'How To Review Someone's Code While Not Being A Jerk!')" />
+                    valueComputed="(SELECT id FROM talks WHERE title = 'How To Review Someone''s Code While Not Being A Jerk!')" />
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Maha Alsayasneh')"/>
-        </insert>-->
+        </insert>
 
-<!--        <insert tableName="speakers_talk">-->
-<!--            <column name="talk_id"-->
-<!--                    valueComputed="(SELECT id FROM talks WHERE title = 'Candy-Doc ou comment j'ai automatisé la documentation métier de mes projets')" />-->
-<!--          <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Edouard Cattez')"/>-->
-<!--        </insert>-->
+        <insert tableName="speakers_talk">
+            <column name="talk_id"
+                    valueComputed="(SELECT id FROM talks WHERE title = 'Candy-Doc ou comment j''ai automatisé la documentation métier de mes projets')" />
+          <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Edouard Cattez')"/>
+        </insert>
 
         <insert tableName="speakers_talk">
             <column name="talk_id"
@@ -353,11 +348,11 @@
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Karim Pinchon')"/>
         </insert>
 
-<!--        <insert tableName="speakers_talk">-->
-<!--            <column name="talk_id"-->
-<!--                    valueComputed="(SELECT id FROM talks WHERE title = 'Et l'ANSSI dit &quot;Voici comment sécuriser un container&quot;')" />-->
-<!--          <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Yann Schepens')"/>-->
-<!--        </insert>-->
+        <insert tableName="speakers_talk">
+            <column name="talk_id"
+                    valueComputed="(SELECT id FROM talks WHERE title = 'Et l''ANSSI dit &quot;Voici comment sécuriser un container&quot;')" />
+          <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Yann Schepens')"/>
+        </insert>
 
         <insert tableName="speakers_talk">
             <column name="talk_id"
@@ -377,11 +372,11 @@
             <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Maha Alsayasneh')"/>
         </insert>
 
-    <!--    <insert tableName="speakers_talk">
+        <insert tableName="speakers_talk">
             <column name="talk_id"
-                    valueComputed="(SELECT id FROM talks WHERE title = 'GPS précis, ISOBUS, coupure de sections, drones, robots, analyses... la place de la tech dans l'agriculture d'aujourd'hui')" />
+                    valueComputed="(SELECT id FROM talks WHERE title = 'GPS précis, ISOBUS, coupure de sections, drones, robots, analyses... la place de la tech dans l''agriculture d''aujourd''hui')" />
           <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Mathieu Passenaud')"/>
-        </insert>-->
+        </insert>
 
         <insert tableName="speakers_talk">
             <column name="talk_id"

@@ -433,7 +433,7 @@ Vous découvrirez dans ce talk les différentes étapes d’un post-mortem réus
         </insert>
 
         <insert tableName="talks">
-            <column name="title" value='When "The little three goldies" play in the captain kubes zoo'/>
+            <column name="title" value="When &quot;The little three goldies&quot; play in the captain kube's zoo"/>
             <column name="description"
                     value="Au travers du conte, pour enfant (ou pas), je revisite les 3 petits cochon: nos 3 petits goldies devront affronter le loup LitmusChaos!!!
 
@@ -798,7 +798,7 @@ Durant ce live coding, nous allons vous démontrer un cas pratique de l’applic
         </insert>
 
         <insert tableName="talks">
-            <column name="title" value='Et l ANSSI dit "Voici comment sécuriser un container"'/>
+            <column name="title" value='Et l&apos;ANSSI dit "Voici comment sécuriser un container"'/>
             <column name="description"
                     value="De nos jours, une bonne partie de nos plateformes de développement et production fonctionnent avec Docker. Mais vous êtes déjà posé la question de la sécurisation de ce super outil ? Peut-être. En tout cas, l’ANSSI se l’ai posé et à publier un certain nombre de recommandations relatives à la configuration et l’usage de Docker. Je vous propose de faire un tour ensemble de ce guide et vous découvrirez qu’il reste probablement quelques failles dans vos infras."/>
             <column name="language" value="fr"/>

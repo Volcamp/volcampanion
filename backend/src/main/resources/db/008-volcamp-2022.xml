@@ -12,7 +12,7 @@
       <column name="is_active" value="true"/>
     </insert>
   </changeSet>
-  <!--<changeSet id="002" author="mickael.gervais@volcamp.io">
+  <changeSet id="002" author="mickael.gervais@volcamp.io">
     <comment>Rooms</comment>
     <insert tableName="rooms">
       <column name="name" value="AUDITORIUM"/>
@@ -39,7 +39,7 @@
       <column name="conference_id" valueSequenceCurrent="conferences_id_seq"/>
     </insert>
   </changeSet>
-  <changeSet id="003" author="mickael.gervais@volcamp.io">
+  <!--<changeSet id="003" author="mickael.gervais@volcamp.io">
     <comment>Speakers</comment>
     <insert tableName="speakers">
       <column name="name" value="Volcamp Team"/>
