@@ -6,6 +6,16 @@
     <changeSet author="rami.khedair@volcamp.io" id="3">
         <comment>Insert Speakers</comment>
         <insert tableName="speakers">
+            <column name="name" value="Volcamp team"/>
+            <column name="email" value="Volcamp.team@volcamp.io"/>
+            <column name="company" value="Volcamp"/>
+            <column name="biography" value=''/>
+            <column name="twitter" value="" />
+            <column name="linkedin" value="" />
+            <column name="photo_link" value="https://2022.volcamp.io/asset/images/logo_volcamp.png" />
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+        <insert tableName="speakers">
             <column name="name" value="Anthony Le Goas"/>
             <column name="email" value="Anthony.Goas@volcamp.io"/>
             <column name="company" value="Svelte Society France"/>
@@ -79,7 +89,7 @@ J’essaie de transmettre ce que j’ai appris avant d’être obsolète.'/>
         </insert>
 
         <insert tableName="speakers">
-            <column name="name" value="Cédric Charière"/>
+            <column name="name" value="Cédric Charière--Fiedler"/>
             <column name="email" value="Cédric.Charière@volcamp.io"/>
             <column name="company" value="siliceum "/>
             <column name="biography" value='Je suis entré dans l’univers de l’informatique par la porte du graphisme et de la création de jeux vidéo. À 14 ans, j’assemblais mes premiers pixels pour mes premiers jeux vidéo. Photoshop et Illustrator furent mes premiers outils numériques.

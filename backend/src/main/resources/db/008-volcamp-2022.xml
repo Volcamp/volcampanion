@@ -12,7 +12,7 @@
       <column name="is_active" value="true"/>
     </insert>
   </changeSet>
-  <changeSet id="002" author="mickael.gervais@volcamp.io">
+  <!--<changeSet id="002" author="mickael.gervais@volcamp.io">
     <comment>Rooms</comment>
     <insert tableName="rooms">
       <column name="name" value="AUDITORIUM"/>
@@ -101,6 +101,6 @@
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM')"/>
       <column name="schedule" value="2022-10-13 09:00"/>
     </insert>
-  </changeSet>
+  </changeSet>-->
 </databaseChangeLog>
 

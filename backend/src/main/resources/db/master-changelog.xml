@@ -27,16 +27,19 @@
   <include file="008-volcamp-2022.xml" labels="Volcamp 2022"
            author="mickael.gervais@volcamp.io"
            relativeToChangelogFile="true"/>
-  <include file="009-volcamp-data-break.xml" labels="Volcamp 2022"
+<!--  <include file="009-volcamp-data-break.xml" labels="Volcamp 2022"
            author="camille.petitalot@volcamp.io"
-           relativeToChangelogFile="true"/>
-  <include file="010-volcamp-data-2022-day1.xml" labels="Volcamp 2022"
+           relativeToChangelogFile="true"/>-->
+<!--  <include file="010-volcamp-data-2022-day1.xml" labels="Volcamp 2022"
            author="camille.petitalot@volcamp.io"
-           relativeToChangelogFile="true"/>
+           relativeToChangelogFile="true"/>-->
   <include file="011-volcamp-data-speaker.xml" labels="Volcamp 2022"
            author="rami.khedair@volcamp.io"
            relativeToChangelogFile="true"/>
   <include file="012-volcamp-data-talk.xml" labels="Volcamp 2022"
+           author="rami.khedair@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="013-volcamp-data-talk-speaker.xml" labels="Volcamp 2022"
            author="rami.khedair@volcamp.io"
            relativeToChangelogFile="true"/>
 </databaseChangeLog>

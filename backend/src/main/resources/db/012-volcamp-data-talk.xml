@@ -832,7 +832,7 @@ Venez découvrir comment mettre en place et utiliser Apache Pinot. Venez mettre 
         </insert>
 
         <insert tableName="talks">
-            <column name="title" value="Mutation Testing - Did my test break my code ?  🤔"/>
+            <column name="title" value="Mutation Testing - Did my test break my code ? 🤔"/>
             <column name="description"
                     value="Last week, you spend the last 2 days writing plenty of tests. Your code coverage was 100% so you thought you could safely leave on a weekend ✈️🏖️
 
