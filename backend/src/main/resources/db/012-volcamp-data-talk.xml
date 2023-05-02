@@ -1,0 +1,983 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="rami.khedair@volcamp.io" id="3">
+        <comment>Insert Talks</comment>
+        <insert tableName="talks">
+            <column name="title" value="L'intro Volcamp"/>
+            <column name="description"
+                    value="L’intro Volcamp 2022 par la team Geek&amp;Terrroir.
+Présentation de la conférence, du contenus, du programme et de nos sponsors."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_15M')"/>
+
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Keynote - (et si on apprenait à) Apprendre et partager autrement"/>
+            <column name="description"
+                    value=""/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_45M')"/>
+
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Keynote - Soyons Fashion - Parlons de souveraineté technologique"/>
+            <column name="description"
+                    value="Croyons-nous vraiment qu’avant 2024 nos algorithmes de recherche ou de reconnaissance d’images seront meilleurs que ceux de Google. Pensons-nous sérieusement que notre Cloud sera au niveau de celui d’AWS dans les prochains mois. Imaginons-nous vraiment que nous serons capables de rivaliser honnêtement avec les meilleurs mondiaux de la cyber-sécurité, de la crypto ou de la blockchain.
+
+Je propose dans cette Keynote d’être un peu sérieux et de réfléchir ensemble à ce concept d’indépendance ou de souveraineté et de décider ensemble des challenges accessibles et ambitieux."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_45M')"/>
+
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Si on aidait le capitaine Némo à classifier les monstres marins ?"/>
+            <column name="description"
+                    value="Intelligence Artificielle, Machine Learning, Deep Learning, … Ces termes on les entend tous les jours mais au final que représentent-ils et surtout comment développe-t-on des applications basées sur ces notions ?
+
+Durant ce talk nous vous ferons découvrir le monde de la data et comment il est, avec les bons outils, facile de se lancer dans l’aventure de l’analyse de données et de la classification.
+
+Ce talk permettra aux développeuses et développeurs de découvrir comment développer des applications apprenantes et montrera qu’il n’est pas nécessaire d’être un As du développement pour développer son propre algorithme de Machine Learning ou de Deep Learning. Nous vous montrerons comment créer votre premier Notebook avec JupyterLab afin de vous accompagner dans vos premiers pas. Ce sera l’occasion pour vous de plonger dans la découverte du monde sous-marin en développant un modèle permettant d’identifier et classifier les sons de mammifères marins.
+
+Pour finir, nous verrons ensemble, avec Streamlit, comment développer une application utilisant ce modèle."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Pause fraîcheur - Elixir au menu !"/>
+            <column name="description"
+                    value="Le langage C à 50 ans, Java a 27 ans, Elixir 11 ans.
+
+Les développeurs continuent d’inventer des outils de travail qui permettent de se concentrer sur l’essentiel.
+
+Pattern match, hot reload, repl, stream, agent-oriented async, embedded tests, etc.
+
+Vous n’avez pas tous ces concepts dans votre langage favori ? On vous montre pourquoi vous risquez de les croiser prochainement !"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Workshop Kafka Streams 101"/>
+            <column name="description"
+                    value="Apache Kafka est aujourd’hui l’une des plateformes de messaging les plus populaires pour gérer les flux de données en temps réel. Beaucoup d’entreprises l’utilisent comme pilier dans une architecture microservice évenementielle ou pour construire leur plateforme de streaming. Kafka Streams est la bibliothèque ultra-lègere permettant de manipuler, transformer, filter, enrichir,….les données au sein d’un cluster Apache Kafka et cela en s’abstrayant complétement du code de plomberie.
+
+Rien de mieux qu’une petite mise en situation pour comprendre les concepts derrière Kafka Streams. Imaginez, vous travaillez pour une grande institution bancaire, The Bank Corp! Le salaire et les jours de congés vous ont fait accepter ce poste mais c’était sans compter le travail. Au sein de cette dernière, votre équipe business souhaiterait mettre en place des traitements en temps réel des transactions que vos clients réalisent. Ils souhaitent être en capacité de détecter des transactions financières particulièrement élevées, des potentielles fraudes mais également de pouvoir connaître le solde des comptes et tout cela en temps réel!
+
+Durant ce workshop, vous allez mettre en place la libraire Kafka Streams afin de répondre aux besoins de l’équipe métier. Vous découvrirez les principaux concepts derrière Apache Kafka. Qu’est-ce qu’un topic, une partition, les offsets, la compaction, le co-partitioning ? Toutes ces notions que vous avez peut-être déjà entendu sans trop comprendre de quoi il en retourne. Vous découvrirez également les caractéristiques d’une application Kafka Streams comme les notions de KStream, KTable, la sémantique exactly-once, en quoi ces applications sont résilientes, scalables, etc…
+
+Ce workshop s’adresse aussi bien aux personnes ne connaissant pas le monde Kafka et aux personnes ayant déjà des notions souhaitant découvrir Kafka Streams.
+
+PRÉ-REQUIS :
+
+JDK 11+
+Maven
+Git
+Docker / Docker Compose
+Votre IDE préféré
+Cloner ce répertoire github : https://github.com/vgallet/workshop-kafka-streams
+Lancer un docker-compose up à la racine afin de télécharger les images docker
+Faire un mvn clean compile afin de récupérer les dépendances"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_2H')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Comment j'ai développé le détecteur de deepfakes le plus puissant du monde pour 100€"/>
+            <column name="description"
+                    value="Le site ThisPersonDoesNotExist.com est un générateur de faux visages ultra-réaliste basé sur les réseaux de neurones, fréquemment utilisé par les réseaux de bots pour créer de faux profils crédibles sur internet.
+
+À une époque où la désinformation et la manipulation de l’opinion passent par les réseaux sociaux, il est nécessaire de se doter d’outils pour repérer les fausses identités, notamment via leur photo de profil. Dans cette conférence, vous découvrirez une méthode permettant de détecter les images générées via ThisPersonDoesNotExist.com, avec une fiabilité de 100% et même un moyen de connaître l’heure exacte où la photo a été produite.
+
+Durant ce talk sans pré-requis, nous aborderons aussi les concepts de base du machine learning nécessaires au fonctionnement des réseaux GAN, et une technique pour générer soi-même des faux visages quasi indétectables."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value='Service Level "Observability" - in Service Quality we Trust !'/>
+            <column name="description"
+                    value="Dans cette talk, nous allons commencer par présenter un peu de théorie (25% du temps) sur les sujets d’Observabilité (et notamment en quoi c’est une évolution du monitoring) et introduirons les concepts clés de logs, metrics et traces.
+
+Nous présenterons les stacks typiques pour implémenter l’observabilité dans les architectures cloud natives, et présenterons de manière didactique l’écosystème open source Open Telemetry, et aiderons nos spectateurs à comprendre en quoi cette stack est vraiment disruptive, notamment parce qu’elle est en train de s’imposer comme un standard chez tous les éditeurs.
+
+Le reste de notre talk présentera des mises en application concrète de ces technos dans l’écosystème Michelin DDI, où nous montrerons comment dans ce contexte nous avons pu corréler logs, traces et métriques, dans l’objectif d’obtenir la meilleure vision de la qualité du service perçue par nos utilisateurs (business driven) et également de pouvoir communiquer en toute transparence et en temps réel cet état de santé."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Développeur à 50 ans"/>
+            <column name="description"
+                    value="Peut on avoir commencé à coder avant ce siècle et continuer à occuper un poste dans le dev après 50 ans ?
+
+Basé sur une histoire vraie, ce talk retrace mon parcours professionnel et ma manière de suivre l’évolution des métiers dans la tech et le développement lors de la dernière décennie"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Et si on essayait plutôt que de tout lancer par la fenêtre ?"/>
+            <column name="description"
+                    value="Depuis quelques années le langage Java a emprunté plusieurs concepts issus de la programmation fonctionnelle, les Streams en sont le parfait exemple. Plus récemment, ce sont des fonctionnalités telles que les Records, le pattern matching ou les Sealed classes qui ont été ajouté au langage et que les développeurs Scala connaissent bien.
+
+Mais qu’en est-il de la gestion des erreurs ? Le système de gestion d’exceptions disponible en Java s’accompagne de plusieurs désavantages et il pose de nombreuses difficultés dans l’implémentation de nos Streams. C’est là qu’intervient Vavr et son Try !
+
+L’objectif de ce Lightning sera de vous présenter le Try de Vavr comme alternative au système de gestion d’exceptions. A l’aide d’exemples concrets, nous verrons comment Vavr et son approche fonctionnelle peut nous aider à rédiger un code plus propre et plus pur tout en garantissant une gestion optimale des erreurs.
+
+Ce talk n’est pas une revue exhaustive de Vavr ni une tentative d’explication de ce qu’est une monade mais la présentation d’une approche différente pour gérer vos exceptions en Java !"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Cargo ou comment étendre le tooling Rust à l'infini !"/>
+            <column name="description"
+                    value="La plupart des langages modernes ont des outils pour gérer les projets, la compilation, le déploiement, etc. Rust ne fait pas exception à cette règle ! Mais à la différence de beaucoup d’autres, le gros de l’outillage standard est regroupé sur un seul outil : Cargo.
+
+Je me propose de vous montrer ce qui est disponible comme outil quand on fait du Rust, comment on peut très facilement étendre Cargo, y compris en Rust !"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Faites décoller vos applications Android avec Jetpack Compose"/>
+            <column name="description"
+                    value="Jusqu’à il n’y a pas si longtemps, construire une application native Android était un long chemin semé d’embûches avant d’arriver à quelque chose.
+
+Mais ça, c’était avant.
+
+Avec Jetpack Compose, boîte à outils écrite en Kotlin et sorti par Google en version stable en juillet 2021, on peut coder une application mobile Android en un temps record et de façon hyper intuitive.
+
+Pour le démontrer, nous allons utiliser Jetpack Compose et bâtir une application Android complète en partant d’un simple composant."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value=""/>
+            <column name="description"
+                    value=""/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value=""/>
+            <column name="description"
+                    value=""/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Introduction à Remix"/>
+            <column name="description"
+                    value="Remix est un nouveau framework full-stack JS qui suscite beaucoup d’enthousiasme.
+
+Est-ce juste un nouveau framework full-stack JS de plus ? L’enthousiasme qu’il suscite est-il justifié ? Qu’apporte-t-il de plus par rapport aux frameworks existants ?
+
+Découvrons au cours de ce talk ce que Remix nous promet: “développer de meilleurs sites web, en nous concentrant sur l’interface utilisateur et en revenant sur les principes fondamentaux. du Web pour offrir une expérience utilisateur rapide, fluide et résiliente”."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Le voyage du héros de l'IT"/>
+            <column name="description"
+                    value="Saviez-vous que vous étiez un expert en histoires ?
+
+Pour preuve, vous êtes capable de prédire la scène suivante dans un film ou une série, voir même de deviner de suite qui est l’assassin! C’est tout à fait normal, car depuis notre plus jeune âge, nous sommes bercé d’histoires, de contes, de légendes, nous en avons intégré inconsciemment les mécaniques.
+
+Dans ce talk original et interactif, nous allons utiliser le concept du Voyage du héros pour raconter une histoire, inspirée directement de vos expériences, et vous montrer que vous avez tout ce qu’il faut pour raconter de belles histoires à votre tour."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Micro-frontends - investigations sur les usages, les contraintes et les solutions"/>
+            <column name="description"
+                    value="Avez-vous déjà eu envie de mélanger de l’Angular avec un petit composant Vue et une grosse application React autonome ? Si vous êtes curieux de ce mélange de technologies hétéroclites, venez découvrir les incroyables solutions qui s’offrent à vous !
+
+Alors que les micro-services côté back sont bien établis aujourd’hui, les architectures micro-frontend représentent encore un vaste terrain d’investigation. Illustrée par les contraintes d’un projet aux ambitions d’extensions conséquentes, cette présentation vous fera découvrir les différentes possibilités qui s’offrent à vous pour intégrer différentes technologies et frameworks au sein d’une seule application Web !"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="La sécurité dès la conception du projet"/>
+            <column name="description"
+                    value="PENSER UNE DÉMARCHE PRÉVENTIVE DÈS LA PHASE DE CONCEPTION D’UN PROJET
+
+En 2020, le nombre de cyberattaques a explosé dans le monde. Selon un récent rapport de l’Agence nationale de la sécurité des systèmes d’information (ANSSI), les opérations de l’ANSSI en 2020 ont été multipliées par 4, par rapport à l’année précédente.
+
+La pandémie de Covid-19 a démultiplié les opportunités de déstabilisation (cyberattaques) dans plusieurs secteurs, dont celui de la santé: CHU de Rouen, Narbonne, Montpellier, Dax, Villefranche-sur-Saône, Oloron-Sainte-Marie, Saint-Gaudens… La liste des hôpitaux s’allonge.
+
+De plus, depuis l’entrée en vigueur du RGPD, la protection des données personnelles ainsi que la sécurité “by design” deviennent des sujets centraux dans nos projets.
+
+Je présenterai les techniques utilisées et j’aborderai aussi la prise de conscience du management sur ces aspects importants.
+
+En effet, même en étant dans le réseau interne d’un datacenter, nous ne sommes pas à l’abri d’une intrusion. Le risque 0 n’existe pas."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+        
+
+        <insert tableName="talks">
+            <column name="title" value="Devenir svelte avec Svelte"/>
+            <column name="description"
+                    value="Svelte a une approche différente des autres frameworks populaires comme Angular, React ou Vue. Il transforme votre code à la compilation pour générer un code javascript vanilla au lieu d’embarquer le framework au runtime.
+
+Cela offre plusieurs avantages
+
+Meilleures performances
+Taille finale réduite
+Syntaxe simplifiée
+Analyse du code à la compilation
+Durant ce Codelabs vous allez apprendre à aimer Svelte et vous découvrirez les différentes possibilités du compilateur en créant une application avec le framework SvelteKit."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_1h45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+        
+        <insert tableName="talks">
+            <column name="title" value="La grande démission - est-ce qu'on va tous changer de job en 2022 ?"/>
+            <column name="description"
+                    value="The Big Quit aux Etats-Unis a déjà eu lieu. En France, les salaires ont augmenté de 7% en 2021, et clairement les entreprises ne sont pas prêtes à faire 7% d’augmentation des salaires. Est-ce qu’elles sont prêtes pour recruter en 2022 ?
+
+Est-ce que votre entreprise a ce qu’il faut pour résister au Raz de marée ?
+
+Et si vous allez partir, qu’est-ce qui vous attend dehors ?
+
+En vrai, les réponses sont assez simples et je vais vous proposer notamment 5 indices ou indicateurs pour savoir si votre boîte a ce qu’il faut pour être stylée en 2022. Parce qu’être Great Place To Work c’est pas suffisant 😋"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Developper des applications Kafka et Kafka Stream à la vitesse de la lumière avec Quarkus"/>
+            <column name="description"
+                    value="Notre aventure commencera avec Quarkus.
+
+En créant un tout petit projet vous pourrez vivre la devise “Supersonic, Subatomic Java”. Nous ferons un détour un rapide détour sur l’expérience de développement que propose Quarkus. Ensuite, on prend la route direction Kafka pour voir comment réaliser un Producer/Consumer et une application Kafka Streams. Vous découvrirez comment être efficace dans le développement tout en prenant beaucoup de plaisir.
+
+On attache sa ceinture, on démarre l’IDE et on attache sa ceinture et on par pour 45m de pure live coding, pas de slides!"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Drogué à l'hexagone, Node JS ne m'a pas vraiment aidé à rester clean ... Mais NestJS pourrait-il me sauver ?"/>
+            <column name="description"
+                    value="On dit parfois que tous les écosystèmes se valent, et qu’a partir du moment où un développeur maîtrise les concepts, il n’aura pas de soucis à les mettre en oeuvre…
+
+Assez adepte du modèle hexagonale, de la clean architecture, et des concepts Domain Driven Design (DDD pour les intimes), Nicolas à pousser cette expériences pour proposer une API REST dans un contexte Javascript.
+
+Est-ce que c’est simple ? Est-ce que c’est fait pour ? Est-ce que c’est une bonne idée ?
+
+Spoiler normand: Peut-être que oui, peut être que non … Ça dépend !
+
+Venez découvrir les étapes de cette expérimentation, les points forts et les points faibles, ainsi que ce qui peut poser problème dans l’implémentation d’un modèle hexagonale dans l’écosystème NodeJS. Mais ne vous inquiétez pas, il existe quelques outils qui peuvent nous aider…."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Reactive Streams. 4 interfaces. Et après ?"/>
+            <column name="description"
+                    value="Reactive Streams est une spécification d’interfaces et d’un protocole pour le traitement de flux asynchrones non-bloquants.
+
+De nombreuses bibliothèques de l’écosystème Java s’appuient sur Reactive Streams: il est ainsi possible de connecter un acteur Akka programmé en Scala qui envoie un flux d’évènements à une application Quarkus qui utilise le modèle de programmation asynchrone de Mutiny en Java.
+
+Si Reactive Streams et son cousin Flow du JDK n’exposent que 4 interfaces en apparence très simples à implémenter, le diable se cache dans les détails du protocole Reactive Streams.
+
+Cette présentation vous expliquera les dessous de Reactive Streams basé sur notre expérience du projet Mutiny, comment écrire un composant Reactive Streams correct, l’intégration de l’asynchrone dans des frameworks comme Quarkus, les fausses bonnes idées liées à la performance ainsi que le futur de l’écosystème réactif Java."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Quarkus, Angular et GraphQL sont sur un bateau 🚢"/>
+            <column name="description"
+                    value="Dans le cadre de la création d’une nouvelle application web, nous avions besoin de mettre en place une architecture robuste, performante et flexible. Nous nous sommes tournés vers Quarkus, et Angular pour les frameworks et avons fait le parie de miser sur GraphQL, encore peu représenté dans les API Java.
+
+Après avoir mis en lumière les principales différences entre REST et GraphQL, nous verrons lors de ce retour d’expérience quels ont été les axes de décision, comment nous avons décidé d’implémenter notre solution ainsi que les difficultés rencontrées."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Service Mesh et Kubernetes - la fausse bonne idée ?"/>
+            <column name="description"
+                    value="Le Service Mesh nous offre de belles promesses, depuis la gestion des trafics lors des déploiements, en passant par la gestion des communications entre les micro services jusqu’à l’observabilité et la surveillance des services. Mais à quel prix ?
+
+Comment la mise en œuvre de ce type de solution impacte nos applications, nos déploiements, nos processus ? Est-ce finalement si opportun ?
+
+Nous allons ensemble prendre un exemple très concret d’une application µService hébergée sur Kubernetes et tenterons avec vous de répondre à ces différentes questions…"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value=""/>
+            <column name="description"
+                    value=""/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Testez vos data pipelines !"/>
+            <column name="description"
+                    value="Les tests unitaires et d’intégration font partie intégrante de la vie des backend ou frontend engineers. Le Test Driven Development (TDD)) commence même à devenir une habitude. Pourtant, chez les data engineers c’est une toute autre histoire : la pratique n’est pas automatique, peu répandue alors que nous développons bien du logiciel.
+
+Le logiciel évolue chaque jour et qui dit évolution, dit introduction de bug ! Notre vie de data engineer ne serait-elle pas plus simple si nous pouvions nous assurer très rapidement de la qualité de nos pipelines ?
+
+Que ce soit en python, en java, en scala, les outils existent pourtant pour tester le code de transformations de données. Alors, si vous voulez prendre soin de votre futur logiciel en rendant vos pipelines plus robustes, cet atelier est fait pour vous !
+
+Je vous propose de développer ensemble, des pipelines testées, facile à faire évoluer et de vous aider à vous orienter vers du TDD. Pour cela nous utiliserons :
+
+Python
+Poetry pour le build &amp; la gestion de dépendances
+Apache Airflow pour orchestrer nos pipelines
+unitest pour les test unitaires
+Docker &amp; testscontainer pour les tests d'intégration
+great_expectation pour les tests de qualité de la donnée
+Un repository git sera mis à disposition peu avant l’atelier, contenant notamment les dépendances nécessaires et un squelette de projet.
+
+A la fin de cet atelier, j’espère que chacun(e) soit convaincu(e) de l’intérêt des tests dans le développement de pipelines data et se sente suffisamment à l’aise pour intégrer cette pratique dans son quotidien."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_1h45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value=""/>
+            <column name="description"
+                    value=""/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Les post-mortems ou comment sortir heureux d’un carnage"/>
+            <column name="description"
+                    value="Une fonctionnalité, un projet, une réunion, ça ne se passe pas toujours bien. Loin de là. C’est parfois même un carnage. 😱 Que fait-on dans ces cas-là ? Ça s’est terminé dans les larmes, le sang et la sueur mais qu’importe ! On met tout ça sous le tapis, c’est fini, on en parle plus. 🙈
+
+Pour que cela recommence encore la prochaine fois ? Pour que tout le monde en souffre sans oser en parler ? Pas la peine !
+
+Alors on prend notre courage à deux mains, et on organise un POST-MORTEM. Mais qu’est-ce que c’est ? À quoi cela sert-il ? Et comment le mettre en place ? 🤔
+
+Vous découvrirez dans ce talk les différentes étapes d’un post-mortem réussi et comment l’animer au mieux pour que chacun et chacune puisse être heureux.se après un tel carnage, sans pour autant être psychopathe ! 😌"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value='When "The little three goldies" play in the captain kubes zoo'/>
+            <column name="description"
+                    value="Au travers du conte, pour enfant (ou pas), je revisite les 3 petits cochon: nos 3 petits goldies devront affronter le loup LitmusChaos!!!
+
+Et si votre déploiement Golang devenez votre pire cauchemar (digne d’un film d’horreur) ? Faisons le point sur les patterns et anti-patterns des déploiements d’applications dans Kubernetes on-premise ou cloud provider: bonnes pratiques vs réalité (exploitation / coût).
+
+Nous utiliserons LitmusChaos pour tester (détruire) notre application afin de démontrer les avantages et inconvénients des replicas / affinités / anti-affinités / multi-région / multi-cloud …."/>
+            <column name="language" value="en"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value='Alan Poe appliqué au data streaming - "Toutes choses sont bonnes ou mauvaises par comparaison"'/>
+            <column name="description"
+                    value="J’ai eu l’occasion de mettre en œuvre :
+
+4 solutions techniques différentes de data streaming (Apache Nifi, Apache Flink, Apache Spark Streaming et Apache Kafka Streams)
+3 solutions de stockage de forte volumétrie (Apache Cassandra, TimescaleDB et Oracle DB)
+sur 3 projets différents de télécollecte IoT et de traitements de données Big Data.
+Cela représente 8 ans de recul sur le traitement de données de forte volumétrie. Cette expérience s’est construite “grâce” à des dizaines de problèmes de performances, de cohérence des données, d’engorgement de nos systèmes distribués… J’ai donc de belles histoires techniques à vous raconter sur le pire et le meilleur de ces différentes solutions. Vous voulez savoir quelle est la meilleure et celle que je vous recommande ? Je suis sûr que vous connaissez la réponse courte “ça dépend”. Pour la réponse longue, il faudra venir me voir…"/>
+            <column name="language" value="en"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+
+        <insert tableName="talks">
+            <column name="title" value="L'Apéro IoT"/>
+            <column name="description"
+                    value="Après des mois sans nous voir, nous pouvons enfin nous retrouver entre amis pour partager un moment amusant et convivial. Et si en plus nous pouvons apprendre et comprendre des choses que nous avions du mal à aborder seuls, c’est un énorme bonus.
+
+C’est justement ce que nous vous proposons au travers de l’apéro IoT dont l’objectif sera de prendre du plaisir et d’avoir les clefs pour nous lancer dans notre premier projet IoT. Cet apéritif se veut interactif, participatif (il n’est pas impossible que nous invitions des gens à monter sur scène)… et aussi réaliste (aucun trucage)!
+
+Nos joyeux bricolos soiffards seront Philippe, Thierry, Louis, et vous ici public chéri. Nous serons réunis autour d’un verre, pour faire le point sur ce sujet complexe et controversé.
+
+Nous vous proposerons un tour matériel et SDK et langages pour que chacun puisse repartir en ayant des envies et des idées de projets à tester ou réaliser."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Mise en place d’un Design System en web components chez Groupama"/>
+            <column name="description"
+                    value=""/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value=""/>
+            <column name="description"
+                    value="Les design systems sont devenus incontournables pour créer des applications qui soient cohérentes entre elles et partagent une identité graphique commune. De plus en plus d’entreprises s’y intéressent car ils permettent de designer et développer de nouvelles applications très rapidement.
+
+Mais si nous, développeurs, savons bien utiliser ou créer des librairies de composants pour un projet, concevoir un design system à l’échelle d’une entreprise est une autre affaire : comment supporter plusieurs frameworks avec une seule base de code ? Comment créer des composants suffisamment génériques pour couvrir tous les besoins ? Comment s’organiser avec les différents projets consommateurs ?
+
+Autant de problématiques auxquelles nous avons dû répondre chez Groupama. Je vous propose un REX sur le design system que j’ai mis en place, utilisé aujourd’hui sur des dizaines de projets allant du vanilla JS à Angular en passant par les micro-frontends Vue 3. Je vous présenterai le contexte, la solution technique avec ses avantages et inconvénients, des alternatives possibles et enfin l’organisation avec les différents projets."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value=""/>
+            <column name="description"
+                    value=""/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Vous prendrez bien un peu de sucre dans votre java ?"/>
+            <column name="description"
+                    value="Le sucre syntaxique est le petit plaisir coupable du développeur. Il lui permet d’écrire un code plus agréable à écrire et maintenir et en moins de lignes de code. Où peut-on mettre du sucre dans son java ? De la programmation fonctionnelle aux nouveaux Records le sucre syntaxique permet de visiter les meilleurs fonctionnalités du java."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value=""/>
+            <column name="description"
+                    value=""/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Keynote day#2"/>
+            <column name="description"
+                    value=""/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_45M')"/>
+
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+
+        <insert tableName="talks">
+            <column name="title" value="Comment casser sa prod avec des logs ? (En toute efficacité)"/>
+            <column name="description"
+                    value="Après près de 10 ans de dev, de douleurs et de pleurs, nous aimerions partager avec vous quelques manières simples et efficaces pour planter vos prod avec des logs. Et si, l’ironie nous en prend, nous pourrions même aborder l’étape de réparation, ou comment rendre les mondes du runtime meilleurs (et peut-être même aussi vos moments de supports !)"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="JOOQ, joy of SQL"/>
+            <column name="description"
+                    value="Et si l’on reprenait le contrôle de nos interactions avec notre base de données préférée? Car en vrai, nos BDD sont des monstres de puissance qui sont souvent sous exploités 😓. Nous verrons, avec JOOQ comment écrire des requêtes SQL simples ou évolués, le tout facilement et de manière type-safe !
+
+Venez découvrir cette superbe librairie OpenSource, compatible Java, Kotlin &amp; Scala, qui va vous permettre de vous simplifier la vie et d’améliorer votre code… et même de découvrir de super fonctionnalités SQL que vous n’imaginiez même pas."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Déployer un cluster analytique avec Citus pour une API Data"/>
+            <column name="description"
+                    value="Leboncoin a lancé en 2021 son site (et son API) lebonobservatoire, véritable vitrine de nos données, analysant les habitudes de consommation des français sur nos principales verticales : automobiles, immbolier, vacances, emploi et bien de consommation.
+
+Nous vous proposons de vous refaire notre épopée technique, particulièrement sur la mise en place de notre base de données. Comment l’avons-nous choisie, mise en place et configurée, ainsi que les choix de notre modèle de données et de distribution. Des réussites aux échecs : vous saurez tout !
+
+Le challenge était effectivement présent, avec un datalake de plusieurs centaines de To et un temps de réponse attendu… de moins d’une seconde sur notre API !"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Vaadin - Quand le back vient au secours du front"/>
+            <column name="description"
+                    value="Je propose dans cet atelier de découvrir le framework Vaadin dans sa version “Core”, c’est à dire accessible à tous.
+
+La version 23 vient de sortir, il est temps de découvrir sa mise en œuvre.
+
+Il s’agira de coder une simple application basée sur Spring Boot pour découvrir les possibilités offertes par cet outil.
+
+Explication des bonnes pratiques, astuces et pièges à éviter, tout le nécessaire pour créer une appli quand on n’est pas spécialement à l’aise avec les solutions front proposées actuellement.
+
+Les sources sont disponibles à cette adresse : https://gitlab.com/bdauvissat/volcamp
+
+Les prérequis sont :
+
+Un IDE Java
+Maven
+JDK 17
+Navigateur web moderne ;)"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_2H')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Créer un jeu vidéo en solo - une quête en mode difficile"/>
+            <column name="description"
+                    value="Je suis développeur Clermontois, actuellement Ingénieur en IT. Avant de travailler pour une ESN locale, pendant un an et demi, je me suis lancé dans la création de jeu vidéo indé, à plein temps.
+
+Des premiers brouillons jusqu’à sa publication, je vous raconte cet épisode de vie. Une aventure qui m’a appris beaucoup sur le plan personnel et professionnel.
+
+Si vous êtes curieux de connaître les coulisses de la création d’un jeu, ou de découvrir ce que ça peut apporter à un développeur logiciel, ce talk est pour vous !"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Comment nous avons géré le syndrome de fatigue des alarmes en réduisant le bruit généré par nos alertes."/>
+            <column name="description"
+                    value="Chez Doctolib, nous avons été confronté au syndrome de l’alarme fatigue avec tous les risques que cela implique.
+
+Nous avons mis au point, après quelques itérations, une méthode pour réduire le bruit et avons ainsi repris le contrôle sur nos alertes de production.
+
+Cette méthode basée sur des métriques est souple et s’adapte facilement au contexte dans lequel on se situe.
+
+N’ayez plus peur de vos alertes, ne les subissez plus et reprenez le contrôle."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value=""/>
+            <column name="description"
+                    value=""/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="GitOps, Continuous Delivery et environnements - Comment éviter l'enfer ?!"/>
+            <column name="description"
+                    value="Lorsque l’on met en place le continuous delivery sur les projets d’application, inévitablement se pose la question de la gestion des environnements sur lesquels nous devons déployer notre application. Pour les petites applications, le nombre d’environnements va être limité, mais lorsque l’on souhaite mettre en place du Blue-Green Deployment ou du Canary Release, ce nombre va subitement grimper.
+
+A cela on rajoute : une architecture distribuée, le paramétrage de l’infrastructure et des composants pour chaque environnement, et l’on arrive rapidement à devoir gérer des centaines de paramètres sur des dizaines d’environnements.
+
+Mais, que se passe-t-il si je dois faire un rollback de l’ensemble ou d’une partie de mon application sur un environnement ? Est-ce que je peux le faire rapidement et sans planter l’environnement ? Est-ce que les exploitants sont capables d’intervenir efficacement sur l’application en production à 3h00 du matin ?
+
+Je vous propose durant ce talk de comprendre comment on arrive rapidement sur ces problématiques. Puis, je vous présenterai un ensemble de bonnes pratiques et d’astuces pour éviter l’enfer !"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Et si les meilleurs Dockerfile étaient ceux que l'on n'écrit pas"/>
+            <column name="description"
+                    value="Une manière assez commune de construire une image aujourd’hui consiste à écrire un Dockerfile. L’écriture d’un bon Dockerfile n’est pas simple, il faut sélectionner une image de base, mettre en place un ensemble de bonnes pratiques autour de la sécurité, de la maintenabilité, de la performance etc. Mais ce n’est pas tout, il va aussi falloir le maintenir dans le temps !
+
+La CNCF propose une spécification, les Cloud Native Buildpacks, qui vise à transformer notre code source en une image pouvant tourner sur n’importe quel cloud. Je vous propose durant ce talk une rapide présentation des Cloud Native Buildpacks, suivi d’une mise en oeuvre pratique avec la création et la mise à jour d’une image… sans Dockerfile !"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="How To Review Someone's Code While Not Being A Jerk!"/>
+            <column name="description"
+                    value="Most of us do code reviews very often if not daily. However, how can we tell whether we are good reviewers or not? Do we review a code as robots? Do we keep in mind that we are reviewing the code of someone who invested time and knowledge to write this code, and thus deserves to get respectful feedback?
+
+In this talk, we present the code review best practices and we answer the following questions: What to look for in a code review? How can we write useful reviews?
+
+Furthermore, we explain the key tips for writing respectful and constructive code review feedback. To discover more about all these points and more, come and see our talk."/>
+            <column name="language" value="en"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Candy-Doc ou comment j'ai automatisé la documentation métier de mes projets"/>
+            <column name="description"
+                    value="Au sein d’une mission pour une enseigne de la grande distribution, nous avons été amenés à refondre des configurateurs sur mesure (volet roulant, porte d’entrée, etc…).
+
+Repartant de zéro c’était l’occasion de mettre en place quelques méthodologies de travail (TDD, BDD, DDD) et de pousser la réflexion non pas sur les aspects techniques du développement mais sur la technicité d’un volet roulant.
+
+Grâce au Gherkin, nous sommes capables de spécifier les comportements attendus du logiciel et de les fournir sous la forme d’une documentation fonctionnelle. Pour autant, rien ne prouve que l’architecture applicative représente le métier qu’il est censé adresser.
+
+En s’appuyant sur le DDD, nous avons donc créé Candy-Doc, un projet open-source, pour extraire de notre base de code, les concepts métiers de notre logiciel pour en faire une documentation fonctionnelle à part entière.
+
+Comment fonctionne Candy-Doc ? Où en sommes-nous aujourd’hui ? Comment contribuer ? Toutes les réponses dans ce talk !"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="« Je ne suis pas sysadmin mais je veux faire de la CI/CD »"/>
+            <column name="description"
+                    value="Code#0 (pronounced Code First) is a free and open-source infrastructure to allow conception, development, tests and deployment cross-platforms (Linux, MacOSX, Windows, Android, iOS), cross-languages (C++, Java, C#, PHP, Javascript, Ruby, RUST, Go, Python, Dart…) and mutli-targets (stores, web, desktop, mobile, plugin, container, REST API…), based on opensource tools (gitea, drone, sonarqube, docker, traefik, swagger…). It focuses on universities and small companies. Its main goals, for universities, are:
+
+to guide sys/admin teams through the setup and the configuration of this infrastructure,
+to provide a pedagogical infrastructure to teachers and professors to help them manage practical projects with tutorials and guides
+to bring students the possibility to use professional tools, good practices in development, project management and team work.
+But as mentioned earlier, it will also benefit small (or even medium) companies with a usable infrastructure for their professional projects."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value=""/>
+            <column name="description"
+                    value=""/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="La verticalisation du Bon Coin"/>
+            <column name="description"
+                    value="En 2019 Leboncoin s’est donné pour objectif de passer d’une position de généraliste à celle d’un multi-spécialiste. Il devenait par là nécessaire d’offrir une expérience utilisateur spécifique à chaque marché .
+
+Or pour les équipes Product &amp; Tech la collaboration autours de ces sujets générait de plus en plus d’impédance. Le pivot n’était donc pas trivial et nécessita des modifications parallèles de l’architecture logicielle et de l’organisation.
+
+Dans ce REX, nous reviendrons sur le chemin parcouru (et le reste à faire) !
+
+On parlera notamment architecture socio-technique, modes de collaboration, plateformes et DevX"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Velero - Sauvegardez et Restaurez (proprement) vos applications kubernetes"/>
+            <column name="description"
+                    value="Déployer une application kubernetes, c’est facile. Déployer une application kubernetes, et s’assurer de pouvoir la restaurer en cas de problèmes, c’est déjà moins évident.
+
+Application stateless, stateful, type de données à sauvegarder, comment et où restaurer ? Des questions à se poser avant qu’il ne soit trop tard.
+
+Il existe des solutions répondant à ce besoin, notamment une des plus connues dans un environnement Kubernetes : Velero.
+
+Au delà d’un simple “hello world” de backup &amp; restore, je vous propose d’aller un peu plus loin pour gérer vos applis: gestion des volumes, hooks, migration de données sur différents types de clusters, filtres sur la restauration, limites de l’outil.
+
+Après une série d’exemples mis en pratique, je ferai un retour sur l’utilisation que j’en ai sur des clusters en production, avec quelques anectodes sur des actions qui se sont plus ou mons bien passées."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="React Native - React pour développer des applications natives Android et iOS"/>
+            <column name="description"
+                    value="React s’est imposé depuis plusieurs années comme une référence dans le développement d’applications web dynamiques. Après le web, le projet Open-Source s’est étendu en 2015 au mobile avec React Native et avec pour objectif de simplifier le développement d’applications mobiles natives Android et iOS et de permettre aux développeurs d’avoir un unique projet fonctionnel sur les deux plateformes.
+
+Au BearStudio, nos clients ont souvent pour besoin de lancer une première version de leur produit sur le marché avec de fortes contraintes de temps et de budget. Dans ce contexte, React Native a rapidement trouvé sa place dans nos solutions technologiques pour répondre à ces besoins. Cela fait maintenant plus de 2 ans que nous utilisons React Native et nous avons ainsi pu développer plusieurs applications mobiles avec celle-ci."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Docker &amp; Docker Compose par la pratique"/>
+            <column name="description"
+                    value="L’objectif de ce live coding est d’utiliser la puissance de docker pour conteneuriser notre application et accélérer son déploiement. On verra aussi pourquoi et comment on aura besoin de Docker Compose pour faciliter la gestion des cycles de vie de nos conteneurs afin de fluidifier et faciliter leur gestion.
+
+Durant ce live coding, nous allons vous démontrer un cas pratique de l’application Wordsmith présentée lors de la conférence DockerCon18."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_1h45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="PHP en 2022"/>
+            <column name="description"
+                    value="PHP est un langage qui propulse une grande partie du web mondial depuis une vingtaine d’années et qui aujourd’hui est encore est très présent. Il est même le principal langage de beaucoup d’entreprises de la French Tech qui lèvent des millions ! Nous allons nous intéresser à sa dualité : un langage capable de créer facilement une page web dynamique par un débutant mais aussi parfaitement viable pour construire une application complexe avec des enjeux de performances, de scalabilités, de fiabilités importants. Je vous propose un tour d’horizon du langage, de son évolution (peut-être qu’on évoquera pourquoi il a parfois mauvaise réputation), de ses principaux frameworks et plus généralement son écosystème."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value='Et l ANSSI dit "Voici comment sécuriser un container"'/>
+            <column name="description"
+                    value="De nos jours, une bonne partie de nos plateformes de développement et production fonctionnent avec Docker. Mais vous êtes déjà posé la question de la sécurisation de ce super outil ? Peut-être. En tout cas, l’ANSSI se l’ai posé et à publier un certain nombre de recommandations relatives à la configuration et l’usage de Docker. Je vous propose de faire un tour ensemble de ce guide et vous découvrirez qu’il reste probablement quelques failles dans vos infras."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Analytique temp réel pour vos utilisateurs avec Apache Pinot"/>
+            <column name="description"
+                    value="De l’analytique temps réel pour vos utilisateurs, à la demande, sur des données tout juste intégrées dans le système, à l’échelle . Vous pouvez en voir des exemples lorsque vous regardez votre flux d’activité sur Linkedin ou que vous regardez un dashboard de livraison de votre plat favori.
+
+Pour mettre à disposition de vos utilisateurs ce genre d’analyses temps réels, de nouveaux outils spécialisés émergent comme Apache Pinot. Cette base de données utilisée par des acteurs comme Linkedin, Stripe et Uber sur des datasets de centaines de TB pourrait bien être la solution que vous attendiez.
+
+Venez découvrir comment mettre en place et utiliser Apache Pinot. Venez mettre de la donnée dans votre vin."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value=""/>
+            <column name="description"
+                    value=""/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Mutation Testing - Did my test break my code ?  🤔"/>
+            <column name="description"
+                    value="Last week, you spend the last 2 days writing plenty of tests. Your code coverage was 100% so you thought you could safely leave on a weekend ✈️🏖️
+
+But on Monday, your inbox is flooded with new bug reports. What happened!? What did you miss?
+
+In this talk, we present Mutation testing which is a technique to evaluate the quality of tests beyond the number of lines tested. Mutation testing is based on creating a changed copy of the code to ensure a software test suite is able to detect the changes.
+
+How do we create Mutation tests? How does it work? What are the advantages and drawbacks of Mutation tests? All these questions will be answered with a demo in this talk.
+
+Come and discover what Mutation testing is and how can we implement it to ensure the quality of our test suites."/>
+            <column name="language" value="en"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="GPS précis, ISOBUS, coupure de sections, drones, robots, analyses... la place de la tech dans l'agriculture d'aujourd'hui"/>
+            <column name="description"
+                    value="Sortons de nos open spaces et autres laboratoires, enfilons une paire de bottes et allons directement dans les champs à la rencontre d’agriculteurs particulièrement connectés et technophiles. Quelles technologies pour une agriculture de précision, plus respectueuse de l’environnement ? Un éleveur, un maraîcher et un céréalier nous présenteront les technologies qu’ils utilisent au quotidien :
+
+robots de traite
+tracteurs qui conduisent seuls
+implantation avec une précision au centimètre
+interactions entre les machines
+Une fois que nous aurons vu leurs usages avec eux, rentrons dans les détails techniques du fonctionnement de ces appareils et de leurs logiciels."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value=""/>
+            <column name="description"
+                    value=""/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="De Vanilla à Tanzu - REX sur une migration Kubernetes"/>
+            <column name="description"
+                    value="Pour atteindre ses objectifs autour de Kubernetes, Michelin à adapté sa stratégie, abandonnant une solution FoSS maintenu en interne au profit d’une distribution commerciale. Découvrez comment Michelin a opéré ce changement en maintenant la disponibilité de ses applications grâce aux pratiques Cloud Native.
+
+On évoquera notre experience sous plusieurs angles, entre autres:
+
+shift dans les pratiques et les skillsets
+changements technologiques (cluster-api…)
+stratégie de migration
+resultats de migration"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Workshop Playwright, le framework end-to-end by Microsoft"/>
+            <column name="description"
+                    value="Vous avez toujours voulu tester rapidement vos features end-to-end ? avec une API très orientée DX ? Disponible sur tous les navigateurs ? Et qui supporte Typescript ?
+
+Alors playwright est fait pour vous et c’est ce que je vous propose de découvrir grace à ce workshop."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_1h45M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="How I made a powerful cache system using Go"/>
+            <column name="description"
+                    value="I discovered Go language but didn’t have any time to follow multiples tutorials to learn it. But one day I discovered Træfik reverse-proxy project when I wanted to switch my infrastructure into fully dockerized one. I’m Træfik user since v1.4 but after many months using it I encountered an issue : there were no caching system in this reverse-proxy. I scrolled over the internet to know if any solution exists but nothing appears.
+
+Then I decided to write my own Træfik cache system, but the main question was “Which language?”
+
+PHP ? Nah.
+Nodejs ? What a joke !
+C++ ? I didn’t learn this language at school and it’s really insane to learn.
+Then I was on Træfik github repository when I decided to write it in Go. Another good point: that’s compatible with docker integration.
+
+So I started the project and called it Souin Let’s see together how I bring it up from code to deployment."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Du code SOLID comme un rock, c’est vraiment utile ?"/>
+            <column name="description"
+                    value="En informatique, plus précisément en programmation orientée objet, on entend souvent parler de programmation SOLID.
+
+SOLID c’est un acronyme de 5 principes qui sont censés nous permettre d’avoir une architecture logicielle plus compréhensible et maintenable. C’est ce bon vieux Martin dans l’article Design Principles and Design Patterns de 2000 qui évoque ces principes. (Ca fait donc déjà 20 ans qu’on en parle…)
+
+Mais dans la vraie vue, est-ce que ce n’est pas surtout beaucoup de boulot pour pas grand-chose ? Dans quelles situations SOLID est vraiment intéressant ? Est-ce que cela sert vraiment ?
+
+Après avoir revu les bases du principe de SOLID, nous verrons ensemble, pour chacun des principes, un cas très imagé de l’avantage qu’il procure, et dans quelle situation ce principe s’avère utile."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="SwiftUI vs Jetpack Compose par un Ingénieur Android"/>
+            <column name="description"
+                    value="En tant que ingénieur Android, Jetpack Compose est une révolution. La confection des interfaces, la maintenance du code et la compatibilité avec les plus vieilles versions d’Android sont seulement quelques points qui font de cette librairie l’une des plus incontournables de la suite Jetpack. Mais du côté de la pomme, SwiftUI s’est aussi imposé comme une alternative incontournable dans le développement d’interface pour les appareils Apple.
+
+Je vous propose de monter sur le ring et de mettre face à face SwiftUI à ma droite et Jetpack Compose à ma gauche. Nous allons comparer leur design, leur usage, leurs différences et leurs perspectives pour avoir un vainqueur et voir qui remporte ce match.
+
+Prenez pop-corn et mauvaise foi, il va y avoir du sang !"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value=""/>
+            <column name="description"
+                    value=""/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+        <insert tableName="talks">
+            <column name="title" value="Le mot de la fin"/>
+            <column name="description"
+                    value=""/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_45M')"/>
+
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2022')"/>
+        </insert>
+
+
+
+
+
+
+    </changeSet>
+</databaseChangeLog>
+

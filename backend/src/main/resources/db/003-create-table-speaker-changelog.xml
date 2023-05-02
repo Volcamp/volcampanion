@@ -9,7 +9,7 @@
                 <constraints primaryKey="true" primaryKeyName="pk_speaker_id"/>
             </column>
             <column name="company" type="VARCHAR(255)"/>
-            <column name="biography" type="VARCHAR(10000)"/>
+            <column name="biography" type="VARCHAR()"/>
             <column name="email" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>

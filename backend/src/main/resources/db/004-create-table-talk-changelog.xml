@@ -11,7 +11,7 @@
             <column name="title" type="VARCHAR(255)"/>
             <column name="language" type="VARCHAR(255)"/>
             <column name="level" type="VARCHAR(255)"/>
-            <column name="description" type="VARCHAR(2047)"/>
+            <column name="description" type="VARCHAR"/>
             <column name="format_id" type="bigint"/>
             <column name="theme_id" type="bigint"/>
             <column name="conference_id" type="bigint"/>
