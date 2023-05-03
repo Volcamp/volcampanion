@@ -8,9 +8,8 @@
 
     <mat-card-actions>
       <mat-card-actions>
-        <a (click)="$event.stopPropagation()" href="{{speaker.linkedin}}" color="linkdin" mat-flat-button class="f7 socialMedia"><mat-icon svgIcon="linkdin" aria-hidden="false" aria-label="linkdin link" /> Linkdin </a>
-        <a (click)="$event.stopPropagation()" href="{{speaker.twitter}}"  color="twitter"  mat-flat-button class="f7 socialMedia"> <mat-icon svgIcon="twitter" aria-hidden="false" aria-label="twitter link" /> Twitter</a>
-
+        <a href="{{speaker.linkedin}}" color="linkedin" mat-flat-button class="f7 socialMedia"><mat-icon svgIcon="linkedin" aria-hidden="false" aria-label="linkedin link" /> {{linkedin}} </a>
+        <a href="{{speaker.twitter}}"  color="twitter"  mat-flat-button class="f7 socialMedia"> <mat-icon svgIcon="twitter" aria-hidden="false" aria-label="twitter link" /> {{twitter}}</a>
       </mat-card-actions>
 
     </mat-card-actions>

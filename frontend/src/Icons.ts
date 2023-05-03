@@ -34,6 +34,6 @@ export function addIcons(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer)
   iconRegistry.addSvgIconLiteral('favorite_checked', sanitizer.bypassSecurityTrustHtml(FAVORITE_CHECKED));
   iconRegistry.addSvgIconLiteral('favorite_unchecked', sanitizer.bypassSecurityTrustHtml(FAVORITE_UNCHECKED));
   iconRegistry.addSvgIconLiteral('twitter', sanitizer.bypassSecurityTrustHtml(TWITTER));
-  iconRegistry.addSvgIconLiteral('linkdin', sanitizer.bypassSecurityTrustHtml(LINKEDIN));
+  iconRegistry.addSvgIconLiteral('linkedin', sanitizer.bypassSecurityTrustHtml(LINKEDIN));
 
 }
