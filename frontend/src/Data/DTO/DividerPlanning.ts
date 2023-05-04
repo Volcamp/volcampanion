@@ -1,6 +1,6 @@
 import {Planning, PlanningType} from "./Planning";
 
-export class DividerPlan implements Planning {
+export class DividerPlanning implements Planning {
   schedule: Date;
 
   constructor(schedule: Date) {

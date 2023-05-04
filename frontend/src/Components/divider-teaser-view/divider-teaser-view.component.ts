@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {DividerPlan} from "../../Data/DTO/DividerPlan";
+import {DividerPlanning} from "../../Data/DTO/DividerPlanning";
 
 @Component({
   selector: 'app-divider-teaser-view',
@@ -7,12 +7,10 @@ import {DividerPlan} from "../../Data/DTO/DividerPlan";
   styleUrls: ['./divider-teaser-view.component.sass']
 })
 export class DividerTeaserViewComponent {
-  @Input() datePlan!: DividerPlan;
-
+  @Input() dividerPlanning!: DividerPlanning;
   startDate = new Date();
 
   ngOnInit(): void {
-    this.startDate = new Date(this.datePlan.schedule)
+    this.startDate = new Date(this.dividerPlanning.schedule)
   }
-
 }

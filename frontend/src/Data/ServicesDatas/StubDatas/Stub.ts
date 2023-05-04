@@ -1,15 +1,15 @@
 import {Planning, PlanningType} from "../../DTO/Planning";
 import {Speaker} from "../../DTO/Speaker";
-import {TalkPlan} from "../../DTO/TalkPlan";
-import {BreakPlan} from "../../DTO/BreakPlan";
-import {DividerPlan} from "../../DTO/DividerPlan";
+import {DividerPlanning} from "../../DTO/DividerPlanning";
+import {TalkPlanning} from "../../DTO/TalkPlanning";
+import {BreakPlanning} from "../../DTO/BreakPlanning";
 
 export const TALK_DATA: Planning[] = [
-  new DividerPlan(new Date("2022-03-03T00:00:00")),
-  new DividerPlan(new Date("2022-10-10T00:00:00")),
-  new DividerPlan(new Date("2022-10-11T00:00:00")),
+  new DividerPlanning(new Date("2022-03-03T00:00:00")),
+  new DividerPlanning(new Date("2022-10-10T00:00:00")),
+  new DividerPlanning(new Date("2022-10-11T00:00:00")),
 
-  new TalkPlan(
+  new TalkPlanning(
     {
       name: "Room A",
       description: "A large room with a projector and whiteboard",
@@ -53,6 +53,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -61,7 +62,7 @@ export const TALK_DATA: Planning[] = [
       ]
     },
     new Date('2022-03-03T12:15:00')),
-  new TalkPlan(
+  new TalkPlanning(
     {
       name: "Room B",
       description: "A large room with a projector and whiteboard",
@@ -105,6 +106,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -117,6 +119,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -126,7 +129,7 @@ export const TALK_DATA: Planning[] = [
     },
     new Date('2022-03-03T13:15:00')),
 
-  new TalkPlan(
+  new TalkPlanning(
     {
       name: "Room C",
       description: "A large room with a projector and whiteboard",
@@ -170,6 +173,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -182,6 +186,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -194,6 +199,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -202,7 +208,7 @@ export const TALK_DATA: Planning[] = [
       ]
     },
     new Date('2022-10-10T09:40:00')),
-  new TalkPlan(
+  new TalkPlanning(
     {
       name: "Room C",
       description: "A large room with a projector and whiteboard",
@@ -246,6 +252,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -258,6 +265,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -270,6 +278,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -280,7 +289,7 @@ export const TALK_DATA: Planning[] = [
     new Date('2022-10-10T22:40:00')
   ),
 
-  new TalkPlan(
+  new TalkPlanning(
     {
       name: "Room C",
       description: "A large room with a projector and whiteboard",
@@ -324,6 +333,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -336,6 +346,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -348,6 +359,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -360,6 +372,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -372,6 +385,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -384,6 +398,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -396,6 +411,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -408,6 +424,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -420,6 +437,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -432,6 +450,7 @@ export const TALK_DATA: Planning[] = [
           linkedin: "https://www.linkedin.com/in/johndoe",
           biography: "John is a software engineer with 10 years of experience",
           photo: "https://picsum.photos/1000/1000",
+          company:"agaetis",
           conference: {
             id: 1
           },
@@ -442,7 +461,7 @@ export const TALK_DATA: Planning[] = [
     new Date('2022-10-11T22:40:00')
   ),
 
-  new BreakPlan(
+  new BreakPlanning(
     {
       id: 6,
       title: "Accueil et Croissants",
@@ -464,7 +483,7 @@ export const TALK_DATA: Planning[] = [
     },
     new Date("2023-10-10T12:15:50"))
   ,
-  new BreakPlan(
+  new BreakPlanning(
     {
       id: 7,
       title: "Accueil et Croissants",
@@ -498,6 +517,7 @@ export const SPEAKER_DATA: Speaker[] = [
     linkedin: 'linkedin.com/in/johnsmith',
     biography: 'John Smith is a software engineer with over 10 years of experience...',
     photo: 'https://picsum.photos/1000/1000',
+    company:"agaetis",
     conference: {
       id: 1,
       name: 'Tech Conference 2023',
@@ -513,6 +533,7 @@ export const SPEAKER_DATA: Speaker[] = [
     linkedin: 'linkedin.com/in/janedoe',
     biography: 'Jane Doe is a UX designer with a passion for creating intuitive user interfaces...',
     photo: 'https://picsum.photos/1000/1000',
+    company:"agaetis",
     conference: {
       id: 1,
       name: 'Tech Conference 2023',
@@ -528,6 +549,7 @@ export const SPEAKER_DATA: Speaker[] = [
     linkedin: 'linkedin.com/in/bobjohnson',
     biography: 'Bob Johnson is a data scientist with expertise in machine learning and data analysis...',
     photo: 'https://picsum.photos/1000/1000',
+    company:"agaetis",
     conference: {
       id: 1,
       name: 'Tech Conference 2023',
@@ -543,6 +565,7 @@ export const SPEAKER_DATA: Speaker[] = [
     linkedin: 'linkedin.com/in/sarahlee',
     biography: 'Sarah Lee is a software engineer and open-source enthusiast...',
     photo: 'https://picsum.photos/1000/1000',
+    company:"agaetis",
     conference: {
       id: 1,
       name: 'Tech Conference 2023',
@@ -558,6 +581,7 @@ export const SPEAKER_DATA: Speaker[] = [
     linkedin: 'linkedin.com/in/davidkim',
     biography: 'David Kim is a cybersecurity expert with a focus on network security...',
     photo: 'https://picsum.photos/1000/1000',
+    company:"agaetis",
     conference: {
       id: 1,
       name: 'Tech Conference 2023',

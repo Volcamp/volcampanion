@@ -1,14 +1,14 @@
 <div class="container">
   <div class="sideIndicater" style="background:{{color}}">
     <span class="f4">
-      {{talkPlan.talk.theme.name}}
+      {{talkPlanning.talk.theme.name}}
     </span>
   </div>
 
   <div class="mainItem">
     <div class="lineContentContainer">
-      <div  class="leftItem" style="display: flex">
-        <span class="f2" >{{talkPlan.talk.title}}</span>
+      <div class="leftItem" style="display: flex">
+        <span class="f2">{{talkPlanning.talk.title}}</span>
       </div>
       <span class="rightItem f4"> {{startDate.toLocaleTimeString('fr-FR').slice(0, 5).replace(":", "h")}}
         - {{endDate.toLocaleTimeString('fr-FR').slice(0, 5).replace(":", "h")}} </span>
@@ -16,13 +16,14 @@
     <span class="f3" style="margin: 0; padding: 0;">
       {{speakersNames}}
     </span>
-    <span class="f3">{{talkPlan.room.name}}</span>
+    <span class="f3">{{talkPlanning.room.name}}</span>
     <div class="lineContentContainer">
-      <div class="leftItem" >
-        <mat-icon matBadge="{{talkPlan.room.capacity}}" matBadgeColor="warn">favorite</mat-icon>
+      <div class="leftItem">
+        <mat-icon matBadge="{{talkPlanning.room.capacity}}" matBadgeColor="warn">favorite</mat-icon>
       </div>
       <div class="rightItem centerLineContent gap" *ngIf="this.isConnected">
-          <app-add-favorite (capacityChange)="onClick($event)" [capacity]=talkPlan.room.capacity [inFavorite]=inFavorite></app-add-favorite>
+        <app-add-favorite (capacityChange)="onClick($event)" [capacity]=talkPlanning.room.capacity
+                          [inFavorite]=inFavorite></app-add-favorite>
       </div>
 
     </div>

@@ -9,10 +9,10 @@ import {compareSchedule} from "../../GeneralVolcamp/CompareTalkPlan";
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent {
-  plans!: Planning[]
+  plannings!: Planning[]
 
 
   constructor(dataService: DataService) {
-    dataService.providePlans().then((plans) => this.plans = plans.sort(compareSchedule))
+    dataService.providePlans().then((plans) => this.plannings = plans.sort(compareSchedule))
   }
 }

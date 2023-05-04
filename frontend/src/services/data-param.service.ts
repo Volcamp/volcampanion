@@ -4,5 +4,6 @@ import {Injectable} from '@angular/core';
 export class DataParamService {
   public storageParam: any;
 
-  constructor() { }
+  constructor() {
+  }
 }

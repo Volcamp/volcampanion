@@ -8,6 +8,6 @@ export interface Speaker {
   linkedin: string;
   biography: string;
   photo: string;
+  company: string;
   conference: Conference;
 }
-

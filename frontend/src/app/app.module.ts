@@ -1,6 +1,5 @@
 import {isDevMode, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ServiceWorkerModule} from '@angular/service-worker';
@@ -77,7 +76,7 @@ import {DataParamService} from "../services/data-param.service";
     provide: DataService,
     useClass: StubService // <--- Defining the swappable implementation.
   },
-  DataParamService],
+    DataParamService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

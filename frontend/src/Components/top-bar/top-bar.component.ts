@@ -1,6 +1,7 @@
-import {Component, DoCheck, Input, TemplateRef, ViewChild, ViewContainerRef, ViewRef} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {NavigationService} from "../../services/navigation.service";
-import {Router, NavigationStart, Event as NavigationEvent, NavigationEnd} from "@angular/router";
+import {Router} from "@angular/router";
+import {EventBackArrowVisibility} from "../../event/EventBackArrowVisibility";
 
 @Component({
   selector: 'app-top-bar',
@@ -9,21 +10,19 @@ import {Router, NavigationStart, Event as NavigationEvent, NavigationEnd} from "
 })
 
 
-export class TopBarComponent   {
+export class TopBarComponent {
   @Input() backable: boolean = false
+
   constructor(private navigation: NavigationService, private router: Router) {
-    this.router.events
-      .subscribe(
-        (event: NavigationEvent) => {
-          if(event instanceof NavigationEnd) {
-            this.change()
-          }
-        });
+    navigation.eventEmitter.on(EventBackArrowVisibility.name, (data: EventBackArrowVisibility) => this.change(data.data))
+
   }
+
   back(): void {
     this.navigation.back()
   }
-  change() {
-    this.backable = this.router.url.slice(1).includes("/");
+
+  public change(backable: boolean) {
+    this.backable = backable;
   }
 }

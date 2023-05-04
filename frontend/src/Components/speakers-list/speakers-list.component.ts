@@ -1,6 +1,5 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {Speaker} from "../../Data/DTO/Speaker";
-import {Router} from "@angular/router";
 import {DataParamService} from "../../services/data-param.service";
 import {NavigationService} from "../../services/navigation.service";
 import {AppRoutes, toRoute} from "../../app/AppRoutes";
@@ -25,7 +24,7 @@ export class SpeakersListComponent implements OnInit {
   breakpoint!: number;
   detailRoute = toRoute(AppRoutes.DETAIL_SPEAKER_ROUTE);
 
-  public constructor(private navgation: NavigationService, private data: DataParamService) {
+  public constructor(private navigation: NavigationService, private data: DataParamService) {
   }
 
   @HostListener('window:resize', ['$event'])
@@ -38,6 +37,6 @@ export class SpeakersListComponent implements OnInit {
   }
 
   navigate(speaker: Speaker) {
-    this.navgation.goToSpeaker(speaker)
+    this.navigation.goToSpeaker(speaker)
   }
 }

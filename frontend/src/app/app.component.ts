@@ -1,8 +1,7 @@
-import {Component, OnInit, TemplateRef, ViewChild, ViewContainerRef, ViewRef} from '@angular/core';
+import {Component} from '@angular/core';
 import {MatIconRegistry} from "@angular/material/icon";
 import {DomSanitizer} from "@angular/platform-browser";
 import {addIcons} from "../Icons";
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -11,13 +10,9 @@ import {Router} from "@angular/router";
 })
 
 export class AppComponent {
-
   title = 'volcampanion-pwa';
+
   constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
-      addIcons(iconRegistry,sanitizer)
+    addIcons(iconRegistry, sanitizer)
   }
-
-
-
-
 }

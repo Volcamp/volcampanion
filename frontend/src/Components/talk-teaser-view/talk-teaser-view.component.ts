@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {getColorTheme} from "../../GeneralVolcamp/ColorThemeAndTypeEmoji"
 import {concatenate} from "../../GeneralVolcamp/Concatenate"
 import {Speaker} from "../../Data/DTO/Speaker";
-import {TalkPlan} from "../../Data/DTO/TalkPlan";
+import {TalkPlanning} from "../../Data/DTO/TalkPlanning";
 
 
 @Component({
@@ -14,8 +14,7 @@ import {TalkPlan} from "../../Data/DTO/TalkPlan";
 
 export class TalkTeaserViewComponent implements OnInit {
   @Input() isConnected: boolean = true
-  @Input() talkPlan!: TalkPlan;
-
+  @Input() talkPlanning!: TalkPlanning;
 
   color: string = ''
   inFavorite: boolean = false
@@ -23,36 +22,34 @@ export class TalkTeaserViewComponent implements OnInit {
   endDate = new Date();
   speakersNames!: string;
 
-
   speakerNames(speakers: Speaker[] | undefined): string[] {
-    if (speakers == undefined) {
+    if (speakers === undefined) {
       return []
     }
     return speakers.map(speaker => speaker.name)
   }
 
   ngOnInit(): void {
-    this.color = getColorTheme(this.talkPlan.talk.theme.name)
-    this.speakersNames = concatenate(this.speakerNames(this.talkPlan.talk.speakers))
-    this.startDate = new Date(this.talkPlan.schedule)
+    this.color = getColorTheme(this.talkPlanning.talk.theme.name)
+    this.speakersNames = concatenate(this.speakerNames(this.talkPlanning.talk.speakers))
+    this.startDate = new Date(this.talkPlanning.schedule)
 
-    this.endDate = new Date(this.startDate.getTime() + this.talkPlan.talk.format.duration * 60000)
-
+    this.endDate = new Date(this.startDate.getTime() + this.talkPlanning.talk.format.duration * 60000)
   }
 
   removeFavorite() {
-    this.talkPlan.room.capacity--
+    this.talkPlanning.room.capacity--
     //faire la requete
     this.inFavorite = false
   }
 
   addFavorite() {
-    this.talkPlan.room.capacity++
+    this.talkPlanning.room.capacity++
     this.inFavorite = true
 
   }
 
-  onClick($event: number) {
-    this.talkPlan.room.capacity = $event
+  onClick(numberFavorite: number) {
+    this.talkPlanning.room.capacity = numberFavorite
   }
 }

@@ -10,10 +10,8 @@ const routes: Routes = [
   {component: HomeComponent, path: AppRoutes.HOME_ROUTE},
   {component: SpeakerPageComponent, path: AppRoutes.SPEAKER_ROUTE},
   {component: DetailTalkComponent, path: AppRoutes.DETAIL_TALK_ROUTE},
-  {component: DetailTalkComponent, path: AppRoutes.DETAIL_TALK_ROUTE},
   {component: DetailSpeakerComponent, path: AppRoutes.DETAIL_SPEAKER_ROUTE},
   {pathMatch: "full", redirectTo: AppRoutes.HOME_ROUTE, path: "**"},
-  {pathMatch: "full", redirectTo: AppRoutes.HOME_ROUTE, path: ""},
 ];
 
 @NgModule({

@@ -3,18 +3,21 @@ import {Speaker} from "../../Data/DTO/Speaker";
 import {ActivatedRoute} from "@angular/router";
 import {DataService} from "../../Data/ServicesDatas/DataService";
 import {DataParamService} from "../../services/data-param.service";
+import {SocialMedia} from "../../GeneralVolcamp/SocialMedia";
 
 @Component({
   selector: 'app-detail-speaker',
   templateUrl: './detail-speaker.component.html',
   styleUrls: ['./detail-speaker.component.sass']
 })
-export class DetailSpeakerComponent implements OnInit{
+export class DetailSpeakerComponent implements OnInit {
   speaker: Speaker | null | undefined = null
-
+  twitter = SocialMedia.TWITTER
+  linkedin = SocialMedia.LINKEDIN
 
   constructor(private route: ActivatedRoute, private dataService: DataService, private dataParamService: DataParamService) {
     this.speaker = dataParamService.storageParam
+
   }
 
   async ngOnInit() {
@@ -23,7 +26,7 @@ export class DetailSpeakerComponent implements OnInit{
 
     if ((this.speaker === undefined)) {
       this.speaker = await this.dataService.getSpeakerById(speakerIdFromRoute)
-    } else if (this.speaker!.id != speakerIdFromRoute) {
+    } else if (this.speaker!.id !== speakerIdFromRoute) {
       this.speaker = await this.dataService.getSpeakerById(speakerIdFromRoute)
     }
   }

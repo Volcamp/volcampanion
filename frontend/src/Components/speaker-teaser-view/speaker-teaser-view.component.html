@@ -1,17 +1,19 @@
-<div class="speaker-card" >
-  <mat-card >
+<div class="speaker-card">
+  <mat-card>
     <mat-card-header>
       <img src="{{speaker.photo}}" mat-card-avatar class="header-image" alt="{{speaker.name}} avatar"/>
-      <mat-card-title><span class="f3">{{speaker.name}}</span> </mat-card-title>
-      <mat-card-subtitle class="f5">Agaetis</mat-card-subtitle>
+      <mat-card-title><span class="f3">{{speaker.name}}</span></mat-card-title>
+      <mat-card-subtitle class="f5">{{speaker.company}}</mat-card-subtitle>
     </mat-card-header>
-
     <mat-card-actions>
-      <mat-card-actions>
-        <a href="{{speaker.linkedin}}" color="linkedin" mat-flat-button class="f7 socialMedia"><mat-icon svgIcon="linkedin" aria-hidden="false" aria-label="linkedin link" /> {{linkedin}} </a>
-        <a href="{{speaker.twitter}}"  color="twitter"  mat-flat-button class="f7 socialMedia"> <mat-icon svgIcon="twitter" aria-hidden="false" aria-label="twitter link" /> {{twitter}}</a>
-      </mat-card-actions>
-
+      <a href="{{speaker.linkedin}}" color="linkedin" mat-flat-button class="f7 socialMedia">
+        <mat-icon svgIcon="linkedin" aria-hidden="false" aria-label="linkedin link"/>
+        {{linkedin}}
+      </a>
+      <a href="{{speaker.twitter}}" color="twitter" mat-flat-button class="f7 socialMedia">
+        <mat-icon svgIcon="twitter" aria-hidden="false" aria-label="twitter link"/>
+        {{twitter}}
+      </a>
     </mat-card-actions>
   </mat-card>
 </div>

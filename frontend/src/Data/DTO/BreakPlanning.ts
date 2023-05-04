@@ -1,7 +1,7 @@
 import {Planning, PlanningType} from "./Planning";
 import {TalkTeaser} from "./Talk";
 
-export class BreakPlan implements Planning {
+export class BreakPlanning implements Planning {
   break: TalkTeaser;
   schedule: Date;
 

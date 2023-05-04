@@ -2,7 +2,7 @@ import {Planning, PlanningType} from "./Planning";
 import {Room} from "./Room";
 import {Talk} from "./Talk";
 
-export class TalkPlan implements Planning {
+export class TalkPlanning implements Planning {
   room: Room;
   talk: Talk;
   schedule: Date;
