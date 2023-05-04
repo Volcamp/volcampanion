@@ -7,5 +7,4 @@ export abstract class DataService {
   abstract provideSpeakers(): Promise<Speaker[]>
   abstract getTalkById(idTalk : number): Promise<TalkPlanning | undefined>
   abstract getSpeakerById(idSpeaker : number): Promise<Speaker | undefined>
-  // Est ce que je pousse le truc en fesant un class generique ...
 }
