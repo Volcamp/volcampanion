@@ -21,7 +21,7 @@ export class TopBarComponent {
   planningsThemes: PlanningTheme[] = [];
   dates: Date[] = [];
 
-  constructor(private navigation: NavigationService, private _bottomSheet: MatBottomSheet,private filterPlannings: FilterPlanningsService) {
+  constructor(private navigation: NavigationService, private _bottomSheet: MatBottomSheet, private filterPlannings: FilterPlanningsService) {
     navigation.eventEmitter.on(EventBackArrowVisibility.name, (data: EventBackArrowVisibility) => this.change(data.data))
 
   }
@@ -43,7 +43,7 @@ export class TopBarComponent {
       },
     });
     bottomSheetRef.afterDismissed().subscribe(data => {
-      this.filterPlannings.eventEmitter.emit(new EventFilterPlanning(new FilterPlanning(this.planningsTypes,this.planningsThemes,this.dates)));
+      this.filterPlannings.eventEmitter.emit(new EventFilterPlanning(new FilterPlanning(this.planningsTypes, this.planningsThemes, this.dates)));
     })
   }
 }
