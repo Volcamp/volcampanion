@@ -23,9 +23,10 @@ export class FilterPlanningsService {
       const planningTalk = plan as TalkPlanning;
       typeBool = filter.planningsTypes.length === 0 || filter.planningsTypes.some(type => type === planningTalk.talk.format.type)
       themeBool = filter.planningsThemes.length === 0 || filter.planningsThemes.some(theme => {
-        console.log(theme + " " + planningTalk.talk.theme.name)
         return theme === planningTalk.talk.theme.name
       })
+    }else if(plan.getType() === PlanningType.BREAK){
+       typeBool = false;
     }
     return typeBool && themeBool && dateBool
 

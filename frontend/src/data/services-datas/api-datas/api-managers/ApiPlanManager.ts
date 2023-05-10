@@ -41,6 +41,7 @@ export class ApiPlanManager {
             finalData.push(new DividerPlanning(new Date(lastDate)));
           }
         }
+
         return finalData;
       })
     );

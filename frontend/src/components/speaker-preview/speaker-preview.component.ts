@@ -8,6 +8,7 @@ import {Component, Input} from '@angular/core';
 export class SpeakerPreviewComponent {
   @Input() name: string = ''
   @Input() photo: string = ''
+  @Input() company: string = ''
 
 
 }

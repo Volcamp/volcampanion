@@ -45,5 +45,8 @@
   <include file="014-volcamp-data-palnning.xml" labels="Volcamp 2022"
            author="rami.khedair@volcamp.io"
            relativeToChangelogFile="true"/>
+  <include file="015-volcamp-data-theme-talk.xml" labels="Volcamp 2022"
+           author="rami.khedair@volcamp.io"
+           relativeToChangelogFile="true"/>
 </databaseChangeLog>
 

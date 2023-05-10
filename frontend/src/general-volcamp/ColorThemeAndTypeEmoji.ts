@@ -1,3 +1,5 @@
+export const THEME_DEFAULT = "Inconnue"
+
 export function getColorTheme(input: string): string {
   if (input.toLowerCase().includes('plenary')) {
     return '#FC5A45';

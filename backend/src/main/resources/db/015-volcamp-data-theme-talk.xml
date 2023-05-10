@@ -1,0 +1,34 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="rami.khedair@volcamp.io" id="3">
+        <update schemaName="volcampanion" tableName="talks">
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>
+            <where>title='L''intro Volcamp'</where>
+        </update>
+        <update schemaName="volcampanion" tableName="talks">
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>
+            <where>title='Keynote - (et si on apprenait à) Apprendre et partager autrement'</where>
+        </update>
+        <update schemaName="volcampanion" tableName="talks">
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>
+            <where>title='Keynote - Soyons Fashion - Parlons de souveraineté technologique'</where>
+        </update>
+        <update schemaName="volcampanion" tableName="talks">
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>
+            <where>title='Keynote day#2'</where>
+        </update>
+        <update schemaName="volcampanion" tableName="talks">
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>
+            <where>title='Keynote day#2'</where>
+        </update>
+        <update schemaName="volcampanion" tableName="talks">
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>
+            <where>title='Le mot de la fin'</where>
+        </update>
+        <delete tableName="talks">
+            <where>title=''</where>
+        </delete>
+    </changeSet>
+</databaseChangeLog>

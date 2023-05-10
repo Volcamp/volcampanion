@@ -1,16 +1,53 @@
 .speakerpreviewImage
-  border-radius: 50%
+  border-radius: 100%
   @media screen and (min-width: 240px) /* Mobile devices */
-    width: 20vw
+    width: 15vw
   @media screen and (min-width: 768px) /* iPads, Tablets */
-    width:10vw
+    width:7vw
   @media screen and (min-width: 1024px) /* Small screens, laptops */
-    width:7vw
+    width:6.5vw
   @media screen and (min-width: 1200px) /* Desktops, large screens */
-    width:7vw
+    width:6vw
 
-.speakerpreviewContainer
-  display: flex
-  flex-direction: column
-  align-items: center
+.container
+  position: relative
+  background: linear-gradient(3deg, rgba(252,99,38,1) 0%, rgba(255,151,109,1) 82%)
+  padding: 0.8rem
+  border-radius: 8px
+  transition: all .25s ease-in-out
 
+.container:hover
+  transform: scale(0.98)
+  border-radius: 20px
+  box-shadow: 0 0 30px 1px rgba(252,99,38,0.25)
+  cursor: pointer
+
+.container:hover .card
+  transform: translateY(-5%)
+
+.info
+  margin-top: 1rem
+
+.info h1, p
+  color: #fff
+  text-align: center
+
+.card
+  transition: all .25s ease-in-out
+
+.card main
+  position: relative
+
+.card main a:hover::after
+  opacity: 1
+
+
+
+.container2
+  background: linear-gradient(3deg, rgba(252,99,38,1) 0%, rgba(255,151,109,1) 82%)
+  transition: all .2s
+
+
+.container2:hover
+  transform: scale(0.98)
+  border-radius: 20px

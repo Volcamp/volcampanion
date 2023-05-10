@@ -48,6 +48,10 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {ApiService} from "../data/services-datas/api-datas/ApiService";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FilterPlanningsService} from "../services/filter-plannings.service";
+import {NotFoundComponent} from "../page/not-found-page/not-found/not-found.component";
+import {SunComponent} from "../page/not-found-page/sun/sun.component";
+import {CloudComponent} from "../page/not-found-page/cloud/cloud.component";
+import {AstronautComponent} from "../page/not-found-page/astronaut/astronaut.component";
 
 @NgModule({
   declarations: [
@@ -69,6 +73,10 @@ import {FilterPlanningsService} from "../services/filter-plannings.service";
     TwitterBtnComponent,
     LinkedinBtnComponent,
     FilterMenuComponent,
+    NotFoundComponent,
+    SunComponent,
+    CloudComponent,
+    AstronautComponent,
   ],
     imports: [
         BrowserModule,

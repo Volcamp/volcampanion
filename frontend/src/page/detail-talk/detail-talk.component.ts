@@ -45,6 +45,8 @@ export class DetailTalkComponent implements OnInit {
       this.iconFormat = getIconFormat(this.talkPlanning!.talk!.format!.type)
     }
 
+    console.log(this.talkPlanning?.talk.speakers)
+
 
   }
 

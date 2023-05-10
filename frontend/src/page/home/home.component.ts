@@ -17,18 +17,16 @@ export class HomeComponent {
 
 
   constructor(private dataService: DataService, private confService: CurrentConferenceService, private filterPlannings: FilterPlanningsService) {
-
-
   }
 
   ngOnInit(): void {
     this.confService.getActiveId().subscribe(conf => {
       this.dataService.providePlannings(conf.id.toString()).subscribe(plannings => {
+          this.planningsNoFilter = plannings.sort(compareSchedule);
           this.plannings = plannings.sort(compareSchedule);
-          this.planningsNoFilter = this.plannings
+
           this.filterPlannings.eventEmitter.on(EventFilterPlanning.name, (data: EventFilterPlanning) => {
             this.plannings = this.filterPlannings.filter(this.planningsNoFilter, data.data);
-            console.log(this.plannings)
           })
         }
       );

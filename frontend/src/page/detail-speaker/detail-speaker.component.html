@@ -1,7 +1,7 @@
 <div class="centerContainer contentPage">
   <div *ngIf="speaker!=null">
     <div class="preview speakerpreviewContainer">
-      <img class="imagSpeaker" src="{{speaker.photo}}">
+      <img class="imagSpeaker" src="{{speaker.photo}}" (error)="speaker.photo='/assets/image/defaultProfile.png'" alt="{{speaker.name}}">
       <span class="f1">{{speaker.name}}</span>
     </div>
     <div class="contentDetailSpeaker">

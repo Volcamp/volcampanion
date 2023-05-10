@@ -5,9 +5,11 @@ import {TalkPlanning} from "../../../dto/TalkPlanning";
 export class TalkMapper {
   static toModel(data: any): TalkPlanning {
     let speakersApi: Speaker[] = []
-    for (let speaker in data.talk.speakers) {
+    // @ts-ignore
+    data.talk.speakers.forEach(speaker => {
       speakersApi.push(SpeakerMapper.toModel(speaker))
-    }
+    })
+
     return new TalkPlanning(
       {
         name: data.room.name,

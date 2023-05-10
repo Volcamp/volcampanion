@@ -30,7 +30,7 @@
 
     <div class="scrollmenu">
       <app-speaker-preview class="speakerPreview" *ngFor="let speaker of talkPlanning!.talk!.speakers"
-                           name="{{speaker.name}}" photo="{{speaker.photo}}"
+                           name="{{speaker.name}}" photo="{{speaker.photo}}" company="{{speaker.company}}"
                            (click)="navigate(speaker)"></app-speaker-preview>
     </div>
     <span class="f4">{{talkPlanning.talk.description}}</span>

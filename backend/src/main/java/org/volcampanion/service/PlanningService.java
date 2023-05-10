@@ -14,7 +14,7 @@ import java.util.List;
 
 @Singleton
 public class PlanningService {
-    private static final String BASE_QUERY = "conference.id = ?1 ";
+    private static final String BASE_QUERY = "id.talk.conference.id = ?1 ";
 
     @Inject
     PlanningRepository repository;
