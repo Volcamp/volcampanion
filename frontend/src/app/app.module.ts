@@ -44,16 +44,16 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FilterPlanningsService} from "../services/filter-plannings.service";
-import {NotFoundComponent} from "../page/not-found-page/not-found/not-found.component";
-import {SunComponent} from "../page/not-found-page/sun/sun.component";
-import {CloudComponent} from "../page/not-found-page/cloud/cloud.component";
-import {AstronautComponent} from "../page/not-found-page/astronaut/astronaut.component";
 import {AbstractPlanningService} from "../services/AbstractPlanningService";
 import {AbstractSpeakerService} from "../services/AbstractSpeakerService";
 import {AbstractConferenceService} from "../services/AbstractConferenceService";
 import {ConferenceService} from "../services/ConferenceService";
 import {AbstractTalkService} from "../services/AbstractTalkService";
 import {TalkService} from "../services/TalkService";
+import {NotFoundComponent} from "../page/not-found-page/not-found/not-found.component";
+import {SunComponent} from "../page/not-found-page/sun/sun.component";
+import {CloudComponent} from "../page/not-found-page/cloud/cloud.component";
+import {AstronautComponent} from "../page/not-found-page/astronaut/astronaut.component";
 
 @NgModule({
   declarations: [
@@ -129,8 +129,6 @@ import {TalkService} from "../services/TalkService";
     },
     HttpClient,
     DataParamService,
-    PlanningService,
-    SpeakerService,
     RequestManager,
     FilterPlanningsService,
   ],
