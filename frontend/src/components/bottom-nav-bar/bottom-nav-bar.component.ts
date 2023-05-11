@@ -27,7 +27,15 @@ export class BottomNavBarComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     let button = document.getElementById(location.pathname);
     if (button == null) {
-      button = document.getElementById(this.defaultRoot);
+      if (location.pathname.toLowerCase().includes(this.homeRoute)) {
+        button = document.getElementById(this.homeRoute);
+      } else if (location.pathname.toLowerCase().includes(this.speakerRoute)) {
+        button = document.getElementById(this.speakerRoute);
+      } else if (location.pathname.toLowerCase().includes(this.favoriteRoute)) {
+        button = document.getElementById(this.favoriteRoute);
+      }else {
+        return
+      }
     }
     button!.classList.add(CLASS_BTN_STYLE, CLASS_BTN_COLOR);
 

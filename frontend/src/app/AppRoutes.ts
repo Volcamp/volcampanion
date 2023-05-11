@@ -1,6 +1,6 @@
 export enum AppRoutes {
   SPEAKER_ROUTE = "speakers",
-  HOME_ROUTE = "home",
+  HOME_ROUTE = "sessions",
   FAVORITE_ROUTE = "favorites",
   DETAIL_TALK_ROUTE = "sessions/:talkId",
   DETAIL_SPEAKER_ROUTE = "speakers/:speakerId",

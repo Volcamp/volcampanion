@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {NavigationService} from "../../services/navigation.service";
 import {EventBackArrowVisibility} from "../../event/EventBackArrowVisibility";
 import {MatBottomSheet} from "@angular/material/bottom-sheet";
@@ -7,6 +7,7 @@ import {PlanningType} from "../../data/dto/Planning";
 import {PlanningTheme} from "../../data/dto/Theme";
 import {EventFilterPlanning, FilterPlanning} from "../../event/EventFilterPlanning";
 import {FilterPlanningsService} from "../../services/filter-plannings.service";
+import {EventFilterVisibility} from "../../event/EventFilterVisibility";
 
 @Component({
   selector: 'app-top-bar',
@@ -16,13 +17,16 @@ import {FilterPlanningsService} from "../../services/filter-plannings.service";
 
 
 export class TopBarComponent {
-  @Input() backable: boolean = false
+  backable: boolean = false;
+  filterable: boolean = true;
+
   planningsTypes: PlanningType[] = [];
   planningsThemes: PlanningTheme[] = [];
   dates: Date[] = [];
 
   constructor(private navigation: NavigationService, private _bottomSheet: MatBottomSheet, private filterPlannings: FilterPlanningsService) {
-    navigation.eventEmitter.on(EventBackArrowVisibility.name, (data: EventBackArrowVisibility) => this.change(data.data))
+    navigation.eventEmitter.on(EventBackArrowVisibility.name, (data: EventBackArrowVisibility) => this.changeBackArrow(data.data))
+    navigation.eventEmitter.on(EventFilterVisibility.name, (data: EventFilterVisibility) => this.changeFilter(data.data))
 
   }
 
@@ -30,8 +34,12 @@ export class TopBarComponent {
     this.navigation.back()
   }
 
-  public change(backable: boolean) {
+  public changeBackArrow(backable: boolean) {
     this.backable = backable;
+  }
+
+  public changeFilter(filterable: boolean) {
+    this.filterable = filterable;
   }
 
   openFilter() {

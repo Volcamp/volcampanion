@@ -7,6 +7,7 @@ import {AppRoutes, toRoute, toRouteById} from "../app/AppRoutes";
 import {TalkPlanning} from "../data/dto/TalkPlanning";
 import {EventEmitter} from "../event/EventEmitter";
 import {EventBackArrowVisibility} from "../event/EventBackArrowVisibility";
+import {EventFilterVisibility} from "../event/EventFilterVisibility";
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,7 @@ export class NavigationService {
         this.history.push(event.urlAfterRedirects);
 
         this.eventEmitter.emit(new EventBackArrowVisibility(this.router.url.slice(1).includes("/")));
+        this.eventEmitter.emit(new EventFilterVisibility(this.router.url.includes(AppRoutes.HOME_ROUTE) || this.router.url.includes(AppRoutes.FAVORITE_ROUTE)));
       }
     });
   }
