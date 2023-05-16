@@ -54,6 +54,7 @@ import {NotFoundComponent} from "../page/not-found-page/not-found/not-found.comp
 import {SunComponent} from "../page/not-found-page/sun/sun.component";
 import {CloudComponent} from "../page/not-found-page/cloud/cloud.component";
 import {AstronautComponent} from "../page/not-found-page/astronaut/astronaut.component";
+import {VolcampRateComponent} from "../components/volcamp-rate/volcamp-rate.component";
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import {AstronautComponent} from "../page/not-found-page/astronaut/astronaut.com
     SunComponent,
     CloudComponent,
     AstronautComponent,
+    VolcampRateComponent,
   ],
   imports: [
     BrowserModule,
