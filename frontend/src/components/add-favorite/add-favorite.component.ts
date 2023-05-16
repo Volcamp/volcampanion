@@ -1,4 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {OidcSecurityService} from "angular-auth-oidc-client";
+import {DataService} from "../../data/services-datas/DataService";
+import {VMFavorite} from "../../data/vm/VMFavorite";
 
 @Component({
   selector: 'app-add-favorite',
@@ -7,19 +10,24 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class AddFavoriteComponent {
   @Output() capacityChange: EventEmitter<number> = new EventEmitter<number>();
-  @Input() inFavorite: boolean = false
-  @Input() capacity: number = 0
+
+  @Input() capacity: number = 0;
+  @Input() talkId: number = 0;
+  vm: VMFavorite;
+
+  constructor(oidcSecurityService: OidcSecurityService, dataService: DataService) {
+    this.vm = new VMFavorite(oidcSecurityService, dataService);
+  }
 
   removeFavorite(event: Event) {
-    event.stopPropagation()
-    this.capacityChange.emit(--this.capacity)
-    //faire la requete
-    this.inFavorite = false
+    event.stopPropagation();
+    this.capacityChange.emit(--this.capacity);
+    this.vm.removeFavorite(this.talkId);
   }
 
   addFavorite(event: Event) {
-    event.stopPropagation()
-    this.capacityChange.emit(++this.capacity)
-    this.inFavorite = true
+    event.stopPropagation();
+    this.capacityChange.emit(++this.capacity);
+    this.vm.addFavorite(this.talkId);
   }
 }

@@ -25,9 +25,9 @@
       <div class="leftItem">
         <mat-icon matBadge="{{talkPlanning.room.capacity}}" matBadgeColor="warn">favorite</mat-icon>
       </div>
-      <div class="rightItem centerLineContent gap" *ngIf="this.isConnected">
+      <div class="rightItem centerLineContent gap">
         <app-add-favorite (capacityChange)="onClick($event)" [capacity]=talkPlanning.room.capacity
-                          [inFavorite]=inFavorite></app-add-favorite>
+                          [talkId]="talkPlanning.talk.id"></app-add-favorite>
       </div>
 
     </div>

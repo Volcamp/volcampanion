@@ -30,4 +30,16 @@ export class StubService extends AbstractDataService {
   getSpeakerById(idSpeaker: number): Observable<Speaker | undefined> {
     return of(SPEAKER_DATA.find(speaker => speaker.id == idSpeaker));
   }
+
+  addTalkToFavorite(idTalk: number): Observable<boolean> {
+    return of(true);
+  }
+
+  provideFavorites(idConf: string): Observable<Planning[]> {
+    return of([]);
+  }
+
+  removeTalkFromFavorite(idTalk: number): Observable<boolean> {
+    return of(true);
+  }
 }

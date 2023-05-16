@@ -1,12 +1,15 @@
-<button (click)="removeFavorite($event)" mat-mini-fab class="icon-Btn" color="warn" *ngIf="this.inFavorite">
-  <mat-icon svgIcon="favorite_checked" aria-hidden="false" aria-label="favorite checked icon"></mat-icon>
+<div *ngIf="this.vm.logged">
+  <button (click)="removeFavorite($event)" mat-mini-fab class="icon-Btn" color="warn" *ngIf="this.vm.inFavorite">
+    <mat-icon svgIcon="favorite_checked" aria-hidden="false" aria-label="favorite checked icon"></mat-icon>
 
-  <span class="f6">
+    <span class="f6">
   </span>
-</button>
+  </button>
 
-<button (click)="addFavorite($event)" mat-mini-fab color="warn" class="icon-Btn" *ngIf="! this.inFavorite">
-  <mat-icon class="icon" svgIcon="favorite_unchecked" aria-hidden="false" aria-label="favorite checked icon"></mat-icon>
-  <span class="f6 text">
+  <button (click)="addFavorite($event)" mat-mini-fab color="warn" class="icon-Btn" *ngIf="! this.vm.inFavorite">
+    <mat-icon class="icon" svgIcon="favorite_unchecked" aria-hidden="false"
+              aria-label="favorite checked icon"></mat-icon>
+    <span class="f6 text">
   </span>
-</button>
+  </button>
+</div>
