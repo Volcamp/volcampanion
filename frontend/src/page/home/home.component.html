@@ -1,1 +1,3 @@
-<app-talks-list [plans]="vm.plannings"></app-talks-list>
+<app-talks-list *ngIf="vm.plannings!==undefined" [plans]="vm.plannings"></app-talks-list>
+<app-loader *ngIf="vm.plannings===undefined"></app-loader>
+

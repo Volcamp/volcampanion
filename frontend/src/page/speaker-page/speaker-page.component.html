@@ -1,1 +1,2 @@
-<app-speakers-list [speakers]="vm.speakers"></app-speakers-list>
+<app-speakers-list  *ngIf="vm.speakers!==undefined" [speakers]="vm.speakers"></app-speakers-list>
+<app-loader *ngIf="vm.speakers===undefined"></app-loader>
