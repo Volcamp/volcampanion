@@ -119,15 +119,15 @@ public class UserController {
                 .setUserIdentifier(userEmail)
                 .setTalk(talk);
     }
-
+    
     @GET
     @APIResponse(responseCode = "200", description = "OK",
             content = @Content(mediaType = "application/json",
                     schema = @Schema(implementation = UserFeedbackTalkDTO[].class)
             )
     )
-    @Path("/feedback-talks")
-    public List<UserFeedbackTalkDTO> listFeedbackTalks(@QueryParam("idTalk") Long idTalk) {
+    @Path("/talks/{idTalk}/feedback")
+    public List<UserFeedbackTalkDTO> listFeedbackTalk(@PathParam("idTalk") Long idTalk) {
         return userFeedbackTalkMapper.toDTO(userFeedbackTalkService.listByTalk(idTalk));
     }
 
