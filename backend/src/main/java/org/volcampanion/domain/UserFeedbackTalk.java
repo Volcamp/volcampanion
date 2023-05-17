@@ -1,12 +1,11 @@
 package org.volcampanion.domain;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
 @Data
 @Accessors(chain = true)
-public class UserFeedbackTalk extends IdentifiableDomain{
+public class UserFeedbackTalk extends IdentifiableDomain {
     private String userIdentifier;
 
     private String comment;

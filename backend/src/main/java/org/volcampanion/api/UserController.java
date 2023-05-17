@@ -119,7 +119,7 @@ public class UserController {
                 .setUserIdentifier(userEmail)
                 .setTalk(talk);
     }
-    
+
     @GET
     @APIResponse(responseCode = "200", description = "OK",
             content = @Content(mediaType = "application/json",
