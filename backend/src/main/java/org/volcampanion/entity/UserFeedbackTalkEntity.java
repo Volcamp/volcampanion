@@ -14,7 +14,7 @@ public class UserFeedbackTalkEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String comment;
-    private int rating;
+    private short rating;
 
 
     @Column(name = "user_id")
