@@ -100,3 +100,14 @@ $fontSizeF7: 0.9
   transform: scale(1.05)
 
 
+=widthResponsive($width1,$width2,$width3,$width4,$width5)
+  @media screen and (min-width: 0px) /* Mobile devices */
+    width: $width1
+  @media screen and (min-width: 240px) /* Mobile devices */
+    width: $width2
+  @media screen and (min-width: 768px) /* iPads, Tablets */
+    width:$width3
+  @media screen and (min-width: 1024px) /* Small screens, laptops */
+    width:$width4
+  @media screen and (min-width: 1200px) /* Desktops, large screens */
+    width:$width5

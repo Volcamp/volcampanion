@@ -20,6 +20,7 @@ import {TalksListComponent} from "../components/talks-list/talks-list.component"
 import {MatDividerModule} from "@angular/material/divider";
 import {BreakTeaserViewComponent} from "../components/break-teaser-view/break-teaser-view.component";
 import {DividerTeaserViewComponent} from "../components/divider-teaser-view/divider-teaser-view.component";
+import {DataService} from "../data/services-datas/DataService";
 import {SpeakerTeaserViewComponent} from "../components/speaker-teaser-view/speaker-teaser-view.component";
 import {SpeakersListComponent} from "../components/speakers-list/speakers-list.component";
 import {SpeakerPageComponent} from "../page/speaker-page/speaker-page.component";
@@ -112,6 +113,9 @@ import {LoaderComponent} from "../components/loader/loader.component";
     ReactiveFormsModule,
     MatNativeDateModule,
     MatCheckboxModule,
+    MatMenuModule,
+    AuthConfigModule,
+
 
 
   ],

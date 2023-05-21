@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-volcamp-rate',
@@ -6,15 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./volcamp-rate.component.sass']
 })
 export class VolcampRateComponent {
-  note : number = -1;
+  @Output() noteOutput: EventEmitter<number> = new EventEmitter<number>();
+  note: number = -1;
 
-  isChecked(note : number) : boolean{
-    return this.note>= note;
+  isChecked(note: number): boolean {
+    return this.note >= note;
   }
 
   check(note: number) {
-    console.log("he")
-    if(this.note!=note) this.note=note;
+    if (this.note != note) this.note = note;
     else this.note = -1;
+    this.noteOutput.emit(this.note)
   }
 }

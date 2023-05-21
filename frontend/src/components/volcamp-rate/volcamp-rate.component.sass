@@ -1,3 +1,5 @@
+@import "src/styles"
+
 input
   position: absolute
   appearance: none
@@ -12,13 +14,4 @@ button
 
 img
   cursor: pointer
-  @media screen and (min-width: 0px) /* Mobile devices */
-    width: 14vw
-  @media screen and (min-width: 240px) /* Mobile devices */
-    width: 14vw
-  @media screen and (min-width: 768px) /* iPads, Tablets */
-    width:6vw
-  @media screen and (min-width: 1024px) /* Small screens, laptops */
-    width:5.5vw
-  @media screen and (min-width: 1200px) /* Desktops, large screens */
-    width:5vw
+  +widthResponsive(14vw,14vw,6vw,5.5vw,5vw)

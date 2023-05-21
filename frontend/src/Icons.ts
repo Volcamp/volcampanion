@@ -29,11 +29,18 @@ export const LINKEDIN =
 </svg>
 `;
 
+export const SEND = `
+<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48">
+    <path d="M120 896V256l760 320-760 320Zm60-93 544-227-544-230v168l242 62-242 60v167Zm0 0V346v457Z"/>
+</svg>
+`;
+
 
 export function addIcons(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
   iconRegistry.addSvgIconLiteral('favorite_checked', sanitizer.bypassSecurityTrustHtml(FAVORITE_CHECKED));
   iconRegistry.addSvgIconLiteral('favorite_unchecked', sanitizer.bypassSecurityTrustHtml(FAVORITE_UNCHECKED));
   iconRegistry.addSvgIconLiteral('twitter', sanitizer.bypassSecurityTrustHtml(TWITTER));
   iconRegistry.addSvgIconLiteral('linkedin', sanitizer.bypassSecurityTrustHtml(LINKEDIN));
+  iconRegistry.addSvgIconLiteral('send', sanitizer.bypassSecurityTrustHtml(SEND));
 
 }

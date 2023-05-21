@@ -37,8 +37,6 @@
 
   </div>
 
-  <div *ngIf="talk===null">
-    <mat-spinner></mat-spinner>
 
-  </div>
 </div>
+<app-loader *ngIf="vm.talkPlanning===undefined"></app-loader>

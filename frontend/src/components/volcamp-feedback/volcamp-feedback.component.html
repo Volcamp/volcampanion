@@ -1,0 +1,17 @@
+<app-volcamp-rate (noteOutput)="update($event)"></app-volcamp-rate>
+<div class="containerSend">
+  <form>
+    <mat-form-field class="formNote" color="accent">
+      <mat-label>Commentaire</mat-label>
+      <textarea matInput #message maxlength="256"></textarea>
+      <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+    </mat-form-field>
+  </form>
+  <div>
+    <button mat-mini-fab color="accent" (click)="sendNote()">
+      <mat-icon class="icon" svgIcon="send" aria-hidden="false"></mat-icon>
+    </button>
+  </div>
+</div>
+
+
