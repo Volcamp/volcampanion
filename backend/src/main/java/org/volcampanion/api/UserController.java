@@ -9,6 +9,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.volcampanion.api.validator.IdentifiableValidator;
+import org.volcampanion.domain.Talk;
 import org.volcampanion.domain.TalkFilters;
 import org.volcampanion.domain.UserFavoriteTalk;
 import org.volcampanion.domain.UserFeedbackTalk;
@@ -52,7 +53,6 @@ public class UserController {
 
     @Inject
     UserFeedbackTalkMapper userFeedbackTalkMapper;
-
 
     @Inject
     UserFavoriteTalkService userFavoriteTalkService;
@@ -103,6 +103,14 @@ public class UserController {
     }
 
     private UserFavoriteTalk validateParamsAndBuildFavoriteTalkDomain(Long talkId, String userEmail) {
+        var talk = validateSubResources(talkId, userEmail);
+
+        return new UserFavoriteTalk()
+                .setUserIdentifier(userEmail)
+                .setTalk(talk);
+    }
+
+    private Talk validateSubResources(Long talkId, String userEmail) {
         if (StringUtils.isBlank(userEmail)) {
             throw new MandatoryParameterException("JWT->email");
         }
@@ -114,10 +122,7 @@ public class UserController {
         if (Objects.isNull(talk)) {
             throw new BadRequestException(String.format("Unable to retrieve a talk using given parameter %s", talkId));
         }
-
-        return new UserFavoriteTalk()
-                .setUserIdentifier(userEmail)
-                .setTalk(talk);
+        return talk;
     }
 
     @GET
@@ -140,12 +145,12 @@ public class UserController {
             )
     )
     public Response addFeedbackToTalk(@PathParam("idTalk") Long talkId, CreateUserFeedbackTalkDTO dto) {
-        var domain = validateParamsAndBuildFeedbackTalkDomain(talkId, dto, jwt.getClaim(Claims.email));
+        var domain = validateParamsFeedbackTalkDomain(talkId, jwt.getClaim(Claims.email))
+                .setRating(dto.getRating())
+                .setComment(dto.getComment());
 
         userFeedbackTalkService.createOrUpdate(domain);
         return Response.status(Response.Status.CREATED).build();
-
-
     }
 
     @DELETE
@@ -157,41 +162,11 @@ public class UserController {
     }
 
     private UserFeedbackTalk validateParamsFeedbackTalkDomain(Long talkId, String userEmail) {
-        if (StringUtils.isBlank(userEmail)) {
-            throw new MandatoryParameterException("JWT->email");
-        }
-
-        var talk = identifiableValidator.validate(new IdentifiableDTO().setId(talkId),
-                "talk->id",
-                (aLong) -> talkService.findById(aLong));
-
-        if (Objects.isNull(talk)) {
-            throw new BadRequestException(String.format("Unable to retrieve a talk using given parameter %s", talkId));
-        }
+        var talk = validateSubResources(talkId, userEmail);
 
         return new UserFeedbackTalk()
                 .setUserIdentifier(userEmail)
                 .setTalk(talk);
-    }
-
-    private UserFeedbackTalk validateParamsAndBuildFeedbackTalkDomain(Long talkId, CreateUserFeedbackTalkDTO dto, String userEmail) {
-        if (StringUtils.isBlank(userEmail)) {
-            throw new MandatoryParameterException("JWT->email");
-        }
-
-        var talk = identifiableValidator.validate(new IdentifiableDTO().setId(talkId),
-                "talk->id",
-                (aLong) -> talkService.findById(aLong));
-
-        if (Objects.isNull(talk)) {
-            throw new BadRequestException(String.format("Unable to retrieve a talk using given parameter %s", talkId));
-        }
-
-        return new UserFeedbackTalk()
-                .setUserIdentifier(userEmail)
-                .setTalk(talk)
-                .setRating(dto.getRating())
-                .setComment(dto.getComment());
     }
 
 

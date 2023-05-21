@@ -1,6 +1,6 @@
-import {Speaker} from "../../../dto/Speaker";
+import {Speaker} from "../Speaker";
 import {SpeakerMapper} from "./SpeakerMapper";
-import {TalkPlanning} from "../../../dto/TalkPlanning";
+import {TalkPlanning} from "../TalkPlanning";
 
 export class TalkMapper {
   static toModel(data: any): TalkPlanning {

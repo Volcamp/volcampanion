@@ -16,5 +16,5 @@ public class PlanningEntity {
   @EmbeddedId
   private PlanningId id;
 
-  private Timestamp schedule;
+
 }

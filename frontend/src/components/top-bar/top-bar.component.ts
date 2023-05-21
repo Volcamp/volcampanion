@@ -1,22 +1,28 @@
-import {Component} from '@angular/core';
-import {NavigationService} from "../../services/navigation.service";
-import {EventBackArrowVisibility} from "../../event/EventBackArrowVisibility";
+import {Component, Input} from '@angular/core';
+import {NavigationService} from "../../services/NavigationService";
+import {BackArrowVisibilityEventArgs} from "../../event/BackArrowVisibilityEventArgs";
 import {MatBottomSheet} from "@angular/material/bottom-sheet";
 import {FilterMenuComponent} from "../filter-menu/filter-menu.component";
 import {PlanningType} from "../../data/dto/Planning";
 import {PlanningTheme} from "../../data/dto/Theme";
-import {EventFilterPlanning, FilterPlanning} from "../../event/EventFilterPlanning";
+import {FilterPlanningEventArgs} from "../../event/FilterPlanningEventArgs";
 import {FilterPlanningsService} from "../../services/filter-plannings.service";
-import {EventFilterVisibility} from "../../event/EventFilterVisibility";
+import {FilterVisibilityEventArgs} from "../../event/FilterVisibilityEventArgs";
+import {AppRoutes, toRoute} from "../../app/AppRoutes";
 
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.sass']
 })
-
-
 export class TopBarComponent {
+  @Input() isMobile!: boolean;
+
+
+  homeRoute = toRoute(AppRoutes.HOME_ROUTE)
+  speakerRoute = toRoute(AppRoutes.SPEAKER_ROUTE)
+  favoriteRoute = toRoute(AppRoutes.FAVORITE_ROUTE)
+
   backable: boolean = false;
   filterable: boolean = true;
 
@@ -25,9 +31,8 @@ export class TopBarComponent {
   dates: Date[] = [];
 
   constructor(private navigation: NavigationService, private _bottomSheet: MatBottomSheet, private filterPlannings: FilterPlanningsService) {
-    navigation.eventEmitter.on(EventBackArrowVisibility.name, (data: EventBackArrowVisibility) => this.changeBackArrow(data.data))
-    navigation.eventEmitter.on(EventFilterVisibility.name, (data: EventFilterVisibility) => this.changeFilter(data.data))
-
+    navigation.backArrowEventEmitter.on((data: BackArrowVisibilityEventArgs) => this.changeBackArrow(data.IsVisible))
+    navigation.filterVisibilityEventEmitter.on((data: FilterVisibilityEventArgs) => this.changeFilter(data.IsVisible))
   }
 
   back(): void {
@@ -51,7 +56,8 @@ export class TopBarComponent {
       },
     });
     bottomSheetRef.afterDismissed().subscribe(data => {
-      this.filterPlannings.eventEmitter.emit(new EventFilterPlanning(new FilterPlanning(this.planningsTypes, this.planningsThemes, this.dates)));
+      this.filterPlannings.eventEmitter.emit(new FilterPlanningEventArgs(this.planningsTypes, this.planningsThemes, this.dates));
     })
   }
+
 }

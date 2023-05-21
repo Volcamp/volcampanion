@@ -25,7 +25,7 @@ public interface PlanningMapper extends IMapper<Planning, PlanningEntity> {
 
   @Mapping(target = "room", source = "id.room")
   @Mapping(target = "talk", source = "id.talk")
-  @Mapping(target = "schedule", source = "schedule")
+  @Mapping(target = "schedule", source = "id.schedule")
   Planning toDomain(PlanningEntity entity);
 
   @InheritInverseConfiguration

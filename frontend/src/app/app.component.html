@@ -1,5 +1,5 @@
-<app-top-bar class="header"/>
+<app-top-bar [isMobile]="isMobile" class="header"/>
 <div class="content">
   <router-outlet/>
 </div>
-<app-bottom-nav-bar class="footer"/>
+<app-bottom-nav-bar [isMobile]="isMobile" class="footer"/>

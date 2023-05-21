@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
-import {DataService} from "../../data/services-datas/DataService";
 import {Planning} from "../../data/dto/Planning";
-import {compareSchedule} from "../../general-volcamp/CompareTalkPlan";
-import {CurrentConferenceService} from "../../data/services-datas/api-datas/current-conference.service";
-import {EventFilterPlanning} from "../../event/EventFilterPlanning";
+import {FilterPlanningEventArgs} from "../../event/FilterPlanningEventArgs";
 import {FilterPlanningsService} from "../../services/filter-plannings.service";
+import {AbstractPlanningService} from "../../services/AbstractPlanningService";
+import {AbstractConferenceService} from "../../services/AbstractConferenceService";
+import {FilterPlanningEvent} from "../../event/FilterPlanningEvent";
 
 @Component({
   selector: 'app-home',
@@ -16,17 +16,17 @@ export class HomeComponent {
   plannings!: Planning[]
 
 
-  constructor(private dataService: DataService, private confService: CurrentConferenceService, private filterPlannings: FilterPlanningsService) {
+  constructor(private dataService: AbstractPlanningService, private confService: AbstractConferenceService, private filterPlannings: FilterPlanningsService) {
   }
 
   ngOnInit(): void {
-    this.confService.getActiveId().subscribe(conf => {
-      this.dataService.providePlannings(conf.id.toString()).subscribe(plannings => {
-          this.planningsNoFilter = plannings.sort(compareSchedule);
-          this.plannings = plannings.sort(compareSchedule);
+    this.confService.getCurrentConference().subscribe(conf => {
+      this.dataService.getPlannings(conf!.id.toString()).subscribe(plannings => {
+          this.planningsNoFilter = plannings;
+          this.plannings = plannings;
 
-          this.filterPlannings.eventEmitter.on(EventFilterPlanning.name, (data: EventFilterPlanning) => {
-            this.plannings = this.filterPlannings.filter(this.planningsNoFilter, data.data);
+          this.filterPlannings.eventEmitter.on((data: FilterPlanningEventArgs) => {
+            this.plannings = this.filterPlannings.filter(this.planningsNoFilter, data);
           })
         }
       );

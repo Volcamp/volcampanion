@@ -1,6 +1,7 @@
 package org.volcampanion.entity;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import javax.persistence.Embeddable;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -19,4 +20,6 @@ public class PlanningId implements Serializable {
     @ManyToOne
     @JoinColumn(name = "talk_id")
     private TalkEntity talk;
+
+    private Timestamp schedule;
 }

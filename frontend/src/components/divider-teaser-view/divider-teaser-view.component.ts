@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {DividerPlanning} from "../../data/dto/DividerPlanning";
-import {formatDate} from "../../general-volcamp/DateFunc";
+import {formatDate} from "../../common/DateFunc";
 
 @Component({
   selector: 'app-divider-teaser-view',

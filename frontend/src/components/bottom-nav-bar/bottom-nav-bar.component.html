@@ -1,4 +1,4 @@
-<span>
+<span *ngIf="isMobile">
   <mat-toolbar>
     <button id="{{homeRoute}}" [routerLink]="[homeRoute]" mat-button class="iconBtn" aria-label="session button"
             (click)="onClick($event)">

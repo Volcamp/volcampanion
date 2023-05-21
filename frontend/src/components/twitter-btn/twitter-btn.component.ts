@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {SocialMedia} from "../../general-volcamp/SocialMedia";
+import {SocialMedia} from "../../common/SocialMedia";
 
 @Component({
   selector: 'app-twitter-btn',

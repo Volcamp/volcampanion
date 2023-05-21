@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Planning, PlanningType} from "../../data/dto/Planning";
-import {NavigationService} from "../../services/navigation.service";
+import {NavigationService} from "../../services/NavigationService";
 
 @Component({
   selector: 'app-talks-list',

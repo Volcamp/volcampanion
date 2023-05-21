@@ -1,10 +1,9 @@
 import {Component, Inject} from '@angular/core';
 import {PlanningType} from "../../data/dto/Planning";
 import {PlanningTheme} from "../../data/dto/Theme";
-import {CurrentConferenceService} from "../../data/services-datas/api-datas/current-conference.service";
-import {compareEqualDate, formatDate} from "../../general-volcamp/DateFunc";
-import {FilterPlanningsService} from "../../services/filter-plannings.service";
+import {compareEqualDate, formatDate} from "../../common/DateFunc";
 import {MAT_BOTTOM_SHEET_DATA} from "@angular/material/bottom-sheet";
+import {AbstractConferenceService} from "../../services/AbstractConferenceService";
 
 @Component({
   selector: 'app-filter-menu',
@@ -12,6 +11,7 @@ import {MAT_BOTTOM_SHEET_DATA} from "@angular/material/bottom-sheet";
   styleUrls: ['./filter-menu.component.sass']
 })
 export class FilterMenuComponent {
+  // TODO replace with referential
   planningsType: PlanningType[]
   planningsTheme: PlanningTheme[]
   datesConference: Date[] = []
@@ -20,7 +20,7 @@ export class FilterMenuComponent {
   planningsThemeSelected: PlanningTheme[] = []
   dateSelected: Date[] = []
 
-  constructor(private conferenceService: CurrentConferenceService,@Inject(MAT_BOTTOM_SHEET_DATA) public data: any) {
+  constructor(private conferenceService: AbstractConferenceService, @Inject(MAT_BOTTOM_SHEET_DATA) public data: any) {
     this.planningsTypeSelected = data.planningsTypes;
     this.planningsThemeSelected = data.planningsThemes;
     this.dateSelected = data.dates;
@@ -33,9 +33,9 @@ export class FilterMenuComponent {
     // @ts-ignore
     this.planningsTheme = Object.keys(PlanningTheme).map(key => PlanningTheme[key]).filter(k => !(parseInt(k) >= 0));
 
-    conferenceService.getActiveId().subscribe(conference => {
-      const startDate = conference.startDate ? new Date(conference.startDate) : null;
-      const endDate = conference.endDate ? new Date(conference.endDate) : null;
+    conferenceService.getCurrentConference().subscribe(conference => {
+      const startDate = conference!.startDate ? new Date(conference!.startDate) : null;
+      const endDate = conference!.endDate ? new Date(conference!.endDate) : null;
 
       if (!startDate || !endDate) {
         this.datesConference = [];

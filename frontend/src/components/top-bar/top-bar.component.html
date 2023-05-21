@@ -6,6 +6,22 @@
 
   <span class="f0 volcampanion">Volcampanion</span>
 
+  <div *ngIf="!isMobile">
+    <button id="{{homeRoute}}" [routerLink]="[homeRoute]" mat-button class="iconBtn" aria-label="session button">
+      <mat-icon aria-hidden="false" aria-label="session icon" fontIcon="date_range"></mat-icon>
+      Sessions
+    </button>
+    <span class="volcamp-spacer"></span>
+    <button id="{{speakerRoute}}" [routerLink]="[speakerRoute]" mat-button class="iconBtn" aria-label="speaker button">
+      <mat-icon aria-hidden="false" aria-label="speaker icon" fontIcon="groups"></mat-icon>
+      Speakers
+    </button>
+    <span class="volcamp-spacer"></span>
+    <button mat-button aria-label="favorite button">
+      <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite"></mat-icon>
+      Favorites
+    </button>
+  </div>
   <span class="volcamp-spacer"></span>
 
   <button mat-icon-button class="example-icon favorite-icon" *ngIf="filterable" (click)="openFilter()"

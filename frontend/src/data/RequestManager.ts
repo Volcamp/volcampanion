@@ -5,6 +5,8 @@ import {Injectable} from "@angular/core";
 @Injectable()
 export class RequestManager {
 
+  // TODO Injection du token ici du coup
+
   constructor(private readonly http: HttpClient) {
   }
 

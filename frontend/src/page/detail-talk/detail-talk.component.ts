@@ -1,12 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {DataService} from "../../data/services-datas/DataService";
-import {getColorTheme, getIconFormat} from "../../general-volcamp/ColorThemeAndTypeEmoji";
+import {getColorTheme, getIconFormat} from "../../common/ColorThemeAndTypeEmoji";
 import {DataParamService} from "../../services/data-param.service";
-import {NavigationService} from "../../services/navigation.service";
+import {NavigationService} from "../../services/NavigationService";
 import {Speaker} from "../../data/dto/Speaker";
-import {AppRoutes, toRoute} from "../../app/AppRoutes";
-import {TalkPlanning} from "../../data/dto/TalkPlanning";
+import {AbstractTalkService} from "../../services/AbstractTalkService";
+import {Talk} from "../../data/dto/Talk";
 
 @Component({
   selector: 'app-detail-talk',
@@ -14,39 +13,29 @@ import {TalkPlanning} from "../../data/dto/TalkPlanning";
   styleUrls: ['./detail-talk.component.sass']
 })
 export class DetailTalkComponent implements OnInit {
-  talkPlanning: TalkPlanning | undefined | null = null
+  talk: Talk | undefined | null = null
   colorTheme: string = "";
   iconFormat: string = ""
-  detailRoute = toRoute(AppRoutes.DETAIL_SPEAKER_ROUTE);
 
-  constructor(private route: ActivatedRoute, private dataService: DataService, private dataParamService: DataParamService, private navigation: NavigationService) {
-    this.talkPlanning = dataParamService.storageParam
-
+  constructor(private route: ActivatedRoute, private dataService: AbstractTalkService, private dataParamService: DataParamService, private navigation: NavigationService) {
+    this.talk = dataParamService.storageParam
   }
 
   ngOnInit() {
     const routeParams = this.route.snapshot.paramMap;
-    const talkIdFromRoute = Number(routeParams.get('talkId'));
+    const talkIdFromRoute = routeParams.get('talkId');
 
-    if ((this.talkPlanning === undefined) || this.talkPlanning?.talk === undefined) {
-      this.dataService.getTalkById(talkIdFromRoute).subscribe(talkPlanning => {
-        this.talkPlanning = talkPlanning;
-        this.colorTheme = getColorTheme(this.talkPlanning!.talk!.theme!.name);
-        this.iconFormat = getIconFormat(this.talkPlanning!.talk!.format!.type);
-      })
-    } else if (this.talkPlanning!.talk.id !== talkIdFromRoute) {
-      this.dataService.getTalkById(talkIdFromRoute).subscribe(talkPlanning => {
-        this.talkPlanning = talkPlanning;
-        this.colorTheme = getColorTheme(this.talkPlanning!.talk!.theme!.name);
-        this.iconFormat = getIconFormat(this.talkPlanning!.talk!.format!.type);
+    if ((this.talk === undefined) ||
+      this.talk!.id.toString() !== talkIdFromRoute) {
+      this.dataService.getTalkById(talkIdFromRoute!).subscribe(talkPlanning => {
+        this.talk = talkPlanning;
+        this.colorTheme = getColorTheme(this.talk!.theme!.name);
+        this.iconFormat = getIconFormat(this.talk!.format!.type);
       })
     } else {
-      this.colorTheme = getColorTheme(this.talkPlanning!.talk!.theme!.name)
-      this.iconFormat = getIconFormat(this.talkPlanning!.talk!.format!.type)
+      this.colorTheme = getColorTheme(this.talk!.theme!.name)
+      this.iconFormat = getIconFormat(this.talk!.format!.type)
     }
-
-    console.log(this.talkPlanning?.talk.speakers)
-
 
   }
 

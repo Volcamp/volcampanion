@@ -1,9 +1,9 @@
-import {Planning, PlanningType} from "../../dto/Planning";
-import {Speaker} from "../../dto/Speaker";
-import {DividerPlanning} from "../../dto/DividerPlanning";
-import {TalkPlanning} from "../../dto/TalkPlanning";
-import {BreakPlanning} from "../../dto/BreakPlanning";
-import {PlanningTheme} from "../../dto/Theme";
+import {Planning, PlanningType} from "../dto/Planning";
+import {Speaker} from "../dto/Speaker";
+import {DividerPlanning} from "../dto/DividerPlanning";
+import {TalkPlanning} from "../dto/TalkPlanning";
+import {BreakPlanning} from "../dto/BreakPlanning";
+import {PlanningTheme} from "../dto/Theme";
 
 export const TALK_DATA: Planning[] = [
   new DividerPlanning(new Date("2022-03-03T00:00:00")),

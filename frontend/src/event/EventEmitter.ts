@@ -1,7 +1,14 @@
 import {EventArgs} from "./EventArgs";
+import Event from "./Event";
 
-export class EventEmitter {
+// @ts-ignore
+export class EventEmitter<T extends Event> {
   listeners: any = {}
+
+  eventType: any;
+  constructor(eventType: any) {
+    this.eventType = eventType;
+  }
 
   private addListener(eventName: string, fn: any) {
     this.listeners[eventName] = this.listeners[eventName] || [];
@@ -9,18 +16,9 @@ export class EventEmitter {
     return this;
   }
 
-  on(eventName: string, fn: any) {
-    return this.addListener(eventName, fn);
-  }
-
-  once(eventName: string, fn: any) {
-    this.listeners[eventName] = this.listeners[eventName] || [];
-    const onceWrapper = () => {
-      fn();
-      this.off(eventName, onceWrapper);
-    }
-    this.listeners[eventName].push(onceWrapper);
-    return this;
+  on(fn: any) {
+    //@ts-ignore
+    return this.addListener(this.eventType.name, fn);
   }
 
   off(eventName: string, fn: any) {
@@ -39,24 +37,15 @@ export class EventEmitter {
     return this;
   }
 
-  emit(eventArgs: EventArgs) {
-    const eventName = eventArgs.getType();
+  emit(eventArgs: EventArgs | undefined) {
+    //@ts-ignore
+    const eventName = this.eventType.name;
     let fns = this.listeners[eventName];
     if (!fns) return false;
     fns.forEach((f: any) => {
-
       f(eventArgs);
     });
     return true;
-  }
-
-  private listenerCount(eventName: string) {
-    let fns = this.listeners[eventName] || [];
-    return fns.length;
-  }
-
-  private rawListeners(eventName: string) {
-    return this.listeners[eventName];
   }
 
 }

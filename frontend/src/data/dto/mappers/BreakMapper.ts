@@ -1,4 +1,4 @@
-import {BreakPlanning} from "../../../dto/BreakPlanning";
+import {BreakPlanning} from "../BreakPlanning";
 
 export class BreakMapper {
   static toModel(data: any): BreakPlanning {

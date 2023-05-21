@@ -20,7 +20,6 @@ import {TalksListComponent} from "../components/talks-list/talks-list.component"
 import {MatDividerModule} from "@angular/material/divider";
 import {BreakTeaserViewComponent} from "../components/break-teaser-view/break-teaser-view.component";
 import {DividerTeaserViewComponent} from "../components/divider-teaser-view/divider-teaser-view.component";
-import {DataService} from "../data/services-datas/DataService";
 import {SpeakerTeaserViewComponent} from "../components/speaker-teaser-view/speaker-teaser-view.component";
 import {SpeakersListComponent} from "../components/speakers-list/speakers-list.component";
 import {SpeakerPageComponent} from "../page/speaker-page/speaker-page.component";
@@ -31,13 +30,11 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {DetailSpeakerComponent} from "../page/detail-speaker/detail-speaker.component";
 import {DataParamService} from "../services/data-param.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {ApiPlanManager} from "../data/services-datas/api-datas/api-managers/ApiPlanManager";
-import {ApiSpeakerManager} from "../data/services-datas/api-datas/api-managers/ApiSpeakerManager";
-import {RequestManager} from "../data/services-datas/api-datas/api-general/RequestManager";
-import {EnvServiceProvider} from "../data/environments/EnvServiceFactory";
+import {PlanningService} from "../services/PlanningService";
+import {SpeakerService} from "../services/SpeakerService";
+import {RequestManager} from "../data/RequestManager";
 import {TwitterBtnComponent} from "../components/twitter-btn/twitter-btn.component";
 import {LinkedinBtnComponent} from "../components/linkedin-btn/linkedin-btn.component";
-import {StubService} from "../data/services-datas/stub-datas/StubService";
 import {FilterMenuComponent} from "../components/filter-menu/filter-menu.component";
 import {MatBottomSheetModule} from "@angular/material/bottom-sheet";
 import {MatChipsModule} from "@angular/material/chips";
@@ -45,13 +42,18 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatNativeDateModule} from "@angular/material/core";
-import {ApiService} from "../data/services-datas/api-datas/ApiService";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FilterPlanningsService} from "../services/filter-plannings.service";
 import {NotFoundComponent} from "../page/not-found-page/not-found/not-found.component";
 import {SunComponent} from "../page/not-found-page/sun/sun.component";
 import {CloudComponent} from "../page/not-found-page/cloud/cloud.component";
 import {AstronautComponent} from "../page/not-found-page/astronaut/astronaut.component";
+import {AbstractPlanningService} from "../services/AbstractPlanningService";
+import {AbstractSpeakerService} from "../services/AbstractSpeakerService";
+import {AbstractConferenceService} from "../services/AbstractConferenceService";
+import {ConferenceService} from "../services/ConferenceService";
+import {AbstractTalkService} from "../services/AbstractTalkService";
+import {TalkService} from "../services/TalkService";
 
 @NgModule({
   declarations: [
@@ -78,47 +80,58 @@ import {AstronautComponent} from "../page/not-found-page/astronaut/astronaut.com
     CloudComponent,
     AstronautComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ServiceWorkerModule.register('ngsw-worker.js', {
-            enabled: !isDevMode(),
-            // Register the ServiceWorker as soon as the application is stable
-            // or after 30 seconds (whichever comes first).
-            registrationStrategy: 'registerWhenStable:30000'
-        }),
-        MatTabsModule,
-        MatIconModule,
-        MatButtonModule,
-        MatToolbarModule,
-        BrowserAnimationsModule,
-        MatProgressBarModule,
-        MatGridListModule,
-        MatCardModule,
-        MatBadgeModule,
-        MatDividerModule,
-        HttpClientModule,
-        MatProgressSpinnerModule,
-        MatBottomSheetModule,
-        MatChipsModule,
-        MatFormFieldModule,
-        MatDatepickerModule,
-        ReactiveFormsModule,
-        MatNativeDateModule,
-        MatCheckboxModule,
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
+    MatTabsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule,
+    MatGridListModule,
+    MatCardModule,
+    MatBadgeModule,
+    MatDividerModule,
+    HttpClientModule,
+    MatProgressSpinnerModule,
+    MatBottomSheetModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
 
 
-    ],
+  ],
   providers: [{
-    provide: DataService,
-    useClass: ApiService // <--- Defining the swappable implementation.
+    provide: AbstractPlanningService,
+    useClass: PlanningService // <--- Defining the swappable implementation.
   },
+    {
+      provide: AbstractSpeakerService,
+      useClass: SpeakerService // <--- Defining the swappable implementation.
+    },
+    {
+      provide: AbstractConferenceService,
+      useClass: ConferenceService // <--- Defining the swappable implementation.
+    },
+    {
+      provide: AbstractTalkService,
+      useClass: TalkService // <--- Defining the swappable implementation.
+    },
     HttpClient,
     DataParamService,
-    ApiPlanManager,
-    ApiSpeakerManager,
+    PlanningService,
+    SpeakerService,
     RequestManager,
-    EnvServiceProvider,
     FilterPlanningsService,
   ],
   bootstrap: [AppComponent]

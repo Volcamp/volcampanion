@@ -1,4 +1,4 @@
-import {AfterViewInit, Component} from '@angular/core';
+import {AfterViewInit, Component, Input} from '@angular/core';
 import {AppRoutes, toRoute} from "../../app/AppRoutes";
 
 @Component({
@@ -6,8 +6,9 @@ import {AppRoutes, toRoute} from "../../app/AppRoutes";
   templateUrl: './bottom-nav-bar.component.html',
   styleUrls: ['./bottom-nav-bar.component.sass']
 })
-
 export class BottomNavBarComponent implements AfterViewInit {
+  @Input() isMobile!: boolean;
+
   homeRoute = toRoute(AppRoutes.HOME_ROUTE)
   speakerRoute = toRoute(AppRoutes.SPEAKER_ROUTE)
   favoriteRoute = toRoute(AppRoutes.FAVORITE_ROUTE)
@@ -25,19 +26,22 @@ export class BottomNavBarComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    let button = document.getElementById(location.pathname);
-    if (button == null) {
-      if (location.pathname.toLowerCase().includes(this.homeRoute)) {
-        button = document.getElementById(this.homeRoute);
-      } else if (location.pathname.toLowerCase().includes(this.speakerRoute)) {
-        button = document.getElementById(this.speakerRoute);
-      } else if (location.pathname.toLowerCase().includes(this.favoriteRoute)) {
-        button = document.getElementById(this.favoriteRoute);
-      }else {
-        return
+    if (this.isMobile) {
+
+      let button = document.getElementById(location.pathname);
+      if (button == null) {
+        if (location.pathname.toLowerCase().includes(this.homeRoute)) {
+          button = document.getElementById(this.homeRoute);
+        } else if (location.pathname.toLowerCase().includes(this.speakerRoute)) {
+          button = document.getElementById(this.speakerRoute);
+        } else if (location.pathname.toLowerCase().includes(this.favoriteRoute)) {
+          button = document.getElementById(this.favoriteRoute);
+        } else {
+          return
+        }
       }
+      button!.classList.add(CLASS_BTN_STYLE, CLASS_BTN_COLOR);
     }
-    button!.classList.add(CLASS_BTN_STYLE, CLASS_BTN_COLOR);
 
 
   }

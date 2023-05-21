@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Speaker} from "../../data/dto/Speaker";
-import {SocialMedia} from "../../general-volcamp/SocialMedia";
+import {SocialMedia} from "../../common/SocialMedia";
 
 @Component({
   selector: 'app-speaker-teaser-view',

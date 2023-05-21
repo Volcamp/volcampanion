@@ -6,8 +6,10 @@ import {DataParamService} from "./data-param.service";
 import {AppRoutes, toRoute, toRouteById} from "../app/AppRoutes";
 import {TalkPlanning} from "../data/dto/TalkPlanning";
 import {EventEmitter} from "../event/EventEmitter";
-import {EventBackArrowVisibility} from "../event/EventBackArrowVisibility";
-import {EventFilterVisibility} from "../event/EventFilterVisibility";
+import {BackArrowVisibilityEventArgs} from "../event/BackArrowVisibilityEventArgs";
+import {FilterVisibilityEventArgs} from "../event/FilterVisibilityEventArgs";
+import {BackArrowVisibilityEvent} from "../event/BackArrowVisibilityEvent";
+import {FilterVisibilityEvent} from "../event/FilterVisibilityEvent";
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +17,16 @@ import {EventFilterVisibility} from "../event/EventFilterVisibility";
 export class NavigationService {
 
   private history: string[] = [];
-  eventEmitter = new EventEmitter();
+  backArrowEventEmitter = new EventEmitter<BackArrowVisibilityEvent>(BackArrowVisibilityEvent);
+  filterVisibilityEventEmitter = new EventEmitter<FilterVisibilityEvent>(FilterVisibilityEvent);
 
   constructor(private router: Router, private location: Location, private dataParam: DataParamService) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.history.push(event.urlAfterRedirects);
 
-        this.eventEmitter.emit(new EventBackArrowVisibility(this.router.url.slice(1).includes("/")));
-        this.eventEmitter.emit(new EventFilterVisibility(this.router.url.includes(AppRoutes.HOME_ROUTE) || this.router.url.includes(AppRoutes.FAVORITE_ROUTE)));
+        this.backArrowEventEmitter.emit(new BackArrowVisibilityEventArgs(this.router.url.slice(1).includes("/")));
+        this.filterVisibilityEventEmitter.emit(new FilterVisibilityEventArgs(this.router.url.includes(AppRoutes.HOME_ROUTE) || this.router.url.includes(AppRoutes.FAVORITE_ROUTE)));
       }
     });
   }
@@ -50,7 +53,7 @@ export class NavigationService {
   }
 
   goToTalk(talkPlanning: TalkPlanning): void {
-    this.dataParam.storageParam = talkPlanning;
+    this.dataParam.storageParam = talkPlanning.talk;
     this.goTo(toRouteById(AppRoutes.DETAIL_TALK_ROUTE, talkPlanning.talk.id.toString()));
   }
 }

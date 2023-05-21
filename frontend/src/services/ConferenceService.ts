@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {RequestManager} from "./api-general/RequestManager";
-import {ApiLinks} from "./api-general/ApiLinks";
+import {RequestManager} from "../data/RequestManager";
 import {map, Observable, of} from "rxjs";
-import {Conference} from "../../dto/Conference";
-import {EnvironmentService} from "../../environments/environment.service";
-import {LinkComposerService} from "./api-general/LinkComposer.service";
+import {Conference} from "../data/dto/Conference";
+import {EnvironmentService} from "./EnvironmentService";
+import {APIRoutes} from "../data/APIRoutes";
+import {AbstractConferenceService} from "./AbstractConferenceService";
 
 
 export const ACTIVE_ID_CONF = "activeIdConf"
@@ -12,14 +12,14 @@ export const ACTIVE_ID_CONF = "activeIdConf"
 @Injectable({
   providedIn: 'root'
 })
-export class CurrentConferenceService {
+export class ConferenceService implements AbstractConferenceService {
   constructor(private env: EnvironmentService, private requestManager: RequestManager) {
   }
 
-  getActiveId(): Observable<Conference> {
+  getCurrentConference(): Observable<Conference> {
     let conf = window.localStorage.getItem(ACTIVE_ID_CONF);
     if (conf == null) {
-      return this.requestManager.get<Conference>(LinkComposerService.constructEndPoint(this.env.apiUrl, ApiLinks.CONFERENCE_ACTIVE)).pipe(
+      return this.requestManager.get<Conference>(this.env.getApiUrl() + APIRoutes.CONFERENCE_ACTIVE).pipe(
         map(conf => {
             window.localStorage.setItem(ACTIVE_ID_CONF, JSON.stringify(conf));
             return conf
@@ -29,5 +29,6 @@ export class CurrentConferenceService {
       return of(JSON.parse(conf))
     }
   }
+
 
 }

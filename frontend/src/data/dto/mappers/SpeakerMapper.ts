@@ -1,4 +1,4 @@
-import {Speaker} from "../../../dto/Speaker";
+import {Speaker} from "../Speaker";
 
 export class SpeakerMapper {
   static toModel(data: any): Speaker {

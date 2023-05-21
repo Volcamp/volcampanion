@@ -1,33 +1,20 @@
-import {EventArgs} from "./EventArgs";
 import {PlanningType} from "../data/dto/Planning";
 import {PlanningTheme} from "../data/dto/Theme";
+import Event from "./Event";
+import {FilterVisibilityEventArgs} from "./FilterVisibilityEventArgs";
 
-export class FilterPlanning {
+export class FilterPlanningEvent extends Event<FilterVisibilityEventArgs> {
+
   planningsTypes: PlanningType[] = [];
   planningsThemes: PlanningTheme[] = [];
   dates: Date[] = [];
 
   constructor(planningsTypes: PlanningType[], planningsThemes: PlanningTheme[], dates: Date[]) {
+    super();
     this.dates = dates;
     this.planningsThemes = planningsThemes;
     this.planningsTypes = planningsTypes;
   }
-}
 
-export class EventFilterPlanning extends EventArgs {
-  constructor(data: FilterPlanning) {
-    super();
-    this._data = data
 
-  }
-
-  get data(): FilterPlanning {
-    return this._data;
-  }
-
-  set data(value: FilterPlanning) {
-    this._data = value;
-  }
-
-  private _data: FilterPlanning;
 }

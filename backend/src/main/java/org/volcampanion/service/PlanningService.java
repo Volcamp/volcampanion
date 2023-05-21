@@ -16,6 +16,8 @@ import java.util.List;
 public class PlanningService {
     private static final String BASE_QUERY = "id.talk.conference.id = ?1 ";
 
+    private static final Sort SORT_ORDER = Sort.ascending("schedule, id.room.id");
+
     @Inject
     PlanningRepository repository;
     @Inject
@@ -28,15 +30,15 @@ public class PlanningService {
     }
 
     public List<Planning> list() {
-        return mapper.toDomain(repository.listAll(Sort.ascending("schedule")));
+        return mapper.toDomain(repository.listAll(SORT_ORDER));
     }
 
     public List<Planning> listByRoom(long room) {
-        return mapper.toDomain(repository.list("id.room.id", Sort.ascending("schedule"), room));
+        return mapper.toDomain(repository.list("id.room.id", SORT_ORDER, room));
     }
 
     public List<Planning> listByTalk(long talk) {
-        return mapper.toDomain(repository.list("id.talk.id", Sort.ascending("schedule"), talk));
+        return mapper.toDomain(repository.list("id.talk.id", SORT_ORDER, talk));
     }
 
     public void delete(Planning domain) {
@@ -55,6 +57,6 @@ public class PlanningService {
         var query = new StringBuilder(BASE_QUERY);
         queryParams.add(filters.getConferenceId());
 
-        return mapper.toDomain(repository.list(query.toString(),Sort.ascending("schedule"), queryParams));
+        return mapper.toDomain(repository.list(query.toString(), SORT_ORDER, queryParams));
     }
 }

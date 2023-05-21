@@ -1,16 +1,16 @@
 <div class="centerContainer contentPage">
-  <div *ngIf="talkPlanning!=null">
+  <div *ngIf="talk!=null">
     <app-add-favorite class="button"></app-add-favorite>
     <div class="lineContentContainer">
       <div class="leftItem">
         <div class="centerLineContent">
-          <span class="f1">{{talkPlanning.talk.title}}</span>
-          <img class="flag" src="/assets/image/flags/{{talkPlanning.talk.language!.toLowerCase().slice(0,2)}}.png"
+          <span class="f1">{{talk.title}}</span>
+          <img class="flag" src="/assets/image/flags/{{talk.language!.toLowerCase().slice(0,2)}}.png"
                alt="language flag"/>
         </div>
 
       </div>
-      <span class="rightItem f3">{{talkPlanning.talk.level}}</span>
+      <span class="rightItem f3">{{talk.level}}</span>
     </div>
 
     <div class="lineContentContainer ">
@@ -18,26 +18,26 @@
       <div class="leftItem">
         <div class="typeFormatContainer centerLineContent">
           <span class="dot" style="background:{{colorTheme}}"></span>
-          <span class="f3">{{talkPlanning.talk.theme.description}}</span>
+          <span class="f3">{{talk.theme.description}}</span>
         </div>
       </div>
 
       <div class="typeFormatContainer rightItem centerLineContent">
         <mat-icon aria-hidden="false" aria-label="type icon">{{iconFormat}}</mat-icon>
-        <span class="f3">{{talkPlanning.talk.format.type}}</span>
+        <span class="f3">{{talk.format.type}}</span>
       </div>
     </div>
 
     <div class="scrollmenu">
-      <app-speaker-preview class="speakerPreview" *ngFor="let speaker of talkPlanning!.talk!.speakers"
+      <app-speaker-preview class="speakerPreview" *ngFor="let speaker of talk!.speakers"
                            name="{{speaker.name}}" photo="{{speaker.photo}}" company="{{speaker.company}}"
                            (click)="navigate(speaker)"></app-speaker-preview>
     </div>
-    <span class="f4">{{talkPlanning.talk.description}}</span>
+    <span class="f4">{{talk.description}}</span>
 
   </div>
 
-  <div *ngIf="talkPlanning===null">
+  <div *ngIf="talk===null">
     <mat-spinner></mat-spinner>
 
   </div>
