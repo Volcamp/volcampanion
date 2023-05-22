@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {NavigationService} from "../../services/NavigationService";
 import {BackArrowVisibilityEventArgs} from "../../event/BackArrowVisibilityEventArgs";
 import {MatBottomSheet} from "@angular/material/bottom-sheet";
@@ -9,14 +9,15 @@ import {FilterPlanningEventArgs} from "../../event/FilterPlanningEventArgs";
 import {FilterPlanningsService} from "../../services/filter-plannings.service";
 import {FilterVisibilityEventArgs} from "../../event/FilterVisibilityEventArgs";
 import {AppRoutes, toRoute} from "../../app/AppRoutes";
-import {OidcSecurityService} from "angular-auth-oidc-client";
+import {LoginResponse, OidcSecurityService} from "angular-auth-oidc-client";
 
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.sass']
 })
-export class TopBarComponent {
+export class TopBarComponent implements OnInit {
+
   @Input() isMobile!: boolean;
 
 
@@ -33,9 +34,16 @@ export class TopBarComponent {
   logged: boolean = false;
 
   constructor(private navigation: NavigationService, private _bottomSheet: MatBottomSheet, private filterPlannings: FilterPlanningsService, private oidcSecurityService: OidcSecurityService) {
-    navigation.backArrowEventEmitter.on((data: BackArrowVisibilityEventArgs) => this.changeBackArrow(data.IsVisible))
-    navigation.filterVisibilityEventEmitter.on((data: FilterVisibilityEventArgs) => this.changeFilter(data.IsVisible))
+    navigation.backArrowEventEmitter.on((data: BackArrowVisibilityEventArgs) => this.changeBackArrow(data.IsVisible));
+    navigation.filterVisibilityEventEmitter.on((data: FilterVisibilityEventArgs) => this.changeFilter(data.IsVisible));
   }
+
+  ngOnInit(): void {
+    this.oidcSecurityService.checkAuth().subscribe((loginResponse: LoginResponse) => {
+      this.logged = loginResponse.isAuthenticated;
+    });
+  }
+
 
   back(): void {
     this.navigation.back()
@@ -71,8 +79,8 @@ export class TopBarComponent {
   }
 
   logInOrOut() {
-    if(this.logged) this.logout()
-    else this.logout()
+    if (this.logged) this.logout()
+    else this.login()
   }
 
 }

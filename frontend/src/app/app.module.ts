@@ -60,6 +60,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import {AuthConfigModule} from "./auth-config.module";
 import {VolcampFeedbackComponent} from "../components/volcamp-feedback/volcamp-feedback.component";
 import {MatInputModule} from "@angular/material/input";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 @NgModule({
   declarations: [
@@ -120,6 +121,7 @@ import {MatInputModule} from "@angular/material/input";
     MatMenuModule,
     AuthConfigModule,
     MatInputModule,
+    MatButtonToggleModule,
 
 
   ],

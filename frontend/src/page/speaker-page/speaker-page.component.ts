@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Speaker} from "../../data/dto/Speaker";
 import {AbstractSpeakerService} from "../../services/AbstractSpeakerService";
 import {AbstractConferenceService} from "../../services/AbstractConferenceService";
+import {VMListSpeaker} from "../../data/vm/VMListSpeaker";
 
 @Component({
   selector: 'app-speaker-page',
@@ -9,15 +9,14 @@ import {AbstractConferenceService} from "../../services/AbstractConferenceServic
   styleUrls: ['./speaker-page.component.sass']
 })
 export class SpeakerPageComponent implements OnInit {
-  speakers!: Speaker[]
+  vm: VMListSpeaker
 
-  constructor(private dataService: AbstractSpeakerService, private confService: AbstractConferenceService) {
+  constructor(dataService: AbstractSpeakerService, confService: AbstractConferenceService) {
+    this.vm = new VMListSpeaker(dataService, confService);
   }
 
   ngOnInit(): void {
-    this.confService.getCurrentConference().subscribe(conf => {
-        this.dataService.getSpeakers(conf!.id.toString()).subscribe((speakers => this.speakers = speakers))
-      }
-    );
+    this.vm.init();
+
   }
 }

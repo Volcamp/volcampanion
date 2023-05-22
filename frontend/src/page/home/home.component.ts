@@ -4,7 +4,7 @@ import {FilterPlanningEventArgs} from "../../event/FilterPlanningEventArgs";
 import {FilterPlanningsService} from "../../services/filter-plannings.service";
 import {AbstractPlanningService} from "../../services/AbstractPlanningService";
 import {AbstractConferenceService} from "../../services/AbstractConferenceService";
-import {FilterPlanningEvent} from "../../event/FilterPlanningEvent";
+import {VMListPlanning} from "../../data/vm/VMListPlanning";
 
 @Component({
   selector: 'app-home',
@@ -12,25 +12,18 @@ import {FilterPlanningEvent} from "../../event/FilterPlanningEvent";
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent {
-  planningsNoFilter: Planning[] = []
-  plannings!: Planning[]
+  vm : VMListPlanning;
 
 
-  constructor(private dataService: AbstractPlanningService, private confService: AbstractConferenceService, private filterPlannings: FilterPlanningsService) {
+  constructor( dataService: AbstractPlanningService,  confService: AbstractConferenceService,  filterPlannings: FilterPlanningsService) {
+    this.vm= new VMListPlanning(dataService,confService,filterPlannings);
   }
 
-  ngOnInit(): void {
-    this.confService.getCurrentConference().subscribe(conf => {
-      this.dataService.getPlannings(conf!.id.toString()).subscribe(plannings => {
-          this.planningsNoFilter = plannings;
-          this.plannings = plannings;
 
-          this.filterPlannings.eventEmitter.on((data: FilterPlanningEventArgs) => {
-            this.plannings = this.filterPlannings.filter(this.planningsNoFilter, data);
-          })
-        }
-      );
-    })
+
+  ngOnInit(): void {
+    this.vm.init()
+
 
   }
 }

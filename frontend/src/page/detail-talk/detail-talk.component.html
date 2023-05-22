@@ -1,41 +1,41 @@
 <div class="centerContainer contentPage">
-  <div *ngIf="talk!=null">
+  <div *ngIf="vm.talk!=null">
     <app-add-favorite class="button"></app-add-favorite>
     <div class="lineContentContainer">
       <div class="leftItem">
         <div class="centerLineContent">
-          <span class="f1">{{talk.title}}</span>
-          <img class="flag" src="/assets/image/flags/{{talk.language!.toLowerCase().slice(0,2)}}.png"
+          <span class="f1">{{vm.talk.title}}</span>
+          <img class="flag" src="/assets/image/flags/{{vm.talk.language!.toLowerCase().slice(0,2)}}.png"
                alt="language flag"/>
         </div>
 
       </div>
-      <span class="rightItem f3">{{talk.level}}</span>
+      <span class="rightItem f3">{{vm.talk.level}}</span>
     </div>
 
     <div class="lineContentContainer ">
 
       <div class="leftItem">
         <div class="typeFormatContainer centerLineContent">
-          <span class="dot" style="background:{{colorTheme}}"></span>
-          <span class="f3">{{talk.theme.description}}</span>
+          <span class="dot" style="background:{{vm.colorTheme}}"></span>
+          <span class="f3">{{vm.talk.theme.description}}</span>
         </div>
       </div>
 
       <div class="typeFormatContainer rightItem centerLineContent">
-        <mat-icon aria-hidden="false" aria-label="type icon">{{iconFormat}}</mat-icon>
-        <span class="f3">{{talk.format.type}}</span>
+        <mat-icon aria-hidden="false" aria-label="type icon">{{vm.iconFormat}}</mat-icon>
+        <span class="f3">{{vm.talk.format.type}}</span>
       </div>
     </div>
 
     <div class="scrollmenu">
-      <app-speaker-preview class="speakerPreview" *ngFor="let speaker of talk!.speakers"
+      <app-speaker-preview class="speakerPreview" *ngFor="let speaker of vm.talk!.speakers"
                            name="{{speaker.name}}" photo="{{speaker.photo}}" company="{{speaker.company}}"
                            (click)="navigate(speaker)"></app-speaker-preview>
     </div>
-    <span class="f4">{{talk.description}}</span>
+    <span class="f4">{{vm.talk.description}}</span>
 
   </div>
   <app-volcamp-feedback></app-volcamp-feedback>
 </div>
-<app-loader *ngIf="talk===undefined"></app-loader>
+<app-loader *ngIf="vm.talk===undefined"></app-loader>
