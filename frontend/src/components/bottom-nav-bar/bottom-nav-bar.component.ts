@@ -1,12 +1,13 @@
-import {AfterViewInit, Component, Input} from '@angular/core';
+import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
 import {AppRoutes, toRoute} from "../../app/AppRoutes";
+import {UserService} from "../../services/UserService";
 
 @Component({
   selector: 'app-bottom-nav-bar',
   templateUrl: './bottom-nav-bar.component.html',
   styleUrls: ['./bottom-nav-bar.component.sass']
 })
-export class BottomNavBarComponent implements AfterViewInit {
+export class BottomNavBarComponent implements AfterViewInit, OnInit {
   @Input() isMobile!: boolean;
 
   homeRoute = toRoute(AppRoutes.HOME_ROUTE)
@@ -14,6 +15,10 @@ export class BottomNavBarComponent implements AfterViewInit {
   favoriteRoute = toRoute(AppRoutes.FAVORITE_ROUTE)
 
   defaultRoot = this.homeRoute
+  logged: boolean = false;
+
+  constructor(private userService : UserService) {
+  }
 
   onClick(event: any) {
     const buttons = document.querySelectorAll(CLASS_BTN_NAME);
@@ -44,6 +49,10 @@ export class BottomNavBarComponent implements AfterViewInit {
     }
 
 
+  }
+
+  ngOnInit(): void {
+    this.logged = this.userService.isLogged();
   }
 }
 

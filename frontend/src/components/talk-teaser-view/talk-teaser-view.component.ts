@@ -13,7 +13,6 @@ import {TalkPlanning} from "../../data/dto/TalkPlanning";
 
 
 export class TalkTeaserViewComponent implements OnInit {
-  @Input() isConnected: boolean = true
   @Input() talkPlanning!: TalkPlanning;
 
   color: string = ''
@@ -34,18 +33,6 @@ export class TalkTeaserViewComponent implements OnInit {
     this.speakersNames = concatenate(this.speakerNames(this.talkPlanning.talk.speakers))
     this.startDate = new Date(this.talkPlanning.schedule)
     this.endDate = new Date(this.startDate.getTime() + this.talkPlanning.talk.format.duration * 1000) //if in minutes need to be 60 000
-  }
-
-  removeFavorite() {
-    this.talkPlanning.room.capacity--
-    //faire la requete
-    this.inFavorite = false
-  }
-
-  addFavorite() {
-    this.talkPlanning.room.capacity++
-    this.inFavorite = true
-
   }
 
   onClick(numberFavorite: number) {

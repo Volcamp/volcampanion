@@ -1,21 +1,23 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {OidcSecurityService} from "angular-auth-oidc-client";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {VMFavorite} from "../../data/vm/VMFavorite";
+import {UserService} from "../../services/UserService";
+import {AbstractTalkFavoriteService} from "../../services/AbstractTalkFavoriteService";
 
 @Component({
   selector: 'app-add-favorite',
   templateUrl: './add-favorite.component.html',
   styleUrls: ['./add-favorite.component.sass']
 })
-export class AddFavoriteComponent {
+export class AddFavoriteComponent{
+
   @Output() capacityChange: EventEmitter<number> = new EventEmitter<number>();
 
   @Input() capacity: number = 0;
   @Input() talkId: number = 0;
   vm: VMFavorite;
 
-  constructor(oidcSecurityService: OidcSecurityService) {
-    this.vm = new VMFavorite(oidcSecurityService);
+  constructor(userService: UserService, abstractTalkFavoriteService: AbstractTalkFavoriteService) {
+    this.vm = new VMFavorite(userService , abstractTalkFavoriteService);
   }
 
   removeFavorite(event: Event) {

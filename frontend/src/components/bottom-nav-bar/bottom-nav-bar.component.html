@@ -11,8 +11,8 @@
       <mat-icon aria-hidden="false" aria-label="speaker icon" fontIcon="groups"></mat-icon>
       Speakers
     </button>
-    <span class="volcamp-spacer"></span>
-     <button mat-button aria-label="favorite button">
+    <span *ngIf="logged" class="volcamp-spacer"></span>
+     <button [routerLink]="[favoriteRoute]" mat-button aria-label="favorite button" *ngIf="logged">
       <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite"></mat-icon>
       Favorites
     </button>

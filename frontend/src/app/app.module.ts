@@ -65,6 +65,10 @@ import {AbstractThemeService} from "../services/AbstractThemeService";
 import {ThemeService} from "../services/ThemeService";
 import {AbstractFormatService} from "../services/AbstractFormatService";
 import {FormatService} from "../services/FormatService";
+import {UserService} from "../services/UserService";
+import {AbstractTalkFavoriteService} from "../services/AbstractTalkFavoriteService";
+import {TalkFavoriteService} from "../services/TalkFavoriteService";
+import {FavoriteComponent} from "../page/favorite/favorite.component";
 
 @NgModule({
   declarations: [
@@ -93,6 +97,8 @@ import {FormatService} from "../services/FormatService";
     VolcampRateComponent,
     LoaderComponent,
     VolcampFeedbackComponent,
+    FavoriteComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -153,10 +159,15 @@ import {FormatService} from "../services/FormatService";
       provide: AbstractFormatService,
       useClass: FormatService // <--- Defining the swappable implementation.
     },
+    {
+      provide: AbstractTalkFavoriteService,
+      useClass: TalkFavoriteService // <--- Defining the swappable implementation.
+    },
     HttpClient,
     DataParamService,
     RequestManager,
     FilterPlanningsService,
+    UserService,
   ],
   bootstrap: [AppComponent]
 })

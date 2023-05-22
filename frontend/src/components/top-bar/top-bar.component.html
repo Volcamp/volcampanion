@@ -15,7 +15,7 @@
       Speakers
     </p>
     <span class="volcamp-spacer"></span>
-    <p  class="f2 wideItem">
+    <p *ngIf="logged" [routerLink]="[favoriteRoute]"  class="f2 wideItem">
       Favorites
     </p>
   </div>

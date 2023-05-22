@@ -10,6 +10,8 @@ import {FilterPlanningsService} from "../../services/filter-plannings.service";
 import {FilterVisibilityEventArgs} from "../../event/FilterVisibilityEventArgs";
 import {AppRoutes, toRoute} from "../../app/AppRoutes";
 import {LoginResponse, OidcSecurityService} from "angular-auth-oidc-client";
+import {ACTIVE_ID_CONF} from "../../services/ConferenceService";
+import {TOKEN, UserService} from "../../services/UserService";
 
 @Component({
   selector: 'app-top-bar',
@@ -33,14 +35,19 @@ export class TopBarComponent implements OnInit {
   dates: Date[] = [];
   logged: boolean = false;
 
-  constructor(private navigation: NavigationService, private _bottomSheet: MatBottomSheet, private filterPlannings: FilterPlanningsService, private oidcSecurityService: OidcSecurityService) {
+  constructor(private navigation: NavigationService, private _bottomSheet: MatBottomSheet, private filterPlannings: FilterPlanningsService, private oidcSecurityService: OidcSecurityService, private userService : UserService) {
     navigation.backArrowEventEmitter.on((data: BackArrowVisibilityEventArgs) => this.changeBackArrow(data.IsVisible));
     navigation.filterVisibilityEventEmitter.on((data: FilterVisibilityEventArgs) => this.changeFilter(data.IsVisible));
   }
 
   ngOnInit(): void {
     this.oidcSecurityService.checkAuth().subscribe((loginResponse: LoginResponse) => {
-      this.logged = loginResponse.isAuthenticated;
+      if(loginResponse.isAuthenticated){
+        this.userService.saveToken(loginResponse.accessToken);
+        this.logged=this.userService.isLogged();
+
+      }
+
     });
   }
 
@@ -72,10 +79,11 @@ export class TopBarComponent implements OnInit {
 
   login() {
     this.oidcSecurityService.authorize();
+
   }
 
   logout() {
-    this.oidcSecurityService.logoff().subscribe((result) => console.log(result));
+    this.oidcSecurityService.logoff().subscribe((result) => this.userService.clearToken());
   }
 
   logInOrOut() {

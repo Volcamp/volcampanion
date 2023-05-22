@@ -45,7 +45,6 @@ export class PlanningService implements AbstractPlanningService {
           }
 
         }
-
         return finalData;
       })
     );
