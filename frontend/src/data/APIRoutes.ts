@@ -6,6 +6,9 @@ export enum APIRoutes {
   CONFERENCE_ACTIVE = "conferences/active/",
   ID_CONF = "?idConf=",
   FAVORITE_BEFORE = "users/talks/",
-  FAVORITE="/users/favorite-talks/",
+  FAVORITE = "/users/favorite-talks/",
   FAVORITE_AFTER = "/favorite",
+  THEMES = "talk-themes/",
+  FORMAT = "talk-formats/",
+
 }

@@ -4,6 +4,8 @@ import {PlanningTheme} from "../../data/dto/Theme";
 import {compareEqualDate, formatDate} from "../../common/DateFunc";
 import {MAT_BOTTOM_SHEET_DATA} from "@angular/material/bottom-sheet";
 import {AbstractConferenceService} from "../../services/AbstractConferenceService";
+import {AbstractThemeService} from "../../services/AbstractThemeService";
+import {AbstractFormatService} from "../../services/AbstractFormatService";
 
 @Component({
   selector: 'app-filter-menu',
@@ -11,27 +13,30 @@ import {AbstractConferenceService} from "../../services/AbstractConferenceServic
   styleUrls: ['./filter-menu.component.sass']
 })
 export class FilterMenuComponent {
-  // TODO replace with referential
-  planningsType: PlanningType[]
-  planningsTheme: PlanningTheme[]
+  planningsType: PlanningType[] = []
+  planningsTheme: PlanningTheme[] = []
   datesConference: Date[] = []
 
   planningsTypeSelected: PlanningType[] = []
   planningsThemeSelected: PlanningTheme[] = []
   dateSelected: Date[] = []
 
-  constructor(private conferenceService: AbstractConferenceService, @Inject(MAT_BOTTOM_SHEET_DATA) public data: any) {
+  constructor(private conferenceService: AbstractConferenceService, @Inject(MAT_BOTTOM_SHEET_DATA) public data: any, private themeService: AbstractThemeService, private formatService: AbstractFormatService) {
     this.planningsTypeSelected = data.planningsTypes;
     this.planningsThemeSelected = data.planningsThemes;
     this.dateSelected = data.dates;
 
-    // @ts-ignore
-    this.planningsType = Object.keys(PlanningType).map(key => PlanningType[key]).filter(k => !(parseInt(k) >= 0));
-    this.planningsType.splice(this.planningsType.indexOf(PlanningType.BREAK), 1);
-    this.planningsType.splice(this.planningsType.indexOf(PlanningType.DELIMITER_DAY), 1);
+    formatService.getFormats().subscribe(data => {
+      this.planningsType = data.map(format => format.type)
+      this.planningsType.splice(this.planningsType.indexOf(PlanningType.BREAK), this.planningsType.lastIndexOf(PlanningType.BREAK) + 1);
+      this.planningsType = this.planningsType.filter((item, index) => this.planningsType.indexOf(item) === index)
 
-    // @ts-ignore
-    this.planningsTheme = Object.keys(PlanningTheme).map(key => PlanningTheme[key]).filter(k => !(parseInt(k) >= 0));
+    })
+
+
+    themeService.getThemes().subscribe(data => {
+      this.planningsTheme = data.map(theme => theme.name);
+    })
 
     conferenceService.getCurrentConference().subscribe(conference => {
       const startDate = conference!.startDate ? new Date(conference!.startDate) : null;
@@ -46,8 +51,6 @@ export class FilterMenuComponent {
           currentDate.setDate(currentDate.getDate() + 1);
         }
       }
-
-
     });
   }
 

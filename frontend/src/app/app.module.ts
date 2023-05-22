@@ -61,6 +61,10 @@ import {AuthConfigModule} from "./auth-config.module";
 import {VolcampFeedbackComponent} from "../components/volcamp-feedback/volcamp-feedback.component";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {AbstractThemeService} from "../services/AbstractThemeService";
+import {ThemeService} from "../services/ThemeService";
+import {AbstractFormatService} from "../services/AbstractFormatService";
+import {FormatService} from "../services/FormatService";
 
 @NgModule({
   declarations: [
@@ -140,6 +144,14 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     {
       provide: AbstractTalkService,
       useClass: TalkService // <--- Defining the swappable implementation.
+    },
+    {
+      provide: AbstractThemeService,
+      useClass: ThemeService // <--- Defining the swappable implementation.
+    },
+    {
+      provide: AbstractFormatService,
+      useClass: FormatService // <--- Defining the swappable implementation.
     },
     HttpClient,
     DataParamService,
