@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-volcamp-note',
+  selector: 'app-volcamp-feedback',
   templateUrl: './volcamp-feedback.component.html',
   styleUrls: ['./volcamp-feedback.component.sass']
 })

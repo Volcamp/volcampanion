@@ -20,7 +20,6 @@ import {TalksListComponent} from "../components/talks-list/talks-list.component"
 import {MatDividerModule} from "@angular/material/divider";
 import {BreakTeaserViewComponent} from "../components/break-teaser-view/break-teaser-view.component";
 import {DividerTeaserViewComponent} from "../components/divider-teaser-view/divider-teaser-view.component";
-import {DataService} from "../data/services-datas/DataService";
 import {SpeakerTeaserViewComponent} from "../components/speaker-teaser-view/speaker-teaser-view.component";
 import {SpeakersListComponent} from "../components/speakers-list/speakers-list.component";
 import {SpeakerPageComponent} from "../page/speaker-page/speaker-page.component";
@@ -57,6 +56,10 @@ import {CloudComponent} from "../page/not-found-page/cloud/cloud.component";
 import {AstronautComponent} from "../page/not-found-page/astronaut/astronaut.component";
 import {VolcampRateComponent} from "../components/volcamp-rate/volcamp-rate.component";
 import {LoaderComponent} from "../components/loader/loader.component";
+import {MatMenuModule} from "@angular/material/menu";
+import {AuthConfigModule} from "./auth-config.module";
+import {VolcampFeedbackComponent} from "../components/volcamp-feedback/volcamp-feedback.component";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -84,6 +87,7 @@ import {LoaderComponent} from "../components/loader/loader.component";
     AstronautComponent,
     VolcampRateComponent,
     LoaderComponent,
+    VolcampFeedbackComponent,
   ],
   imports: [
     BrowserModule,
@@ -115,7 +119,7 @@ import {LoaderComponent} from "../components/loader/loader.component";
     MatCheckboxModule,
     MatMenuModule,
     AuthConfigModule,
-
+    MatInputModule,
 
 
   ],

@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {OidcSecurityService} from "angular-auth-oidc-client";
-import {DataService} from "../../data/services-datas/DataService";
 import {VMFavorite} from "../../data/vm/VMFavorite";
 
 @Component({
@@ -15,8 +14,8 @@ export class AddFavoriteComponent {
   @Input() talkId: number = 0;
   vm: VMFavorite;
 
-  constructor(oidcSecurityService: OidcSecurityService, dataService: DataService) {
-    this.vm = new VMFavorite(oidcSecurityService, dataService);
+  constructor(oidcSecurityService: OidcSecurityService) {
+    this.vm = new VMFavorite(oidcSecurityService);
   }
 
   removeFavorite(event: Event) {

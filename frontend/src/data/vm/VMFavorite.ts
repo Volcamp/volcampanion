@@ -1,11 +1,11 @@
 import {OidcSecurityService} from "angular-auth-oidc-client";
-import {DataService} from "../services-datas/DataService";
+import {DataService} from "angular-auth-oidc-client/lib/api/data.service";
 
 export class VMFavorite {
   logged: boolean = false;
   inFavorite: boolean = false;
 
-  constructor(private oidcSecurityService: OidcSecurityService, private dataService: DataService) {
+  constructor(private oidcSecurityService: OidcSecurityService) {
     this.oidcSecurityService.isAuthenticated$.subscribe(({isAuthenticated}) => {
       this.logged = isAuthenticated;
     });
@@ -13,7 +13,6 @@ export class VMFavorite {
 
   removeFavorite(talkId: number) {
     if (this.logged) {
-      this.dataService.removeTalkFromFavorite(talkId);
       this.inFavorite = false;
     }
 
@@ -21,7 +20,6 @@ export class VMFavorite {
 
   addFavorite(talkId: number) {
     if (this.logged) {
-      this.dataService.addTalkToFavorite(talkId);
       this.inFavorite = true;
     }
   }
