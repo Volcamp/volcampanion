@@ -1,3 +1,5 @@
+@import "src/styles"
+
 .contentDetailSpeaker
   display: grid
   gap: 10px
@@ -8,14 +10,12 @@
   margin: auto
 .imagSpeaker
   border-radius: 50%
-  @media screen and (min-width: 240px) /* Mobile devices */
-    width: 45vw
-  @media screen and (min-width: 768px) /* iPads, Tablets */
-    width:25vw
-  @media screen and (min-width: 1024px) /* Small screens, laptops */
-    width:20vw
-  @media screen and (min-width: 1200px) /* Desktops, large screens */
-    width:20vw
+  +widthResponsive(45vw,25vw,20vw,20vw,20vw)
+
+.company
+  background: #6FC660
+  color: black
+  width: fit-content
 
 .speakerpreviewContainer
   display: flex

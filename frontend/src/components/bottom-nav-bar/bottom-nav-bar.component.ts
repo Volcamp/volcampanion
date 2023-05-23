@@ -17,7 +17,7 @@ export class BottomNavBarComponent implements AfterViewInit, OnInit {
   defaultRoot = this.homeRoute
   logged: boolean = false;
 
-  constructor(private userService : UserService) {
+  constructor(private userService: UserService) {
   }
 
   onClick(event: any) {

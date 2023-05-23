@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractSpeakerService} from "../../services/AbstractSpeakerService";
 import {AbstractConferenceService} from "../../services/AbstractConferenceService";
-import {VMListSpeaker} from "../../data/vm/VMListSpeaker";
+import {VMListSpeaker} from "../../vm/VMListSpeaker";
 
 @Component({
   selector: 'app-speaker-page',

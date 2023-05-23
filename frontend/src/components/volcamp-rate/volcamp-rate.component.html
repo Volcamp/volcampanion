@@ -1,11 +1,7 @@
 <div class="rating">
   <div *ngFor="let id of [1,2,3,4,5]">
     <button (click)="check(id)">
-      <img src='/assets/image/volcanNote/{{isChecked(id) ?  "checked/" : "border/"}}{{id}}.png' >
+      <img src='/assets/image/volcanNote/{{isChecked(id) ?  "checked/" : "border/"}}{{id}}.png'>
     </button>
   </div>
-
-
-
-
 </div>

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {DataParamService} from "../../services/data-param.service";
 import {AbstractSpeakerService} from "../../services/AbstractSpeakerService";
-import {VMSpeaker} from "../../data/vm/VMSpeaker";
+import {VMSpeaker} from "../../vm/VMSpeaker";
+import {DataParamService} from "../../services/DataParamService";
 
 @Component({
   selector: 'app-detail-speaker',
@@ -14,6 +14,7 @@ export class DetailSpeakerComponent implements OnInit {
 
   constructor(route: ActivatedRoute, dataService: AbstractSpeakerService, dataParamService: DataParamService) {
     this.vm = new VMSpeaker(route, dataService, dataParamService);
+    console.log(this.vm.speaker?.company);
 
   }
 

@@ -1,5 +1,5 @@
-<app-top-bar [isMobile]="isMobile" class="header"/>
-<div class="content">
+<app-top-bar [isMobile]="isMobile" class="header" id="header"/>
+<div class="content" style="padding-top:{{document.getElementById('header')!.offsetHeight + 10 }}px;" >
   <router-outlet/>
 </div>
-<app-bottom-nav-bar [isMobile]="isMobile" class="footer"/>
+<app-bottom-nav-bar [isMobile]="isMobile" class="footer" id="footer"/>

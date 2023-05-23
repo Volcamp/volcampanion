@@ -1,9 +1,9 @@
-import {Planning} from "../dto/Planning";
-import {FilterPlanningsService} from "../../services/filter-plannings.service";
-import {UserService} from "../../services/UserService";
-import {AbstractTalkFavoriteService} from "../../services/AbstractTalkFavoriteService";
-import {FilterPlanningEventArgs} from "../../event/FilterPlanningEventArgs";
-import {AbstractConferenceService} from "../../services/AbstractConferenceService";
+import {Planning} from "../data/dto/Planning";
+import {FilterPlanningsService} from "../services/FilterPlanningsService";
+import {UserService} from "../services/UserService";
+import {AbstractTalkFavoriteService} from "../services/AbstractTalkFavoriteService";
+import {FilterPlanningEventArgs} from "../event/FilterPlanningEventArgs";
+import {AbstractConferenceService} from "../services/AbstractConferenceService";
 
 export class VMFavoritePage {
   planningsNoFilter: Planning[] = []

@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
 import {Location} from "@angular/common";
 import {Speaker} from "../data/dto/Speaker";
-import {DataParamService} from "./data-param.service";
 import {AppRoutes, toRoute, toRouteById} from "../app/AppRoutes";
 import {TalkPlanning} from "../data/dto/TalkPlanning";
 import {EventEmitter} from "../event/EventEmitter";
@@ -10,6 +9,7 @@ import {BackArrowVisibilityEventArgs} from "../event/BackArrowVisibilityEventArg
 import {FilterVisibilityEventArgs} from "../event/FilterVisibilityEventArgs";
 import {BackArrowVisibilityEvent} from "../event/BackArrowVisibilityEvent";
 import {FilterVisibilityEvent} from "../event/FilterVisibilityEvent";
+import {DataParamService} from "./DataParamService";
 
 @Injectable({
   providedIn: 'root'

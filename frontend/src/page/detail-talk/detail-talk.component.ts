@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {DataParamService} from "../../services/data-param.service";
 import {NavigationService} from "../../services/NavigationService";
 import {Speaker} from "../../data/dto/Speaker";
 import {AbstractTalkService} from "../../services/AbstractTalkService";
-import {VMTalk} from "../../data/vm/VMTalk";
+import {VMTalk} from "../../vm/VMTalk";
+import {DataParamService} from "../../services/DataParamService";
 
 @Component({
   selector: 'app-detail-talk',
@@ -14,7 +14,7 @@ import {VMTalk} from "../../data/vm/VMTalk";
 export class DetailTalkComponent implements OnInit {
   vm: VMTalk
 
-  constructor(route: ActivatedRoute, dataService: AbstractTalkService, dataParamService: DataParamService,private navigation: NavigationService) {
+  constructor(route: ActivatedRoute, dataService: AbstractTalkService, dataParamService: DataParamService, private navigation: NavigationService) {
     this.vm = new VMTalk(route, dataService, dataParamService);
   }
 

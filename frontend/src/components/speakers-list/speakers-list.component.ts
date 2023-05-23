@@ -1,8 +1,8 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {Speaker} from "../../data/dto/Speaker";
-import {DataParamService} from "../../services/data-param.service";
 import {NavigationService} from "../../services/NavigationService";
 import {AppRoutes, toRoute} from "../../app/AppRoutes";
+import {DataParamService} from "../../services/DataParamService";
 
 
 function sizeNumber(screenSize: number): number {

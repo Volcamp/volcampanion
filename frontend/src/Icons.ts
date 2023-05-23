@@ -35,6 +35,12 @@ export const SEND = `
 </svg>
 `;
 
+export const BUSINESS = `
+<svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 -960 960 960" width="48">
+    <path d="M140-120q-24 0-42-18t-18-42v-489q0-24 18-42t42-18h190v-91q0-24 18-42t42-18h180q24 0 42 18t18 42v91h190q24 0 42 18t18 42v489q0 24-18 42t-42 18H140Zm250-609h180v-91H390v91Zm430 358H571v60H391v-60H140v191h680v-191Zm-369 0h60v-60h-60v60Zm-311-60h251v-60h180v60h249v-238H140v238Zm340 30Z"/>
+</svg>
+`;
+
 
 export function addIcons(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
   iconRegistry.addSvgIconLiteral('favorite_checked', sanitizer.bypassSecurityTrustHtml(FAVORITE_CHECKED));
@@ -42,5 +48,6 @@ export function addIcons(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer)
   iconRegistry.addSvgIconLiteral('twitter', sanitizer.bypassSecurityTrustHtml(TWITTER));
   iconRegistry.addSvgIconLiteral('linkedin', sanitizer.bypassSecurityTrustHtml(LINKEDIN));
   iconRegistry.addSvgIconLiteral('send', sanitizer.bypassSecurityTrustHtml(SEND));
+  iconRegistry.addSvgIconLiteral('business', sanitizer.bypassSecurityTrustHtml(BUSINESS));
 
 }

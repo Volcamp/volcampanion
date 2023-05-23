@@ -1,10 +1,8 @@
-import {TalkPlanning} from "../dto/TalkPlanning";
 import {ActivatedRoute} from "@angular/router";
-import {DataParamService} from "../../services/data-param.service";
-import {AbstractTalkService} from "../../services/AbstractTalkService";
-import {NavigationService} from "../../services/NavigationService";
-import {Talk} from "../dto/Talk";
-import {getColorTheme, getIconFormat} from "../../common/ColorThemeAndTypeEmoji";
+import {AbstractTalkService} from "../services/AbstractTalkService";
+import {Talk} from "../data/dto/Talk";
+import {getColorTheme, getIconFormat} from "../common/ColorThemeAndTypeEmoji";
+import {DataParamService} from "../services/DataParamService";
 
 export class VMTalk {
   talk: Talk | undefined | null = null

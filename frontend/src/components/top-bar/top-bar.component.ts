@@ -6,12 +6,11 @@ import {FilterMenuComponent} from "../filter-menu/filter-menu.component";
 import {PlanningType} from "../../data/dto/Planning";
 import {PlanningTheme} from "../../data/dto/Theme";
 import {FilterPlanningEventArgs} from "../../event/FilterPlanningEventArgs";
-import {FilterPlanningsService} from "../../services/filter-plannings.service";
 import {FilterVisibilityEventArgs} from "../../event/FilterVisibilityEventArgs";
 import {AppRoutes, toRoute} from "../../app/AppRoutes";
 import {LoginResponse, OidcSecurityService} from "angular-auth-oidc-client";
-import {ACTIVE_ID_CONF} from "../../services/ConferenceService";
-import {TOKEN, UserService} from "../../services/UserService";
+import {UserService} from "../../services/UserService";
+import {FilterPlanningsService} from "../../services/FilterPlanningsService";
 
 @Component({
   selector: 'app-top-bar',
@@ -35,16 +34,16 @@ export class TopBarComponent implements OnInit {
   dates: Date[] = [];
   logged: boolean = false;
 
-  constructor(private navigation: NavigationService, private _bottomSheet: MatBottomSheet, private filterPlannings: FilterPlanningsService, private oidcSecurityService: OidcSecurityService, private userService : UserService) {
+  constructor(private navigation: NavigationService, private _bottomSheet: MatBottomSheet, private filterPlannings: FilterPlanningsService, private oidcSecurityService: OidcSecurityService, private userService: UserService) {
     navigation.backArrowEventEmitter.on((data: BackArrowVisibilityEventArgs) => this.changeBackArrow(data.IsVisible));
     navigation.filterVisibilityEventEmitter.on((data: FilterVisibilityEventArgs) => this.changeFilter(data.IsVisible));
   }
 
   ngOnInit(): void {
     this.oidcSecurityService.checkAuth().subscribe((loginResponse: LoginResponse) => {
-      if(loginResponse.isAuthenticated){
+      if (loginResponse.isAuthenticated) {
         this.userService.saveToken(loginResponse.accessToken);
-        this.logged=this.userService.isLogged();
+        this.logged = this.userService.isLogged();
 
       }
 

@@ -28,7 +28,6 @@ import {DetailTalkComponent} from "../page/detail-talk/detail-talk.component";
 import {SpeakerPreviewComponent} from "../components/speaker-preview/speaker-preview.component";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {DetailSpeakerComponent} from "../page/detail-speaker/detail-speaker.component";
-import {DataParamService} from "../services/data-param.service";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {PlanningService} from "../services/PlanningService";
 import {SpeakerService} from "../services/SpeakerService";
@@ -43,7 +42,6 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatCheckboxModule} from "@angular/material/checkbox";
-import {FilterPlanningsService} from "../services/filter-plannings.service";
 import {AbstractPlanningService} from "../services/AbstractPlanningService";
 import {AbstractSpeakerService} from "../services/AbstractSpeakerService";
 import {AbstractConferenceService} from "../services/AbstractConferenceService";
@@ -53,7 +51,6 @@ import {TalkService} from "../services/TalkService";
 import {NotFoundComponent} from "../page/not-found-page/not-found/not-found.component";
 import {SunComponent} from "../page/not-found-page/sun/sun.component";
 import {CloudComponent} from "../page/not-found-page/cloud/cloud.component";
-import {AstronautComponent} from "../page/not-found-page/astronaut/astronaut.component";
 import {VolcampRateComponent} from "../components/volcamp-rate/volcamp-rate.component";
 import {LoaderComponent} from "../components/loader/loader.component";
 import {MatMenuModule} from "@angular/material/menu";
@@ -69,6 +66,8 @@ import {UserService} from "../services/UserService";
 import {AbstractTalkFavoriteService} from "../services/AbstractTalkFavoriteService";
 import {TalkFavoriteService} from "../services/TalkFavoriteService";
 import {FavoriteComponent} from "../page/favorite/favorite.component";
+import {FilterPlanningsService} from "../services/FilterPlanningsService";
+import {DataParamService} from "../services/DataParamService";
 
 @NgModule({
   declarations: [
@@ -93,7 +92,6 @@ import {FavoriteComponent} from "../page/favorite/favorite.component";
     NotFoundComponent,
     SunComponent,
     CloudComponent,
-    AstronautComponent,
     VolcampRateComponent,
     LoaderComponent,
     VolcampFeedbackComponent,

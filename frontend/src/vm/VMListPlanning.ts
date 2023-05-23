@@ -1,17 +1,18 @@
-import {Planning} from "../dto/Planning";
-import {AbstractPlanningService} from "../../services/AbstractPlanningService";
-import {AbstractConferenceService} from "../../services/AbstractConferenceService";
-import {FilterPlanningsService} from "../../services/filter-plannings.service";
-import {FilterPlanningEventArgs} from "../../event/FilterPlanningEventArgs";
+import {Planning} from "../data/dto/Planning";
+import {AbstractPlanningService} from "../services/AbstractPlanningService";
+import {AbstractConferenceService} from "../services/AbstractConferenceService";
+import {FilterPlanningEventArgs} from "../event/FilterPlanningEventArgs";
+import {FilterPlanningsService} from "../services/FilterPlanningsService";
 
 export class VMListPlanning {
   planningsNoFilter: Planning[] = []
   plannings!: Planning[]
 
-  constructor(private dataService: AbstractPlanningService, private confService: AbstractConferenceService, private filterPlannings: FilterPlanningsService ) {
+  constructor(private dataService: AbstractPlanningService, private confService: AbstractConferenceService, private filterPlannings: FilterPlanningsService) {
 
   }
-  init(){
+
+  init() {
     this.confService.getCurrentConference().subscribe(conf => {
       this.dataService.getPlannings(conf!.id.toString()).subscribe(plannings => {
           this.planningsNoFilter = plannings;

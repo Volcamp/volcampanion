@@ -1,17 +1,12 @@
+@import "src/styles"
+
 .speakerpreviewImage
   border-radius: 100%
-  @media screen and (min-width: 240px) /* Mobile devices */
-    width: 15vw
-  @media screen and (min-width: 768px) /* iPads, Tablets */
-    width:7vw
-  @media screen and (min-width: 1024px) /* Small screens, laptops */
-    width:6.5vw
-  @media screen and (min-width: 1200px) /* Desktops, large screens */
-    width:6vw
+  +widthResponsive(20vw,20vw,6vw,6.5vw,6vw)
 
 .container
   position: relative
-  background: linear-gradient(3deg, rgba(252,99,38,1) 0%, rgba(255,151,109,1) 82%)
+  background: rgba(252,101,41,1)
   padding: 0.8rem
   border-radius: 8px
   transition: all .25s ease-in-out
@@ -44,7 +39,7 @@
 
 
 .container2
-  background: linear-gradient(3deg, rgba(252,99,38,1) 0%, rgba(255,151,109,1) 82%)
+  background: radial-gradient(circle, rgba(255,192,167,1) 0%, rgba(252,101,41,1) 71%)
   transition: all .2s
 
 

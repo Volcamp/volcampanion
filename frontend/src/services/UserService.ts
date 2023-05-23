@@ -1,6 +1,5 @@
 import {Injectable} from "@angular/core";
 import {EventEmitter} from "../event/EventEmitter";
-import {BackArrowVisibilityEvent} from "../event/BackArrowVisibilityEvent";
 import {LogEvent} from "../event/LogEvent";
 import {LogEventArgs} from "../event/LogEventArgs";
 

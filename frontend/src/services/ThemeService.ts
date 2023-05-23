@@ -10,9 +10,10 @@ import {APIRoutes} from "../data/APIRoutes";
   providedIn: 'root'
 })
 
-export class ThemeService implements AbstractThemeService{
+export class ThemeService implements AbstractThemeService {
   constructor(private env: EnvironmentService, private requestManager: RequestManager) {
   }
+
   getThemes(): Observable<Theme[]> {
     return this.requestManager.get<Theme[]>(this.env.getApiUrl() + APIRoutes.THEMES)
   }

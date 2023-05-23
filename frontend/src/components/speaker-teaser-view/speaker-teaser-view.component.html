@@ -1,7 +1,8 @@
 <div class="speaker-card zoomOutCard">
   <mat-card class="zoomOutContainer" style="">
     <mat-card-header>
-      <img src="{{speaker.photo}}" (error)="speaker.photo='/assets/image/defaultProfile.png'" mat-card-avatar class="header-image" alt="{{speaker.name}} avatar" />
+      <img src="{{speaker.photo}}" (error)="speaker.photo='/assets/image/defaultProfile.png'" mat-card-avatar
+           class="header-image" alt="{{speaker.name}} avatar"/>
       <mat-card-title><span class="f3">{{speaker.name}}</span></mat-card-title>
       <mat-card-subtitle class="f5">{{speaker.company}}</mat-card-subtitle>
     </mat-card-header>

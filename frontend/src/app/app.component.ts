@@ -12,6 +12,7 @@ import {addIcons} from "../Icons";
 export class AppComponent {
   title = 'volcampanion-pwa';
   isMobile: boolean = false;
+  document = document;
 
   ngOnInit() {
     this.isMobile = window.innerWidth < 1024;

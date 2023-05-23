@@ -1,6 +1,6 @@
-import {UserService} from "../../services/UserService";
-import {AbstractTalkFavoriteService} from "../../services/AbstractTalkFavoriteService";
-import {LogEventArgs} from "../../event/LogEventArgs";
+import {UserService} from "../services/UserService";
+import {AbstractTalkFavoriteService} from "../services/AbstractTalkFavoriteService";
+import {LogEventArgs} from "../event/LogEventArgs";
 
 export class VMFavorite {
   logged: boolean;

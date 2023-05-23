@@ -14,7 +14,8 @@ export class DividerTeaserViewComponent {
   ngOnInit(): void {
     this.startDate = new Date(this.dividerPlanning.schedule)
   }
-  formatDate(date : Date){
+
+  formatDate(date: Date) {
     return formatDate(date)
   }
 }

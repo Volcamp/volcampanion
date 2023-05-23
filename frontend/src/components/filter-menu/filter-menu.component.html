@@ -1,10 +1,12 @@
 <mat-tab-group>
   <mat-tab label="Type">
-    <mat-chip-option class="chips" *ngFor="let type of  planningsType" (click)="selectOption(type,planningsTypeSelected)"
+    <mat-chip-option class="chips" *ngFor="let type of  planningsType"
+                     (click)="selectOption(type,planningsTypeSelected)"
                      [selected]="planningsTypeSelected.indexOf(type) >= 0"><p class="f5">{{type}}</p></mat-chip-option>
   </mat-tab>
   <mat-tab label="Theme">
-    <mat-chip-option class="chips" *ngFor="let theme of  planningsTheme" (click)="selectOption(theme,planningsThemeSelected)"
+    <mat-chip-option class="chips" *ngFor="let theme of  planningsTheme"
+                     (click)="selectOption(theme,planningsThemeSelected)"
                      [selected]="planningsThemeSelected.indexOf(theme) >= 0"><p class="f5">{{theme}}</p>
     </mat-chip-option>
   </mat-tab>
@@ -12,7 +14,8 @@
     <section class="example-section">
       <ul>
         <li>
-          <mat-checkbox *ngFor="let date of datesConference" (click)="selectDate(date)"  [checked]="isDateSelected(date)">{{formatDate(date)}}</mat-checkbox>
+          <mat-checkbox *ngFor="let date of datesConference" (click)="selectDate(date)"
+                        [checked]="isDateSelected(date)">{{formatDate(date)}}</mat-checkbox>
         </li>
       </ul>
     </section>

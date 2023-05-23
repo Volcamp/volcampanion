@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
-import {VMFavorite} from "../../data/vm/VMFavorite";
-import {VMFavoritePage} from "../../data/vm/VMFavoritePage";
+import {Component} from '@angular/core';
+import {VMFavoritePage} from "../../vm/VMFavoritePage";
 import {AbstractTalkFavoriteService} from "../../services/AbstractTalkFavoriteService";
 import {AbstractConferenceService} from "../../services/AbstractConferenceService";
-import {FilterPlanningsService} from "../../services/filter-plannings.service";
 import {UserService} from "../../services/UserService";
+import {FilterPlanningsService} from "../../services/FilterPlanningsService";
 
 @Component({
   selector: 'app-favorite',
@@ -12,10 +11,10 @@ import {UserService} from "../../services/UserService";
   styleUrls: ['./favorite.component.sass']
 })
 export class FavoriteComponent {
-  vm : VMFavoritePage;
+  vm: VMFavoritePage;
 
   constructor(dataService: AbstractTalkFavoriteService, confService: AbstractConferenceService, filterPlannings: FilterPlanningsService, userService: UserService) {
-    this.vm = new VMFavoritePage(dataService,confService,filterPlannings,userService);
+    this.vm = new VMFavoritePage(dataService, confService, filterPlannings, userService);
   }
 
 }
