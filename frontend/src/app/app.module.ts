@@ -74,6 +74,8 @@ import {AdminPlanningsComponent} from "../page/admin-plannings/admin-plannings.c
 import {AdminSideNavComponent} from "../components/admin-side-nav/admin-side-nav.component";
 import {AdminTalksComponent} from "../page/admin-talks/admin-talks.component";
 import {AdminSpeakerComponent} from "../page/admin-speaker/admin-speaker.component";
+import {AdminTalkPreviewComponent} from "../components/admin-talk-preview/admin-talk-preview.component";
+import {AdminTalkListComponent} from "../components/admin-talk-list/admin-talk-list.component";
 
 @NgModule({
   declarations: [
@@ -106,6 +108,8 @@ import {AdminSpeakerComponent} from "../page/admin-speaker/admin-speaker.compone
     AdminSideNavComponent,
     AdminTalksComponent,
     AdminSpeakerComponent,
+    AdminTalkPreviewComponent,
+    AdminTalkListComponent,
   ],
   imports: [
     BrowserModule,

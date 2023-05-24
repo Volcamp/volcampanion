@@ -14,8 +14,6 @@ export class DetailSpeakerComponent implements OnInit {
 
   constructor(route: ActivatedRoute, dataService: AbstractSpeakerService, dataParamService: DataParamService) {
     this.vm = new VMSpeaker(route, dataService, dataParamService);
-    console.log(this.vm.speaker?.company);
-
   }
 
   ngOnInit() {

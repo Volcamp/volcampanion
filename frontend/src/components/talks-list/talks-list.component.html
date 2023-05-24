@@ -5,7 +5,7 @@
 
     </div>
 
-    <div class="miniView contentPage  " *ngIf="plan.getType() === BREAK">
+    <div class="miniView contentPage" *ngIf="plan.getType() === BREAK">
       <app-break-teaser-view [breakPlanning]="$any(plan)"/>
     </div>
 

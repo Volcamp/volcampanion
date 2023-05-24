@@ -1,0 +1,17 @@
+<div class="center" >
+  <div  class="container contentPage">
+    <div class="plus">
+      <div class="toggle">
+        <input type="checkbox">
+        <span class="button"></span>
+        <span class="label">+</span>
+      </div>
+    </div>
+
+
+    <div *ngFor="let talk of talks">
+      <app-admin-talk-preview [talk]="talk"></app-admin-talk-preview>
+    </div>
+  </div>
+</div>
+

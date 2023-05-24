@@ -5,6 +5,7 @@ import {Observable} from "rxjs";
 import {EnvironmentService} from "./EnvironmentService";
 import {AbstractTalkService} from "./AbstractTalkService";
 import {Talk} from "../data/dto/Talk";
+import {Speaker} from "../data/dto/Speaker";
 
 
 @Injectable()
@@ -14,5 +15,9 @@ export class TalkService implements AbstractTalkService {
 
   getTalkById(idTalk: string): Observable<Talk> {
     return this.requestManager.get<Talk>(this.env.getApiUrl() + APIRoutes.TALKS + idTalk);
+  }
+
+  getTalks(idConf: string): Observable<Talk[]> {
+    return this.requestManager.get<Talk[]>(this.env.getApiUrl() + APIRoutes.TALKS + APIRoutes.ID_CONF + idConf);
   }
 }
