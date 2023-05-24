@@ -1,4 +1,4 @@
-import {Speaker} from "../data/dto/Speaker";
+import {Speaker} from "../data/dto/input/Speaker";
 import {APIRoutes} from "../data/APIRoutes";
 import {Observable} from "rxjs";
 import {RequestManager} from "../data/RequestManager";

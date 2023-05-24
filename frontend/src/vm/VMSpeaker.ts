@@ -1,4 +1,4 @@
-import {Speaker} from "../data/dto/Speaker";
+import {Speaker} from "../data/dto/input/Speaker";
 import {ActivatedRoute} from "@angular/router";
 import {SocialMedia} from "../common/SocialMedia";
 import {AbstractSpeakerService} from "../services/AbstractSpeakerService";

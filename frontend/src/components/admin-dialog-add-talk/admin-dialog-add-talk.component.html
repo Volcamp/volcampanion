@@ -1,0 +1,109 @@
+<h1 mat-dialog-title>Ajout Talk</h1>
+<div mat-dialog-content>
+  <mat-stepper #stepper>
+    <!--------------------------- Step --------------------------->
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup" class="bigForm">
+        <ng-template matStepLabel>Information de Talk</ng-template>
+        <div class="form">
+          <mat-form-field>
+            <mat-label>Titre</mat-label>
+            <input required matInput>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Niveau</mat-label>
+            <input matInput>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Langage</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <textarea matInput
+                    cdkTextareaAutosize
+                    cdkAutosizeMinRows="2"
+                    cdkAutosizeMaxRows="12"
+          ></textarea>
+        </mat-form-field>
+
+      </form>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <!--------------------------- Theme --------------------------->
+
+    <mat-step>
+      <ng-template matStepLabel>Theme</ng-template>
+      <mat-chip-listbox aria-label="Fish selection">
+        <mat-chip-option *ngFor="let theme of themes">{{theme.name}}</mat-chip-option>
+      </mat-chip-listbox>
+
+    </mat-step>
+
+    <!--------------------------- Format --------------------------->
+
+    <mat-step>
+      <ng-template matStepLabel>Format</ng-template>
+      <mat-chip-listbox aria-label="Fish selection" >
+        <mat-chip-option *ngFor="let format of formats">{{format.name}}</mat-chip-option>
+
+      </mat-chip-listbox>
+
+    </mat-step>
+
+    <!--------------------------- Conference --------------------------->
+
+    <mat-step>
+      <ng-template matStepLabel>Conference</ng-template>
+      <mat-chip-listbox aria-label="Fish selection">
+        <mat-chip-option *ngFor="let conference of conferences">{{conference.name}}</mat-chip-option>
+      </mat-chip-listbox>
+    </mat-step>
+
+    <!--------------------------- Step --------------------------->
+
+    <mat-step [stepControl]="secondFormGroup" label="Choisi les Speaker">
+      <div cdkDropListGroup>
+        <div class="example-container">
+          <h2>To do</h2>
+
+          <div
+            cdkDropList
+            [cdkDropListData]="todo"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+          </div>
+        </div>
+
+        <div class="example-container">
+          <h2>Done</h2>
+
+          <div
+            cdkDropList
+            [cdkDropListData]="done"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+  </mat-stepper>
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="add()">Ajouter</button>
+    <button mat-button (click)="closeDialog()">Annuler</button>
+  </div>
+</div>
+

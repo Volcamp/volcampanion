@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {getColorTheme} from "../../common/ColorThemeAndTypeEmoji"
 import {concatenate} from "../../common/Concatenate"
-import {Speaker} from "../../data/dto/Speaker";
-import {TalkPlanning} from "../../data/dto/TalkPlanning";
+import {Speaker} from "../../data/dto/input/Speaker";
+import {TalkPlanning} from "../../data/dto/input/TalkPlanning";
 
 
 @Component({

@@ -1,5 +1,5 @@
-import {PlanningType} from "../data/dto/Planning";
-import {PlanningTheme} from "../data/dto/Theme";
+import {PlanningType} from "../data/dto/input/Planning";
+import {PlanningTheme} from "../data/dto/input/Theme";
 import Event from "./Event";
 import {FilterVisibilityEventArgs} from "./FilterVisibilityEventArgs";
 

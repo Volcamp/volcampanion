@@ -3,7 +3,7 @@ import {map, Observable, of} from "rxjs";
 import {RequestManager} from "../data/RequestManager";
 import {EnvironmentService} from "./EnvironmentService";
 import {APIRoutes} from "../data/APIRoutes";
-import {Planning} from "../data/dto/Planning";
+import {Planning} from "../data/dto/input/Planning";
 import {Injectable} from "@angular/core";
 
 export const FAVORITE_LIST = "favoriteList"

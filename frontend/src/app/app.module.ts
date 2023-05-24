@@ -83,6 +83,9 @@ import {
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import {AdminEditBtnComponent} from "../components/admin-edit-btn/admin-edit-btn.component";
 import {AdminAddBtnComponent} from "../components/admin-add-btn/admin-add-btn.component";
+import {AdminDialogAddTalkComponent} from "../components/admin-dialog-add-talk/admin-dialog-add-talk.component";
+import {CdkDrag, CdkDropList, CdkDropListGroup} from "@angular/cdk/drag-drop";
+import {MatStepperModule} from "@angular/material/stepper";
 
 @NgModule({
   declarations: [
@@ -121,45 +124,50 @@ import {AdminAddBtnComponent} from "../components/admin-add-btn/admin-add-btn.co
     AdminDialogDeleteTalkComponent,
     AdminEditBtnComponent,
     AdminAddBtnComponent,
+    AdminDialogAddTalkComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    }),
-    MatTabsModule,
-    MatIconModule,
-    MatButtonModule,
-    MatToolbarModule,
-    BrowserAnimationsModule,
-    MatProgressBarModule,
-    MatGridListModule,
-    MatCardModule,
-    MatBadgeModule,
-    MatDividerModule,
-    HttpClientModule,
-    MatProgressSpinnerModule,
-    MatBottomSheetModule,
-    MatChipsModule,
-    MatFormFieldModule,
-    MatDatepickerModule,
-    ReactiveFormsModule,
-    MatNativeDateModule,
-    MatCheckboxModule,
-    MatMenuModule,
-    AuthConfigModule,
-    MatInputModule,
-    MatButtonToggleModule,
-    MatSidenavModule,
-    MatListModule,
-    MatDialogModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: !isDevMode(),
+            // Register the ServiceWorker as soon as the application is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerWhenStable:30000'
+        }),
+        MatTabsModule,
+        MatIconModule,
+        MatButtonModule,
+        MatToolbarModule,
+        BrowserAnimationsModule,
+        MatProgressBarModule,
+        MatGridListModule,
+        MatCardModule,
+        MatBadgeModule,
+        MatDividerModule,
+        HttpClientModule,
+        MatProgressSpinnerModule,
+        MatBottomSheetModule,
+        MatChipsModule,
+        MatFormFieldModule,
+        MatDatepickerModule,
+        ReactiveFormsModule,
+        MatNativeDateModule,
+        MatCheckboxModule,
+        MatMenuModule,
+        AuthConfigModule,
+        MatInputModule,
+        MatButtonToggleModule,
+        MatSidenavModule,
+        MatListModule,
+        MatDialogModule,
+        CdkDropList,
+        CdkDrag,
+        CdkDropListGroup,
+        MatStepperModule,
 
 
-  ],
+    ],
   providers: [{
     provide: AbstractPlanningService,
     useClass: PlanningService // <--- Defining the swappable implementation.

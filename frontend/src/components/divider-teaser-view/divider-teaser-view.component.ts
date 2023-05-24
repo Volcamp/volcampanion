@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {DividerPlanning} from "../../data/dto/DividerPlanning";
+import {DividerPlanning} from "../../data/dto/input/DividerPlanning";
 import {formatDate} from "../../common/DateFunc";
 
 @Component({

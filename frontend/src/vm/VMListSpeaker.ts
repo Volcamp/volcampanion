@@ -1,4 +1,4 @@
-import {Speaker} from "../data/dto/Speaker";
+import {Speaker} from "../data/dto/input/Speaker";
 import {AbstractSpeakerService} from "../services/AbstractSpeakerService";
 import {AbstractConferenceService} from "../services/AbstractConferenceService";
 

@@ -4,8 +4,8 @@ import {RequestManager} from "../data/RequestManager";
 import {Observable} from "rxjs";
 import {APIRoutes} from "../data/APIRoutes";
 import {AbstractFormatService} from "./AbstractFormatService";
-import {Format} from "../data/dto/Format";
-import {Theme} from "../data/dto/Theme";
+import {Format} from "../data/dto/input/Format";
+import {Theme} from "../data/dto/input/Theme";
 
 @Injectable({
   providedIn: 'root'

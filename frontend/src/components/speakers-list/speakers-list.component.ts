@@ -1,5 +1,5 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
-import {Speaker} from "../../data/dto/Speaker";
+import {Speaker} from "../../data/dto/input/Speaker";
 import {NavigationService} from "../../services/NavigationService";
 import {AppRoutes, toRoute} from "../../app/AppRoutes";
 import {DataParamService} from "../../services/DataParamService";

@@ -1,6 +1,6 @@
 import {EventArgs} from "./EventArgs";
-import {PlanningType} from "../data/dto/Planning";
-import {PlanningTheme} from "../data/dto/Theme";
+import {PlanningType} from "../data/dto/input/Planning";
+import {PlanningTheme} from "../data/dto/input/Theme";
 
 export class FilterPlanningEventArgs extends EventArgs {
 

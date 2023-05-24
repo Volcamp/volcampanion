@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Planning, PlanningType} from "../data/dto/Planning";
+import {Planning, PlanningType} from "../data/dto/input/Planning";
 import {compareEqualDate} from "../common/DateFunc";
-import {TalkPlanning} from "../data/dto/TalkPlanning";
+import {TalkPlanning} from "../data/dto/input/TalkPlanning";
 import {EventEmitter} from "../event/EventEmitter";
 import {FilterPlanningEventArgs} from "../event/FilterPlanningEventArgs";
 import {FilterPlanningEvent} from "../event/FilterPlanningEvent";

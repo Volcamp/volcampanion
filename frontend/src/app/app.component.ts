@@ -16,13 +16,13 @@ import {switchUserTheme} from "../common/Theme";
 export class AppComponent {
   title = 'volcampanion-pwa';
   isMobile: boolean = false;
-  document = document;
   isAdmin: boolean;
-
+  padding : number = 0;
 
 
   ngOnInit() {
     this.isMobile = window.innerWidth < 1024;
+    this.padding = document.getElementById('header')!.offsetHeight
   }
 
   @HostListener('window:resize', ['$event'])

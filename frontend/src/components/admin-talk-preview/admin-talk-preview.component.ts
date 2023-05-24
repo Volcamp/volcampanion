@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Talk} from "../../data/dto/Talk";
+import {Talk} from "../../data/dto/input/Talk";
 import {AdminDialogDeleteTalkComponent} from "../admin-dialog-delete-talk/admin-dialog-delete-talk.component";
 
 @Component({

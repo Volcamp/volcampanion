@@ -1,6 +1,6 @@
 import {Component, Inject} from '@angular/core';
-import {PlanningType} from "../../data/dto/Planning";
-import {PlanningTheme} from "../../data/dto/Theme";
+import {PlanningType} from "../../data/dto/input/Planning";
+import {PlanningTheme} from "../../data/dto/input/Theme";
 import {compareEqualDate, formatDate} from "../../common/DateFunc";
 import {MAT_BOTTOM_SHEET_DATA} from "@angular/material/bottom-sheet";
 import {AbstractConferenceService} from "../../services/AbstractConferenceService";
@@ -21,7 +21,9 @@ export class FilterMenuComponent {
   planningsThemeSelected: PlanningTheme[] = []
   dateSelected: Date[] = []
 
-  constructor(private conferenceService: AbstractConferenceService, @Inject(MAT_BOTTOM_SHEET_DATA) public data: any, private themeService: AbstractThemeService, private formatService: AbstractFormatService) {
+  constructor(private conferenceService: AbstractConferenceService, @Inject(MAT_BOTTOM_SHEET_DATA) public data: any,
+              private themeService: AbstractThemeService, private formatService: AbstractFormatService) {
+
     this.planningsTypeSelected = data.planningsTypes;
     this.planningsThemeSelected = data.planningsThemes;
     this.dateSelected = data.dates;

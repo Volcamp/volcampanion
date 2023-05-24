@@ -4,8 +4,8 @@ import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
 import {EnvironmentService} from "./EnvironmentService";
 import {AbstractTalkService} from "./AbstractTalkService";
-import {Talk} from "../data/dto/Talk";
-import {Speaker} from "../data/dto/Speaker";
+import {Talk} from "../data/dto/input/Talk";
+import {Speaker} from "../data/dto/input/Speaker";
 
 
 @Injectable()

@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Planning, PlanningType} from "../../data/dto/Planning";
+import {Planning, PlanningType} from "../../data/dto/input/Planning";
 import {NavigationService} from "../../services/NavigationService";
 
 @Component({

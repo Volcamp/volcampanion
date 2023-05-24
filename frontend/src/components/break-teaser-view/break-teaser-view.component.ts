@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {BreakPlanning} from "../../data/dto/BreakPlanning";
+import {BreakPlanning} from "../../data/dto/input/BreakPlanning";
 
 @Component({
   selector: 'app-break-teaser-view',

@@ -1,9 +1,9 @@
 <app-top-bar [isMobile]="isMobile" class="header" id="header"/>
 
-<div class="content" style="padding-top:{{document.getElementById('header')!.offsetHeight +10 }}px;">
+<div class="content" style="padding-top:{{padding+20}}px;">
   <mat-drawer-container autosize style=" background: white">
     <mat-drawer #drawer mode="side" class="adminSideBar"
-                style="padding-top:{{document.getElementById('header')!.offsetHeight   }}px;">
+                style="padding-top:{{padding}}px;">
         <app-admin-side-nav></app-admin-side-nav>
     </mat-drawer>
     <div>

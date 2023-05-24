@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
 import {Location} from "@angular/common";
-import {Speaker} from "../data/dto/Speaker";
+import {Speaker} from "../data/dto/input/Speaker";
 import {AppRoutes, toRoute, toRouteById} from "../app/AppRoutes";
-import {TalkPlanning} from "../data/dto/TalkPlanning";
+import {TalkPlanning} from "../data/dto/input/TalkPlanning";
 import {EventEmitter} from "../event/EventEmitter";
 import {BackArrowVisibilityEventArgs} from "../event/BackArrowVisibilityEventArgs";
 import {FilterVisibilityEventArgs} from "../event/FilterVisibilityEventArgs";

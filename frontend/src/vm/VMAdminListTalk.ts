@@ -1,7 +1,7 @@
 import {AbstractPlanningService} from "../services/AbstractPlanningService";
 import {AbstractConferenceService} from "../services/AbstractConferenceService";
 import {FilterPlanningsService} from "../services/FilterPlanningsService";
-import {Talk} from "../data/dto/Talk";
+import {Talk} from "../data/dto/input/Talk";
 import {AbstractTalkService} from "../services/AbstractTalkService";
 
 export class VMAdminListTalk {

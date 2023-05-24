@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {Talk} from "../../data/dto/Talk";
-import {AdminDialogDeleteTalkComponent} from "../admin-dialog-delete-talk/admin-dialog-delete-talk.component";
+import {Talk} from "../../data/dto/input/Talk";
+import {AdminDialogAddTalkComponent} from "../admin-dialog-add-talk/admin-dialog-add-talk.component";
 
 @Component({
   selector: 'app-admin-talk-list',
@@ -8,7 +8,7 @@ import {AdminDialogDeleteTalkComponent} from "../admin-dialog-delete-talk/admin-
   styleUrls: ['./admin-talk-list.component.sass']
 })
 export class AdminTalkListComponent {
-  @Input() talks! : Talk[];
-  addDialog = AdminDialogDeleteTalkComponent;
+  @Input() talks!: Talk[];
+  addDialog = AdminDialogAddTalkComponent;
 
 }

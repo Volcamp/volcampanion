@@ -1,4 +1,4 @@
-import {Planning} from "../data/dto/Planning";
+import {Planning} from "../data/dto/input/Planning";
 import {FilterPlanningsService} from "../services/FilterPlanningsService";
 import {UserService} from "../services/UserService";
 import {AbstractTalkFavoriteService} from "../services/AbstractTalkFavoriteService";

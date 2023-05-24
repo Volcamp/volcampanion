@@ -1,9 +1,9 @@
 import {AbstractDataService} from "../../services/AbstractDataService";
 import {SPEAKER_DATA, TALK_DATA} from "./Stub";
-import {Planning, PlanningType} from "../dto/Planning";
-import {Speaker} from "../dto/Speaker";
+import {Planning, PlanningType} from "../dto/input/Planning";
+import {Speaker} from "../dto/input/Speaker";
 import {Observable, of} from "rxjs";
-import {TalkPlanning} from "../dto/TalkPlanning";
+import {TalkPlanning} from "../dto/input/TalkPlanning";
 
 export class StubService extends AbstractDataService {
   providePlannings(idConf: string): Observable<Planning[]> {

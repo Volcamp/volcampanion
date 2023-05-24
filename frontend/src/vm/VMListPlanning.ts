@@ -1,4 +1,4 @@
-import {Planning} from "../data/dto/Planning";
+import {Planning} from "../data/dto/input/Planning";
 import {AbstractPlanningService} from "../services/AbstractPlanningService";
 import {AbstractConferenceService} from "../services/AbstractConferenceService";
 import {FilterPlanningEventArgs} from "../event/FilterPlanningEventArgs";

@@ -1,14 +1,14 @@
-import {Planning, PlanningType} from "../data/dto/Planning";
-import {BreakMapper} from "../data/dto/mappers/BreakMapper";
-import {TalkMapper} from "../data/dto/mappers/TalkMapper";
+import {Planning, PlanningType} from "../data/dto/input/Planning";
+import {BreakMapper} from "../data/dto/input/mappers/BreakMapper";
+import {TalkMapper} from "../data/dto/input/mappers/TalkMapper";
 import {APIRoutes} from "../data/APIRoutes";
 import {RequestManager} from "../data/RequestManager";
 import {Injectable} from "@angular/core";
 import {map, Observable} from "rxjs";
 import {EnvironmentService} from "./EnvironmentService";
-import {TalkPlanning} from "../data/dto/TalkPlanning";
+import {TalkPlanning} from "../data/dto/input/TalkPlanning";
 import {AbstractPlanningService} from "./AbstractPlanningService";
-import {DividerPlanning} from "../data/dto/DividerPlanning";
+import {DividerPlanning} from "../data/dto/input/DividerPlanning";
 
 
 @Injectable()

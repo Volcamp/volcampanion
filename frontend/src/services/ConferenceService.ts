@@ -1,10 +1,11 @@
 import {Injectable} from '@angular/core';
 import {RequestManager} from "../data/RequestManager";
 import {map, Observable, of} from "rxjs";
-import {Conference} from "../data/dto/Conference";
+import {Conference} from "../data/dto/input/Conference";
 import {EnvironmentService} from "./EnvironmentService";
 import {APIRoutes} from "../data/APIRoutes";
 import {AbstractConferenceService} from "./AbstractConferenceService";
+import {Speaker} from "../data/dto/input/Speaker";
 
 
 export const ACTIVE_ID_CONF = "activeIdConf"
@@ -19,7 +20,7 @@ export class ConferenceService implements AbstractConferenceService {
   getCurrentConference(): Observable<Conference> {
     let conf = window.localStorage.getItem(ACTIVE_ID_CONF);
     if (conf == null) {
-      return this.requestManager.get<Conference>(this.env.getApiUrl() + APIRoutes.CONFERENCE_ACTIVE).pipe(
+      return this.requestManager.get<Conference>(this.env.getApiUrl() + APIRoutes.CONFERENCE + APIRoutes.CONFERENCE_ACTIVE).pipe(
         map(conf => {
             window.localStorage.setItem(ACTIVE_ID_CONF, JSON.stringify(conf));
             return conf
@@ -28,6 +29,11 @@ export class ConferenceService implements AbstractConferenceService {
     } else {
       return of(JSON.parse(conf))
     }
+  }
+
+  getConferences(): Observable<Conference[]> {
+    return this.requestManager.get<Conference[]>(this.env.getApiUrl() + APIRoutes.CONFERENCE );
+
   }
 
 
