@@ -22,12 +22,18 @@ export class UserService {
   isAdmin(): boolean {
     const token: string | null = window.localStorage.getItem(TOKEN);
     if (token === '' || token === null) return false;
-    return this.parseJwt(token)._roles.lower() === "admin";
+    const tokenAfterParse = this.parseJwt(token);
+    if (tokenAfterParse === '') return false;
+
+    const tokenObject = this.parseJwt(token);
+    for (let i = 0; i < tokenObject._roles.length; i++) {
+      tokenObject._roles[i] = tokenObject._roles[i].toLowerCase()
+    }
+    return tokenObject._roles.includes("admin");
   }
 
   saveToken(token: string) {
     window.localStorage.setItem(TOKEN, JSON.stringify(token));
-    console.log("yoo")
     this.logEventEmitter.emit(new LogEventArgs(this.isLogged()));
   }
 

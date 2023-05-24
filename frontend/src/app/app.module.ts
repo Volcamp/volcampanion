@@ -68,6 +68,12 @@ import {TalkFavoriteService} from "../services/TalkFavoriteService";
 import {FavoriteComponent} from "../page/favorite/favorite.component";
 import {FilterPlanningsService} from "../services/FilterPlanningsService";
 import {DataParamService} from "../services/DataParamService";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatListModule} from "@angular/material/list";
+import {AdminPlanningsComponent} from "../page/admin-plannings/admin-plannings.component";
+import {AdminSideNavComponent} from "../components/admin-side-nav/admin-side-nav.component";
+import {AdminTalksComponent} from "../page/admin-talks/admin-talks.component";
+import {AdminSpeakerComponent} from "../page/admin-speaker/admin-speaker.component";
 
 @NgModule({
   declarations: [
@@ -96,7 +102,10 @@ import {DataParamService} from "../services/DataParamService";
     LoaderComponent,
     VolcampFeedbackComponent,
     FavoriteComponent,
-
+    AdminPlanningsComponent,
+    AdminSideNavComponent,
+    AdminTalksComponent,
+    AdminSpeakerComponent,
   ],
   imports: [
     BrowserModule,
@@ -130,6 +139,8 @@ import {DataParamService} from "../services/DataParamService";
     AuthConfigModule,
     MatInputModule,
     MatButtonToggleModule,
+    MatSidenavModule,
+    MatListModule,
 
 
   ],

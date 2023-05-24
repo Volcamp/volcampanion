@@ -1,5 +1,17 @@
 <app-top-bar [isMobile]="isMobile" class="header" id="header"/>
-<div class="content" style="padding-top:{{document.getElementById('header')!.offsetHeight + 10 }}px;" >
-  <router-outlet/>
+<div class="content" style="padding-top:{{document.getElementById('header')!.offsetHeight +10 }}px;">
+  <mat-drawer-container autosize style=" background: white">
+    <mat-drawer #drawer mode="side" class="adminSideBar"
+                style="padding-top:{{document.getElementById('header')!.offsetHeight   }}px;">
+        <app-admin-side-nav></app-admin-side-nav>
+    </mat-drawer>
+    <div>
+      <router-outlet/>
+    </div>
+  </mat-drawer-container>
 </div>
 <app-bottom-nav-bar [isMobile]="isMobile" class="footer" id="footer"/>
+<button *ngIf="isAdmin" mat-mini-fab class="menu" color="primary" style="border-radius: 10px" (click)="drawer.toggle()">
+  <mat-icon>menu</mat-icon>
+</button>
+
