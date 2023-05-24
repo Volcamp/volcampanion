@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Talk} from "../../data/dto/Talk";
+import {AdminDialogDeleteTalkComponent} from "../admin-dialog-delete-talk/admin-dialog-delete-talk.component";
 
 @Component({
   selector: 'app-admin-talk-preview',
@@ -8,5 +9,8 @@ import {Talk} from "../../data/dto/Talk";
 })
 export class AdminTalkPreviewComponent {
   @Input() talk! : Talk;
+
+  deleteDialog = AdminDialogDeleteTalkComponent;
+  editDialog = AdminDialogDeleteTalkComponent;
 
 }

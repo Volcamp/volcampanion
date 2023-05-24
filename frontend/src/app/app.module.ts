@@ -76,6 +76,13 @@ import {AdminTalksComponent} from "../page/admin-talks/admin-talks.component";
 import {AdminSpeakerComponent} from "../page/admin-speaker/admin-speaker.component";
 import {AdminTalkPreviewComponent} from "../components/admin-talk-preview/admin-talk-preview.component";
 import {AdminTalkListComponent} from "../components/admin-talk-list/admin-talk-list.component";
+import {AdminDeleteBtnComponent} from "../components/admin-delete-btn/admin-delete-btn.component";
+import {
+  AdminDialogDeleteTalkComponent
+} from "../components/admin-dialog-delete-talk/admin-dialog-delete-talk.component";
+import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import {AdminEditBtnComponent} from "../components/admin-edit-btn/admin-edit-btn.component";
+import {AdminAddBtnComponent} from "../components/admin-add-btn/admin-add-btn.component";
 
 @NgModule({
   declarations: [
@@ -110,6 +117,10 @@ import {AdminTalkListComponent} from "../components/admin-talk-list/admin-talk-l
     AdminSpeakerComponent,
     AdminTalkPreviewComponent,
     AdminTalkListComponent,
+    AdminDeleteBtnComponent,
+    AdminDialogDeleteTalkComponent,
+    AdminEditBtnComponent,
+    AdminAddBtnComponent,
   ],
   imports: [
     BrowserModule,
@@ -145,6 +156,7 @@ import {AdminTalkListComponent} from "../components/admin-talk-list/admin-talk-l
     MatButtonToggleModule,
     MatSidenavModule,
     MatListModule,
+    MatDialogModule,
 
 
   ],

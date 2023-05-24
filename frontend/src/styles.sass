@@ -115,6 +115,20 @@ $fontSizeF7: 0.9
   @media screen and (min-width: 1200px) /* Desktops, large screens */
     width:$width5
 
+=heightResponsive($height1,$height2,$height3,$height4,$height5)
+  @media screen and (min-width: 0px) /* Mobile devices */
+    height: $height1
+  @media screen and (min-width: 240px) /* Mobile devices */
+    height: $height2
+  @media screen and (min-width: 768px) /* iPads, Tablets */
+    height:$height3
+  @media screen and (min-width: 1024px) /* Small screens, laptops */
+    height:$height4
+  @media screen and (min-width: 1200px) /* Desktops, large screens */
+    height:$height5
+
+
+
 
 
 @mixin theme-color-grabber($theme)
