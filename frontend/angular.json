@@ -31,7 +31,7 @@
               "src/manifest.webmanifest",
             ],
             "styles": [
-              "src/theme.scss",
+              "src/app/theme.scss",
               "src/styles.sass"
             ],
             "scripts": [],

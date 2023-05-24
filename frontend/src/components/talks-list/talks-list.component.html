@@ -9,7 +9,7 @@
       <app-break-teaser-view [breakPlanning]="$any(plan)"/>
     </div>
 
-    <div class="miniView contentPage content shadow" (click)="navigate($any(plan))"
+    <div class="miniView contentPage zoomOutCard content shadow" (click)="navigate($any(plan))"
          *ngIf="plan.getType() !== DELIMITER_DAY && plan.getType() !== BREAK">
       <app-talk-teaser-view [talkPlanning]="$any(plan)"/>
     </div>

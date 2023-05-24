@@ -1,36 +1,36 @@
-<div class="topBar">
-  <mat-icon *ngIf="backable" class="backBtn" (click)="back()" aria-hidden="false" aria-label="filter icon"
-            fontIcon="arrow_back_ios"/>
-  <mat-icon *ngIf="!backable" class="backBtn" style="visibility: hidden" aria-hidden="false" aria-label="filter icon"
-            fontIcon="arrow_back_ios"/>
+<p>
+  <mat-toolbar color="primary">
+    <mat-icon *ngIf="backable" class="backBtn" (click)="back()" aria-hidden="false" aria-label="filter icon"
+              fontIcon="arrow_back_ios"/>
+    <mat-icon *ngIf="!backable" class="backBtn" style="visibility: hidden" aria-hidden="false" aria-label="filter icon"
+              fontIcon="arrow_back_ios"/>
+    <span class="f0 volcampanion">Volcampanion</span>
+    <span *ngIf="! isMobile">
+      <span [routerLink]="[homeRoute]" class="f2 wideItem">
+        Sessions
+      </span>
+      <span [routerLink]="[speakerRoute]" class="f2 wideItem">
+        Speakers
+      </span>
+      <span *ngIf="logged" [routerLink]="[favoriteRoute]" class="f2 wideItem">
+        Favorites
+      </span>
+    </span>
 
-  <span class="f0 volcampanion">Volcampanion</span>
-
-  <div class="topBarWideContainer" *ngIf="!isMobile">
-    <p [routerLink]="[homeRoute]" class="f2 wideItem">
-      Sessions
-    </p>
     <span class="volcamp-spacer"></span>
-    <p [routerLink]="[speakerRoute]" class="f2 wideItem">
-      Speakers
-    </p>
-    <span class="volcamp-spacer"></span>
-    <p *ngIf="logged" [routerLink]="[favoriteRoute]" class="f2 wideItem">
-      Favorites
-    </p>
-  </div>
-  <span class="volcamp-spacer"></span>
-
-  <button mat-icon-button class="example-icon favorite-icon" *ngIf="filterable" (click)="openFilter()"
-          aria-label="filter button">
-    <mat-icon aria-hidden="false" aria-label="filter icon" fontIcon="filter_list"/>
-  </button>
-  <button [matMenuTriggerFor]="menu" mat-icon-button class="example-icon" aria-label="user button">
-    <mat-icon aria-hidden="false" aria-label="user icon" fontIcon="account_circle"/>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item (click)="logInOrOut()">{{logged ? "Se déconnecter" : "Se connecter"}}
-      <mat-icon aria-hidden="false" aria-label="login/out icon" fontIcon='{{logged ? "logout" : "login"}}'/>
+    <button mat-icon-button class="example-icon favorite-icon" *ngIf="filterable" (click)="openFilter()"
+            aria-label="filter button">
+      <mat-icon aria-hidden="false" aria-label="filter icon" fontIcon="filter_list"/>
     </button>
-  </mat-menu>
-</div>
+    <button [matMenuTriggerFor]="menu" mat-icon-button class="example-icon" aria-label="user button">
+      <mat-icon aria-hidden="false" aria-label="user icon" fontIcon="account_circle"/>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="logInOrOut()">{{logged ? "Se déconnecter" : "Se connecter"}}
+        <mat-icon aria-hidden="false" aria-label="login/out icon" fontIcon='{{logged ? "logout" : "login"}}'/>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+</p>
+
+
