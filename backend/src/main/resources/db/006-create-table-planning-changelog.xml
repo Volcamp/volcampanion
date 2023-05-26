@@ -27,5 +27,11 @@
       </column>
     </createTable>
   </changeSet>
+  <changeSet  author="rami.khedair@volcamp.io"  id="2">
+    <addUniqueConstraint  schemaName="volcampanion"
+                          columnNames="room_id, talk_id,schedule"
+                          tableName="plannings"
+                          />
+  </changeSet>
 </databaseChangeLog>
 

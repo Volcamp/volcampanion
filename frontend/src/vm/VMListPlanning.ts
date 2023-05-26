@@ -1,14 +1,15 @@
 import {Planning} from "../data/dto/input/Planning";
-import {AbstractPlanningService} from "../services/AbstractPlanningService";
-import {AbstractConferenceService} from "../services/AbstractConferenceService";
+import {AbstractPlanningService} from "../services/abstract/AbstractPlanningService";
+import {AbstractConferenceService} from "../services/abstract/AbstractConferenceService";
 import {FilterPlanningEventArgs} from "../event/FilterPlanningEventArgs";
 import {FilterPlanningsService} from "../services/FilterPlanningsService";
+import {AbstractTalkFavoriteService} from "../services/abstract/AbstractTalkFavoriteService";
 
 export class VMListPlanning {
   planningsNoFilter: Planning[] = []
   plannings!: Planning[]
 
-  constructor(private dataService: AbstractPlanningService, private confService: AbstractConferenceService, private filterPlannings: FilterPlanningsService) {
+  constructor(private dataService: AbstractPlanningService, private favoriteService: AbstractTalkFavoriteService, private confService: AbstractConferenceService, private filterPlannings: FilterPlanningsService) {
 
   }
 
@@ -23,6 +24,7 @@ export class VMListPlanning {
           })
         }
       );
+      this.favoriteService.getFavorites(conf!.id.toString(),true).subscribe();
     })
   }
 }

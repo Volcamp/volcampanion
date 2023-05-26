@@ -1,7 +1,7 @@
 import {Speaker} from "../data/dto/input/Speaker";
 import {ActivatedRoute} from "@angular/router";
 import {SocialMedia} from "../common/SocialMedia";
-import {AbstractSpeakerService} from "../services/AbstractSpeakerService";
+import {AbstractSpeakerService} from "../services/abstract/AbstractSpeakerService";
 import {DataParamService} from "../services/DataParamService";
 
 export class VMSpeaker {

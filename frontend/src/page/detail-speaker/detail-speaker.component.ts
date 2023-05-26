@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {AbstractSpeakerService} from "../../services/AbstractSpeakerService";
+import {AbstractSpeakerService} from "../../services/abstract/AbstractSpeakerService";
 import {VMSpeaker} from "../../vm/VMSpeaker";
 import {DataParamService} from "../../services/DataParamService";
 

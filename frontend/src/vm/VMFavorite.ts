@@ -1,28 +1,37 @@
 import {UserService} from "../services/UserService";
-import {AbstractTalkFavoriteService} from "../services/AbstractTalkFavoriteService";
+import {AbstractTalkFavoriteService} from "../services/abstract/AbstractTalkFavoriteService";
 import {LogEventArgs} from "../event/LogEventArgs";
+import {Planning} from "../data/dto/input/Planning";
+import {compareTalkPlanning} from "../common/CompareTalkPlan";
 
 export class VMFavorite {
   logged: boolean;
-  inFavorite: boolean = false;
+  inFavorite!: boolean;
 
-  constructor(private userService: UserService, private dataService: AbstractTalkFavoriteService) {
+  constructor(private userService: UserService, private dataService: AbstractTalkFavoriteService,
+              private planning: Planning) {
     this.logged = userService.isLogged();
     userService.logEventEmitter.on((data: LogEventArgs) => {
       this.logged = data.IsLog
     });
+    dataService.getFavorites().subscribe(plannings => {
+      this.inFavorite = plannings.some(planning => {
+        return compareTalkPlanning(planning, this.planning);
+      })
+
+    })
   }
 
-  removeFavorite(talkId: number) {
+  removeFavorite() {
     if (this.logged) {
-      this.dataService.removeFromFavorite(talkId);
+      this.dataService.removeFromFavorite(this.planning);
       this.inFavorite = false;
     }
   }
 
-  addFavorite(talkId: number) {
+  addFavorite() {
     if (this.logged) {
-      this.dataService.addToFavorite(talkId);
+      this.dataService.addToFavorite(this.planning);
       this.inFavorite = true;
     }
   }

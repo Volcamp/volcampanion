@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {NavigationService} from "../../services/NavigationService";
 import {Speaker} from "../../data/dto/input/Speaker";
-import {AbstractTalkService} from "../../services/AbstractTalkService";
+import {AbstractTalkService} from "../../services/abstract/AbstractTalkService";
 import {VMTalk} from "../../vm/VMTalk";
 import {DataParamService} from "../../services/DataParamService";
 

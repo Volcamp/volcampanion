@@ -33,7 +33,7 @@ export class UserService {
   }
 
   saveToken(token: string) {
-    window.localStorage.setItem(TOKEN, JSON.stringify(token));
+    window.localStorage.setItem(TOKEN, token);
     this.logEventEmitter.emit(new LogEventArgs(this.isLogged()));
   }
 

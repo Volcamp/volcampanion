@@ -5,9 +5,9 @@ import lombok.experimental.Accessors;
 
 @Data
 @Accessors(chain = true)
-public class UserFavoriteTalk {
+public class UserFavoritePlanning {
 
     private String userIdentifier;
 
-    private Talk talk;
+    private Planning planning;
 }

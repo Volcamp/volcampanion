@@ -41,12 +41,12 @@ export class TopBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.logged = this.userService.isLogged();
     this.oidcSecurityService.checkAuth().subscribe((loginResponse: LoginResponse) => {
       if (loginResponse.isAuthenticated) {
         this.userService.saveToken(loginResponse.accessToken);
         this.logged = this.userService.isLogged();
       }
-
     });
   }
 

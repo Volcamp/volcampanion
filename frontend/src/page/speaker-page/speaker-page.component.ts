@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {AbstractSpeakerService} from "../../services/AbstractSpeakerService";
-import {AbstractConferenceService} from "../../services/AbstractConferenceService";
+import {AbstractSpeakerService} from "../../services/abstract/AbstractSpeakerService";
+import {AbstractConferenceService} from "../../services/abstract/AbstractConferenceService";
 import {VMListSpeaker} from "../../vm/VMListSpeaker";
 
 @Component({

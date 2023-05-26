@@ -27,7 +27,7 @@
       </div>
       <div class="rightItem centerLineContent gap">
         <app-add-favorite (capacityChange)="onClick($event)" [capacity]=talkPlanning.room.capacity
-                          [talkId]="talkPlanning.talk.id"></app-add-favorite>
+                          [planning]="talkPlanning"></app-add-favorite>
       </div>
 
     </div>

@@ -1,6 +1,6 @@
 import {Speaker} from "../data/dto/input/Speaker";
-import {AbstractSpeakerService} from "../services/AbstractSpeakerService";
-import {AbstractConferenceService} from "../services/AbstractConferenceService";
+import {AbstractSpeakerService} from "../services/abstract/AbstractSpeakerService";
+import {AbstractConferenceService} from "../services/abstract/AbstractConferenceService";
 
 export class VMListSpeaker {
   speakers!: Speaker[]

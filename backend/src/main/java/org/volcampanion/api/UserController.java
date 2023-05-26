@@ -9,21 +9,16 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.volcampanion.api.validator.IdentifiableValidator;
+import org.volcampanion.domain.Planning;
 import org.volcampanion.domain.Talk;
-import org.volcampanion.domain.TalkFilters;
-import org.volcampanion.domain.UserFavoriteTalk;
+import org.volcampanion.domain.UserFavoritePlanning;
 import org.volcampanion.domain.UserFeedbackTalk;
-import org.volcampanion.domain.mappers.TalkMapper;
+import org.volcampanion.domain.mappers.PlanningMapper;
 import org.volcampanion.domain.mappers.UserFeedbackTalkMapper;
-import org.volcampanion.dto.CreateUserFeedbackTalkDTO;
-import org.volcampanion.dto.IdentifiableDTO;
-import org.volcampanion.dto.TalkDTO;
-import org.volcampanion.dto.UserFeedbackTalkDTO;
+import org.volcampanion.dto.*;
 import org.volcampanion.exception.MandatoryParameterException;
 import org.volcampanion.exception.dto.ErrorDTO;
-import org.volcampanion.service.TalkService;
-import org.volcampanion.service.UserFavoriteTalkService;
-import org.volcampanion.service.UserFeedbackTalkService;
+import org.volcampanion.service.*;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -31,6 +26,9 @@ import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -49,13 +47,19 @@ public class UserController {
     TalkService talkService;
 
     @Inject
-    TalkMapper talkMapper;
+    RoomService roomService;
+
+    @Inject
+    PlanningService planningService;
+
+    @Inject
+    PlanningMapper planningMapper;
 
     @Inject
     UserFeedbackTalkMapper userFeedbackTalkMapper;
 
     @Inject
-    UserFavoriteTalkService userFavoriteTalkService;
+    UserFavoritePlanningService userFavoritePlanningService;
 
     @Inject
     IdentifiableValidator identifiableValidator;
@@ -63,57 +67,78 @@ public class UserController {
     @Inject
     UserFeedbackTalkService userFeedbackTalkService;
 
+
     @GET
     @APIResponse(responseCode = "200", description = "OK",
             content = @Content(mediaType = "application/json",
                     schema = @Schema(implementation = TalkDTO[].class)
             )
     )
-    @Path("/favorite-talks")
-    public List<TalkDTO> listFavoriteTalks(@QueryParam("idConf") Long idConf) {
-        return talkMapper.toDTO(talkService.listWithFilters(
-                        new TalkFilters()
-                                .setConferenceId(idConf)
-                )
-        );
+    @Path("/plannings/favorite")
+    public List<PlanningDTO> listFavoritePlannings(@QueryParam("idConf") Long idConf) {
+        // FIXME the loop should be done other way this is only temporary
+        List<Planning> plannings = new ArrayList<>();
+        for (UserFavoritePlanning userFavoritePlanning :
+                userFavoritePlanningService.listByUser(verifyEmail(jwt.getClaim(Claims.email)))) {
+            plannings.add(userFavoritePlanning.getPlanning());
+
+        }
+
+        return planningMapper.toDTO(plannings);
     }
 
     @POST
-    @Path("/talks/{idTalk}/favorite")
+    @Path("/plannings/favorite")
     @Transactional
     @APIResponse(responseCode = "409", description = "This talk is already added as favorite",
             content = @Content(mediaType = "application/json",
                     schema = @Schema(implementation = ErrorDTO.class)
             )
     )
-    public Response addTalkToFavorite(@PathParam("idTalk") Long talkId) {
-        var domain = validateParamsAndBuildFavoriteTalkDomain(talkId, jwt.getClaim(Claims.email));
-
-        userFavoriteTalkService.createOrUpdate(domain);
+    public Response addPlanningToFavorite(CreatePlanningDTO planningDTO) {
+        var domain = validateParamsAndBuildFavoritePlanningDomain(planningDTO, verifyEmail(jwt.getClaim(Claims.email)));
+        userFavoritePlanningService.createOrUpdate(domain);
         return Response.status(Response.Status.CREATED).build();
     }
 
     @DELETE
-    @Path("/talks/{idTalk}/favorite")
+    @Path("/plannings/favorite")
     @Transactional
-    public void removeTalkFromFavorite(@PathParam("idTalk") Long talkId) {
-        var domain = validateParamsAndBuildFavoriteTalkDomain(talkId, jwt.getClaim(Claims.email));
+    public void removePlanningFromFavorite(@QueryParam("idTalk") Long idTalk,
+                                           @QueryParam("date") String date, @QueryParam("idRoom") Long idRoom) {
 
-        userFavoriteTalkService.delete(domain);
+        var userFavoritePlanning = new UserFavoritePlanning().setUserIdentifier(verifyEmail(jwt.getClaim(Claims.email))).
+                setPlanning(planningService.findById(
+                        new Planning().
+                                setRoom(roomService.findById(idRoom)).
+                                setTalk(talkService.findById(idTalk)).
+                                setSchedule(LocalDateTime.parse(date, DateTimeFormatter.ISO_DATE_TIME))
+                ));
+
+        userFavoritePlanningService.delete(userFavoritePlanningService.findById(userFavoritePlanning));
     }
 
-    private UserFavoriteTalk validateParamsAndBuildFavoriteTalkDomain(Long talkId, String userEmail) {
-        var talk = validateSubResources(talkId, userEmail);
+    private UserFavoritePlanning validateParamsAndBuildFavoritePlanningDomain(CreatePlanningDTO planningDTO, String userEmail) {
+        var planning = validateSubResourcesPlanning(planningDTO, userEmail);
 
-        return new UserFavoriteTalk()
+        return new UserFavoritePlanning()
                 .setUserIdentifier(userEmail)
-                .setTalk(talk);
+                .setPlanning(planning);
+    }
+
+    private Planning validateSubResourcesPlanning(CreatePlanningDTO planningDTO, String userEmail) {
+        verifyEmail(userEmail);
+
+        var planning = planningService.findById(planningMapper.toDomain(planningDTO));
+
+        if (Objects.isNull(planning)) {
+            throw new BadRequestException(String.format("Unable to retrieve a planning using given parameter %s", planningDTO));
+        }
+        return planning;
     }
 
     private Talk validateSubResources(Long talkId, String userEmail) {
-        if (StringUtils.isBlank(userEmail)) {
-            throw new MandatoryParameterException("JWT->email");
-        }
+        verifyEmail(userEmail);
 
         var talk = identifiableValidator.validate(new IdentifiableDTO().setId(talkId),
                 "talk->id",
@@ -123,6 +148,13 @@ public class UserController {
             throw new BadRequestException(String.format("Unable to retrieve a talk using given parameter %s", talkId));
         }
         return talk;
+    }
+
+    private static String verifyEmail(String userEmail) {
+        if (StringUtils.isBlank(userEmail)) {
+            throw new MandatoryParameterException("JWT->email");
+        }
+        return userEmail;
     }
 
     @GET

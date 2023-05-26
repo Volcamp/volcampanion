@@ -15,7 +15,7 @@ import {switchAdminTheme, switchUserTheme} from "../common/Theme";
 
 
 function isLogged(): boolean {
-  switchAdminTheme();
+  switchUserTheme();
   return inject(UserService).isLogged();
 }
 

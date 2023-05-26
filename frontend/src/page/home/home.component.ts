@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
-import {AbstractPlanningService} from "../../services/AbstractPlanningService";
-import {AbstractConferenceService} from "../../services/AbstractConferenceService";
+import {AbstractPlanningService} from "../../services/abstract/AbstractPlanningService";
+import {AbstractConferenceService} from "../../services/abstract/AbstractConferenceService";
 import {VMListPlanning} from "../../vm/VMListPlanning";
 import {FilterPlanningsService} from "../../services/FilterPlanningsService";
+import {AbstractTalkFavoriteService} from "../../services/abstract/AbstractTalkFavoriteService";
 
 @Component({
   selector: 'app-home',
@@ -13,8 +14,8 @@ export class HomeComponent {
   vm: VMListPlanning;
 
 
-  constructor(dataService: AbstractPlanningService, confService: AbstractConferenceService, filterPlannings: FilterPlanningsService) {
-    this.vm = new VMListPlanning(dataService, confService, filterPlannings);
+  constructor(dataService: AbstractPlanningService, favoriteService: AbstractTalkFavoriteService , confService: AbstractConferenceService, filterPlannings: FilterPlanningsService) {
+    this.vm = new VMListPlanning(dataService,favoriteService,  confService, filterPlannings);
   }
 
 

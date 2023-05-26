@@ -39,14 +39,14 @@ import {MatBottomSheetModule} from "@angular/material/bottom-sheet";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDatepickerModule} from "@angular/material/datepicker";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatCheckboxModule} from "@angular/material/checkbox";
-import {AbstractPlanningService} from "../services/AbstractPlanningService";
-import {AbstractSpeakerService} from "../services/AbstractSpeakerService";
-import {AbstractConferenceService} from "../services/AbstractConferenceService";
+import {AbstractPlanningService} from "../services/abstract/AbstractPlanningService";
+import {AbstractSpeakerService} from "../services/abstract/AbstractSpeakerService";
+import {AbstractConferenceService} from "../services/abstract/AbstractConferenceService";
 import {ConferenceService} from "../services/ConferenceService";
-import {AbstractTalkService} from "../services/AbstractTalkService";
+import {AbstractTalkService} from "../services/abstract/AbstractTalkService";
 import {TalkService} from "../services/TalkService";
 import {NotFoundComponent} from "../page/not-found-page/not-found/not-found.component";
 import {SunComponent} from "../page/not-found-page/sun/sun.component";
@@ -58,12 +58,12 @@ import {AuthConfigModule} from "./auth-config.module";
 import {VolcampFeedbackComponent} from "../components/volcamp-feedback/volcamp-feedback.component";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
-import {AbstractThemeService} from "../services/AbstractThemeService";
+import {AbstractThemeService} from "../services/abstract/AbstractThemeService";
 import {ThemeService} from "../services/ThemeService";
-import {AbstractFormatService} from "../services/AbstractFormatService";
+import {AbstractFormatService} from "../services/abstract/AbstractFormatService";
 import {FormatService} from "../services/FormatService";
 import {UserService} from "../services/UserService";
-import {AbstractTalkFavoriteService} from "../services/AbstractTalkFavoriteService";
+import {AbstractTalkFavoriteService} from "../services/abstract/AbstractTalkFavoriteService";
 import {TalkFavoriteService} from "../services/TalkFavoriteService";
 import {FavoriteComponent} from "../page/favorite/favorite.component";
 import {FilterPlanningsService} from "../services/FilterPlanningsService";
@@ -80,12 +80,14 @@ import {AdminDeleteBtnComponent} from "../components/admin-delete-btn/admin-dele
 import {
   AdminDialogDeleteTalkComponent
 } from "../components/admin-dialog-delete-talk/admin-dialog-delete-talk.component";
-import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import {MatDialogModule} from "@angular/material/dialog";
 import {AdminEditBtnComponent} from "../components/admin-edit-btn/admin-edit-btn.component";
 import {AdminAddBtnComponent} from "../components/admin-add-btn/admin-add-btn.component";
 import {AdminDialogAddTalkComponent} from "../components/admin-dialog-add-talk/admin-dialog-add-talk.component";
-import {CdkDrag, CdkDropList, CdkDropListGroup} from "@angular/cdk/drag-drop";
+import {CdkDrag, CdkDragPreview, CdkDropList, CdkDropListGroup} from "@angular/cdk/drag-drop";
 import {MatStepperModule} from "@angular/material/stepper";
+import {DragListsComponent} from "../components/drag-lists/drag-lists.component";
+import {SearchListComponent} from "../components/search-list/search-list.component";
 
 @NgModule({
   declarations: [
@@ -125,49 +127,53 @@ import {MatStepperModule} from "@angular/material/stepper";
     AdminEditBtnComponent,
     AdminAddBtnComponent,
     AdminDialogAddTalkComponent,
+    DragListsComponent,
+    SearchListComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ServiceWorkerModule.register('ngsw-worker.js', {
-            enabled: !isDevMode(),
-            // Register the ServiceWorker as soon as the application is stable
-            // or after 30 seconds (whichever comes first).
-            registrationStrategy: 'registerWhenStable:30000'
-        }),
-        MatTabsModule,
-        MatIconModule,
-        MatButtonModule,
-        MatToolbarModule,
-        BrowserAnimationsModule,
-        MatProgressBarModule,
-        MatGridListModule,
-        MatCardModule,
-        MatBadgeModule,
-        MatDividerModule,
-        HttpClientModule,
-        MatProgressSpinnerModule,
-        MatBottomSheetModule,
-        MatChipsModule,
-        MatFormFieldModule,
-        MatDatepickerModule,
-        ReactiveFormsModule,
-        MatNativeDateModule,
-        MatCheckboxModule,
-        MatMenuModule,
-        AuthConfigModule,
-        MatInputModule,
-        MatButtonToggleModule,
-        MatSidenavModule,
-        MatListModule,
-        MatDialogModule,
-        CdkDropList,
-        CdkDrag,
-        CdkDropListGroup,
-        MatStepperModule,
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
+    MatTabsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule,
+    MatGridListModule,
+    MatCardModule,
+    MatBadgeModule,
+    MatDividerModule,
+    HttpClientModule,
+    MatProgressSpinnerModule,
+    MatBottomSheetModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    AuthConfigModule,
+    MatInputModule,
+    MatButtonToggleModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDialogModule,
+    CdkDropList,
+    CdkDrag,
+    CdkDropListGroup,
+    MatStepperModule,
+    CdkDragPreview,
+    FormsModule,
 
 
-    ],
+  ],
   providers: [{
     provide: AbstractPlanningService,
     useClass: PlanningService // <--- Defining the swappable implementation.

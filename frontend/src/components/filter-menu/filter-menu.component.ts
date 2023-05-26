@@ -3,9 +3,9 @@ import {PlanningType} from "../../data/dto/input/Planning";
 import {PlanningTheme} from "../../data/dto/input/Theme";
 import {compareEqualDate, formatDate} from "../../common/DateFunc";
 import {MAT_BOTTOM_SHEET_DATA} from "@angular/material/bottom-sheet";
-import {AbstractConferenceService} from "../../services/AbstractConferenceService";
-import {AbstractThemeService} from "../../services/AbstractThemeService";
-import {AbstractFormatService} from "../../services/AbstractFormatService";
+import {AbstractConferenceService} from "../../services/abstract/AbstractConferenceService";
+import {AbstractThemeService} from "../../services/abstract/AbstractThemeService";
+import {AbstractFormatService} from "../../services/abstract/AbstractFormatService";
 
 @Component({
   selector: 'app-filter-menu',

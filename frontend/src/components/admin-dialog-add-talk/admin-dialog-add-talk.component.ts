@@ -1,13 +1,14 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
-import {FormBuilder, Validators} from "@angular/forms";
-import {AbstractThemeService} from "../../services/AbstractThemeService";
-import {AbstractFormatService} from "../../services/AbstractFormatService";
+import {FormBuilder, FormControl, Validators} from "@angular/forms";
+import {AbstractThemeService} from "../../services/abstract/AbstractThemeService";
+import {AbstractFormatService} from "../../services/abstract/AbstractFormatService";
 import {Format} from "../../data/dto/input/Format";
 import {Theme} from "../../data/dto/input/Theme";
-import {AbstractConferenceService} from "../../services/AbstractConferenceService";
+import {AbstractConferenceService} from "../../services/abstract/AbstractConferenceService";
 import {Conference} from "../../data/dto/input/Conference";
+import {AbstractSpeakerService} from "../../services/abstract/AbstractSpeakerService";
+import {Speaker} from "../../data/dto/input/Speaker";
 
 @Component({
   selector: 'app-admin-dialog-add-talk',
@@ -18,11 +19,25 @@ export class AdminDialogAddTalkComponent {
   formats: Format[] = [];
   themes: Theme[] = [];
   conferences: Conference[] = [];
+  speakers: Speaker[] = [];
+  speakersToAdd: Speaker[] = [];
 
+  titleForm: FormControl = new FormControl('', [Validators.required]);
+
+  firstStepper = this._formBuilder.group({
+    titleForm: this.titleForm,
+  });
 
   constructor(public dialogRef: MatDialogRef<AdminDialogAddTalkComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
-              private _formBuilder: FormBuilder, private themeService: AbstractThemeService,
-              private formatService: AbstractFormatService, private conferenceService: AbstractConferenceService) {
+              private themeService: AbstractThemeService, private formatService: AbstractFormatService,
+              private conferenceService: AbstractConferenceService, private dataService: AbstractSpeakerService,
+              private _formBuilder: FormBuilder) {
+    this.conferenceService.getCurrentConference().subscribe(conf => {
+        this.dataService.getSpeakers(conf!.id.toString()).subscribe((speakers => {
+          this.speakers = speakers
+        }))
+      }
+    )
 
     formatService.getFormats().subscribe(data => {
       this.formats = data
@@ -39,36 +54,13 @@ export class AdminDialogAddTalkComponent {
 
   }
 
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
-  todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
-
-  done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
-
-  drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex,
-      );
-    }
-  }
-
   closeDialog() {
     this.dialogRef.close()
   }
 
   add() {
-    //requete add
-    this.dialogRef.close()
+    console.log(this.titleForm.value)
+    console.log(this.speakersToAdd)
 
   }
 

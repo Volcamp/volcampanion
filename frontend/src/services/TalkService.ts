@@ -3,7 +3,7 @@ import {RequestManager} from "../data/RequestManager";
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
 import {EnvironmentService} from "./EnvironmentService";
-import {AbstractTalkService} from "./AbstractTalkService";
+import {AbstractTalkService} from "./abstract/AbstractTalkService";
 import {Talk} from "../data/dto/input/Talk";
 import {Speaker} from "../data/dto/input/Speaker";
 

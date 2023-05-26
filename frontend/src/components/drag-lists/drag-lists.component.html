@@ -1,0 +1,39 @@
+<div cdkDropListGroup class="containerDragLists">
+  <div class="list">
+    <h2 class="accentColorFG">{{titleFrom}}</h2>
+    <app-search-list [list]="fromBackup" (searching)="search($event,true)"></app-search-list>
+    <div
+      class="listDrag"
+      cdkDropList
+      [cdkDropListData]="from"
+      (cdkDropListDropped)="drop($event,true)">
+      <div *ngFor="let item of from" cdkDrag class="dragItem zoomOutCard">
+        <ng-container [ngTemplateOutlet]="itemDisplayTemplate" [ngTemplateOutletContext]="{ $implicit: item }"></ng-container>
+        <mat-divider></mat-divider>
+        <div *cdkDragPreview class="draggedItem">
+          <ng-container  [ngTemplateOutlet]="itemDisplayPreview" [ngTemplateOutletContext]="{ $implicit: item }"></ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="list">
+    <h2 class="primaryColorFG">{{titleTo}}</h2>
+    <app-search-list [list]="toBackup" (searching)="search($event,false)"></app-search-list>
+    <div
+      class="listDrag"
+      cdkDropList
+      [cdkDropListData]="to"
+      (cdkDropListDropped)="drop($event,false)">
+      <div *ngFor="let item of to" cdkDrag class="dragItem zoomOutCard">
+        <ng-container [ngTemplateOutlet]="itemDisplayTemplate" [ngTemplateOutletContext]="{ $implicit: item }"></ng-container>
+        <div *cdkDragPreview class="draggedItem">
+          <ng-container  [ngTemplateOutlet]="itemDisplayPreview" [ngTemplateOutletContext]="{ $implicit: item }"></ng-container>
+        </div>
+        <mat-divider></mat-divider>
+      </div>
+    </div>
+  </div>
+</div>
+

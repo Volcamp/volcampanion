@@ -1,7 +1,8 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {VMFavorite} from "../../vm/VMFavorite";
 import {UserService} from "../../services/UserService";
-import {AbstractTalkFavoriteService} from "../../services/AbstractTalkFavoriteService";
+import {AbstractTalkFavoriteService} from "../../services/abstract/AbstractTalkFavoriteService";
+import {Planning} from "../../data/dto/input/Planning";
 
 @Component({
   selector: 'app-add-favorite',
@@ -13,22 +14,26 @@ export class AddFavoriteComponent {
   @Output() capacityChange: EventEmitter<number> = new EventEmitter<number>();
 
   @Input() capacity: number = 0;
-  @Input() talkId: number = 0;
-  vm: VMFavorite;
+  @Input() planning!: Planning;
+  vm!: VMFavorite;
 
-  constructor(userService: UserService, abstractTalkFavoriteService: AbstractTalkFavoriteService) {
-    this.vm = new VMFavorite(userService, abstractTalkFavoriteService);
+  constructor(private userService: UserService, private abstractTalkFavoriteService: AbstractTalkFavoriteService) {
+
+  }
+
+  ngOnInit() {
+    this.vm = new VMFavorite(this.userService, this.abstractTalkFavoriteService, this.planning);
   }
 
   removeFavorite(event: Event) {
     event.stopPropagation();
     this.capacityChange.emit(--this.capacity);
-    this.vm.removeFavorite(this.talkId);
+    this.vm.removeFavorite();
   }
 
   addFavorite(event: Event) {
     event.stopPropagation();
     this.capacityChange.emit(++this.capacity);
-    this.vm.addFavorite(this.talkId);
+    this.vm.addFavorite();
   }
 }

@@ -3,7 +3,7 @@ import {EnvironmentService} from "./EnvironmentService";
 import {RequestManager} from "../data/RequestManager";
 import {Observable} from "rxjs";
 import {APIRoutes} from "../data/APIRoutes";
-import {AbstractFormatService} from "./AbstractFormatService";
+import {AbstractFormatService} from "./abstract/AbstractFormatService";
 import {Format} from "../data/dto/input/Format";
 import {Theme} from "../data/dto/input/Theme";
 

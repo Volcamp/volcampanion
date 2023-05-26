@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {AbstractThemeService} from "./AbstractThemeService";
+import {AbstractThemeService} from "./abstract/AbstractThemeService";
 import {Observable} from "rxjs";
 import {Theme} from "../data/dto/input/Theme";
 import {EnvironmentService} from "./EnvironmentService";

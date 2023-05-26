@@ -1,8 +1,8 @@
-import {AbstractPlanningService} from "../services/AbstractPlanningService";
-import {AbstractConferenceService} from "../services/AbstractConferenceService";
+import {AbstractPlanningService} from "../services/abstract/AbstractPlanningService";
+import {AbstractConferenceService} from "../services/abstract/AbstractConferenceService";
 import {FilterPlanningsService} from "../services/FilterPlanningsService";
 import {Talk} from "../data/dto/input/Talk";
-import {AbstractTalkService} from "../services/AbstractTalkService";
+import {AbstractTalkService} from "../services/abstract/AbstractTalkService";
 
 export class VMAdminListTalk {
   talks: Talk[] = []

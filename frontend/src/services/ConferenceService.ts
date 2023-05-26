@@ -4,8 +4,7 @@ import {map, Observable, of} from "rxjs";
 import {Conference} from "../data/dto/input/Conference";
 import {EnvironmentService} from "./EnvironmentService";
 import {APIRoutes} from "../data/APIRoutes";
-import {AbstractConferenceService} from "./AbstractConferenceService";
-import {Speaker} from "../data/dto/input/Speaker";
+import {AbstractConferenceService} from "./abstract/AbstractConferenceService";
 
 
 export const ACTIVE_ID_CONF = "activeIdConf"
@@ -32,7 +31,7 @@ export class ConferenceService implements AbstractConferenceService {
   }
 
   getConferences(): Observable<Conference[]> {
-    return this.requestManager.get<Conference[]>(this.env.getApiUrl() + APIRoutes.CONFERENCE );
+    return this.requestManager.get<Conference[]>(this.env.getApiUrl() + APIRoutes.CONFERENCE);
 
   }
 

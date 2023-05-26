@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 import {RequestManager} from "../data/RequestManager";
 import {Injectable} from "@angular/core";
 import {EnvironmentService} from "./EnvironmentService";
-import {AbstractSpeakerService} from "./AbstractSpeakerService";
+import {AbstractSpeakerService} from "./abstract/AbstractSpeakerService";
 
 @Injectable()
 export class SpeakerService implements AbstractSpeakerService {

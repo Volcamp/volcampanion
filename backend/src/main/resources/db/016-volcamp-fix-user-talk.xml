@@ -1,0 +1,39 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="rami.khedair@volcamp.io" id="1">
+        <delete schemaName="volcampanion"
+                tableName="user_favorite_talks">
+        </delete>
+    </changeSet>
+
+    <changeSet   author="rami.khedair@volcamp.io" id="2">
+        <dropTable  cascadeConstraints="true"
+                    schemaName="volcampanion"
+                    tableName="user_favorite_talks"/>
+    </changeSet>
+
+    <changeSet  author="rami.khedair@volcamp.io" id="3">
+        <createTable tableName="user_favorite_plannings">
+
+            <column name="planning_room_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="planning_talk_id" type="bigint">
+            </column>
+
+            <column name="planning_schedule"  type="timestamp">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="user_id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+
+        <addPrimaryKey tableName="user_favorite_plannings" columnNames="planning_room_id, planning_talk_id,planning_schedule,user_id"/>
+    </changeSet>
+</databaseChangeLog>

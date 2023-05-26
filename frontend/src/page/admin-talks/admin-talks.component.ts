@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {VMAdminListTalk} from "../../vm/VMAdminListTalk";
-import {AbstractTalkService} from "../../services/AbstractTalkService";
-import {AbstractConferenceService} from "../../services/AbstractConferenceService";
+import {AbstractTalkService} from "../../services/abstract/AbstractTalkService";
+import {AbstractConferenceService} from "../../services/abstract/AbstractConferenceService";
 
 @Component({
   selector: 'app-admin-talks',

@@ -1,5 +1,5 @@
 import {ActivatedRoute} from "@angular/router";
-import {AbstractTalkService} from "../services/AbstractTalkService";
+import {AbstractTalkService} from "../services/abstract/AbstractTalkService";
 import {Talk} from "../data/dto/input/Talk";
 import {getColorTheme, getIconFormat} from "../common/ColorThemeAndTypeEmoji";
 import {DataParamService} from "../services/DataParamService";

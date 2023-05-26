@@ -2,13 +2,13 @@
 <div mat-dialog-content>
   <mat-stepper #stepper>
     <!--------------------------- Step --------------------------->
-    <mat-step [stepControl]="firstFormGroup">
-      <form [formGroup]="firstFormGroup" class="bigForm">
+    <mat-step [stepControl]="firstStepper " errorMessage="Name is required.">
+      <form  class="bigForm">
         <ng-template matStepLabel>Information de Talk</ng-template>
         <div class="form">
           <mat-form-field>
             <mat-label>Titre</mat-label>
-            <input required matInput>
+            <input required matInput  [formControl]="titleForm">
           </mat-form-field>
           <mat-form-field>
             <mat-label>Niveau</mat-label>
@@ -30,16 +30,13 @@
         </mat-form-field>
 
       </form>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
     </mat-step>
 
     <!--------------------------- Theme --------------------------->
 
     <mat-step>
       <ng-template matStepLabel>Theme</ng-template>
-      <mat-chip-listbox aria-label="Fish selection">
+      <mat-chip-listbox>
         <mat-chip-option *ngFor="let theme of themes">{{theme.name}}</mat-chip-option>
       </mat-chip-listbox>
 
@@ -49,61 +46,46 @@
 
     <mat-step>
       <ng-template matStepLabel>Format</ng-template>
-      <mat-chip-listbox aria-label="Fish selection" >
+      <mat-chip-listbox>
         <mat-chip-option *ngFor="let format of formats">{{format.name}}</mat-chip-option>
 
       </mat-chip-listbox>
+    </mat-step>
 
+    <!--------------------------- Speaker --------------------------->
+
+    <mat-step>
+      <ng-template matStepLabel>Choisi les Speaker</ng-template>
+      <app-drag-lists  titleFrom="Speakers" titleTo="Speakers for the talk" [to]="speakersToAdd" [from]="speakers" [itemDisplayTemplate]="itemTemplate" [itemDisplayPreview]="itemTemplatePreview">
+        <ng-template #itemTemplate let-item>
+          <span class="h3">{{item.name}}</span>
+        </ng-template>
+
+        <ng-template #itemTemplatePreview let-item>
+          <app-speaker-preview name="{{item.name}}" company="{{item.company}}" photo="{{item.photo}}"></app-speaker-preview>
+        </ng-template>
+      </app-drag-lists>
     </mat-step>
 
     <!--------------------------- Conference --------------------------->
 
     <mat-step>
       <ng-template matStepLabel>Conference</ng-template>
-      <mat-chip-listbox aria-label="Fish selection">
+      <mat-chip-listbox>
         <mat-chip-option *ngFor="let conference of conferences">{{conference.name}}</mat-chip-option>
       </mat-chip-listbox>
     </mat-step>
 
-    <!--------------------------- Step --------------------------->
 
-    <mat-step [stepControl]="secondFormGroup" label="Choisi les Speaker">
-      <div cdkDropListGroup>
-        <div class="example-container">
-          <h2>To do</h2>
-
-          <div
-            cdkDropList
-            [cdkDropListData]="todo"
-            class="example-list"
-            (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
-          </div>
-        </div>
-
-        <div class="example-container">
-          <h2>Done</h2>
-
-          <div
-            cdkDropList
-            [cdkDropListData]="done"
-            class="example-list"
-            (cdkDropListDropped)="drop($event)">
-            <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </mat-step>
 
   </mat-stepper>
 
-  <div mat-dialog-actions>
-    <button mat-button (click)="add()">Ajouter</button>
-    <button mat-button (click)="closeDialog()">Annuler</button>
+  <div mat-dialog-actions style="display: flex">
+    <button color="accent" mat-button (click)="stepper.next()">Suivant</button>
+    <span class="volcamp-spacer"></span>
+    <button color="warn" mat-button (click)="closeDialog()">Annuler</button>
+    <button color="primary" mat-button (click)="add()">Ajouter</button>
+
   </div>
 </div>
 

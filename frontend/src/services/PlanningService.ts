@@ -7,7 +7,7 @@ import {Injectable} from "@angular/core";
 import {map, Observable} from "rxjs";
 import {EnvironmentService} from "./EnvironmentService";
 import {TalkPlanning} from "../data/dto/input/TalkPlanning";
-import {AbstractPlanningService} from "./AbstractPlanningService";
+import {AbstractPlanningService} from "./abstract/AbstractPlanningService";
 import {DividerPlanning} from "../data/dto/input/DividerPlanning";
 
 
