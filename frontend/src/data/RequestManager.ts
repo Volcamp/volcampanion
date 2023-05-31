@@ -22,7 +22,6 @@ export class RequestManager {
   }
 
   delete<T>(url: string): Observable<T> {
-    console.log(url)
     return this.http.delete<T>(url, {headers: this.getHeaders()});
   }
 

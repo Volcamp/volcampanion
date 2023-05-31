@@ -16,7 +16,6 @@ export class AdminAddBtnComponent {
     const dialogRef = this.dialog.open(this.dialogToOpen);
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
   }
 }

@@ -1,0 +1,46 @@
+<h2 mat-dialog-title>Information</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="info">
+    <h3>Titre : </h3>
+    <span class="f4">{{talk.title ?? unknown}}</span>
+  </div>
+
+  <div class="info">
+    <h3>Niveau : </h3>
+    <span class="f4">{{talk.level ?? unknown}}</span>
+  </div>
+
+
+  <div class="info">
+    <h3>Language : </h3>
+    <span class="f4">{{talk.language ?? unknown}}</span>
+  </div>
+
+
+  <div class="info">
+    <h3>Theme : </h3>
+    <span class="f4">{{talk.theme?.name ?? unknown}}</span>
+  </div>
+
+
+  <div class="info">
+    <h3>Format : </h3>
+    <span class="f4">{{talk.format?.type ?? unknown}}</span>
+  </div>
+
+  <div class="info">
+    <h3>Speakers : </h3>
+    <span class="f4">{{speakersNames ?? unknown}}</span>
+  </div>
+
+  <div>
+    <h3>Description : </h3>
+    <span class="f4">{{data.description ?? unknown}}</span>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end" class="action">
+  <app-admin-delete-btn name="{{data.title}}" id="{{data.id}}" [dialogToOpen]=deleteDialog
+                        (click)="dialogRef.close()"></app-admin-delete-btn>
+  <app-admin-edit-btn [item]="data" [dialogToOpen]=editDialog (click)="dialogRef.close()"></app-admin-edit-btn>
+</mat-dialog-actions>

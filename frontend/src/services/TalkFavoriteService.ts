@@ -1,5 +1,5 @@
 import {AbstractTalkFavoriteService} from "./abstract/AbstractTalkFavoriteService";
-import {map, Observable, of} from "rxjs";
+import {catchError, map, Observable, of} from "rxjs";
 import {RequestManager} from "../data/RequestManager";
 import {EnvironmentService} from "./EnvironmentService";
 import {APIRoutes} from "../data/APIRoutes";
@@ -16,18 +16,28 @@ export class TalkFavoriteService implements AbstractTalkFavoriteService {
   constructor(private env: EnvironmentService, private requestManager: RequestManager) {
   }
 
-  addToFavorite(planning: Planning) {
+  addToFavorite(planning: Planning): Observable<boolean> {
     // @ts-ignore
-    this.requestManager.post<string>(this.env.getApiUrl() + APIRoutes.FAVORITE, PlanningMapper.toDTO(planning)).subscribe(data => {
-
-    });
+    return this.requestManager.post<string>(this.env.getApiUrl() + APIRoutes.FAVORITE, PlanningMapper.toDTO(planning)).pipe(
+      map(() => true),
+      catchError(() => {
+        return of(false)
+      }));
   }
 
   removeFromFavorite(planning: Planning): Observable<boolean> {
-    let date : Date = new Date(planning.schedule.getTime() - (planning.schedule.getTimezoneOffset() * 60000))
-    // @ts-ignore
-    this.requestManager.delete<string>(this.env.getApiUrl() + APIRoutes.FAVORITE + "?date="+date.toJSON()+"&idRoom="+planning?.room.id+"&idTalk="+planning?.talk.id).subscribe(); // TODO verify that the delete happened
-    return of(true);
+    let date: Date = new Date(planning.schedule.getTime() - (planning.schedule.getTimezoneOffset() * 60000))
+    return this.requestManager.delete<string>(this.env.getApiUrl() + APIRoutes.FAVORITE +
+      APIRoutes.FAVORITE_DATE_FIRST_PARAM + date.toJSON()
+      // @ts-ignore
+      + APIRoutes.FAVORITE_ROOM_PARAM + planning?.room.id
+      // @ts-ignore
+      + APIRoutes.FAVORITE_TALK_PARAM + planning?.talk.id).pipe(
+          map(() => true),
+          catchError(() => {
+            return of(false)
+      }
+    ));
   }
 
   getFavorites(idConf?: string, fromApi: boolean = false): Observable<Planning[]> {

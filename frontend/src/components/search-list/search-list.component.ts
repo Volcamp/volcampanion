@@ -17,7 +17,7 @@ export class SearchListComponent {
     } else {
       console.log(this.list)
       this.filtered = this.list.filter(item => {
-        return item.name.toLowerCase().includes(this.searchValue.toLowerCase());
+        return item.name.toLowerCase().includes(this.searchValue.toLowerCase()); //FIXME This expression need to be passed in param
       });
     }
     this.searching.emit(this.filtered);

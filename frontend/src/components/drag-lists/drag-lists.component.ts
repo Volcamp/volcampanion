@@ -79,6 +79,5 @@ export class DragListsComponent implements OnChanges {
         this.toBackup.push(item);
       })
     }
-    console.log("hey step bro");
   }
 }

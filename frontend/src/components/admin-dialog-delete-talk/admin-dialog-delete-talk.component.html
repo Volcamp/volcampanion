@@ -3,6 +3,8 @@
   Vous êtes sûr de vouloir supprimer "{{data.nameParam}}" de l'ID : {{data.idParam}} ?
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="delete()">Supprimer</button>
-  <button mat-button (click)="closeDialog()">Annuler</button>
+  <button mat-button color="warn" (click)="closeDialog()">Annuler</button>
+  <span class="volcamp-spacer"></span>
+  <button mat-button color="primary" (click)="delete()">Supprimer</button>
+
 </div>

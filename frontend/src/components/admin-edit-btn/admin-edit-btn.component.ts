@@ -15,13 +15,12 @@ export class AdminEditBtnComponent {
   }
 
   openDialog() {
-    let itemParam = this.item
+    const itemParam = this.item;
     const dialogRef = this.dialog.open(this.dialogToOpen, {
-      data: { itemParam},
+      data: itemParam,
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
   }
 }

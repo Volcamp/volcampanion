@@ -1,6 +1,6 @@
 <div cdkDropListGroup class="containerDragLists">
   <div class="list">
-    <h2 class="accentColorFG">{{titleFrom}}</h2>
+    <h4 class="accentColorFG">{{titleFrom}}</h4>
     <app-search-list [list]="fromBackup" (searching)="search($event,true)"></app-search-list>
     <div
       class="listDrag"
@@ -19,7 +19,7 @@
 
 
   <div class="list">
-    <h2 class="primaryColorFG">{{titleTo}}</h2>
+    <h4 class="primaryColorFG">{{titleTo}}</h4>
     <app-search-list [list]="toBackup" (searching)="search($event,false)"></app-search-list>
     <div
       class="listDrag"

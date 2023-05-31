@@ -8,10 +8,12 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.volcampanion.domain.UserFavoritePlanning;
 import org.volcampanion.entity.UserFavoritePlanningEntity;
+import org.volcampanion.util.mapping.TimestampMapper;
 
 @Mapper(componentModel = CDI,
         uses = {
                 TalkMapper.class,
+                TimestampMapper.class,
         })
 public interface UserFavoritePlanningMapper extends IMapper<UserFavoritePlanning, UserFavoritePlanningEntity> {
 

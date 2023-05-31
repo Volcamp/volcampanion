@@ -22,18 +22,16 @@ export class AddFavoriteComponent {
   }
 
   ngOnInit() {
-    this.vm = new VMFavorite(this.userService, this.abstractTalkFavoriteService, this.planning);
+    this.vm = new VMFavorite(this.userService, this.abstractTalkFavoriteService, this.planning,this.capacity,this.capacityChange);
   }
 
   removeFavorite(event: Event) {
     event.stopPropagation();
-    this.capacityChange.emit(--this.capacity);
     this.vm.removeFavorite();
   }
 
   addFavorite(event: Event) {
     event.stopPropagation();
-    this.capacityChange.emit(++this.capacity);
     this.vm.addFavorite();
   }
 }

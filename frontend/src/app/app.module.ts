@@ -88,6 +88,11 @@ import {CdkDrag, CdkDragPreview, CdkDropList, CdkDropListGroup} from "@angular/c
 import {MatStepperModule} from "@angular/material/stepper";
 import {DragListsComponent} from "../components/drag-lists/drag-lists.component";
 import {SearchListComponent} from "../components/search-list/search-list.component";
+import {STEPPER_GLOBAL_OPTIONS} from "@angular/cdk/stepper";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {SnackBarService} from "../services/SnackBarService";
+import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
+import {AdminDialogInfoTalkComponent} from "../components/admin-dialog-info-talk/admin-dialog-info-talk.component";
 
 @NgModule({
   declarations: [
@@ -129,6 +134,7 @@ import {SearchListComponent} from "../components/search-list/search-list.compone
     AdminDialogAddTalkComponent,
     DragListsComponent,
     SearchListComponent,
+    AdminDialogInfoTalkComponent,
   ],
   imports: [
     BrowserModule,
@@ -171,7 +177,8 @@ import {SearchListComponent} from "../components/search-list/search-list.compone
     MatStepperModule,
     CdkDragPreview,
     FormsModule,
-
+    MatAutocompleteModule,
+    MatSnackBarModule,
 
   ],
   providers: [{
@@ -202,11 +209,16 @@ import {SearchListComponent} from "../components/search-list/search-list.compone
       provide: AbstractTalkFavoriteService,
       useClass: TalkFavoriteService // <--- Defining the swappable implementation.
     },
+    {
+      provide: STEPPER_GLOBAL_OPTIONS,
+      useValue: {showError: true},
+    },
     HttpClient,
     DataParamService,
     RequestManager,
     FilterPlanningsService,
     UserService,
+    SnackBarService,
   ],
   bootstrap: [AppComponent]
 })
