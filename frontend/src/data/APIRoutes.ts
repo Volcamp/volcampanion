@@ -12,5 +12,7 @@ export enum APIRoutes {
   FAVORITE_ROOM_PARAM = "&idRoom=",
   THEMES = "talk-themes/",
   FORMAT = "talk-formats/",
+  FEEDBACK = "feedback/",
+  USER = "users/",
 
 }

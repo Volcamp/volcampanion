@@ -3,14 +3,17 @@ import {AbstractTalkService} from "../services/abstract/AbstractTalkService";
 import {Talk} from "../data/dto/input/Talk";
 import {getColorTheme, getIconFormat} from "../common/ColorThemeAndTypeEmoji";
 import {DataParamService} from "../services/DataParamService";
+import {FeedbackTalkInitEventArgs} from "../event/FeedbackTalkInitEventArgs";
+import {FeedbackInitService} from "../services/FeedbackInitService";
 
 export class VMTalk {
   talk: Talk | undefined | null = null
   colorTheme: string = "";
-  iconFormat: string = ""
+  iconFormat: string = "";
 
-  constructor(private route: ActivatedRoute, private dataService: AbstractTalkService, private dataParamService: DataParamService) {
-    this.talk = dataParamService.storageParam
+  constructor(private route: ActivatedRoute, private dataService: AbstractTalkService,
+              private dataParamService: DataParamService, private feedbackInitService: FeedbackInitService) {
+    this.talk = this.dataParamService.storageParam;
 
   }
 
@@ -29,6 +32,8 @@ export class VMTalk {
       this.colorTheme = getColorTheme(this.talk!.theme!.name)
       this.iconFormat = getIconFormat(this.talk!.format!.type)
     }
-
+    if (talkIdFromRoute != null) {
+      this.feedbackInitService.eventEmitterFeedback.emit(new FeedbackTalkInitEventArgs(talkIdFromRoute))
+    }
   }
 }

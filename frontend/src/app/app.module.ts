@@ -91,8 +91,13 @@ import {SearchListComponent} from "../components/search-list/search-list.compone
 import {STEPPER_GLOBAL_OPTIONS} from "@angular/cdk/stepper";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {SnackBarService} from "../services/SnackBarService";
-import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {AdminDialogInfoTalkComponent} from "../components/admin-dialog-info-talk/admin-dialog-info-talk.component";
+import {AbstractTalkFeedbackService} from "../services/abstract/AbstractTalkFeedbackService";
+import {TalkFeedbackService} from "../services/TalkFeedbackService";
+import {FeedbackInitService} from "../services/FeedbackInitService";
+import {MatExpansionModule} from "@angular/material/expansion";
+
 
 @NgModule({
   declarations: [
@@ -136,51 +141,52 @@ import {AdminDialogInfoTalkComponent} from "../components/admin-dialog-info-talk
     SearchListComponent,
     AdminDialogInfoTalkComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: !isDevMode(),
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
-    }),
-    MatTabsModule,
-    MatIconModule,
-    MatButtonModule,
-    MatToolbarModule,
-    BrowserAnimationsModule,
-    MatProgressBarModule,
-    MatGridListModule,
-    MatCardModule,
-    MatBadgeModule,
-    MatDividerModule,
-    HttpClientModule,
-    MatProgressSpinnerModule,
-    MatBottomSheetModule,
-    MatChipsModule,
-    MatFormFieldModule,
-    MatDatepickerModule,
-    ReactiveFormsModule,
-    MatNativeDateModule,
-    MatCheckboxModule,
-    MatMenuModule,
-    AuthConfigModule,
-    MatInputModule,
-    MatButtonToggleModule,
-    MatSidenavModule,
-    MatListModule,
-    MatDialogModule,
-    CdkDropList,
-    CdkDrag,
-    CdkDropListGroup,
-    MatStepperModule,
-    CdkDragPreview,
-    FormsModule,
-    MatAutocompleteModule,
-    MatSnackBarModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: !isDevMode(),
+            // Register the ServiceWorker as soon as the application is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerWhenStable:30000'
+        }),
+        MatTabsModule,
+        MatIconModule,
+        MatButtonModule,
+        MatToolbarModule,
+        BrowserAnimationsModule,
+        MatProgressBarModule,
+        MatGridListModule,
+        MatCardModule,
+        MatBadgeModule,
+        MatDividerModule,
+        HttpClientModule,
+        MatProgressSpinnerModule,
+        MatBottomSheetModule,
+        MatChipsModule,
+        MatFormFieldModule,
+        MatDatepickerModule,
+        ReactiveFormsModule,
+        MatNativeDateModule,
+        MatCheckboxModule,
+        MatMenuModule,
+        AuthConfigModule,
+        MatInputModule,
+        MatButtonToggleModule,
+        MatSidenavModule,
+        MatListModule,
+        MatDialogModule,
+        CdkDropList,
+        CdkDrag,
+        CdkDropListGroup,
+        MatStepperModule,
+        CdkDragPreview,
+        FormsModule,
+        MatAutocompleteModule,
+        MatSnackBarModule,
+        MatExpansionModule,
 
-  ],
+    ],
   providers: [{
     provide: AbstractPlanningService,
     useClass: PlanningService // <--- Defining the swappable implementation.
@@ -210,6 +216,10 @@ import {AdminDialogInfoTalkComponent} from "../components/admin-dialog-info-talk
       useClass: TalkFavoriteService // <--- Defining the swappable implementation.
     },
     {
+      provide: AbstractTalkFeedbackService,
+      useClass: TalkFeedbackService // <--- Defining the swappable implementation.
+    },
+    {
       provide: STEPPER_GLOBAL_OPTIONS,
       useValue: {showError: true},
     },
@@ -219,6 +229,8 @@ import {AdminDialogInfoTalkComponent} from "../components/admin-dialog-info-talk
     FilterPlanningsService,
     UserService,
     SnackBarService,
+    FeedbackInitService,
+
   ],
   bootstrap: [AppComponent]
 })

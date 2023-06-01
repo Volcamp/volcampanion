@@ -1,4 +1,8 @@
 import {Component} from '@angular/core';
+import {VMFeedbackTalk} from "../../vm/VMFeedbackTalk";
+import {UserService} from "../../services/UserService";
+import {AbstractTalkFeedbackService} from "../../services/abstract/AbstractTalkFeedbackService";
+import {FeedbackInitService} from "../../services/FeedbackInitService";
 
 @Component({
   selector: 'app-volcamp-feedback',
@@ -6,13 +10,10 @@ import {Component} from '@angular/core';
   styleUrls: ['./volcamp-feedback.component.sass']
 })
 export class VolcampFeedbackComponent {
-  note: number = -1;
+  vm!: VMFeedbackTalk;
+  idTalk!: string;
 
-  update(note: number) {
-    this.note = note;
-  }
-
-  sendNote() {
-    // Api request
+  constructor(userService: UserService, dataService: AbstractTalkFeedbackService, feedbackInitService: FeedbackInitService,) {
+    this.vm = new VMFeedbackTalk(userService, dataService, feedbackInitService);
   }
 }

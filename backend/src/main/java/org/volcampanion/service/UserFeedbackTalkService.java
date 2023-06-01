@@ -16,7 +16,7 @@ public class UserFeedbackTalkService extends BaseService<UserFeedbackTalk, UserF
     }
 
     public List<UserFeedbackTalk> listByTalk(Long talkId) {
-        return mapper.toDomain(repository.list("id.talk", talkId));
+        return mapper.toDomain(repository.list("talk_id", talkId));
     }
 
     public void deleteByTalk(UserFeedbackTalk domain) {

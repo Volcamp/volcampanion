@@ -1,4 +1,6 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {FeedbackInitService} from "../../services/FeedbackInitService";
+import {NoteChangeEventArgs} from "../../event/NoteChangeEventArgs";
 
 @Component({
   selector: 'app-volcamp-rate',
@@ -7,7 +9,14 @@ import {Component, EventEmitter, Output} from '@angular/core';
 })
 export class VolcampRateComponent {
   @Output() noteOutput: EventEmitter<number> = new EventEmitter<number>();
+  @Input() noted = false;
   note: number = -1;
+
+  constructor(feedbackInitService: FeedbackInitService) {
+      feedbackInitService.eventEmitterNote.on((data : NoteChangeEventArgs) => {
+        this.note = data.note;
+      })
+  }
 
   isChecked(note: number): boolean {
     return this.note >= note;
@@ -18,4 +27,5 @@ export class VolcampRateComponent {
     else this.note = -1;
     this.noteOutput.emit(this.note)
   }
+
 }

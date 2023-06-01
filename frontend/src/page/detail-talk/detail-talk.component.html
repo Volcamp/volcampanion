@@ -1,4 +1,5 @@
 <div class="centerContainer contentPage">
+  <app-volcamp-feedback></app-volcamp-feedback>
   <div *ngIf="vm.talk!=null">
     <div class="lineContentContainer">
       <div class="leftItem">
@@ -11,7 +12,6 @@
       </div>
       <span class="rightItem f3">{{vm.talk.level}}</span>
     </div>
-
     <div class="lineContentContainer ">
 
       <div class="leftItem">
@@ -32,9 +32,11 @@
                            name="{{speaker.name}}" photo="{{speaker.photo}}" company="{{speaker.company}}"
                            (click)="navigate(speaker)"></app-speaker-preview>
     </div>
+
+
     <span class="f4">{{vm.talk.description}}</span>
 
   </div>
-  <app-volcamp-feedback></app-volcamp-feedback>
+
 </div>
 <app-loader *ngIf="vm.talk===undefined"></app-loader>
