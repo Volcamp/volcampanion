@@ -1,4 +1,4 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {FormBuilder, FormControl, Validators} from "@angular/forms";
 import {AbstractThemeService} from "../../services/abstract/AbstractThemeService";
@@ -13,7 +13,6 @@ import {map, Observable, startWith} from "rxjs";
 import {CreateTalk} from "../../data/dto/output/CreateTalk";
 import {AbstractTalkService} from "../../services/abstract/AbstractTalkService";
 import {SnackBarService} from "../../services/SnackBarService";
-import {Talk} from "../../data/dto/input/Talk";
 
 @Component({
   selector: 'app-admin-dialog-add-talk',
@@ -96,7 +95,7 @@ export class AdminDialogAddTalkComponent implements OnInit {
       startWith(''),
       map(value => this._filter(value || '')),
     );
-    if(this.data !== null){
+    if (this.data !== null) {
       this.titleForm.setValue(this.data.title ?? '');
       this.levelForm.setValue(this.data.level ?? '');
       this.languageForm.setValue(this.data.language ?? '');
@@ -138,22 +137,22 @@ export class AdminDialogAddTalkComponent implements OnInit {
         return {id: speaker.id}
       })
     }
-    if(this.data == null){
+    if (this.data == null) {
       this.abstractTalkService.addTalk(talkToSend).subscribe(data => {
-        if(data){
+        if (data) {
           this.dialogRef.close();
           this.snackBarService.open(`Le talk ${talkToSend.title} a été ajouter`, "Fermer");
-        }else {
+        } else {
           this.snackBarService.open(`Un probleme a survenue`, "Fermer");
         }
 
       });
-    }else {
+    } else {
       this.abstractTalkService.putTalk(talkToSend).subscribe(data => {
-        if(data){
+        if (data) {
           this.dialogRef.close();
           this.snackBarService.open(`Le talk ${talkToSend.title} a été modifier`, "Fermer");
-        }else {
+        } else {
           this.snackBarService.open(`Un probleme a survenue`, "Fermer");
         }
       });

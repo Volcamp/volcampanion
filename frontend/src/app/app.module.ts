@@ -97,6 +97,17 @@ import {AbstractTalkFeedbackService} from "../services/abstract/AbstractTalkFeed
 import {TalkFeedbackService} from "../services/TalkFeedbackService";
 import {FeedbackInitService} from "../services/FeedbackInitService";
 import {MatExpansionModule} from "@angular/material/expansion";
+import {AdminSpeakerPreviewComponent} from "../components/admin-speaker-preview/admin-speaker-preview.component";
+import {AdminSpeakerListComponent} from "../components/admin-speaker-list/admin-speaker-list.component";
+import {
+  AdminDialogInfoSpeakerComponent
+} from "../components/admin-dialog-info-speaker/admin-dialog-info-speaker.component";
+import {
+  AdminDialogAddEditSpeakerComponent
+} from "../components/admin-dialog-add-edit-speaker/admin-dialog-add-edit-speaker.component";
+import {
+  AdminDialogDeleteSpeakerComponent
+} from "../components/admin-dialog-delete-speaker/admin-dialog-delete-speaker.component";
 
 
 @NgModule({
@@ -140,6 +151,11 @@ import {MatExpansionModule} from "@angular/material/expansion";
     DragListsComponent,
     SearchListComponent,
     AdminDialogInfoTalkComponent,
+    AdminSpeakerPreviewComponent,
+    AdminSpeakerListComponent,
+    AdminDialogInfoSpeakerComponent,
+    AdminDialogAddEditSpeakerComponent,
+    AdminDialogDeleteSpeakerComponent,
   ],
     imports: [
         BrowserModule,

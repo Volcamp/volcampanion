@@ -1,0 +1,13 @@
+<div class="card adminTalkBGGradientBefore">
+  <div class="content">
+    <p class="heading f5">{{speaker.id}} - {{speaker.name.length > 20 ? speaker.name.slice(0,20)+"..." : speaker.name}}</p>
+
+    <p class="para f6">
+      {{speaker.company}}
+    </p>
+    <div class="actionContainer">
+      <app-admin-delete-btn name="{{speaker.name}}" id="{{speaker.id}}" [dialogToOpen]=deleteDialog (click)="$event.stopPropagation()"></app-admin-delete-btn>
+      <app-admin-edit-btn [item]="speaker" [dialogToOpen]=editDialog (click)="$event.stopPropagation()"></app-admin-edit-btn>
+    </div>
+  </div>
+</div>

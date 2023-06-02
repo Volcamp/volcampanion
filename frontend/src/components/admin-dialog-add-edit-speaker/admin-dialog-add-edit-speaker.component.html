@@ -1,0 +1,81 @@
+<div mat-dialog-content>
+  <mat-stepper #stepper>
+    <!--------------------------- Step --------------------------->
+    <mat-step [stepControl]="infoStepper" errorMessage="Information manquante">
+      <div class="container">
+
+        <form class="bigForm">
+          <ng-template matStepLabel>Information de Speaker</ng-template>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Nom</mat-label>
+              <input required matInput [formControl]="nameForm">
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input required matInput [formControl]="emailForm">
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Twitter</mat-label>
+              <input matInput [formControl]="twitterForm">
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Linkedin</mat-label>
+              <input matInput [formControl]="linkedinForm">
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Entreprise</mat-label>
+              <input matInput [formControl]="companyForm">
+            </mat-form-field>
+
+
+          </div>
+          <mat-form-field>
+            <mat-label>Photo</mat-label>
+            <input matInput [formControl]="photoForm">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Biography</mat-label>
+            <textarea matInput
+                      cdkTextareaAutosize
+                      cdkAutosizeMinRows="2"
+                      cdkAutosizeMaxRows="12"
+                      [formControl]="biographyForm"></textarea>
+          </mat-form-field>
+
+
+        </form>
+        <img src="{{photoForm.value}}" #img (error)="img.src='/assets/image/defaultProfile.png'"
+             class="imagSpeaker" alt="avatar"/>
+      </div>
+
+    </mat-step>
+
+    <!--------------------------- Conference --------------------------->
+
+    <mat-step [stepControl]="confStepper" errorMessage="Choisi la conference">
+      <ng-template matStepLabel>Conference</ng-template>
+      <mat-chip-listbox [formControl]="confForm">
+        <div *ngFor="let conference of conferences">
+          <mat-chip-option [value]="conference" selected="{{(conference.id === confCurrent.id && data === undefined)
+                                                                             || conference.id === confForm.value.id}}">
+            {{conference.name}}
+          </mat-chip-option>
+        </div>
+      </mat-chip-listbox>
+    </mat-step>
+  </mat-stepper>
+
+  <div mat-dialog-actions style="display: flex">
+    <button color="warn" mat-button (click)="closeDialog()">Annuler</button>
+    <span class="volcamp-spacer"></span>
+    <button color="accent" mat-button (click)="stepper.next()">Suivant</button>
+    <button color="primary" mat-button (click)="add()">Valider</button>
+  </div>
+</div>
+

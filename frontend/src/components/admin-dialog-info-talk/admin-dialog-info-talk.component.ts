@@ -5,6 +5,7 @@ import {AdminDialogAddTalkComponent} from "../admin-dialog-add-talk/admin-dialog
 import {Speaker} from "../../data/dto/input/Speaker";
 import {concatenate} from "../../common/Concatenate";
 import {Talk} from "../../data/dto/input/Talk";
+import {AdminDialogDeleteSpeakerComponent} from "../admin-dialog-delete-speaker/admin-dialog-delete-speaker.component";
 
 @Component({
   selector: 'app-admin-dialog-info-talk',
@@ -12,7 +13,7 @@ import {Talk} from "../../data/dto/input/Talk";
   styleUrls: ['./admin-dialog-info-talk.component.sass']
 })
 export class AdminDialogInfoTalkComponent {
-  deleteDialog = AdminDialogDeleteTalkComponent;
+  deleteDialog = AdminDialogDeleteSpeakerComponent;
   editDialog = AdminDialogAddTalkComponent;
   speakersNames: string = "";
   talk: Talk;

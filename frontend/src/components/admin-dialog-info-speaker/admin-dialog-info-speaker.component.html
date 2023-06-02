@@ -1,0 +1,37 @@
+<h2 mat-dialog-title>Information</h2>
+
+<mat-dialog-content class="mat-typography container">
+    <img src="{{speaker.photo}}" (error)="speaker.photo='/assets/image/defaultProfile.png'"
+         class="imagSpeaker" alt="{{speaker.name}} avatar"/>
+  <div>
+    <div class="info">
+      <h3>Nom : </h3>
+      <span class="f4">{{speaker.name ?? unknown}}</span>
+    </div>
+
+    <div class="info">
+      <h3>Twitter : </h3>
+      <a class="f4">{{speaker.twitter != "" ? speaker.twitter  ?? unknown : unknown}}</a>
+    </div>
+
+    <div class="info">
+      <h3>Linkedin : </h3>
+      <span class="f4">{{speaker.linkedin != "" ? speaker.linkedin  ?? unknown : unknown}}</span>
+    </div>
+
+    <div class="info">
+      <h3>Mail : </h3>
+      <span class="f4">{{speaker.email ?? unknown}}</span>
+    </div>
+
+    <div>
+      <h3>Biography : </h3>
+      <span class="f4">{{speaker.biography ?? unknown}}</span>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end" class="action">
+  <app-admin-delete-btn name="{{data.title}}" id="{{data.id}}" [dialogToOpen]=deleteDialog
+                        (click)="dialogRef.close()"></app-admin-delete-btn>
+  <app-admin-edit-btn [item]="data" [dialogToOpen]=editDialog (click)="dialogRef.close()"></app-admin-edit-btn>
+</mat-dialog-actions>
