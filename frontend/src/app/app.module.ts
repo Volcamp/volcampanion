@@ -108,6 +108,10 @@ import {
 import {
   AdminDialogDeleteSpeakerComponent
 } from "../components/admin-dialog-delete-speaker/admin-dialog-delete-speaker.component";
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import {AdminPlanningRoomComponent} from "../components/admin-planning-room/admin-planning-room.component";
+import {AdminPlanningDateComponent} from "../components/admin-planning-date/admin-planning-date.component";
 
 
 @NgModule({
@@ -156,6 +160,8 @@ import {
     AdminDialogInfoSpeakerComponent,
     AdminDialogAddEditSpeakerComponent,
     AdminDialogDeleteSpeakerComponent,
+    AdminPlanningRoomComponent,
+    AdminPlanningDateComponent,
   ],
     imports: [
         BrowserModule,
@@ -201,6 +207,7 @@ import {
         MatAutocompleteModule,
         MatSnackBarModule,
         MatExpansionModule,
+        CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
 
     ],
   providers: [{

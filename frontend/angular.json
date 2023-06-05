@@ -28,9 +28,10 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.webmanifest",
+              "src/manifest.webmanifest"
             ],
             "styles": [
+              "node_modules/angular-calendar/css/angular-calendar.css",
               "src/app/theme.scss",
               "src/styles.sass"
             ],
@@ -104,6 +105,7 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
+              "node_modules/angular-calendar/css/angular-calendar.css",
               "src/styles.sass"
             ],
             "scripts": []
