@@ -14,5 +14,5 @@ export enum APIRoutes {
   FORMAT = "talk-formats/",
   FEEDBACK = "feedback/",
   USER = "users/",
-
+  ROOM = "rooms",
 }

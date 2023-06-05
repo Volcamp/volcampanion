@@ -1,6 +1,8 @@
-<div class="containerRoom">
+<div>
   <span class="warnColor title">{{formatDate(date)}}</span>
-  <div *ngFor="let room in rooms">
-    <app-admin-planning-room [room]=room [viewDate]="date" ></app-admin-planning-room>
+  <div class="containerRooms">
+    <div *ngFor="let room of rooms">
+      <app-admin-planning-room [room]=room  [events]="convertPlanning(room)"></app-admin-planning-room>
+    </div>
   </div>
 </div>

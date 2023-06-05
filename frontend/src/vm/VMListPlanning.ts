@@ -15,7 +15,7 @@ export class VMListPlanning {
 
   init() {
     this.confService.getCurrentConference().subscribe(conf => {
-      this.dataService.getPlannings(conf!.id.toString()).subscribe(plannings => {
+      this.dataService.getPlannings(conf.id.toString()).subscribe(plannings => {
           this.planningsNoFilter = plannings;
           this.plannings = plannings;
 
@@ -24,7 +24,7 @@ export class VMListPlanning {
           })
         }
       );
-      this.favoriteService.getFavorites(conf!.id.toString(),true).subscribe();
+      this.favoriteService.getFavorites(conf.id.toString(),true).subscribe();
     })
   }
 }

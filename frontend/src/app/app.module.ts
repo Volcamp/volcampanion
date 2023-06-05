@@ -112,6 +112,9 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import {AdminPlanningRoomComponent} from "../components/admin-planning-room/admin-planning-room.component";
 import {AdminPlanningDateComponent} from "../components/admin-planning-date/admin-planning-date.component";
+import {AbstractRoomService} from "../services/abstract/AbstractRoomService";
+import {RoomService} from "../services/RoomService";
+import {PlanningsInitService} from "../services/plannings-init.service";
 
 
 @NgModule({
@@ -243,6 +246,10 @@ import {AdminPlanningDateComponent} from "../components/admin-planning-date/admi
       useClass: TalkFeedbackService // <--- Defining the swappable implementation.
     },
     {
+      provide: AbstractRoomService,
+      useClass: RoomService // <--- Defining the swappable implementation.
+    },
+    {
       provide: STEPPER_GLOBAL_OPTIONS,
       useValue: {showError: true},
     },
@@ -253,6 +260,7 @@ import {AdminPlanningDateComponent} from "../components/admin-planning-date/admi
     UserService,
     SnackBarService,
     FeedbackInitService,
+    PlanningsInitService,
 
   ],
   bootstrap: [AppComponent]
