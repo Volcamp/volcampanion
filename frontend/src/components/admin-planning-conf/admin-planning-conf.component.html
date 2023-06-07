@@ -1,0 +1,3 @@
+<div *ngFor="let date of dates">
+  <app-admin-planning-date [date]=date confId="{{conf.id}}" [plannings]="convertPlanning(date)"></app-admin-planning-date>
+</div>

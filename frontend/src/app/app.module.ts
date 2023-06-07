@@ -114,7 +114,9 @@ import {AdminPlanningRoomComponent} from "../components/admin-planning-room/admi
 import {AdminPlanningDateComponent} from "../components/admin-planning-date/admin-planning-date.component";
 import {AbstractRoomService} from "../services/abstract/AbstractRoomService";
 import {RoomService} from "../services/RoomService";
-import {PlanningsInitService} from "../services/plannings-init.service";
+import {AdminPlanningConfComponent} from "../components/admin-planning-conf/admin-planning-conf.component";
+import {PlanningExternalDropService} from "../services/PlanningExternalDropService";
+import {PlanningCalendarDragDropService} from "../services/PlanningCalendarDragDropService";
 
 
 @NgModule({
@@ -165,6 +167,7 @@ import {PlanningsInitService} from "../services/plannings-init.service";
     AdminDialogDeleteSpeakerComponent,
     AdminPlanningRoomComponent,
     AdminPlanningDateComponent,
+    AdminPlanningConfComponent,
   ],
     imports: [
         BrowserModule,
@@ -260,10 +263,12 @@ import {PlanningsInitService} from "../services/plannings-init.service";
     UserService,
     SnackBarService,
     FeedbackInitService,
-    PlanningsInitService,
+    PlanningExternalDropService,
+    PlanningCalendarDragDropService,
 
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }

@@ -1,17 +1,19 @@
 <div class="containerRoom">
   <span class=" warnColor title">{{room.name}}</span>
-  <div [ngSwitch]="view" dir="rtl" class="notSelectable">
+  <div dir="rtl" class="notSelectable" >
     <mwl-calendar-day-view
+      [minimumEventHeight]=minEventDuration
       [hourDuration]="hourDuration"
       [hourSegments]="hourProperties.segmentHour"
       [dayStartHour]="hourProperties.startHour"
       [dayEndHour]="hourProperties.endHour"
       [viewDate]="viewDate"
-      [events]="events"
+      [events]="eventsDefault"
       [refresh]="refresh"
-      (eventTimesChanged)="eventTimesChanged($event)"
+      [snapDraggedEvents]="false"
+      [validateEventTimesChanged]="validateEventTimesChanged"
+      (eventTimesChanged)="eventManger($event)"
     >
     </mwl-calendar-day-view>
   </div>
 </div>
-
