@@ -3,7 +3,7 @@ import {Room} from "../../data/dto/input/Room";
 import {Planning, PlanningType} from "../../data/dto/input/Planning";
 import {formatDate} from 'src/common/DateFunc';
 import {AbstractRoomService} from "../../services/abstract/AbstractRoomService";
-import {CalendarPlanningMapper} from "../../common/Calandar/CalendarPlanningMapper";
+import {CalendarPlanningMapper} from "../../common/Calandar/Mappers/CalendarPlanningMapper";
 import {map, Observable} from "rxjs";
 import {CalendarEvent} from "angular-calendar";
 
@@ -36,8 +36,7 @@ export class AdminPlanningDateComponent {
             return room.id === (planning as any).room.id;
           }
           return false;
-        })
-          .map(planning => CalendarPlanningMapper.toCalendar(planning))
+        }).map(planning => CalendarPlanningMapper.toCalendar(planning))
       )
     );
   }

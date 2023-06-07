@@ -117,6 +117,9 @@ import {RoomService} from "../services/RoomService";
 import {AdminPlanningConfComponent} from "../components/admin-planning-conf/admin-planning-conf.component";
 import {PlanningExternalDropService} from "../services/PlanningExternalDropService";
 import {PlanningCalendarDragDropService} from "../services/PlanningCalendarDragDropService";
+import {
+  AdminPlanningListTalkComponent
+} from "../components/admin-planning-list-talk/admin-planning-list-talk.component";
 
 
 @NgModule({
@@ -168,6 +171,7 @@ import {PlanningCalendarDragDropService} from "../services/PlanningCalendarDragD
     AdminPlanningRoomComponent,
     AdminPlanningDateComponent,
     AdminPlanningConfComponent,
+    AdminPlanningListTalkComponent,
   ],
     imports: [
         BrowserModule,

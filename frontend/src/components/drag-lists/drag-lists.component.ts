@@ -31,7 +31,6 @@ export class DragListsComponent implements OnChanges {
   drop(event: CdkDragDrop<any[]>, isListFrom: boolean) {
     if (event.previousContainer != event.container) {
       if (isListFrom && ! this.toBackup.includes(event.previousContainer.data[event.previousIndex])) {
-        console.log("yoooooo")
         transferArrayItem(
           this.toBackup,
           this.fromBackup,
@@ -39,7 +38,6 @@ export class DragListsComponent implements OnChanges {
           event.currentIndex,
         );
       } else if(isListFrom && ! this.toBackup.includes(event.previousContainer.data[event.previousIndex])){
-        console.log("yoooooo")
         transferArrayItem(
           this.fromBackup,
           this.toBackup,

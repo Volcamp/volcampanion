@@ -7,6 +7,8 @@ import {compareEqualDate} from "../common/DateFunc";
 import {TalkPlanning} from "../data/dto/input/TalkPlanning";
 import {isSameDay} from "date-fns";
 import {Subject} from "rxjs";
+import {Talk} from "../data/dto/input/Talk";
+import {CalendarTalkPlanningMapper} from "../common/Calandar/Mappers/CalendarTalkPlanningMapper";
 
 @Injectable()
 export class PlanningCalendarDragDropService {
@@ -38,9 +40,7 @@ export class PlanningCalendarDragDropService {
 
   eventDropped({event, newStart, newEnd, allDay,}: CalendarEventTimesChangedEvent, room: Room,
                events: CalendarEvent<Planning>[]): CalendarEvent<Planning>[] {
-    if (typeof allDay !== 'undefined') {
-      event.allDay = allDay;
-    }
+    this.verifyAllDay(allDay, event);
     event.start = newStart;
     event.end = new Date(event.start.getTime() + (event.meta as any).talk.format.duration * 1000);
     event.meta.room = room; //TODO make all changement date, room, talk.format.duration
@@ -84,4 +84,23 @@ export class PlanningCalendarDragDropService {
     return true;
   };
 
+  eventDroppedFromTalk(eventCalendar: CalendarEventTimesChangedEvent, room: Room, events: CalendarEvent<Planning>[]) {
+    const {event, newStart, allDay,} = eventCalendar;
+
+    this.verifyAllDay(allDay, event);
+    event.start = newStart;
+    event.end = new Date(event.start.getTime() + (event.meta as Talk).format.duration * 1000);
+
+    event.meta.room = room; //TODO make all changement date, room, talk.format.duration
+    event.meta.schedule = event.start;
+
+    events.push(CalendarTalkPlanningMapper.toPlanning(event,room));
+    return [...events];
+  }
+
+  private verifyAllDay(allDay: boolean | undefined, event: CalendarEvent<any>) {
+    if (typeof allDay !== 'undefined') {
+      event.allDay = allDay;
+    }
+  }
 }

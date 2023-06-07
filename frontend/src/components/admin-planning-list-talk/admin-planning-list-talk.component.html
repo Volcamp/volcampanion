@@ -1,0 +1,6 @@
+<div cdkDropList class="list" mwlDroppable (drop)="drop($event.dropData.event)">
+    <div class="box" *ngFor="let event of eventsDefault" mwlDraggable
+         [dropData]="{event: event}"
+         [touchStartLongPress]="{ delay: 300, delta: 30 }"
+         dragActiveClass="drag-active" >{{event.meta?.id + " - " + event.meta?.title}}</div>
+</div>

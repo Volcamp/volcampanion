@@ -41,6 +41,9 @@ export class AdminPlanningRoomComponent implements AfterContentInit {
 
   eventManger(eventTimesChangedEvent: CalendarEventTimesChangedEvent): void {
     const {event} = eventTimesChangedEvent;
+    if(event.meta.room === undefined && event.meta.schedule === undefined){
+      this.eventDropped(eventTimesChangedEvent,true);
+    }
     if ((event.meta as TalkPlanning).room.id === this.room.id && compareEqualDate(event.meta.schedule, this.viewDate)) {
       this.eventTimesChanged(eventTimesChangedEvent);
     } else {
@@ -60,13 +63,23 @@ export class AdminPlanningRoomComponent implements AfterContentInit {
     this.planningCalendarDragDropService.eventTimesChanged(eventTimesChangedEvent, this.eventsDefault, this.refresh);
   }
 
-  eventDropped(calendarEventTimesChangedEvent: CalendarEventTimesChangedEvent): void {
-    this.planningExternalDropService.eventEmitter.emit(new PlanningExternalDropEventArgs(
-      calendarEventTimesChangedEvent.event.meta.talk.id,
-      calendarEventTimesChangedEvent.event.meta.room.id,
-      calendarEventTimesChangedEvent.event.meta.schedule));
+  eventDropped(calendarEventTimesChangedEvent: CalendarEventTimesChangedEvent,talkList :boolean = false): void {
+    if(talkList){
+      console.log(calendarEventTimesChangedEvent.event);
+      /* this.planningExternalDropService.eventEmitter.emit(new PlanningExternalDropEventArgs(
+        calendarEventTimesChangedEvent.event.meta.id,
+        -1,
+        new Date())) */
+      this.eventsDefault = this.planningCalendarDragDropService.eventDroppedFromTalk(calendarEventTimesChangedEvent, this.room, this.eventsDefault);
+    }else {
+      this.planningExternalDropService.eventEmitter.emit(new PlanningExternalDropEventArgs(
+        calendarEventTimesChangedEvent.event.meta.talk.id,
+        calendarEventTimesChangedEvent.event.meta.room.id,
+        calendarEventTimesChangedEvent.event.meta.schedule));
 
-    this.eventsDefault = this.planningCalendarDragDropService.eventDropped(calendarEventTimesChangedEvent, this.room, this.eventsDefault);
+      this.eventsDefault = this.planningCalendarDragDropService.eventDropped(calendarEventTimesChangedEvent, this.room, this.eventsDefault);
+    }
+
   }
 
 }
