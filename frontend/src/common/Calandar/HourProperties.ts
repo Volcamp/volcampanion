@@ -1,4 +1,4 @@
-export const HOUR_DEFAULT_PROPERTIES : HourProperties = {
+export const HOUR_DEFAULT_PROPERTIES: HourProperties = {
   endHour: 18,
   segmentHour: 4,
   startHour: 8

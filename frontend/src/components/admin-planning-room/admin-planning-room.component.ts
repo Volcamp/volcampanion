@@ -43,7 +43,7 @@ export class AdminPlanningRoomComponent implements AfterContentInit {
 
   eventManger(eventTimesChangedEvent: CalendarEventTimesChangedEvent): void {
     const {event} = eventTimesChangedEvent;
-    eventTimesChangedEvent.newEnd = new Date( eventTimesChangedEvent.newStart.getTime() + (event.meta as any).talk.format.duration * 1000);
+    eventTimesChangedEvent.newEnd = new Date(eventTimesChangedEvent.newStart.getTime() + (event.meta as any).talk.format.duration * 1000);
     if (event.meta.room === undefined && event.meta.schedule === undefined) {
       this.eventDropped(eventTimesChangedEvent, true);
     } else if ((event.meta as TalkPlanning).room.id === this.room.id && compareEqualDate(event.meta.schedule, this.viewDate)) {
@@ -70,7 +70,7 @@ export class AdminPlanningRoomComponent implements AfterContentInit {
   eventDropped(calendarEventTimesChangedEvent: CalendarEventTimesChangedEvent, talkList: boolean = false): void {
     if (this.validateEventTimesChanged(calendarEventTimesChangedEvent, false)) {
       if (talkList) {
-         this.planningExternalDropService.eventEmitter.emit(new PlanningExternalDropEventArgs(
+        this.planningExternalDropService.eventEmitter.emit(new PlanningExternalDropEventArgs(
           calendarEventTimesChangedEvent.event.meta.talk.id,
           -1,
           new Date()))

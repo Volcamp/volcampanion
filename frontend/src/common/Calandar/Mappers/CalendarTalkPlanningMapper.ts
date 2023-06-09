@@ -8,7 +8,7 @@ import {CalendarTalk} from "../CalendarTalk";
 import {getColorRoom} from "../RoomToColor";
 
 export class CalendarTalkPlanningMapper {
-  static toPlanning(eventTalk : CalendarEvent<CalendarTalk>,room : Room, color?: EventColor, actions?: CalendarEventAction[]): CalendarEvent<Planning> {
+  static toPlanning(eventTalk: CalendarEvent<CalendarTalk>, room: Room, color?: EventColor, actions?: CalendarEventAction[]): CalendarEvent<Planning> {
     return {
       start: eventTalk.start,
       end: eventTalk.end,
@@ -20,7 +20,7 @@ export class CalendarTalkPlanningMapper {
         afterEnd: true,
       },
       draggable: true,
-      meta: new TalkPlanning(room, (eventTalk.meta?.talk as Talk),eventTalk.start)
+      meta: new TalkPlanning(room, (eventTalk.meta?.talk as Talk), eventTalk.start)
     }
   }
 }

@@ -1,4 +1,4 @@
-<div class="container">
+<div>
   <mat-chip-option color="warn" #filter [value]=false (click)="filter.value = ! filter.value">
     <mat-icon>filter_list_alt</mat-icon>
   </mat-chip-option>
@@ -13,7 +13,5 @@
       </div>
       <div matBadge="{{event.meta?.occurrence}}"></div>
     </div>
-
   </div>
-
 </div>

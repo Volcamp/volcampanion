@@ -1,7 +1,6 @@
 import {EventColor} from "calendar-utils"
 import {CalendarEvent, CalendarEventAction} from "angular-calendar";
 import {CalendarTalk} from "../CalendarTalk";
-import {getColorRoom} from "../RoomToColor";
 
 export class CalendarTalkMapper {
   static toCalendar(calendarTalk: CalendarTalk, color?: EventColor, actions?: CalendarEventAction[]): CalendarEvent<CalendarTalk> {
