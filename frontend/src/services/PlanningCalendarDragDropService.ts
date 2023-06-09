@@ -5,10 +5,10 @@ import {CalendarEvent, CalendarEventTimesChangedEvent} from "angular-calendar";
 import {Planning} from "../data/dto/input/Planning";
 import {compareEqualDate} from "../common/DateFunc";
 import {TalkPlanning} from "../data/dto/input/TalkPlanning";
-import {isSameDay} from "date-fns";
 import {Subject} from "rxjs";
 import {Talk} from "../data/dto/input/Talk";
 import {CalendarTalkPlanningMapper} from "../common/Calandar/Mappers/CalendarTalkPlanningMapper";
+import {getColorRoom} from "../common/Calandar/RoomToColor";
 
 @Injectable()
 export class PlanningCalendarDragDropService {
@@ -17,7 +17,7 @@ export class PlanningCalendarDragDropService {
                          eventsDraggedFrom: CalendarEvent<Planning>[], refresh: Subject<void>) {
     if (data.idRoom === draggedRoom.id && compareEqualDate(draggedViewDate, data.date)) {
       const index = eventsDraggedFrom.findIndex(planningEvent => {
-          return compareEqualDate(planningEvent.meta?.schedule!, data.date) &&
+          return planningEvent.meta?.schedule! === data.date &&
             data.idRoom === (planningEvent.meta as TalkPlanning).room.id &&
             data.idTalk === (planningEvent.meta as TalkPlanning).talk.id
         }
@@ -27,7 +27,7 @@ export class PlanningCalendarDragDropService {
     }
   }
 
-  eventTimesChanged(eventTimesChangedEvent: CalendarEventTimesChangedEvent, events: CalendarEvent<Planning>[], refresh: Subject<void>): void {
+  eventTimesChanged(eventTimesChangedEvent: CalendarEventTimesChangedEvent, events: CalendarEvent<Planning>[], refresh: Subject<void>): boolean {
     delete eventTimesChangedEvent.event.cssClass;
     if (this.validateEventTimesChanged(eventTimesChangedEvent, false, events)) {
       const {event, newStart, newEnd} = eventTimesChangedEvent;
@@ -35,16 +35,20 @@ export class PlanningCalendarDragDropService {
       event.meta.schedule = newStart;
       event.end = newEnd;
       refresh.next();
+      return true;
     }
+    return false;
   }
 
-  eventDropped({event, newStart, newEnd, allDay,}: CalendarEventTimesChangedEvent, room: Room,
+  eventDropped(eventTimesChangedEvent: CalendarEventTimesChangedEvent, room: Room,
                events: CalendarEvent<Planning>[]): CalendarEvent<Planning>[] {
+    const {event, newStart, newEnd, allDay,} = eventTimesChangedEvent;
     this.verifyAllDay(allDay, event);
     event.start = newStart;
     event.end = new Date(event.start.getTime() + (event.meta as any).talk.format.duration * 1000);
     event.meta.room = room; //TODO make all changement date, room, talk.format.duration
     event.meta.schedule = event.start;
+    event.color = getColorRoom(room.name);
 
     events.push(event);
     return [...events];
@@ -54,19 +58,12 @@ export class PlanningCalendarDragDropService {
   validateEventTimesChanged = ({event, newStart, newEnd, allDay}: CalendarEventTimesChangedEvent,
                                addCssClass = true, events: CalendarEvent<Planning>[]) => {
     delete event.cssClass;
-    // @ts-ignore
-    const sameDay = isSameDay(newStart, newEnd);
-
-    if (!sameDay) {
-      return false;
-    }
 
     // don't allow dragging events to the same times as other events
     const overlappingEvent = events.find((otherEvent) => {
-
+      // @ts-ignore
       return (
         otherEvent !== event &&
-        !otherEvent.allDay &&
         // @ts-ignore
         ((otherEvent.start < newStart && newStart < otherEvent.end) ||
           // @ts-ignore
@@ -89,12 +86,9 @@ export class PlanningCalendarDragDropService {
 
     this.verifyAllDay(allDay, event);
     event.start = newStart;
-    event.end = new Date(event.start.getTime() + (event.meta as Talk).format.duration * 1000);
+    event.end = new Date(event.start.getTime() + (event.meta.talk as Talk).format.duration * 1000);
 
-    event.meta.room = room; //TODO make all changement date, room, talk.format.duration
-    event.meta.schedule = event.start;
-
-    events.push(CalendarTalkPlanningMapper.toPlanning(event,room));
+    events.push(CalendarTalkPlanningMapper.toPlanning(event, room));
     return [...events];
   }
 

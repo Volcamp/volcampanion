@@ -9,6 +9,7 @@ import {TalkPlanning} from "../../data/dto/input/TalkPlanning";
 import {PlanningExternalDropService} from "../../services/PlanningExternalDropService";
 import {PlanningExternalDropEventArgs} from "../../event/PlanningExternalDropEventArgs";
 import {PlanningCalendarDragDropService} from "../../services/PlanningCalendarDragDropService";
+import {SnackBarService} from "../../services/SnackBarService";
 
 
 @Component({
@@ -29,10 +30,11 @@ export class AdminPlanningRoomComponent implements AfterContentInit {
 
   refresh = new Subject<void>();
 
-  constructor(private planningExternalDropService: PlanningExternalDropService, private planningCalendarDragDropService: PlanningCalendarDragDropService) {
+  constructor(private planningExternalDropService: PlanningExternalDropService,
+              private planningCalendarDragDropService: PlanningCalendarDragDropService, private snackService: SnackBarService) {
     this.planningExternalDropService.eventEmitter.on((data: PlanningExternalDropEventArgs) => {
-      planningCalendarDragDropService.draggedAndDroppedValid(data, this.room, this.viewDate, this.eventsDefault,this.refresh);
-    })
+      planningCalendarDragDropService.draggedAndDroppedValid(data, this.room, this.viewDate, this.eventsDefault, this.refresh);
+    });
   }
 
   ngAfterContentInit() {
@@ -41,10 +43,10 @@ export class AdminPlanningRoomComponent implements AfterContentInit {
 
   eventManger(eventTimesChangedEvent: CalendarEventTimesChangedEvent): void {
     const {event} = eventTimesChangedEvent;
-    if(event.meta.room === undefined && event.meta.schedule === undefined){
-      this.eventDropped(eventTimesChangedEvent,true);
-    }
-    if ((event.meta as TalkPlanning).room.id === this.room.id && compareEqualDate(event.meta.schedule, this.viewDate)) {
+    eventTimesChangedEvent.newEnd = new Date( eventTimesChangedEvent.newStart.getTime() + (event.meta as any).talk.format.duration * 1000);
+    if (event.meta.room === undefined && event.meta.schedule === undefined) {
+      this.eventDropped(eventTimesChangedEvent, true);
+    } else if ((event.meta as TalkPlanning).room.id === this.room.id && compareEqualDate(event.meta.schedule, this.viewDate)) {
       this.eventTimesChanged(eventTimesChangedEvent);
     } else {
       this.eventDropped(eventTimesChangedEvent)
@@ -60,26 +62,34 @@ export class AdminPlanningRoomComponent implements AfterContentInit {
   };
 
   eventTimesChanged(eventTimesChangedEvent: CalendarEventTimesChangedEvent): void {
-    this.planningCalendarDragDropService.eventTimesChanged(eventTimesChangedEvent, this.eventsDefault, this.refresh);
+    if (!this.planningCalendarDragDropService.eventTimesChanged(eventTimesChangedEvent, this.eventsDefault, this.refresh)) {
+      this.reserved();
+    }
   }
 
-  eventDropped(calendarEventTimesChangedEvent: CalendarEventTimesChangedEvent,talkList :boolean = false): void {
-    if(talkList){
-      console.log(calendarEventTimesChangedEvent.event);
-      /* this.planningExternalDropService.eventEmitter.emit(new PlanningExternalDropEventArgs(
-        calendarEventTimesChangedEvent.event.meta.id,
-        -1,
-        new Date())) */
-      this.eventsDefault = this.planningCalendarDragDropService.eventDroppedFromTalk(calendarEventTimesChangedEvent, this.room, this.eventsDefault);
-    }else {
-      this.planningExternalDropService.eventEmitter.emit(new PlanningExternalDropEventArgs(
-        calendarEventTimesChangedEvent.event.meta.talk.id,
-        calendarEventTimesChangedEvent.event.meta.room.id,
-        calendarEventTimesChangedEvent.event.meta.schedule));
+  eventDropped(calendarEventTimesChangedEvent: CalendarEventTimesChangedEvent, talkList: boolean = false): void {
+    if (this.validateEventTimesChanged(calendarEventTimesChangedEvent, false)) {
+      if (talkList) {
+         this.planningExternalDropService.eventEmitter.emit(new PlanningExternalDropEventArgs(
+          calendarEventTimesChangedEvent.event.meta.talk.id,
+          -1,
+          new Date()))
+        this.eventsDefault = this.planningCalendarDragDropService.eventDroppedFromTalk(calendarEventTimesChangedEvent, this.room, this.eventsDefault);
+      } else {
+        this.planningExternalDropService.eventEmitter.emit(new PlanningExternalDropEventArgs(
+          calendarEventTimesChangedEvent.event.meta.talk.id,
+          calendarEventTimesChangedEvent.event.meta.room.id,
+          calendarEventTimesChangedEvent.event.meta.schedule,));
 
-      this.eventsDefault = this.planningCalendarDragDropService.eventDropped(calendarEventTimesChangedEvent, this.room, this.eventsDefault);
+        this.eventsDefault = this.planningCalendarDragDropService.eventDropped(calendarEventTimesChangedEvent, this.room, this.eventsDefault);
+      }
+    } else {
+      this.reserved();
     }
 
   }
 
+  private reserved() {
+    this.snackService.open("Ce Créneau est déjà reservé !", "Fermer");
+  }
 }

@@ -1,24 +1,22 @@
-import {Planning} from "../../../data/dto/input/Planning";
 import {EventColor} from "calendar-utils"
-import {TalkPlanning} from "../../../data/dto/input/TalkPlanning";
 import {CalendarEvent, CalendarEventAction} from "angular-calendar";
-import {colors} from "../Colors";
-import {Talk} from "../../../data/dto/input/Talk";
+import {CalendarTalk} from "../CalendarTalk";
+import {getColorRoom} from "../RoomToColor";
 
 export class CalendarTalkMapper {
-  static toCalendar(talk: Talk, color?: EventColor, actions?: CalendarEventAction[]): CalendarEvent<Talk> {
+  static toCalendar(calendarTalk: CalendarTalk, color?: EventColor, actions?: CalendarEventAction[]): CalendarEvent<CalendarTalk> {
     return {
       start: new Date(),
-      end: new Date(new Date().getTime() + talk.format.duration * 1000),
-      title: `${talk.id} - ${talk.title}`,
+      end: new Date(new Date().getTime() + calendarTalk.talk.format.duration * 1000),
+      title: `${calendarTalk.talk.id} - ${calendarTalk.talk.title}`,
       color: color,
-      actions : actions,
+      actions: actions,
       resizable: {
         beforeStart: true,
         afterEnd: true,
       },
       draggable: true,
-      meta: talk,
+      meta: calendarTalk,
     }
   }
 }

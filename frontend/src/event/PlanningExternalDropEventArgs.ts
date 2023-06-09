@@ -2,7 +2,7 @@ import {EventArgs} from "./EventArgs";
 
 export class PlanningExternalDropEventArgs extends EventArgs {
 
-  constructor(idTalk: number, idRoom: number, date: Date) {
+  constructor(idTalk: number, idRoom: number, date: Date, fromTalk: boolean = false) {
     super();
     this._idTalk = idTalk;
     this._idRoom = idRoom;
@@ -29,6 +29,7 @@ export class PlanningExternalDropEventArgs extends EventArgs {
   set date(value: Date) {
     this._date = value;
   }
+
   private _date: Date;
 
 }

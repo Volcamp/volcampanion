@@ -6,10 +6,10 @@ import {AbstractPlanningService} from "../../services/abstract/AbstractPlanningS
 import {AbstractConferenceService} from "../../services/abstract/AbstractConferenceService";
 import {compareEqualDate} from "../../common/DateFunc";
 import {AbstractTalkService} from "../../services/abstract/AbstractTalkService";
-import {Talk} from "../../data/dto/input/Talk";
-import {TalkPlanning} from "../../data/dto/input/TalkPlanning";
 import {CalendarEvent} from "angular-calendar";
 import {CalendarTalkMapper} from "../../common/Calandar/Mappers/CalendarTalkMapper";
+import {CalendarTalk} from "../../common/Calandar/CalendarTalk";
+import {TalkPlanning} from "../../data/dto/input/TalkPlanning";
 
 @Component({
   selector: 'app-admin-planning-conf',
@@ -20,7 +20,7 @@ export class AdminPlanningConfComponent {
   conf!: Conference;
   plannings: Observable<Planning[]> = of([]);
   dates: Date[] = [];
-  talks: Observable<CalendarEvent<Talk>[]> = of([]);
+  talks: Observable<CalendarEvent<CalendarTalk>[]> = of([]);
 
   constructor(private abstractPlanningService: AbstractPlanningService, private abstractConferenceService: AbstractConferenceService,
               private abstractTalkService: AbstractTalkService) {
@@ -37,7 +37,16 @@ export class AdminPlanningConfComponent {
         abstractTalkService.getTalks(conf.id.toString()).subscribe(talks => {
           talks.forEach(talk => {
             this.talks.subscribe(talks => {
-              talks.push(CalendarTalkMapper.toCalendar(talk));
+              if (talk.format.type !== PlanningType.DELIMITER_DAY, talk.format.type !== PlanningType.BREAK) {
+                const occurrence: number = plannings.filter(planning => {
+                  if (planning.getType() !== PlanningType.BREAK && planning.getType() != PlanningType.DELIMITER_DAY) {
+                    return (planning as TalkPlanning).talk.id == talk.id
+                  }
+                  return false;
+                }).length
+
+                talks.push(CalendarTalkMapper.toCalendar({talk, occurrence}));
+              }
             });
           });
         });
@@ -55,7 +64,6 @@ export class AdminPlanningConfComponent {
     })
 
   }
-
 
   convertPlanning(date: Date): Observable<Planning[]> {
     return this.plannings.pipe(map(plannings => {

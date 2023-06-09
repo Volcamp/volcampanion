@@ -4,21 +4,23 @@ import {CalendarEvent, CalendarEventAction} from "angular-calendar";
 import {TalkPlanning} from "../../../data/dto/input/TalkPlanning";
 import {Talk} from "../../../data/dto/input/Talk";
 import {Room} from "../../../data/dto/input/Room";
+import {CalendarTalk} from "../CalendarTalk";
+import {getColorRoom} from "../RoomToColor";
 
 export class CalendarTalkPlanningMapper {
-  static toPlanning(eventTalk : CalendarEvent<Talk>,room : Room, color?: EventColor, actions?: CalendarEventAction[]): CalendarEvent<Planning> {
+  static toPlanning(eventTalk : CalendarEvent<CalendarTalk>,room : Room, color?: EventColor, actions?: CalendarEventAction[]): CalendarEvent<Planning> {
     return {
       start: eventTalk.start,
       end: eventTalk.end,
-      title: `${(eventTalk.meta as Talk).id} - ${(eventTalk.meta as Talk).title}`,
-      color: color,
+      title: `${(eventTalk.meta?.talk as Talk).id} - ${(eventTalk.meta?.talk as Talk).title}`,
+      color: color ?? getColorRoom(room.name),
       actions: actions,
       resizable: {
         beforeStart: true,
         afterEnd: true,
       },
       draggable: true,
-      meta: new TalkPlanning(room, (eventTalk.meta as Talk),eventTalk.start)
+      meta: new TalkPlanning(room, (eventTalk.meta?.talk as Talk),eventTalk.start)
     }
   }
 }

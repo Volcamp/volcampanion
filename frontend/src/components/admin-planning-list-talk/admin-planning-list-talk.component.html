@@ -1,6 +1,19 @@
-<div cdkDropList class="list" mwlDroppable (drop)="drop($event.dropData.event)">
-    <div class="box" *ngFor="let event of eventsDefault" mwlDraggable
+<div class="container">
+  <mat-chip-option color="warn" #filter [value]=false (click)="filter.value = ! filter.value">
+    <mat-icon>filter_list_alt</mat-icon>
+  </mat-chip-option>
+
+  <div class="list" mwlDroppable (drop)="drop($event.dropData.event)">
+    <div class="box" *ngFor="let event of eventsDefault | filterListCalendarPipe: filter.value" mwlDraggable
          [dropData]="{event: event}"
          [touchStartLongPress]="{ delay: 300, delta: 30 }"
-         dragActiveClass="drag-active" >{{event.meta?.id + " - " + event.meta?.title}}</div>
+         dragActiveClass="drag-active">
+      <div class="title">
+        {{event.meta?.talk?.id + " - " + event.meta?.talk?.title}}
+      </div>
+      <div matBadge="{{event.meta?.occurrence}}"></div>
+    </div>
+
+  </div>
+
 </div>

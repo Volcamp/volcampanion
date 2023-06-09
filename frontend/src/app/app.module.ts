@@ -120,6 +120,7 @@ import {PlanningCalendarDragDropService} from "../services/PlanningCalendarDragD
 import {
   AdminPlanningListTalkComponent
 } from "../components/admin-planning-list-talk/admin-planning-list-talk.component";
+import {FilterListCalendarPipe} from "../pipes/FilterListCalendarPipe";
 
 
 @NgModule({
@@ -172,6 +173,7 @@ import {
     AdminPlanningDateComponent,
     AdminPlanningConfComponent,
     AdminPlanningListTalkComponent,
+    FilterListCalendarPipe,
   ],
     imports: [
         BrowserModule,
