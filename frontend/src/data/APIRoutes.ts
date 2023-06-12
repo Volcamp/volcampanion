@@ -1,6 +1,7 @@
 export enum APIRoutes {
   SPEAKER = "speakers/",
   PLANNING = "plannings/",
+  PLANNING_ALL = "all/",
   TALK = "plannings/talk/",
   TALKS = "talks/",
   CONFERENCE_ACTIVE = "active/",

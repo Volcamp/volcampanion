@@ -121,6 +121,7 @@ import {
   AdminPlanningListTalkComponent
 } from "../components/admin-planning-list-talk/admin-planning-list-talk.component";
 import {FilterListCalendarPipe} from "../pipes/FilterListCalendarPipe";
+import {AdminPlanningActionsComponent} from "../components/admin-planning-actions/admin-planning-actions.component";
 
 
 @NgModule({
@@ -174,6 +175,7 @@ import {FilterListCalendarPipe} from "../pipes/FilterListCalendarPipe";
     AdminPlanningConfComponent,
     AdminPlanningListTalkComponent,
     FilterListCalendarPipe,
+    AdminPlanningActionsComponent,
   ],
     imports: [
         BrowserModule,

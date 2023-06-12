@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, QueryList, ViewChildren} from '@angular/core';
 import {Conference} from "../../data/dto/input/Conference";
 import {map, Observable, of} from "rxjs";
 import {Planning, PlanningType} from "../../data/dto/input/Planning";
@@ -10,6 +10,13 @@ import {CalendarEvent} from "angular-calendar";
 import {CalendarTalkMapper} from "../../common/Calandar/Mappers/CalendarTalkMapper";
 import {CalendarTalk} from "../../common/Calandar/CalendarTalk";
 import {TalkPlanning} from "../../data/dto/input/TalkPlanning";
+import {AdminPlanningDateComponent} from "../admin-planning-date/admin-planning-date.component";
+import {PlanningMapper} from "../../data/dto/output/mappers/PlanningMapper";
+import {SnackBarService} from "../../services/SnackBarService";
+import {APIRoutes} from "../../data/APIRoutes";
+import {ACTIVE_ID_CONF} from "../../services/ConferenceService";
+
+export const PLANNING_CALENDAR = "planningCalendar"
 
 @Component({
   selector: 'app-admin-planning-conf',
@@ -21,9 +28,11 @@ export class AdminPlanningConfComponent {
   plannings: Observable<Planning[]> = of([]);
   dates: Date[] = [];
   talks: Observable<CalendarEvent<CalendarTalk>[]> = of([]);
+  @ViewChildren(AdminPlanningDateComponent) planningDates!: QueryList<AdminPlanningDateComponent>;
+
 
   constructor(private abstractPlanningService: AbstractPlanningService, private abstractConferenceService: AbstractConferenceService,
-              private abstractTalkService: AbstractTalkService) {
+              private abstractTalkService: AbstractTalkService, private snackBarService: SnackBarService) {
     abstractConferenceService.getCurrentConference().subscribe(conf => {
       this.conf = conf;
       // @ts-ignore
@@ -31,7 +40,7 @@ export class AdminPlanningConfComponent {
       // @ts-ignore
       this.conf.endDate = new Date(this.conf.endDate);
 
-      this.plannings = abstractPlanningService.getPlannings(conf.id.toString());
+      this.setPlanning();
 
       this.plannings.subscribe(plannings => {
         abstractTalkService.getTalks(conf.id.toString()).subscribe(talks => {
@@ -73,4 +82,48 @@ export class AdminPlanningConfComponent {
     }))
   }
 
+  collectData(): Planning[] {
+    const plannings: Planning[] = []
+    this.planningDates.forEach(planningDate => {
+      planningDate.planningRooms.forEach(planningRoom => {
+        planningRoom.eventsDefault.forEach(planningEvent => {
+          plannings.push(planningEvent.meta!);
+        });
+      });
+    });
+    return plannings;
+  }
+
+  upload() {
+    this.abstractPlanningService.clearAddPlanning(this.collectData().map(planning => {
+      return PlanningMapper.toCreateDTO(planning as TalkPlanning);
+    })).subscribe(data => {
+      if (data) {
+        this.snackBarService.open(`Le planning a été sauvguarder`, 'Fermer')
+      } else {
+        this.snackBarService.open(`Un probleme a survenue`, "Fermer");
+      }
+    });
+  }
+
+  save() {
+    window.localStorage.setItem(PLANNING_CALENDAR,JSON.stringify(this.collectData()));
+  }
+
+  delete() {
+    window.localStorage.removeItem(PLANNING_CALENDAR);
+    window.location.reload();
+  }
+
+  private setPlanning() {
+    let plannings = window.localStorage.getItem(PLANNING_CALENDAR);
+    if (plannings == null) {
+      this.plannings = this.abstractPlanningService.getPlannings(this.conf.id.toString());
+    } else {
+      const planningsAny : any[] = JSON.parse(plannings);
+      this.plannings = of(planningsAny.map(planning => {
+        return PlanningMapper.toTalkPlanning(planning);
+      }))
+    }
+  }
 }

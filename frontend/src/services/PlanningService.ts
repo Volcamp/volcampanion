@@ -4,11 +4,14 @@ import {TalkMapper} from "../data/dto/input/mappers/TalkMapper";
 import {APIRoutes} from "../data/APIRoutes";
 import {RequestManager} from "../data/RequestManager";
 import {Injectable} from "@angular/core";
-import {map, Observable} from "rxjs";
+import {catchError, map, Observable, of} from "rxjs";
 import {EnvironmentService} from "./EnvironmentService";
 import {TalkPlanning} from "../data/dto/input/TalkPlanning";
 import {AbstractPlanningService} from "./abstract/AbstractPlanningService";
 import {DividerPlanning} from "../data/dto/input/DividerPlanning";
+import {CreateTalk} from "../data/dto/output/CreateTalk";
+import {HttpResponse} from "@angular/common/http";
+import {CreatePlanning} from "../data/dto/output/CreatePlanning";
 
 
 @Injectable()
@@ -66,4 +69,15 @@ export class PlanningService implements AbstractPlanningService {
 
       }));
   }
+
+  clearAddPlanning(plannings: CreatePlanning[]): Observable<boolean> {
+    return this.requestManager.post<HttpResponse<CreatePlanning>>(this.env.getApiUrl() + APIRoutes.PLANNING + APIRoutes.PLANNING_ALL, plannings).pipe(
+      map(() => true),
+      catchError(() => {
+        return of(false)
+      })
+    );
+  }
+
+
 }
