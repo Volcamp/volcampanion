@@ -12,6 +12,7 @@ import {AdminPlanningsComponent} from "../page/admin-plannings/admin-plannings.c
 import {AdminTalksComponent} from "../page/admin-talks/admin-talks.component";
 import {AdminSpeakerComponent} from "../page/admin-speaker/admin-speaker.component";
 import {switchAdminTheme, switchUserTheme} from "../common/Theme";
+import {AdminConferencesComponent} from "../page/admin-conferences/admin-conferences.component";
 
 
 function isLogged(): boolean {
@@ -36,6 +37,7 @@ const routes: Routes = [
   {component: DetailTalkComponent, path: AppRoutes.DETAIL_TALK_ROUTE, canActivate: [() => user()]},
   {component: DetailSpeakerComponent, path: AppRoutes.DETAIL_SPEAKER_ROUTE, canActivate: [() => user()]},
   {component: FavoriteComponent, path: AppRoutes.FAVORITE_ROUTE, canActivate: [() => isLogged()]},
+  {component: AdminConferencesComponent, path: AppRoutes.ADMIN_CONFERENCES, canActivate: [() => isAdmin()]},
   {component: AdminPlanningsComponent, path: AppRoutes.ADMIN_PLANNINGS, canActivate: [() => isAdmin()]},
   {component: AdminTalksComponent, path: AppRoutes.ADMIN_TALKS, canActivate: [() => isAdmin()]},
   {component: AdminSpeakerComponent, path: AppRoutes.ADMIN_SPEAKERS, canActivate: [() => isAdmin()]},

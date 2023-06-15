@@ -76,6 +76,10 @@ export class AdminDialogAddEditSpeakerComponent {
   }
 
   add() {
+    if(this.infoStepper.invalid || this.confStepper.invalid){
+      this.snackBarService.open(`Remplissez la formulaire`, "Fermer");
+      return;
+    }
     const speakerToSend: CreateSpeaker = {
       name: this.nameForm.value,
       email: this.emailForm.value,
@@ -103,7 +107,7 @@ export class AdminDialogAddEditSpeakerComponent {
       this.dataService.putSpeaker(speakerToSend).subscribe(data => {
         if (data) {
           this.dialogRef.close();
-          this.snackBarService.open(`Le talk ${speakerToSend.name} a été modifier`, "Fermer");
+          this.snackBarService.open(`Le speaker ${speakerToSend.name} a été modifier`, "Fermer");
         } else {
           this.snackBarService.open(`Un probleme a survenue`, "Fermer");
         }

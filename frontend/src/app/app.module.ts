@@ -122,6 +122,17 @@ import {
 import {FilterListCalendarPipe} from "../pipes/FilterListCalendarPipe";
 import {AdminPlanningActionsComponent} from "../components/admin-planning-actions/admin-planning-actions.component";
 import {FilterSearch} from "../pipes/FilterSearch";
+import {
+  AdminConferencePreviewComponent
+} from "../components/admin-conference-preview/admin-conference-preview.component";
+import {
+  AdminDialogDeleteConferenceComponent
+} from "../components/admin-dialog-delete-conference/admin-dialog-delete-conference.component";
+import {
+  AdminDialogAddEditConferenceComponent
+} from "../components/admin-dialog-add-edit-conference/admin-dialog-add-edit-conference.component";
+import {AdminConferenceListComponent} from "../components/admin-conference-list/admin-conference-list.component";
+import {AdminConferencesComponent} from "../page/admin-conferences/admin-conferences.component";
 
 
 @NgModule({
@@ -176,6 +187,11 @@ import {FilterSearch} from "../pipes/FilterSearch";
     FilterListCalendarPipe,
     AdminPlanningActionsComponent,
     FilterSearch,
+    AdminConferencePreviewComponent,
+    AdminDialogDeleteConferenceComponent,
+    AdminDialogAddEditConferenceComponent,
+    AdminConferenceListComponent,
+    AdminConferencesComponent,
   ],
     imports: [
         BrowserModule,

@@ -1,10 +1,12 @@
 import {Injectable} from '@angular/core';
 import {RequestManager} from "../data/RequestManager";
-import {map, Observable, of} from "rxjs";
+import {catchError, map, Observable, of} from "rxjs";
 import {Conference} from "../data/dto/input/Conference";
 import {EnvironmentService} from "./EnvironmentService";
 import {APIRoutes} from "../data/APIRoutes";
 import {AbstractConferenceService} from "./abstract/AbstractConferenceService";
+import {CreateConference} from "../data/dto/output/CreateConference";
+import {HttpResponse} from "@angular/common/http";
 
 
 export const ACTIVE_ID_CONF = "activeIdConf"
@@ -32,8 +34,33 @@ export class ConferenceService implements AbstractConferenceService {
 
   getConferences(): Observable<Conference[]> {
     return this.requestManager.get<Conference[]>(this.env.getApiUrl() + APIRoutes.CONFERENCE);
-
   }
 
 
+  addConference(Conference: CreateConference): Observable<boolean> {
+    return this.requestManager.post<HttpResponse<CreateConference>>(this.env.getApiUrl() + APIRoutes.CONFERENCE, Conference).pipe(
+      map(() => true),
+      catchError(() => {
+        return of(false)
+      })
+    );
+  }
+
+  deleteConference(idConference: string): Observable<boolean> {
+    return this.requestManager.delete<CreateConference>(this.env.getApiUrl() + APIRoutes.CONFERENCE + idConference).pipe(
+      map(() => true),
+      catchError(() => {
+        return of(false)
+      })
+    );
+  }
+
+  putConference(Conference: CreateConference): Observable<boolean> {
+    return this.requestManager.put<CreateConference>(this.env.getApiUrl() + APIRoutes.CONFERENCE, Conference).pipe(
+      map(() => true),
+      catchError(() => {
+        return of(false)
+      })
+    );
+  }
 }

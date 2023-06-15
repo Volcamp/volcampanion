@@ -1,0 +1,39 @@
+@import "src/styles"
+
+.card
+  position: relative
+  display: flex
+  align-items: center
+  +widthResponsive(25vw,50vw,20vw,20vw,15vw)
+  +heightResponsive(12vw,25vw,15vw,10vw,7vw)
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2)
+  padding: 32px
+  overflow: hidden
+  border-radius: 10px
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1)
+  &::before
+    content: ""
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    height: 5px
+    z-index: -1
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1)
+
+.content
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+  gap: 20px
+  color: #212121
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1)
+  .heading
+    font-weight: 70
+  .para
+    line-height: 1.5
+
+
+.actionContainer
+  display: flex
+  gap: 10px

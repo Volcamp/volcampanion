@@ -7,11 +7,19 @@
   flex-direction: column
   align-content: center
 
+.container
+  display: flex
+  gap: 10px
+
 .mat-step
   padding-top: 30px
 
+.imagSpeaker
+  align-self: center
+  @import "src/styles"
+  +widthResponsive(20vw, 12vw, 10vw, 10vw, 10vw)
 
-.pinBottom
+.test
   background: white
   position: sticky
   bottom: 0

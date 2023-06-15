@@ -10,5 +10,6 @@ export class AdminSideNavComponent {
   talkRoute = toRoute(AppRoutes.ADMIN_TALKS)
   planningRoute = toRoute(AppRoutes.ADMIN_PLANNINGS)
   speakerRoute = toRoute(AppRoutes.ADMIN_SPEAKERS)
+  conferenceRoute = toRoute(AppRoutes.ADMIN_CONFERENCES)
 
 }

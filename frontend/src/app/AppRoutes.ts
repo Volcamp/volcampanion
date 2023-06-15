@@ -1,6 +1,7 @@
 export enum AppRoutes {
   SPEAKER_ROUTE = "speakers",
   HOME_ROUTE = "sessions",
+  ADMIN_CONFERENCES = "admin/conferences",
   ADMIN_PLANNINGS = "admin/sessions",
   ADMIN_TALKS = "admin/talks",
   ADMIN_SPEAKERS = "admin/speakers",

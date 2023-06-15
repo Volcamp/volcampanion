@@ -1,0 +1,13 @@
+<div class="card adminTalkBGGradientBefore">
+  <div class="content">
+    <p class="heading f5">{{conference.id}} - {{conference.name!.length > 20 ? conference.name!.slice(0,20)+"..." : conference.name}}</p>
+
+    <p class="para f6">
+      La conference commence le {{formatDate(conference.startDate!)}} et fini le {{formatDate(conference.endDate!)}}
+    </p>
+    <div class="actionContainer">
+      <app-admin-delete-btn name="{{conference.name}}" id="{{conference.id}}" [dialogToOpen]=deleteDialog (click)="$event.stopPropagation()"></app-admin-delete-btn>
+      <app-admin-edit-btn [item]="conference" [dialogToOpen]=editDialog (click)="$event.stopPropagation()"></app-admin-edit-btn>
+    </div>
+  </div>
+</div>

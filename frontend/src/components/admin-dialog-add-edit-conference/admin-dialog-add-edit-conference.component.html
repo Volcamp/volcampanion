@@ -1,0 +1,36 @@
+<div mat-dialog-content>
+  <mat-stepper>
+    <!--------------------------- Step --------------------------->
+    <mat-step [stepControl]="infoStepper" errorMessage="Information manquante">
+        <form class="bigForm">
+          <ng-template matStepLabel>Information de Speaker</ng-template>
+          <div class="form">
+            <mat-form-field>
+              <mat-label>Nom</mat-label>
+              <input required matInput [formControl]="nameForm">
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Enter a date range</mat-label>
+              <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+                <input matStartDate placeholder="Start date" [value]="range.value.start">
+                <input matEndDate placeholder="End date" [value]="range.value.end">
+              </mat-date-range-input>
+              <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+            </mat-form-field>
+
+
+          </div>
+        </form>
+    </mat-step>
+  </mat-stepper>
+
+  <div mat-dialog-actions style="display: flex" class="pinBottom">
+    <button color="warn" mat-button (click)="closeDialog()">Annuler</button>
+    <span class="volcamp-spacer"></span>
+    <button color="primary" mat-button (click)="add()">Valider</button>
+  </div>
+</div>
+

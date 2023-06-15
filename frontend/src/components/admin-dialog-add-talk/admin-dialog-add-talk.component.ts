@@ -26,7 +26,6 @@ export class AdminDialogAddTalkComponent implements OnInit {
   conferences: Conference[] = [];
   speakers: Speaker[] = [];
   speakersToAdd: Speaker[] = [];
-  numberOfSteps = 0;
   confCurrent!: Conference;
 
 
@@ -119,6 +118,10 @@ export class AdminDialogAddTalkComponent implements OnInit {
   }
 
   add() {
+    if (this.infoStepper.invalid || this.confStepper || this.themeStepper || this.formatStepper) {
+      this.snackBarService.open(`Remplissez la formulaire`, "Fermer");
+      return;
+    }
     const talkToSend: CreateTalk = {
       title: this.titleForm.value,
       description: this.descriptionForm.value,

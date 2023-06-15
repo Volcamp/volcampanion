@@ -1,0 +1,10 @@
+<div class="center">
+  <div class="container contentPage">
+    <div class="plus">
+      <app-admin-add-btn [dialogToOpen]=addDialog></app-admin-add-btn>
+    </div>
+    <div *ngFor="let conference of conferences">
+        <app-admin-conference-preview [conference]="conference"></app-admin-conference-preview>
+    </div>
+  </div>
+</div>
