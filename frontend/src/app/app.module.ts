@@ -87,7 +87,6 @@ import {AdminDialogAddTalkComponent} from "../components/admin-dialog-add-talk/a
 import {CdkDrag, CdkDragPreview, CdkDropList, CdkDropListGroup} from "@angular/cdk/drag-drop";
 import {MatStepperModule} from "@angular/material/stepper";
 import {DragListsComponent} from "../components/drag-lists/drag-lists.component";
-import {SearchListComponent} from "../components/search-list/search-list.component";
 import {STEPPER_GLOBAL_OPTIONS} from "@angular/cdk/stepper";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {SnackBarService} from "../services/SnackBarService";
@@ -122,6 +121,7 @@ import {
 } from "../components/admin-planning-list-talk/admin-planning-list-talk.component";
 import {FilterListCalendarPipe} from "../pipes/FilterListCalendarPipe";
 import {AdminPlanningActionsComponent} from "../components/admin-planning-actions/admin-planning-actions.component";
+import {FilterSearch} from "../pipes/FilterSearch";
 
 
 @NgModule({
@@ -163,7 +163,6 @@ import {AdminPlanningActionsComponent} from "../components/admin-planning-action
     AdminAddBtnComponent,
     AdminDialogAddTalkComponent,
     DragListsComponent,
-    SearchListComponent,
     AdminDialogInfoTalkComponent,
     AdminSpeakerPreviewComponent,
     AdminSpeakerListComponent,
@@ -176,6 +175,7 @@ import {AdminPlanningActionsComponent} from "../components/admin-planning-action
     AdminPlanningListTalkComponent,
     FilterListCalendarPipe,
     AdminPlanningActionsComponent,
+    FilterSearch,
   ],
     imports: [
         BrowserModule,
