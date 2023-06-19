@@ -1,3 +1,7 @@
-<app-talks-list *ngIf="vm.plannings!==undefined" [plans]="vm.plannings"></app-talks-list>
+<div *ngIf="vm.plannings!==undefined">
+  <div *ngFor="let date of vm.dates" class="containerDesktop">
+    <app-talks-list [plannings]="getByDate(date)"></app-talks-list>
+  </div>
+</div>
 <app-loader *ngIf="vm.plannings===undefined"></app-loader>
 

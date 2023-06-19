@@ -11,7 +11,8 @@ export class TalksListComponent {
 
   BREAK = PlanningType.BREAK;
   DELIMITER_DAY = PlanningType.DELIMITER_DAY;
-  @Input() plans: Planning[] = [];
+  @Input() plannings: Planning[] = [];
+  @Input() noContentDisplay = false;
 
   public constructor(private navigation: NavigationService) {
   }
@@ -19,4 +20,6 @@ export class TalksListComponent {
   navigate(talkPlan: any) {
     this.navigation.goToTalk(talkPlan);
   }
+
+
 }

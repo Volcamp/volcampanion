@@ -14,6 +14,13 @@ shortDivider
   justify-content: center
   padding: 10px
 
+.containerPlanning
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+
+.break
+  width: 90vw
 
 .containerBig
   display: flex
@@ -25,6 +32,17 @@ shortDivider
   margin: 10px
   padding-left: 10px
 
+.contentWidth
+  @media screen and (min-width: 240px) //Mobile devices
+      width: 90vw
+  @media screen and (min-width: 600px) //Mobile devices
+      width: 90vw
+  @media screen and (min-width: 768px) //iPads, Tablets
+      width: 90vw
+  @media screen and (min-width: 1024px) //Small screens, laptops
+      width: 20vw
+  @media screen and (min-width: 1200px) //Desktops, large screens
+      width: 20vw
 .shadow
   box-shadow: -5px 5px 10px #dadada, 5px -5px 10px #f6f6f6 !important
 

@@ -1,20 +1,22 @@
-<div *ngFor="let plan of  plans ">
-  <div class="containerBig">
-    <div class="miniView" *ngIf="plan.getType() === DELIMITER_DAY">
-      <app-divider-teaser-view [dividerPlanning]="$any(plan)"/>
+<div class="containerPlanning">
+  <div *ngFor="let plan of  plannings ">
+    <div class="containerBig">
+      <div class="miniView" *ngIf="plan.getType() === DELIMITER_DAY">
+        <app-divider-teaser-view [dividerPlanning]="$any(plan)"/>
 
-    </div>
+      </div>
 
-    <div class="miniView contentPage" *ngIf="plan.getType() === BREAK">
-      <app-break-teaser-view [breakPlanning]="$any(plan)"/>
-    </div>
+      <div class="miniView contentPage break" *ngIf="plan.getType() === BREAK">
+        <app-break-teaser-view [breakPlanning]="$any(plan)"/>
+      </div>
 
-    <div class="miniView contentPage zoomOutCard content shadow" (click)="navigate($any(plan))"
-         *ngIf="plan.getType() !== DELIMITER_DAY && plan.getType() !== BREAK">
-      <app-talk-teaser-view [talkPlanning]="$any(plan)"/>
+      <div class="miniView contentPage zoomOutCard content contentWidth shadow" (click)="navigate($any(plan))"
+           *ngIf="plan.getType() !== DELIMITER_DAY && plan.getType() !== BREAK">
+        <app-talk-teaser-view [talkPlanning]="$any(plan)"/>
+      </div>
     </div>
   </div>
 </div>
-<div *ngIf="plans.length === 0" class="container">
+<div *ngIf="plannings.length === 0 && noContentDisplay" class="container">
   <span class="content">Pas de contenue à afficher</span>
 </div>
