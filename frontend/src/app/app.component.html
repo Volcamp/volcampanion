@@ -12,7 +12,7 @@
   </mat-drawer-container>
 </div>
 <app-bottom-nav-bar [isMobile]="isMobile" class="footer" id="footer"/>
-<button *ngIf="isAdmin" mat-mini-fab class="menu" color="primary" style="border-radius: 10px" (click)="drawer.toggle()">
+<button *ngIf="isAdmin && logged" mat-mini-fab class="menu" color="primary" style="border-radius: 10px" (click)="drawer.toggle()">
   <mat-icon>menu</mat-icon>
 </button>
 

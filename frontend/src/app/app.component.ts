@@ -1,10 +1,9 @@
-import {Component, HostListener, Inject} from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {MatIconRegistry} from "@angular/material/icon";
 import {DomSanitizer} from "@angular/platform-browser";
 import {addIcons} from "../Icons";
 import {UserService} from "../services/UserService";
 import {LogEventArgs} from "../event/LogEventArgs";
-import {DOCUMENT} from "@angular/common";
 import {switchUserTheme} from "../common/Theme";
 
 @Component({
@@ -17,7 +16,8 @@ export class AppComponent {
   title = 'volcampanion-pwa';
   isMobile: boolean = false;
   isAdmin: boolean;
-  padding : number = 0;
+  padding: number = 0;
+  logged: boolean = false;
 
 
   ngOnInit() {
@@ -30,12 +30,14 @@ export class AppComponent {
     this.isMobile = event.target.innerWidth < 1024;
   }
 
-  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private userService : UserService) {
+  constructor(iconRegistry: MatIconRegistry, sanitizer: DomSanitizer, private userService: UserService) {
     switchUserTheme();
-    addIcons(iconRegistry, sanitizer)
+    addIcons(iconRegistry, sanitizer);
+    this.logged = this.userService.isLogged();
     this.isAdmin = userService.isAdmin();
     userService.logEventEmitter.on((data: LogEventArgs) => {
-      this.isAdmin = userService.isAdmin()
+      this.isAdmin = userService.isAdmin();
+      this.logged = this.userService.isLogged();
     });
   }
 
