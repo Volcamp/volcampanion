@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {AfterViewInit, Component, HostListener, Input, OnInit} from '@angular/core';
 import {AppRoutes, toRoute} from "../../app/AppRoutes";
 import {UserService} from "../../services/UserService";
 
@@ -28,27 +28,35 @@ export class BottomNavBarComponent implements AfterViewInit, OnInit {
 
     const clickedButton = event.currentTarget;
     clickedButton.classList.add(CLASS_BTN_STYLE, CLASS_BTN_COLOR);
+    this.defaultRoot = clickedButton?.id!;
   }
 
   ngAfterViewInit(): void {
     if (this.isMobile) {
-
-      let button = document.getElementById(location.pathname);
-      if (button == null) {
-        if (location.pathname.toLowerCase().includes(this.homeRoute)) {
-          button = document.getElementById(this.homeRoute);
-        } else if (location.pathname.toLowerCase().includes(this.speakerRoute)) {
-          button = document.getElementById(this.speakerRoute);
-        } else if (location.pathname.toLowerCase().includes(this.favoriteRoute)) {
-          button = document.getElementById(this.favoriteRoute);
-        } else {
-          return
-        }
+      let button;
+      if (location.pathname.toLowerCase().includes(this.homeRoute)) {
+        button = document.getElementById(this.homeRoute);
+      } else if (location.pathname.toLowerCase().includes(this.speakerRoute)) {
+        button = document.getElementById(this.speakerRoute);
+      } else if (location.pathname.toLowerCase().includes(this.favoriteRoute)) {
+        button = document.getElementById(this.favoriteRoute);
+      } else {
+        button = document.getElementById(this.defaultRoot)
       }
-      button!.classList.add(CLASS_BTN_STYLE, CLASS_BTN_COLOR);
+      button?.classList.add(CLASS_BTN_STYLE, CLASS_BTN_COLOR);
+      this.defaultRoot = button?.id!;
     }
+  }
 
-
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    if (this.isMobile) {
+      const buttons = document.querySelectorAll(CLASS_BTN_NAME);
+      buttons.forEach((button) => {
+        button.classList.remove(CLASS_BTN_STYLE, CLASS_BTN_COLOR);
+      }); // ----> not necessary but just to be sure
+      document.getElementById(this.defaultRoot)?.classList.add(CLASS_BTN_STYLE, CLASS_BTN_COLOR);
+    }
   }
 
   ngOnInit(): void {

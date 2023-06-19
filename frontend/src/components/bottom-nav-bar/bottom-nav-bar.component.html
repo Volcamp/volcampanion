@@ -12,7 +12,8 @@
       Speakers
     </button>
     <span *ngIf="logged" class="volcamp-spacer"></span>
-     <button [routerLink]="[favoriteRoute]" mat-button aria-label="favorite button" *ngIf="logged">
+     <button id="{{favoriteRoute}}"  [routerLink]="[favoriteRoute]" mat-button class="iconBtn"
+             aria-label="favorite button" *ngIf="logged"  (click)="onClick($event)">
       <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite"></mat-icon>
       Favorites
     </button>
