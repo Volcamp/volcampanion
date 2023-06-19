@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
 import {getColorTheme} from "../../common/ColorThemeAndTypeEmoji"
 import {concatenate} from "../../common/Concatenate"
 import {Speaker} from "../../data/dto/input/Speaker";
@@ -21,6 +21,19 @@ export class TalkTeaserViewComponent implements OnInit {
   endDate = new Date();
   speakersNames!: string;
 
+  height : number = 0;
+  @ViewChild('element1')
+  element1!: ElementRef;
+
+  @ViewChild('element2')
+  element2!: ElementRef;
+
+  @ViewChild('element3')
+  element3!: ElementRef;
+
+  @ViewChild('element4')
+  element4!: ElementRef;
+
   speakerNames(speakers: Speaker[] | undefined): string[] {
     if (speakers === undefined) {
       return []
@@ -38,4 +51,13 @@ export class TalkTeaserViewComponent implements OnInit {
   onClick(numberFavorite: number) {
     this.talkPlanning.room.capacity = numberFavorite
   }
+
+  ngAfterViewInit(){
+    if(this.height <= 0){
+      // @ts-ignore
+      setTimeout(_  => this.height = this.element1.nativeElement.offsetHeight + this.element2.nativeElement.offsetHeight +
+        this.element3.nativeElement.offsetHeight + this.element4.nativeElement.offsetHeight + 10);
+    }
+  }
+
 }

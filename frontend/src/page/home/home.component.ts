@@ -15,7 +15,7 @@ export class HomeComponent {
 
 
   constructor(dataService: AbstractPlanningService, favoriteService: AbstractTalkFavoriteService , confService: AbstractConferenceService, filterPlannings: FilterPlanningsService) {
-    this.vm = new VMListPlanning(dataService,favoriteService,  confService, filterPlannings);
+    this.vm = new VMListPlanning(dataService,  confService, filterPlannings);
   }
 
 

@@ -1,27 +1,24 @@
 <div class="container">
-  <div class="sideIndicater" style="background:{{color}}">
-    <span class="f4" *ngIf="talkPlanning.talk.theme.description.length > 9">
-      {{talkPlanning.talk.theme.description.slice(0, 9) + "..."}}
-    </span>
-
-    <span class="f4" *ngIf="talkPlanning.talk.theme.description.length < 9">
+  <div  class="sideIndicater" style="height:{{height}}px;
+  background:{{color}}">
+    <span class="f4 nowrap">
       {{talkPlanning.talk.theme.description}}
     </span>
   </div>
 
   <div class="mainItem">
-    <div class="lineContentContainer">
+    <div #element1  class="lineContentContainer">
       <div class="leftItem" style="display: flex">
         <span class="f2">{{talkPlanning.talk.title}}</span>
       </div>
       <span class="rightItem f4"> {{startDate.toLocaleTimeString('fr-FR').slice(0, 5).replace(":", "h")}}
         - {{endDate.toLocaleTimeString('fr-FR').slice(0, 5).replace(":", "h")}} </span>
     </div>
-    <span class="f3" style="margin: 0; padding: 0;">
+    <span #element2 class="f3" style="margin: 0; padding: 0;">
       {{speakersNames}}
     </span>
-    <span class="f3">{{talkPlanning.room.name[0].toUpperCase() + talkPlanning.room.name.slice(1).toLowerCase()}}</span>
-    <div class="lineContentContainer">
+    <span  #element3 class="f3">{{talkPlanning.room.name[0].toUpperCase() + talkPlanning.room.name.slice(1).toLowerCase()}}</span>
+    <div  #element4 class="lineContentContainer">
       <div class="leftItem">
         <mat-icon matBadge="{{talkPlanning.room.capacity}}" matBadgeColor="warn">favorite</mat-icon>
       </div>
@@ -31,8 +28,6 @@
       </div>
 
     </div>
-
-
   </div>
 
 </div>

@@ -15,12 +15,14 @@ export class VMFavorite {
     userService.logEventEmitter.on((data: LogEventArgs) => {
       this.logged = data.IsLog
     });
-    dataService.getFavorites().subscribe(plannings => {
-      this.inFavorite = plannings.some(planning => {
-        return compareTalkPlanning(planning, this.planning);
-      })
+    if(this.logged){
+      dataService.getFavorites().subscribe(plannings => {
+        this.inFavorite = plannings.some(planning => {
+          return compareTalkPlanning(planning, this.planning);
+        });
+      });
+    }
 
-    })
   }
 
   removeFavorite() {
