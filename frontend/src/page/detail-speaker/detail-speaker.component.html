@@ -1,20 +1,20 @@
 <div class="centerContainer contentPage">
-  <div *ngIf="vm.speaker!=null">
-    <div class="preview speakerpreviewContainer">
+  <div *ngIf="vm.speaker!=null" class="container">
+    <div class="preview speakerpreviewContainer magicpattern">
       <img class="imagSpeaker" src="{{vm.speaker.photo}}" (error)="vm.speaker.photo='/assets/image/defaultProfile.png'"
            alt="{{vm.speaker.name}}">
       <span class="f1">{{vm.speaker.name}}</span>
     </div>
     <div class="contentDetailSpeaker">
 
-      <button *ngIf="vm.speaker.company != '' && vm.speaker.company != undefined"  class="f4 centerLineContent company" mat-fab extended color="primary" disableRipple disabled >
-        <mat-icon aria-hidden="false" aria-label="speaker icon"
-                  svgIcon="business"></mat-icon>
-        {{vm.speaker.company}}
-      </button>
+      <div *ngIf="vm.speaker.company != '' && vm.speaker.company != undefined"  class="f4 primaryColorBG centerLineContent company" >
+          <mat-icon aria-hidden="false" aria-label="speaker icon"
+          >business_center</mat-icon>
+          {{vm.speaker.company}}
+      </div>
       <div class="centerLineContent">
         <app-linkedin-btn *ngIf="vm.speaker.linkedin != '' " userId="{{vm.speaker.linkedin}}" class="socialMediaSpeaker"/>
-        <app-twitter-btn  *ngIf="vm.speaker.twitter != '' "userId="{{vm.speaker.twitter}}" class="socialMediaSpeaker "/>
+        <app-twitter-btn  *ngIf="vm.speaker.twitter != '' " userId="{{vm.speaker.twitter}}" class="socialMediaSpeaker "/>
       </div>
       <span class="f4">{{vm.speaker.biography}}</span>
     </div>

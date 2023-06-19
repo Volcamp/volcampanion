@@ -1,5 +1,5 @@
-<a href="{{linkedinLink+userId}}" *ngIf="userId!=''" (click)="$event.stopPropagation()" color="linkedin" mat-flat-button
-   class="f7">
-  <mat-icon svgIcon="linkedin" aria-hidden="false" aria-label="linkedin link"/>
-  {{linkedin}}
+<a mat-button   href="{{linkedinLink+userId}}" *ngIf="userId!=''" (click)="$event.stopPropagation()" color="linkedin"
+   >
+  <mat-icon svgIcon="linkedin" class="icon" aria-hidden="false" aria-label="linkedin link"/>
+  <span class="f7 ">{{linkedin}} </span>
 </a>

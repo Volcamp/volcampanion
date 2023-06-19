@@ -1,7 +1,6 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {Speaker} from "../../data/dto/input/Speaker";
 import {NavigationService} from "../../services/NavigationService";
-import {AppRoutes, toRoute} from "../../app/AppRoutes";
 import {DataParamService} from "../../services/DataParamService";
 
 
@@ -22,7 +21,6 @@ function sizeNumber(screenSize: number): number {
 export class SpeakersListComponent implements OnInit {
   @Input() speakers: Speaker[] = [];
   breakpoint!: number;
-  detailRoute = toRoute(AppRoutes.DETAIL_SPEAKER_ROUTE);
 
   public constructor(private navigation: NavigationService, private data: DataParamService) {
   }
