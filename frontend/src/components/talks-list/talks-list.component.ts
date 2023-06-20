@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {AfterContentInit, Component, Input} from '@angular/core';
 import {Planning, PlanningType} from "../../data/dto/input/Planning";
 import {NavigationService} from "../../services/NavigationService";
 
@@ -7,18 +7,25 @@ import {NavigationService} from "../../services/NavigationService";
   templateUrl: './talks-list.component.html',
   styleUrls: ['./talks-list.component.sass']
 })
-export class TalksListComponent {
+export class TalksListComponent implements AfterContentInit {
 
   BREAK = PlanningType.BREAK;
   DELIMITER_DAY = PlanningType.DELIMITER_DAY;
   @Input() plannings: Planning[] = [];
   @Input() noContentDisplay = false;
+  nbItem: number = 0;
 
   public constructor(private navigation: NavigationService) {
   }
 
   navigate(talkPlan: any) {
     this.navigation.goToTalk(talkPlan);
+  }
+
+  ngAfterContentInit(): void {
+    this.nbItem = this.plannings.filter(planning => {
+      return planning !== undefined
+    }).length
   }
 
 

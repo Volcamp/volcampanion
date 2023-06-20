@@ -1,2 +1,5 @@
 <app-talks-list *ngIf="vm.plannings!==undefined" [plannings]="vm.plannings" [noContentDisplay]="true"></app-talks-list>
-<app-loader *ngIf="vm.plannings===undefined"></app-loader>
+<app-loader *ngIf="vm.plannings===undefined && vm.noConnection !== true"></app-loader>
+<div *ngIf="vm.noConnection === true">
+  <app-no-connection></app-no-connection>
+</div>

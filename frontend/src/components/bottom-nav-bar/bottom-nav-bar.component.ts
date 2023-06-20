@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, HostListener, Input, OnInit} from '@angular/core';
 import {AppRoutes, toRoute} from "../../app/AppRoutes";
 import {UserService} from "../../services/UserService";
+import {LogEventArgs} from "../../event/LogEventArgs";
 
 @Component({
   selector: 'app-bottom-nav-bar',
@@ -18,6 +19,7 @@ export class BottomNavBarComponent implements AfterViewInit, OnInit {
   logged: boolean = false;
 
   constructor(private userService: UserService) {
+
   }
 
   onClick(event: any) {
@@ -61,7 +63,9 @@ export class BottomNavBarComponent implements AfterViewInit, OnInit {
 
   ngOnInit(): void {
     this.logged = this.userService.isLogged();
-  }
+    this.userService.logEventEmitter.on((data: LogEventArgs) => {
+      this.logged = data.IsLog
+    });  }
 }
 
 export const CLASS_BTN_NAME = 'button.iconBtn';

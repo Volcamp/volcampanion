@@ -10,6 +10,7 @@ export class VMTalk {
   talk: Talk | undefined | null = null
   colorTheme: string = "";
   iconFormat: string = "";
+  noConnection: boolean = false;
 
   constructor(private route: ActivatedRoute, private dataService: AbstractTalkService,
               private dataParamService: DataParamService, private feedbackInitService: FeedbackInitService) {
@@ -23,11 +24,16 @@ export class VMTalk {
 
     if ((this.talk === undefined) ||
       this.talk!.id.toString() !== talkIdFromRoute) {
-      this.dataService.getTalkById(talkIdFromRoute!).subscribe(talkPlanning => {
-        this.talk = talkPlanning;
-        this.colorTheme = getColorTheme(this.talk!.theme!.name);
-        this.iconFormat = getIconFormat(this.talk!.format!.type);
-      })
+      this.dataService.getTalkById(talkIdFromRoute!).subscribe({
+        next: (talkPlanning) => {
+          this.talk = talkPlanning;
+          this.colorTheme = getColorTheme(this.talk!.theme!.name);
+          this.iconFormat = getIconFormat(this.talk!.format!.type);
+        },
+        error: () => {
+          this.noConnection = true;
+        }
+      });
     } else {
       this.colorTheme = getColorTheme(this.talk!.theme!.name)
       this.iconFormat = getIconFormat(this.talk!.format!.type)

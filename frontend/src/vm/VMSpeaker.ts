@@ -9,6 +9,7 @@ export class VMSpeaker {
   speaker: Speaker | null | undefined = null
   twitter = SocialMedia.TWITTER
   linkedin = SocialMedia.LINKEDIN
+  noConnection: boolean = false;
 
   constructor(private route: ActivatedRoute, private dataService: AbstractSpeakerService, private dataParamService: DataParamService) {
     this.speaker = dataParamService.storageParam
@@ -20,9 +21,23 @@ export class VMSpeaker {
     const speakerIdFromRoute = routeParams.get('speakerId');
 
     if ((this.speaker === undefined)) {
-      this.dataService.getSpeakerById(speakerIdFromRoute!).subscribe(speaker => this.speaker = speaker)
+      this.dataService.getSpeakerById(speakerIdFromRoute!).subscribe({
+        next: (speaker) => {
+          this.speaker = speaker;
+        },
+        error : () => {
+          this.noConnection = true;
+        }
+      });
     } else if (this.speaker!.id.toString() !== speakerIdFromRoute) {
-      this.dataService.getSpeakerById(speakerIdFromRoute!).subscribe(speaker => this.speaker = speaker)
+      this.dataService.getSpeakerById(speakerIdFromRoute!).subscribe({
+        next: (speaker) => {
+          this.speaker = speaker;
+        },
+        error : () => {
+          this.noConnection = true;
+        }
+      });
     }
   }
 }

@@ -20,4 +20,7 @@
     </div>
   </div>
 </div>
-<app-loader *ngIf="vm.speaker===undefined"></app-loader>
+<app-loader *ngIf="vm.speaker===undefined && vm.noConnection !== true"></app-loader>
+<div *ngIf="vm.noConnection === true">
+  <app-no-connection></app-no-connection>
+</div>

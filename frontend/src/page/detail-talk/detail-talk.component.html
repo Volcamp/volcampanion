@@ -1,5 +1,5 @@
 <div class="centerContainer contentPage">
-  <app-volcamp-feedback></app-volcamp-feedback>
+  <app-volcamp-feedback *ngIf="vm.talk!=null"></app-volcamp-feedback>
   <div *ngIf="vm.talk!=null">
     <div class="lineContentContainer">
       <div class="leftItem">
@@ -39,4 +39,7 @@
   </div>
 
 </div>
-<app-loader *ngIf="vm.talk===undefined"></app-loader>
+<app-loader *ngIf="vm.talk===undefined && vm.noConnection !== true"></app-loader>
+<div *ngIf="vm.noConnection === true">
+  <app-no-connection></app-no-connection>
+</div>

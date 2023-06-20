@@ -13,9 +13,9 @@
           <app-break-teaser-view [breakPlanning]="$any(planning)"/>
         </div>
 
-        <div class="miniView contentPage zoomOutCard content contentWidth shadow" (click)="navigate($any(planning))"
+        <div class="miniView contentPage zoomOutCard content contentWidth shadow size{{nbItem}}" (click)="navigate($any(planning))"
              *ngSwitchDefault matRipple>
-          <app-talk-teaser-view [talkPlanning]="$any(planning)"/>
+          <app-talk-teaser-view [talkPlanning]="$any(planning)" [inItem]="nbItem"/>
         </div>
       </div>
     </div>

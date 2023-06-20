@@ -14,9 +14,9 @@ import {TalkPlanning} from "../../data/dto/input/TalkPlanning";
 
 export class TalkTeaserViewComponent implements OnInit {
   @Input() talkPlanning!: TalkPlanning;
-
-  color: string = ''
-  inFavorite: boolean = false
+  @Input() inItem : number = 0;
+  color: string = '';
+  inFavorite: boolean = false;
   startDate = new Date();
   endDate = new Date();
   speakersNames!: string;

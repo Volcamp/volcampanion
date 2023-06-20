@@ -8,7 +8,7 @@
 
   <div class="mainItem">
     <div #element1 class="lineContentContainer" matTooltip="{{talkPlanning.talk.title + '. ' + speakersNames}}" matTooltipPosition="above">
-      <div class="leftItem contentWidth noWrapDesktop" style="display: flex">
+      <div class="leftItem contentSize{{inItem}} contentWidth noWrapDesktop" style="display: flex">
         <span class="f3">{{talkPlanning.talk.title}}</span>
       </div>
       <span class="rightItem f4"> {{startDate.toLocaleTimeString('fr-FR').slice(0, 5).replace(":", "h")}}

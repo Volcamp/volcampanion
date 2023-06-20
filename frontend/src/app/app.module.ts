@@ -134,6 +134,7 @@ import {
 import {AdminConferenceListComponent} from "../components/admin-conference-list/admin-conference-list.component";
 import {AdminConferencesComponent} from "../page/admin-conferences/admin-conferences.component";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import {NoConnectionComponent} from "../components/no-connection/no-connection.component";
 
 
 @NgModule({
@@ -193,6 +194,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     AdminDialogAddEditConferenceComponent,
     AdminConferenceListComponent,
     AdminConferencesComponent,
+    NoConnectionComponent,
   ],
   imports: [
     BrowserModule,
