@@ -71,8 +71,7 @@
         </ng-template>
 
         <ng-template #itemTemplatePreview let-item>
-          <app-speaker-preview name="{{item.name}}" company="{{item.company}}"
-                               photo="{{item.photo}}"></app-speaker-preview>
+          <span class="h3">{{item.name}}</span>
         </ng-template>
       </app-drag-lists>
     </mat-step>

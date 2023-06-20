@@ -15,12 +15,12 @@ import {AbstractTalkService} from "../../services/abstract/AbstractTalkService";
 import {SnackBarService} from "../../services/SnackBarService";
 
 @Component({
-  selector: 'app-admin-dialog-add-talk',
-  templateUrl: './admin-dialog-add-talk.component.html',
+  selector: 'app-admin-dialog-add-edit-talk',
+  templateUrl: './admin-dialog-add-edit-talk.component.html',
   styleUrls: ['./admin-dialog-add-talk.component.sass'],
 
 })
-export class AdminDialogAddTalkComponent implements OnInit {
+export class AdminDialogAddEditTalkComponent implements OnInit {
   formats: Format[] = [];
   themes: Theme[] = [];
   conferences: Conference[] = [];
@@ -60,7 +60,7 @@ export class AdminDialogAddTalkComponent implements OnInit {
     confForm: this.confForm,
   });
 
-  constructor(public dialogRef: MatDialogRef<AdminDialogAddTalkComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
+  constructor(public dialogRef: MatDialogRef<AdminDialogAddEditTalkComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
               private themeService: AbstractThemeService, private formatService: AbstractFormatService,
               private conferenceService: AbstractConferenceService, private dataService: AbstractSpeakerService,
               private abstractTalkService: AbstractTalkService, private _formBuilder: FormBuilder,

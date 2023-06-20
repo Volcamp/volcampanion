@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Talk} from "../../data/dto/input/Talk";
-import {AdminDialogAddTalkComponent} from "../admin-dialog-add-talk/admin-dialog-add-talk.component";
+import {AdminDialogAddEditTalkComponent} from "../admin-dialog-add-edit-talk/admin-dialog-add-edit-talk.component";
 import {MatDialog} from "@angular/material/dialog";
 import {AdminDialogInfoTalkComponent} from "../admin-dialog-info-talk/admin-dialog-info-talk.component";
 
@@ -11,7 +11,7 @@ import {AdminDialogInfoTalkComponent} from "../admin-dialog-info-talk/admin-dial
 })
 export class AdminTalkListComponent {
   @Input() talks!: Talk[];
-  addDialog = AdminDialogAddTalkComponent;
+  addDialog = AdminDialogAddEditTalkComponent;
 
   constructor(public dialog: MatDialog) {
   }

@@ -83,7 +83,7 @@ import {
 import {MatDialogModule} from "@angular/material/dialog";
 import {AdminEditBtnComponent} from "../components/admin-edit-btn/admin-edit-btn.component";
 import {AdminAddBtnComponent} from "../components/admin-add-btn/admin-add-btn.component";
-import {AdminDialogAddTalkComponent} from "../components/admin-dialog-add-talk/admin-dialog-add-talk.component";
+import {AdminDialogAddEditTalkComponent} from "../components/admin-dialog-add-edit-talk/admin-dialog-add-edit-talk.component";
 import {CdkDrag, CdkDragPreview, CdkDropList, CdkDropListGroup} from "@angular/cdk/drag-drop";
 import {MatStepperModule} from "@angular/material/stepper";
 import {DragListsComponent} from "../components/drag-lists/drag-lists.component";
@@ -173,7 +173,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     AdminDialogDeleteTalkComponent,
     AdminEditBtnComponent,
     AdminAddBtnComponent,
-    AdminDialogAddTalkComponent,
+    AdminDialogAddEditTalkComponent,
     DragListsComponent,
     AdminDialogInfoTalkComponent,
     AdminSpeakerPreviewComponent,

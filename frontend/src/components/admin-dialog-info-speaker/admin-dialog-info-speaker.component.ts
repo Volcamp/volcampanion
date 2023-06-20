@@ -1,6 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {AdminDialogDeleteTalkComponent} from "../admin-dialog-delete-talk/admin-dialog-delete-talk.component";
-import {AdminDialogAddTalkComponent} from "../admin-dialog-add-talk/admin-dialog-add-talk.component";
+import {AdminDialogAddEditTalkComponent} from "../admin-dialog-add-edit-talk/admin-dialog-add-edit-talk.component";
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {Speaker} from "../../data/dto/input/Speaker";
 import {
