@@ -1,10 +1,14 @@
 .container
   display: grid
 
+.space
+  padding: 5px 0
+  
 .sideIndicater
   display: flex
   border-radius: 50px
   justify-content: center
+  place-self: center
   text-orientation: mixed
   writing-mode: vertical-rl
   grid-column: 1
@@ -14,14 +18,25 @@
   height: fit-content+100px
   margin-right: 15px
 
+.noWrapDesktop
+  @media screen and (min-width: 1024px) //Small screens, laptops
+      white-space: nowrap
+  @media screen and (min-width: 1200px) //Desktops, large screens
+      white-space: nowrap
+
 .nowrap
-  white-space: nowrap
+      white-space: nowrap
 .mainItem
   grid-column: 2 / 1000
   grid-row: 1
   display: grid
   gap: 10px
 
+.contentWidth
+  @media screen and (min-width: 1024px) //Small screens, laptops
+      width: 10vw
+  @media screen and (min-width: 1200px) //Desktops, large screens
+      width: 10vw
 
 .gap
   display: flex

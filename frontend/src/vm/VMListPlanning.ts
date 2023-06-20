@@ -41,7 +41,6 @@ export class VMListPlanning {
             }
           });
           this.dates = uniqueDates;
-
         }
       );
 

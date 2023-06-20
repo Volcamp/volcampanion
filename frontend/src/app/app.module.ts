@@ -40,7 +40,7 @@ import {MatChipsModule} from "@angular/material/chips";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {MatNativeDateModule} from "@angular/material/core";
+import {MatNativeDateModule, MatRippleModule} from "@angular/material/core";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {AbstractPlanningService} from "../services/abstract/AbstractPlanningService";
 import {AbstractSpeakerService} from "../services/abstract/AbstractSpeakerService";
@@ -133,6 +133,7 @@ import {
 } from "../components/admin-dialog-add-edit-conference/admin-dialog-add-edit-conference.component";
 import {AdminConferenceListComponent} from "../components/admin-conference-list/admin-conference-list.component";
 import {AdminConferencesComponent} from "../page/admin-conferences/admin-conferences.component";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 
 @NgModule({
@@ -193,53 +194,55 @@ import {AdminConferencesComponent} from "../page/admin-conferences/admin-confere
     AdminConferenceListComponent,
     AdminConferencesComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ServiceWorkerModule.register('ngsw-worker.js', {
-            enabled: !isDevMode(),
-            // Register the ServiceWorker as soon as the application is stable
-            // or after 30 seconds (whichever comes first).
-            registrationStrategy: 'registerWhenStable:30000'
-        }),
-        MatTabsModule,
-        MatIconModule,
-        MatButtonModule,
-        MatToolbarModule,
-        BrowserAnimationsModule,
-        MatProgressBarModule,
-        MatGridListModule,
-        MatCardModule,
-        MatBadgeModule,
-        MatDividerModule,
-        HttpClientModule,
-        MatProgressSpinnerModule,
-        MatBottomSheetModule,
-        MatChipsModule,
-        MatFormFieldModule,
-        MatDatepickerModule,
-        ReactiveFormsModule,
-        MatNativeDateModule,
-        MatCheckboxModule,
-        MatMenuModule,
-        AuthConfigModule,
-        MatInputModule,
-        MatButtonToggleModule,
-        MatSidenavModule,
-        MatListModule,
-        MatDialogModule,
-        CdkDropList,
-        CdkDrag,
-        CdkDropListGroup,
-        MatStepperModule,
-        CdkDragPreview,
-        FormsModule,
-        MatAutocompleteModule,
-        MatSnackBarModule,
-        MatExpansionModule,
-        CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
+    MatTabsModule,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule,
+    MatGridListModule,
+    MatCardModule,
+    MatBadgeModule,
+    MatDividerModule,
+    HttpClientModule,
+    MatProgressSpinnerModule,
+    MatBottomSheetModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    AuthConfigModule,
+    MatInputModule,
+    MatButtonToggleModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDialogModule,
+    CdkDropList,
+    CdkDrag,
+    CdkDropListGroup,
+    MatStepperModule,
+    CdkDragPreview,
+    FormsModule,
+    MatAutocompleteModule,
+    MatSnackBarModule,
+    MatExpansionModule,
+    CalendarModule.forRoot({provide: DateAdapter, useFactory: adapterFactory}),
+    MatRippleModule,
+    MatTooltipModule,
 
-    ],
+  ],
   providers: [{
     provide: AbstractPlanningService,
     useClass: PlanningService // <--- Defining the swappable implementation.

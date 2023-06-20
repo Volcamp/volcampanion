@@ -15,17 +15,17 @@ export class FilterPlanningsService {
   constructor() {
   }
 
-  filterCheck(plan: Planning, filter: FilterPlanningEventArgs): boolean {
+  filterCheck(planning: Planning, filter: FilterPlanningEventArgs): boolean {
     let typeBool = true;
     let themeBool = true;
-    let dateBool = filter.dates.length === 0 || filter.dates.some(date => compareEqualDate(date, plan.schedule))
+    let dateBool = filter.dates.length === 0 || filter.dates.some(date => compareEqualDate(date, planning.schedule))
 
-    if (plan.getType() === PlanningType.DELIMITER_DAY) {
+    if (planning.getType() === PlanningType.DELIMITER_DAY) {
       return dateBool;
-    } else if (plan.getType() === PlanningType.BREAK) {
+    } else if (planning.getType() === PlanningType.BREAK) {
       return dateBool;
     } else {
-      const planningTalk = plan as TalkPlanning;
+      const planningTalk = planning as TalkPlanning;
       typeBool = filter.planningsTypes.length === 0 || filter.planningsTypes.some(type => type === planningTalk.talk.format.type)
       themeBool = filter.planningsThemes.length === 0 || filter.planningsThemes.some(theme => {
         return theme === planningTalk.talk.theme.name
@@ -36,8 +36,8 @@ export class FilterPlanningsService {
 
   filter(plannings: Planning[], filter: FilterPlanningEventArgs): Planning[] {
 
-    return plannings.filter(plan => {
-      return this.filterCheck(plan, filter)
+    return plannings.filter(planning => {
+      return this.filterCheck(planning, filter)
     });
   }
 

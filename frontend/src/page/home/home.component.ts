@@ -4,8 +4,10 @@ import {AbstractConferenceService} from "../../services/abstract/AbstractConfere
 import {VMListPlanning} from "../../vm/VMListPlanning";
 import {FilterPlanningsService} from "../../services/FilterPlanningsService";
 import {AbstractTalkFavoriteService} from "../../services/abstract/AbstractTalkFavoriteService";
-import {Planning} from "../../data/dto/input/Planning";
+import {Planning, PlanningType} from "../../data/dto/input/Planning";
 import {compareEqualDateAndTime} from "../../common/DateFunc";
+import {roomPosition} from "../../common/RoomPosition";
+import {TalkPlanning} from "../../data/dto/input/TalkPlanning";
 
 @Component({
   selector: 'app-home',
@@ -26,9 +28,28 @@ export class HomeComponent {
   }
 
   getByDate(date: Date): Planning[] {
-    return this.vm.plannings.filter(planning => {
+    const plannings = this.vm.plannings.filter(planning => {
       return compareEqualDateAndTime(planning.schedule, date);
-    })
+    });
+    if (plannings.some(planning => {
+      if(planning !== undefined){
+        return planning.getType() !== PlanningType.DELIMITER_DAY && plannings[0].getType() !== PlanningType.BREAK;
+      }
+      return true
+    })) {
+      const planningsOrder: Planning[] = [];
+      for (let i = 0; i < 4; i++) {
+        // @ts-ignore
+        planningsOrder.push(undefined); // <-|----- Be careful the planning can contain undefined
+      }
+      plannings.forEach(planning => {
+        planningsOrder.splice(roomPosition((planning as TalkPlanning).room.name), 0, planning);
+      });
+      return planningsOrder;
+    } else {
+      return plannings;
+    }
+
 
   }
 }
