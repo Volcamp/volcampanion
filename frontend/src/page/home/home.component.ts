@@ -22,34 +22,11 @@ export class HomeComponent {
     this.vm = new VMListPlanning(dataService, confService, filterPlannings);
   }
 
-
   ngOnInit(): void {
     this.vm.init()
   }
 
   getByDate(date: Date): Planning[] {
-    const plannings = this.vm.plannings.filter(planning => {
-      return compareEqualDateAndTime(planning.schedule, date);
-    });
-    if (plannings.some(planning => {
-      if(planning !== undefined){
-        return planning.getType() !== PlanningType.DELIMITER_DAY && plannings[0].getType() !== PlanningType.BREAK;
-      }
-      return true
-    })) {
-      const planningsOrder: Planning[] = [];
-      for (let i = 0; i < 4; i++) {
-        // @ts-ignore
-        planningsOrder.push(undefined); // <-|----- Be careful the planning can contain undefined
-      }
-      plannings.forEach(planning => {
-        planningsOrder.splice(roomPosition((planning as TalkPlanning).room.name), 0, planning);
-      });
-      return planningsOrder;
-    } else {
-      return plannings;
-    }
-
-
+    return this.vm.getByDate(date);
   }
 }

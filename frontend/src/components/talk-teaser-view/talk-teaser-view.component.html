@@ -7,11 +7,11 @@
   </div>
 
   <div class="mainItem">
-    <div #element1 class="lineContentContainer" matTooltip="{{talkPlanning.talk.title + '. ' + speakersNames}}" matTooltipPosition="above">
+    <div #element1 class="lineContentContainer">
       <div class="leftItem contentSize{{inItem}} contentWidth noWrapDesktop" style="display: flex">
         <span class="f3">{{talkPlanning.talk.title}}</span>
       </div>
-      <span class="rightItem f4"> {{startDate.toLocaleTimeString('fr-FR').slice(0, 5).replace(":", "h")}}
+      <span class="rightItem f4" style="padding-right: 10px"> {{startDate.toLocaleTimeString('fr-FR').slice(0, 5).replace(":", "h")}}
         - {{endDate.toLocaleTimeString('fr-FR').slice(0, 5).replace(":", "h")}} </span>
     </div>
     <span #element2 class="f4 noWrapDesktop" style="margin: 0; padding: 0;">

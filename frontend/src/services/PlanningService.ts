@@ -12,6 +12,7 @@ import {DividerPlanning} from "../data/dto/input/DividerPlanning";
 import {CreateTalk} from "../data/dto/output/CreateTalk";
 import {HttpResponse} from "@angular/common/http";
 import {CreatePlanning} from "../data/dto/output/CreatePlanning";
+import {formatPlanning} from "../common/FormatPlannings/FormatPlannings";
 
 
 @Injectable()
@@ -22,44 +23,9 @@ export class PlanningService implements AbstractPlanningService {
   getPlannings(idConf: string): Observable<Planning[]> {
     return this.requestManager.get<any>(this.env.getApiUrl() + APIRoutes.PLANNING + "?idConf=" + idConf).pipe(
       map(data => {
-        const finalData: Planning[] = [];
-
-        //Handle first day for first item
-        if (data?.length > 0) {
-          this.addDayDelimiterForDate(data[0].schedule, finalData);
-        }
-        let previousSchedule = new Date(data[0].schedule);
-        let currentSchedule;
-        for (let planning of data) {
-          currentSchedule = new Date(planning.schedule);
-
-          if(previousSchedule.getDay() !== currentSchedule.getDay()){
-            this.addDayDelimiterForDate(planning.schedule, finalData);
-            previousSchedule = currentSchedule;
-          }
-
-          switch (planning.talk.format.type) {
-            case PlanningType.BREAK:
-              finalData.push(BreakMapper.toModel(planning));
-              break;
-            default:
-              finalData.push(TalkMapper.toModel(planning));
-              break;
-          }
-
-        }
-        return finalData;
+        return formatPlanning(data);
       })
     );
-  }
-
-  private addDayDelimiterForDate(eventDate: string, finalData: Planning[]) {
-    let date = new Date(eventDate);
-    date.setHours(0);
-    date.setSeconds(0);
-    date.setMilliseconds(0);
-    date.setMinutes(0);
-    finalData.push(new DividerPlanning(new Date(date)));
   }
 
   getPlanningById(id: string): Observable<TalkPlanning> {
@@ -81,3 +47,4 @@ export class PlanningService implements AbstractPlanningService {
 
 
 }
+

@@ -1,5 +1,5 @@
 <div *ngIf="vm.plannings!==undefined">
-  <div *ngFor="let date of vm.dates" class="containerDesktop">
+  <div *ngFor="let date of vm.dates">
     <app-talks-list [plannings]="getByDate(date)"></app-talks-list>
   </div>
 </div>

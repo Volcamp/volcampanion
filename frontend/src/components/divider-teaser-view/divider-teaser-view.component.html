@@ -1,4 +1,6 @@
-<div class="date warnBorder accentColorBG">
-  <span class="f4">{{formatDate(startDate)}}</span>
+<div #fix class="date warnBorder accentColorBG border">
+  <span class="f2">{{formatDate(startDate)}}</span>
 </div>
-
+<div style="top: {{padding}}px;" *ngIf="visible" class="date warnBorder accentColorBG fixed">
+  <span class="f2">{{formatDate(startDate)}}</span>
+</div>

@@ -1,36 +1,21 @@
-import {Planning} from "../data/dto/input/Planning";
 import {FilterPlanningsService} from "../services/FilterPlanningsService";
 import {UserService} from "../services/UserService";
 import {AbstractTalkFavoriteService} from "../services/abstract/AbstractTalkFavoriteService";
-import {FilterPlanningEventArgs} from "../event/FilterPlanningEventArgs";
 import {AbstractConferenceService} from "../services/abstract/AbstractConferenceService";
-import {compareSchedule} from "../common/CompareTalkPlan";
+import {VMPlannings} from "./VMPlannings";
 
-export class VMFavoritePage {
-  planningsNoFilter: Planning[] = []
-  plannings!: Planning[]
-  noConnection: boolean = false;
+export class VMFavoritePage extends VMPlannings {
 
-  constructor(private dataService: AbstractTalkFavoriteService, private confService: AbstractConferenceService, private filterPlannings: FilterPlanningsService, private userService: UserService) {
+  constructor(private dataService: AbstractTalkFavoriteService, private confService: AbstractConferenceService,filterPlannings: FilterPlanningsService, private userService: UserService) {
+    super(filterPlannings);
   }
 
   init() {
     this.confService.getCurrentConference().subscribe({
       next: (conf) => {
-        this.dataService.getFavorites(conf!.id.toString(), true).subscribe({
-          next: (plannings) => {
-            this.planningsNoFilter = plannings;
-            this.plannings = plannings.sort(compareSchedule);
-            this.filterPlannings.eventEmitter.on((data: FilterPlanningEventArgs) => {
-              this.plannings = this.filterPlannings.filter(this.planningsNoFilter, data);
-            });
-          },
-          error: () => {
-            this.noConnection = true;
-          }
-        });
+        this.initPlanning(this.dataService.getFavorites(conf!.id.toString(), true));
       },
-      error : () =>{
+      error: () => {
         this.noConnection = true;
       }
     });

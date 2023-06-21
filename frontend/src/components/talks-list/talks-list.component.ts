@@ -25,7 +25,8 @@ export class TalksListComponent implements AfterContentInit {
   ngAfterContentInit(): void {
     this.nbItem = this.plannings.filter(planning => {
       return planning !== undefined
-    }).length
+    }).length;
+    console.log(this.plannings)
   }
 
 

@@ -1,8 +1,9 @@
-<app-talks-list *ngIf="vm.plannings!==undefined" [plannings]="vm.plannings" [noContentDisplay]="true"></app-talks-list>
-<app-loader *ngIf="vm.plannings===undefined && vm.noConnection !== true" ></app-loader>
-<div *ngIf="vm.plannings!==undefined && vm.plannings.length<=0" class="containerEmpty">
-  <span class="f1 noContent primaryColorFG">Pas de contenue à afficher</span>
+<div *ngIf="vm.plannings!==undefined">
+  <div *ngFor="let date of vm.dates">
+    <app-talks-list [plannings]="getByDate(date)"></app-talks-list>
+  </div>
 </div>
+<app-loader *ngIf="vm.plannings===undefined && vm.noConnection !== true"></app-loader>
 <div *ngIf="vm.noConnection === true">
   <app-no-connection></app-no-connection>
 </div>

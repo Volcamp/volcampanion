@@ -8,6 +8,9 @@ import {Injectable} from "@angular/core";
 import {BreakMapper} from "../data/dto/input/mappers/BreakMapper";
 import {TalkMapper} from "../data/dto/input/mappers/TalkMapper";
 import {PlanningMapper} from "../data/dto/output/mappers/PlanningMapper";
+import {formatPlanning} from "../common/FormatPlannings/FormatPlannings";
+import {DividerMapper} from "../data/dto/input/mappers/DividerMapper";
+import {compareSchedule} from "../common/CompareTalkPlan";
 
 export const FAVORITE_LIST = "favoriteList"
 
@@ -33,11 +36,11 @@ export class TalkFavoriteService implements AbstractTalkFavoriteService {
       + APIRoutes.FAVORITE_ROOM_PARAM + planning?.room.id
       // @ts-ignore
       + APIRoutes.FAVORITE_TALK_PARAM + planning?.talk.id).pipe(
-          map(() => true),
-          catchError(() => {
-            return of(false)
-      }
-    ));
+      map(() => true),
+      catchError(() => {
+          return of(false)
+        }
+      ));
   }
 
   getFavorites(idConf?: string, fromApi: boolean = false): Observable<Planning[]> {
@@ -45,13 +48,13 @@ export class TalkFavoriteService implements AbstractTalkFavoriteService {
     if (favorites == null || fromApi) {
       return this.requestManager.get<any[]>(this.env.getApiUrl() + APIRoutes.FAVORITE + APIRoutes.ID_CONF + idConf).pipe(
         map(favoritesApi => {
-            const finalData = this.dataToPlannings(favoritesApi);
+            const finalData = this.dataToPlannings(favoritesApi).sort(compareSchedule);
             window.localStorage.setItem(FAVORITE_LIST, JSON.stringify(finalData));
-            return finalData;
+            return formatPlanning(finalData);
           }
         ));
     } else {
-      return of(this.dataToPlannings(JSON.parse(favorites)))
+      return of(formatPlanning(this.dataToPlannings(JSON.parse(favorites).sort(compareSchedule))));
     }
 
   }
@@ -60,6 +63,9 @@ export class TalkFavoriteService implements AbstractTalkFavoriteService {
     const finalData: Planning[] = [];
     for (let planning of favoritesApi) {
       switch (planning.talk.format.type) {
+        case PlanningType.DELIMITER_DAY:
+          finalData.push(DividerMapper.toModel(planning));
+          break;
         case PlanningType.BREAK:
           finalData.push(BreakMapper.toModel(planning));
           break;

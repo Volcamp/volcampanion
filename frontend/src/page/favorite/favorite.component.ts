@@ -4,6 +4,10 @@ import {AbstractTalkFavoriteService} from "../../services/abstract/AbstractTalkF
 import {AbstractConferenceService} from "../../services/abstract/AbstractConferenceService";
 import {UserService} from "../../services/UserService";
 import {FilterPlanningsService} from "../../services/FilterPlanningsService";
+import {Planning, PlanningType} from "../../data/dto/input/Planning";
+import {compareEqualDateAndTime} from "../../common/DateFunc";
+import {roomPosition} from "../../common/RoomPosition";
+import {TalkPlanning} from "../../data/dto/input/TalkPlanning";
 
 @Component({
   selector: 'app-favorite',
@@ -19,6 +23,10 @@ export class FavoriteComponent implements OnInit{
 
   ngOnInit(): void {
     this.vm.init();
+  }
+
+  getByDate(date: Date): Planning[] {
+    return this.vm.getByDate(date);
   }
 
 }
