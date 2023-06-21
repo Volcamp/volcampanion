@@ -3,7 +3,7 @@
   <div *ngFor="let planning of  plannings ">
     <div class="containerBig">
 
-      <div [ngSwitch]="planning.getType()" *ngIf="planning !== undefined; else blank" >
+      <div [ngSwitch]="planning.getType()" *ngIf="planning !== undefined; else blank">
 
         <div class="miniView" *ngSwitchCase="DELIMITER_DAY">
           <app-divider-teaser-view [dividerPlanning]="$any(planning)"/>
@@ -13,14 +13,15 @@
           <app-break-teaser-view [breakPlanning]="$any(planning)"/>
         </div>
 
-        <div class="miniView contentPage zoomOutCard content contentWidth shadow size{{nbItem}}" (click)="navigate($any(planning))"
+        <div class="miniView contentPage zoomOutCard content contentWidth shadow size{{nbItem}}"
+             (click)="navigate($any(planning))"
              *ngSwitchDefault matRipple>
           <app-talk-teaser-view [talkPlanning]="$any(planning)" [inItem]="nbItem"/>
         </div>
       </div>
     </div>
     <ng-template #blank>
-        <div class="contentWidth contentDesktop"></div>
+      <div class="contentWidth contentDesktop"></div>
     </ng-template>
 
   </div>
