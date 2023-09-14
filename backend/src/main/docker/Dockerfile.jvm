@@ -1,10 +1,10 @@
-FROM maven:3.8.4-openjdk-17 as build
+FROM maven:3.8.4-openjdk-17 AS build
 RUN mkdir /app
 WORKDIR /app
 COPY . /app
 RUN mvn clean package -DskipTests
 
-FROM registry.access.redhat.com/ubi8/openjdk-17:1.14 as runtime
+FROM registry.access.redhat.com/ubi8/openjdk-17:1.14 AS runtime
 ENV LANGUAGE='en_US:en'
 # We make four distinct layers so if there are application changes the library layers can be re-used
 COPY --from=build --chown=185 /app/target/quarkus-app/lib/ /deployments/lib/
