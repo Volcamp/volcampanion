@@ -1,8 +1,8 @@
 {
-  "name": "volcampanion",
-  "short_name": "volcampanion",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "Volcampanion",
+  "short_name": "Volcampanion",
+  "theme_color": "#6FC660",
+  "background_color": "white",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
