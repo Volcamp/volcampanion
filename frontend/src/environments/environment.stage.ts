@@ -2,7 +2,7 @@ import {LogLevel} from "angular-auth-oidc-client";
 
 export const environment = {
   production: true,
-  apiUrl : 'https://volcamp-api-dev.cleverapps.io/',
+  apiUrl : 'https://volcampanion-api-stage.cleverapps.io/',
   openIdClient: {
     authority: 'https://dev-stage-v.eu.auth0.com',
     redirectUrl: window.location.origin,
