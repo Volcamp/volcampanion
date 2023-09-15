@@ -1,8 +1,9 @@
 FROM maven:3.8.4-openjdk-17 AS build
+ARG DEPLOYMENT_PROFILE
 RUN mkdir /app
 WORKDIR /app
 COPY . /app
-RUN mvn clean package -DskipTests
+RUN mvn clean package -DskipTests -Dquarkus.profile=${DEPLOYMENT_PROFILE}
 
 FROM registry.access.redhat.com/ubi8/openjdk-17:1.14 AS runtime
 ENV LANGUAGE='en_US:en'
