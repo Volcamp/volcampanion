@@ -38,7 +38,8 @@ export class VMPlannings {
           });
           this.dates = uniqueDates;
         },
-        error: () => {
+        error: (err) => {
+          console.log("ERORORORORORRO", err)
           this.noConnection = true;
         }
       },
@@ -61,7 +62,7 @@ export class VMPlannings {
         planningsOrder.push(undefined); // <-|----- Be careful the planning can contain undefined
       }
       plannings.forEach(planning => {
-        planningsOrder.splice(roomPosition((planning as TalkPlanning).room.name), 1, planning);
+        planningsOrder.splice(roomPosition((planning as TalkPlanning).room?.name), 1, planning);
       });
       return planningsOrder;
     } else {

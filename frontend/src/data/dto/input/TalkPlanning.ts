@@ -3,11 +3,11 @@ import {Room} from "./Room";
 import {Talk} from "./Talk";
 
 export class TalkPlanning implements Planning {
-  room: Room;
+  room: Room | null;
   talk: Talk;
   schedule: Date;
 
-  constructor(room: Room, talk: Talk, schedule: Date) {
+  constructor(room: Room | null, talk: Talk, schedule: Date) {
     this.room = room
     this.talk = talk
     this.schedule = schedule

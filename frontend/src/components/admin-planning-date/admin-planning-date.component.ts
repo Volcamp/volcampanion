@@ -7,6 +7,8 @@ import {CalendarPlanningMapper} from "../../common/Calandar/Mappers/CalendarPlan
 import {map, Observable} from "rxjs";
 import {CalendarEvent} from "angular-calendar";
 import {AdminPlanningRoomComponent} from "../admin-planning-room/admin-planning-room.component";
+import {AbstractConferenceService} from "../../services/abstract/AbstractConferenceService";
+import {Conference} from "../../data/dto/input/Conference";
 
 @Component({
   selector: 'app-admin-planning-date',
@@ -14,15 +16,19 @@ import {AdminPlanningRoomComponent} from "../admin-planning-room/admin-planning-
   styleUrls: ['./admin-planning-date.component.sass']
 })
 export class AdminPlanningDateComponent{
+  conf!: Conference;
   @Input() date!: Date;
   @Input() confId!: string;
   @Input() plannings!: Observable<Planning[]>;
   rooms: Room[] = [];
   @ViewChildren(AdminPlanningRoomComponent) planningRooms!: QueryList<AdminPlanningRoomComponent>;
 
-  constructor(private dataService: AbstractRoomService) {
-    this.dataService.getRoom(this.confId).subscribe(data => {
-      this.rooms = data;
+  constructor(private dataService: AbstractRoomService, private conferenceService: AbstractConferenceService) {
+    conferenceService.getCurrentConference().subscribe(conf => {
+      this.conf = conf;
+      this.dataService.getRoom(this.conf.id?.toString()).subscribe(data => {
+        this.rooms = data;
+      });
     });
   }
 

@@ -10,7 +10,7 @@ export class CalendarPlanningMapper {
       start: planning.schedule,
       end: new Date(planning.schedule.getTime() + (planning as any).talk.format.duration * 1000),
       title: `${(planning as TalkPlanning).talk.id} - ${(planning as any).talk.title}`,
-      color: color ?? getColorRoom((planning as TalkPlanning).room.name),
+      color: color ?? getColorRoom((planning as TalkPlanning).room?.name),
       actions: actions,
       resizable: {
         beforeStart: true,
