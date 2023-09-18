@@ -172,6 +172,8 @@ $fontSizeF7: 0.9
   -ms-user-select: none
   user-select: none
 
+.bold
+  font-weight: bold
 
 @mixin theme-color-grabber($theme)
   // Parse the theme and create variables for each color in the pallete
@@ -181,6 +183,8 @@ $fontSizeF7: 0.9
   // Create theme specfic styles
   .primaryColorBG
     background-color: matTheme.mat-color($primary)
+  .accentColor
+    color: matTheme.mat-color($accent)
   .accentColorBG
     background-color: matTheme.mat-color($accent)
   .warnColorBG
@@ -190,7 +194,7 @@ $fontSizeF7: 0.9
   .accentColorBGGradient
     background: radial-gradient(circle, rgba(255,192,167,1) 0%, matTheme.mat-color($accent)  71%)
   .warnColorBGGradient
-    background: radial-gradient(circle, #fafafa 0%, matTheme.mat-color($warn)  71%)
+    background: radial-gradient(circle, #fafafa 0%, matTheme.mat-color($accent)  90%)
   .primaryColorFG
     color: matTheme.mat-color($primary)
   .accentColorFG

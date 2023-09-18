@@ -46,6 +46,10 @@ export class NavigationService {
 
   }
 
+  goToHome(){
+    this.router.navigateByUrl(toRoute(AppRoutes.ROUTE_PAGE));
+  }
+
   goToSpeaker(speaker: Speaker): void {
     this.dataParam.storageParam = speaker;
     this.goTo(toRouteById(AppRoutes.DETAIL_SPEAKER_ROUTE, speaker.id.toString()));
