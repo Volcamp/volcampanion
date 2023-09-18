@@ -1,7 +1,7 @@
 import {LogLevel} from "angular-auth-oidc-client";
 
 export const environment = {
-  production: true,
+  production: false,
   apiUrl: 'http://localhost:8080/',
   openIdClient: {
     authority: 'https://dev-stage-v.eu.auth0.com',
