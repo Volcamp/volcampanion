@@ -2,18 +2,9 @@
   <mat-chip-option color="warn" #filter [value]=false (click)="filter.value = ! filter.value">
     <mat-icon>filter_list_alt</mat-icon>
   </mat-chip-option>
-  <div class="search-bar">
-    <mat-form-field>
-      <mat-label>Search</mat-label>
-      <input matInput [(ngModel)]="searchValueFrom" >
-      <button *ngIf="searchValueFrom" matSuffix mat-icon-button (click)="clearFrom()">
-        <mat-icon>close</mat-icon>
-      </button>
-    </mat-form-field>
-  </div>
 
   <div class="list" mwlDroppable (drop)="drop($event.dropData.event)">
-    <div class="box" *ngFor="let event of filterWithSearchBox() | filterListCalendarPipe: filter.value" mwlDraggable
+    <div class="box" *ngFor="let event of eventsDefault | filterListCalendarPipe: filter.value" mwlDraggable
          [dropData]="{event: event}"
          [touchStartLongPress]="{ delay: 300, delta: 30 }"
          dragActiveClass="drag-active">

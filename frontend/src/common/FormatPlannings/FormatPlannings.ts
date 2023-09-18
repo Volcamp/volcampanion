@@ -14,7 +14,6 @@ function addDayDelimiterForDate(eventDate: Date, finalData: Planning[]) {
 
 export function formatPlanning(data: any[]) {
   const finalData: Planning[] = [];
-  if (data?.length === 0) return finalData;
 
   //Handle first day for first item
   if (data?.length > 0) {

@@ -18,7 +18,7 @@ export class PlanningCalendarDragDropService {
     if (data.idRoom === draggedRoom.id && compareEqualDate(draggedViewDate, data.date)) {
       const index = eventsDraggedFrom.findIndex(planningEvent => {
           return planningEvent.meta?.schedule! === data.date &&
-            data.idRoom === (planningEvent.meta as TalkPlanning).room?.id &&
+            data.idRoom === (planningEvent.meta as TalkPlanning).room.id &&
             data.idTalk === (planningEvent.meta as TalkPlanning).talk.id
         }
       );

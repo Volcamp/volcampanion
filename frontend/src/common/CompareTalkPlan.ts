@@ -18,6 +18,6 @@ export function compareTalkPlanning(a: Planning, b: Planning) {
   }
   return compareSchedule(a, b) === 0  &&
     (a as TalkPlanning).talk.id === (b as TalkPlanning).talk.id &&
-    (a as TalkPlanning).room?.id === (b as TalkPlanning).room?.id;
+    (a as TalkPlanning).room.id === (b as TalkPlanning).room.id;
 }
 

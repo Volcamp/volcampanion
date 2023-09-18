@@ -8,7 +8,7 @@
         <insert tableName="talks">
             <column name="title" value="L'intro Volcamp"/>
             <column name="description"
-                    value="L’intro Volcamp 2022 par la team Geek&amp;Terroir.
+                    value="L’intro Volcamp 2022 par la team Geek&amp;Terrroir.
 Présentation de la conférence, du contenus, du programme et de nos sponsors."/>
             <column name="language" value="fr"/>
             <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_15M')"/>

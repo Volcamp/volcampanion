@@ -46,7 +46,7 @@ export class AdminPlanningRoomComponent implements AfterContentInit {
     eventTimesChangedEvent.newEnd = new Date(eventTimesChangedEvent.newStart.getTime() + (event.meta as any).talk.format.duration * 1000);
     if (event.meta.room === undefined && event.meta.schedule === undefined) {
       this.eventDropped(eventTimesChangedEvent, true);
-    } else if ((event.meta as TalkPlanning).room?.id === this.room.id && compareEqualDate(event.meta.schedule, this.viewDate)) {
+    } else if ((event.meta as TalkPlanning).room.id === this.room.id && compareEqualDate(event.meta.schedule, this.viewDate)) {
       this.eventTimesChanged(eventTimesChangedEvent);
     } else {
       this.eventDropped(eventTimesChangedEvent)

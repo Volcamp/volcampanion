@@ -1,7 +1,7 @@
 <app-admin-planning-actions (deleteEmitter)="delete()" (saveEmitter)="save()" (uploadEmitter)="upload()"></app-admin-planning-actions>
 <div class="container">
   <div class="scrollH">
-    <app-admin-planning-list-talk [talks]="talks"></app-admin-planning-list-talk>
+    <app-admin-planning-list-talk [events]="talks"></app-admin-planning-list-talk>
   </div>
   <div class="scrollW">
     <div *ngFor="let date of dates">

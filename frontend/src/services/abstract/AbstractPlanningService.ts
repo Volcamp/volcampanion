@@ -5,5 +5,5 @@ import {CreatePlanning} from "../../data/dto/output/CreatePlanning";
 export abstract class AbstractPlanningService {
   abstract getPlannings(idConf: string): Observable<Planning[]>
 
-  abstract replacePlanning(plannings: CreatePlanning[]): Observable<boolean>
+  abstract clearAddPlanning(plannings: CreatePlanning[]): Observable<boolean>
 }

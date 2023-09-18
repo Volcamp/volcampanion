@@ -2,7 +2,7 @@ import {LogLevel} from "angular-auth-oidc-client";
 
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:8080/',
+  apiUrl: 'http://192.168.226.58:8080/',
   openIdClient: {
     authority: 'https://dev-stage-v.eu.auth0.com',
     redirectUrl: window.location.origin,
@@ -13,7 +13,7 @@ export const environment = {
     silentRenew: true,
     useRefreshToken: true,
     logLevel: LogLevel.Debug,
-    customParamsAuthRequest: {audience: 'https://volcamp-api-dev.cleverapps.io/',},
+    customParamsAuthRequest: {audience: 'https://volcamp-api-dev.azurewebsites.net/',},
     customParamsRefreshTokenRequest: {scope: 'openid profile offline_access',},
   },
 };

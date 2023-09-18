@@ -17,9 +17,9 @@
     <span #element2 class="f4 noWrapDesktop" style="margin: 0; padding: 0;">
       {{speakersNames}}
     </span>
-    <span #element3 *ngIf="talkPlanning.room"
+    <span #element3
           class="f4">{{talkPlanning.room.name[0].toUpperCase() + talkPlanning.room.name.slice(1).toLowerCase()}}</span>
-    <div #element4 class="lineContentContainer" *ngIf="talkPlanning.room">
+    <div #element4 class="lineContentContainer">
       <div class="leftItem">
         <mat-icon matBadge="{{talkPlanning.room.capacity}}" matBadgeColor="warn">favorite</mat-icon>
       </div>

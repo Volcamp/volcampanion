@@ -1,7 +1,7 @@
 import {Identifier} from "./Identifier";
 
 export interface CreatePlanning{
-  room: Identifier | null,
+  room: Identifier,
   talk: Identifier,
   schedule: Date,
 }

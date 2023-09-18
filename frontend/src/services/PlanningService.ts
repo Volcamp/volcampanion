@@ -36,7 +36,7 @@ export class PlanningService implements AbstractPlanningService {
       }));
   }
 
-  replacePlanning(plannings: CreatePlanning[]): Observable<boolean> {
+  clearAddPlanning(plannings: CreatePlanning[]): Observable<boolean> {
     return this.requestManager.post<HttpResponse<CreatePlanning>>(this.env.getApiUrl() + APIRoutes.PLANNING + APIRoutes.PLANNING_ALL, plannings).pipe(
       map(() => true),
       catchError(() => {
