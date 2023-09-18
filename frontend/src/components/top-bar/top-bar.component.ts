@@ -55,6 +55,10 @@ export class TopBarComponent implements OnInit {
     this.navigation.back()
   }
 
+  home(): void {
+    this.navigation.goToHome();
+  }
+
   public changeBackArrow(backable: boolean) {
     this.backable = backable;
   }
