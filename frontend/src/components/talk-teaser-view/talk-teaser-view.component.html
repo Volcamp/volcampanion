@@ -20,10 +20,10 @@
     <span #element3 *ngIf="talkPlanning.room"
           class="f4">{{talkPlanning.room.name[0].toUpperCase() + talkPlanning.room.name.slice(1).toLowerCase()}}</span>
     <div #element4 class="lineContentContainer" *ngIf="talkPlanning.room">
-      <div class="leftItem">
+<!--      <div class="leftItem">-->
 <!--        <mat-icon matBadge="{{talkPlanning.room.capacity}}" matBadgeColor="warn" >favorite</mat-icon>-->
-        <mat-icon>favorite</mat-icon>
-      </div>
+<!--        <mat-icon>favorite</mat-icon>-->
+<!--      </div>-->
       <div class="rightItem centerLineContent gap">
         <app-add-favorite (capacityChange)="onClick($event)" [capacity]=talkPlanning.room.capacity
                           [planning]="talkPlanning"></app-add-favorite>

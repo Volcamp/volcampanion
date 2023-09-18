@@ -14,3 +14,38 @@ export enum PlanningTheme {
   UX_UI = "UX_UI",
   PLENARY = "PLENARY",
 }
+
+export const FILTERS_PLANNING_THEME = [
+  {
+    name: PlanningTheme.LANGUAGE_AND_FRAMEWORK,
+    description: "Lang. & Frameworks"
+  },
+  {
+    name: PlanningTheme.BIGDATA_AND_AI,
+    description: "Big Data & AI"
+  },
+  {
+    name: PlanningTheme.WEB_AND_MOBILE,
+    description: "Web & Mobile"
+  },
+  {
+    name: PlanningTheme.DEVOPS_AND_CLOUD,
+    description: "Devops & Cloud"
+  },
+  {
+    name: PlanningTheme.ARCHI_PERF_AND_SECU,
+    description: "Archi, Perf & Sécu"
+  },
+  {
+    name: PlanningTheme.DISCOVERY,
+    description: "Découverte"
+  },
+  {
+    name: PlanningTheme.UX_UI,
+    description: "UX/UI"
+  },
+  {
+    name: PlanningTheme.PLENARY,
+    description: "Plénière"
+  }
+]
