@@ -4,7 +4,7 @@
 
       <div [ngSwitch]="planning.getType()" *ngIf="planning !== undefined; else blank">
 
-        <div *ngSwitchCase="DELIMITER_DAY">
+        <div *ngSwitchCase="DELIMITER_DAY" style="min-width: 700px">
           <app-divider-teaser-view [dividerPlanning]="$any(planning)"/>
         </div>
 

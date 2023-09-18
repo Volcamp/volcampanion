@@ -11,6 +11,7 @@ import {PlanningMapper} from "../data/dto/output/mappers/PlanningMapper";
 import {formatPlanning} from "../common/FormatPlannings/FormatPlannings";
 import {DividerMapper} from "../data/dto/input/mappers/DividerMapper";
 import {compareSchedule} from "../common/CompareTalkPlan";
+import {HttpErrorResponse} from "@angular/common/http";
 
 export const FAVORITE_LIST = "favoriteList"
 
@@ -23,7 +24,11 @@ export class TalkFavoriteService implements AbstractTalkFavoriteService {
     // @ts-ignore
     return this.requestManager.post<string>(this.env.getApiUrl() + APIRoutes.FAVORITE, PlanningMapper.toDTO(planning)).pipe(
       map(() => true),
-      catchError(() => {
+      catchError((error: HttpErrorResponse) => {
+        //Prevent error when API is slower and request is sent twice
+        if (error.status === 409) {
+          return of(true)
+        }
         return of(false)
       }));
   }
