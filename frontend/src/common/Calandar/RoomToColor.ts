@@ -1,7 +1,10 @@
 import {EventColor} from "calendar-utils";
 import {colors} from "./Colors";
 
-export function getColorRoom(input: string): EventColor {
+export function getColorRoom(input: string | undefined): EventColor {
+  if (input === undefined) {
+    return colors.white;
+  }
   if (input.toLowerCase().includes('auditorium')) {
     return colors.red;
   } else if (input.toLowerCase().includes('mezzanine')) {

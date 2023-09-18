@@ -30,9 +30,9 @@
   <include file="009-volcamp-data-break.xml" labels="Volcamp 2022"
            author="camille.petitalot@volcamp.io"
            relativeToChangelogFile="true"/>
-<!--  <include file="010-volcamp-data-2022-day1.xml" labels="Volcamp 2022"
-           author="camille.petitalot@volcamp.io"
-           relativeToChangelogFile="true"/>-->
+<!--  <include file="010-volcamp-data-2022-day1.xml" labels="Volcamp 2022"-->
+<!--           author="camille.petitalot@volcamp.io"-->
+<!--           relativeToChangelogFile="true"/>-->
   <include file="011-volcamp-data-speaker.xml" labels="Volcamp 2022"
            author="rami.khedair@volcamp.io"
            relativeToChangelogFile="true"/>
@@ -50,6 +50,30 @@
            relativeToChangelogFile="true"/>
   <include file="016-volcamp-fix-user-talk.xml" labels="Volcamp 2022"
            author="rami.khedair@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2023/001-volcamp-2023-ref.xml" labels="Volcamp 2023"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2023/002-volcamp-2023-speakers.xml" labels="Volcamp 2023"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2023/003-volcamp-2023-day1-talks.xml" labels="Volcamp 2023"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2023/004-volcamp-2023-day2-talks.xml" labels="Volcamp 2023"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2023/005-volcamp-2023-planning-day1.xml" labels="Volcamp 2023"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2023/006-volcamp-2023-planning-day2.xml" labels="Volcamp 2023"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2023/007-volcamp-2023-planning-speaker-day1.xml" labels="Volcamp 2023"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2023/008-volcamp-2023-planning-speaker-day2.xml" labels="Volcamp 2023"
+           author="camille.petitalot@volcamp.io"
            relativeToChangelogFile="true"/>
 </databaseChangeLog>
 

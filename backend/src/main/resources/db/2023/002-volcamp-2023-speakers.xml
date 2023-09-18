@@ -1,0 +1,1024 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+  <changeSet id="001" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Volcamp Team"/>
+      <column name="email" value="contact@volcamp.io"/>
+      <column name="company" value="Geek &amp; Terroir"/>
+      <column name="biography" value='Organisateurs de Volcamp'/>
+      <column name="twitter" value="https://twitter.com/VolcampIO"/>
+      <column name="linkedin" value="https://www.linkedin.com/company/volcampio/?originalSubdomain=fr"/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/logo_volcamp.png"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="002" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Achraf Harrag"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value=''/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/32.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="003" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Alexia Souvane"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value=''/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/27.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="004" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Anthony Pena"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value=''/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/1.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="005" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Anthony Rey"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='Je suis un développeur passionné par mon métier. Avec un fort intérêt pour le développement front end, je m’intéresse aux différentes façon d’organiser un design system pour collaborer efficacement entre PO (ou autre responsable du produit), UX, UI, et développeur. Inspiré initialement par XP (extreme programming), je n’ai pas de préférence envers un langage de programmation en particulier, la méthode de travail m’importe beaucoup plus. L’apprentissage est, selon moi, nécessaire tout au long du parcours d’un développeur. C’est pourquoi je participe aux communautés du Software Craftsmanship. Le concept du logiciel libre de GNU (cf gnu.org) m’intéresse beaucoup, c’est pourquoi je favorise l’utilisation de technologies libres.'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/68.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="006" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Antonin Brugnot"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='Touche à tout dans l’âme, j’aime expérimenter beaucoup d’outils et de concepts qui peuvent m’aider dans mon quotidien de DEVOPS.'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/51.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="007" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Benjamin Legrand"/>
+      <column name="email" value=" "/>
+      <column name="company" value="Onepoint"/>
+      <column name="biography"
+              value='Tombé dans la marmite du web étant petit en regardant la source des pages html, c’est tout naturellement que Benjamin fit depuis 2008 du développement web son métier. D’abord full-stack, puis en fait full fronteux, parfois défricheur de frameworks javascript bizarres, amoureux du Typescript, fanboy d’Angular. touche à tout musicien. Intervenu sur plein de projets variés, de l’e-commerce à l’industrie, en passant par les telecoms. Aujourd’hui Tech Lead front / Architecte Logiciel chez Onepoint'/>
+      <column name="twitter" value="https://twitter.com/benjilegnard"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/11.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="008" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Benjamin Marron"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='Toujours autant passionné et curieux qu’à mes débuts il y a 25 ans. Je suis lead Developer chez Enfrasys, dans le domaine de la sécurisation d’infrastructure de transport (routes, tunnel, métro). Mon credo : faire évoluer les équipes de developpement que j’accompagne tant sur le plan technique que des bonnes pratiques.'/>
+      <column name="twitter" value="https://twitter.com/bmarron"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/56.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="009" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Camille Pillot"/>
+      <column name="email" value=" "/>
+      <column name="company" value="Takima"/>
+      <column name="biography"
+              value='Rien ne présageait que Camille ferait du web. Plutôt destinée à une carrière dans les systèmes embarqués, c’est finalement le dev, qui l’a embarquée il y 2 ans. Sur le chemin, elle découvre son talent de leadership et se dit qu’au final, elle pourrait aussi emmener du monde avec elle dans sa quête de connaissance et de veille ! Adepte de meetups comme certains, fan de frameworks comme beaucoup, elle connaît TypeScript jusqu’au bout des ongles et prend parfois son clavier pour partager ce qui l’anime au quotidien.'/>
+      <column name="twitter" value="https://twitter.com/camiPillotDev"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/36.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="010" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Christophe Breheret-Girardin"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='En immersion chez nombre de clients pendant plus de 20 ans, j’ai pu évoluer sur différents postes (dev / tech lead / architecte) dans des domaines variés (supervision de lignes de métro, optimisation de la production électrique, fabrication d’avion, sites e-marchand, etc.) sur de multiples technologies et dans un contexte de perpétuelle évolution technique.
+Depuis quelques années, je me consacre au software craftsmanship et propose des audits, des formations, ainsi que du coaching. En effet, lassé par la fatalité des anomalies et des systèmes complexes à maintenir et à faire évoluer, j’ai adopté une vision basée sur l’excellence technique et l’amélioration continue qui se concentre sur les pratiques plutôt que sur les technologies.'/>
+      <column name="twitter" value="https://twitter.com/ChristopheB_G"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/37.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="011" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Clara Wiatrowski"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value=''/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value="https://twitter.com/clarabaila"/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/25.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="012" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Colin Damon"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value=''/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/46.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="013" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Constance Bureau"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value=''/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/52.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="014" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="David Aparicio"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Passionate engineer in Computer Science, graduated INSA Lyon 2014, after two years spent at UNICAMP in Brazil, actively participates in the community, through Meetups and conferences. His motto: “No developer is supposed to ignore security”.
+Ingénieur passionné en Informatique, diplômé INSA Lyon 2014, après deux années passées à UNICAMP au Brésil, participe activement à la communauté, à travers des Meetups et des conférences. Sa devise: « Nul développeur n’est censé ignorer la sécurité »'/>
+      <column name="twitter" value="https://twitter.com/dadideo"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/60.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="015" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Elaine Dias Batista"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='Elaine has been working with mobile apps development for the past 6 years. Since the launch of the Google Assistant, she has been following the developments around that area. She truly believes that interacting with technology using natural language will define the future of computing. Born and raised in Brazil, she’s been living in France since 2004 and loves everything multicultural. She’s a GDE for the Google Assistant.'/>
+      <column name="twitter" value="https://twitter.com/elainedbatista"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/14.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="016" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Elizabeth Zaslavsky"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Je prends racine dans la sphère de la production industrielle. En utilisant le Lean, l’excellence opérationnelle, j’ai participé à des industrialisations sur des projets pour la SNCF, PSA et autres. La philosophie de ces méthodes m’a amené à la culture Agile, qui donnent une perspective différente aux organisations de travail. Convaincue de la valeur de la facilitation comme support aux experts techniques, j’aime adapter la théorie à des solutions pratiques et concrètes.
+Aujourd’hui coach Agile et Scrum Master pour des équipes de développement de produits numériques, je souhaite partager des bonnes pratiques ainsi que les faux pas concernant le travail en collectif.'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/66.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="017" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Emmanuel Tran"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value=''/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/70.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="018" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Éric Blanchard"/>
+      <column name="email" value=" "/>
+      <column name="company" value="ERAMET SERVICES"/>
+      <column name="biography" value='Architecte Cloud chez ERAMET SERVICES'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/67.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="019" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Etienne Guenyot"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='JVM developer, I began to work with Java 8 in a bank insurance context in 2015. Thank I went to a more full-stack environment with Java and Angular 2+. More lately I switched in the marketplace domain where I could begin to work with Kotlin and Reactor.'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/42.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="020" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Fabien Vergnes"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value=''/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/19.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="021" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Fabrice Rabarijaona"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Consultant freelance / FlutterFlow Ambassador.
+Fabrice travaille dans l’informatique depuis plus de 15 ans.
+Ses expériences sont essentiellement liées à la mise en place de systèmes et sites web à fort trafic en B2C et B2B construits avec le langage Java et Spring framework avec tout ce qui tourne autour : Microservices, Cloud, REST, Nosql…
+À ses heures perdues, Fabrice développe des applications mobiles avec le framework de Google Flutter. Très impliqué au sein de la communauté FlutterFlow, il anime la chaîne YouTube FlutterflowFab.'/>
+      <column name="twitter" value="https://twitter.com/rabfabs"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/47.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="022" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Fanny Klauk"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Accompagnatrice agile, co-créatrice de TADx, j’ai parcouru des kilomètres de lignes de développements, d’analyses fonctionnelles et d’architectures orientées données avant de revenir à mes premières amours : le travail d’équipe, dans un cadre motivant et bienveillant, autour de produits utiles et vivants.
+C’est donc tout naturellement vers l’agilité que mes dernières missions se sont tournées. Depuis, je glane le meilleur pour alimenter les équipes que j’accompagne au quotidien : mindset DevOps et craftership, outils au service de la qualité et du déploiement, techniques de design thinking pour capter les vrais besoins et l’amélioration continue des produits et des équipes.'/>
+      <column name="twitter" value="https://twitter.com/klf37"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/39.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="023" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="François Nollen"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Staff Engineer &amp; Tech Ambassador at SNCF Connect &amp; Tech. Member of « TOSIT : The Open Source I Trust » (https://tosit.fr). Committer « Tock: The Open Conversation Kit » (https://doc.tock.ai).
+Topics: Flutter ChatBots OpenSource DevOps Observability Git Maven KotlinJVM…'/>
+      <column name="twitter" value="https://twitter.com/FrancoisN0"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/62.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="024" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="François Ponchon"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value=''/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/64.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="025" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="François Teychene"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Cloud Developer @ Startree, meetup addict &amp; organizer @ Montpellier, SunnyTech team.
+Développeur couteau suisse pouvant intervenir du Javascript à la table de routage. Mes passions actuelles sont le Rust, le DevOps et le Scala en plus de vouloir mettre des conteneurs partout.'/>
+      <column name="twitter" value="https://twitter.com/fteychene"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/55.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="026" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Frédéric Wickert"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value=''/>
+      <column name="twitter" value="https://twitter.com/FredericWickert"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/6.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="027" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Gaetan Eleouet"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='Dans mes jeunes années être geek n’était pas un métier et pourtant je suis aujourd’hui développeur depuis 15 ans. Animé par des convictions fortes sur l’impact des développeurs sur le monde, je transmets et j’enseigne dans le cadre d’atelier de code et en vacation en école d’ingénieur. Au-delà de mon métier, c’est aussi une passion : je code pour le plaisir dans des projets personnels et lors de compétition de programmation.'/>
+      <column name="twitter" value="https://twitter.com/egaetan"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/12.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="028" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Guillaume Hospital"/>
+      <column name="email" value=" "/>
+      <column name="company" value="Michelin"/>
+      <column name="biography" value=''/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/33.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="029" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Guillaume Roussel"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='Athlète de la tech la semaine et de la course à pied le weekend, Guillaume se donne autant à fond pour courir un marathon que pour comprendre une nouvelle techno. Son triathlon favori: devops - cloud - broker de messages. Guillaume alias “guigui” vit à 100 à l’heure. Mais comme il aime les challenges, il n’a pas hésité à trouver de la place dans son agenda pour transmettre ses connaissances. Forcément la haute disponibilité ça lui parle, car après tout, si un broker RabbitMQ peut le faire, pourquoi pas lui !'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/23.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="030" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Gérald Sadde"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Avocat depuis 2004, Gérald SADDE est le cofondateur du cabinet Lyonnais SHIFT avocats qui intervient particulièrement en matière de Technologies de l’Information et de la Communication et dans le domaine plus vaste des technologies avancées impliquant des méthodes contractuelles adaptées. Ses missions impliquant une importante dimension technologique, les avocats du cabinet ont tous une forte culture logicielle et technologique du fait de leur parcours ou des dossiers traités par le passé.
+
+Depuis 17 ans notre cabinet a suivi des centaines de startups, PME et ETI dans leurs contentieux, leurs négociations contractuelles, leur conformité légale, incluant le RGPD et des missions de DPO. La compétence du cabinet s’étend à la réglementation du web, de la sécurité informatique, des biens numériques, du ecommerce, …
+
+Par ailleurs, l’ADN du cabinet et particulièrement marqué par sa proximité avec la startup d’édition logicielle en SaaS Legal Pilot, legaltech de « document automation », à laquelle a activement participé le cabinet SHIFT avocats en tant que cofondateur.'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/71.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="031" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Henri Gomez"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Je travaille dans l’industrie logicielle depuis plus de 35 ans.
+J’ai commencé ma carrière coté développement, Développeur puis Chef de Projet et pour finir Architecte Logiciel. J’ai ensuite glissé vers l’ingénierie logicielle, comme Tech QA puis Architecte CI. Et je sévis maintenant coté Run, Opérations, DevOps et SRE.
+Il y a bien longtemps, je suis tombé dans l’OpenSource, un peu par hasard et j’y suis resté par conviction. Membre de l’Apache Fondation, pour avoir contribué à Apache Tomcat, je suis plus ASL que GPL mais l’important est ailleurs.
+Une overdose de couches d’abstractions fait que mes hobbies tournent autour de l’informatique embarquée et de machines des années 80 que j’aime ramener à la vie, mon monitoring se faisant avec un oscilloscope et mes déploiements avec un fer à souder.
+Si vous me demandez quel est le meilleur ordinateur que j’ai jamais rencontré, ma réponse sera bien évidemment le Commodore 64 :)'/>
+      <column name="twitter" value="https://twitter.com/hgomez"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/43.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="032" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Jean-Pascal Thiery"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='Lorsque je me suis lancé dans le monde de l’informatique, j’ai dés le début souhaité mettre à disposition toutes les possibilités offertes par les outils informatisés afin de développer la communication en favorisant les échanges.'/>
+      <column name="twitter" value="https://x.com/jpthiery"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/44.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="033" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Johanna Millet"/>
+      <column name="email" value=" "/>
+      <column name="company" value="CGI"/>
+      <column name="biography" value='Développeuse depuis 4 ans sur le bassin clermontois dans une équipe de data-scientistes pour l’industrie et vacataire à l’IUT informatique à ses heures perdues, Johanna est à l’origine spécialisé dans le .NET et se passionne aussi grandement pour le Python, Azure, le Devops, l’architecture logicielle et l’automatisation.
+Elle aimerait partager son expérience et ses conseils dans le contexte de l’industrie 4.0 qui nécessite d’aller vite tout en étant inventif et flexible.'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/26.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="034" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="José Paumard"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='Passionate about programming computers for over 25 years, Jose made his debut in assembler and C, C for SIMD parallel machines before adopting Java as an object-oriented language. PhD in applied maths and computer science, assistant professor at the University Sorbonne Paris Nord for 25 years, and now Java Developer Advocate at Oracle. Java Champion Alumni, JavaOne Rockstar, Jose also has a passion for education and knowledge transfer. He gives talks in major international Java conferences (JavaOne, Oracle CodeOne, Devoxx in Antwerp, Paris and London, DevNexus). He wrote numerous technical articles on Java technologies for Java Magazine, Oracle Technolgy Network. He writes a blog, Java le soir, French documentary source on Java technologies for thousands of french speaking developers around the world. He is a member of the french Paris Java User Group, has been a co-organizer of the conference Devoxx France for three years, and disorganizer of JChateau, an unconference held in the Chateau of the Loire Valley. He maintains a french YouTube channel with more than 80 hours of Java courses. He is also a Pluralsight author in the Java space.'/>
+      <column name="twitter" value="https://x.com/JosePaumard"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/29.png"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="035" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Julien Briault"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='Network Engineer SRE chez Deezer et IT Manager à mes heures perdues au Restos du Cœur et développeur Go sur le temps qu’il me reste, je suis un passionné d’informatique, de réseau et de logiciels libres. Je travail actuellement sur une solution Open Source de gestion de la configuration d’équipements réseau à destination des équipes IT.'/>
+      <column name="twitter" value="https://x.com/ju_hnny5"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/3.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="036" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Julien Buret"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='Julien participe à plein temps depuis une bonne vingtaine d’années maintenant au développement d’un grand nombre d’applicatifs, avec une forte appétence pour l’open-source. Il est Principal Engineer chez SNCF Connect &amp; Tech'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/61.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="037" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Julien Tanguy"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value=''/>
+      <column name="twitter" value="https://x.com/jutanguy"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/2.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="038" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Karim Bogtob"/>
+      <column name="email" value=" "/>
+      <column name="company" value="Datadog"/>
+      <column name="biography" value='Je suis un développeur qui aime les casse-têtes et les problèmes d’informatique.
+Aujourd’hui, je travaille sur le développement de fonctionnalités sur des architectures cloud native chez Datadog, en concevant des solutions scalables et en maintenant les systèmes qui en découlent.
+J’aime l’idée de faire en sorte que la plus petite machine puisse traiter le plus gros volume de données possible. Mon travail est principalement d’essayer de combiner ce motto avec pragmatisme, mentoring et collaboration !'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/69.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="039" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Kévin Beaugrand"/>
+      <column name="email" value=" "/>
+      <column name="company" value="CGI"/>
+      <column name="biography" value='
+☁️🤖Developer and craftsman in the field of information technology 🚀☕️ - Microsoft MVP Azure.
+With more than 10 years of experience in software analysis and design in various industry sectors I have become an expert in implementing solutions based on .NET Azure Cloud and IoT technologies. I am also passionate about innovation, new technologies and technical challenges.'/>
+      <column name="twitter" value="https://x.com/kbeaugrand"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/7.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="040" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Laurent Grangeau"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='Laurent Grangeau is a Cloud Solution Architect with more than 10+ years of experience. Former Java developer, he has since developed in .NET, with Agile and DevOps mindsets. He has been experimenting with cloud providers for more than 5+ years. Docker enthusiast from the beginning, he has experienced with building microservices and distributed systems. He loves to automate things and run distributed applications at scale.'/>
+      <column name="twitter" value="https://x.com/laurentgrangeau"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/10.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="041" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Louis Tournayre"/>
+      <column name="email" value=" "/>
+      <column name="company" value="Zenika"/>
+      <column name="biography" value='Formateur, développeur passionné et surtout Dev qui automatise l’ Ops @ Zenika Lyon.
+Mes sujets de cœur sont Dev côté backend, kubernetes, cloud, automatisation, …
+J’aime le partage et l’échange en tant que speaker et aussi en tant qu’organisateur de meetup (co-fondateur et co-organisateur du GDG Cloud IoT Lyon).'/>
+      <column name="twitter" value="https://x.com/_louidji"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/5.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="042" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Ludovic Piot"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='CTO chez Duonyx, Ludovic est tombé dans le DevOps en 2004, soit… 3 ans avant l’invention du mot DevOps. ;-) A l’époque, il fait des déploiements en Infra as Code sur les premiers serveurs blade, en bare-metal.
+Il adore aider les équipes projet à gagner en autonomie via l’usage d’outils et d’automatisation et à travers une collaboration libre et sans contrainte. C’est donc tout naturellement qu’il a accueilli Docker et Kubernetes comme les outils ultimes pour l’aider dans sa marotte favorite.
+En meetups comme en conférences, il aime partager son amour pour le Cloud, l’Infra as Code, le DevOps et les sujets d’optimisation de performance.'/>
+      <column name="twitter" value="https://x.com/lpiot"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/9.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="043" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Manuel Luzarreta"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='Manuel Luzarreta - Ops ascendant DevOps chez Clever Cloud. Travaille dans l’équipe infrastructure qui gère la plateforme Clever Cloud et s’intéresse notamment à l’automatisation du déploiement et du maintien des briques d’infrastructures (orchestrateur, hyperviseurs, load balancers…).'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/28.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="044" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Marc Chevaldonné"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value=''/>
+      <column name="twitter" value="https://x.com/Code_1st"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/50.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="045" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Marie-Laure Momplot"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Je suis Marie-Laure Momplot 👱‍♀️.
+
+Je travaille pour Michelin depuis fin 2009.
+
+Analyste-développeuse de par mes études j’ai commencé par du dev java, un peu devops, de l’analyse fonctionnelle, du scrum master et du chef de projet! Je suis un peu un couteau suisse finalement 😏 ! D’ailleurs je me suis relancée dans l’aventure du développement il y a deux ans, je fais du kafka mais surtout du kafka streams, du kubernetes tanzu :)'/>
+      <column name="twitter" value="https://x.com/MaLainDa"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/30.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="046" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Mathilde Lorrain"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='Mathilde a percé le secret de la fusion nucléaire et ne s’éteint jamais. Quand on lui a dit que son API pourrait être aussi réactive qu’elle, forcément, elle n’a pas pu s’empêcher… Passionnée de DevOps et de Backend, elle aime quand les choses sont directes et efficaces. Comme elle. D’ailleurs, elle utilise volontiers son surplus d’énergie pour transmettre ses secrets. Il paraît même qu’elle va venir faire une conf…'/>
+      <column name="twitter" value="https://x.com/mathildelorrain"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/22.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="047" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Maud Robin"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value=''/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/59.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="048" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Moustapha Agack"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='I smash my keyboard, sometimes it makes cool stuff'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/48.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="049" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Nastasia Fouret"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='Je suis actuellement développeuse au pôle Data / Business Intelligence de Lojelis , j’ai commencé comme statisticienne pendant 4 ans dans un laboratoire de recherche au sein d’un CHU. Depuis, j’ai un fort intérêt pour le machine learning, que je cultive notamment en donnant des cours sur le sujet à l’école Hexagone à Clermont-Ferrand.'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/20.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="050" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Nicolas Torion"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Je suis développeur full-stack au BearStudio, studio d’accompagnement pour porteurs de projet et de développement d’applications web et mobile basé à Rouen.
+
+https://www.bearstudio.fr/
+
+Et depuis peu j’ai rejoint l’organisation de Codeurs en Seine.'/>
+      <column name="twitter" value="https://x.com/NicoTotor"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/21.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="051" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Nolwenn Doucet"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Docteur en sciences des matériaux reconverti en développeur. Je suis rapidement tombé dans la culture du software craftsmanship qui pousse à s’intéresser au problème à résoudre avant de proposer et de mettre en place des solutions.
+
+J’apprécie le partage de connaissance et je tente de faire en sorte que les devs prennent plus de plaisir dans leur travail en co-organisant le meetup des crafters de Lyon.'/>
+      <column name="twitter" value="https://x.com/DoNolwenn"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/49.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="052" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Olivier Poncet"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='Geek, ex-nerd repenti, je code, je teste, je bricole, je soude et parfois fait sauter les plombs. CTO et spécialiste du magiciel, je suis aussi libriste dans l’âme et très impliqué dans le mouvement des logiciels libres.'/>
+      <column name="twitter" value="https://x.com/ponceto91"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/4.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="053" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Paul Dennetiere"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value=''/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/54.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="054" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Pierre-Marie Aubineau"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Je suis passionné par le développement et le game design. J’ai eu la chance d’avoir très jeune des ordinateurs entre les mains, et l’envie de m’en servir pour construire plein de choses ne m’a jamais quitté !
+
+J’ai notamment pu travailler sur de la création de jeu vidéo, de la domotique et de la réalisation de site communautaire. Au quotidien, je travaille sur des technos C# .NET, Java, Kafka, et dans mon temps libre, je fais la part belle aux jeux (de société comme jeux vidéo) et à la musique.
+
+Les domaines qui m’intéressent et me plaisent sont vastes, et je prends beaucoup de plaisir à partager et à échanger autour de la tech. J’ai d’ailleurs cherché à mutualiser mon expérience de création de jeux vidéo en écrivant des articles sur Game Code Club.
+
+'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/17.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="055" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Raphaël Gonçalves"/>
+      <column name="email" value=" "/>
+      <column name="company" value="Michelin"/>
+      <column name="biography" value=''/>
+      <column name="twitter" value="https://x.com/R4phG"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/34.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="056" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Rémi Verchère"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='D’abord chez les Devs sur des solutions embarquées, j’ai au fur et à mesure des mes postes basculé chez les Ops sur des solutions d’infrastructure diverses et variées.
+
+Pendant plus de 10 ans j’ai donc bossé avec les Devs et les Ops, affichant une volonté de proposer des choix autour des solutions Open Source.
+
+Je suis maintenant consultant depuis plusieurs années, et apporte aux entreprises mon savoir-faire sur des sujets d’automatisation, observabilité et cloud native infrastructure, en tant qu’Ops au service des Devs.'/>
+      <column name="twitter" value="https://x.com/rverchere"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/8.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="057" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Safia Zouaoui"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography"
+              value='J’ai à cœur d’imaginer et concevoir des expériences utilisateurs qui répondent aux besoins et enjeux des utilisateurs et améliorent leur quotidien, et ceci depuis le début de ma carrière en 2005. Forte de cette expérience enrichissante, j’ai eu envie de partager mes connaissances et mon expertise avec mes pairs, pour les faire grandir dans le domaine et leur apprendre à ne pas tomber dans certains pièges. C’est donc tout naturellement qu’en 2019 j’ai co fondé le centre de compétence UX UI Lyonnais pour le client Enedis. En 2021 suite à la rencontre des équipes de designers parisiens, nous avons fait le choix de co fonder un centre de compétence unique et national, afin d’apporter plus de cohérence dans les pratiques de design au sein de l’entreprise et améliorer l’expérience utilisateurs.'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/58.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="058" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Samuel Morel"/>
+      <column name="email" value=" "/>
+      <column name="company" value="Sopra Steria"/>
+      <column name="biography" value='Architecte Logiciel @ Sopra Steria depuis 2016, je suis un touche à tout !
+Formateur, recruteur, manager, j’aime varier les plaisirs.
+
+L’industrialisation 🚀 a toujours été pour moi une approche séduisante, et dans mes différentes expériences, il y a toujours eu une partie d’automatisation 🤖
+J’ai essentiellement travaillé dans des environnements Java, mais également plus récemment sur de l’Angular et bien sûr un peu de Devops 🛠 , surtout dans le cloud ☁
+Adepte de la sécurité applicative, je suis attentif à toute l’actualité sécu 🔐 (riche en ce moment … 😱)
+
+En dehors du boulot, je fais pas mal de ski 🎿, du tennis 🎾, et beaucoup de VTT surtout en descente et en skatepark 🚵‍♀️
+
+Au plaisir de vous rencontrer 👋'/>
+      <column name="twitter" value="https://x.com/samuelmorel"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/35.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="059" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Sandrine Banas"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Expert technique avec plus de 20 ans d’expérience. J’ai participé à de nombreux projets de sites internet, intranet ou extranet, avec de solides compétences techniques en analyse, architecture, conception et développement.
+
+Actuellement je travaille sur des projets Java (Microservices / Spring boot), Angular / Ionic et AWS.'/>
+      <column name="twitter" value="https://x.com/cosjava"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/63.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="060" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Simon Maurin"/>
+      <column name="email" value=" "/>
+      <column name="company" value="Leboncoin"/>
+      <column name="biography" value='Lead architect @leboncoin
+
+Centres d’intérêts : Socio-technical architecture / DDD / Craft / Data Engineering'/>
+      <column name="twitter" value="https://x.com/MaurinSimon"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/53.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="061" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Sofia Lescano"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Backend Engineer chez Ankorstore'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/65.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="062" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Stephane Philippart"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Développeur un jour, développeur toujours !
+
+Développeur Java depuis de nombreuses d’années, j’ai la joie de connaître le JDK 1.1, JEE, Struts, … et maintenant Spring, Quarkus, Angular, Groovy, Golang, …
+
+Durant plus d’une dizaine d’années j’ai été Architecte Logiciel, métier qui m’a permis de me confronter à de nombreuses problématiques inhérentes aux systèmes d’information toujours complexes dans les grands groupes.
+
+J’ai eu aussi d’autres vies, notamment dans l’automatisation et la livraison avec la mise place de chaînes de CI/CD basées sur les pipelines as code de Jenkins.
+
+Aimant particulièrement le partage et les relations avec les développeurs je suis devenu DevRel au sein d’OVHcloud. Cette nouvelle aventure me permet de continuer à être au milieu de technologies que j’affectionne comme Kubernetes par exemple mais aussi de continuer à apprendre et découvrir énormément de nouvelles choses. J’ai, notamment, découvert le monde passionnant de l’intelligence artificielle et plus particulièrement du machine learning.
+
+Tout en gardant à l’esprit une de mes principales motivation en tant que DevRel : rendre les développeuses et développeurs heureux.
+
+Toujours dans le partage, je suis le co-créateur du Meetup TADx à Tours, permettant la découverte et partage autour de différents sujets de la tech.'/>
+      <column name="twitter" value="https://x.com/wildagsx"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/38.png"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="063" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Stéphanie Monnerie"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='
+Initialement formée à la pharmacologie, je suis rapidement tombée dans la donnée et ai choisi de me lancer dans l’analyse et le traitement de cette dernière via le fabuleux monde de la bio-informatique.
+
+Je suis allée jusqu’à soutenir une thèse en 2019 avant d’ouvrir mon esprit à des horizons plus larges en devenant consultante Data Scientist dans le cabinet de conseil Datalyo. Depuis je travail sur divers sujets pour nos clients dans le but de les accompagner au mieux.
+
+J’ai également la chance de pouvoir donner régulièrement des formations, en école ainsi qu’à un public professionnel, allant de l’acculturation à la formation technique.'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/15.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="064" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Sylvain Dedieu"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Bonjour à vous,
+
+Passionné de développement et technologies front-end/mobile, je me suis spécialisé dans ce domaine en tant que leader technique.
+
+Au sein de Kaizen Solution, j’évolue donc avec ce statut au sein de différentes équipes et pour différents clients.
+
+Formateur en interne, je monte et dispense des formations sur Angular, AngularJS, VueJS et Flutter.
+
+Depuis 2019, j’ai également la chance d’intervenir à l’Université UGA (Grenoble) pour dispenser une UE sur le développement mobile cross-plateforme aux Master 2 Génie Informatique.
+
+La veille technique et les projets personnels occupent également une grande partie de mon temps.
+
+Le reste est principalement dédié au sport et à la nourriture ;).'/>
+      <column name="twitter" value="https://x.com/DedieuS"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/16.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="065" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Sylvain Lequeux"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Sylvain est Data Engineer chez Ekinox.
+
+Passionné par le software craftsmanship, il l’applique dès qu’il peut. En traitement de la donnée sur Spark ou Kafka, mais également lors de l’accompagnement d’équipes de Data Scientists.”'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/13.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="066" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Sébastien Viale"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value=''/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/31.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="067" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Thomas Jouve"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='
+Développeur depuis … longtemps, un peu touche à tout de l’infra à l’algorithmie. J’adore bricoler, démonter, réparer des trucs ce qui me prends beaucoup de temps mais qui me permet aussi de découvrir beaucoup de choses ;-)
+
+Comme l’informatique est une passion pour moi, j’aime beaucoup partager ce que j’ai appris.'/>
+      <column name="twitter" value="https://x.com/farunty"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/18.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="068" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Tom Taranto"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Tom est Machine Learning Engineer chez Ekinox.
+
+En eternel curieux, il ne cesse de s’intéresser à de nouveaux sujets. Des dernières avancées en Machine learning aux bonnes pratiques de développement.'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/72.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="069" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Victor Gallet"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='
+Aujourd’hui, Staff Software Engineer chez ManoMano, j’ai été Directeur technique pour la société Zenika ainsi que Consultant Java
+
+Confluent Certified Trainer (Apache Kafka)
+
+Organisateur de la conférence AlpesCraft'/>
+      <column name="twitter" value="https://x.com/GalletVictor"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/41.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="070" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Vincent Aubrun"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Après un début de carrière dans une banque et un virage vers les marketplace, j’officie désormais en tant que Staff Software Engineer sur la plateforme de paiement de ManoMano.
+
+Grognon en chef'/>
+      <column name="twitter" value=""/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/40.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="071" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Virginie Casavecchia"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Diplômée en 2010 d’un Master de cryptologie et sécurité informatique, je travaille depuis 2011 au sein de la société Actoll proposant des solutions de paiement par carte bancaire sur autoroute, dans les transports en commun ou encore pour du don, ainsi que des solutions de billettique (~gestion de titres de transports) pour les réseaux de transport en commun de diverses tailles.
+
+Initialement développeuse, je suis ensuite passée côté intégration et qualification des solutions de paiement.
+
+Je suis aujourd’hui à la fois responsable qualification, intégratrice, formatrice en interne ou pour les clients, support client, rédactrice de documentations : en somme baby-DevRel 🦄🥑.
+
+Parallèlement, je suis membre d’un groupe de musique intitulé Les Marmottes depuis 2011. Nous faisons principalement des reprises instrumentales de morceaux de métal, bandes originales de films/séries/jeux vidéos.'/>
+      <column name="twitter" value="https://x.com/La_Fee_Dragee"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/24.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="072" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Yann Schepens"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Originellement développeur PHP, je suis devenu avec le temps expert technique, Architecte, Évangéliste, Coach technique (chef de projet si nécessaire) ; en résumé : Tech Lead.
+
+Mes domaines de prédilection ?
+
+La POO
+La qualité
+Le process DevOps
+Le coaching technique
+Le PHP'/>
+      <column name="twitter" value="https://x.com/YannSchepens"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/45.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="073" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Yannick Guern"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Je m’appelle Yannick Guern connu sous les réseaux sous le pseudo d’Akanoa.
+
+Je travaille chez Clever Cloud en tant que développeur base de données.
+
+Je fais du Rust depuis plus de 3 ans maintenant et j’essaie de présenter la beauté de cet écosystème au plus grand nombre.
+
+Mon plaisir est de vulgariser des concepts pour les amener à la compréhension du plus grand monde, vous pouvez retrouver mon travail ici.'/>
+      <column name="twitter" value="https://x.com/_Akanoa_"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/57.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>
+

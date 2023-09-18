@@ -11,8 +11,21 @@ import {PlanningExternalDropService} from "../../services/PlanningExternalDropSe
   styleUrls: ['./admin-planning-list-talk.component.sass']
 })
 export class AdminPlanningListTalkComponent implements AfterContentInit {
-  @Input() events: Observable<CalendarEvent<CalendarTalk>[]> = of([]);
+  @Input() talks: Observable<CalendarEvent<CalendarTalk>[]> = of([]);
   eventsDefault: CalendarEvent<CalendarTalk>[] = [];
+  searchValueFrom: string = "";
+
+  clearFrom() {
+    this.searchValueFrom = "";
+  }
+
+  filterWithSearchBox(): CalendarEvent<CalendarTalk>[] {
+    if (this.searchValueFrom === "") {
+      return this.eventsDefault;
+    }
+    return this.eventsDefault
+      .filter(elt => elt.title.toUpperCase().includes(this.searchValueFrom.toUpperCase()))
+  }
 
   constructor(private planningExternalDropService: PlanningExternalDropService) {
     this.planningExternalDropService.eventEmitter.on((data: PlanningExternalDropEventArgs) => {
@@ -49,7 +62,7 @@ export class AdminPlanningListTalkComponent implements AfterContentInit {
   }
 
   ngAfterContentInit(): void {
-    this.events.subscribe(events => {
+    this.talks.subscribe(events => {
       this.eventsDefault = events
     })
   }

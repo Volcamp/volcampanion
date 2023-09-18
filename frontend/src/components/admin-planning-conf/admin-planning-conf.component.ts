@@ -13,8 +13,6 @@ import {TalkPlanning} from "../../data/dto/input/TalkPlanning";
 import {AdminPlanningDateComponent} from "../admin-planning-date/admin-planning-date.component";
 import {PlanningMapper} from "../../data/dto/output/mappers/PlanningMapper";
 import {SnackBarService} from "../../services/SnackBarService";
-import {APIRoutes} from "../../data/APIRoutes";
-import {ACTIVE_ID_CONF} from "../../services/ConferenceService";
 
 export const PLANNING_CALENDAR = "planningCalendar"
 
@@ -46,7 +44,7 @@ export class AdminPlanningConfComponent {
         abstractTalkService.getTalks(conf.id.toString()).subscribe(talks => {
           talks.forEach(talk => {
             this.talks.subscribe(talks => {
-              if (talk.format.type !== PlanningType.DELIMITER_DAY, talk.format.type !== PlanningType.BREAK) {
+              if (talk?.format?.type !== PlanningType.DELIMITER_DAY) {
                 const occurrence: number = plannings.filter(planning => {
                   if (planning.getType() !== PlanningType.BREAK && planning.getType() != PlanningType.DELIMITER_DAY) {
                     return (planning as TalkPlanning).talk.id == talk.id
@@ -95,9 +93,17 @@ export class AdminPlanningConfComponent {
   }
 
   upload() {
-    this.abstractPlanningService.clearAddPlanning(this.collectData().map(planning => {
-      return PlanningMapper.toCreateDTO(planning as TalkPlanning);
-    })).subscribe(data => {
+    this.abstractPlanningService.replacePlanning(this.collectData()
+      .map(elt => {
+        var res = elt as TalkPlanning;
+        if (res.talk.format.type == PlanningType.BREAK) {
+          res.room = null;
+        }
+        return elt;
+      })
+      .map(planning => {
+        return PlanningMapper.toCreateDTO(planning as TalkPlanning);
+      })).subscribe(data => {
       if (data) {
         this.snackBarService.open(`Le planning a été sauvguarder`, 'Fermer')
       } else {
@@ -107,7 +113,7 @@ export class AdminPlanningConfComponent {
   }
 
   save() {
-    window.localStorage.setItem(PLANNING_CALENDAR,JSON.stringify(this.collectData()));
+    window.localStorage.setItem(PLANNING_CALENDAR, JSON.stringify(this.collectData()));
   }
 
   delete() {
@@ -120,7 +126,7 @@ export class AdminPlanningConfComponent {
     if (plannings == null) {
       this.plannings = this.abstractPlanningService.getPlannings(this.conf.id.toString());
     } else {
-      const planningsAny : any[] = JSON.parse(plannings);
+      const planningsAny: any[] = JSON.parse(plannings);
       this.plannings = of(planningsAny.map(planning => {
         return PlanningMapper.toTalkPlanning(planning);
       }))
