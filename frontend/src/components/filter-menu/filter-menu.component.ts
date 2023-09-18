@@ -1,6 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {PlanningType} from "../../data/dto/input/Planning";
-import {PlanningTheme} from "../../data/dto/input/Theme";
+import {FILTERS_PLANNING_THEME, PlanningTheme} from "../../data/dto/input/Theme";
 import {compareEqualDate, formatDate} from "../../common/DateFunc";
 import {MAT_BOTTOM_SHEET_DATA} from "@angular/material/bottom-sheet";
 import {AbstractConferenceService} from "../../services/abstract/AbstractConferenceService";
@@ -14,7 +14,7 @@ import {AbstractFormatService} from "../../services/abstract/AbstractFormatServi
 })
 export class FilterMenuComponent {
   planningsType: PlanningType[] = []
-  planningsTheme: PlanningTheme[] = []
+  planningsTheme: any[] = FILTERS_PLANNING_THEME
   datesConference: Date[] = []
 
   planningsTypeSelected: PlanningType[] = []
@@ -37,7 +37,12 @@ export class FilterMenuComponent {
 
 
     themeService.getThemes().subscribe(data => {
-      this.planningsTheme = data.map(theme => theme.name);
+      this.planningsTheme = data.map(theme => {
+        return {
+          name: theme.name,
+          description: theme.description
+        };
+      });
     })
 
     conferenceService.getCurrentConference().subscribe(conference => {

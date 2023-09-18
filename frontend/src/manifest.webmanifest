@@ -2,7 +2,7 @@
   "name": "Volcampanion",
   "short_name": "Volcampanion",
   "theme_color": "#6FC660",
-  "background_color": "white",
+  "background_color": "#6FC660",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

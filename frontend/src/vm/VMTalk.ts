@@ -5,17 +5,21 @@ import {getColorTheme, getIconFormat} from "../common/ColorThemeAndTypeEmoji";
 import {DataParamService} from "../services/DataParamService";
 import {FeedbackTalkInitEventArgs} from "../event/FeedbackTalkInitEventArgs";
 import {FeedbackInitService} from "../services/FeedbackInitService";
+import {Room} from "../data/dto/input/Room";
 
 export class VMTalk {
   talk: Talk | undefined | null = null
+  room: Room | undefined
+  planningTime: string = "";
   colorTheme: string = "";
   iconFormat: string = "";
   noConnection: boolean = false;
 
   constructor(private route: ActivatedRoute, private dataService: AbstractTalkService,
               private dataParamService: DataParamService, private feedbackInitService: FeedbackInitService) {
-    this.talk = this.dataParamService.storageParam;
-
+    this.talk = this.dataParamService.storageParam?.talk;
+    this.room = this.dataParamService.storageParam?.room;
+    this.planningTime = this.dataParamService.storageParam?.planningTime;
   }
 
   init() {
