@@ -19,7 +19,6 @@ export class TalksListComponent implements AfterContentInit {
   }
 
   navigate(talkPlan: any) {
-    console.log("PLAN : ", talkPlan)
     this.navigation.goToTalk(talkPlan);
   }
 
