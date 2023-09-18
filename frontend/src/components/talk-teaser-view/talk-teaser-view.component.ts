@@ -14,14 +14,14 @@ import {TalkPlanning} from "../../data/dto/input/TalkPlanning";
 
 export class TalkTeaserViewComponent implements OnInit {
   @Input() talkPlanning!: TalkPlanning;
-  @Input() inItem : number = 0;
+  @Input() inItem: number = 0;
   color: string = '';
   inFavorite: boolean = false;
   startDate = new Date();
   endDate = new Date();
   speakersNames!: string;
 
-  height : number = 0;
+  height: number = 0;
   @ViewChild('element1')
   element1!: ElementRef;
 
@@ -49,13 +49,14 @@ export class TalkTeaserViewComponent implements OnInit {
   }
 
   onClick(numberFavorite: number) {
+    if (!this.talkPlanning.room) return;
     this.talkPlanning.room.capacity = numberFavorite
   }
 
-  ngAfterViewInit(){
-    if(this.height <= 0){
+  ngAfterViewInit() {
+    if (this.height <= 0) {
       // @ts-ignore
-      setTimeout(_  => this.height = this.element1.nativeElement.offsetHeight + this.element2.nativeElement.offsetHeight +
+      setTimeout(_ => this.height = this.element1.nativeElement.offsetHeight + this.element2.nativeElement.offsetHeight +
         this.element3.nativeElement.offsetHeight + this.element4.nativeElement.offsetHeight + 10);
     }
   }

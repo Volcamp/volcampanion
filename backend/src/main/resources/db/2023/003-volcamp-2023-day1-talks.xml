@@ -1,0 +1,566 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+  <changeSet id="001" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Accueil Café Jour 1"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'BREAK_60M')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="002" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="L'intro Volcamp"/>
+      <column name="description"
+              value="L’intro Volcamp 2023 par la team Geek&amp;Terroir.
+Présentation de la conférence, du contenus, du programme et de nos sponsors."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="003" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Keynote - Histoire de l'informatique"/>
+      <column name="description"
+              value='Pour comprendre où nous allons, mieux vaut savoir d’où nous venons.
+Mais aussi pour le plaisir de la découverte et de la connaissance… je propose une petite session d’histoire de l’informatique'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="004" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Compter les moutons à grande échelle"/>
+      <column name="description"
+              value='Datadog permet de créer des métriques automatiques à partir d’événements d’observabilité front-end (Real User Monitoring). Par exemple, compter les sessions utilisateurs qui passent par la page d’un produit puis qui finissent par l’acheter après avoir vu les avis.
+
+Dans ce talk, nous allons voir comment le backend du produit RUM fait pour compter des documents qui évoluent dans le temps, tout en supportant une volumétrie à l’échelle de 100% du trafic de nos clients.
+
+On parlera donc de flot d’ingestion basé Kafka, de dé-duplication d’événements et d’agrégation de métriques à grande échelle via des structures de données probabilistes ou approximatives, et comment le backend RUM associe toutes ces techniques pour offrir une solution flexible et hautement scalable.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="005" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Construire soi-même son clavier mécanique, idée bizarre ou idée de génie ?"/>
+      <column name="description"
+              value='Après avoir longtemps voulu un clavier ““ergonomique””, j’ai décidé de me lancer moi-même dans sa construction
+
+Ce que je ne savais pas, c’est que j’allais plonger dans le monde merveilleux des claviers mécaniques et du ““do it yourself””
+
+On sait tous utiliser le clavier standard AZERTY dit 100%, mais est-ce que cette disposition est toujours pertinente en 2023 ?
+
+En quoi faire son propre clavier peut il être intéressant pour les développeurs et développeuses que nous sommes ?
+
+Survolons ensemble les différentes options qui s’offrent à nous aujourd’hui.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="006" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Explorons l'évolution de l'UI/UX mobile"/>
+      <column name="description"
+              value='Skeuomorphisme, flat design, material design, neumorphisme, gestion multi-tâche en horizontal, en vertical… raccourcis, widgets, assistants vocaux. L’interface graphique et les interactions qu’on réalise sur les smartphones ont bien évolué depuis 2008.
+
+Dans ce talk, je vous propose de voyager avec moi dans l’historique de ces pratiques et son évolution au cours des années.
+
+Quels étaient les impacts pour les utilisateurs ? Pour nous développeurs ? J’aborderai également la convergence des pratiques et comment cela favorise les solutions crossplatform côté UI/UX.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'UX_UI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="007" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Codons un jeu du pendu"/>
+      <column name="description"
+              value='Connaissez-vous les coding dojo ?
+
+Si oui, vous savez qu’il s’agit de résoudre un petit problème de code loin de la pression de la production. Si vous ne le saviez pas, désormais ce n’est plus le cas. C’est l’occasion de découvrir ou de progresser dans l’écriture des tests automatiques, de tenter de nouveaux designs mais surtout de partager et de progresser.
+
+Ici donc point de technologies au sommet de la vague, juste vous, votre binôme et un IDE avec votre langage préféré.
+
+Dans le cadre de cet atelier nous vous proposons donc de coder un jeu du pendu (seule la partie algorithmique et la représentation du mot à trouver) à deux ou trois. Il y a aura deux itérations séparées d’un moment d’échanges. La première sera sans contraintes afin de découvrir l’exercice et la seconde nous obligerons des contraintes qui vous pousseront hors de votre zone de confort afin d’explorer de nouvelles pratiques.
+
+Comme tout coding dojo qui se respecte, il est peu probable d’arriver au bout de l’exercice mais là n’est pas le but !'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_2H')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="008" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Pause"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'BREAK_30M')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="009" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="SRE, Mythes vs Réalités"/>
+      <column name="description"
+              value='Il y a encore trop souvent une vision fantasmée de l’activité SRE, ce qui entraine mécaniquement des retours à la réalité qui sont parfois douloureux.
+
+L’intention de ce talk est de faire un retour d’expérience SRE, sur ce que nous avons pu voir, Jean-Pascal et Henri, dans des entreprises de petites à grandes, des jeunes pousses ou de vénérables institutions.
+
+L’idée est de vous armer pour éviter le maximum de déconvenues et rendre l’activité SRE la plus profitable et efficiente possible.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="010" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Du Flop au Top - Comment améliorer vos POC ?"/>
+      <column name="description"
+              value='Vous aussi vous avez l’impression que les POC que vous développez ne servent à rien ? Ou au contraire, qui n’a jamais connu les fameux “POC en prod” ?
+
+Dans ce talk je partagerais mon expérience en tant que développeuse au sein d’une équipe de data scientistes qui ne fournit (pas) que des POC dans l’objectif de transformer le manufacturing. J’étayerai mon retour d’expérience avec des sujets de computer vision, d’optimisation ou encore de maîtrise procédé.
+
+Mettez-vous en condition : vous devez être efficace. On vous donne carte blanche ! Quelle aubaine, ou peut-être pas…
+
+Ce REX sera illustré par des cas concrets autour du Cloud Azure, l’utilisation de Gitlab et des technologies .Net et Python.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="011" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Comment tester efficacement vos applicatifs d'intelligence artificielle"/>
+      <column name="description"
+              value='Alors que l’intelligence artificielle est de plus en plus intégrée dans les systèmes logiciels, le test de ces systèmes reste un défi complexe et souvent mal compris. Ces systèmes présentent un ensemble unique de difficultés, de leur nature probabiliste aux processus exploratoires et aux contextes en constante évolution inhérents au développement de modèles de Machine Learning.
+
+Dans ce talk, nous discuterons des processus de développement logiciel que les Data Scientists et Machine Learning Engineers peuvent suivre pour assurer la fiabilité et la maintenabilité de leurs logiciels, tout en conservant la capacité d’explorer rapidement les moyens d’améliorer leurs modèles de Machine Learning en réponse aux dérives des données d’entrée ou aux changements des exigences fonctionnelles.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="012" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Pause déjeuner &amp; Lightning"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'BREAK_75M')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="013" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Stable diffusion Retraining on a Custom dataset of Tattoo drawings"/>
+      <column name="description"
+              value='During this Lightning talk (15M) i can talk about Stable Diffusion and how it can be retrained and use in order to generate an infinity of tattoo drawing, inspired by a real dataset of tatoos.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="014" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title"
+              value="L'entraînement de modèles et leur impact écologique - un grand pouvoir implique de grandes responsabilités"/>
+      <column name="description"
+              value='Notre impact écologique en tant que générateurs et consommateurs de données est devenu un véritable enjeu que nous ne pouvons ignorer : un grand pouvoir implique de grandes responsabilités.
+
+Mettons en avant les conséquences que peuvent avoir nos métiers sur l’environnement, mais également les actions pouvant limiter cet impact, voire le rendre favorable.
+
+Sur ce sujet pas de réponse magique, mais des pistes de réflexion que nous trouvons pertinents de partager pour ouvrir d’avantage les échanges autour de cette question au sein de la communauté.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="015" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Une architecture pour tester son front-end"/>
+      <column name="description"
+              value='Dans le monde du développement, tout le monde parle de test: ““Si tu n’écris pas de test, ton code ne peut pas être de qualité””.
+
+Cela fait 4 ans que je développe et tout autant de temps que je me pose la question de comment tester unitairement mon frontend. Tester son backend semble approprié car il contient une grande part de logique: le cœur métier.
+
+Mais est-ce aussi simple côté frontend? - où l’on doit gérer un état global, le garder synchronisé avec des données provenant de diverses sources et afficher le tout à l’utilisateur. Il y a bien quelques logiques d’affichage et transformations de données, mais les tester unitairement ne semble pas couvrir la globalité d’un comportement, de l’interaction utilisateur jusqu’à l’affichage à l’écran.
+
+Après plusieurs années à travailler sur des projets sans tests et d’autres projets où l’on testait individuellement chaque fonction, aujourd’hui je présente une architecture permettant de tester unitairement son front de manière efficace en couvrant les comportements plus que l’implémentation.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'WEB_AND_MOBILE')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="016" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Mettez de l'affordance dans votre vie tech !"/>
+      <column name="description"
+              value='L’affordance : la capacité d’un système à suggérer son utilisation. C’est un domaine important de l’UX et du design, mais qui a des implications partout.
+
+Dans nos métiers, nous avons la responsabilité de faciliter la vie à nos utilisateurs, mais également à nos homologues, ceux qui utiliseront des API fraîchement créées ou qui liront notre documentation technique.
+
+Dans ce talk, on parle d’affiches pour chat perdu, de portes à pousser ou à tirer, mais surtout de comment apprivoiser l’affordance pour en faire une alliée dans la tech.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'UX_UI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="017" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Pause"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'BREAK_15M')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="018" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="SurrealDB, une base de données qui fait rêver les dev ? 😮"/>
+      <column name="description"
+              value='SurrealDB c’est une base de données moderne, écrite en Rust avec une liste de fonctionnalités qui fait rêver …
+SQL, Document, Graph voir hybride, que ce soit in memory, en single node ou en cluster distribué tout en restant ACID (ça c’est pour les DBA !). Pour les dev, interface via une API Rest simple et intuitive, utilisation d’un nouveau langage (SurrealQL), fini les procédure stockées en SQL illisibles 🤩, fini les jointures 🙏 !
+
+Bref, SurrealDB est vendu comme une base de données ✨NewSQL✨.
+Actuellement en beta, la première version RC sort Q2 2023 ! Alors véritable révolution ou trop beau pour être vrai ?
+
+Pour répondre à cette question, et avec les fonctionnalités disponibles à date, nous ferons un tour des fonctionnalités avec un ““how to”” en live coding, pour découvrir le produit. Ensuite, nous comparerons les performances 🚄 avec les leaders de chaque paradigme PostgreSQL, MongoDB et Neo4j.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="019" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Pimp my search (platfom)!"/>
+      <column name="description"
+              value='Le moteur de recherche au Bon Coin consiste en 60 millions de documents sur lesquels sont jouées jusqu’à 5000 requêtes/sec.
+
+Durant les 3 dernières années il est passé par de nombreuses transformations. Pour gagner significativement en précision et en performance bien entendu. Mais aussi pour offrir une expérience de développement optimale aux équipes via une approche plateforme.
+
+Venez écouter cette aventure ! On parlera notamment :
+
+Plateform engineering
+Expérimentation et AB testing
+Elasticsearch et machine learning'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="020" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="En sécurité sur la route des vacances"/>
+      <column name="description"
+              value='En 1999, le tunnel du Mont Blanc s’embrasait et faisait 39 morts.
+Au delà de la catastrophe elle même, cela a entrainé de nombreux changements.
+
+Au niveau européen, les normes en termes de ventilation, de gestion d’incendie et de gestion du trafic ont évoluées. Les exigences au niveau des systèmes de ventilation et d’extinction d’incendie ont été renforcées. Mais surtout une obligation de surveillance globale des ouvrages et un examen de sécurité périodique ont été instaurées. En termes d’infrastructures, cela a entrainé la création de nouvelles galeries de sécurité ou l’installation de systèmes plus performants.
+
+En partant des équipements électriques jusqu’au système d’aide à l’exploitation, je vous propose un tour d’horizon des technologies mises en oeuvre dans un tunnel routier.
+
+De l’extracteur d’air au capteur de pression sur une porte, chaque équipement doit pouvoir être supervisés et pour certains, commandés. Pour cela, des progiciels existent et des automates sont utilisés pour assurer la liaison entre ces logiciels et les équipements. Un système d’aide à la supervision permet d’assurer la traçabilité des évènements et des actions entreprises par le superviseur. Tout cela doit bien sûr répondre à des exigences de disponibilité et de redondance.
+
+Venez découvrir l’architecture que nous avons mise en place sur nos projets de rénovation de la supervision des tunnels autoroutiers. On parlera Spring, Redis et AMQP entre autres…
+
+Vous n’emprunterez plus un tunnel de la même manière après ce talk.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="021" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="La sécurité, par où commencer ? Install party 🎉"/>
+      <column name="description"
+              value='Venez avec votre PC/Linux/MAC, vous connaissez probablement les Linux Install Parties ? Alors, faisons de même avec la Sécurité, nous allons suivre l’approche DevSecOps du Mistère américain de la défense. Pour cela, rien de plus simple, venez avec votre ordinateur, votre projet opensource et vos outils (IDE, CI/CD). Après quelques slides de présentation, nous évolurons étape par étape dans la sécurisation de votre application. Si votre application est dockerisée, nous évonquerons les bonnes pratiques de l’ANSSI sur ce sujet. Nous verrons ainsi, à travers cet atelier, comment le GitOps/CI/CD permettent à nous et aux organisations d’améliorer notre posture face à la sécurité.
+
+On présentera les actions effectuées ce code en Go et si un participant n’a pas de projet phare, ni de code opensource, on pourra partir de ce projet (sans les workflows)
+
+Pré-requis : connaissances élementaires sur l’OS, le code, les pipelines de CI/CD'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_1h45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="022" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Le multi-tenancy chez Apache Kafka, navigation dans un sujet majeur"/>
+      <column name="description"
+              value='Quand Kafka devient progressivement le « système nerveux central pour les données », la simplicité des brokers peut passer d’une bénédiction à une malédiction. Les services qui étaient auparavant découplés doivent de plus en plus se connaître les uns les autres pour éviter les problèmes de collisions: topic, consumer groups, schema, connecteurs, métadonnées etc.
+
+Chez Conduktor, nous avons eu le défi d’accueillir des milliers de tenants Kafka performants et isolés.
+
+Pour trouver une solution viable et économique, nous avons exploré un large éventail de solutions possibles, notamment :
+
+Plus de clusters Kafka - Chaque nouveau service peut-il avoir son propre cluster?
+Convention - Choisissez des prefix, des headers, etc. pour éviter les conflits
+Application côté client - Personnaliser les clients pour garantir la compatibilité
+Application côté serveur - Configurez les brokers pour n’autoriser que les clients qui se comportent correctement
+Proxy - Un outil efficace
+Embarquez avec nous dans un voyage d’idées, de leçons et de solutions sur la façon dont nous avons résolu le multi-tenancy et comment vous pouvez l’appliquer à presque tous les déploiements Kafka.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="023" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Quelques pistes pour soigner ses traces d'exécution"/>
+      <column name="description"
+              value='Combien d’entre-vous se sont déjà retrouvés à devoir analyser un bug, voire intervenir en astreinte et ne pas comprendre pourquoi ça a planté ?
+Qui s’est déjà demandé si la ligne de log qu’iel est en train d’écrire relève du debug, de l’info ou autre ?
+Qui a déjà du laisser son application en niveau de log maximal sans quoi aucune analyse n’est possible ?
+
+Je vous propose aujourd’hui de vous donner quelques pistes de base pour soigner vos traces d’exécution, issues de mon expérience dans l’industrie du paiement sur autoroute.
+Vous aurez ainsi une meilleure idée de comment choisir le niveau de gravité d’une ligne de log, et quelles sont les informations pertinentes à y indiquer.
+
+Il s’agira d’une présentation ““classique”” avec slides.
+Le sujet ouvert à tous niveaux et langages car je vais présenter ici des principes assez généraux, avec quelques exemples.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="024" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Monorepo &amp; monomythe 🧚‍♀️🧙🧌"/>
+      <column name="description"
+              value='Le monorepo : un pattern de plus en plus courant qui ne fait pourtant pas l’unanimité. Avec ses mythes et ses réalités.
+Justement, vous connaissez le monomythe de J. Campbell ?
+
+Venez revivre le voyage de 300 développeurs (Mobile/Web/Back/Infra) passés en monorepo : appel de l’aventure, péripéties, épreuves techniques et un dénouement heureux. Vous découvrirez :
+
+Pourquoi les équipes SNCF Connect ont adopté un dépôt Git unique et un seul pipeline CI/CD,
+Les réticences, les vrais problèmes rencontrés, les solutions qu’on a trouvées (DevOps, Infra-as-code, BFF, Gradle, Flutter, Inner Source…),
+Pourquoi on continue dans la voie du monorepo 💡'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+<!--  <changeSet id="025" author="camille.petitalot@volcamp.io">-->
+<!--    <insert tableName="talks">-->
+<!--      <column name="title" value="Pause"/>-->
+<!--      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'BREAK_30M')"/>-->
+<!--      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>-->
+<!--    </insert>-->
+<!--  </changeSet>-->
+  <changeSet id="026" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Créer sa propre VM avec compilation JIT pour les nuls"/>
+      <column name="description"
+              value='La compilation « Just In Time » est une technique d’exécution très utilisée depuis de nombreuses années au sein des machines virtuelles de langages tels que Java, C#, JavaScript, etc …. Elle permet d’interpréter et d’exécuter un byte-code tout en le transformant « à la volée » vers le langage machine natif de la machine hôte nous permettant ainsi d’obtenir des performances bien plus élevées lors d’une seconde exécution du code.
+
+Ces techniques de recompilation dynamique peuvent être complexes à appréhender lorsque l’on est néophyte sur le sujet, c’est pourquoi nous allons démystifier ensemble ce sujet.
+
+Dans ce talk nous mettrons en œuvre et en live notre propre machine virtuelle avec JIT intégrée pour une calculatrice RPN (Reverse Polish Notation), sans aucun framework ni infrastructure de compilation extérieure, en émettant nous même le code machine x86_64 nécessaire à l’exécution.
+
+Puisse le dieu des « segmentation fault (core dumped) » être avec nous !'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="027" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Agiliser sans parler Agile"/>
+      <column name="description"
+              value='Que ce soit dans une transformation organisationnelle ou dans un fonctionnement de routine en sprints, finalement, le meilleur moyen de pratiquer les valeurs Agiles, c’est de ne pas parler Agile. Oubliez le mot “Agile” et remplacez le par des mots plus précis. Découvrez pourquoi c’est parfois nécessaire et surtout comment ça finit paradoxalement par mener à l’adoption des valeurs Agiles, sans en parler! Surtout, ciblez plutôt sur la transformation culturelle, et utilisez cette force pour traiter les dysfonctionnements dans une équipe.
+
+Dans ce talk je vous propose d’abord une prise de recul sur les besoins se cachant derrière une demande de transformation Agile et voir comment adresser ces besoins là. Pour finir, un REX sur l’une de mes transformations imagera comment au mieux cibler la transformation culturelle et adresser les besoins prioritaires du client.
+
+Si vous voulez :
+
+Prendre du recul sur l’agilité et sur les raisons qui poussent à demander une transformation
+Donner un exemple de transformation chez un client “qui n’a pas le temps”
+Comprendre le Cargo Cult et ses dangers
+Quelques notions basiques sur la résistance au changement
+Alors je serais ravie d’échanger avec vous!'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="028" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title"
+              value="D'un orchestre figé à un joli ballet aka comment on a propulsé notre monolith dans un pas de danse endiablé 😈"/>
+      <column name="description"
+              value='Il était une fois, dans une célèbre manufacture de pneus 🏭, une grande volonté de remplacer son orchestrateur supply chain et logistique 🚚. Le chef d’orchestre étant épuisé, il fallait le remplacer: et pourquoi pas par un joli ballet 🤔 ?
+
+Ayant choisi ses nouveaux atouts, kafka et kafka streams, plongez dans l’aventure de notre équipe, ultra motivée, pour passer d’un logiciel orchestré à des chorégraphies de micro services bien rôdées ✨. Sur un nouveau tempo 🥁, venez découvrir comment elle a pu accorder un rythme de batch quotidien voir hebdo avec des flux continus et instantanés d’une architecture event driven. Mais aussi, venez apprendre de nos fausses notes et nos pas maladroits pour passer d’un monolith figé à plusieurs centaines de micro-services survoltés 🧨.
+
+Fort de notre histoire, vous repartirez avec la stratégie qui nous a permis :
+
+la coordination harmonieuse de plus de 200 micro services kafka streams sur kubernetes tanzu,
+l’utilisation de 250 objets kafka connects pour discuter avec nos applications legacies,
+les points d’attention à garder en tête lors du passage d’un écosystème cadencé dans une base de données à un logiciel ““event management”” basé sur 1000 topics kafka'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="029" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Changer son environnement fullstack en un clin d'oeil avec devenv"/>
+      <column name="description"
+              value='Peu importe la stack ou l’OS, on se retrouve toujours à devoir gérer au quotidien les packages, leurs dépendances, nos outils de développement, parfois en jonglant entre plusieurs versions. Pour certaines stacks on peut utiliser des outils spécifiques comme SDKMan ou NVM, mais quid de l’uniformisation ? On doit apprendre à manier tous ces outils ce qui n’est pas idéal…
+
+Venez découvrir Nix et Devenv pour gérer toutes vos configurations de dev sans prise de tête ! Cette paire d’outils presque magique va nous permettre de déclarer ce qu’on veut comme environnement, rendre celui-ci réplicable (fini la journée voir semaine perdue à configurer le poste du nouvel arrivant), alterner entre plusieurs stacks et ce peu importe les stacks qu’on utilise !'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_1h45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="030" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title"
+              value="Design des applications métier et si on considérait nos salariés comme des clients ?"/>
+      <column name="description"
+              value='Je vous propose un retour d’expérience de la conception des applications métiers dans le milieu industriel. quels sont les éléments de contexte spécifique de ces utilisateurs , les challenges à relever pour les designers, les leviers.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'UX_UI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="031" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Du flocon au Palais Majestueux - Découverte de Nix ❄️"/>
+      <column name="description"
+              value='Si vous êtes comme moi et que vous aimez bidouiller, vous vous êtes surement rendus compte que vous installez tout un tas d’outils différents qui ont tendances à s’accumuler dans les tréfonds de votre disque dur.
+
+Autre chose qui commence à apparaître, avoir besoin de versions différentes d’un même programme pour tester les différences.
+
+Toutes ces problématiques peuvent être en partie résolues au travers de Docker, mais je voudrai vous montrer qu’une autre voie est possible et essayer de démystifier son langage qui peut sembler déroutant au premier abord, mais qui s’avère extrêmement puissant une fois maîtrisé.
+
+Dans ce talk, nous parlerons des concepts fondamentaux du langage, de sa capacité à créer des environnements de développement portables et de la flexibilité qu’il apporte sur ““le droit à l’erreur””.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="033" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="L'IA ne remplacera pas le développeur. Mais dév+IA remplaceront le développeur."/>
+      <column name="description"
+              value='Beaucoup de gens craignent que l’IA remplace un jour les emplois humains, y compris celui des développeurs. Cependant, nous pensons que cette crainte est infondée. L’IA ne remplacera pas les développeurs, mais elle les aidera à devenir plus efficaces et plus productifs.
+
+Avec Frédéric WICKERT et Kevin BEAUGRAND, regardons comment en tant que développeur nous utilisons une IA dans un projet de développement et comment, en se posant les bonnes questions, des outils comme Chat GPT ou Copilot peuvent améliorer la productivité.
+
+Encore faut-il savoir poser les bonnes questions et savoir ce que l’on attend. Finalement, n’est-ce pas cela le métier de développeur ?
+
+Et si en plus d’utiliser des assistants IA pour développer, nous utilisions l’IA dans nos algorithmes pour améliorer notre productivité et nos réalisations ? Allons encore plus loin avec l’IA et intégrons la clairement dans notre manière de coder.
+
+Remplaçons certains algorithmes déterMistes dans notre code par de l’IA.
+
+C’est comme cela que le développeur et l’IA remplaceront le développeur.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="034" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Green Java 🌿 ou comment appliquer l'éco-conception à son code ☕"/>
+      <column name="description"
+              value='Ecoconception, green It, informatique durable ou éco-TIC… les développeurs vont sauver la planète ! Couramment abordé sur des problématiques Front comme le poids des pages, il est temps de mettre en avant l’importance cruciale des développements Back et en particulier Java.
+
+Regardons ensemble quelles sont les pratiques à adopter pour passer notre code Java au vert : frugalité technique, limitation de la bande passante, optimisation des accès base de données, Mimisation de la consommation des ressources, performance, gestion de la mémoire, traitements asynchrones…'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="035" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="GraphQL et Spring Boot - nouveau starter, nouveau départ ?"/>
+      <column name="description"
+              value='Visiblement, GraphQL, ça devient sérieux cette histoire. Que tu fasses partie des early-fans qui ont cru en l’approche, que tu t’intéresses à la techno parce que tu as entendu parler du nouveau starter spring boot, ou que tu te dises “Graph quoi ?”, ce talk est fait pour toi.
+
+Dans cette conférence, on rappellera évidemment à quels usages GraphQL répond particulièrement bien (ou pas), et nous ferons le focus sur les intégrations avec Spring Boot.
+
+Nous proposerons aussi un retour d’expérience sur l’utilisation de la technologie, dans des contextes concrets.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="036" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Les modules Terraform chez Eramet - pourquoi et comment faire ?"/>
+      <column name="description"
+              value='Chez Eramet, entreprise bien implantée à Clermont, nous nous sommes lancés dans Terraform depuis 2020. La modularité offerte par Terraform a été vu comme un atout que nous exploitons pour standardiser nos projets.
+
+Pendant ce REX, nous allons vous présenter le cheminement intellectuel qui nous a amené à modulariser Terraform ainsi que les défis associés et comment nous les avons surmontés
+
+a. Organisation des modules b. Versionning et release automatisé c. Tests de non-régression/d’intégration automatisé d. Les points d’attention lors des montées de version
+
+Nous espérons apporter avec ce REX des bonnes pratiques de gestion modulaire dans Terraform à la communauté.'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'REX_45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>
+

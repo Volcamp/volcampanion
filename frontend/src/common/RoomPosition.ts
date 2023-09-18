@@ -1,4 +1,6 @@
-export function roomPosition(roomName : string) : number{
+export function roomPosition(roomName: string | undefined): number {
+  if (roomName === undefined) return 0;
+
   if (roomName.toLowerCase().includes('auditorium')) {
     return 0;
   } else if (roomName.toLowerCase().includes('mezzanine')) {
