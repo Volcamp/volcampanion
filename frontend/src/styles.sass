@@ -24,6 +24,10 @@
 .mdc-list
   padding: unset !important
 
+::ng-deep .mat-badge-content
+  width: auto !important
+  min-width: 22px !important
+
 .contentPage
   @media screen and (min-width: 240px) //Mobile devices
       width: 90%
@@ -108,6 +112,7 @@ $fontSizeF7: 0.9
 
 .lineContentContainer
   display: grid
+  margin-top: 10px
 
 
 .leftItem
@@ -131,9 +136,6 @@ $fontSizeF7: 0.9
 .zoomOutCard
   transition: all 0.5s cubic-bezier(0.15, 0.83, 0.66, 1)
   cursor: pointer
-
-.zoomOutCard:hover
-  transform: scale(1.05)
 
 
 =widthResponsive($width1,$width2,$width3,$width4,$width5)
@@ -170,6 +172,8 @@ $fontSizeF7: 0.9
   -ms-user-select: none
   user-select: none
 
+.bold
+  font-weight: bold
 
 @mixin theme-color-grabber($theme)
   // Parse the theme and create variables for each color in the pallete
@@ -179,6 +183,8 @@ $fontSizeF7: 0.9
   // Create theme specfic styles
   .primaryColorBG
     background-color: matTheme.mat-color($primary)
+  .accentColor
+    color: matTheme.mat-color($accent)
   .accentColorBG
     background-color: matTheme.mat-color($accent)
   .warnColorBG
@@ -188,7 +194,7 @@ $fontSizeF7: 0.9
   .accentColorBGGradient
     background: radial-gradient(circle, rgba(255,192,167,1) 0%, matTheme.mat-color($accent)  71%)
   .warnColorBGGradient
-    background: radial-gradient(circle, #fafafa 0%, matTheme.mat-color($warn)  71%)
+    background: radial-gradient(circle, #fafafa 0%, matTheme.mat-color($accent)  90%)
   .primaryColorFG
     color: matTheme.mat-color($primary)
   .accentColorFG

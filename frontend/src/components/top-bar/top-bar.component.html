@@ -4,15 +4,24 @@
               fontIcon="arrow_back_ios"/>
     <mat-icon *ngIf="!backable" style="visibility: hidden" aria-hidden="false" aria-label="filter icon"
               fontIcon="arrow_back_ios"/>
-    <span class="f0 volcampanion" >Volcampanion</span>
+    <button class="primaryColorBG"
+            style="border: none; display: flex"
+            (click)="home()">
+      <img style="align-self: center"
+        class="icon"
+        src="assets/image/cercleVolcamp2023.png"
+        height="42px"
+      />
+      <span class="f0 volcampanion" style="margin-left: 4px">Volcampanion</span>
+    </button>
 
-      <span [routerLink]="[homeRoute]" class="f2 wideItem" *ngIf="!isMobile">
+    <span [routerLink]="[homeRoute]" class="f2 wideItem" *ngIf="!isMobile">
         Sessions
       </span>
-      <span [routerLink]="[speakerRoute]" class="f2 wideItem" *ngIf="!isMobile">
+    <span [routerLink]="[speakerRoute]" class="f2 wideItem" *ngIf="!isMobile">
         Speakers
       </span>
-      <span *ngIf="logged && !isMobile" [routerLink]="[favoriteRoute]" class="f2 wideItem" >
+    <span *ngIf="logged && !isMobile" [routerLink]="[favoriteRoute]" class="f2 wideItem">
         Favorites
       </span>
 

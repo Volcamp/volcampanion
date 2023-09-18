@@ -1,5 +1,11 @@
-<a href="{{twitterLink+userId}}" *ngIf="visible" (click)="$event.stopPropagation()" color="twitter" mat-flat-button
+<a href="{{twitterLink+userId}}" *ngIf="visible" (click)="$event.stopPropagation()"
+   style="background-color: black; color: whitesmoke" mat-flat-button
    class="f7 btnRadius">
-  <mat-icon class="icon" svgIcon="twitter" aria-hidden="false" aria-label="twitter link"></mat-icon>
+  <mat-icon class="icon" style="width: 20px" aria-hidden="false" aria-label="twitter link">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path fill="currentColor"
+            d="M18.205 2.25h3.308l-7.227 8.26l8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231l5.45-6.231Zm-1.161 17.52h1.833L7.045 4.126H5.078L17.044 19.77Z"/>
+    </svg>
+  </mat-icon>
   <span class="f7 ">{{twitter}}</span>
 </a>

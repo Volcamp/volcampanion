@@ -13,15 +13,6 @@
   transition: all .25s ease-in-out
   +widthResponsive(25vw,25vw,11vw,11.5vw,11vw)
 
-.container:hover
-  transform: scale(0.98)
-  border-radius: 20px
-  box-shadow: 0 0 30px 1px rgba(252,99,38,0.25)
-  cursor: pointer
-
-.container:hover .card
-  transform: translateY(-5%)
-
 .info
   margin-top: 1rem
 
@@ -29,7 +20,8 @@
   color: #fff
   text-align: center
 
-
+.wrap
+  white-space: pre-wrap
 
 .card
   transition: all .25s ease-in-out
@@ -38,9 +30,6 @@
 .card main
   position: relative
 
-.card main a:hover::after
-  opacity: 1
-
 .container2
   justify-content: center
   align-content: center
@@ -48,7 +37,3 @@
   flex-direction: column
   transition: all .2s
 
-
-.container2:hover
-  transform: scale(0.98)
-  border-radius: 20px

@@ -39,7 +39,6 @@ export class VMPlannings {
           this.dates = uniqueDates;
         },
         error: (err) => {
-          console.log("ERORORORORORRO", err)
           this.noConnection = true;
         }
       },

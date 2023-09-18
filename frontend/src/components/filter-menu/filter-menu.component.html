@@ -6,8 +6,10 @@
   </mat-tab>
   <mat-tab label="Theme">
     <mat-chip-option class="chips" *ngFor="let theme of  planningsTheme"
-                     (click)="selectOption(theme,planningsThemeSelected)"
-                     [selected]="planningsThemeSelected.indexOf(theme) >= 0"><p class="f5">{{theme}}</p>
+                     (click)="selectOption(theme.name,planningsThemeSelected)"
+                     [selected]="planningsThemeSelected.indexOf(theme.name) >= 0"><p class="f5">
+      {{theme.description}}
+    </p>
     </mat-chip-option>
   </mat-tab>
   <mat-tab label="Date">
