@@ -9,6 +9,8 @@ export class SpeakerPreviewComponent {
   @Input() name: string = ''
   @Input() photo: string = ''
   @Input() company: string = ''
+  @Input() room: string = ''
+  @Input() planningTime: string = ''
 
 
 }

@@ -19,6 +19,7 @@ export class TalksListComponent implements AfterContentInit {
   }
 
   navigate(talkPlan: any) {
+    console.log("PLAN : ", talkPlan)
     this.navigation.goToTalk(talkPlan);
   }
 
@@ -26,7 +27,6 @@ export class TalksListComponent implements AfterContentInit {
     this.nbItem = this.plannings.filter(planning => {
       return planning !== undefined
     }).length;
-    console.log(this.plannings)
   }
 
 

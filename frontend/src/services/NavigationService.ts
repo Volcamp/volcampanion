@@ -26,7 +26,7 @@ export class NavigationService {
         this.history.push(event.urlAfterRedirects);
 
         this.backArrowEventEmitter.emit(new BackArrowVisibilityEventArgs(this.router.url.slice(1).includes("/")));
-        this.filterVisibilityEventEmitter.emit(new FilterVisibilityEventArgs(! this.router.url.slice(1).includes("/") && (this.router.url.includes(AppRoutes.HOME_ROUTE) || this.router.url.includes(AppRoutes.FAVORITE_ROUTE))));
+        this.filterVisibilityEventEmitter.emit(new FilterVisibilityEventArgs(!this.router.url.slice(1).includes("/") && (this.router.url.includes(AppRoutes.HOME_ROUTE) || this.router.url.includes(AppRoutes.FAVORITE_ROUTE))));
       }
     });
   }
@@ -53,7 +53,13 @@ export class NavigationService {
   }
 
   goToTalk(talkPlanning: TalkPlanning): void {
-    this.dataParam.storageParam = talkPlanning.talk;
+    this.dataParam.storageParam = {};
+    this.dataParam.storageParam.talk = talkPlanning.talk;
+    this.dataParam.storageParam.room = talkPlanning.room?.name;
+    const startDate = new Date(talkPlanning.schedule);
+    const endDate = new Date(startDate.getTime() + talkPlanning.talk.format.duration * 1000); //if in minutes need to be 60 000
+    this.dataParam.storageParam.planningTime = startDate.toLocaleTimeString('fr-FR').slice(0, 5).replace(":", "h")
+      + " - " + endDate.toLocaleTimeString('fr-FR').slice(0, 5).replace(":", "h");
     this.goTo(toRouteById(AppRoutes.DETAIL_TALK_ROUTE, talkPlanning.talk.id.toString()));
   }
 }

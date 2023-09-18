@@ -24,6 +24,10 @@
 .mdc-list
   padding: unset !important
 
+::ng-deep .mat-badge-content
+  width: auto !important
+  min-width: 22px !important
+
 .contentPage
   @media screen and (min-width: 240px) //Mobile devices
       width: 90%
@@ -108,6 +112,7 @@ $fontSizeF7: 0.9
 
 .lineContentContainer
   display: grid
+  margin-top: 10px
 
 
 .leftItem
@@ -132,8 +137,8 @@ $fontSizeF7: 0.9
   transition: all 0.5s cubic-bezier(0.15, 0.83, 0.66, 1)
   cursor: pointer
 
-.zoomOutCard:hover
-  transform: scale(1.05)
+//.zoomOutCard:hover
+//  transform: scale(1.05)
 
 
 =widthResponsive($width1,$width2,$width3,$width4,$width5)

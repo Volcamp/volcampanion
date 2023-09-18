@@ -33,9 +33,22 @@
                            (click)="navigate(speaker)"></app-speaker-preview>
     </div>
 
+    <div class="lineContentContainer ">
 
-    <span class="f4">{{vm.talk.description}}</span>
+      <div class="leftItem">
+        <div class="typeFormatContainer centerLineContent">
+          <span *ngIf="vm.room" class="f3">Salle <span style="font-weight: bold">{{vm.room}}</span></span>
+        </div>
+      </div>
 
+      <div class="typeFormatContainer rightItem centerLineContent">
+        <span *ngIf="vm.planningTime" class="f3"> à  <span style="font-weight: bold">{{vm.planningTime}}</span></span>
+      </div>
+    </div>
+
+    <div class="lineContentContainer ">
+      <span class="f4">{{vm.talk.description}}</span>
+    </div>
   </div>
 
 </div>
