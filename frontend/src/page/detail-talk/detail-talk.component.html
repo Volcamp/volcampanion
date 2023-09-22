@@ -1,5 +1,4 @@
 <div class="centerContainer contentPage">
-  <app-volcamp-feedback *ngIf="vm.talk!=null"></app-volcamp-feedback>
   <div *ngIf="vm.talk!=null">
     <div class="lineContentContainer">
       <div class="leftItem">
@@ -49,6 +48,9 @@
     <div class="lineContentContainer ">
       <span class="f4">{{vm.talk.description}}</span>
     </div>
+
+    <app-volcamp-feedback talkId="{{vm.talk.id}}"></app-volcamp-feedback>
+
   </div>
 
 </div>
