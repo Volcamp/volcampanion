@@ -8,14 +8,17 @@ import {NoteChangeEventArgs} from "../../event/NoteChangeEventArgs";
   styleUrls: ['./volcamp-rate.component.sass']
 })
 export class VolcampRateComponent {
+  private DEFAULT_NOTE: number = 5
+
   @Output() noteOutput: EventEmitter<number> = new EventEmitter<number>();
   @Input() noted = false;
   note: number = -1;
 
   constructor(feedbackInitService: FeedbackInitService) {
-      feedbackInitService.eventEmitterNote.on((data : NoteChangeEventArgs) => {
-        this.note = data.note;
-      })
+    this.check(this.DEFAULT_NOTE);
+    feedbackInitService.eventEmitterNote.on((data: NoteChangeEventArgs) => {
+      this.note = data.note;
+    })
   }
 
   isChecked(note: number): boolean {
@@ -23,8 +26,10 @@ export class VolcampRateComponent {
   }
 
   check(note: number) {
-    if (this.note != note) this.note = note;
-    else this.note = -1;
+    if (this.note != note) {
+      this.note = note
+    }
+    else this.note = 0;
     this.noteOutput.emit(this.note)
   }
 

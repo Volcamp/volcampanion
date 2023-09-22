@@ -185,6 +185,8 @@ $fontSizeF7: 0.9
     background-color: matTheme.mat-color($primary)
   .accentColor
     color: matTheme.mat-color($accent)
+  .accentColorDarker
+    color: matTheme.mat-color($accent, darker)
   .accentColorBG
     background-color: matTheme.mat-color($accent)
   .warnColorBG
@@ -208,6 +210,15 @@ $fontSizeF7: 0.9
     background:  linear-gradient(-45deg,  matTheme.mat-color($accent)  0%, matTheme.mat-color($primary)   100% )
   .warnBorder
     border: 3px solid matTheme.mat-color($primary)
+  .accentLightBorder
+    border: 1px solid matTheme.mat-color($accent)
+
+.mat-mdc-unelevated-button>.mat-icon, .mat-mdc-raised-button>.mat-icon, .mat-mdc-outlined-button>.mat-icon
+  vertical-align: top
+  font-size: 1.25em
+  height: inherit!important
+
+
 
 
 
