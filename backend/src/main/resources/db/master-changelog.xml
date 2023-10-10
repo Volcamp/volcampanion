@@ -75,5 +75,8 @@
   <include file="2023/008-volcamp-2023-planning-speaker-day2.xml" labels="Volcamp 2023"
            author="camille.petitalot@volcamp.io"
            relativeToChangelogFile="true"/>
+  <include file="2023/009-volcamp-2023-planning-updates.xml" labels="Volcamp 2023"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
 </databaseChangeLog>
 
