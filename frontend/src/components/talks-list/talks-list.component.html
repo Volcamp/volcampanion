@@ -1,6 +1,6 @@
 <div class="containerPlanning">
-  <div *ngFor="let planning of plannings ">
-    <div class="containerBig">
+  <div *ngFor="let planning of plannings " style="">
+    <div class="containerBig" style="">
 
       <div [ngSwitch]="planning.getType()" *ngIf="planning !== undefined; else blank">
 
@@ -8,7 +8,7 @@
           <app-divider-teaser-view [dividerPlanning]="$any(planning)"/>
         </div>
 
-        <div class="miniView contentPage break" *ngSwitchCase="BREAK">
+        <div class="miniView contentPage break" *ngSwitchCase="BREAK" style="margin: 0 auto">
           <app-break-teaser-view [breakPlanning]="$any(planning)"/>
         </div>
 

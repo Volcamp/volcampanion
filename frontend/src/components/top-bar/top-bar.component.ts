@@ -11,7 +11,6 @@ import {AppRoutes, toRoute} from "../../app/AppRoutes";
 import {LoginResponse, OidcSecurityService} from "angular-auth-oidc-client";
 import {UserService} from "../../services/UserService";
 import {FilterPlanningsService} from "../../services/FilterPlanningsService";
-import {switchAdminTheme} from "../../common/Theme";
 
 @Component({
   selector: 'app-top-bar',
@@ -82,7 +81,6 @@ export class TopBarComponent implements OnInit {
 
   login() {
     this.oidcSecurityService.authorize();
-
   }
 
   logout() {

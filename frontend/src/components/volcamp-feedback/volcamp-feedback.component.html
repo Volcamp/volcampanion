@@ -1,29 +1,41 @@
 <div *ngIf="vm.logged">
-  <mat-expansion-panel style="width: fit-content !important; -webkit-box-shadow: none;
-                                  -moz-box-shadow: none;      box-shadow: none;">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Votre Avis compte
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <div class="containerSend" >
-      <app-volcamp-rate [noted]="vm.noted" (noteOutput)="vm.update($event)"></app-volcamp-rate>
-      <div>
-        <button mat-mini-fab color="accent" (click)="vm.sendNote()" [disabled]="vm.noted"  >
-          <mat-icon class="icon" svgIcon="send" aria-hidden="false" *ngIf="! vm.noted"></mat-icon>
-          <mat-icon class="icon"  aria-hidden="false" *ngIf="vm.noted">check_circle_outline</mat-icon>
+  <div class="container">
+    <mat-grid-list cols="5" rowHeight="4rem">
+      <mat-grid-tile colspan="5">
+        <span class="f1 accentColor">Votre avis compte pour nous !</span>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="5">
+        <app-volcamp-rate [noted]="vm.noted" (noteOutput)="vm.update($event)"></app-volcamp-rate>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="5" [rowspan]="2">
+        <form>
+          <mat-form-field class="formNote accentLightBorder" color="accent">
+            <mat-label>📝 Laissez un commentaire 😊</mat-label>
+            <textarea matInput #message
+                      [value]="vm.feedBack.comment"
+                      [(ngModel)]="vm.feedBack.comment"
+                      maxlength="256"
+                      [ngModelOptions]="{standalone: true}"
+                      [disabled]="this.vm.noted">
+        </textarea>
+            <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+          </mat-form-field>
+        </form>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="3"/>
+      <mat-grid-tile colspan="2">
+        <button class="actionButton" *ngIf="!vm.noted" mat-raised-button color="accent" (click)="vm.sendNote()"
+                [disabled]="vm.noted">
+          <mat-icon class="icon" inline=true svgIcon="send" aria-hidden="false" *ngIf="!vm.noted"></mat-icon>
+          Soumettre
         </button>
-      </div>
-    </div>
-    <form *ngIf="true">
-      <mat-form-field class="formNote" color="accent">
-        <mat-label>Commentaire</mat-label>
-        <textarea matInput #message [value]="vm.feedBack.comment" [(ngModel)]="vm.feedBack.comment" maxlength="256"
-                  [ngModelOptions]="{standalone: true}" [disabled]="this.vm.noted"></textarea>
-        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
-      </mat-form-field>
-    </form>
-  </mat-expansion-panel>
+        <button class="actionButton" *ngIf="vm.noted" mat-raised-button color="warn" (click)="vm.deleteFeedback()" [disabled]="!vm.noted">
+          <mat-icon class="icon" inline=true  aria-hidden="false" *ngIf="vm.noted">delete</mat-icon>
+          Supprimer
+        </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 
 </div>
 

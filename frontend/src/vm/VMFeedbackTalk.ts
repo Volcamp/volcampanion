@@ -3,7 +3,6 @@ import {LogEventArgs} from "../event/LogEventArgs";
 import {Feedback} from "../data/dto/input/Feedback";
 import {AbstractTalkFeedbackService} from "../services/abstract/AbstractTalkFeedbackService";
 import {FeedbackInitService} from "../services/FeedbackInitService";
-import {FeedbackTalkInitEventArgs} from "../event/FeedbackTalkInitEventArgs";
 import {NoteChangeEventArgs} from "../event/NoteChangeEventArgs";
 
 
@@ -14,12 +13,9 @@ export class VMFeedbackTalk {
   noted: boolean = false;
 
   constructor(private userService: UserService, private dataService: AbstractTalkFeedbackService,
-              private feedbackInitService: FeedbackInitService) {
+              private feedbackInitService: FeedbackInitService, private talkId: string) {
     this.logged = userService.isLogged();
-    feedbackInitService.eventEmitterFeedback.on((data: FeedbackTalkInitEventArgs) => {
-      this.init(data.idTalk);
-
-    });
+    this.init(talkId);
   }
 
   private init(idTalk: string) {
@@ -54,4 +50,9 @@ export class VMFeedbackTalk {
   }
 
 
+  deleteFeedback() {
+    this.dataService.removeFeedback(this.idTalk).subscribe(() => {
+      this.noted = false;
+    });
+  }
 }

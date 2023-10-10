@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {VMFeedbackTalk} from "../../vm/VMFeedbackTalk";
 import {UserService} from "../../services/UserService";
 import {AbstractTalkFeedbackService} from "../../services/abstract/AbstractTalkFeedbackService";
@@ -9,11 +9,16 @@ import {FeedbackInitService} from "../../services/FeedbackInitService";
   templateUrl: './volcamp-feedback.component.html',
   styleUrls: ['./volcamp-feedback.component.sass']
 })
+// TODO handle delete its own feedback with button
 export class VolcampFeedbackComponent {
   vm!: VMFeedbackTalk;
-  idTalk!: string;
+  @Input() talkId: string = ''
 
-  constructor(userService: UserService, dataService: AbstractTalkFeedbackService, feedbackInitService: FeedbackInitService,) {
-    this.vm = new VMFeedbackTalk(userService, dataService, feedbackInitService);
+
+  constructor(private userService: UserService, private dataService: AbstractTalkFeedbackService, private feedbackInitService: FeedbackInitService,) {
+  }
+
+  ngOnInit() {
+    this.vm = new VMFeedbackTalk(this.userService, this.dataService, this.feedbackInitService, this.talkId);
   }
 }

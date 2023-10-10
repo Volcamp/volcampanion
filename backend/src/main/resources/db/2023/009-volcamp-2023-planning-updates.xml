@@ -1,0 +1,168 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="001" author="camille.petitalot@volcamp.io">
+        <comment>Suppression - Planning Day 2</comment>
+        <delete tableName="plannings">
+            <where>talk_id = (SELECT id FROM talks WHERE title = 'Ca y est, j''ai cassé la prod !')</where>
+        </delete>
+    </changeSet>
+    <changeSet id="002" author="camille.petitalot@volcamp.io">
+        <comment>Suppression - Planning Day 1</comment>
+        <delete tableName="plannings">
+            <where>talk_id = (SELECT id FROM talks WHERE title = 'Quelques pistes pour soigner ses traces d''exécution')</where>
+        </delete>
+    </changeSet>
+    <changeSet id="003" author="camille.petitalot@volcamp.io">
+        <comment>Updates - Planning Day 2</comment>
+        <insert tableName="plannings">
+            <column name="talk_id"
+                    valueComputed="(SELECT id FROM talks WHERE title = 'Quelques pistes pour soigner ses traces d''exécution')"/>
+            <column name="room_id"
+                    valueComputed="(SELECT id FROM rooms WHERE name = 'SHOWROOM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2023'))"/>
+            <column name="schedule" value="2023-10-13 11:30"/>
+        </insert>
+    </changeSet>
+    <changeSet id="004" author="camille.petitalot@volcamp.io">
+        <comment>Updates - Planning Day 1</comment>
+        <update tableName="plannings">
+            <column name="room_id"
+                    valueComputed="(SELECT id FROM rooms WHERE name = 'SHOWROOM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2023'))"/>
+            <where>talk_id = (SELECT id FROM talks WHERE title = 'Monorepo &amp; monomythe 🧚‍♀️🧙🧌')</where>
+        </update>
+    </changeSet>
+    <changeSet id="005" author="camille.petitalot@volcamp.io">
+        <comment>Updates - Planning Day 1</comment>
+        <update tableName="plannings">
+            <column name="schedule" value="2023-10-12 14:30"/>
+            <where>talk_id = (SELECT id FROM talks WHERE title = 'Du flocon au Palais Majestueux - Découverte de Nix ❄️')</where>
+        </update>
+    </changeSet>
+    <changeSet id="006" author="camille.petitalot@volcamp.io">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM speakers WHERE name = 'Arnaud Wetzel' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2023') ;</sqlCheck>
+        </preConditions>
+        <insert tableName="speakers">
+            <column name="name" value="Arnaud Wetzel"/>
+            <column name="email" value=" "/>
+            <column name="company" value=""/>
+            <column name="biography" value=''/>
+            <column name="twitter" value="https://x.com/awetzel"/>
+            <column name="linkedin" value=""/>
+            <column name="photo_link" value="https://volcamp.io/asset/images/speakers/65.jpg"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+        </insert>
+    </changeSet>
+    <changeSet id="007" author="camille.petitalot@volcamp.io">
+        <insert tableName="talks">
+            <column name="title" value="La construction d’une approche technologique alternative aux géants du cloud"/>
+            <column name="description"
+                    value="L’approche devops est aujourd’hui le modèle de livraison logiciel de référence. Mais avoir une approche intégrée des processus de développement et d’exploitation d’un logiciel n’est possible que si elle est associée à un socle technologique fondamentalement compatible avec celle-ci.
+
+Un ensemble de solutions du marché facilite cette approche : PaaS (platform as a service), ITSM (information technology service management), IaC (Infrastructure as Code) ; mais pourrions-nous imaginer la création d’une architecture nativement conçue pour supporter l’approche devOps et indépendante de ces éditeurs logiciel ?
+
+Lors de ce talk, je vous propose,
+
+-d’analyser ces solutions de marché, d’extraire les caractéristiques clés qui leur ont permis de transformer notre façon de livrer et d’opérer un logiciel pour le mieux avec les principes devops. -de comprendre les défis et problématiques créés par leur utilisation : dépendance, sécurité, SaaS et périmètre de responsabilité, contrôle des performances, coûts. -de présenter, pas à pas, la construction d’une architecture technico-fonctionnelle - depuis la gestion du hardware jusqu’aux interfaces de gestion pour les opérationnels - permettant d’intégrer ces principes et bénéfices nativement et évitant ainsi la création de ces “couches” de dépendances qui constituent aujourd’hui la norme du marché.
+
+Cette approche technologique que je vous propose n’est pas simplement théorique, nous l’avons développée au sein de mon entreprise depuis 14 ans et elle a été déployée avec succès pour aujourd’hui gérer des systèmes responsables du traitement de volumes d’affaires massifs dans les systèmes d’information de grandes entreprises françaises et internationales, d’Auvergne et d’ailleurs ! Nous pourrons donc discuter ensemble des défis pratiques qui émergent de la construction d’une telle approche technologique alternative."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+        </insert>
+    </changeSet>
+    <changeSet id="008" author="camille.petitalot@volcamp.io">
+        <insert tableName="speakers_talk">
+            <column name="speaker_id"
+                    valueComputed="(SELECT id FROM speakers WHERE name = 'Arnaud Wetzel' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2023'))"/>
+            <column name="talk_id"
+                    valueComputed="(SELECT id FROM talks WHERE title = 'La construction d’une approche technologique alternative aux géants du cloud' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2023'))"/>
+        </insert>
+    </changeSet>
+    <changeSet id="009" author="camille.petitalot@volcamp.io">
+        <comment>Planning Day 1</comment>
+        <insert tableName="plannings">
+            <column name="talk_id"
+                    valueComputed="(SELECT id FROM talks WHERE title = 'La construction d’une approche technologique alternative aux géants du cloud')"/>
+            <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'INDUSTRIE' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2023'))"/>
+            <column name="schedule" value="2023-10-12 16:45"/>
+        </insert>
+    </changeSet>
+    <changeSet id="010" author="camille.petitalot@volcamp.io">
+        <insert tableName="speakers">
+            <column name="name" value="Elles bougent"/>
+            <column name="email" value=" "/>
+            <column name="company" value=""/>
+            <column name="biography" value=''/>
+            <column name="twitter" value="https://x.com/ellesbougent"/>
+            <column name="linkedin" value="https://linkedin.com/company/elles-bougent"/>
+            <column name="photo_link" value="https://drive.google.com/file/d/1ikelHrz7x_8wx3P9L9qhChbWtBjU0Mhq/preview"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+        </insert>
+    </changeSet>
+    <changeSet id="011" author="camille.petitalot@volcamp.io">
+        <insert tableName="talks">
+            <column name="title" value="C'est un fait les jeunes filles se désintéressent des sciences, cela vous interpelle?"/>
+            <column name="description"
+                    value="85% des métiers de 2030 n’existent pas encore ! Et surtout des métiers liés au numérique!
+
+Pourquoi se priver de 50% de la population !! C’est un fait les jeunes filles se désintéressent des sciences.
+
+Des initiatives existent, venez à la rencontre de:
+
+Samia Riviere : “Diversity and inclusion manager for IT-Digital”,
+Des représentantes de l’association “Ellesbougent”, qui viendront vous partager leurs initiatives
+Un format un peu différent pour cette conférence, qui sera plus, une session d’échange sur le thème de la mixité, mais avec un angle de vue un peu différent.
+
+Venez partager vos expériences ou simplement découvrir des initiatives. On vous attend !"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2023')"/>
+        </insert>
+    </changeSet>
+    <changeSet id="012" author="camille.petitalot@volcamp.io">
+        <insert tableName="speakers_talk">
+            <column name="speaker_id"
+                    valueComputed="(SELECT id FROM speakers WHERE name = 'Elles bougent' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2023'))"/>
+            <column name="talk_id"
+                    valueComputed="(SELECT id FROM talks WHERE title = 'C''est un fait les jeunes filles se désintéressent des sciences, cela vous interpelle?' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2023'))"/>
+        </insert>
+    </changeSet>
+    <changeSet id="013" author="camille.petitalot@volcamp.io">
+        <comment>Planning Day 1</comment>
+        <insert tableName="plannings">
+            <column name="talk_id"
+                    valueComputed="(SELECT id FROM talks WHERE title = 'C''est un fait les jeunes filles se désintéressent des sciences, cela vous interpelle?')"/>
+            <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'BOX' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2023'))"/>
+            <column name="schedule" value="2023-10-12 17:45"/>
+        </insert>
+    </changeSet>
+    <changeSet id="014" author="camille.petitalot@volcamp.io">
+        <delete tableName="speakers_talk">
+            <where>speaker_id = (SELECT id FROM speakers WHERE name = 'Sofia Lescano' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2023'))</where>
+        </delete>
+    </changeSet>
+    <changeSet id="015" author="camille.petitalot@volcamp.io">
+        <delete tableName="talks">
+            <where>title = 'Ca y est, j''ai cassé la prod !'</where>
+        </delete>
+    </changeSet>
+    <changeSet id="016" author="camille.petitalot@volcamp.io">
+        <delete tableName="speakers">
+            <where>name = 'Sofia Lescano' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2023')
+            </where>
+        </delete>
+    </changeSet>
+    <changeSet id="017" author="camille.petitalot@volcamp.io">
+        <update tableName="speakers">
+            <column name="biography"
+                    value="Développeur passionné depuis mon premier site web en PHP en 1999, j’ai co-fondé l’entreprise Kbrw en 2009 qui propose des solutions logiciels au service de la supply-chain."/>
+            <where>name = 'Arnaud Wetzel'</where>
+        </update>
+    </changeSet>
+</databaseChangeLog>
+
