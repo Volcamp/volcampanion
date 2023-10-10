@@ -141,5 +141,28 @@ Venez partager vos expériences ou simplement découvrir des initiatives. On vou
             <column name="schedule" value="2023-10-12 17:45"/>
         </insert>
     </changeSet>
+    <changeSet id="014" author="camille.petitalot@volcamp.io">
+        <delete tableName="speakers_talk">
+            <where>speaker_id = (SELECT id FROM speakers WHERE name = 'Sofia Lescano' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2023'))</where>
+        </delete>
+    </changeSet>
+    <changeSet id="015" author="camille.petitalot@volcamp.io">
+        <delete tableName="talks">
+            <where>title = 'Ca y est, j''ai cassé la prod !'</where>
+        </delete>
+    </changeSet>
+    <changeSet id="016" author="camille.petitalot@volcamp.io">
+        <delete tableName="speakers">
+            <where>name = 'Sofia Lescano' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2023')
+            </where>
+        </delete>
+    </changeSet>
+    <changeSet id="017" author="camille.petitalot@volcamp.io">
+        <update tableName="speakers">
+            <column name="biography"
+                    value="Développeur passionné depuis mon premier site web en PHP en 1999, j’ai co-fondé l’entreprise Kbrw en 2009 qui propose des solutions logiciels au service de la supply-chain."/>
+            <where>name = 'Arnaud Wetzel'</where>
+        </update>
+    </changeSet>
 </databaseChangeLog>
 
