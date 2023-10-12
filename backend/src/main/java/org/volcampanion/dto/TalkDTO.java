@@ -17,8 +17,7 @@ public class TalkDTO {
     private TalkThemeDTO theme;
     private TalkFormatDTO format;
     private List<SpeakerDTO> speakers;
-
-//    TODO Ajouter liste de commentaires
+    private UserFeedbackTalkDTO feedback;
 
 }
 
