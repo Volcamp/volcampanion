@@ -2,6 +2,8 @@ package org.volcampanion.api;
 
 
 import org.apache.commons.collections4.CollectionUtils;
+import org.eclipse.microprofile.jwt.Claims;
+import org.eclipse.microprofile.jwt.JsonWebToken;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
@@ -9,7 +11,9 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.volcampanion.api.validator.IdentifiableValidator;
 import org.volcampanion.domain.Talk;
 import org.volcampanion.domain.TalkFilters;
+import org.volcampanion.domain.UserFeedbackTalk;
 import org.volcampanion.domain.mappers.TalkMapper;
+import org.volcampanion.domain.mappers.UserFeedbackTalkMapper;
 import org.volcampanion.dto.CreateTalkDTO;
 import org.volcampanion.dto.TalkDTO;
 import org.volcampanion.exception.NotFoundException;
@@ -50,6 +54,15 @@ public class TalkController {
     @Inject
     TalkMapper mapper;
 
+    @Inject
+    JsonWebToken jwt;
+
+    @Inject
+    UserFeedbackTalkService feedbackService;
+
+    @Inject
+    UserFeedbackTalkMapper feedbackTalkMapper;
+
     @GET
     @APIResponse(responseCode = "200", description = "OK",
             content = @Content(mediaType = "application/json",
@@ -73,11 +86,19 @@ public class TalkController {
     )
     @Tag(name = "Talks API")
     public TalkDTO getTalkById(@PathParam("idTalk") Long idTalk) {
-        var conf = service.findById(idTalk);
-        if (conf == null) {
+        String email = jwt.getClaim(Claims.email);
+        var talk = service.findById(idTalk);
+        UserFeedbackTalk feedback = null;
+        if (email != null) {
+            feedback = feedbackService.findByUser(idTalk, email);
+        }
+        if (talk == null) {
             throw new NotFoundException();
         }
-        return mapper.toDTO(conf);
+
+        var result = mapper.toDTO(talk);
+        result.setFeedback(feedbackTalkMapper.toDTO(feedback));
+        return result;
     }
 
     @DELETE

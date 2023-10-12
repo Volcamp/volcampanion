@@ -7,7 +7,6 @@ import org.volcampanion.entity.UserFeedbackTalkEntity;
 import org.volcampanion.entity.mappers.IMapper;
 
 import javax.inject.Singleton;
-import java.util.ArrayList;
 import java.util.List;
 
 @Singleton
@@ -33,5 +32,16 @@ public class UserFeedbackTalkService extends BaseService<UserFeedbackTalk, UserF
         }
         repository.deleteById(existingFeedback.getId());
         repository.flush();
+    }
+
+    public UserFeedbackTalk findByUser(Long talkId, String userEmail) {
+        var queryParams = Parameters.with("userIdentifier", userEmail)
+                .and("talkId", talkId);
+
+        var existingFeedback = repository.find(FIND_QUERY, queryParams).firstResult();
+        if (existingFeedback == null) {
+            return null;
+        }
+        return mapper.toDomain(existingFeedback);
     }
 }

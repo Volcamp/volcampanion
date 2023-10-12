@@ -42,8 +42,8 @@ export class VMTalk {
       this.colorTheme = getColorTheme(this.talk!.theme!.name)
       this.iconFormat = getIconFormat(this.talk!.format!.type)
     }
-    if (talkIdFromRoute != null) {
-      this.feedbackInitService.eventEmitterFeedback.emit(new FeedbackTalkInitEventArgs(talkIdFromRoute))
-    }
+    // if (talkIdFromRoute != null) {
+    //   this.feedbackInitService.eventEmitterFeedback.emit(new FeedbackTalkInitEventArgs(talkIdFromRoute))
+    // }
   }
 }
