@@ -27,7 +27,8 @@ export class TalkMapper {
         conference: data.talk.conference,
         theme: data.talk.theme,
         format: data.talk.format,
-        speakers: speakersApi
+        speakers: speakersApi,
+        feedback: data.talk.feedback
       },
       new Date(data.schedule)
     )

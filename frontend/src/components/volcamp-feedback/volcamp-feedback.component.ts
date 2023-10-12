@@ -3,6 +3,7 @@ import {VMFeedbackTalk} from "../../vm/VMFeedbackTalk";
 import {UserService} from "../../services/UserService";
 import {AbstractTalkFeedbackService} from "../../services/abstract/AbstractTalkFeedbackService";
 import {FeedbackInitService} from "../../services/FeedbackInitService";
+import {Feedback} from "../../data/dto/input/Feedback";
 
 @Component({
   selector: 'app-volcamp-feedback',
@@ -13,6 +14,7 @@ import {FeedbackInitService} from "../../services/FeedbackInitService";
 export class VolcampFeedbackComponent {
   vm!: VMFeedbackTalk;
   @Input() talkId: string = ''
+  @Input() feedback: Feedback | null = null
 
 
   constructor(private userService: UserService, private dataService: AbstractTalkFeedbackService, private feedbackInitService: FeedbackInitService,) {
@@ -20,5 +22,7 @@ export class VolcampFeedbackComponent {
 
   ngOnInit() {
     this.vm = new VMFeedbackTalk(this.userService, this.dataService, this.feedbackInitService, this.talkId);
+    console.log(JSON.stringify(this.feedback))
+    this.vm.setFeedback(this.feedback!);
   }
 }
