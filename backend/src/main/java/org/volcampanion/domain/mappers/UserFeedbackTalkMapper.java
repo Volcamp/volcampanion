@@ -7,9 +7,9 @@ import org.volcampanion.dto.UserFeedbackTalkDTO;
 
 import java.util.List;
 
-import static org.mapstruct.MappingConstants.ComponentModel.CDI;
+import static org.mapstruct.MappingConstants.ComponentModel.JAKARTA;
 
-@Mapper(componentModel = CDI)
+@Mapper(componentModel = JAKARTA)
 public interface UserFeedbackTalkMapper {
     UserFeedbackTalkDTO toDTO(UserFeedbackTalk domain);
 

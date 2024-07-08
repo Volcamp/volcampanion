@@ -3,20 +3,19 @@ package org.volcampanion.service;
 
 import org.volcampanion.domain.Room;
 import org.volcampanion.domain.RoomFilters;
-import org.volcampanion.domain.TalkFilters;
 import org.volcampanion.entity.RoomEntity;
-import org.volcampanion.entity.mappers.RoomMapper;
+import org.volcampanion.entity.mappers.EntityRoomMapper;
 import org.volcampanion.repository.RoomRepository;
 
-import javax.inject.Singleton;
+import jakarta.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
 import java.util.List;
 
-@Singleton
+@ApplicationScoped
 public class RoomService extends BaseService<Room, RoomEntity> {
     private static final String BASE_QUERY = "conference.id = ?1 ";
 
-    RoomService(RoomMapper mapper, RoomRepository repository) {
+    RoomService(EntityRoomMapper mapper, RoomRepository repository) {
         super(mapper, repository);
     }
 

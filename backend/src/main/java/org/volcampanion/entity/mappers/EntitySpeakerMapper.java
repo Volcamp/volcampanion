@@ -1,6 +1,6 @@
 package org.volcampanion.entity.mappers;
 
-import static org.mapstruct.MappingConstants.ComponentModel.CDI;
+import static org.mapstruct.MappingConstants.ComponentModel.JAKARTA;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.mapstruct.Mapping;
 import org.volcampanion.domain.Speaker;
 import org.volcampanion.entity.SpeakerEntity;
 
-@Mapper(componentModel = CDI, uses = ConferenceMapper.class)
-public interface SpeakerMapper extends IMapper<Speaker, SpeakerEntity> {
+@Mapper(componentModel = JAKARTA, uses = EntityConferenceMapper.class)
+public interface EntitySpeakerMapper extends IMapper<Speaker, SpeakerEntity> {
 
     @Mapping(target = "talks", ignore = true)
     Speaker toDomain(SpeakerEntity entity);

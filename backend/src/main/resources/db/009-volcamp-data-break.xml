@@ -9,25 +9,25 @@
       <column name="name" value="BREAK_15M"/>
       <column name="type" value="BREAK"/>
       <column name="description" value="coffe break"/>
-      <column name="duration" value="15 minutes"/>
+      <column name="duration" value="15"/>
     </insert>
     <insert tableName="talk_formats">
       <column name="name" value="BREAK_30M"/>
       <column name="type" value="BREAK"/>
       <column name="description" value="medium coffe break"/>
-      <column name="duration" value="30 minutes"/>
+      <column name="duration" value="30"/>
     </insert>
     <insert tableName="talk_formats">
       <column name="name" value="BREAK_60M"/>
       <column name="type" value="BREAK"/>
       <column name="description" value="long coffee break"/>
-      <column name="duration" value="60 minutes"/>
+      <column name="duration" value="60"/>
     </insert>
     <insert tableName="talk_formats">
       <column name="name" value="BREAK_75M"/>
       <column name="type" value="BREAK"/>
       <column name="description" value="long break for launch"/>
-      <column name="duration" value="75 minutes"/>
+      <column name="duration" value="75"/>
     </insert>
   </changeSet>
   <changeSet author="camille.petitalot@volcamp.io" id="2">

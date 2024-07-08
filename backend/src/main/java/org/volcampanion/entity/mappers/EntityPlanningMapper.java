@@ -1,6 +1,6 @@
 package org.volcampanion.entity.mappers;
 
-import static org.mapstruct.MappingConstants.ComponentModel.CDI;
+import static org.mapstruct.MappingConstants.ComponentModel.JAKARTA;
 
 import java.util.List;
 import org.mapstruct.InheritInverseConfiguration;
@@ -10,18 +10,18 @@ import org.volcampanion.domain.Planning;
 import org.volcampanion.entity.PlanningEntity;
 import org.volcampanion.util.mapping.TimestampMapper;
 
-@Mapper(componentModel = CDI,
+@Mapper(componentModel = JAKARTA,
     uses = {
-        ConferenceMapper.class,
-        RoomMapper.class,
-        SpeakerMapper.class,
-        TalkMapper.class,
-        TalkFormatMapper.class,
-        TalkThemeMapper.class,
+        EntityConferenceMapper.class,
+        EntityRoomMapper.class,
+        EntitySpeakerMapper.class,
+        EntityTalkMapper.class,
+        EntityTalkFormatMapper.class,
+        EntityTalkThemeMapper.class,
         TimestampMapper.class
     }
 )
-public interface PlanningMapper extends IMapper<Planning, PlanningEntity> {
+public interface EntityPlanningMapper extends IMapper<Planning, PlanningEntity> {
 
   @Mapping(target = "room", source = "id.room")
   @Mapping(target = "talk", source = "id.talk")

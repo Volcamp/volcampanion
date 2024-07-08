@@ -6,10 +6,10 @@ import org.volcampanion.domain.UserFeedbackTalk;
 import org.volcampanion.entity.UserFeedbackTalkEntity;
 import org.volcampanion.entity.mappers.IMapper;
 
-import javax.inject.Singleton;
+import jakarta.enterprise.context.ApplicationScoped;
 import java.util.List;
 
-@Singleton
+@ApplicationScoped
 public class UserFeedbackTalkService extends BaseService<UserFeedbackTalk, UserFeedbackTalkEntity> {
 
     private static final String FIND_QUERY = "userIdentifier = :userIdentifier AND talk.id = :talkId";

@@ -4,11 +4,11 @@ import org.volcampanion.dto.IdentifiableDTO;
 import org.volcampanion.exception.BadRequestException;
 import org.volcampanion.exception.MandatoryParameterException;
 
-import javax.inject.Singleton;
+import jakarta.enterprise.context.ApplicationScoped;
 import java.util.Objects;
 import java.util.function.Function;
 
-@Singleton
+@ApplicationScoped
 public class IdentifiableValidator {
 
     public static final String ID_PROVIDED_WAS_NOT_FOUND = "%s provided was not found";

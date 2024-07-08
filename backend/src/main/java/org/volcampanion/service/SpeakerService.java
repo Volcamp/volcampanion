@@ -2,18 +2,18 @@ package org.volcampanion.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.inject.Singleton;
+import jakarta.enterprise.context.ApplicationScoped;
 import org.volcampanion.domain.Speaker;
 import org.volcampanion.domain.SpeakerFilters;
 import org.volcampanion.entity.SpeakerEntity;
-import org.volcampanion.entity.mappers.SpeakerMapper;
+import org.volcampanion.entity.mappers.EntitySpeakerMapper;
 import org.volcampanion.repository.SpeakerRepository;
 
-@Singleton
+@ApplicationScoped
 public class SpeakerService extends BaseService<Speaker, SpeakerEntity> {
     private static final String BASE_QUERY = "conference.id = ?1 ";
 
-    SpeakerService(SpeakerMapper mapper, SpeakerRepository repository) {
+    SpeakerService(EntitySpeakerMapper mapper, SpeakerRepository repository) {
         super(mapper, repository);
     }
 

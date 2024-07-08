@@ -2,15 +2,15 @@ package org.volcampanion.service;
 
 import org.volcampanion.domain.Conference;
 import org.volcampanion.entity.ConferenceEntity;
-import org.volcampanion.entity.mappers.ConferenceMapper;
+import org.volcampanion.entity.mappers.EntityConferenceMapper;
 import org.volcampanion.repository.ConferenceRepository;
 
-import javax.inject.Singleton;
+import jakarta.enterprise.context.ApplicationScoped;
 
-@Singleton
+@ApplicationScoped
 public class ConferenceService extends BaseService<Conference, ConferenceEntity> {
 
-    ConferenceService(ConferenceMapper mapper, ConferenceRepository repository) {
+    ConferenceService(EntityConferenceMapper mapper, ConferenceRepository repository) {
         super(mapper, repository);
     }
 

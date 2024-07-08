@@ -9,43 +9,43 @@
       <column name="name" value="KEYNOTE_15M"/>
       <column name="type" value="KEYNOTE"/>
       <column name="description" value="Keynote"/>
-      <column name="duration" value="15 minutes"/>
+      <column name="duration" value="15"/>
     </insert>
     <insert tableName="talk_formats">
       <column name="name" value="KEYNOTE_45M"/>
       <column name="type" value="KEYNOTE"/>
       <column name="description" value="Keynote"/>
-      <column name="duration" value="45 minutes"/>
+      <column name="duration" value="45"/>
     </insert>
     <insert tableName="talk_formats">
       <column name="name" value="CONFERENCE_45MIN"/>
       <column name="type" value="CONFERENCE"/>
       <column name="description" value="Conference"/>
-      <column name="duration" value="45 minutes"/>
+      <column name="duration" value="45"/>
     </insert>
     <insert tableName="talk_formats">
       <column name="name" value="WORKSHOP_1h45M"/>
       <column name="type" value="WORKSHOP"/>
       <column name="description" value="Workshop"/>
-      <column name="duration" value="1 hours 45 minutes"/>
+      <column name="duration" value="105"/>
     </insert>
     <insert tableName="talk_formats">
       <column name="name" value="WORKSHOP_2H"/>
       <column name="type" value="WORKSHOP"/>
       <column name="description" value="Workshop"/>
-      <column name="duration" value="2 hours"/>
+      <column name="duration" value="120"/>
     </insert>
     <insert tableName="talk_formats">
       <column name="name" value="REX_45M"/>
       <column name="type" value="REX"/>
       <column name="description" value="Rex"/>
-      <column name="duration" value="45 minutes"/>
+      <column name="duration" value="45"/>
     </insert>
     <insert tableName="talk_formats">
       <column name="name" value="LIGHTNING_15M"/>
       <column name="type" value="LIGHTNING"/>
       <column name="description" value="Lightning"/>
-      <column name="duration" value="15 minutes"/>
+      <column name="duration" value="15"/>
     </insert>
   </changeSet>
   <changeSet author="mickael.gervais@volcamp.io" id="2">

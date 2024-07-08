@@ -1,7 +1,7 @@
 package org.volcampanion.repository;
 
 import io.quarkus.hibernate.orm.panache.PanacheRepositoryBase;
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.ApplicationScoped;
 import org.volcampanion.entity.PlanningEntity;
 import org.volcampanion.entity.PlanningId;
 

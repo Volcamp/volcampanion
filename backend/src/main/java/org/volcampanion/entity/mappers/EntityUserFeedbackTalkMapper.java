@@ -8,13 +8,13 @@ import org.volcampanion.entity.UserFeedbackTalkEntity;
 
 import java.util.List;
 
-import static org.mapstruct.MappingConstants.ComponentModel.CDI;
+import static org.mapstruct.MappingConstants.ComponentModel.JAKARTA;
 
-@Mapper(componentModel = CDI,
+@Mapper(componentModel = JAKARTA,
         uses = {
-                TalkMapper.class,
+                EntityTalkMapper.class,
         })
-public interface UserFeedbackTalkMapper extends IMapper<UserFeedbackTalk, UserFeedbackTalkEntity> {
+public interface EntityUserFeedbackTalkMapper extends IMapper<UserFeedbackTalk, UserFeedbackTalkEntity> {
     @Mapping(target = "userIdentifier")
     @Mapping(target = "talk")
     UserFeedbackTalk toDomain(UserFeedbackTalkEntity entity);

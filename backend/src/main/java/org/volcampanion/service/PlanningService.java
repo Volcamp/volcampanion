@@ -4,15 +4,15 @@ import io.quarkus.panache.common.Sort;
 import org.volcampanion.domain.Planning;
 import org.volcampanion.domain.PlanningFilters;
 import org.volcampanion.entity.PlanningEntity;
-import org.volcampanion.entity.mappers.PlanningMapper;
+import org.volcampanion.entity.mappers.EntityPlanningMapper;
 import org.volcampanion.repository.PlanningRepository;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
+import jakarta.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
 import java.util.List;
 
-@Singleton
+@ApplicationScoped
 public class PlanningService {
     private static final String BASE_QUERY = "id.talk.conference.id = ?1 ";
 
@@ -21,7 +21,7 @@ public class PlanningService {
     @Inject
     PlanningRepository repository;
     @Inject
-    PlanningMapper mapper;
+    EntityPlanningMapper mapper;
 
     public Planning createOrUpdate(Planning domain) {
         var entity = mapper.toEntity(domain);

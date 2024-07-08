@@ -19,10 +19,10 @@ import org.volcampanion.dto.TalkDTO;
 import org.volcampanion.exception.NotFoundException;
 import org.volcampanion.service.*;
 
-import javax.inject.Inject;
-import javax.transaction.Transactional;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
+import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
 

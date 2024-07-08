@@ -15,13 +15,13 @@ import org.volcampanion.dto.TalkDTO;
 import org.volcampanion.exception.NotFoundException;
 import org.volcampanion.service.PlanningService;
 
-import javax.inject.Inject;
-import javax.transaction.Transactional;
-import javax.ws.rs.*;
+import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
+import jakarta.ws.rs.*;
 import java.util.Collections;
 import java.util.List;
 
-import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+import static jakarta.ws.rs.core.MediaType.APPLICATION_JSON;
 
 @Path("/plannings")
 @Produces(APPLICATION_JSON)

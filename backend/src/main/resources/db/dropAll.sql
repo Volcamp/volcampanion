@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS volcampanion.databasechangelog;
 DROP TABLE IF EXISTS volcampanion.databasechangeloglock;
-DROP TABLE IF EXISTS volcampanion.user_favorite_talks;
+DROP TABLE IF EXISTS volcampanion.user_favorite_plannings;
 DROP TABLE IF EXISTS volcampanion.speakers_talk;
 DROP TABLE IF EXISTS volcampanion.feedbacks;
 DROP TABLE IF EXISTS volcampanion.plannings;

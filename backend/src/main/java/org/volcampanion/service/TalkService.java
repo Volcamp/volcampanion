@@ -1,21 +1,22 @@
 package org.volcampanion.service;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.inject.Singleton;
+import jakarta.enterprise.context.ApplicationScoped;
 import org.apache.commons.lang3.StringUtils;
 import org.volcampanion.domain.Talk;
 import org.volcampanion.domain.TalkFilters;
 import org.volcampanion.entity.TalkEntity;
-import org.volcampanion.entity.mappers.TalkMapper;
+import org.volcampanion.entity.mappers.EntityTalkMapper;
 import org.volcampanion.repository.TalkRepository;
 
-@Singleton
+import java.util.ArrayList;
+import java.util.List;
+
+@ApplicationScoped
 public class TalkService extends BaseService<Talk, TalkEntity> {
 
     private static final String BASE_QUERY = "conference.id = ?1 ";
 
-    TalkService(TalkMapper mapper, TalkRepository repository) {
+    TalkService(EntityTalkMapper mapper, TalkRepository repository) {
         super(mapper, repository);
     }
 
