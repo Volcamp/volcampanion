@@ -1,9 +1,0 @@
-<div *ngIf="vm.plannings!==undefined">
-  <div *ngFor="let date of vm.dates">
-    <app-talks-list [plannings]="getByDate(date)"></app-talks-list>
-  </div>
-</div>
-<app-loader *ngIf="vm.plannings===undefined && vm.noConnection !== true"></app-loader>
-<div *ngIf="vm.noConnection === true">
-  <app-no-connection></app-no-connection>
-</div>
