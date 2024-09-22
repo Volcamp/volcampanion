@@ -1,0 +1,555 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+  <changeSet id="001" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Accueil Café Jour 1"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'BREAK_60M')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="002" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="L'intro Volcamp"/>
+      <column name="description"
+              value="L’intro Volcamp 2024 par la team Geek&amp;Terroir.
+Présentation de la conférence, du contenus, du programme et de nos sponsors."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="003" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Keynote Jour 1"/>
+      <column name="description"
+              value=''/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="004" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Cracking the Quantum Code. Découvrons la révolution quantique !"/>
+      <column name="description"
+              value='Depuis le début de l’année, les annonces concernant les ordinateurs quantiques se multiplient.
+
+L’informatique quantique promet une puissance de calcul sans précédent, révolutionnant des domaines allant de la science des matériaux et de la découverte de médicaments à la modélisation financière et à la cryptographie. Mais qu’est-ce que l’informatique quantique et comment fonctionne-t-elle ?
+
+Cette conférence plonge dans le monde fascinant de la mécanique quantique pour dévoiler le fonctionnement interne des ordinateurs quantiques, en explorant des éléments tels que les qubits, les portes quantiques, les circuits quantiques, les algorithmes quantiques, les hardwares quantiques et en montrant comment nous pouvons simuler et exécuter un programme quantique !'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="005" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Il était une faille. 5 histoires sur l'AppSec et ce qu'on peut en apprendre"/>
+      <column name="description"
+              value='Dans le Web, les failles de sécurité sont partout, et comprendre comment elles se forment (et comment les éviter) est crucial. Dans ce talk, je partage des histoires vraies de vulnérabilités pour parler de sécurité de manière concrète.
+
+Après plus de 40 numéros d’une newsletter qui explique et vulgarise des failles de sécurité marquantes, comment ces vulnérabilités sont survenues et comment les développeurs peuvent se protéger, j’en ai sélectionné 5 particulièrement intéressantes. Soit pour comprendre un aspect particulièrement pointu de la sécurité applicative, soit pour illustrer l’intérêt du storytelling dans la cybersécurité. Saviez-vous qu’il était possible de se faire hacker depuis sa boîte aux lettres ? Ou qu’il avait été possible de voler des sessions sur ChatGPT en requêtant une feuille de style CSS ?'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="006" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Commons - Good or Evil ?"/>
+      <column name="description"
+              value='La mise en place de commons au sein d’un SI est un reflexe assez commun, d’autant plus avec l’essor des Microservices.
+
+Ces librairies “maison” sont en effet bien pratique pour mutualiser des comportements métiers ou techniques. L’objectif de cette conférence est de fournir une critique constructive sur le recours aux commons, de présenter leurs coûts plus ou moins cachés et de donner des conseils pour réduire au maximum ces coûts.
+
+Et pourquoi pas même de proposer une solution alternative pour adresser les problématiques auxquelles les commons tentent de répondre… Cela ne semble peut-être pas évident au premier abord mais les commons sont un parfait support pour parler Software Craftmanship, architecture et même IA !'/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="007" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="10 tests simples pour améliorer l'accessibilité de votre site"/>
+      <column name="description"
+              value="Derrière ce titre « clickbait » se cache une vraie méthode basée sur une checklist du W3C.
+
+Elle permet de tester soit même l’accessibilité d’un site en 10 tests simple, même sans avoir un profil technique.
+
+Cette méthode ne remplace pas un « vrais » audit de site, mais elle va permettre de donner une idée générale de l’accessibilité d’un site. Ces tests couvrent une bonne partie des problèmes bloquants d’accessibilité. Les passer avec succès est une base essentielle pour rendre accessible un site.
+
+Ils sont rapides et faciles à faire, tous les intervenants d’un projet peuvent les réaliser : Clients, PO, CP, Dev, UX/UI Designers…
+
+L’objectif de cet atelier est de présenter ces 10 tests et de les pratiquer en « live » en utilisant divers outils quand c’est nécessaire :
+
+Extensions navigateurs (Web Developper, Heading Maps, A11y Outline, Stylish...)
+Les outils d'accessibilité des navigateur
+L'inspecteur de code pour les profils les plus techniques
+Nous aborderons également les outils d’automatisation de tests qui peuvent être intégrés à vos IDE ou à votre CI/CD.
+
+S’il reste assez de temps, en fonction de la progression des participants, nous pourrons même aborder des tests “bonus” ou jouer un peu avec les lecteurs d’écrans."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_2H')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'UX_UI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="008" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Pause"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'BREAK_30M')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="009" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Enseigner l'algorithmique et la programmation aux petits et tout petits"/>
+      <column name="description"
+              value="Depuis l’avènement des smartphones et des réseaux sociaux, les ordinateurs sont encore plus présents dans notre vie quotidienne, au travail, dans nos loisirs. L’informatique prend une part très (ou trop ?) importante dans nos vies, et pour certains avant même leurs 2 ans d’âge. Fin avril 2024, la “Commission Écrans” a rendu au Président de la République son rapport “Enfants et écrans : À la recherche du Temps Perdu” pour réguler les pratiques du numérique. La régulation est très certainement une des solutions à mettre en place. Mais une autre voie mériterait d’être mise davantage en avant : l’enseignement de l’algorithmique et de la programmation aux jeunes, petits et tout petits.
+
+Depuis plus de 10 ans, j’interviens auprès des jeunes de 4 à 14 ans pour leur faire des introductions au codage, à l’algorithmique et à la programmation. Je ne suis pas le seul. Les premières expériences ont vu le jour à la fin des années 60 et de nombreuses solutions ont vu le jour depuis, que ce soit avec ou sans écran. Volcamp PIOU PIOU fait partie de ces expériences. Ces apprentissages restent néanmoins exceptionnels, alors que d’autres disciplines sont largement enseignées dans les écoles et les collèges. Pourtant, l’informatique touchera beaucoup plus les générations futures que la plupart des autres disciplines.
+
+À travers cette présentation, j’expliquerai pourquoi je pense qu’il est nécessaire d’enseigner l’algorithmique et la programmation aux plus jeunes. Je présenterai pour cela les expériences passées les plus marquantes et m’appuierai par exemple sur les travaux de Piaget, de Simon Papert ou encore Adele Goldman et Alan Kay. Je continuerai avec des exemples plus modernes et mes propres expériences dans des écoles auvergnates. Je présenterai l’application développée avec mes étudiants et utilisée dans les écoles, et notamment durant l’évènement Volcamp Piou Piou. Nous verrons ainsi que les bienfaits dépassent largement le domaine de l’informatique et peut également apporter des solutions à la recherche d’une meilleure utilisation de l’outil informatique, de la compréhension des problèmes liés à la sécurité et à la gestion de sa vie privée, et à l’attraction des filles vers les métiers du numérique."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="010" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Succès débloqué. Rendre son jeu vidéo accessible"/>
+      <column name="description"
+              value="Dans cette conférence, nous plongeons dans l’univers des jeux vidéo pour explorer comment les rendre plus accueillants et adaptés à tous les joueurs et à toutes les joueuses.
+
+Chaque élément du jeu, du packaging aux premières interactions à l’écran, est minutieusement repensé pour créer une expérience immersive et juste pour chacun et chacune.
+
+Découvrez avec nous comment ces mécanismes conçus spécifiquement brisent les barrières, ouvrant ainsi un terrain de jeu équitable pour toutes les personnes passionnées de jeux vidéo."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERECE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="011" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Du CSS aux shaders WebGL - panorama des techniques d'animation sur le web"/>
+      <column name="description"
+              value="Parfois subtiles, parfois proéminentes, les animations sont un élément essentiel pour une expérience utilisateur agréable. Mais une fois qu’on a imaginé des animations plus ou moins folles, vient la question fatidique du “comment fait-on ça ?”, à laquelle j’aimerais vous aider à répondre.
+
+Pour pouvoir choisir la technique la mieux adaptée à chaque animation, il vaut mieux avoir une boîte à outils la plus complète possible. J’aimerais vous aider à construire la vôtre en vous présentant un panel le plus large possible de techniques d’animation sur le web : des APIs natives classiques (CSS, Web Animation API) aux plus complexes (Canvas API) en passant par les librairies spécialisées (FLIP, Lottie, Framer Motion, Rive…). Nous finirons avec WebGL et ses shaders GLSL, qui feraient trembler plus d’un développeur mais dont on retrouve les effets impressionnants sur tous les sites récompensés aux Awwwards.
+
+Je passerai rapidement sur toutes ces techniques, en comparant leurs performances et utilisations possibles, afin de vous laisser la liberté d’explorer plus en profondeur celles qui vous intéressent."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="012" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Pause déjeuner &amp; Lightning"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'BREAK_75M')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="013" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Les lois de la tech"/>
+      <column name="description"
+              value="« Nul n’est censé ignorer la loi. » Qui n’a jamais entendu parler des Lois de Murphy, de Moore ou de Pareto ? Ces noms vous sont familiers, on vous en parle constamment, mais d’où viennent-elles vraiment ? Et que dire des lois de Conway, de Goodhart, de Hofstadter ou de Gregor Hohpe, peut-être moins connues, mais tout aussi cruciales dans notre univers technologique ?
+
+Plongez avec moi dans les tables de la loi. Ces lois, souvent mentionnées, sont pourtant rarement explorées en profondeur. Venez découvrir leurs racines, leurs origines, leurs créateurs. Comprenez comment elles façonnent encore aujourd’hui notre monde technologique et discutez de leur pertinence future. Cette conférence est une invitation à éveiller notre curiosité et à approfondir notre compréhension des principes qui régissent notre univers technologique. En explorant les contextes historiques et les motivations qui ont conduit à la formulation de ces lois, nous pourrons mieux appréhender leur impact actuel et envisager leur rôle dans le futur.
+
+Que vous soyez un professionnel de la technologie, un chercheur ou simplement un passionné, cette session vous offrira une occasion unique de découvrir et de discuter de ces lois fondatrices. Préparez-vous à une plongée captivante dans l’histoire, la logique et les implications de ces principes essentiels."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="014" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Apprendre la programmation informatique avec du bois."/>
+      <column name="description"
+              value="Dans ce talk, on n’utilisera aucune technologie informatique ni électronique, car l’idée est de construire un langage informatique (quasi turing complete) avec 25 morceaux de bois représentant des instructions de code.
+
+On vous présentera d’abord l’intérêt pédagogique du projet Code en Bois qui est une innovation clermontoise à mi-chemin entre un smart-game, un jeu montessori et un vrai ordinateur.
+
+On prendra quelques exemples de concepts algorithmiques qui peuvent être appris et résolus avec du bois: des boucles for/while, des structures conditionnelles, des fonctions, des variables. Oui, on peut aller jusqu’à coder une suite de Fibonacci ou résoudre le problème des deux robots.
+
+A la fin vous pourrez bien sûr tester et manipuler le matériel. On ouvrira à une petite discussion sur des cas d’usage professionnels.
+
+Atelier ouvert à tous sans pré-requis (même pas besoin d’avoir des enfants)"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="015" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Assistants vocaux, le défi de la neutralité de genre"/>
+      <column name="description"
+              value="Cette présentation explorera l’innovation et les défis liés à la création de voix neutres en genre (ni masculine ni féminine) pour les assistants vocaux.
+
+Nous explorerons comment la neutralité de genre peut transformer notre interaction avec la technologie et favoriser une plus grande inclusivité.
+
+L’accent sera mis sur l’importance de cette évolution dans un contexte technologique en rapide évolution, où la représentation et l’inclusivité deviennent des enjeux cruciaux."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="016" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Infrastructure as True Code avec Pulumi"/>
+      <column name="description"
+              value="Vous connaissez peut-être l’Infrastructure as Code, cette façon de décrire le contenu d’une infrastructure cible dans du code source. Presque toutes les solutions existantes (Terraform, CloudFormation…) proposent un paradigme identique, à savoir déclarer les ressources à provisionner dans des fichiers de configuration.
+
+Certaines solutions fournissent également quelques options pour donner plus de flexibilité au développeur comme des expressions (déclaration de variables, boucles for…), des imports de modules, du templating, etc. Malheureusement, de par l’approche déclarative, on est limité aux fonctionnalités proposées par l’outil choisi pour gérer notre IaC. Et si vous pouviez utiliser votre langage favori pour créer votre infra AWS, vos ressources Kubernetes, etc? C’est ce que permet Pulumi, coder son infrastructure avec un langage traditionnel (JavaScript, Python, Go, Java…).
+
+Dans cette présentation, je vous présenterai cet outil, les avantages qu’il apporte et implémenterai une infrastructure from scratch."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="017" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Pause"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'BREAK_15M')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="018" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Notre GitLab sur internet ? Oui Monsieur le RSSI !"/>
+      <column name="description"
+              value="La pandémie de COVID-19, l’essor du télétravail, les fusions-acquisitions et les partenariats stratégiques ont redéfini le paysage professionnel. L’ère du travail avec des équipements spécifiques sur site est révolue. La question se pose : comment intégrer efficacement de nouveaux contributeurs sans les encombrer de matériel coûteux (ordinateurs préconfigurés, VPN, dongles de sécurité, etc.) et sans les soumettre à des procédures fastidieuses ?
+
+Face à ce défi, nous avons osé poser la question : “Et si nous rendions GitLab accessible directement sur Internet ?” L’idée semblait audacieuse, voire irréalisable. GitLab ne propose pas nativement de MFA sur la ligne de commande, et c’est la condition ultime pour aller au bout de cette idée. Et pourtant, nous l’avons fait. Sans détériorer l’experience utilisateur.
+
+Dans ce REX, nous partagerons les différentes phases de ce projet et révélerons la solution technique, subtil mélange entre Git Credential Manager, NGINX et une délégation OIDC, qui a su convaincre et mettre d’accord nos équipes. Rejoignez-nous pour découvrir comment nous avons repensé l’intégration des contributeurs dans l’ère après COVID."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="019" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Créer une IA de zéro avec Charles Darwin et des kubes !"/>
+      <column name="description"
+              value="Que vous soyez expert(e) de la technique ou novice au sujet de l’intelligence artificielle, ce talk vous emmènera dans un voyage à travers le temps et la technologie.
+
+Du XIXe siècle à aujourd’hui, en passant par l’union soviétique, nous verrons les concepts sur lesquels repose l’IA mais également comment créer votre propre intelligence artificielle depuis chez vous grâce à l’open-source !"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="020" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Le legacy n’est pas une fatalité"/>
+      <column name="description"
+              value="Qu’est-ce qui maintient ton entreprise coincée dans l’âge de pierre numérique ?
+
+Ton SI est sinistré et tu te bats avec ton “legacy” au quotidien ?
+
+L’intégration d’un nouveau produit est devenue aussi complexe que de convaincre un T-rex d’entrer dans un salon de thé !
+
+À chaque évolution de nos systèmes, naît un nouvel héritage du passé. Malgré tous nos efforts, le “legacy” est et restera là, comme si la loi de Murphy avait décidé d’en faire son terrain de jeu.
+
+Maintenant, admettons-le, nos “legacy” sont comme ces cousins excentriques avec qui on doit cohabiter. Ils seront toujours là demain, et après-demain aussi, comme un feuilleton à suspense interminable.
+
+A travers un REX de conception d’une architecture d’intégration d’un composant SAAS à un legacy, je vous embarquerai dans un voyage mystérieux et fantastique, naviguant de problème en problème. Imaginez-vous explorer les contrées de l’architecture orientée événements, des WebHook design pattern, des évolutions de format de message, le tout orchestré sur la scène tumultueuse de la plateforme Kafka, dans un univers souvent impitoyable.
+
+Si, comme moi, tu en as assez d’entendre un refrain du genre: “Il ne faudrait pas prendre le risque d’avoir des idées nouvelles”, pourquoi ne pas osez briser les chaînes du passé pour embrasser la promesse d’un avenir radieux ?"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="021" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Recette pour des environnements aux petits oignons pour ton déploiement continu"/>
+      <column name="description"
+              value="On a tous besoin de déployer des environnements de dev, de test à la demande avec les contraintes que cela comporte (automatisation des mises à jour, sécurité, accès pour les utilisateurs, optimisation des coûts…)
+
+Dans ce workshop, nous proposons aux étudiants de mettre en place un environnement sur un cluster Kubernetes et comment on peut s’outiller pour que tout cela devienne beaucoup plus simple.
+
+Pour réussir notre recette, nous partons d’un cluster Kubernetes tout frais, auquel nous ajouterons les ingrédients nécessaires pour avoir un environnement prêt à déguster :
+
+une farandole d'URLs pour simplifier l'accès aux environnements à des développeurs, testeurs ...
+un bouquet de certificats pour sécuriser tout cela
+un filet de GitOps pour piloter les installations et les mises à jour
+une pointe de green pour éteindre automatiquement vos environnements pendant les périodes creuses
+un soupçon de sécurité pour contrôler son cluster
+Le tout mariné par GitLab avec la gestion ses fonctionnalités de gestion des environnements.
+
+Parmi les ingrédients, on retrouvera : external-dns, cert-manager, Flux, kube-downscaler, kyverno et d’autres petits outils qui améliorent le quotidien
+
+Ce workshop est un régal pour construire votre toolkit pour s’avourer la mise en place de vos environnements.
+
+A vos tabliers ! 👩‍🍳 👨🏻‍🍳"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_1h45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="022" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Comment nous avons transformé les Restos du Cœur en Cloud Provider"/>
+      <column name="description"
+              value="Cette conférence vous plongera au cœur d’une transformation audacieuse, où les Restos du Cœur ont évolué pour devenir un fournisseur de services Cloud (en interne).
+
+À travers cette histoire captivante, nous explorerons en détail le projet de construction d’une plateforme de cloud privé reposant sur les technologies robustes d’OpenStack et de Kubernetes, intégrant une prise en compte proactive de l’énergie.
+
+Nous aborderons les motivations derrière cette initiative avant-gardiste, mettant en lumière les défis uniques rencontrés dans l’adaptation de concepts de cloud computing au sein d’une organisation à but non lucratif.
+
+Au cours de la présentation, nous plongerons dans les détails techniques de l’infrastructure, décrivant la conception de la plateforme de cloud privé, son architecture basée sur OpenStack et Kubernetes, ainsi que les choix de configuration spécifiques qui ont été faits pour répondre aux besoins particuliers des Restos du Cœur, tout en mettant en avant l’approche “Bare Metal forecasting” pour une gestion dynamique et efficiente de l’énergie.
+
+Des retours d’expérience concrets seront partagés, mettant en lumière les succès, les leçons apprises et les perspectives d’avenir pour cette initiative novatrice."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="023" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Vivre du logiciel libre pour de vrai"/>
+      <column name="description"
+              value="Développer un logiciel libre, c’est cool. Avoir des utilisateur·rices, c’est encore plus cool. Pouvoir en vivre, c’est encore plus plus cool !
+
+WeasyPrint est une bibliothèque Python opensource dont le premier commit remonte au 20 avril 2011, mais ce n’est que depuis 2020 que nous gagnons notre vie avec 💸.
+
+Durant cette présentation, nous verrons l’évolution de nos logiciels libres et comment nous sommes passés d’un projet développé et utilisé dans une entreprise à un produit avec des clients.
+
+Nous parlerons des différentes solutions pour gagner de l’argent avec un logiciel libre, pourquoi nous en avons choisi certaines (et pas d’autres) et comment les mettre en place."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="024" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Goldie d'or et les trois CNI"/>
+      <column name="description"
+              value="Au travers du conte, pour enfant, je revisite les boucles d’or: notre petite goldie dorée va tester l’environnement de nos trois oursons réseautés !!! Et si votre déploiement Golang vous aidez à tester les CNI du landscapes CNCF.
+
+Nous nous appuierons sur clusters Kubernetes et notre petite application va ainsi les environnements avec les 3 CNI ( Calico, Cilium et Antréa) au travers de tests basique mais simple comme vous devriez le faire pour éprouver votre choix du réseau dans votre cluster Kubernetes."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="025" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Compose to Kube, same player shoot again"/>
+      <column name="description"
+              value="Kubernetes est le standard de facto dans notre industrie pour orchestrer des applications conteneur-izées en production. Les développeurs apprécient pourtant toujours autant la simplicité et la compacité du modèle proposé par Docker Compose, au moins pendant le développement. Une demande qui revient donc en boucle concerne une traduction auto-magique du compose.yaml en fichiers kube.yaml. Cette fonctionnalité a été proposée par de nombreux outils, avec des approches diverses, y compris par Docker avec “Compose on Kubernetes” qui a finalement été déprécié. Nous avons eu une expérience similaire avec les “Cloud Integrations” et le traduction de Compose vers Amazon ECS.
+
+Dans cette session, nous explorerons notre héritage pour comprendre les raisons de ces échecs, avant de vous présenter la nouvelle génération d’outil “Compose to Kube” sur laquelle nous travaillons, qui veut combiner la simplicité pour un développeur à déployer son application compose.yaml sur k8s, and la flexibilité pour les équipes plateforme de contrôler et d’adapter la conversion pour correspondre aux solutions techniques déployées sur leur cluster."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="026" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Les feature flags. le couteau suisse de votre flow de développement"/>
+      <column name="description"
+              value="Les features flags sont une technique permettant d’activer ou désactiver à la demande certaines fonctionnalités d’une application.
+
+Ils permettent non seulement de rendre les mises en production moins effrayantes, séparant le déploiement du livrable et l’activation des nouvelles fonctionnalités mais aussi de simplifier le flow de développement, en permettant de livrer des features non finalisées.
+
+Au travers d’exemples concrets, nous verrons comment mettre en place les features flags, ce qu’ils peuvent apporter, mais également les dérives auxquels ils peuvent aboutir les manières de les éviter."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="027" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Tabby, mon Copilot libre"/>
+      <column name="description"
+              value="L’évolution rapide de l’IA appliquée au développement logiciel a donné naissance à des outils puissants tels que Github Copilot. Cependant, la dépendance à une connexion internet, le manque de contrôle sur le modèle, les coûts associés, et les préoccupations liées à la confidentialité des données ont ouvert la voie à une alternative révolutionnaire : Tabby ML.
+
+Tabby propose une expérience similaire à Github Copilot, mais se démarque par son accessibilité à 100% GRATUITE et son statut open source, offrant une autonomie totale à ses utilisateurs. En un clic, vous pouvez déployer votre propre instance Tabby, que ce soit localement ou sur vos propres serveurs. Imaginez coder assisté par l’IA dans un avion ou un train, indépendamment de la disponibilité du Wi-Fi ! L’extension Tabby pour VSCode, IntelliJ et d’autres, vous permet de commencer à coder sans souci.
+
+Avec Tabby, une plateforme hautement “customisable”, le modèle d’IA utilisé pour la génération du code peut être choisi parmi divers modèles du Huggingface Hub, et le tout peut fonctionner directement sur votre ordinateur, sans nécessiter une connexion internet.
+
+Dans cette présentation, nous explorerons les fonctionnalités de Tabby, son architecture, et la manière dont il redéfinit notre approche de la génération de code basée sur l’IA. Rejoignez-nous pour découvrir comment Tabby peut libérer votre potentiel créatif tout en préservant votre liberté et votre confidentialité."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="028" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="RAGTime - Discuter avec ses propres données"/>
+      <column name="description"
+              value="Au-delà de la hype autour de ChatGPT, comment construire un moteur de recherche conversationnelle (aka “chatbot”) basé sur des données et documents qui doivent rester privés ? La solution est le RAG (Retrieval Augmented Generation). C’est le moteur de recherche qui va fournir un contexte vérifiable sur lequel se basera la génération des réponses du chatbot.
+
+Elasticsearch, bien connu pour ses capacités de recherche par mots-clés a depuis plusieurs années intégré les “dense vectors” et la recherche sémantique, permettant une recherche et un scoring hybrides combinant ces deux approches. En parallèle, l’utilisation des LLM (Large Language Models) s’est démocratisée avec des orchestrateurs comme LangChain4J et des LLM accessibles et faciles à déployer avec Ollama.
+
+Dans ce hands-on lab, après une introduction des principes de base, nous vous proposons de construire un chatbot sur un jeu de données d’entreprise et discuter avec lui ! Nous utiliserons Elasticsearch, Quarkus, LangChain4J et Ollama."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_1h45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="029" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Le choix d’une organisation par l’échec avec la Team Rocket"/>
+      <column name="description"
+              value="La team Rocket cherche la meilleure des organisations Business, Produit et Tech afin d’attraper sa première feature. Plein de prototypes ont été réalisés afin de trouver l’organisation rêvée. Revenons sur l’ensemble de ces méthodes et trouvons celle qui correspond le mieux à notre contexte et à notre équipe, le tout illustré de façon ludique.
+
+Jessie : Afin de trouver la meilleure organisation James : Afin de rallier toutes les équipes à nos réunions Jessie : Afin d’écraser le cycle en V et l’agilité James : Afin de développer nos stratégies jusqu’à la voie lactée Jessie : Jessie ! James : James ! Jessie : la Team Rocket, plus rapide que la lumière !! James : Organisez-vous, ou ce sera la guerre ! J et J : oui, la guerre !!"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="030" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title"
+              value="Dev Faster, Dev Smarter. Comment le Low Code Open Source et l'IA redéfinissent le développement logiciel ?"/>
+      <column name="description"
+              value="En tant que directeur technique au sein d’une ESN, la capacité à développer et déployer rapidement des solutions efficientes et maintenables est une de mes préoccupations.
+
+Sur ces dernières années, nous avons pu expérimenter différentes pistes nous permettant d’accélérer notre productivité sans pour autant s’enfermer dans des options commerciales :
+
+NocoDb et Budibase : deux puissantes solutions opensource qui permettent de construire des applications complètes en quelques clics
+AppSmith : permet aux développeurs de créer avec peu de codage des interfaces utilisateur riches capables de s'appuyer sur des API ou bases de données existantes
+Appwrite et Supabase, similaires à Firebase de Google, ces outils fournissent des back-end as a service robustes et évolutifs
+JHipster : générateur d'applications robuste et moderne qui permet de créer rapidement des applications basées sur un modèle d'entités
+Lors de cette conférence, je vous propose une immersion dans ces solutions opensource, pour en analyser les avantages comme les limitations.
+
+Mais à l’heure de l’avènement des IA génératives et du software craftsmanship, ces solutions low code sont-elles vouées à disparaître comme le prévoient certains analystes ? Je partagerais avec vous ma vision argumentée sur leur potentiel actuel et leur évolution à venir. Vous en sortirez grandis avec de nouvelles “armes de productivité massive”."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'SUSTAINABLE_IT')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="031" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="REX IoT - Les clés du succès pour passer de l'idée à la réalité"/>
+      <column name="description"
+              value="Tu veux tout savoir sur l’IoT dans la vraie vie ? Cette conférence est faite pour toi ! A partir d’un retour d’expérience, je vais t’expliquer comment choisir le bon matériel, gérer tes appareils à distance et les maintenir à jour pour éviter les problèmes une fois en production.
+
+Nous aborderons également des points importants comme l’organisation de ton système, la gestion des coûts, et comment passer à l’échelle. Bien sûr, nous plongerons un peu dans certains pattern de gestion de la data IoT tout en respectant la vie privée avec des mesures telles que le RGPD.
+
+Viens nous rejoindre pour une session où nous partagerons des astuces et des conseils pour propulser ton projet IoT dans le monde réel."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="032" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Application mobile offline-first avec React Native ⚛️ et WatermelonDB 🍉"/>
+      <column name="description"
+              value="C’est une problématique assez commune sur les projets d’application mobile : faire en sorte que l’application puisse fonctionner entièrement en mode hors ligne sans besoin d’avoir accès à une connexion internet, tout en permettant à l’utilisateur d’utiliser des fonctionnalités complexes en local et de se resynchroniser avec le serveur lorsqu’une connexion internet est disponible.
+
+Avec mon équipe nous avons été confronté à cette problématique pour un projet React Native, et après avoir comparé les différentes solutions nous avons utilisé la librairie open-source WatermelonDB 🍉
+
+Cette librairie permet de répondre à cette problématique et propose des solutions pour tous les problèmes posés par le offline-first.
+
+WatermelonDB propose entre autre des outils pour définir son schéma de base de données en local, accéder / modifier ses données en local et pour resynchroniser l’application avec le serveur / API lorsqu’une connexion internet est de nouveau disponible.
+
+Cette conférence est un retour d’expérience sur l’utilisation de cette librairie et de toutes les contraintes qu’il faut prendre en compte lorsque l’on veut développer une application mobile offline-first avec notamment la gestion de l’API pour permettre la resynchronisation."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="033" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Data Quality Evaluation"/>
+      <column name="description"
+              value="La qualité des données est un élément clé pour construire et optimiser de bons modèles d’apprentissage. Malgré de nombreuses tentatives pour caractériser la qualité des données, il existe encore un besoin de formalisation rigoureuse et d’une mesure efficace de la qualité à partir des observations disponibles.
+
+En effet, sans une compréhension claire des processus de formation et de test, il est difficile d’évaluer les performances intrinsèques d’un modèle. Par ailleurs, les outils permettant de mesurer la qualité des données spécifiques au machine learning font encore défaut. Dans cette présentation, nous introduisons et expliquons une nouvelle métrique pour mesurer la qualité des données. Cette métrique est basée sur l’évolution corrélée entre la performance de classification et la détérioration des données. La méthode proposée présente l’avantage majeur d’être indépendante du modèle.
+
+De plus, nous fournissons une interprétation de chaque critère et des exemples de niveaux d’évaluation. Nous confirmons l’utilité de la métrique proposée par des expériences numériques intensives et détaillons quelques cas illustratifs avec des qualités contrôlées et interprétables."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="034" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="L'UX en entreprise - guide pratique"/>
+      <column name="description"
+              value="Vous voyez partout des entreprises vanter leur UX intuitive, leur conception user-centric, leur Product Design Team, mais ces notions sont floues pour vous ?
+
+Pas de panique, elles le sont pour beaucoup, y compris pour celles et ceux qui sont du secteur.
+
+Ce talk propose de démystifier le domaine de l’expérience utilisateur, et de proposer des actions concrètes à mettre en place pour déterminer ses besoins en UX sans se ruiner.
+
+Il s’adresse aux professionnel.le.s qui souhaitent découvrir l’UX avec simplicité, tout en faisant le tour de la question."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'UX_UI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>
+
