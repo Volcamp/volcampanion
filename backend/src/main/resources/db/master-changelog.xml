@@ -97,5 +97,14 @@
   <include file="2024/007-volcamp-planning-speaker-day1.xml" labels="Volcamp 2024"
            author="camille.petitalot@volcamp.io"
            relativeToChangelogFile="true"/>
+  <include file="2024/004-volcamp-day2-talks.xml" labels="Volcamp 2024"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2024/006-volcamp-planning-day2.xml" labels="Volcamp 2024"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2024/008-volcamp-planning-speaker-day2.xml" labels="Volcamp 2024"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
 </databaseChangeLog>
 

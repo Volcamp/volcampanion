@@ -1,0 +1,487 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+  <changeSet id="001" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Accueil Café Jour 2"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'BREAK_30M')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="002" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Keynotes"/>
+      <column name="description"
+              value=" "/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="003" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="J'ai une idée pour réduire l'empreinte environnementale du numérique par 4"/>
+      <column name="description"
+              value="Supprimer la loi de Moore pour arrêter l’obsolescence programmée
+
+Imaginons l’inimaginable : et si on arrêtait la loi de Moore ? Cette “loi” a structuré les industries du logiciel et du matériel informatique depuis presque 60 ans. Cette course effrénée vers la puissance fait que nous jetons collectivement chaque année plus de 50 millions de tonnes de déchets électroniques, qui ne sont quasiment pas recyclés. Dans 80% des cas, un smartphone est jeté alors qu’il fonctionne encore. Juste parce qu’il est considéré comme obsolète.
+
+Mais la loi de Moore n’est pas une fatalité, elle s’essouffle même de plus en plus.
+
+Il faut savoir que c’est la fabrication du matériel qui compose les trois quarts de l’empreinte environnementale du numérique. Si on se mettait à optimiser nos logiciels plutôt que d’empiler les features pas toujours utiles, on pourrait faire tourner nos logiciels beaucoup beaucoup plus rapidement. Il y a en effet des gisements insoupçonnés de performance qui ont été négligés. J’ai trouvé par exemple un script Python qui a pu être optimisé d’un facteur 408 000 000 (oui, 408 millions de fois). Les exemples sont légion, j’en ai plein.
+
+On pourrait libérer toute cette puissance gâchée.
+
+C’est ce que j’appelle le principe d’erOOM, pour “Effort Radicalement Organisé d’Optimisation en Masse” (oui, je suis désolé).
+
+En optimisant le logiciel d’un facteur 2 tous les deux ans, on libère des ressources comme l’a fait la loi de Moore en son temps, et cela nous permettent d’innover, mais sans changer le matériel ! Et donc de s’attaquer à ce qui fait les trois quarts de l’empreinte environnementale du numérique ! Et avec les ressources numériques (temps de CPU, mémoire) économisées, nous pourrions continuer à innover, à inventer de nouveaux usages tout en réduisant drastiquement la pollution numérique.
+
+Ça tombe bien, la planète en a bigrement besoin."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'SUSTAINABLE_IT')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="004" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="De l'infra à la config', as code en 3 couches"/>
+      <column name="description"
+              value="Une forge logicielle, c’est cool à développer. Artifactory, Gitlab, Gitlab-ci, Kubernetes, Sonarqube, les firewall, les LANs, etc. sont tout autant d’outils qu’il faut installer, configurer, maintenir et détruire.
+
+Pour nous simplifier la vie, nous avons essayer de tout faire “as code”, enfin presque. Mais comme nous avons quelques années expériences derrière nous, on a senti le foutoir venir de ne faire qu’un et seul dépôt pour tout gérer.
+
+Nous nous sommes donc questionner sur la façon d’organiser ce “all as code”.
+
+Après avoir repris les contraintes et les besoins fonctionnels et techniques de cette plateforme, je vous présenterai la façon dont nous avons décidé de résoudre cette problématique."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="005" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Une plateforme à concevoir, deux architectes - trois possibilités ?"/>
+      <column name="description"
+              value="La conception d’une plateforme est toujours délicate à initier.
+
+Comment démarrer? Quelle est la démarche à adopter pour concevoir une architecture? Quel est le modèle à appliquer: event streaming, orchestration ou chorégraphie? Au travers d’un besoin utilisateur, nous prendrons notre “casquette” d’architecte et déroulerons devant vous une étude pour une toute nouvelle plateforme “Rillettes de Tours @ Home”.
+
+Après avoir analysé le besoin, confrontés nos idées et convictions devant vous, nous choisirons, parmi toutes les solutions possibles, quelle est la “moins pire”.
+
+Nous vous solliciterons pour valider notre conception et les exemples d’implémentation possibles.
+
+A la fin de cette présentation, vous aurez des clés pour penser et démarrer les études de vos architectures en toute sérénité (ou presque)."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="006" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Mission Jetpack Compose - révolutionnez le développement mobile"/>
+      <column name="description"
+              value="Félicitations, vous démarrez votre tout nouveau job en tant qu’espion·ne à la CIA, la Compose Intelligence Agency 🕵️
+
+Votre mission, si toutefois vous l’acceptez, consistera à intégrer notre équipe pour retrouver un dangereux fugitif 🥷
+
+Durant cette mission, votre objectif sera de créer une application “composée” de plusieurs écrans. Pour la mener à bien, vous aurez à disposition des gadgets fournis par Jetpack Compose, tels que les images, les animations et les previews 🧑‍💻
+
+Vous aurez 2 heures, et pas une minute de plus, pour manier l’art de créer des applications mobiles ⏱️ Pas d’inquiétude, vous aurez à vos côtés nos deux meilleurs agents spécialisés dans le Renseignement Jetpack Compose.
+
+Venez apprendre la maîtrise de ces outils qui révolutionnent le développement Android, et bien plus.
+
+Ce message s’autodétruira dans 5 secondes… 💣 Bonne chance."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_2H')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="007" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="IA-404 - Explication not found"/>
+      <column name="description"
+              value="Quand on demande à une IA :”Dessine moi un chat”, elle fera potentiellement bien le job. Si maintenant on lui demande :”Pourquoi l’animal que tu as dessiné est un chat ?”, on risque au contraire d’avoir une réponse tout droit sortie d’un dictionnaire plutôt que d’une justification sur l’image générée.
+
+Pourquoi ?
+
+Cette question, qui fait trembler les IA d’aujourd’hui, permet d’obtenir une explication à un résultat donné par une IA. Enfin en théorie.
+
+En pratique, la course aux IA a amené des IA plus rapides, avec des réseaux de neurones plus complexes, des boîtes noires qui ne donnent aucune justification et qui donnent des résultats que même les experts en IA ne comprennent pas encore entièrement.
+
+Mais alors, est-il possible d’expliquer l’IA ou est-elle déjà hors de notre contrôle ?"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="008" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Développer en Java Cloud Native en 2024, Unpopular Opinion ?"/>
+      <column name="description"
+              value="Lorsqu’on souhaite lancer un projet de nos jours, plein de langages de développement et technologies intéressantes s’offrent à nous : Go, Rust, Clojure… Alors pourquoi choisir Java ?
+
+Du poste de développeur au déploiement en production, en environnement “Cloud Native”, nous vous proposons de faire un tour d’horizon de l’écosystème Java pour bien démarrer en 2024 : quels IDE ? Quels toolings possibles ? Quels frameworks ? Quelle méthode de déploiement ? Comment déployer en douceur dans différents environnements de production ?
+
+L’échange se fera entre un “Ops” qui a de mauvais souvenirs du siècle dernier (Tomcat ou tout autre bon vieux serveur J2EE d’avant JEE, démarrage lent, gestion de la RAM) et un “Dev” qui lui fera redécouvrir le monde merveilleux des Java-istes actuels, et ainsi réconcilier les Dev et Ops, ou pas ! ;)"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="009" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Elixir - une potion pour mixer complexité et concurrence en temps réel"/>
+      <column name="description"
+              value="Distribution, haute tolérance à la faute, temps réel, et déploiement avec zéro secondes d’interruption sont les promesses que Erricson se fait, pour ses réseaux de téléphonie, dès 1986 avec le language Erlang et l’Open Telecom Platform. 36 ans plus tard, l’industrie logicielle cherche toujours de nouvelles approches pour assurer la haute disponibilité et le déploiement continu de ses applications . Et si une solution était déjà sous nos yeux ? Construit sur l’écosystème Erlang, le language Elixir, à partir de 2011, propose un nouvel écosystème moderne grandissant dans le développement web, le streaming, l’analyse de données, le machine learning,…
+
+Si apprendre à lancer 100.000 processus en parallèle ne vous fait pas peur, accompagnez moi, pendant 45 minutes, pour un tour complet du language Elixir et comprendre pourquoi les forces d’un language et de son écosystème aident à adopter les principes d ‘architecture logicielle qui nous sont chers comme le Domain-Driven Design, les monolithes ou les microservices."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="010" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="GreenOps, le nouveau FinOps"/>
+      <column name="description"
+              value="On pense souvent intuitivement que le coût est un bon “proxy” pour les émissions de CO2 d’une infrastructure Cloud. On se dit que moins on dépense, moins on utilise de ressources et moins on émet de CO2. Mais cette logique peut nous induire en erreur. Par exemple, le choix du lieu d’une region chez un hébergeur Cloud peut changer radicalement les émissions de carbone, même si le tarif horaire est relativement similaire d’une région à l’autre.
+
+Les pratiques de FinOps peuvent nous aider à mieux comprendre et réduire les coûts de notre infrastructure cloud. Avec de l’automatisation, on peut optimiser notre infra pour n’utiliser que le nécessaire, ce qui est très bon pour le portefeuille. Parfois bon aussi pour l’environment, mais pas toujours.
+
+On parle désormais de “GreenOps”, en s’inspirant de la même idée : utiliser les méthodes de DevOps et FinOps pour contrôler et diminuer les émissions de CO2 et réduire l’impact environnemental de notre infrastructure cloud."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'SUSTAINABLE_IT')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="011" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Comment merger sa PR en 10 secondes. REX mob code review"/>
+      <column name="description"
+              value="Dans la plupart des équipes de développement les suggestions de code sont faites via des Pull (ou Merges) Request. Elles sont le lieu de discussions asynchrones pouvant prendre des heures voire des jours à se terminer. Des validations sont en plus nécessaires pour les merger ralentissant le rythme des releases de nouvelles fonctionnalités. Ces échanges écrits peuvent également amener des incompréhensions et une communication violente qui peuvent dégrader la cohésion dans une équipe.
+
+Pendant 2 ans, dans mon équipe, nous avons fait du mob code review avant de merger nos PR. Au lieu de les ouvrir et de faire des code reviews chacun de notre côté, nous nous retrouvions plusieurs fois par jour pour présenter et améliorer le code écrit. C’est comme cela que nous mergions nos PR en 10 secondes​.
+
+Après vous avoir présenté ce concept, je vous expliquerai comment nous avons fait évoluer nos pratiques au fur et à mesure que l’équipe grandissait. Parmi elles, nous souhaitions aligner l’architecture et les standards de code, tout en ayant au sein de l’équipe, une bonne compréhension de l’application d’un point de vue fonctionnel ou technique. Je détaillerai les difficultés que nous avons rencontrées et les ajustements que nous avons mis en place, les avantages et les inconvénients que j’y vois, ainsi que les conditions nécessaires pour faire du mob code review."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="012" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Mon Expérience avec Rust ! Pourquoi c'est un Game Changer ?"/>
+      <column name="description"
+              value="Dans ce Quickie, je vais essayer de parler de mon expérience en tant que développeur débutant en Rust.
+
+J’ai une formation Java et j’apprends maintenant Rust, et j’ai découvert beaucoup de concepts qui m’ont appris comment je devrais penser à la performance avant de commencer à coder, Ownership et Borrowing sont les concepts qui m’ont aidé à vraiment comprendre comment le stack et le heap fonctionnent ensemble.
+
+Je vais essayer de montrer quelques benchmarks entre Rust et d’autres langages afin de montrer son impact sur la performance."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="013" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Introduction aux outils de tests de sécurité d'application statique (SAST)"/>
+      <column name="description"
+              value="Le plus tôt vous testez votre application, moins les bugs de sécurité vous coûtera. Alors autant tester directement votre code. Mais avant d’installer le premier outil venue, regardons ensemble ce qu’est exactement un Static Application Security Testing (SAST). Y-a-t’il plusieurs type de SAST? Comment savoir si l’outil est pertinent ?
+
+Nous allons répondre à ces questions pour vous permettre d’envoyer du code en production plus sereinement."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="014" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="TinyGo, petit mais costaud ! 💪"/>
+      <column name="description"
+              value="Go est un langage facile à prendre en main, typé et compilé. Avec ce langage vous pouvez créer des CLI (outils en ligne de commande), des microservices, des applications REST, gRPC, des Bots pour Discord… Mais savez-vous que vous pouvez également créer des applications en Go pour des microcontrôleurs, des consoles de jeux vidéo et même générer du code en WebAssembly ?
+
+C’est possible grâce à TinyGo !
+
+TinyGo est un compilateur Go pour les systèmes embarqués et pour le Web moderne. Vous pouvez compiler et exécuter des programmes TinyGo sur de nombreuses cartes à microcontrôleur telles que le BBC micro:bit, l’Arduino Uno, la Nintendo Switch et la Game Boy Advance ;-).
+
+Dans ce talk vous pourrez découvrir TinyGo ainsi que ses possibilités et usages concrets à travers des démos, en live, qui vous ferons découvrir plusieurs expérimentations de TinyGo.
+
+Spoiler alert : il se peut que des Nintendo Game Boy Advance et Gopher Badge soient utilisées durant ce talk 😜"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="015" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="REST à sa place ( ou “Maman, je dois faire de l’IoT !”)"/>
+      <column name="description"
+              value="Bienvenue à vous aventuriers : développeurs “full stack” de tous horizons, après quelques périeuses années d’expérience, nulle spécification d’application “CRUD” ne vous effraie. SPA et API REST sont votre marteau et tournevis, auxquels rien ne semble résister…
+
+Rien, vraiment ? Pas si vite ! Aujourd’hui une demande “IoT” vous tombe dessus - une sombre histoire d’équipements à piloter à distance avec une faible latence - l’occasion de sortir des sentiers battus ?
+
+Nous balaierons diverses alternatives, de plus en plus éloignées des pratiques “web” classiques, avec des rappels de fondamentaux, les forces et limites, des bouts de code (Java Spring).
+
+“polling” HTTP : rappels HTTP et TCP; problématique de latence et charge; threading Java/Spring/Tomcat; HTTP keep-alive
+“long polling” : principe; impl Spring Reactive (Mono); problématiques “state-full” (routage mono et multi instances)
+Server-Side events : principes; impl Spring Reactive (Flux)
+WebSockets et STOMP : principes; impl Spring
+MQTT - standard de facto, prenons le temps! - bases du protocole; écosystème (brokers, lib client, SaaS IoT); impl Spring; bonnes pratiques (sécu, topics)"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="016" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Manifeste pour un artisanat logiciel responsable"/>
+      <column name="description"
+              value="Souvent désigné comme la solution a tous les problèmes, le numérique est loin d’être la “silver bullet” attendue aux problèmes actuels.
+
+Son empreinte environnementale est non négligeable et ne cesse de grandir. Il est également source d’exclusion sociale (problèmes d’accessibilité, de connectivité, de ressources, de discrimination, …).
+
+Et si en tant qu’artisans logiciel, nous prenions enfin ces problématiques en compte ?
+
+Je vous propose de voir ce qu’on entend par numérique responsable et comment l’intégrer dans nos pratiques quotidiennes pour essayer de tendre vers un artisanat logiciel plus responsable."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'SUSTAINABLE_IT')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="017" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Kescape, un escape game pour KubeLover"/>
+      <column name="description"
+              value="Venez mettre à l’épreuve vos compétences Kubernetes dans notre escape game maison, en nous aidant à éliminé les menaces qui planent sur notre cluster ! Pour venir à bout de toutes les salles vous aurez à disposition un kit de survie, votre talent, kubectl et peut être quelques indices.
+
+La difficulté étant progressive, ce jeu est ouvert à tous ceux qui ont déjà manipulé et utilisé Kubernetes, et surtout qui aiment le challenge!"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_1h45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="018" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Anatomie d'une faille"/>
+      <column name="description"
+              value="Coup de tonnerre ! Le vendredi 29 mars 2024 fut révélée une tentative d’attaque qui aurait pu avoir des conséquences désastreuses ; le projet xz-utils, fournissant des outils et bibliothèques de compression de données, était alors compromis par une ingénieuse attaque qui aurait pu donner accès à n’importe quel serveur exposé dans le monde … attaque qui n’a pu aboutir grâce à un heureux concours de circonstances.
+
+Sortez les scalpels ! Je vous propose de mettre cette attaque sur la table d’autopsie afin d’en étudier son anatomie : de son déroulement,s’écoulant sur plus de deux longues années, aux techniques d’ingénierie sociale et d’ingénierie logicielle utilisées. Nous reviendrons enfin sur les risques et conséquences liés aux attaques visant la supply-chain du monde du logiciel libre et open-source."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="019" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Exploiting Client-Side Path Traversal. CSRF is Dead, Long Live CSRF"/>
+      <column name="description"
+              value="To provide users with a safer browsing experience, the IETF proposal named “Incrementally Better Cookies” set in motion a few important changes to address Cross-Site Request Forgery (CSRF) and other client side issues. Soon after, Chrome and other major browsers implemented the recommended changes and introduced the SameSite attribute. SameSite helps mitigate CSRF, but does that mean CSRF is Dead?
+
+While auditing major web applications, we realized that Client Side Path-Traversal (CSPT) can be actually leveraged to resuscitate CSRF for the joy of all pentesters. Listed in the Top 10 Web Hacking Techniques of 2022, Client Side Path-Traversal has been overlooked for years. While considered by many as a low-impact vulnerability, it can be actually used to force an end user to execute unwanted actions on a web application.
+
+Once we have introduced the basics of Client Side Path Traversal, we will present sources and sinks for Cross Site Request Forgery. Software engineers will learn how to defend their applications against this new class of vulnerabilities, while security auditors will come back home with a set of tips and tricks to bring CSRF back in their reports. To demonstrate the impact and novelty of our discovery, we will showcase vulnerabilities in major web messaging applications, including Mattermost and Rocket.Chat among others. Finally, we will also release a Burp extension to help the discovery of Client-Side Path-Traversal sources and sinks."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="020" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Picocli - mets du Java dans ton terminal !"/>
+      <column name="description"
+              value="Les CLI (Command Line Interface), tout le monde les utilise et elles existent depuis la nuit des temps. Souvent synonymes de gain de productivité, leur création est parfois obscure et peut sembler complexe. C’était le cas il y a quelques décennies, mais depuis quelques années, des langages et Frameworks permettent d’en écrire simplement dans votre langage préféré. Je vous propose d’utiliser un langage qui ne paraît pas, au premier abord, le plus intuitif pour faire une CLI : Java !
+
+Mais il sera bien accompagné dans cette tâche : grâce à Picocli et Quarkus, notre CLI aura tout d’une grande, tout en étant simple à développer ! Et cerise sur le gâteau : nous créerons un “vrai” exécutable grâce à Graal VM.
+
+Venez m’accompagner lors d’une session de live coding permettant de mettre en lumière comment créer une CLI en Java avec Picocli et Quarkus en partant de zéro !
+
+Et qui sait, avec un peu de magie on aura, au final, un vrai assistant intelligent dans notre et terminal 🤖."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="021" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="L'instabilité de nos tests nous empêche de délivrer"/>
+      <column name="description"
+              value="Vos tests vous mettent en colère ? Vous empêchent-ils d’itérer rapidement ?
+
+De plus en plus de développeurs travaillent sur notre monolithe et certains tests ont commencé à échouer de manière aléatoire et cela s’est propagé rapidement dans notre base de code. Comme notre objectif principal est de fournir des fonctionnalités significatives à nos clients avec un code de qualité et une plateforme stable, les échecs de test bloquent notre CI. Cela entraîne une énorme perte de temps et de la frustration lorsque l’application n’est pas vraiment cassée.
+
+Ce problème était connu depuis un moment… Mais personne ne voulait s’y attaquer; le cacher sous le tapis était plus facile. Et coder des fonctionnalités est bien plus gratifiant que de corriger des tests buggés ! Au cours de cette conférence, nous verrons des exemples concrets des raisons pour lesquelles nos tests n’étaient pas satisfaisants et la manière dont nous les avons corrigés, avec des stratégies à la fois techniques et humaines."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="022" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Chapter Lead - retour d’XP après 2 ans de mise en place chez BforBank"/>
+      <column name="description"
+              value="Chez BforBank, on sort du plus gros refactoring de notre histoire… Et ça ne concernait pas le code. En l’espace d’un an, nous sommes passés d’une équipe solo à une quinzaine de Squads et de l’agilité at-scale. Facile ? Ou pas.
+
+Parmi les enjeux de la restructuration, une question a une importance particulière : comment garder une homogénéité dans la qualité des développements et la stack, tout en donnant un maximum d’autonomie à chaque équipe ?
+
+La réponse qu’on a trouvé : implémenter le Chapter Lead.
+
+Garant des bonnes pratiques, créateur de poc et curieux, cet expert Tech est au service de la communauté de développeurs qu’il anime et qu’il doit tirer vers l’excellence. Inspiré du rôle de Chapter Manager de Spotify, le Lead Chapter met les mains dans le code et développe des features complexes mais aussi prend du recul pour voir quels sont les points de blocage dans le quotidien de sa communauté.
+
+Vous repartirez avec notre retour d’expérience, nos fails, nos réussites et les nouveaux enjeux que cette mise en place a fait apparaître, notamment sur l’installation d’une culture du partage tech au sein de nos équipes"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="023" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Detection Engineering à grande échelle - un focus sur le long terme"/>
+      <column name="description"
+              value="La plupart des équipes d’un Security Operation Center (SOC) ont aujourd’hui du mal à construire en permanence mais aussi à maintenir des règles de détection et leur documentation associée dans le temps, principalement lorsqu’il y en a des centaines. Par ailleurs, le contrat de niveau de service (SLA), les indicateurs clés de performance (KPI) et la télémétrie liés aux alertes sont souvent des sujets clés pour ces équipes. Ce sont de grands défis, surtout compte tenu de la longue histoire du SOC, et nous aimerions partager notre méthodologie et nos outils pour essayer de résoudre ces défis.
+
+Notre objectif principal sera le pipeline d’intégration et de livraison continues (CI/CD) entourant les règles de détection et les KPI, après avoir introduit un peu de contexte autour des journaux (logs) ingérés et des règles de détection.
+
+Tout d’abord, nous décrirons certains problèmes concernant la collecte d’événements dans le contexte XDR (Extended Detection and Response) et les décisions prises pour les résoudre. Nous partagerons ensuite le langage de détection et quelques principes de règles de détection.
+
+Dans un deuxième temps, nous expliquerons comment construire et maintenir des centaines de règles de détection et leur documentation associée, en utilisant les meilleures pratiques d’intégration et de livraison continue (CI/CD).
+
+Enfin, et pour alimenter notre processus d’amélioration continue, nous partagerons comment les KPI pourraient aider les analystes SOC (ou les Detection Engineers) à surveiller leurs règles et à traquer des menaces spécifiques. Cette observabilité aidera à revoir les règles de détection, à améliorer la qualité en réduisant le taux de faux positifs et en testant les capacités de détection au fil du temps."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="024" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Plongez dans l'apprentissage renforcé. Développez votre propre joueur de pendu"/>
+      <column name="description"
+              value="Cet atelier propose une introduction pratique à l’apprentissage renforcé (RL), en utilisant le jeu du pendu comme exemple concret. Conçu pour les débutants en intelligence artificielle, il a pour objectif de démystifier les concepts fondamentaux du RL, tels que les agents, les environnements, les états, les actions, les récompenses, et les politiques de décision.
+
+Grâce à Python et à la library Gymnasium, nous vous offrons une session interactive au cours de laquelle vous développerez un agent capable de jouer au jeu du pendu. À la fin de l’atelier, vous aurez acquis une compréhension approfondie de l’apprentissage renforcé appliqué à un jeu classique."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_1h45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="025" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Créer un browser from scratch, c'est possible ?"/>
+      <column name="description"
+              value="Quand on travaille dans l’univers du scraping, on est souvent confronté à une évolution violente: on commence par récuperer des pages web en écrivant de simples requêtes HTTP, mais rapidement on se trouve confronté à des pages qui nécessitent d’exécuter du Javascript. Et là, c’est l’escalade, on doit utiliser Chrome headless avec Selenium, Puppeeter ou Playwright. Bref, des outils lourds et difficiles à mettre en prod et à scaler.
+
+Alors depuis quelques mois on s’est lancé à 2 devs dans le projet de créer un browser léger et capable d’exécuter du Javascript: une sorte de curl + js. Et histoire simplifier les choses, on va l’écrire en Zig.
+
+Dans ce retour d’expérience, on discutera de scraping, du fonctionnement d’un browser, des API web et du langage Zig."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="026" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Monolithe et Microservices - les choix d’aujourd’hui, la souffrance de demain ?"/>
+      <column name="description"
+              value="Dans cette conférence décontractée et pleine d’humour, nous allons explorer l’impact du choix de l’architecture logicielle. Nous plongerons dans une comparaison entre le Monolithe et les Microservices, en observant comment chaque choix influence l’évolution d’un projet sur une décennie.
+
+Nous examinerons les avantages et les inconvénients de chaque approche au fil du temps, en nous demandant où les économies de temps et d’argent sont réalisées, et où elles sont perdues.
+
+Une compétition amicale va avoir lieu : d’un côté, le Monolithe, un peu vieux jeu mais solide comme un roc. De l’autre, les Microservices, flexibles et dynamiques, mais un peu dispersés. Attendez-vous à une analyse approfondie, mais sans trop de chichis !"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="027" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title"
+              value="Kubernetes + Event Driven Autoscaling = Comment garder votre cool pendant les heures de pointe !"/>
+      <column name="description"
+              value="Dans un monde où les applications et les services doivent être hautement disponibles et performants, la gestion efficace des ressources est cruciale. Kubernetes, en tant que plateforme de gestion de conteneurs, offre des fonctionnalités robustes pour gérer ces défis.
+
+L’une de ces fonctionnalités est le scaling automatique. Mais quel scaling utiliser ? Horizontal Pod Scaling (basée sur des metics CPU et/ou RAM) ou Kubernetes Event Driven Autoscaling (basé sur des évènements)
+
+Dans cette conférence, nous plongerons dans le cœur du dynamic scaling de Kubernetes. Nous explorerons comment il permet aux applications de répondre de manière flexible aux variations de la demande, en augmentant ou en diminuant les ressources en fonction des besoins. Nous discuterons également de la manière dont cette fonctionnalité peut être utilisée pour optimiser l’utilisation des ressources, améliorer les performances et réduire les coûts.
+
+Nous aborderons des sujets tels que :
+
+Les principes fondamentaux du scaling
+Comment configurer et utiliser l’auto scaling
+Quand utiliser quel type de scaling (KEDA vs HPA)
+Des exemples concrets d’event based scaling
+Rejoignez-nous pour cette session technique approfondie et découvrez comment vous pouvez tirer parti du “Dynamic Event Scaling” de Kubernetes pour faire passer vos applications et services au niveau supérieur 🚀"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+  <changeSet id="028" author="camille.petitalot@volcamp.io">
+    <comment>Talks</comment>
+    <insert tableName="talks">
+      <column name="title" value="Cloture"/>
+      <column name="description"
+              value="La cloture de Volcamp 2024 par la team Geek&amp;Terroir."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+
+</databaseChangeLog>
+
