@@ -1,22 +1,19 @@
 package org.volcampanion.service;
 
 import io.quarkus.panache.common.Sort;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 import org.volcampanion.domain.Planning;
 import org.volcampanion.domain.PlanningFilters;
 import org.volcampanion.entity.PlanningEntity;
 import org.volcampanion.entity.mappers.EntityPlanningMapper;
 import org.volcampanion.repository.PlanningRepository;
 
-import jakarta.inject.Inject;
-import jakarta.enterprise.context.ApplicationScoped;
-import java.util.ArrayList;
 import java.util.List;
 
 @ApplicationScoped
 public class PlanningService {
-    private static final String BASE_QUERY = "id.talk.conference.id = ?1 ";
-
-    private static final Sort SORT_ORDER = Sort.ascending("schedule, id.room.id");
+    private static final Sort SORT_ORDER = Sort.ascending("id.schedule, id.room.id");
 
     @Inject
     PlanningRepository repository;
@@ -53,10 +50,6 @@ public class PlanningService {
     }
 
     public List<Planning> listWithFilters(PlanningFilters filters) {
-        var queryParams = new ArrayList<>();
-        var query = new StringBuilder(BASE_QUERY);
-        queryParams.add(filters.getConferenceId());
-
-        return mapper.toDomain(repository.list(query.toString(), SORT_ORDER, queryParams));
+        return mapper.toDomain(repository.findByConfId(filters.getConferenceId()));
     }
 }

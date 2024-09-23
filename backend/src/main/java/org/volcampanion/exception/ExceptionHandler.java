@@ -14,6 +14,7 @@ public class ExceptionHandler implements ExceptionMapper<RuntimeException> {
 
     @Override
     public Response toResponse(RuntimeException e) {
+        log.error("An error occurred", e);
         if (e instanceof NotFoundException) {
             return Response.status(Response.Status.NOT_FOUND).build();
         } else if (e instanceof MandatoryParameterException || e instanceof BadRequestException) {

@@ -42,10 +42,11 @@ export class TalkTeaserViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.talkPlanning.talk.title)
     this.color = getColorTheme(this.talkPlanning.talk.theme.name)
     this.speakersNames = concatenate(this.speakerNames(this.talkPlanning.talk.speakers))
     this.startDate = new Date(this.talkPlanning.schedule)
-    this.endDate = new Date(this.startDate.getTime() + this.talkPlanning.talk.format.duration * 1000) //if in minutes need to be 60 000
+    this.endDate = new Date(this.startDate.getTime() + this.talkPlanning.talk.format.duration * 60 * 1000) //if in minutes need to be 60 000
   }
 
   onClick(numberFavorite: number) {

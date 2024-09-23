@@ -20,6 +20,7 @@ export class VMPlannings {
   initPlanning(observable: Observable<Planning[]>) {
     observable.subscribe({
         next: plannings => {
+          console.log("data")
           this.planningsNoFilter = plannings;
           this.plannings = plannings;
 

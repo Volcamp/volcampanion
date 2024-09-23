@@ -142,7 +142,7 @@ Chaque élément du jeu, du packaging aux premières interactions à l’écran,
 
 Découvrez avec nous comment ces mécanismes conçus spécifiquement brisent les barrières, ouvrant ainsi un terrain de jeu équitable pour toutes les personnes passionnées de jeux vidéo."/>
       <column name="language" value="fr"/>
-      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERECE_45MIN')"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
       <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
     </insert>

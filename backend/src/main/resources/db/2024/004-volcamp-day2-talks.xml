@@ -18,7 +18,7 @@
       <column name="description"
               value=" "/>
       <column name="language" value="fr"/>
-      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_45MIN')"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_45M')"/>
       <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
     </insert>
