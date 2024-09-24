@@ -1,6 +1,7 @@
 import {AfterContentInit, Component, Input} from '@angular/core';
 import {Planning, PlanningType} from "../../data/dto/input/Planning";
 import {NavigationService} from "../../services/NavigationService";
+import {TalkPlanning} from "../../data/dto/input/TalkPlanning";
 
 @Component({
   selector: 'app-talks-list',
@@ -26,7 +27,22 @@ export class TalksListComponent implements AfterContentInit {
     this.nbItem = this.plannings.filter(planning => {
       return planning !== undefined
     }).length;
+    console.log("nbItem" + this.nbItem);
   }
 
+  getType(planning: Planning) {
+    if (this.hasGetType(planning)) {
+      return planning.getType();
+    } else {
+      // @ts-ignore
+      if (planning['talk'] === undefined) {
+        return PlanningType.DELIMITER_DAY;
+      }
+      return (planning as TalkPlanning)?.talk.format.type;
+    }
+  }
 
+  hasGetType(obj: any): boolean {
+    return typeof obj.getType === 'function';
+  }
 }

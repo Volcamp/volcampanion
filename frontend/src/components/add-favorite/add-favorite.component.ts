@@ -1,8 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {VMFavorite} from "../../vm/VMFavorite";
-import {UserService} from "../../services/UserService";
-import {AbstractTalkFavoriteService} from "../../services/abstract/AbstractTalkFavoriteService";
-import {Planning} from "../../data/dto/input/Planning";
+import {LocalStorageFavoriteService} from "../../services/LocalStorageFavoriteService";
+import {TalkPlanning} from "../../data/dto/input/TalkPlanning";
 
 @Component({
   selector: 'app-add-favorite',
@@ -14,24 +12,28 @@ export class AddFavoriteComponent {
   @Output() capacityChange: EventEmitter<number> = new EventEmitter<number>();
 
   @Input() capacity: number = 0;
-  @Input() planning!: Planning;
-  vm!: VMFavorite;
+  @Input() planning!: TalkPlanning;
 
-  constructor(private userService: UserService, private abstractTalkFavoriteService: AbstractTalkFavoriteService) {
+  inFavorite: boolean = false;
+
+  constructor(private localStorageFavoriteService: LocalStorageFavoriteService) {
 
   }
 
   ngOnInit() {
-    this.vm = new VMFavorite(this.userService, this.abstractTalkFavoriteService, this.planning,this.capacity,this.capacityChange);
+    let favorites = this.localStorageFavoriteService.getFavoriteList();
+    this.inFavorite = favorites.filter(obj => obj?.talk?.id === this.planning?.talk.id).length > 0;
   }
 
   removeFavorite(event: Event) {
     event.stopPropagation();
-    this.vm.removeFavorite();
+    this.localStorageFavoriteService.removeFavoriteFromList(this.planning);
+    this.inFavorite = false;
   }
 
   addFavorite(event: Event) {
     event.stopPropagation();
-    this.vm.addFavorite();
+    this.localStorageFavoriteService.addFavoriteToList(this.planning);
+    this.inFavorite = true;
   }
 }

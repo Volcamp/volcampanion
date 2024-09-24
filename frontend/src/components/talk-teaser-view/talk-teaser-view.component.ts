@@ -42,7 +42,6 @@ export class TalkTeaserViewComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.talkPlanning.talk.title)
     this.color = getColorTheme(this.talkPlanning.talk.theme.name)
     this.speakersNames = concatenate(this.speakerNames(this.talkPlanning.talk.speakers))
     this.startDate = new Date(this.talkPlanning.schedule)

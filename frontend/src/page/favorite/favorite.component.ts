@@ -1,32 +1,41 @@
 import {Component, OnInit} from '@angular/core';
-import {VMFavoritePage} from "../../vm/VMFavoritePage";
-import {AbstractTalkFavoriteService} from "../../services/abstract/AbstractTalkFavoriteService";
-import {AbstractConferenceService} from "../../services/abstract/AbstractConferenceService";
-import {UserService} from "../../services/UserService";
-import {FilterPlanningsService} from "../../services/FilterPlanningsService";
-import {Planning, PlanningType} from "../../data/dto/input/Planning";
-import {compareEqualDateAndTime} from "../../common/DateFunc";
+import {Planning} from "../../data/dto/input/Planning";
+import {compareEqualDate, compareEqualDateAndTime} from "../../common/DateFunc";
 import {roomPosition} from "../../common/RoomPosition";
 import {TalkPlanning} from "../../data/dto/input/TalkPlanning";
+import {LocalStorageFavoriteService} from "../../services/LocalStorageFavoriteService";
+import {DividerPlanning} from "../../data/dto/input/DividerPlanning";
 
 @Component({
   selector: 'app-favorite',
   templateUrl: './favorite.component.html',
   styleUrls: ['./favorite.component.sass']
 })
-export class FavoriteComponent implements OnInit{
-  vm: VMFavoritePage;
+export class FavoriteComponent implements OnInit {
+  favoriteList: any[] = [];
+  dates: any[] = [];
+  days: any[] = [];
 
-  constructor(dataService: AbstractTalkFavoriteService, confService: AbstractConferenceService, filterPlannings: FilterPlanningsService, userService: UserService) {
-    this.vm = new VMFavoritePage(dataService, confService, filterPlannings, userService);
+  constructor(private localStorageFavoriteService: LocalStorageFavoriteService) {
   }
 
   ngOnInit(): void {
-    this.vm.init();
+    this.favoriteList = this.localStorageFavoriteService.getFavoriteList();
+    this.dates = this.localStorageFavoriteService.getDatesList();
+    this.days = this.localStorageFavoriteService.getDaysList();
   }
 
   getByDate(date: Date): Planning[] {
-    return this.vm.getByDate(date);
+    const plannings = this.favoriteList.filter(planning => {
+      return compareEqualDateAndTime(new Date(planning.schedule), new Date(date));
+    });
+    const planningsOrder: Planning[] = [];
+
+    plannings.forEach(planning => {
+      planningsOrder.splice(roomPosition((planning as TalkPlanning).room?.name), 1, planning);
+    });
+    let res: Planning[] = planningsOrder.map(elt => TalkPlanning.fromStorage(elt));
+    return res;
   }
 
 }

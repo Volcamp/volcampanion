@@ -4,10 +4,8 @@ import {AbstractConferenceService} from "../../services/abstract/AbstractConfere
 import {VMListPlanning} from "../../vm/VMListPlanning";
 import {FilterPlanningsService} from "../../services/FilterPlanningsService";
 import {AbstractTalkFavoriteService} from "../../services/abstract/AbstractTalkFavoriteService";
-import {Planning, PlanningType} from "../../data/dto/input/Planning";
-import {compareEqualDateAndTime} from "../../common/DateFunc";
-import {roomPosition} from "../../common/RoomPosition";
-import {TalkPlanning} from "../../data/dto/input/TalkPlanning";
+import {Planning} from "../../data/dto/input/Planning";
+import {LocalStorageFavoriteService} from "../../services/LocalStorageFavoriteService";
 
 @Component({
   selector: 'app-home',
@@ -18,8 +16,8 @@ export class HomeComponent {
   vm: VMListPlanning;
 
 
-  constructor(dataService: AbstractPlanningService, favoriteService: AbstractTalkFavoriteService, confService: AbstractConferenceService, filterPlannings: FilterPlanningsService) {
-    this.vm = new VMListPlanning(dataService, confService, filterPlannings);
+  constructor(dataService: AbstractPlanningService, favoriteService: AbstractTalkFavoriteService, confService: AbstractConferenceService, filterPlannings: FilterPlanningsService, localStorageFavoriteService: LocalStorageFavoriteService) {
+    this.vm = new VMListPlanning(dataService, localStorageFavoriteService, confService, filterPlannings);
   }
 
   ngOnInit(): void {

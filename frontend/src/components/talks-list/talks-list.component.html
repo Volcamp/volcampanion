@@ -2,7 +2,7 @@
   <div *ngFor="let planning of plannings " style="">
     <div class="containerBig" style="">
 
-      <div [ngSwitch]="planning.getType()" *ngIf="planning !== undefined; else blank">
+      <div [ngSwitch]="getType(planning)" *ngIf="planning !== undefined; else blank">
 
         <div *ngSwitchCase="DELIMITER_DAY">
           <app-divider-teaser-view [dividerPlanning]="$any(planning)"/>

@@ -2,13 +2,16 @@ import {AbstractPlanningService} from "../services/abstract/AbstractPlanningServ
 import {AbstractConferenceService} from "../services/abstract/AbstractConferenceService";
 import {FilterPlanningsService} from "../services/FilterPlanningsService";
 import {VMPlannings} from "./VMPlannings";
+import {LocalStorageFavoriteService} from "../services/LocalStorageFavoriteService";
 
 export class VMListPlanning extends VMPlannings {
 
 
-  constructor(private dataService: AbstractPlanningService, private confService: AbstractConferenceService,
+  constructor(private dataService: AbstractPlanningService,
+              localStorageFavoriteService: LocalStorageFavoriteService,
+              private confService: AbstractConferenceService,
               filterPlannings: FilterPlanningsService) {
-    super(filterPlannings);
+    super(filterPlannings, localStorageFavoriteService);
 
   }
 

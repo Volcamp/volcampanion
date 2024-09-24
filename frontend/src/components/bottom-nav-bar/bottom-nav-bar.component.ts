@@ -12,6 +12,7 @@ export class BottomNavBarComponent implements AfterViewInit, OnInit {
   @Input() isMobile!: boolean;
 
   homeRoute = toRoute(AppRoutes.HOME_ROUTE)
+  infosRoute = toRoute(AppRoutes.INFOS_ROUTE)
   speakerRoute = toRoute(AppRoutes.SPEAKER_ROUTE)
   favoriteRoute = toRoute(AppRoutes.FAVORITE_ROUTE)
 
@@ -42,6 +43,8 @@ export class BottomNavBarComponent implements AfterViewInit, OnInit {
         button = document.getElementById(this.speakerRoute);
       } else if (location.pathname.toLowerCase().includes(this.favoriteRoute)) {
         button = document.getElementById(this.favoriteRoute);
+      } else if (location.pathname.toLowerCase().includes(this.infosRoute)) {
+        button = document.getElementById(this.infosRoute);
       } else {
         button = document.getElementById(this.defaultRoot)
       }
@@ -65,7 +68,8 @@ export class BottomNavBarComponent implements AfterViewInit, OnInit {
     this.logged = this.userService.isLogged();
     this.userService.logEventEmitter.on((data: LogEventArgs) => {
       this.logged = data.IsLog
-    });  }
+    });
+  }
 }
 
 export const CLASS_BTN_NAME = 'button.iconBtn';

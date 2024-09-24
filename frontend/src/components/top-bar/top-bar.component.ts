@@ -23,6 +23,7 @@ export class TopBarComponent implements OnInit {
 
 
   homeRoute = toRoute(AppRoutes.HOME_ROUTE)
+  infosRoute = toRoute(AppRoutes.INFOS_ROUTE)
   speakerRoute = toRoute(AppRoutes.SPEAKER_ROUTE)
   favoriteRoute = toRoute(AppRoutes.FAVORITE_ROUTE)
 

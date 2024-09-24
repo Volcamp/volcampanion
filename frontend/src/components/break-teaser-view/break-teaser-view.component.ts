@@ -13,6 +13,6 @@ export class BreakTeaserViewComponent implements OnInit {
 
   ngOnInit(): void {
     this.startDate = new Date(this.breakPlanning.schedule)
-    this.endDate = new Date(this.startDate.getTime() + this.breakPlanning.break.format.duration * 1000) //if in minutes need to be 60 000
+    this.endDate = new Date(this.startDate.getTime() + this.breakPlanning.break.format.duration * 60 * 1000) //if in minutes need to be 60 000
   }
 }

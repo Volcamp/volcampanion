@@ -22,7 +22,6 @@ export class VolcampFeedbackComponent {
 
   ngOnInit() {
     this.vm = new VMFeedbackTalk(this.userService, this.dataService, this.feedbackInitService, this.talkId);
-    console.log(JSON.stringify(this.feedback))
     this.vm.setFeedback(this.feedback!);
   }
 }

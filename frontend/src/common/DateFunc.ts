@@ -4,8 +4,9 @@ export function compareEqualDate(a: Date, b: Date): boolean {
 
 
 export function compareEqualDateAndTime(a: Date, b: Date): boolean {
-  return compareEqualDate(a,b) && a.getTime()===b.getTime();
+  return compareEqualDate(a, b) && a.getTime() === b.getTime();
 }
+
 
 export function formatDate(date: Date): string {
   return `${date.toLocaleString('fr-FR', {weekday: 'long'})} ${date.getDate()} ${date.toLocaleString('fr-FR', {month: 'long'})}  ${date.getFullYear()}`
