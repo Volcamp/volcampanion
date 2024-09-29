@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FeedbackInitService} from "../../services/FeedbackInitService";
-import {NoteChangeEventArgs} from "../../event/NoteChangeEventArgs";
+import {LocalStorageFeedbacksService} from "../../services/LocalStorageFeedbacksService";
 
 @Component({
   selector: 'app-volcamp-rate',
@@ -12,13 +12,29 @@ export class VolcampRateComponent {
 
   @Output() noteOutput: EventEmitter<number> = new EventEmitter<number>();
   @Input() noted = false;
-  note: number = -1;
+  private _currentNote: number = -1;
 
-  constructor(feedbackInitService: FeedbackInitService) {
+  @Input()
+  set currentNote(value: number | undefined) {
+    this._currentNote = value ?? -1;
+    this.onCurrentNoteChange(value ?? -1);
+  }
+
+  get currentNote(): number {
+    return this._currentNote;
+  }
+
+  // Cette méthode sera déclenchée à chaque changement de currentNote
+  onCurrentNoteChange(newNote: number) {
+    console.log("CHANGED", newNote)
+    this.note = newNote;
+  }
+
+  note: number = this.DEFAULT_NOTE;
+
+  constructor(feedbackInitService: FeedbackInitService, private localStorageFeedbacksService: LocalStorageFeedbacksService) {
     this.check(this.DEFAULT_NOTE);
-    feedbackInitService.eventEmitterNote.on((data: NoteChangeEventArgs) => {
-      this.note = data.note;
-    })
+    this.note = this.currentNote ?? this.DEFAULT_NOTE;
   }
 
   isChecked(note: number): boolean {
@@ -28,8 +44,7 @@ export class VolcampRateComponent {
   check(note: number) {
     if (this.note != note) {
       this.note = note
-    }
-    else this.note = 0;
+    } else this.note = 0;
     this.noteOutput.emit(this.note)
   }
 

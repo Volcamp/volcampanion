@@ -5,7 +5,7 @@
         <span class="f1 accentColor">Votre avis compte pour nous !</span>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="5">
-        <app-volcamp-rate [noted]="vm.noted" (noteOutput)="vm.update($event)"></app-volcamp-rate>
+        <app-volcamp-rate [currentNote]="currentNote" [noted]="vm.noted" (noteOutput)="vm.update($event)"></app-volcamp-rate>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="5" [rowspan]="2">
         <form>
@@ -29,10 +29,10 @@
           <mat-icon class="icon" inline=true svgIcon="send" aria-hidden="false" *ngIf="!vm.noted"></mat-icon>
           Soumettre
         </button>
-        <button class="actionButton" *ngIf="vm.noted" mat-raised-button color="warn" (click)="vm.deleteFeedback()" [disabled]="!vm.noted">
-          <mat-icon class="icon" inline=true  aria-hidden="false" *ngIf="vm.noted">delete</mat-icon>
-          Supprimer
-        </button>
+<!--        <button class="actionButton" *ngIf="vm.noted" mat-raised-button color="warn" (click)="vm.deleteFeedback()" [disabled]="!vm.noted">-->
+<!--          <mat-icon class="icon" inline=true  aria-hidden="false" *ngIf="vm.noted">delete</mat-icon>-->
+<!--          Supprimer-->
+<!--        </button>-->
       </mat-grid-tile>
     </mat-grid-list>
   </div>

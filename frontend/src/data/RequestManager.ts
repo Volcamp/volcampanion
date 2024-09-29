@@ -1,5 +1,5 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable, of} from 'rxjs';
+import {Observable} from 'rxjs';
 import {Injectable} from "@angular/core";
 import {UserService} from "../services/UserService";
 
@@ -28,7 +28,7 @@ export class RequestManager {
 
   private getHeaders(): HttpHeaders {
     return new HttpHeaders({
-      'Authorization': `Bearer ${this.userService.getToken()}`,
+      // 'Authorization': `Bearer ${this.userService.getToken()}`,
       'Content-Type': 'application/json'
     });
   }

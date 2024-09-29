@@ -1,10 +1,9 @@
 import {UserService} from "../services/UserService";
-import {LogEventArgs} from "../event/LogEventArgs";
 import {Feedback} from "../data/dto/input/Feedback";
 import {AbstractTalkFeedbackService} from "../services/abstract/AbstractTalkFeedbackService";
 import {FeedbackInitService} from "../services/FeedbackInitService";
+import {LocalStorageFeedbacksService} from "../services/LocalStorageFeedbacksService";
 import {NoteChangeEventArgs} from "../event/NoteChangeEventArgs";
-import {EmptyFeedback} from "../data/dto/input/EmptyFeedback";
 
 
 export class VMFeedbackTalk {
@@ -14,28 +13,18 @@ export class VMFeedbackTalk {
   noted: boolean = false;
 
   constructor(private userService: UserService, private dataService: AbstractTalkFeedbackService,
-              private feedbackInitService: FeedbackInitService, private talkId: string) {
+              private feedbackInitService: FeedbackInitService, private talkId: string,
+              private localStorageFeedbacksService: LocalStorageFeedbacksService) {
     this.logged = userService.isLogged();
     this.init(talkId);
   }
 
   private init(idTalk: string) {
     this.idTalk = idTalk;
-    this.userService.logEventEmitter.on((data: LogEventArgs) => {
-      this.logged = data.IsLog
-    });
-    if (this.logged) {
-      this.dataService.getFeedback(this.idTalk).subscribe(data => {
-        if (data.length != 0) {
-          // this.feedBack = data[0];
-          this.feedbackInitService.eventEmitterNote.emit(new NoteChangeEventArgs(this.feedBack.rating))
-
-          // this.noted = true;
-        } else {
-          // this.noted = false;
-        }
-
-      });
+    const res = this.localStorageFeedbacksService.getFeedback(idTalk);
+    if (res["comment"] || res["rating"]) {
+      this.feedBack = res;
+      this.noted = true;
     }
   }
 
@@ -44,24 +33,17 @@ export class VMFeedbackTalk {
   }
 
   sendNote() {
-    this.dataService.addFeedback(this.feedBack, this.idTalk).subscribe(data => {
-      this.noted = data;
-    });
-
-  }
-
-  setFeedback(feedback: Feedback) {
-    this.feedBack = feedback;
+    this.localStorageFeedbacksService.addFeedback(this.idTalk, this.feedBack);
     this.noted = true;
-    if (feedback == null) {
-      this.feedBack = new EmptyFeedback();
-      this.noted = false;
-    }
   }
 
-  deleteFeedback() {
-    this.dataService.removeFeedback(this.idTalk).subscribe(() => {
-      this.noted = false;
-    });
-  }
+  // setFeedback(feedback: Feedback) {
+  //   this.feedBack = feedback;
+  //   this.noted = true;
+  //   if (feedback == null) {
+  //     this.feedBack = new EmptyFeedback();
+  //     this.noted = false;
+  //   }
+  // }
+
 }
