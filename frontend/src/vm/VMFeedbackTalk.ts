@@ -34,6 +34,7 @@ export class VMFeedbackTalk {
 
   sendNote() {
     this.localStorageFeedbacksService.addFeedback(this.idTalk, this.feedBack);
+    //TODO send also to backend
     this.noted = true;
   }
 

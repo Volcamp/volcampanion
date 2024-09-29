@@ -62,23 +62,23 @@ public class TalkFormatController {
         return mapper.toDTO(conf);
     }
 
-    @DELETE
-    @Path("/{id}")
-    public void delete(@PathParam("id") Long id) {
-        service.deleteById(id);
-    }
-
-    @POST
-    @Transactional
-    public TalkFormatDTO create(CreateTalkFormatDTO dto) {
-        return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
-    }
-
-    @PUT
-    @Transactional
-    public TalkFormatDTO update(CreateTalkFormatDTO dto) {
-        return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
-    }
+//    @DELETE
+//    @Path("/{id}")
+//    public void delete(@PathParam("id") Long id) {
+//        service.deleteById(id);
+//    }
+//
+//    @POST
+//    @Transactional
+//    public TalkFormatDTO create(CreateTalkFormatDTO dto) {
+//        return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
+//    }
+//
+//    @PUT
+//    @Transactional
+//    public TalkFormatDTO update(CreateTalkFormatDTO dto) {
+//        return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
+//    }
 
 
 }

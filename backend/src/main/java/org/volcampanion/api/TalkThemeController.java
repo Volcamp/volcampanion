@@ -62,23 +62,23 @@ public class TalkThemeController {
         return mapper.toDTO(conf);
     }
 
-    @DELETE
-    @Path("/{id}")
-    public void delete(@PathParam("id") Long id) {
-        service.deleteById(id);
-    }
-
-    @POST
-    @Transactional
-    public TalkThemeDTO create(CreateTalkThemeDTO dto) {
-        return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
-    }
-
-    @PUT
-    @Transactional
-    public TalkThemeDTO update(CreateTalkThemeDTO dto) {
-        return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
-    }
+//    @DELETE
+//    @Path("/{id}")
+//    public void delete(@PathParam("id") Long id) {
+//        service.deleteById(id);
+//    }
+//
+//    @POST
+//    @Transactional
+//    public TalkThemeDTO create(CreateTalkThemeDTO dto) {
+//        return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
+//    }
+//
+//    @PUT
+//    @Transactional
+//    public TalkThemeDTO update(CreateTalkThemeDTO dto) {
+//        return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
+//    }
 
 
 }

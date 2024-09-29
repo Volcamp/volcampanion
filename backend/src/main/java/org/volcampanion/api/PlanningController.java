@@ -88,27 +88,27 @@ public class PlanningController {
         return mapper.toDTO(plannings);
     }
 
-    @DELETE
-    @Path("/room/{room}/talk/{talk}")
-    public void delete(@PathParam("room") Long room, @PathParam("talk") Long talk) {
-        final PlanningDTO dto = new PlanningDTO().setRoom(new RoomDTO().setId(room))
-                .setTalk(new TalkDTO().setId(talk));
-        final Planning planning = mapper.toDomain(dto);
-        service.delete(planning);
-    }
-
-    @POST
-    @Transactional
-    public PlanningDTO create(CreatePlanningDTO dto) {
-        //TODO handle input id verif
-        return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
-    }
-
-    @PUT
-    @Transactional
-    public PlanningDTO update(CreatePlanningDTO dto) {
-        return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
-    }
+//    @DELETE
+//    @Path("/room/{room}/talk/{talk}")
+//    public void delete(@PathParam("room") Long room, @PathParam("talk") Long talk) {
+//        final PlanningDTO dto = new PlanningDTO().setRoom(new RoomDTO().setId(room))
+//                .setTalk(new TalkDTO().setId(talk));
+//        final Planning planning = mapper.toDomain(dto);
+//        service.delete(planning);
+//    }
+//
+//    @POST
+//    @Transactional
+//    public PlanningDTO create(CreatePlanningDTO dto) {
+//        //TODO handle input id verif
+//        return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
+//    }
+//
+//    @PUT
+//    @Transactional
+//    public PlanningDTO update(CreatePlanningDTO dto) {
+//        return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
+//    }
 
 
 }

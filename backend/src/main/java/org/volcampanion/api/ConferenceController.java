@@ -1,20 +1,18 @@
 package org.volcampanion.api;
 
 
+import jakarta.inject.Inject;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.volcampanion.domain.mappers.ConferenceMapper;
 import org.volcampanion.dto.ConferenceDTO;
-import org.volcampanion.dto.CreateConferenceDTO;
 import org.volcampanion.exception.NotFoundException;
 import org.volcampanion.service.ConferenceService;
 
-import jakarta.inject.Inject;
-import jakarta.transaction.Transactional;
-import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("/conferences")
@@ -72,23 +70,23 @@ public class ConferenceController {
         return mapper.toDTO(conf);
     }
 
-    @DELETE
-    @Path("/{id}")
-    public void delete(@PathParam("id") Long id) {
-        service.deleteById(id);
-    }
-
-    @POST
-    @Transactional
-    public ConferenceDTO create(CreateConferenceDTO dto) {
-        return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
-    }
-
-    @PUT
-    @Transactional
-    public ConferenceDTO update(CreateConferenceDTO dto) {
-        return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
-    }
+//    @DELETE
+//    @Path("/{id}")
+//    public void delete(@PathParam("id") Long id) {
+//        service.deleteById(id);
+//    }
+//
+//    @POST
+//    @Transactional
+//    public ConferenceDTO create(CreateConferenceDTO dto) {
+//        return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
+//    }
+//
+//    @PUT
+//    @Transactional
+//    public ConferenceDTO update(CreateConferenceDTO dto) {
+//        return mapper.toDTO(service.createOrUpdate(mapper.toDomain(dto)));
+//    }
 
 
 }
