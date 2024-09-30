@@ -3,7 +3,6 @@ import {Feedback} from "../data/dto/input/Feedback";
 import {AbstractTalkFeedbackService} from "../services/abstract/AbstractTalkFeedbackService";
 import {FeedbackInitService} from "../services/FeedbackInitService";
 import {LocalStorageFeedbacksService} from "../services/LocalStorageFeedbacksService";
-import {NoteChangeEventArgs} from "../event/NoteChangeEventArgs";
 
 
 export class VMFeedbackTalk {
@@ -33,8 +32,11 @@ export class VMFeedbackTalk {
   }
 
   sendNote() {
+    if (this.feedBack.rating === -1) {
+      this.feedBack.rating = 5;
+    }
     this.localStorageFeedbacksService.addFeedback(this.idTalk, this.feedBack);
-    //TODO send also to backend
+    this.dataService.addFeedback(this.feedBack, this.idTalk).subscribe();
     this.noted = true;
   }
 

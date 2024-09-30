@@ -26,7 +26,6 @@ export class VolcampRateComponent {
 
   // Cette méthode sera déclenchée à chaque changement de currentNote
   onCurrentNoteChange(newNote: number) {
-    console.log("CHANGED", newNote)
     this.note = newNote;
   }
 
