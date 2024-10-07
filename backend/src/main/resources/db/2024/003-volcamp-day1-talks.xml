@@ -38,13 +38,15 @@ Présentation de la conférence, du contenus, du programme et de nos sponsors."/
   <changeSet id="004" author="camille.petitalot@volcamp.io">
     <comment>Talks</comment>
     <insert tableName="talks">
-      <column name="title" value="Cracking the Quantum Code. Découvrons la révolution quantique !"/>
+      <column name="title" value="3615 Twitch, un bot sur Minitel ?"/>
       <column name="description"
-              value='Depuis le début de l’année, les annonces concernant les ordinateurs quantiques se multiplient.
+              value='Streamant de temps en temps sur Twitch, je me suis demandé comment améliorer l’interaction avec les viewers.
 
-L’informatique quantique promet une puissance de calcul sans précédent, révolutionnant des domaines allant de la science des matériaux et de la découverte de médicaments à la modélisation financière et à la cryptographie. Mais qu’est-ce que l’informatique quantique et comment fonctionne-t-elle ?
+Passionné d’IoT et d’objets vintages, je me suis dit “Et si mes viewers affichaient leurs réactions sur le Minitel que j’avais en arrière-plan ?”
 
-Cette conférence plonge dans le monde fascinant de la mécanique quantique pour dévoiler le fonctionnement interne des ordinateurs quantiques, en explorant des éléments tels que les qubits, les portes quantiques, les circuits quantiques, les algorithmes quantiques, les hardwares quantiques et en montrant comment nous pouvons simuler et exécuter un programme quantique !'/>
+Dans ce talk, j’exprime mon REX sur comment ce bel objet du quotidien d’un autre temps fonctionnait pour l’affichage des images (le format Videotex), et comment créer un bot Twitch utilisant StableDiffusion pour afficher des images sur le minitel et comment bidouiller en mode DIY la machine avec un ESP8266.
+
+Ce talk se veut également interactif : vous pourrez vous-même communiquer avec mon minitel en live depuis votre téléphone !'/>
       <column name="language" value="fr"/>
       <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
       <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
@@ -394,22 +396,22 @@ Dans cette session, nous explorerons notre héritage pour comprendre les raisons
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
     </insert>
   </changeSet>
-  <changeSet id="026" author="camille.petitalot@volcamp.io">
-    <comment>Talks</comment>
-    <insert tableName="talks">
-      <column name="title" value="Les feature flags. le couteau suisse de votre flow de développement"/>
-      <column name="description"
-              value="Les features flags sont une technique permettant d’activer ou désactiver à la demande certaines fonctionnalités d’une application.
+<!--  <changeSet id="026" author="camille.petitalot@volcamp.io">-->
+<!--    <comment>Talks</comment>-->
+<!--    <insert tableName="talks">-->
+<!--      <column name="title" value="Les feature flags. le couteau suisse de votre flow de développement"/>-->
+<!--      <column name="description"-->
+<!--              value="Les features flags sont une technique permettant d’activer ou désactiver à la demande certaines fonctionnalités d’une application.-->
 
-Ils permettent non seulement de rendre les mises en production moins effrayantes, séparant le déploiement du livrable et l’activation des nouvelles fonctionnalités mais aussi de simplifier le flow de développement, en permettant de livrer des features non finalisées.
+<!--Ils permettent non seulement de rendre les mises en production moins effrayantes, séparant le déploiement du livrable et l’activation des nouvelles fonctionnalités mais aussi de simplifier le flow de développement, en permettant de livrer des features non finalisées.-->
 
-Au travers d’exemples concrets, nous verrons comment mettre en place les features flags, ce qu’ils peuvent apporter, mais également les dérives auxquels ils peuvent aboutir les manières de les éviter."/>
-      <column name="language" value="fr"/>
-      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
-      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
-      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
-    </insert>
-  </changeSet>
+<!--Au travers d’exemples concrets, nous verrons comment mettre en place les features flags, ce qu’ils peuvent apporter, mais également les dérives auxquels ils peuvent aboutir les manières de les éviter."/>-->
+<!--      <column name="language" value="fr"/>-->
+<!--      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>-->
+<!--      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>-->
+<!--      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>-->
+<!--    </insert>-->
+<!--  </changeSet>-->
   <changeSet id="027" author="camille.petitalot@volcamp.io">
     <comment>Talks</comment>
     <insert tableName="talks">

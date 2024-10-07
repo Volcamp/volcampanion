@@ -195,14 +195,14 @@
               valueComputed="(SELECT id FROM talks WHERE title = 'L''instabilité de nos tests nous empêche de délivrer' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>
     </insert>
   </changeSet>
-  <changeSet id="025" author="camille.petitalot@volcamp.io">
-    <insert tableName="speakers_talk">
-      <column name="speaker_id"
-              valueComputed="(SELECT id FROM speakers WHERE name = 'Arnaud Mary' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>
-      <column name="talk_id"
-              valueComputed="(SELECT id FROM talks WHERE title = 'Chapter Lead - retour d’XP après 2 ans de mise en place chez BforBank' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>
-    </insert>
-  </changeSet>
+<!--  <changeSet id="025" author="camille.petitalot@volcamp.io">-->
+<!--    <insert tableName="speakers_talk">-->
+<!--      <column name="speaker_id"-->
+<!--              valueComputed="(SELECT id FROM speakers WHERE name = 'Arnaud Mary' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>-->
+<!--      <column name="talk_id"-->
+<!--              valueComputed="(SELECT id FROM talks WHERE title = 'Chapter Lead - retour d’XP après 2 ans de mise en place chez BforBank' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>-->
+<!--    </insert>-->
+<!--  </changeSet>-->
   <changeSet id="026" author="camille.petitalot@volcamp.io">
     <insert tableName="speakers_talk">
       <column name="speaker_id"

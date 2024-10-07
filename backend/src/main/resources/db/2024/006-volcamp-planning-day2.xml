@@ -240,7 +240,7 @@
     <comment>Planning</comment>
     <insert tableName="plannings">
       <column name="talk_id"
-              valueComputed="(SELECT id FROM talks WHERE format_id = (SELECT id FROM talk_formats WHERE name = 'BREAK_15M' and title = 'Pause') AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>
+              valueComputed="(SELECT id FROM talks WHERE format_id = (SELECT id FROM talk_formats WHERE name = 'BREAK_30M' and title = 'Pause') AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>
       <column name="schedule" value="2024-10-11 15:15"/>
     </insert>
@@ -255,16 +255,16 @@
       <column name="schedule" value="2024-10-11 15:45"/>
     </insert>
   </changeSet>
-  <changeSet id="026" author="camille.petitalot@volcamp.io">
-    <comment>Planning</comment>
-    <insert tableName="plannings">
-      <column name="talk_id"
-              valueComputed="(SELECT id FROM talks WHERE title = 'Chapter Lead - retour d’XP après 2 ans de mise en place chez BforBank')"/>
-      <column name="room_id"
-              valueComputed="(SELECT id FROM rooms WHERE name = 'SHOWROOM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>
-      <column name="schedule" value="2024-10-11 15:45"/>
-    </insert>
-  </changeSet>
+<!--  <changeSet id="026" author="camille.petitalot@volcamp.io">-->
+<!--    <comment>Planning</comment>-->
+<!--    <insert tableName="plannings">-->
+<!--      <column name="talk_id"-->
+<!--              valueComputed="(SELECT id FROM talks WHERE title = 'Chapter Lead - retour d’XP après 2 ans de mise en place chez BforBank')"/>-->
+<!--      <column name="room_id"-->
+<!--              valueComputed="(SELECT id FROM rooms WHERE name = 'SHOWROOM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>-->
+<!--      <column name="schedule" value="2024-10-11 15:45"/>-->
+<!--    </insert>-->
+<!--  </changeSet>-->
   <changeSet id="027" author="camille.petitalot@volcamp.io">
     <comment>Planning</comment>
     <insert tableName="plannings">
@@ -311,8 +311,8 @@
       <column name="talk_id"
               valueComputed="(SELECT id FROM talks WHERE title = 'Kubernetes + Event Driven Autoscaling = Comment garder votre cool pendant les heures de pointe !')"/>
       <column name="room_id"
-              valueComputed="(SELECT id FROM rooms WHERE name = 'FABLAB' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>
-      <column name="schedule" value="2024-10-11 16:45"/>
+              valueComputed="(SELECT id FROM rooms WHERE name = 'SHOWROOM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>
+      <column name="schedule" value="2024-10-11 15:45"/>
     </insert>
   </changeSet>
   <changeSet id="032" author="camille.petitalot@volcamp.io">

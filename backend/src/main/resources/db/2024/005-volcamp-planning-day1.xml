@@ -32,7 +32,7 @@
     <comment>Planning</comment>
     <insert tableName="plannings">
       <column name="talk_id"
-              valueComputed="(SELECT id FROM talks WHERE title = 'Cracking the Quantum Code. Découvrons la révolution quantique !')"/>
+              valueComputed="(SELECT id FROM talks WHERE title = '3615 Twitch, un bot sur Minitel ?')"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>
       <column name="schedule" value="2024-10-10 10:15"/>
     </insert>
@@ -253,16 +253,16 @@
       <column name="schedule" value="2024-10-10 15:45"/>
     </insert>
   </changeSet>
-  <changeSet id="026" author="camille.petitalot@volcamp.io">
-    <comment>Planning</comment>
-    <insert tableName="plannings">
-      <column name="talk_id"
-              valueComputed="(SELECT id FROM talks WHERE title = 'Les feature flags. le couteau suisse de votre flow de développement')"/>
-      <column name="room_id"
-              valueComputed="(SELECT id FROM rooms WHERE name = 'SHOWROOM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>
-      <column name="schedule" value="2024-10-10 15:45"/>
-    </insert>
-  </changeSet>
+<!--  <changeSet id="026" author="camille.petitalot@volcamp.io">-->
+<!--    <comment>Planning</comment>-->
+<!--    <insert tableName="plannings">-->
+<!--      <column name="talk_id"-->
+<!--              valueComputed="(SELECT id FROM talks WHERE title = 'Les feature flags. le couteau suisse de votre flow de développement')"/>-->
+<!--      <column name="room_id"-->
+<!--              valueComputed="(SELECT id FROM rooms WHERE name = 'SHOWROOM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>-->
+<!--      <column name="schedule" value="2024-10-10 15:45"/>-->
+<!--    </insert>-->
+<!--  </changeSet>-->
   <changeSet id="027" author="camille.petitalot@volcamp.io">
     <comment>Planning</comment>
     <insert tableName="plannings">
@@ -319,8 +319,8 @@
       <column name="talk_id"
               valueComputed="(SELECT id FROM talks WHERE title = 'Application mobile offline-first avec React Native ⚛️ et WatermelonDB 🍉')"/>
       <column name="room_id"
-              valueComputed="(SELECT id FROM rooms WHERE name = 'FABLAB' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>
-      <column name="schedule" value="2024-10-10 17:45"/>
+              valueComputed="(SELECT id FROM rooms WHERE name = 'SHOWROOM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2024'))"/>
+      <column name="schedule" value="2024-10-10 15:45"/>
     </insert>
   </changeSet>
   <changeSet id="033" author="camille.petitalot@volcamp.io">

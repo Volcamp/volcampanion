@@ -359,26 +359,26 @@ Ce problème était connu depuis un moment… Mais personne ne voulait s’y att
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
     </insert>
   </changeSet>
-  <changeSet id="022" author="camille.petitalot@volcamp.io">
-    <comment>Talks</comment>
-    <insert tableName="talks">
-      <column name="title" value="Chapter Lead - retour d’XP après 2 ans de mise en place chez BforBank"/>
-      <column name="description"
-              value="Chez BforBank, on sort du plus gros refactoring de notre histoire… Et ça ne concernait pas le code. En l’espace d’un an, nous sommes passés d’une équipe solo à une quinzaine de Squads et de l’agilité at-scale. Facile ? Ou pas.
+<!--  <changeSet id="022" author="camille.petitalot@volcamp.io">-->
+<!--    <comment>Talks</comment>-->
+<!--    <insert tableName="talks">-->
+<!--      <column name="title" value="Chapter Lead - retour d’XP après 2 ans de mise en place chez BforBank"/>-->
+<!--      <column name="description"-->
+<!--              value="Chez BforBank, on sort du plus gros refactoring de notre histoire… Et ça ne concernait pas le code. En l’espace d’un an, nous sommes passés d’une équipe solo à une quinzaine de Squads et de l’agilité at-scale. Facile ? Ou pas.-->
 
-Parmi les enjeux de la restructuration, une question a une importance particulière : comment garder une homogénéité dans la qualité des développements et la stack, tout en donnant un maximum d’autonomie à chaque équipe ?
+<!--Parmi les enjeux de la restructuration, une question a une importance particulière : comment garder une homogénéité dans la qualité des développements et la stack, tout en donnant un maximum d’autonomie à chaque équipe ?-->
 
-La réponse qu’on a trouvé : implémenter le Chapter Lead.
+<!--La réponse qu’on a trouvé : implémenter le Chapter Lead.-->
 
-Garant des bonnes pratiques, créateur de poc et curieux, cet expert Tech est au service de la communauté de développeurs qu’il anime et qu’il doit tirer vers l’excellence. Inspiré du rôle de Chapter Manager de Spotify, le Lead Chapter met les mains dans le code et développe des features complexes mais aussi prend du recul pour voir quels sont les points de blocage dans le quotidien de sa communauté.
+<!--Garant des bonnes pratiques, créateur de poc et curieux, cet expert Tech est au service de la communauté de développeurs qu’il anime et qu’il doit tirer vers l’excellence. Inspiré du rôle de Chapter Manager de Spotify, le Lead Chapter met les mains dans le code et développe des features complexes mais aussi prend du recul pour voir quels sont les points de blocage dans le quotidien de sa communauté.-->
 
-Vous repartirez avec notre retour d’expérience, nos fails, nos réussites et les nouveaux enjeux que cette mise en place a fait apparaître, notamment sur l’installation d’une culture du partage tech au sein de nos équipes"/>
-      <column name="language" value="fr"/>
-      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
-      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
-      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
-    </insert>
-  </changeSet>
+<!--Vous repartirez avec notre retour d’expérience, nos fails, nos réussites et les nouveaux enjeux que cette mise en place a fait apparaître, notamment sur l’installation d’une culture du partage tech au sein de nos équipes"/>-->
+<!--      <column name="language" value="fr"/>-->
+<!--      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>-->
+<!--      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>-->
+<!--      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>-->
+<!--    </insert>-->
+<!--  </changeSet>-->
   <changeSet id="023" author="camille.petitalot@volcamp.io">
     <comment>Talks</comment>
     <insert tableName="talks">

@@ -87,22 +87,22 @@ J’adore créer des scripts et automatiser des tâches pour les rendre plus eff
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
     </insert>
   </changeSet>
-  <changeSet id="007" author="camille.petitalot@volcamp.io">
-    <insert tableName="speakers">
-      <column name="name" value="Arnaud Mary"/>
-      <column name="email" value=" "/>
-      <column name="company" value=""/>
-      <column name="biography" value='Arnaud aurait pu vous dire qu’il a fait du Cobol ou bossé dans les énergies renouvelables, mais ça ne vous aiderait pas à comprendre le rôle qu’il occupe aujourd’hui chez BforBank.
+<!--  <changeSet id="007" author="camille.petitalot@volcamp.io">-->
+<!--    <insert tableName="speakers">-->
+<!--      <column name="name" value="Arnaud Mary"/>-->
+<!--      <column name="email" value=" "/>-->
+<!--      <column name="company" value=""/>-->
+<!--      <column name="biography" value='Arnaud aurait pu vous dire qu’il a fait du Cobol ou bossé dans les énergies renouvelables, mais ça ne vous aiderait pas à comprendre le rôle qu’il occupe aujourd’hui chez BforBank.-->
 
-Sportif convaincu et Java lover (ou bien le contraire), son quotidien ne se résume plus à être développeur chevronné parmi les siens. Aujourd’hui, il est surtout celui qui réorganise les équipes, met en place les nouveaux rôles qui leur permettent de toujours mieux se réaliser dans ce qu’ils font. D’ailleurs, il n’est pas impossible qu’il vienne vous en parler !
+<!--Sportif convaincu et Java lover (ou bien le contraire), son quotidien ne se résume plus à être développeur chevronné parmi les siens. Aujourd’hui, il est surtout celui qui réorganise les équipes, met en place les nouveaux rôles qui leur permettent de toujours mieux se réaliser dans ce qu’ils font. D’ailleurs, il n’est pas impossible qu’il vienne vous en parler !-->
 
-'/>
-      <column name="twitter" value=""/>
-      <column name="linkedin" value=""/>
-      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/49.jpg"/>
-      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
-    </insert>
-  </changeSet>
+<!--'/>-->
+<!--      <column name="twitter" value=""/>-->
+<!--      <column name="linkedin" value=""/>-->
+<!--      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/49.jpg"/>-->
+<!--      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>-->
+<!--    </insert>-->
+<!--  </changeSet>-->
   <changeSet id="008" author="camille.petitalot@volcamp.io">
     <insert tableName="speakers">
       <column name="name" value="Audrey Gentili"/>
@@ -472,22 +472,22 @@ Aujourd’hui, devenu expert des technologies de développement au sein de la so
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
     </insert>
   </changeSet>
-  <changeSet id="033" author="camille.petitalot@volcamp.io">
-    <insert tableName="speakers">
-      <column name="name" value="Laurent Grangeau"/>
-      <column name="email" value=" "/>
-      <column name="company" value=""/>
-      <column name="biography" value='Laurent Grangeau is a Cloud Solution Architect with more than 10+ years of experience.
+<!--  <changeSet id="033" author="camille.petitalot@volcamp.io">-->
+<!--    <insert tableName="speakers">-->
+<!--      <column name="name" value="Laurent Grangeau"/>-->
+<!--      <column name="email" value=" "/>-->
+<!--      <column name="company" value=""/>-->
+<!--      <column name="biography" value='Laurent Grangeau is a Cloud Solution Architect with more than 10+ years of experience.-->
 
-Former Java developer, he has since developed in .NET, with Agile and DevOps mindsets.
+<!--Former Java developer, he has since developed in .NET, with Agile and DevOps mindsets.-->
 
-He has been experimenting with cloud providers for more than 5+ years. Docker enthusiast from the beginning, he has experienced with building microservices and distributed systems. He loves to automate things and run distributed applications at scale.'/>
-      <column name="twitter" value="https://twitter.com/laurentgrangeau"/>
-      <column name="linkedin" value=""/>
-      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/21.jpg"/>
-      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
-    </insert>
-  </changeSet>
+<!--He has been experimenting with cloud providers for more than 5+ years. Docker enthusiast from the beginning, he has experienced with building microservices and distributed systems. He loves to automate things and run distributed applications at scale.'/>-->
+<!--      <column name="twitter" value="https://twitter.com/laurentgrangeau"/>-->
+<!--      <column name="linkedin" value=""/>-->
+<!--      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/21.jpg"/>-->
+<!--      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>-->
+<!--    </insert>-->
+<!--  </changeSet>-->
   <changeSet id="034" author="camille.petitalot@volcamp.io">
     <insert tableName="speakers">
       <column name="name" value="Jérôme Masson"/>
@@ -1049,6 +1049,20 @@ Yasmine a une formation d’ingénieure couplée à un master en innovation et c
       <column name="twitter" value=""/>
       <column name="linkedin" value=""/>
       <column name="photo_link" value="https://volcamp.io/asset/images/speakers/39.jpg"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="072" author="camille.petitalot@volcamp.io">
+    <insert tableName="speakers">
+      <column name="name" value="Sylvain Gougouzian"/>
+      <column name="email" value=" "/>
+      <column name="company" value=""/>
+      <column name="biography" value='Dev / Formateur GreenIT Speaker, Chef d’orchestre, (Retro)Gamer, Papa geek, Eleveur de GNUs
+Plus d’infos sur https://gouz.dev'/>
+      <column name="twitter" value="https://twitter.com/GouZ"/>
+      <column name="linkedin" value=""/>
+      <column name="photo_link" value="https://volcamp.io/asset/images/speakers/21.png"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2024')"/>
     </insert>
   </changeSet>
