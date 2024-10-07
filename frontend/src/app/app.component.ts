@@ -46,11 +46,11 @@ export class AppComponent {
       this.isAdmin = userService.isAdmin();
       this.logged = this.userService.isLogged();
     });
-    if(this.userService.isLogged()){
-      this.abstractConferenceService.getCurrentConference().subscribe(conf => {
-        this.favoriteService.getFavorites(conf.id.toString(),true).subscribe();
-      })
-    }
+    // if(this.userService.isLogged()){
+    //   this.abstractConferenceService.getCurrentConference().subscribe(conf => {
+    //     this.favoriteService.getFavorites(conf.id.toString(),true).subscribe();
+    //   })
+    // }
 
   }
 

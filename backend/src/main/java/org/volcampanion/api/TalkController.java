@@ -1,9 +1,10 @@
 package org.volcampanion.api;
 
 
+import jakarta.inject.Inject;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.MediaType;
 import org.apache.commons.collections4.CollectionUtils;
-import org.eclipse.microprofile.jwt.Claims;
-import org.eclipse.microprofile.jwt.JsonWebToken;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
@@ -11,18 +12,12 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.volcampanion.api.validator.IdentifiableValidator;
 import org.volcampanion.domain.Talk;
 import org.volcampanion.domain.TalkFilters;
-import org.volcampanion.domain.UserFeedbackTalk;
 import org.volcampanion.domain.mappers.TalkMapper;
-import org.volcampanion.domain.mappers.UserFeedbackTalkMapper;
 import org.volcampanion.dto.CreateTalkDTO;
 import org.volcampanion.dto.TalkDTO;
 import org.volcampanion.exception.NotFoundException;
 import org.volcampanion.service.*;
 
-import javax.inject.Inject;
-import javax.transaction.Transactional;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,15 +49,6 @@ public class TalkController {
     @Inject
     TalkMapper mapper;
 
-    @Inject
-    JsonWebToken jwt;
-
-    @Inject
-    UserFeedbackTalkService feedbackService;
-
-    @Inject
-    UserFeedbackTalkMapper feedbackTalkMapper;
-
     @GET
     @APIResponse(responseCode = "200", description = "OK",
             content = @Content(mediaType = "application/json",
@@ -86,41 +72,33 @@ public class TalkController {
     )
     @Tag(name = "Talks API")
     public TalkDTO getTalkById(@PathParam("idTalk") Long idTalk) {
-        String email = jwt.getClaim(Claims.email);
         var talk = service.findById(idTalk);
-        UserFeedbackTalk feedback = null;
-        if (email != null) {
-            feedback = feedbackService.findByUser(idTalk, email);
-        }
         if (talk == null) {
             throw new NotFoundException();
         }
-
-        var result = mapper.toDTO(talk);
-        result.setFeedback(feedbackTalkMapper.toDTO(feedback));
-        return result;
+        return mapper.toDTO(talk);
     }
 
-    @DELETE
-    @Path("/{id}")
-    public void delete(@PathParam("id") Long id) {
-        service.deleteById(id);
-    }
-
-    @POST
-    @Transactional
-    public TalkDTO create(CreateTalkDTO dto) {
-        var talk = populateTalkWithSubEntities(dto);
-
-        return mapper.toDTO(service.createOrUpdate(talk));
-    }
-
-    @PUT
-    @Transactional
-    public TalkDTO update(CreateTalkDTO dto) {
-        var talk = populateTalkWithSubEntities(dto);
-        return mapper.toDTO(service.createOrUpdate(talk));
-    }
+//    @DELETE
+//    @Path("/{id}")
+//    public void delete(@PathParam("id") Long id) {
+//        service.deleteById(id);
+//    }
+//
+//    @POST
+//    @Transactional
+//    public TalkDTO create(CreateTalkDTO dto) {
+//        var talk = populateTalkWithSubEntities(dto);
+//
+//        return mapper.toDTO(service.createOrUpdate(talk));
+//    }
+//
+//    @PUT
+//    @Transactional
+//    public TalkDTO update(CreateTalkDTO dto) {
+//        var talk = populateTalkWithSubEntities(dto);
+//        return mapper.toDTO(service.createOrUpdate(talk));
+//    }
 
     private Talk populateTalkWithSubEntities(CreateTalkDTO dto) {
         var format = identifiableValidator.validate(dto.getFormat(),

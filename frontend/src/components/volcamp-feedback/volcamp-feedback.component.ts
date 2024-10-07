@@ -4,6 +4,7 @@ import {UserService} from "../../services/UserService";
 import {AbstractTalkFeedbackService} from "../../services/abstract/AbstractTalkFeedbackService";
 import {FeedbackInitService} from "../../services/FeedbackInitService";
 import {Feedback} from "../../data/dto/input/Feedback";
+import {LocalStorageFeedbacksService} from "../../services/LocalStorageFeedbacksService";
 
 @Component({
   selector: 'app-volcamp-feedback',
@@ -16,13 +17,15 @@ export class VolcampFeedbackComponent {
   @Input() talkId: string = ''
   @Input() feedback: Feedback | null = null
 
+  currentNote: number = 5
 
-  constructor(private userService: UserService, private dataService: AbstractTalkFeedbackService, private feedbackInitService: FeedbackInitService,) {
+  constructor(private userService: UserService, private dataService: AbstractTalkFeedbackService, private feedbackInitService: FeedbackInitService, private localStorageFeedbacksService: LocalStorageFeedbacksService,) {
   }
 
   ngOnInit() {
-    this.vm = new VMFeedbackTalk(this.userService, this.dataService, this.feedbackInitService, this.talkId);
-    console.log(JSON.stringify(this.feedback))
-    this.vm.setFeedback(this.feedback!);
+    this.vm = new VMFeedbackTalk(this.userService, this.dataService, this.feedbackInitService, this.talkId, this.localStorageFeedbacksService);
+    if (this.vm.feedBack.rating > 0) {
+      this.currentNote = this.vm.feedBack.rating;
+    }
   }
 }

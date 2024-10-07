@@ -1,11 +1,11 @@
 import {Planning, PlanningType} from "../data/dto/input/Planning";
-import {AbstractConferenceService} from "../services/abstract/AbstractConferenceService";
 import {FilterPlanningsService} from "../services/FilterPlanningsService";
 import {FilterPlanningEventArgs} from "../event/FilterPlanningEventArgs";
 import {Observable} from "rxjs";
 import {compareEqualDateAndTime} from "../common/DateFunc";
 import {roomPosition} from "../common/RoomPosition";
 import {TalkPlanning} from "../data/dto/input/TalkPlanning";
+import {LocalStorageFavoriteService} from "../services/LocalStorageFavoriteService";
 
 export class VMPlannings {
   planningsNoFilter: Planning[] = []
@@ -13,7 +13,7 @@ export class VMPlannings {
   dates: Date[] = [];
   noConnection: boolean = false
 
-  constructor(private filterPlannings: FilterPlanningsService) {
+  constructor(private filterPlannings: FilterPlanningsService, private localStorageFavoriteService: LocalStorageFavoriteService) {
 
   }
 
@@ -37,6 +37,8 @@ export class VMPlannings {
             }
           });
           this.dates = uniqueDates;
+          this.localStorageFavoriteService.setDatesList(this.dates);
+          this.localStorageFavoriteService.setDaysList(this.planningsNoFilter.filter(elt => elt.getType() === PlanningType.DELIMITER_DAY));
         },
         error: (err) => {
           this.noConnection = true;

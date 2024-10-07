@@ -1,9 +1,8 @@
 package org.volcampanion.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.experimental.Accessors;
-
-import javax.persistence.*;
 
 @Entity
 @Data

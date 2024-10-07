@@ -10,13 +10,13 @@ export class UserService {
   logEventEmitter = new EventEmitter<LogEvent>(LogEvent);
 
   isLogged(): boolean {
-    const token: string | null = window.localStorage.getItem(TOKEN);
-
-    if (token === '' || token === null) return false;
-    const tokenAfterParse = this.parseJwt(token);
-    if (tokenAfterParse === '') return false;
-    return new Date(this.parseJwt(token).exp * 1000) >= new Date();
-
+    // const token: string | null = window.localStorage.getItem(TOKEN);
+    //
+    // if (token === '' || token === null) return false;
+    // const tokenAfterParse = this.parseJwt(token);
+    // if (tokenAfterParse === '') return false;
+    // return new Date(this.parseJwt(token).exp * 1000) >= new Date();
+    return true;
   }
 
   isAdmin(): boolean {

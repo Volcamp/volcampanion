@@ -7,9 +7,9 @@ import org.volcampanion.dto.PlanningDTO;
 
 import java.util.List;
 
-import static org.mapstruct.MappingConstants.ComponentModel.CDI;
+import static org.mapstruct.MappingConstants.ComponentModel.JAKARTA;
 
-@Mapper(componentModel = CDI, uses = {
+@Mapper(componentModel = JAKARTA, uses = {
         RoomMapper.class,
         TalkMapper.class
 })

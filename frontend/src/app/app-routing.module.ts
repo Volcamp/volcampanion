@@ -13,6 +13,7 @@ import {AdminTalksComponent} from "../page/admin-talks/admin-talks.component";
 import {AdminSpeakerComponent} from "../page/admin-speaker/admin-speaker.component";
 import {switchAdminTheme, switchUserTheme} from "../common/Theme";
 import {AdminConferencesComponent} from "../page/admin-conferences/admin-conferences.component";
+import {InfosComponent} from "../page/infos/infos.component";
 
 
 function isLogged(): boolean {
@@ -32,11 +33,12 @@ function user(): boolean {
 
 const routes: Routes = [
   {component: HomeComponent, path: AppRoutes.HOME_ROUTE, canActivate: [() => user()]},
+  {component: InfosComponent, path: AppRoutes.INFOS_ROUTE, canActivate: [() => user()]},
   {component: NotFoundComponent, path: AppRoutes.NOT_FOUND, canActivate: [() => user()]},
   {component: SpeakerPageComponent, path: AppRoutes.SPEAKER_ROUTE, canActivate: [() => user()]},
   {component: DetailTalkComponent, path: AppRoutes.DETAIL_TALK_ROUTE, canActivate: [() => user()]},
   {component: DetailSpeakerComponent, path: AppRoutes.DETAIL_SPEAKER_ROUTE, canActivate: [() => user()]},
-  {component: FavoriteComponent, path: AppRoutes.FAVORITE_ROUTE, canActivate: [() => isLogged()]},
+  {component: FavoriteComponent, path: AppRoutes.FAVORITE_ROUTE, canActivate: [() => user()]},
   {component: AdminConferencesComponent, path: AppRoutes.ADMIN_CONFERENCES, canActivate: [() => isAdmin()]},
   {component: AdminPlanningsComponent, path: AppRoutes.ADMIN_PLANNINGS, canActivate: [() => isAdmin()]},
   {component: AdminTalksComponent, path: AppRoutes.ADMIN_TALKS, canActivate: [() => isAdmin()]},

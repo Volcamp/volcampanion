@@ -1,20 +1,20 @@
 package org.volcampanion.service;
 
 import org.volcampanion.domain.UserFavoritePlanning;
-import org.volcampanion.entity.mappers.UserFavoritePlanningMapper;
+import org.volcampanion.entity.mappers.EntityUserFavoritePlanningMapper;
 import org.volcampanion.repository.UserFavoritePlanningRepository;
 
-import javax.inject.Inject;
-import javax.inject.Singleton;
+import jakarta.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
 import java.util.List;
 
-@Singleton
+@ApplicationScoped
 public class UserFavoritePlanningService {
 
     @Inject
     UserFavoritePlanningRepository repository;
     @Inject
-    UserFavoritePlanningMapper mapper;
+    EntityUserFavoritePlanningMapper mapper;
 
     public UserFavoritePlanning createOrUpdate(UserFavoritePlanning domain) {
         var entity = mapper.toEntity(domain);

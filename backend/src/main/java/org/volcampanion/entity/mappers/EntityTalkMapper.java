@@ -1,22 +1,21 @@
 package org.volcampanion.entity.mappers;
 
-import static org.mapstruct.MappingConstants.ComponentModel.CDI;
+import static org.mapstruct.MappingConstants.ComponentModel.JAKARTA;
 
 import java.util.List;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.volcampanion.domain.Talk;
 import org.volcampanion.entity.TalkEntity;
 
-@Mapper(componentModel = CDI,
+@Mapper(componentModel = JAKARTA,
     uses = {
-        TalkFormatMapper.class,
-        TalkThemeMapper.class,
-        SpeakerMapper.class,
-        ConferenceMapper.class
+        EntityTalkFormatMapper.class,
+        EntityTalkThemeMapper.class,
+        EntitySpeakerMapper.class,
+        EntityConferenceMapper.class
     })
-public interface TalkMapper extends IMapper<Talk, TalkEntity> {
+public interface EntityTalkMapper extends IMapper<Talk, TalkEntity> {
 
   Talk toDomain(TalkEntity entity);
 

@@ -3,7 +3,7 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
-  <changeSet id="" author="camille.petitalot@volcamp.io">
+  <changeSet id="000" author="camille.petitalot@volcamp.io">
     <insert tableName="speakers_talk">
       <column name="speaker_id"
               valueComputed="(SELECT id FROM speakers WHERE name = 'Volcamp Team' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2023'))"/>

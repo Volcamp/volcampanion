@@ -6,11 +6,17 @@
       <mat-icon aria-hidden="false" aria-label="session icon" fontIcon="date_range"></mat-icon>
       Sessions
     </button>
-    <span *ngIf="logged" class="volcamp-spacer"></span>
+    <span class="volcamp-spacer"></span>
      <button id="{{favoriteRoute}}" [routerLink]="[favoriteRoute]" mat-button class="iconBtn"
-             aria-label="favorite button" *ngIf="logged" (click)="onClick($event)">
+             aria-label="favorite button" (click)="onClick($event)">
       <mat-icon aria-hidden="false" aria-label="favorite icon" fontIcon="favorite"></mat-icon>
       Favorites
+    </button>
+    <span class="volcamp-spacer"></span>
+     <button id="{{infosRoute}}" [routerLink]="[infosRoute]" mat-button class="iconBtn"
+             aria-label="infos button" (click)="onClick($event)">
+      <mat-icon aria-hidden="false" aria-label="infos icon" fontIcon="infos"></mat-icon>
+      Infos
     </button>
     <span class="volcamp-spacer"></span>
     <button id="{{speakerRoute}}" [routerLink]="[speakerRoute]" mat-button class="iconBtn" aria-label="speaker button"
@@ -20,16 +26,5 @@
     </button>
 
   </mat-toolbar>
-    <mat-grid-list cols="8" rowHeight="1rem" style="margin-bottom: 2px !important;">
-      <mat-grid-tile [colspan]="2">
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="4">
-      <span style="" class="f5"> Ce site est hebergé par &nbsp; </span>
-      <img style="max-height: 20px"
-           src="https://www.clever-cloud.com/app/themes/Starter/assets/img/brand-assets/logo_on_white.svg">
-      </mat-grid-tile>
-      <mat-grid-tile [colspan]="2">
-      </mat-grid-tile>
-    </mat-grid-list>
   </div>
 </span>

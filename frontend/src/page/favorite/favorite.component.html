@@ -1,9 +1,20 @@
-<div *ngIf="vm.plannings!==undefined">
-  <div *ngFor="let date of vm.dates">
+<div *ngIf="favoriteList!==undefined">
+  <div *ngFor="let date of dates">
     <app-talks-list [plannings]="getByDate(date)"></app-talks-list>
   </div>
 </div>
-<app-loader *ngIf="vm.plannings===undefined && vm.noConnection !== true"></app-loader>
-<div *ngIf="vm.noConnection === true">
-  <app-no-connection></app-no-connection>
+<app-loader *ngIf="favoriteList===undefined"></app-loader>
+<div *ngIf="favoriteList === undefined || favoriteList.length === 0">
+  <div class="card-container">
+    <mat-card class="custom-card" style="margin-top: 10px;" appearance="outlined">
+      <mat-card-header>
+        <mat-card-title>Tu n'as actuellement aucun favoris</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image style="margin: 2px" src="assets/image/cryingVolcano.png"
+           alt="Crying Volcano">
+      <mat-card-content>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
 </div>

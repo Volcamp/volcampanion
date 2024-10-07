@@ -1,9 +1,9 @@
 package org.volcampanion.exception;
 
-import javax.persistence.PersistenceException;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.ext.ExceptionMapper;
-import javax.ws.rs.ext.Provider;
+import jakarta.persistence.PersistenceException;
+import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.ext.ExceptionMapper;
+import jakarta.ws.rs.ext.Provider;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.exception.ConstraintViolationException;
 import org.volcampanion.exception.dto.ErrorDTO;
@@ -14,6 +14,7 @@ public class ExceptionHandler implements ExceptionMapper<RuntimeException> {
 
     @Override
     public Response toResponse(RuntimeException e) {
+        log.error("An error occurred", e);
         if (e instanceof NotFoundException) {
             return Response.status(Response.Status.NOT_FOUND).build();
         } else if (e instanceof MandatoryParameterException || e instanceof BadRequestException) {

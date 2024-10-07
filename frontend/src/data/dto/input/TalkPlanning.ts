@@ -13,6 +13,10 @@ export class TalkPlanning implements Planning {
     this.schedule = schedule
   }
 
+  public static fromStorage(elt: any): TalkPlanning {
+    return elt;
+  }
+
   getType(): PlanningType {
     return this.talk.format.type;
   }

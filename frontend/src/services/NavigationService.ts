@@ -26,7 +26,7 @@ export class NavigationService {
         this.history.push(event.urlAfterRedirects);
 
         this.backArrowEventEmitter.emit(new BackArrowVisibilityEventArgs(this.router.url.slice(1).includes("/")));
-        this.filterVisibilityEventEmitter.emit(new FilterVisibilityEventArgs(!this.router.url.slice(1).includes("/") && (this.router.url.includes(AppRoutes.HOME_ROUTE) || this.router.url.includes(AppRoutes.FAVORITE_ROUTE))));
+        this.filterVisibilityEventEmitter.emit(new FilterVisibilityEventArgs(!this.router.url.slice(1).includes("/") && (this.router.url.includes(AppRoutes.HOME_ROUTE))));
       }
     });
   }
@@ -46,7 +46,7 @@ export class NavigationService {
 
   }
 
-  goToHome(){
+  goToHome() {
     this.router.navigateByUrl(toRoute(AppRoutes.ROUTE_PAGE));
   }
 

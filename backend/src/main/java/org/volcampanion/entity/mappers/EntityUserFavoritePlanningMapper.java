@@ -1,6 +1,6 @@
 package org.volcampanion.entity.mappers;
 
-import static org.mapstruct.MappingConstants.ComponentModel.CDI;
+import static org.mapstruct.MappingConstants.ComponentModel.JAKARTA;
 
 import java.util.List;
 import org.mapstruct.InheritInverseConfiguration;
@@ -10,12 +10,12 @@ import org.volcampanion.domain.UserFavoritePlanning;
 import org.volcampanion.entity.UserFavoritePlanningEntity;
 import org.volcampanion.util.mapping.TimestampMapper;
 
-@Mapper(componentModel = CDI,
+@Mapper(componentModel = JAKARTA,
         uses = {
-                TalkMapper.class,
+                EntityTalkMapper.class,
                 TimestampMapper.class,
         })
-public interface UserFavoritePlanningMapper extends IMapper<UserFavoritePlanning, UserFavoritePlanningEntity> {
+public interface EntityUserFavoritePlanningMapper extends IMapper<UserFavoritePlanning, UserFavoritePlanningEntity> {
 
     @Mapping(target = "userIdentifier", source = "id.userIdentifier")
     @Mapping(target = "planning.room" , source = "id.room")

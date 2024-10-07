@@ -10,6 +10,10 @@ public abstract class BaseService<Domain extends IdentifiableDomain, Entity> {
     protected IMapper<Domain, Entity> mapper;
     protected PanacheRepository<Entity> repository;
 
+    protected BaseService(){
+        //Do nothing
+    }
+
     protected BaseService(IMapper<Domain, Entity> mapper, PanacheRepository<Entity> repository) {
         this.mapper = mapper;
         this.repository = repository;

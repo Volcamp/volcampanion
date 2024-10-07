@@ -1,15 +1,15 @@
 package org.volcampanion.service;
 
-import javax.inject.Singleton;
+import jakarta.enterprise.context.ApplicationScoped;
 import org.volcampanion.domain.TalkTheme;
 import org.volcampanion.entity.TalkThemeEntity;
-import org.volcampanion.entity.mappers.TalkThemeMapper;
+import org.volcampanion.entity.mappers.EntityTalkThemeMapper;
 import org.volcampanion.repository.TalkThemeRepository;
 
-@Singleton
+@ApplicationScoped
 public class TalkThemeService extends BaseService<TalkTheme, TalkThemeEntity> {
 
-    TalkThemeService(TalkThemeMapper mapper, TalkThemeRepository repository) {
+    TalkThemeService(EntityTalkThemeMapper mapper, TalkThemeRepository repository) {
         super(mapper, repository);
     }
 }
