@@ -106,5 +106,31 @@
   <include file="2024/008-volcamp-planning-speaker-day2.xml" labels="Volcamp 2024"
            author="camille.petitalot@volcamp.io"
            relativeToChangelogFile="true"/>
+  <!--  2025 -->
+  <include file="2025/001-volcamp-2025-ref.xml" labels="Volcamp 2025"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2025/010-volcamp-2025-correct-speakers.xml" labels="Volcamp 2025"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2025/003-volcamp-2025-day1-talks.xml" labels="Volcamp 2025"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2025/004-volcamp-2025-day2-talks.xml" labels="Volcamp 2025"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2025/005-volcamp-2025-planning-day1.xml" labels="Volcamp 2025"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2025/006-volcamp-2025-planning-day2.xml" labels="Volcamp 2025"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2025/007-volcamp-2025-planning-speaker-day1.xml" labels="Volcamp 2025"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2025/008-volcamp-2025-planning-speaker-day2.xml" labels="Volcamp 2025"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+
 </databaseChangeLog>
 

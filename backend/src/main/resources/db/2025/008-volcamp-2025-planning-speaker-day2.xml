@@ -1,0 +1,253 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+  <changeSet id="001" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Intro Volcamp jour 2</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'L''intro Volcamp' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025') AND format_id = (SELECT id FROM talk_formats WHERE name = 'KEYNOTE_15M'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Volcamp team' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="002" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Keynote jour 2 - Alexandre Zapolsky</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Keynote jour 2' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Alexandre Zapolsky' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="003" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Another World - Fabien Sanglard</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Another World, une belle leçon d''architecture logicielle' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Olivier Poncet' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="004" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - TUI Terminal - Thomas Abot</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Quand le Terminal dévore la UI - TUI pour tout le monde !' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Thierry Chantier' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="005" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Intégration produit - Christophe CHAUDIER</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Intégration d''un produit du marché dans un écosystème d''entreprise - retour sur notre développeur expérience' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Emilie Bisseriex' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="006" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Rust microservices - Laurent Grangeau</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Créez votre premier microservices en Rust' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Jean-Eudes Couignoux' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="007" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - RFID MIFARE - Guillaume Bodet</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = '🔓 RFID, MIFARE, chambre d''hôtel et flipper0 - décryptage sans contact' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Nicolas Ledez' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="008" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Dagger CI/CD - Jean-Baptiste Langlois</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Dagger, le couteau suisse de la CI/CD moderne ?' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Benjamin Georgeault' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="009" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Makers père fils - Jean-François Garreau</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Makers de Père en Fils' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Sylvain Gougouzian' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="010" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Makers père fils - Thomas Garreau</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Makers de Père en Fils' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Matthias Gougouzian' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="011" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Plan B IaC - Nicolas Decoster</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Plan B activé - Gérer une panne régionale par IaC' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Benoît Garçon' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="012" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Donjons Pythons - Jean Paliès</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Donjons et Pythons - la chevaleresse à la rescousse' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Juliette Grillere' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="013" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Informatique quantique - Djan Correa</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Informatique quantique - Préparez vous à l''éruption !!!' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Damien Hackett' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="014" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Projet enfant 7 ans - Adrien Lemercier</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Ce projet né dans la chambre d''un enfant de 7 ans' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Julien Duraysseix' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="015" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Multi-agents Flowise - Julien Mercier</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Libérer la puissance des systèmes multi-agents avec Flowise' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Laurent Grangeau' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="016" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - SSE Chronicles - David Pilato</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'SSE Chronicles - Quand ton appli chuchote à ton navigateur' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'm4dz' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="017" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Télétravail 4 ans - Mathieu Bruyen</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = '4 ans de télé-travail total. Retours d''expérience, défis et bonnes pratiques' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Daniel Petisme' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="018" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Figma workshop - Kevin Allioli</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Quoi ? Vous n''utilisez pas Figma ?!?' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Simon Mercier' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="019" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Dette technique échelle - Eric TAIX</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'À l''épreuve de l''échelle - surmonter la dette technique et les défis d''une plateforme DevOps' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Lucas Drago' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="020" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Système distribué séries - Mathieu ANCELIN</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Le système distribué qui a survécu à 1 milliards de séries' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Alexandre Burgoni' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="021" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Motion Design UX - Céline Vidal</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Animer sans surcharger - le Motion Design au service de l''UX' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Nancy Bonicel' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="022" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Agent NL2SQL - Omar MELLOUKI</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Construire un agent NL2SQL avec Semantic Kernel - l''IA au service des données' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Kevin Beaugrand' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="023" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Performance écologie - Romain CAMBONIE</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Numérique - comment lier performance et écologie ?' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Romuald Priol' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="024" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Souveraineté Cloud - Moez Jellouli</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'État des Lieux de la Souveraineté du Cloud - Des Clouds Publics aux Clouds Confidentiels' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Seifeddin Mansri' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="025" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - async-profiler - Andrei Pangin</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Workshop async-profiler' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Victor Gallet' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="026" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - DevSecOps Trivy - Julien LAVIGNE DU CADET</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Une petit histoire du DevSecOps avec Trivy 🔎🔗' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Geoffrey Graveaud' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="027" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Vates VMS - Olivier Lambert</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Vates VMS une stack de virtualisation à l''heure du DevOps et du cloud-native ? (et une alternative à VMware !)' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Nathanaël Hannebert' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="028" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Clôture</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Cloture' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Volcamp team' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+
+
+  <changeSet id="029" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Créez votre premier microservices en Rust - Nait Belkacem Youssef</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Créez votre premier microservices en Rust' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Nait Belkacem Youssef' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+  <changeSet id="030" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Libérer la puissance des systèmes multi-agents avec Flowise - Tony Jarriault</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Libérer la puissance des systèmes multi-agents avec Flowise' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Tony Jarriault' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+  <changeSet id="031" author="camille.petitalot@volcamp.io">
+    <comment>Talk Speakers - Quoi ? Vous n&apos;utilisez pas Figma ?!? - Antoine Candy</comment>
+    <insert tableName="speakers_talk">
+      <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Quoi ? Vous n''utilisez pas Figma ?!?' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+      <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Antoine Candy' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+    </insert>
+  </changeSet>
+</databaseChangeLog>

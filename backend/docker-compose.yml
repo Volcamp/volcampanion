@@ -1,5 +1,24 @@
 version: '3.3'
 services:
+  volcampanion-backend:
+    build:
+      context: .
+      dockerfile: src/main/docker/Dockerfile.jvm.arm64
+      args:
+        DEPLOYMENT_PROFILE: dev
+      platforms:
+        - linux/arm64
+    container_name: volcampanion-backend
+    ports:
+      - '8080:8080'
+    restart: always
+    depends_on:
+      - volcampaniondb
+    environment:
+      - QUARKUS_DATASOURCE_JDBC_URL=jdbc:postgresql://volcampaniondb:5432/volcamp
+      - QUARKUS_DATASOURCE_USERNAME=postgres
+      - QUARKUS_DATASOURCE_PASSWORD=secret
+
   volcampaniondb:
     image: postgres:14.1-alpine
     container_name: volcampaniondb

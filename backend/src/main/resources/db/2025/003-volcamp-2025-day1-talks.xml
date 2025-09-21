@@ -1,0 +1,303 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+  <changeSet id="001" author="camille.petitalot@volcamp.io">
+    <comment>Talks Jour 1 - Accueil</comment>
+    <insert tableName="talks">
+      <column name="title" value="Accueil Café"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'BREAK_60M')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="002" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Intro Volcamp 2025"/>
+      <column name="description" value="L'intro Volcamp 2025 par la team Geek&amp;Terroir. Présentation de la conférence, du contenus, du programme et de nos sponsors."/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="003" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Keynote jour 1"/>
+      <column name="description" value="Keynote d'ouverture par Estelle Landry et Emilie Goubin"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'KEYNOTE_45M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'PLENARY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="004" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Créer un spécialiste de l'Aligot et de la Truffade avec Docker Model Runner et le Docker MCP Toolkit"/>
+      <column name="description" value="Workshop sur l'IA avec Docker et les outils MCP"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DATA_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="005" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Créer son propre Jeu de Rôle en Agentic AI &amp; MCP"/>
+      <column name="description" value="Création d'un jeu de rôle utilisant l'IA agentique et MCP"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DATA_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="006" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Licence to Code"/>
+      <column name="description" value="Découverte du monde du développement"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="007" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="L'IOT pour 5 ans et + - Atelier d'initiation sur carte micro:bit"/>
+      <column name="description" value="Atelier d'initiation à l'IoT pour enfants avec micro:bit"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_120MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="008" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Pause 11h00"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'BREAK_30M')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="009" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Les meilleures excuses pour ne pas adopter Quarkus"/>
+      <column name="description" value="Démystification de Quarkus et réponses aux objections courantes"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANG_FRAMEWORKS')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="010" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Your RAG Chatbot - Minute 21 onwards"/>
+      <column name="description" value="Développement de chatbots RAG, focus sur les aspects avancés"/>
+      <column name="language" value="en"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="011" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Se réapproprier Internet par les noms de domaine"/>
+      <column name="description" value="Comprendre et maîtriser les noms de domaine pour la souveraineté numérique"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="012" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Pause déjeuner &amp; Lightning J1"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'BREAK_75M')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="013" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Créer un browser from scratch, 1 an plus tard..."/>
+      <column name="description" value="Retour d'expérience sur le développement d'un navigateur"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="014" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="T'as vu mes docs ? Je les fait avec typst !"/>
+      <column name="description" value="Découverte de typst pour la documentation"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANG_FRAMEWORKS')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="015" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="L'art du DeeJaying par la pratique"/>
+      <column name="description" value="Découverte de l'art du DJ à travers la pratique"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="016" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Démasquer les proxy par design"/>
+      <column name="description" value="Comprendre et maîtriser les patterns proxy"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DATA_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="017" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Mes trains Jouef passent au numérique, avec des Raspberry et TinyGo !"/>
+      <column name="description" value="Modernisation de trains miniatures avec IoT"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="018" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Kyverno - la conformité dans votre cluster kubernetes"/>
+      <column name="description" value="Sécurisation et conformité Kubernetes avec Kyverno"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="019" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="⚔️ Le code dont vous êtes le héros ou l'héroïne +5 en agilité, +10 en fun !"/>
+      <column name="description" value="Gamification du développement et de l'agilité"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="020" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Déploiement de clusters kubernetes à grande échelle, quels outils à utiliser et comment"/>
+      <column name="description" value="Workshop sur le déploiement Kubernetes à grande échelle"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_120MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_CLOUD')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="021" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Gérer des clusters presque identiques en mode GitOps avec ArgoCD"/>
+      <column name="description" value="GitOps et gestion de clusters avec ArgoCD"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_CLOUD')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="022" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="La santé a-t-elle peur du cloud ?"/>
+      <column name="description" value="Adoption du cloud dans le secteur de la santé"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DATA_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="023" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Une architecture opensource moderne qui ne déraille pas"/>
+      <column name="description" value="Architecture moderne robuste avec l'opensource"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="024" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Pause 15h15"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'BREAK_30M')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="025" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="SFUI - Science-Fiction User Interface"/>
+      <column name="description" value="Design d'interfaces futuristes inspirées de la science-fiction"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="026" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Démêler des problèmes de provenances de données à l'aide des graphs"/>
+      <column name="description" value="Utilisation des graphes pour tracer la provenance des données"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DATA_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="027" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="🎵​ Faire une virée à deux, Tous les deux sur les chemins 🎵​"/>
+      <column name="description" value="Développement en binôme et collaboration"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+  <changeSet id="028" author="camille.petitalot@volcamp.io">
+    <insert tableName="talks">
+      <column name="title" value="Mission IApossible - Arrêtez le train Lego à temps grâce à l'IA et l'Edge"/>
+      <column name="description" value="Workshop IA et edge computing avec Lego"/>
+      <column name="language" value="fr"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_120MIN')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DATA_AI')"/>
+      <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+    </insert>
+  </changeSet>
+
+</databaseChangeLog>
