@@ -108,7 +108,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Plan B activé - Gérer une panne régionale par IaC' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 13:30"/>
+      <column name="schedule" value="2025-10-03 12:30"/>
     </insert>
   </changeSet>
 
@@ -117,7 +117,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Donjons et Pythons - la chevaleresse à la rescousse' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 13:45"/>
+      <column name="schedule" value="2025-10-03 12:30"/>  
     </insert>
   </changeSet>
 
@@ -126,7 +126,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Informatique quantique - Préparez vous à l''éruption !!!' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 14:00"/>
+      <column name="schedule" value="2025-10-03 13:00"/>
     </insert>
   </changeSet>
 
@@ -135,7 +135,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Ce projet né dans la chambre d''un enfant de 7 ans' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 14:15"/>
+      <column name="schedule" value="2025-10-03 13:00"/>
     </insert>
   </changeSet>
 
@@ -144,7 +144,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Pause 14h30 J2' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 14:30"/>
+      <column name="schedule" value="2025-10-03 13:15"/>
     </insert>
   </changeSet>
 
@@ -153,7 +153,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Libérer la puissance des systèmes multi-agents avec Flowise' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 14:45"/>
+      <column name="schedule" value="2025-10-03 13:30"/>
     </insert>
   </changeSet>
 
@@ -162,7 +162,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'SSE Chronicles - Quand ton appli chuchote à ton navigateur' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'SHOWROOM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 14:45"/>
+      <column name="schedule" value="2025-10-03 13:30"/>
     </insert>
   </changeSet>
 
@@ -171,7 +171,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = '4 ans de télé-travail total. Retours d''expérience, défis et bonnes pratiques' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'FABLAB' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 14:45"/>
+      <column name="schedule" value="2025-10-03 13:30"/>
     </insert>
   </changeSet>
 
@@ -180,7 +180,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Quoi ? Vous n''utilisez pas Figma ?!?' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'WORKSHOP' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 14:45"/>
+      <column name="schedule" value="2025-10-03 13:30"/>
     </insert>
   </changeSet>
 
@@ -189,7 +189,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'À l''épreuve de l''échelle - surmonter la dette technique et les défis d''une plateforme DevOps' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 15:30"/>
+      <column name="schedule" value="2025-10-03 14:30"/>
     </insert>
   </changeSet>
 
@@ -198,7 +198,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Le système distribué qui a survécu à 1 milliards de séries' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'SHOWROOM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 15:30"/>
+      <column name="schedule" value="2025-10-03 14:30"/>
     </insert>
   </changeSet>
 
@@ -207,7 +207,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Animer sans surcharger - le Motion Design au service de l''UX' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'FABLAB' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 15:30"/>
+      <column name="schedule" value="2025-10-03 14:30"/>
     </insert>
   </changeSet>
 
@@ -216,7 +216,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Pause 16h15 J2' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 16:15"/>
+      <column name="schedule" value="2025-10-03 15:15"/>
     </insert>
   </changeSet>
 
@@ -225,7 +225,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Construire un agent NL2SQL avec Semantic Kernel - l''IA au service des données' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 16:45"/>
+      <column name="schedule" value="2025-10-03 15:45"/>
     </insert>
   </changeSet>
 
@@ -234,7 +234,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Numérique - comment lier performance et écologie ?' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'SHOWROOM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 16:45"/>
+      <column name="schedule" value="2025-10-03 15:45"/>
     </insert>
   </changeSet>
 
@@ -243,7 +243,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'État des Lieux de la Souveraineté du Cloud - Des Clouds Publics aux Clouds Confidentiels' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'FABLAB' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 16:45"/>
+      <column name="schedule" value="2025-10-03 15:45"/>
     </insert>
   </changeSet>
 
@@ -252,7 +252,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Workshop async-profiler' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'WORKSHOP' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 16:45"/>
+      <column name="schedule" value="2025-10-03 15:45"/>
     </insert>
   </changeSet>
 
@@ -261,7 +261,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Une petit histoire du DevSecOps avec Trivy 🔎🔗' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 17:30"/>
+      <column name="schedule" value="2025-10-03 16:45"/>
     </insert>
   </changeSet>
 
@@ -270,7 +270,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Vates VMS une stack de virtualisation à l''heure du DevOps et du cloud-native ? (et une alternative à VMware !)' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'SHOWROOM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 17:30"/>
+      <column name="schedule" value="2025-10-03 16:45"/>
     </insert>
   </changeSet>
 
@@ -279,7 +279,7 @@
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Cloture' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
-      <column name="schedule" value="2025-10-03 18:15"/>
+      <column name="schedule" value="2025-10-03 17:45"/>
     </insert>
   </changeSet>
 

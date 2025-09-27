@@ -178,7 +178,7 @@
     
     <changeSet author="camille.petitalot@volcamp.io" id="update-openfeedback-url-another-world">
         <update tableName="talks">
-            <column name="open_feedback_url" value="Another World, une belle leçon d’architecture logicielle"/>
+            <column name="open_feedback_url" value="https://openfeedback.io/ip5uawISaJ66uRrHB8L5/2025-10-03/d2t1s1"/>
             <where>title = 'Another World, une belle leçon d''architecture logicielle' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
         </update>
     </changeSet>
