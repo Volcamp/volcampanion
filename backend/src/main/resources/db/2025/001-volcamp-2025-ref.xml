@@ -35,7 +35,7 @@
     </insert>
     <insert tableName="rooms">
       <column name="name" value="FABLAB"/>
-      <column name="description" value="Créativité"/>
+      <column name="description" value="FABLAB"/>
       <column name="capacity" value="65"/>
       <column name="conference_id" valueSequenceCurrent="conferences_id_seq"/>
     </insert>

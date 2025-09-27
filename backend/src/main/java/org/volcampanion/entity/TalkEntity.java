@@ -29,5 +29,7 @@ public class TalkEntity {
     private ConferenceEntity conference;
     @ManyToMany(mappedBy = "talks")
     private List<SpeakerEntity> speakers;
+    @Column(name = "open_feedback_url")
+    private String openFeedbackUrl;
 
 }

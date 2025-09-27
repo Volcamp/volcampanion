@@ -17,5 +17,6 @@ public class Talk extends IdentifiableDomain {
     private TalkFormat format;
     private Conference conference;
     private List<Speaker> speakers;
+    private String openFeedbackUrl;
 }
 

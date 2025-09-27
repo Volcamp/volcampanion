@@ -9,7 +9,7 @@ import {Room} from "../data/dto/input/Room";
 
 export class VMTalk {
   talk: Talk | undefined | null = null
-  room: Room | undefined
+  room: string | undefined
   planningTime: string = "";
   colorTheme: string = "";
   iconFormat: string = "";

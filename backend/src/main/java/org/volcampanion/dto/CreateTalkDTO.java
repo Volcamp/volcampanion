@@ -15,5 +15,6 @@ public class CreateTalkDTO {
     private IdentifiableDTO format;
     private IdentifiableDTO conference;
     private List<IdentifiableDTO> speakers;
+    private String openFeedbackUrl;
 }
 

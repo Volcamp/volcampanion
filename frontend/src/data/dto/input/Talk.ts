@@ -18,6 +18,7 @@ export interface Talk extends TalkTeaser {
   theme: Theme;
   speakers: Speaker[];
   feedback: Feedback;
+  openFeedbackUrl?: string;
 }
 
 

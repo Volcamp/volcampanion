@@ -28,7 +28,8 @@ export class TalkMapper {
         theme: data.talk.theme,
         format: data.talk.format,
         speakers: speakersApi,
-        feedback: data.talk.feedback
+        feedback: data.talk.feedback,
+        openFeedbackUrl: data.talk.openFeedbackUrl
       },
       new Date(data.schedule)
     )

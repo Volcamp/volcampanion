@@ -19,17 +19,13 @@ export class ConferenceService implements AbstractConferenceService {
   }
 
   getCurrentConference(): Observable<Conference> {
-    let conf = window.localStorage.getItem(ACTIVE_ID_CONF);
-    if (conf == null) {
-      return this.requestManager.get<Conference>(this.env.getApiUrl() + APIRoutes.CONFERENCE + APIRoutes.CONFERENCE_ACTIVE).pipe(
-        map(conf => {
-            window.localStorage.setItem(ACTIVE_ID_CONF, JSON.stringify(conf));
-            return conf
-          }
-        ));
-    } else {
-      return of(JSON.parse(conf))
-    }
+    // Force refresh from API instead of using cache during development
+    return this.requestManager.get<Conference>(this.env.getApiUrl() + APIRoutes.CONFERENCE + APIRoutes.CONFERENCE_ACTIVE).pipe(
+      map(conf => {
+          window.localStorage.setItem(ACTIVE_ID_CONF, JSON.stringify(conf));
+          return conf
+        }
+      ));
   }
 
   getConferences(): Observable<Conference[]> {

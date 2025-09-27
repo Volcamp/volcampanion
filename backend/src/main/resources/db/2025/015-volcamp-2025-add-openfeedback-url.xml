@@ -1,0 +1,16 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    
+    <changeSet author="camille.petitalot@volcamp.io" id="add-open-feedback-url-column">
+        <addColumn tableName="talks">
+            <column name="open_feedback_url" type="VARCHAR(500)">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+    </changeSet>
+    
+    
+</databaseChangeLog>

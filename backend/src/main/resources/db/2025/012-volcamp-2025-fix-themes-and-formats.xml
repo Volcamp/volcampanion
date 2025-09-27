@@ -1,0 +1,35 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+  <changeSet id="001" author="camille.petitalot@volcamp.io">
+    <comment>Fix incorrect theme and format references in 2025 talks</comment>
+    
+    <!-- Fix theme references: DATA_AI should be BIGDATA_AND_AI -->
+    <update tableName="talks">
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+      <where>conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025') AND theme_id = (SELECT id FROM talk_themes WHERE name = 'DATA_AI')</where>
+    </update>
+    
+    <!-- Fix theme references: LANG_FRAMEWORKS should be LANGUAGE_AND_FRAMEWORK -->
+    <update tableName="talks">
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
+      <where>conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025') AND theme_id = (SELECT id FROM talk_themes WHERE name = 'LANG_FRAMEWORKS')</where>
+    </update>
+    
+    <!-- Fix theme references: DEVOPS_CLOUD should be DEVOPS_AND_CLOUD -->
+    <update tableName="talks">
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+      <where>conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025') AND theme_id = (SELECT id FROM talk_themes WHERE name = 'DEVOPS_CLOUD')</where>
+    </update>
+    
+    <!-- Fix format references: LIGHTNING_15MIN should be LIGHTNING_15M -->
+    <update tableName="talks">
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <where>conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025') AND format_id = (SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15MIN')</where>
+    </update>
+    
+  </changeSet>
+</databaseChangeLog>

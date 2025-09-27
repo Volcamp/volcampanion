@@ -107,6 +107,9 @@
            author="camille.petitalot@volcamp.io"
            relativeToChangelogFile="true"/>
   <!--  2025 -->
+  <include file="2025/015-volcamp-2025-add-openfeedback-url.xml" labels="Volcamp 2025"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
   <include file="2025/001-volcamp-2025-ref.xml" labels="Volcamp 2025"
            author="camille.petitalot@volcamp.io"
            relativeToChangelogFile="true"/>
@@ -129,6 +132,27 @@
            author="camille.petitalot@volcamp.io"
            relativeToChangelogFile="true"/>
   <include file="2025/008-volcamp-2025-planning-speaker-day2.xml" labels="Volcamp 2025"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2025/011-volcamp-2025-fix-missing-formats.xml" labels="Volcamp 2025"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2025/012-volcamp-2025-fix-themes-and-formats.xml" labels="Volcamp 2025"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2025/016-volcamp-2025-update-openfeedback-urls.xml" labels="Volcamp 2025"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2025/013-volcamp-2025-fix-speaker-photos.xml" labels="Volcamp 2025"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2025/014-volcamp-2025-update-speaker-bios.xml" labels="Volcamp 2025"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2025/052-volcamp-2025-complete-missing-talks-and-planning.xml" labels="Volcamp 2025"
+           author="camille.petitalot@volcamp.io"
+           relativeToChangelogFile="true"/>
+  <include file="2025/053-volcamp-2025-update-all-talk-descriptions.xml" labels="Volcamp 2025"
            author="camille.petitalot@volcamp.io"
            relativeToChangelogFile="true"/>
 

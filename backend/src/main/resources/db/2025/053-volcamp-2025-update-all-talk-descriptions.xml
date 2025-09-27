@@ -1,0 +1,390 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Mise à jour de toutes les descriptions de talks et ajout speakers manquants -->
+    
+    <!-- Les associations speakers-talks pour micro:bit sont déjà créées dans 007-volcamp-2025-planning-speaker-day1.xml -->
+    
+    <changeSet id="001" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Docker MCP Toolkit Aligot Truffade</comment>
+        <update tableName="talks">
+            <column name="description" value="Lorsque vous mettez les pieds en Auvergne il est de bon ton de connaître ces deux spécialités emblématiques que sont l'Aligot et de la Truffade (c'est valable aussi si vous pensez partir habiter à Paris), de comprendre pourquoi elles déclenchent tant de passions et surtout de ne pas raconter n'importe quoi à propos de ces fleurons gastronomiques. Je me propose donc de vous expliquer comment créer Bob, un &quot;engramme numerique avec une personnalité&quot; spécialiste de ces deux plats authentiques. Ce sera l'occasion : de démystifier complètement le concept d'IA générative, mais aussi d'apprendre à faire des applications d'IA génératives, de le faire uniquement avec des LLM locaux (et pas des &quot;gros&quot;). En sortant de cette présentation vous saurez ce que sont un prompt, un contexte, du rag, du function calling (ou tools), et MCP (Model Context Protocol), mais vous saurez aussi comment les mettre en oeuvre. Pour cela, j'utiliserais la solution Docker Model Runner pour les LLM, Redis pour le RAG, Docker MCP Toolkit pour la partie MCP, Golang pour le code, Docker Compose pour orchestrer tout cela. Et vous aurez enfin la preuve que l'IA c'est utile mais que pour des besoins spécifiques vous n'avez pas besoin de ChatGPT, Claude.AI et les autres"/>
+            <where>title = 'Créer un spécialiste de l''Aligot et de la Truffade avec Docker Model Runner et le Docker MCP Toolkit' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="002" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Jeu de Rôle Agentic AI MCP</comment>
+        <update tableName="talks">
+            <column name="description" value="Vous êtes un Développeur ou une Développeuse, fan de Jeu de Rôle et aimez les chats ? Alors venez découvrir Cats' Tail, un Jeu de Rôle transformant des concepts complexes d'IA en une expérience de jeu immersive et évolutive ! Durant ce talk, vous découvrirez comment mettre en oeuvre les techniques d'Agentic AI et MCP (Model Context Protocol) afin de créer un Maître du Jeu (MJ) orchestrant plusieurs agents, chacuns spécialisé dans une tâche particulière. En Bonus : Enrichir l'expérience en persistant les échanges entre joueurs et MJ dans une base de données afin de renforcer l'immersion des joueurs et joueuses :)"/>
+            <where>title = 'Créer son propre Jeu de Rôle en Agentic AI &amp; MCP' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="003" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Licence to Code</comment>
+        <update tableName="talks">
+            <column name="description" value="MIT, GPL, Apache, MIT… Des noms que vous croisez tout le temps. Il y a quelques dizaines d'années, des codeurs de talent ont hacké le droit pour libérer le code et se libérer des juristes. Mais un minimum de compréhension est tout de même requis car le logiciel libre repose toujours sur le droit. Utiliser des libs, contribuer à de l'open source, partager son code : tout ça implique des obligations, des choix de licences, et parfois… des sueurs froides. Pourtant, pas besoin d'être juriste pour comprendre les bases et faire les bons choix. Décortiquons ensemble les licences open source les plus répandues — leurs promesses, leurs impératifs, et surtout ce qu'elles impliquent pour vous, en tant que dev. Vous découvrirez pourquoi &quot;copyleft&quot; n'est pas qu'un simple jeu de mot sur le &quot;copyright&quot;, pourquoi certaines licences ont une influence sur la communauté d'un projet, pourquoi certaines sont considérées plus &quot;corporate-friendly&quot; que d'autres, et comment éviter les mauvaises surprises quand vous mixez du code. Pas de jargon, pas de bullshit légal : juste ce qu'il faut pour comprendre, utiliser et contribuer sereinement,voire choisir une licence pour votre futur projet sans avoir à lancer un thread reddit. Une compétence trop souvent négligée… et pourtant indispensable dès qu'on touche à de l'open source."/>
+            <where>title = 'Licence to Code' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="004" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - IOT micro:bit et ajout URL OpenFeedback</comment>
+        <update tableName="talks">
+            <column name="description" value="La carte micro:bit est une mini carte programmable créée en 2015 par la BBC avec pour objectif d'en distribuer aux écoliers britanniques afin de les initier au développement en bloc, javascript ou python. Peu chère, aux performances limitées, elle est dotées de plusieurs entrées / sorties permettant différents usages : Découverte et apprentissage de l'informatique, Prototypage / IoT, Entrainement et perfectionnement au développement (kata, tests), Pratique de l'algorithmie avec contraintes fortes (peu de mémoire, peu de cpu), Et surtout s'amuser. Venez prendre en main cette petite carte très efficace, voir ses possibilités et imaginer ce que vous pouvez en faire. Nous coderons ensemble un mini snake, nous jouerons avec les entrées / sorties et nous ferons même des katas d'algo. Après cette session, vous n'aurez qu'une seule envie, continuer à coder sur la carte."/>
+            <column name="open_feedback_url" value="https://openfeedback.io/ip5uawISaJ66uRrHB8L5/2025-10-02/d1t4s1"/>
+            <where>title = 'L''IOT pour 5 ans et + - Atelier d''initiation sur carte micro:bit' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="005" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Quarkus excuses</comment>
+        <update tableName="talks">
+            <column name="description" value="Quarkus est un framework applicatif moderne de référence qui a été pensé pour tirer parti des qualités de Java dans les environnements qui lui sont le moins favorables : le cloud, les conteneurs, et plus généralement tous les contextes où les ressources sont contraintes. Quarkus est une fondation robuste et versatile pour un large panel de cas d'usage : services distribués, micro-services, architectures évènementielles, serverless / function-as-a-service, AI-infused applications, et même des outils en ligne de commande. Quarkus fourni également une expérience développeur qui surclasse le reste de l'écosystème Java : rechargement dynamique, exécution automatique de tests impactés par des changements, lancement et configuration de services (bases de données, Kafka, etc), console de développement web qui ne soit pas un gadget, etc. L'essayer c'est l'adopter ? Pas si vite ! Nous verrons dans cette session quelles sont les meilleures excuses pour ne pas passer à Quarkus et ne surtout pas remettre en cause vos choix et vos habitudes. À moins que … 😇"/>
+            <where>title = 'Les meilleures excuses pour ne pas adopter Quarkus' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="006" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - RAG Chatbot minute 21</comment>
+        <update tableName="talks">
+            <column name="description" value="Bien sûr, vous pouvez créer un chatbot RAG en 20 minutes avec quelques lignes de code. Mais est-ce que ça vaut vraiment le coup ? Et une fois que c'est fait, que se passe-t-il après ? Comme toujours, tout part des données, et pour le RAG, ça veut dire le chunking. Mais ce n'est qu'une partie de l'équation : comment bien gérer la requête utilisateur pour maximiser la pertinence des réponses ? Et avec tous les outils et APIs externes utilisés, comment évaluer la qualité des résultats ? Pour répondre à ces questions (et bien d'autres !), explorons ensemble quelques techniques simples qui peuvent faire toute la différence."/>
+            <where>title = 'Your RAG Chatbot - Minute 21 onwards' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="007" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Internet noms de domaine</comment>
+        <update tableName="talks">
+            <column name="description" value="Cette conférence explique comment fonctionne Internet. En parlant un peu de technique, mais surtout de qui contrôle quoi, comment, et où… Comment fonctionne Internet ? Techniquement, on sait à peu près : IP, DNS et paf, ça donne le web, ce truc décentralisé qu'on ne savait pas expliquer à nos grands-parents au XXe siècle. La technique c'est mignon, mais n'importe quelle intelligence artificielle sait gérer (non, mais c'était pour placer intelligence artificielle, il paraît que c'est vendeur). Mais on oublie souvent qu'il a bien fallu prendre des décisions pour mettre en place cette foire aux chatons en vidéo. Qui décide de quoi et comment ? À quelles structures appartiennent ces personnes ? Est-ce qu'il s'agit d'entreprises cotées à la bourse du Wakanda ? La réponse, c'est qu'il y a des organismes états-uniens sans but lucratif au cœur de la gouvernance, qui délèguent à d'autres organismes &quot;régionaux&quot; (lire continentaux), qui distribuent à des entreprises privées à but lucratif, qui vendent ça aux client·e·s final·e·s. Le tronc du réseau est plutôt participatif… mais entre personnes morales, et cette participation s'arrête là où commence la lucrativité (coïncidence ?). Au cours de cette présentation, nous allons découvrir les détails de la gouvernance d'Internet, les aspects géopolitiques, et comment faire en sorte que nous, les petit·e·s participant·e·s de ce réseau, puissions raccrocher les wagons de la démocratie et du participatif."/>
+            <where>title = 'Se réapproprier Internet par les noms de domaine' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="008" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Browser from scratch</comment>
+        <update tableName="talks">
+            <column name="description" value="L'an passé je suis venu présenter le project Lightpanda: créer un browser headless open source à partir de (presque) rien. Un an plus tard je vous propose de faire un update sur l'état du projet, avec des démos du browser. Ce sera l'occasion de re-parler de Zig, d'Internet, de V8 mais aussi d'IA."/>
+            <where>title = 'Créer un browser from scratch, 1 an plus tard...' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="009" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Typst documentation</comment>
+        <update tableName="talks">
+            <column name="description" value="Marre des limitations de Markdown et Asciidoc ? Tu passes ton temps à mettre du html dans tes slides en Markdown ? LaTeX est trop lourd ? Tu voudrais voir en direct tes modifications quand tu crées des slides ? Viens découvrir typst ! Dans cette présentation je te montrerai comment j'utilise typst pour : générer mes slides en pdf ou html, avoir la maîtrise de l'agencement du contenu, créer des diagrammes et du contenu scientifique poussé, annoter précisément du code, et bien plus encore !"/>
+            <where>title = 'T''as vu mes docs ? Je les fait avec typst !' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="010" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - DeeJaying et correction speaker</comment>
+        <update tableName="talks">
+            <column name="description" value="Dans cet atelier, nous allons découvrir quelques techniques utilisées par les DeeJays pour vous faire bouger toute une soirée : L'ajustement des BPM (Battements Par Minute), L'ajustement des harmoniques, Les égalisateurs de fréquence, Les Cue Points, Les boucles. Nous tenterons à la fin de faire un mix à plusieurs mains pour mettre en pratique ce que nous avons appris. Matériel principalement utilisé : deux Pioneer CDJ-3000, une Pioneer DJM-V10LF, une table AmericanDJ Pro Event table II. Aucune connaissance en musique requise. Juste un bon moment à passer en poussant des boutons."/>
+            <where>title = 'L''art du DeeJaying par la pratique' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+        <!-- Correction de l'association speaker : David Pilato au lieu de m4dz -->
+        <delete tableName="speakers_talk">
+            <where>talk_id = (SELECT id FROM talks WHERE title = 'L''art du DeeJaying par la pratique' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')) AND speaker_id = (SELECT id FROM speakers WHERE name = 'm4dz' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))</where>
+        </delete>
+        <insert tableName="speakers_talk">
+            <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'L''art du DeeJaying par la pratique' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'David Pilato' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="011" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Proxy par design</comment>
+        <update tableName="talks">
+            <column name="description" value="Les acteurs derrières les menaces de scraping, scalping et autres fraudes en ligne ont un usage intensif des proxy pour plusieurs raisons: leur assurer l'anonymité, et déployer leurs attaques à grande échelle. Les fournisseurs de proxy de leur côté sont contraints aux mêmes règles que tout opérateur de réseau pour faire partie du paysage d'Internet: obtenir des IPs d'une part, et être annoncé sur le réseau par BGP de l'autre. Je vous propose de me suivre quelques instants dans ma traque des blocs d'IP appartenant à des fournisseurs de proxy et de vous partager une des méthodes pour les démasquer. Cette méthode, à base d'analyse d'attributs réseau comme l'AS (Autonomous System) et l'ISP (Internet Service Provider) au cours du temps, est reproductible à partir de vos logs d'accès web et permet d'identifier un nombre non négligeable d'IP liées à une infrastructure d'anonymisation."/>
+            <where>title = 'Démasquer les proxy par design' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="012" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Trains Jouef TinyGo</comment>
+        <update tableName="talks">
+            <column name="description" value="Dans les années 1970/1980, de nombreux enfants ont eu la chance de grandir avec des petits trains électriques, au format HO (1:87). Le principe était simple : on pose des rails, qu'on alimente en 18V, et les trains circulent sur les rails. Un demi-siècle plus tard, mon grand-père de 85 ans et moi-même nous sommes lancés dans le projet un peu fou de faire passer au numérique ses trains électriques de cette époque. Bienvenue dans ce retour d'expérience, avec du matériel, et des humains, qui ont traversé les générations. Au menu : de l'électronique (pas trop, promis !), des Raspberry, du TinyGo… et des petits trains, bien entendu."/>
+            <where>title = 'Mes trains Jouef passent au numérique, avec des Raspberry et TinyGo !' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="013" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Kyverno conformité Kubernetes</comment>
+        <update tableName="talks">
+            <column name="description" value="Si aujourd'hui Kubernetes est devenu la norme de l'orchestration des containers, tout n'est pas parfait. Malgré les méthodologies SRE et gitops, les déploiements sont nombreux et réguliers. Il est difficile, voire impossible, de garantir que les bonnes pratiques ou les politiques d'entreprise sont bien appliquées partout. Les environnements sont vivants : Le stagiaire qui déploie les nouvelles applications selon le dernier tuto. La sécurité vous remonte des failles ou de nouvelles règles à implémenter. Et vos ops découvrent encore des APIs obsolètes qui bloquent la montée de version du cluster. Autant d'exemples d'anecdotes vécues dans beaucoup d'entreprises. Et pourtant, il existe des solutions à mettre en œuvre sur vos clusters pour parvenir à réduire le chaos et suivre le niveau de conformité. Je vous propose de découvrir un outil que j'utilise au quotidien, une belle boîte à outils pleine d'avenir : Kyverno."/>
+            <where>title = 'Kyverno - la conformité dans votre cluster kubernetes' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="014" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Code héros héroïne gamification</comment>
+        <update tableName="talks">
+            <column name="description" value="Imaginez… Une équipe de devs aguerri·es, un royaume en proie au chaos technique, et une quête légendaire pour vaincre la dette legacy à coups de pull requests magiques. Votre CI est une arène. Vos tests, des sorts. Et chaque merge réussie vous fait gagner des points d'expérience. Partez à la découverte de la gamification appliquée au cycle de développement logiciel. À travers des retours d'expérience concrets (Sonar Smash, GitLab Achievements, et autres serious games), des mécaniques ludiques applicables dans vos routines d'équipe, et quelques mini-jeux surprises, nous explorerons comment transformer nos pratiques quotidiennes en véritables quêtes collaboratives. Que vous soyez une barbare du back-end 🪓, un ensorceleur du front 🔮 ou une elfe multi-classée DruideOps 🌿, vous repartirez avec des idées concrètes, des ressources, et une furieuse envie de jouer. Rejoignez l'aventure, héros et héroïnes du code ! 🎲"/>
+            <where>title = '⚔️ Le code dont vous êtes le héros ou l''héroïne +5 en agilité, +10 en fun !' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="015" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Kubernetes workshop et ajout URL OpenFeedback</comment>
+        <update tableName="talks">
+            <column name="description" value="Aujourd'hui, déployer un cluster Kubernetes est facile, de nombreuses solutions existent, cloud public, cloud privé, …. nous avons l'embarras du choix. Comment faire quand on veut déployer ET gérer un grand nombre de clusters ? Quelle solution utiliser ? Les avantages/inconvénients de telle ou telle solution… Je vous propose un petit workshop pour vous familiariser avec une solution de déploiement 100% opensource, sans avoir besoin de terraform ou crossplane ou pulumi, … du pure kubernetes pour piloter pleins de kubernetes. Objectif : vous montrer qu'il n'est pas &quot;plus compliqué&quot; de gérer deux ou plus de 100 clusters (sans pour autant déployer 100 clusters pendant le workshop :) )"/>
+            <column name="open_feedback_url" value="https://openfeedback.io/ip5uawISaJ66uRrHB8L5/2025-10-02/d1t4s5"/>
+            <where>title = 'Déploiement de clusters kubernetes à grande échelle, quels outils à utiliser et comment' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="016" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Architecture ferroviaire opensource</comment>
+        <update tableName="talks">
+            <column name="description" value="Un grand acteur du domaine énergétique nous a confié le développement du système de télérelève des données d'énergie ferroviaire. Concrètement l'application est en charge de collecter, stocker et fiabiliser les données de consommation d'énergie de tous les trains circulant en France et des trains français circulant en Europe. Cela nous permet de résoudre le casse-tête consistant à savoir quelle entreprise ferroviaire a consommé à quel endroit quelle énergie fournie par tel gestionnaire d'infrastructure. Fait rare, nous avons été présent depuis le tout début du projet pour participer à tous les choix de conception du système, en passant par le choix des bases de données, du système de data streaming, de supervision, d'orchestration des processus… pour garantir fiabilité, performance et résilience de notre solution. Ce talk va donc être l'occasion de vous présenter la solution mise en place qui s'appuie sur des technologies opensource modernes : Apache Flink, Apache Nifi, Camunda, Spring Boot, Angular, PostgreSQL, Timescale, Cassandra, Docker, Ansible, Metabase. Rome ne s'est pas construite en un jour. Nous vous détaillerons ce qui a guidé nos choix, nous présenterons quelques technos phare et un bilan 5 ans après le démarrage du projet."/>
+            <where>title = 'Une architecture opensource moderne qui ne déraille pas' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="017" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Santé cloud RGPD HDS EHDS</comment>
+        <update tableName="talks">
+            <column name="description" value="Les données de santé sont parmi les plus convoitées sur le dark web, juste derrière les données bancaires. Surprenant ? Pas vraiment quand on connaît leur valeur. Mais alors, comment les exploiter tout en les protégeant ? En 20 ans de MedTech, j'ai touché à la donnée de santé de différentes façons : d'abord product manager en radiothérapie pour faciliter sa saisie, puis évoluant jusqu'à CTPO d'une startup qui aide la recherche à exploiter ces données hors des murs de l'hôpital. Je vais partager avec vous mon expérience du terrain. Au programme : 1- Le RGPD appliqué au médical (promis, ce sera digeste) 2- La collecte et structuration des données (spoiler : on est encore loin du tout automatisé) 3- Le Federated Learning en action (quand l'IA vient aux données) 4- De l'hébergement HDS à l'European Health Data Space (et ça, c'est pour demain) Alors, le cloud dans la santé, on y va ou pas ? Takeaways : Apprendre que l'utilisation des données de santé est parfaitement légale et savoir décrypter les clauses d'utilisations dans les documents médicaux (même perso). Comprendre les difficultés liées à l'anonymisation et découvrir la diversité des normes utilisables pour structurer les données. Voir des exemples concrets de federated learning, les obligations d'un hébergeur de données de santé (HDS) et ce que prévoir de faire l'Europe avec l'European Health Data Space (EHDS)."/>
+            <where>title = 'La santé a-t-elle peur du cloud ?' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="018" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - ArgoCD GitOps clusters presque identiques</comment>
+        <update tableName="talks">
+            <column name="description" value="ArgoCD est un outil parmi d'autres permettant de déployer des applications en mode GitOps sur Kubernetes. Il est d'autant plus efficace lorsqu'on gère une flotte de clusters, pour avoir un parc cohérent. Sauf que parfois, lorsqu'on reprend une infra existante, tout n'a pas été déployé à l'identique 🤷‍♂️. Je vous propose alors un retour d'expérience sur la mise en place d'ArgoCD pour gérer des clusters &quot;presque&quot; identiques, ou le mot &quot;presque&quot; à son importance 😅. Après une brève introduction de l'outil, nous verrons ensemble comment il a été déployé, et surtout comment ont été structurés les dépôts Git pour résoudre les problématiques suivantes : Environnements dev &amp; prod, Versions différentes de clusters, Charts Helm déployés avec configuration, nom de releases &amp; namespaces différents, Intégration avec Renovate, Faible dépendance à l'outil ArgoCD. Le tout sera accompagné de démo pour valider les solutions proposées. Il existe une multitude de possibilités de mise en place du GitOps. Cette présentation est un exemple d'implémentation répondant à mon besoin, qui pourra correspondre à tout ou partie au vôtre !"/>
+            <where>title = 'Gérer des clusters presque identiques en mode GitOps avec ArgoCD' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="019" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - SFUI Science-Fiction User Interface</comment>
+        <update tableName="talks">
+            <column name="description" value="Vous connaissez les Command Line Interface (CLI), les Graphical User Interface (GUI), les Natural User Interface (NUI), peut-être même les Organic User Interface (XUI)… J'aimerais les comparer aux SFUI : les Science-Fiction User Interface. Les SFUI sont les interfaces utilisateur proposées dans les oeuvres de science-fiction, principalement dans les oeuvres cinématographiques. Les propositions artistiques qui sont faites dans les oeuvres sont largement inspirées des progrès techniques et scientifiques, en particulier en informatique. Mais les récits d'anticipation ont pu aussi influencer les scientifiques dans leurs designs. Je vous propose de m'accompagner dans le visionnage d'extraits d'oeuvres de science-fiction dans lesquelles les SFUI sont présentes, et des les comparer aux UI de leur époque et de la nôtre. Le tout est présenté sous la forme d'un quizz (qui sera capable de reconnaître toutes les oeuvres présentées ?) accompagné de commentaires critiques sans prétention, dans le seul but de passer un bon moment, à la fois technique et culturel :)"/>
+            <where>title = 'SFUI - Science-Fiction User Interface' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="020" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Provenance données graphs NetworkX</comment>
+        <update tableName="talks">
+            <column name="description" value="La provenance des données constitue un enjeu majeur dans les systèmes d'informations modernes, répondant à des besoins de sécurité, de qualité, d'évolution, et de conformité réglementaire ( RGPD, audit, … ). En tant que professionnelle de la données, j'ai régulièrement eu à répondre à la question :&quot; Comment et où ces informations ont-elles été construites ? &quot; Dans les écosystèmes complexes, les données subissent de multiples opérations, elles peuvent être transformées, déplacées d'un système à un autre, agrégées et exploitées à différents niveaux , pour différentes raisons. L'accumulation de ces opérations crée des architectures stratifiées difficiles à documenter et à comprendre. Les méthodologies traditionnelles de documentation ( statique, métadonnées, diagramme de flux,..) atteignent leurs limites pour répondre à la question de la provenance de la donnée. Ce talk présentera une méthodologie d'analyse de provenance basée sur la théorie des graphs et implémentée avec python (Networkx). Cette approche permet de modéliser et visualiser efficacement les flux de données, révélant leurs interdépendances et facilitant l'audit, le debugging ou l'optimisation des pipelines. J'illustrerai cette méthodologie à travers des cas concrets, notamment un rapport analytique complexe comprenant des centaines de variables issues de sources multiples."/>
+            <where>title = 'Démêler des problèmes de provenances de données à l''aide des graphs' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="021" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Android Auto virée à deux</comment>
+        <update tableName="talks">
+            <column name="description" value="Dans ce talk, je vous propose de voyager sur les routes en compagnie d'Android Auto. À moins d'avoir un iPhone ou de rouler en Peugeot 205 comme moi, normalement vous avez déjà utilisé une fois Android Auto. Pour rappel: Android Auto sert à porter les applications de votre téléphone sur l'écran de votre véhicule pour ne pas vous déconcentrer pendant votre conduite. Dans cette conférence découverte, nous développerons une démo concrète en live qui nous permettra d'échanger tout le long sur tous ces aspects. Nous créerons un projet simple sous Android, inspiré d'un cas client concret, pour apprendre à le porter sur Android Auto. Dans les grandes lignes nous verrons comment créer un émulateur de test sur ordinateur, configurer notre application déjà existante dans Android Studio, développerons plusieurs vues spécifiques au portage Android Auto et nous testerons le tout sur un vrai ordinateur de bord tactile. Enfin pour conclure, tout le long du talk et dans un temps dédié après celui-ci, je serai ravi d'échanger avec vous 😃"/>
+            <where>title = '🎵​ Faire une virée à deux, Tous les deux sur les chemins 🎵​' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="022" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Mission IApossible train Lego IA Edge et ajout URL OpenFeedback</comment>
+        <update tableName="talks">
+            <column name="description" value="Plongez dans un univers où l'open source rencontre la culture geek ! Dans cette session unique, nous vous invitons à découvrir Mission Impossible : Dead Reckoning version Lego City 60337. Imaginez un train Lego équipé d'un mini ordinateur Jetson Orin de chez Nvidia, piloté par une IA, capable de reconnaître les panneaux de signalisation et de s'arrêter juste à temps. Le tout développé avec les technos du moment, telles que YOLO, Jupyter, Quarkus &amp; Kubernetes. Votre mission, si vous l'acceptez, sera de venir découvrir comment une IA est entraînée puis déployée à bord du train Lego City 60337 pour l'arrêter avant qu'il ne soit trop tard ! Alors, prêts à relever le défi ? Venez explorer l'IA et le Edge Computing sous un angle ludique et innovant !"/>
+            <column name="open_feedback_url" value="https://openfeedback.io/ip5uawISaJ66uRrHB8L5/2025-10-02/d1t4s7"/>
+            <where>title = 'Mission IApossible - Arrêtez le train Lego à temps grâce à l''IA et l''Edge' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="023" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Ce projet né dans la chambre d'un enfant de 7 ans (Pokédex IA)</comment>
+        <update tableName="talks">
+            <column name="description" value="Quand j'étais petit, j'avais un Carapuce et un rêve : devenir le meilleur dresseur Pokémon ! Le soir, dans mon lit, loin de ma Game Boy, je m'imaginais en train de répertorier toutes ces créatures… Aujourd'hui, je suis (un peu) plus grand, et avec l'aide d'une IA, j'ai créé le Pokédex de mes jeux et de mes dessins animés. Dans ce court talk, je vous montre comment un rêve d'enfant et un peu d'IA peuvent inspirer les grands enfants que nous sommes."/>
+            <where>title = 'Ce projet né dans la chambre d''un enfant de 7 ans' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="024" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Libérer la puissance des systèmes multi-agents avec Flowise</comment>
+        <update tableName="talks">
+            <column name="description" value="De nombreux développeurs et équipes produits utilisent aujourd'hui des agents d'IA générative pour les aider à créer des logiciels ou des applications. Mais ces applications sont souvent uniquement composées d'une seule IA et ne permettent pas de réaliser des tâches complexes. Les systèmes multi-agents offrent une approche pour modéliser des appels d'agents spécialisés capables d'interagir entre eux. Dans cette présentation, nous explorerons les fondements de ces systèmes, en détaillant leurs composants clés et leurs modes d'interaction. Nous nous pencherons ensuite sur les différentes architectures possibles, depuis les systèmes centralisés jusqu'aux systèmes entièrement décentralisés. Enfin, nous mettrons en œuvre une application au travers de Flowise, une plateforme open-source low code pour faciliter le développement et le déploiement de systèmes multi-agents et sa capacité à les orchestrer de manière efficace. À travers une démonstration concrète, nous verrons comment Flowise permet de créer des applications complexes, en gérant la coordination, la communication et la prise de décision entre de multiples agents."/>
+            <where>title = 'Libérer la puissance des systèmes multi-agents avec Flowise' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="025" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - SSE Chronicles Server-Sent Events</comment>
+        <update tableName="talks">
+            <column name="description" value="Ah, le vénérable WebSocket ! Star incontestée de la communication temps réel… Mais connaissez-vous son cousin discret qui préfère les monologues aux dialogues? Bienvenue dans l'univers moins connu des Server-Sent Events (SSE), cette technologie qui murmure des données à votre navigateur. Ici, nous plongerons dans les coulisses de la communication unidirectionnelle et découvrirons pourquoi parfois, moins c'est plus. Armés d'un serveur Bun et d'un broker RabbitMQ, nous orchestrerons un flot de données avec élégance. Mais attention, ce talk n'est pas pour un public passif ! Votre téléphone deviendra un acteur de cette expérience collective. Tandis que vous vous installerez confortablement, vos écrans commenceront à évoluer mystérieusement au rythme de la présentation, créant une chorégraphie numérique synchronisée. Entre récits de WebWorkers surchargés et interactivité, cette session révélera comment transformer une simple connexion HTTP en un canal de communication persistant qui fera palpiter le cœur de vos applications. Venez découvrir comment moins de code peut créer plus de magie, et pourquoi parfois, il suffit de savoir écouter."/>
+            <where>title = 'SSE Chronicles - Quand ton appli chuchote à ton navigateur' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="026" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - 4 ans de télétravail total REX</comment>
+        <update tableName="talks">
+            <column name="description" value="Qu'on l'adore ou on le déteste, le télétravail est passé d'une option marginale à une réalité incontournable pour de nombreuses entreprises, notamment depuis la crise du COVID. S'il a prouvé sa viabilité et apporté de nombreux bénéfices, il a également révélé des défis humains, techniques et organisationnels. Fort de 4 ans d'expérience en télétravail total au sein d'une entreprise internationale, je partagerai dans cette présentation un retour d'expérience structuré autour de trois axes : Les leçons apprises : Nous verrons comment le travail à distance peut améliorer la productivité, offrir plus de flexibilité et favoriser une meilleure qualité de vie au travail. Les défis rencontrés : Nous aborderons des enjeux tels que la communication, la cohésion d'équipe, la prévention de l'épuisement professionnel et la lutte contre l'isolement. Les bonnes pratiques : Nous discuterons de stratégies pour instaurer une culture de confiance, améliorer la collaboration à distance et tirer pleinement parti des outils numériques. Ce retour d'expérience vise à fournir des solutions concrètes pour faire du télétravail un atout durable pour les entreprises et les collaborateurs."/>
+            <where>title = '4 ans de télé-travail total. Retours d''expérience, défis et bonnes pratiques' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="027" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Workshop Figma design collaboratif</comment>
+        <update tableName="talks">
+            <column name="description" value="C'est le leader des outils de design collaboratif ! C'est sur ce logiciel que se rencontrent designers, développeurs, chef de projets, product owner, clients … toutes les parties prenantes d'un projet tech ! En quoi Figma est fait pour vous ? On en parle et on pratique dans cet atelier ! ;) Interface graphique, maquettes, tests utilisateurs, démo client et même prototypes animés ??! C'est possible avec ce logiciel ! On découvre ensemble et de manière ludique Figma, son interface, ses concepts."/>
+            <where>title = 'Quoi ? Vous n''utilisez pas Figma ?!?' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="028" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Motion Design UX micro-interactions</comment>
+        <update tableName="talks">
+            <column name="description" value="Micro-interactions, animations, transitions : et si les détails faisaient toute la différence ? Le motion design ne sert pas qu'à embellir : il structure l'expérience, guide l'utilisateur et renforce la clarté des interactions. L'objectif : créer des parcours fluides, compréhensibles et engageants, sans alourdir l'interface ni sacrifier la performance. Au programme : cas concrets, bonnes pratiques UX/UI et outils clés pour intégrer l'animation de manière utile et mesurée."/>
+            <where>title = 'Animer sans surcharger - le Motion Design au service de l''UX' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="029" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Système distribué 1 milliard séries Warp10</comment>
+        <update tableName="talks">
+            <column name="description" value="Dans la plupart des entreprises, Prometheus est la référence en matière de gestion des métriques. Il bénéficie d'une vaste communauté, et ce, en grande partie grâce à la CNCF. Mais que ce soit PromQL (Prometheus Query Language), le format des données ou Prometheus lui-même, il n'est pas parfait. Depuis quelques années, des alternatives ont émergé, promettant des performances améliorées, une meilleure gestion de la montée en charge et une consommation mémoire plus optimisée. Explorons ensemble un logiciel distribué (Warp10) capable de stocker et de calculer les métriques d'infrastructure de Clever Cloud (&gt;150 millions de séries). Oubliez tout ce que vous savez sur Prometheus et les technologies associées, découvrons ensemble comment nous pouvons gérer autant de métriques tout en garantissant des temps de réponse faibles."/>
+            <where>title = 'Le système distribué qui a survécu à 1 milliards de séries' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="030" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Dette technique GitLab scaling</comment>
+        <update tableName="talks">
+            <column name="description" value="Passer à l'échelle, gérer la dépréciation d'architecture, maintenir un produit polyvalent en constante évolution… Ces défis nous ont souvent donné l'impression de courir après notre solution, voire de la maintenir à bout de bras. Cette solution, vous la connaissez bien : GitLab, l'outil incontournable du monde de la tech. Pour ceux qui administrent ce service au sein d'un grand système d'information, ces dernières années ont probablement été semées d'embûches. Prenons un exemple concret : faire évoluer une infrastructure prévue pour 1 000 utilisateurs vers une autre supportant 5 000 utilisateurs implique de passer d'une simple machine virtuelle à 28. Ajoutez à cela la transition de NFS vers un Gitaly Cluster suite à une dépréciation, remettant en cause l'ensemble de votre stratégie de sauvegarde, et vous obtenez un véritable casse-tête technique. Pourtant, après des années à voir notre dette technique s'accumuler plus vite que nous ne pouvions la résorber, nous avons enfin vu le bout du tunnel. En 2025, nous avons réussi à éponger une grande partie de cette dernière! Dans ce talk, je partagerai notre retour d'expérience sur l'administration de GitLab dans un contexte exigeant. J'aborderai : Les principaux défis techniques rencontrés (scaling, dépréciation, sauvegardes). Les solutions concrètes que nous avons mises en œuvre. Les leçons apprises pour gérer une plateforme critique en constante évolution. Rejoignez ce talk et explorez comment dompter la complexité d'une plateforme comme GitLab, avec des enseignements directement exploitables."/>
+            <where>title = 'À l''épreuve de l''échelle - surmonter la dette technique et les défis d''une plateforme DevOps' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="031" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Agent NL2SQL Semantic Kernel</comment>
+        <update tableName="talks">
+            <column name="description" value="Et si vos utilisateurs pouvaient interroger une base de données avec une simple phrase en langage naturel ? Dans cette session, nous explorerons comment concevoir un agent NL2SQL efficace et fiable en s'appuyant sur Semantic Kernel. Vous découvrirez comment orchestrer prompts, skills et memory pour piloter un LLM vers la génération de requêtes SQL valides et sécurisées. Nous aborderons les défis du prompt engineering, l'intégration de contextes métiers, la validation des sorties, ainsi que les bonnes pratiques pour éviter les hallucinations ou requêtes incorrectes. Au programme : retour d'expérience, démo live, architecture de référence et code open source. 🎯 Une session 100% technique pour celles et ceux qui veulent mettre l'IA générative au cœur de leurs stacks data et analytics."/>
+            <where>title = 'Construire un agent NL2SQL avec Semantic Kernel - l''IA au service des données' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="032" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Numérique performance écologie</comment>
+        <update tableName="talks">
+            <column name="description" value="Déconstruire les idées reçues sur l'impact environnemental du numérique. Un site rapide est-il forcément plus écologique ? Est-ce qu'optimiser son code suffit à réduire l'impact environnemental d'un projet ? Ou est-ce qu'on laisse ça aux « gros pollueurs » ? Cette conférence propose de démêler le vrai du faux sur les liens entre performance et écoconception, de comprendre les différents niveaux d'impact du numérique, et d'identifier les leviers concrets pour faire mieux. 👉 Objectif : dépasser le greenwashing, comprendre les vrais enjeux, et repartir avec des pistes pour des projets plus sobres, plus efficaces, plus honnêtes."/>
+            <where>title = 'Numérique - comment lier performance et écologie ?' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="033" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Souveraineté Cloud GAIA-X</comment>
+        <update tableName="talks">
+            <column name="description" value="Dans un contexte géopolitique tendu et face à des réglementations de plus en plus exigeantes, la souveraineté numérique est devenue un enjeu stratégique pour les organisations. Cette conférence propose un état des lieux complet des solutions de cloud souverain, depuis les clouds publics traditionnels jusqu'aux technologies émergentes de cloud confidentiel. Nous explorerons l'évolution des approches de souveraineté cloud, en analysant leurs forces et faiblesses respectives : clouds souverains de première génération, clouds de confiance issus de partenariats avec les hyperscalers, initiatives européennes comme GAIA-X, et technologies de confidential computing. Pour chaque approche, nous examinerons les aspects techniques, juridiques et stratégiques. La présentation culminera avec une feuille de route pratique en quatre phases pour adopter une stratégie cloud souveraine adaptée à votre organisation, en équilibrant exigences de souveraineté, contraintes budgétaires et besoins d'innovation. Que vous soyez en phase d'évaluation de votre stratégie cloud ou déjà engagé dans une démarche de souveraineté numérique, cette conférence vous fournira une vision claire des options disponibles et des tendances futures pour faire des choix éclairés."/>
+            <where>title = 'État des Lieux de la Souveraineté du Cloud - Des Clouds Publics aux Clouds Confidentiels' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="034" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Workshop async-profiler JVM</comment>
+        <update tableName="talks">
+            <column name="description" value="🚨 CPU qui s'emballe ? OutOfMemory qui frappe sans prévenir ? Votre application Java vous fait des caprices en production ? Découvrez async-profiler, le couteau suisse du diagnostic de performance pour les applications Java. Plus besoin de naviguer à l'aveugle dans votre code ! Dans ce workshop pratique, vous apprendrez à : appréhender async-profiler en conditions réelles, décrypter les FlameGraphs pour identifier les goulots d'étranglement, simuler des scénarios de charge réalistes avec k6, diagnostiquer et résoudre les problèmes de performance courants. Un workshop hands-on destiné aux développeurs évoluant dans l'écosystème JVM. Focus sur la pratique : pas de théorie complexe, mais des outils concrets pour booster vos compétences en diagnostic performance. Venez avec votre laptop, repartez avec des compétences immédiatement applicables en production ! 👩‍💻 À qui s'adresse ce workshop ? Aux développeurs JVM, qu'ils soient novices ou expérimentés, cherchant à enrichir leur arsenal pour analyser et résoudre les problèmes de performance. 📋 Préparez votre terrain de jeu : Linux ou Mac (désolé, Windows n'est pas invité à la fête), Java 17+, Docker Compose, k6 (ou Docker). Ou utilisez notre environnement Gitpod préconfiguré pour un démarrage rapide. Venez découvrir, apprendre, et surtout pratiquer. Parce qu'avec les bons outils, chaque problème a sa solution. 🚨 Voir les pré-requis : https://github.com/vgallet/was."/>
+            <where>title = 'Workshop async-profiler' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="035" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Vates VMS alternative VMware</comment>
+        <update tableName="talks">
+            <column name="description" value="A l'heure où l'on parle beaucoup de cloud, de DevOps, de cloud-native, devons-nous abandonner la virtualisation et considérer qu'il s'agit d'une technologie d'une époque révolue ? Venez découvrir comment nous essayons chez Vates de proposer une stack de virtualisation complète, et des outils autour pour résolument s'intégrer dans le contexte actuel. Au cour de ce talk je vous présenterai les outils portés par une équipe dédiée aux &quot;DevOps tools&quot;, qui développe tout ce qui lui passe par la tête : Un provider Terraform, Un provider Pulumi, Un module PowerShell, Un module Ansible, Des intégrations Kubernetes (Rancher, Kubermatic, MicroK8s), Le développement d'un CSI prodiver pour Kubernetes. Et tout cela en open source, avec du support pro pour ceux qui le souhaitent ! 🚀 Vates édite XCP-ng et Xen Orchestra, une solution complète de virtualisation basée sur Xen, et maîtrise la stack du noyau Xen au provider Terraform en passant par les drivers et guest tools ⚙️"/>
+            <where>title = 'Vates VMS une stack de virtualisation à l''heure du DevOps et du cloud-native ? (et une alternative à VMware !)' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="036" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - DevSecOps Trivy sécurité</comment>
+        <update tableName="talks">
+            <column name="description" value="Face à l'augmentation des cybermenaces, il est devenu important et stratégique de protéger les applications et leurs infrastructures. Dans ce cas, le DevSecOps permet d'intégrer la sécurité dès les premières étapes du cycle de développement et de faire des livraisons rapides et plutôt &quot;sécure&quot;. Cependant, l'intégration de la sécurité dès le début du cycle de développement peut être un défi. Comment démarrer ? Comment s'y prendre ? Quels process pouvons-nous mettre en place ? Quels sont les bons repères ? Et enfin quels outils du monde de la sécurité peuvent être fiables et facilement intégrables dans un CICD ? Une petite histoire du DevSecOps avec Trivy est un retour d'expérience sur l'intégration et l'utilisation d'un scanner de sécurité open source dans le cas de la création d'images Docker personnalisée pour une équipe de développement. Dans cette histoire présentée sous forme de démo live, nous verrons ensemble le fort potentiel de l'outil Trivy et comment celui-ci s'intègre aisément dans un process de création d'image Docker jusqu'à leur livraison. En partant de la conception d'une image (Dockerfile) et en passant par l'analyse des composants systèmes (librairie système, outils natifs ou installés) d'images personnalisées (Phase Post build image) , puis en passant par la génération et de l'analyse des SBOMS (Software Bill Of Materials) et en terminant par la génération automatisée d'un rapport des failles de sécurités des images et de leurs dépendances sous différents formats (Markdown, Word,etc.). Nous terminerons en parlant de l'intégration des SBOMS et de leur analyse via Trivy Server directement dans l'outil Dependency Track. Tout, tout, tout, vous saurez tout sur le shifting left security avec Trivy ! (ou presque)"/>
+            <where>title = 'Une petit histoire du DevSecOps avec Trivy 🔎🔗' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="037" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Another World architecture logicielle</comment>
+        <update tableName="talks">
+            <column name="description" value="Another World, le jeu culte d'Éric Chahi sorti en 1991, n'est pas seulement un chef-d'œuvre artistique et narratif. C'est aussi une prouesse technique remarquable qui a révolutionné l'industrie du jeu vidéo par son architecture logicielle innovante. Dans cette conférence, nous plongerons dans les entrailles de ce jeu légendaire pour découvrir comment Éric Chahi a conçu une architecture modulaire et portable qui a permis au jeu de fonctionner sur une multitude de plateformes avec un minimum d'adaptations. Nous explorerons la machine virtuelle custom qu'il a développée, les techniques de compression et d'optimisation mémoire utilisées, ainsi que les choix de design qui ont rendu possible cette portabilité exceptionnelle. Une leçon d'architecture logicielle intemporelle qui résonne encore aujourd'hui avec nos préoccupations modernes de développement cross-platform et d'optimisation des ressources."/>
+            <where>title = 'Another World, une belle leçon d''architecture logicielle' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="038" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - TUI Terminal interfaces</comment>
+        <update tableName="talks">
+            <column name="description" value="Les interfaces graphiques ont beau dominer notre quotidien, le terminal reste un outil incontournable pour de nombreux développeurs et administrateurs système. Mais qui a dit que les applications en ligne de commande devaient être ternes et peu ergonomiques ? Découvrez l'univers des TUI (Terminal User Interfaces) et apprenez à créer des applications terminales modernes, interactives et visuellement attrayantes ! Dans cette session, nous explorerons les frameworks les plus populaires pour développer des TUI : Textual pour Python, BubbleTea pour Go, et Ratatui pour Rust. Nous verrons comment ces outils permettent de créer des interfaces riches avec des composants interactifs, des animations fluides et une expérience utilisateur soignée, le tout dans votre terminal préféré. Au programme : comparaison des différents frameworks, démonstrations pratiques, bonnes pratiques de design pour TUI, et cas d'usage concrets. Que vous développiez des outils DevOps, des utilitaires système ou des applications de monitoring, les TUI peuvent transformer votre approche du développement d'outils en ligne de commande !"/>
+            <where>title = 'Quand le Terminal dévore la UI - TUI pour tout le monde !' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="039" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Intégration produit marché écosystème</comment>
+        <update tableName="talks">
+            <column name="description" value="Intégrer un produit du marché dans un écosystème d'entreprise complexe peut rapidement se transformer en parcours du combattant. Entre les contraintes techniques, les exigences de sécurité et les besoins métier spécifiques, comment s'assurer que l'expérience développeur reste au centre des préoccupations ? Dans ce retour d'expérience, nous partagerons notre approche pour intégrer harmonieusement une solution externe tout en préservant la productivité et la satisfaction des équipes de développement. Nous aborderons les défis rencontrés lors de l'intégration : adaptation aux standards internes, gestion des dépendances, mise en place de l'outillage (Python, GitLab CI/CD), création de documentation avec Docusaurus, et formation des équipes. Vous découvrirez les stratégies que nous avons mises en place pour créer une expérience développeur fluide : automatisation des processus, outils de développement adaptés, documentation interactive, et feedback continu. Un talk concret pour tous ceux qui cherchent à réussir l'intégration d'outils externes sans sacrifier l'expérience de leurs équipes de développement."/>
+            <where>title = 'Intégration d''un produit du marché dans un écosystème d''entreprise - retour sur notre développeur expérience' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="040" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Microservices Rust workshop</comment>
+        <update tableName="talks">
+            <column name="description" value="Rust s'impose de plus en plus comme un langage de choix pour le développement de microservices performants et sûrs. Dans ce workshop pratique, vous découvrirez comment créer votre premier microservice en Rust from scratch ! Nous commencerons par les fondamentaux du langage : ownership, borrowing, et gestion mémoire sans garbage collector. Puis nous construirons ensemble un microservice complet avec : création d'une API REST robuste avec des frameworks modernes, gestion des erreurs à la Rust, intégration de bases de données, mise en place de tests unitaires et d'intégration, observabilité avec des métriques et traces OTLP (OpenTelemetry Protocol). Ce workshop s'adresse aux développeurs ayant une expérience en développement backend qui souhaitent découvrir Rust dans un contexte microservices. Vous repartirez avec un microservice fonctionnel et les bonnes pratiques pour développer des services performants, sûrs et maintenables en Rust. Prérequis : connaissances de base en développement backend, laptop avec Rust installé."/>
+            <where>title = 'Créez votre premier microservices en Rust' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="041" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - RFID MIFARE flipper0 sécurité</comment>
+        <update tableName="talks">
+            <column name="description" value="Badges d'accès, cartes de transport, systèmes de paiement sans contact... Les technologies RFID et MIFARE sont partout dans notre quotidien. Mais que se cache-t-il derrière ces petites puces qui nous simplifient la vie ? Et surtout, sont-elles aussi sécurisées qu'on le pense ? Dans cette conférence de démystification, nous plongerons dans l'univers de la RFID et des cartes MIFARE avec un angle sécurité. Armés d'un Flipper Zero et d'autres outils de pentest, nous découvrirons comment ces technologies fonctionnent, quelles sont leurs vulnérabilités, et comment les exploiter (de manière éthique, bien sûr !). Au programme : fonctionnement des protocoles RFID/NFC, analyse des cartes MIFARE Classic et leurs faiblesses cryptographiques, démonstrations pratiques avec le Flipper Zero, techniques de clonage et d'attaque, protection par smartphone et applications mobiles, bonnes pratiques pour sécuriser vos implémentations. Une session technique et pratique pour comprendre les enjeux de sécurité de ces technologies omniprésentes et apprendre à mieux les protéger."/>
+            <where>title = '🔓 RFID, MIFARE, chambre d''hôtel et flipper0 - décryptage sans contact' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="042" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Dagger CI/CD moderne</comment>
+        <update tableName="talks">
+            <column name="description" value="Les pipelines CI/CD sont souvent synonymes de fichiers YAML interminables, de configurations rigides et de débogages laborieux. Changeons de paradigme ! Conçu par les créateurs de Docker, Dagger propose d'écrire vos pipelines avec votre langage de prédilection : Go, TypeScript, PHP, Java, etc… et de les exécuter dans des conteneurs Docker. Fini les « ça marche chez moi » : lancez/testez votre CI/CD partout, même localement ! Dans cette session, nous découvrirons comment Dagger révolutionne l'approche traditionnelle de la CI/CD : écriture de pipelines en code avec des langages typés, exécution reproductible dans des conteneurs, debugging local simplifié, réutilisabilité et modularité des composants, intégration avec les plateformes CI/CD existantes. Nous verrons des exemples concrets d'implémentation et comparerons avec les approches traditionnelles. Que vous soyez développeur, DevOps ou SRE, découvrez comment Dagger peut simplifier et fiabiliser vos processus de déploiement tout en améliorant l'expérience développeur."/>
+            <where>title = 'Dagger, le couteau suisse de la CI/CD moderne ?' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="043" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Makers Père Fils</comment>
+        <update tableName="talks">
+            <column name="description" value="Quand la passion du making se transmet de père en fils, cela donne des projets créatifs et techniques passionnants ! Dans ce talk familial et convivial, Sylvain et Matthias Gougouzian partageront leur aventure commune dans l'univers des makers et de l'électronique créative. Découvrez leurs projets réalisés ensemble : revival du mythique Nabaztag avec des technologies modernes, expérimentations avec Raspberry Pico et microcontrôleurs, projets d'impression 3D et fabrication numérique, création d'objets connectés ludiques et éducatifs, développement avec Kord (Kotlin pour Arduino). Au-delà de la technique, ce talk explore la dimension humaine du making : comment transmettre la passion de la création, apprendre ensemble en s'amusant, développer la créativité et l'esprit critique, partager des moments complices autour de projets concrets. Une session inspirante qui montre que la technologie peut être un formidable vecteur de lien intergénérationnel et d'apprentissage mutuel. Que vous soyez parent, maker ou simplement curieux, venez découvrir comment la créativité technique peut rassembler les générations !"/>
+            <where>title = 'Makers de Père en Fils' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="044" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Plan B IaC basculement</comment>
+        <update tableName="talks">
+            <column name="description" value="Quand votre région cloud principale tombe en panne, avez-vous un plan B ? Dans ce lightning talk intense, découvrez comment nous avons géré une panne régionale majeure grâce à l'Infrastructure as Code et une stratégie de basculement bien rodée. En 15 minutes chrono, nous partagerons notre retour d'expérience sur : la mise en place d'une architecture multi-régions avec Terraform et Terragrunt, les stratégies de réplication et de sauvegarde cross-region, l'activation du plan de continuité d'activité en situation de crise, les leçons apprises et les améliorations apportées post-incident. Un concentré d'enseignements pratiques pour tous ceux qui gèrent des infrastructures critiques et veulent être prêts quand Murphy frappe à la porte. Parce que ce n'est pas une question de savoir SI une panne régionale arrivera, mais QUAND elle arrivera !"/>
+            <where>title = 'Plan B activé - Gérer une panne régionale par IaC' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="045" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Informatique quantique éruption</comment>
+        <update tableName="talks">
+            <column name="description" value="L'informatique quantique n'est plus de la science-fiction ! Comme un volcan qui gronde avant l'éruption, cette technologie révolutionnaire accumule sa puissance et se prépare à bouleverser notre monde numérique. Mais êtes-vous prêts pour cette éruption technologique ? Dans ce lightning talk énergique, nous explorerons pourquoi l'informatique quantique représente une révolution imminente : les principes fondamentaux qui la rendent si puissante, les domaines qui seront transformés en premier (cryptographie, IA, simulation), l'état actuel de la recherche et des implémentations, les défis techniques encore à surmonter, comment les développeurs peuvent se préparer dès maintenant. Une session de sensibilisation pour comprendre les enjeux de cette technologie disruptive et anticiper son impact sur nos métiers. L'éruption quantique approche : il est temps de s'y préparer !"/>
+            <where>title = 'Informatique quantique - Préparez vous à l''éruption !!!' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="046" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Donjons Pythons chevaleresse</comment>
+        <update tableName="talks">
+            <column name="description" value="Oyez, oyez ! La chevaleresse Juliette vous convie à une quête épique dans les donjons de Python ! Dans ce lightning talk ludique et décalé, nous partirons à l'aventure dans l'univers de la programmation Python avec un twist médiéval fantastique. Armée de son épée de code et de sa magie algorithmique, notre chevaleresse vous guidera à travers : les monstres du code legacy qu'il faut terrasser, les trésors cachés des bibliothèques Python méconnues, les pièges des bugs sournois et comment les éviter, les sorts magiques (fonctions) les plus puissants du royaume Python, la quête ultime : écrire du code propre et maintenable. Une approche originale et divertissante pour découvrir ou redécouvrir Python sous un angle créatif. Que vous soyez novice ou développeur expérimenté, préparez-vous à vivre une aventure coding inoubliable ! En garde, bugs maléfiques !"/>
+            <where>title = 'Donjons et Pythons - la chevaleresse à la rescousse' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+</databaseChangeLog>

@@ -4,10 +4,24 @@
       <mat-grid-tile colspan="5">
         <span class="f1 accentColor">Votre avis compte pour nous !</span>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="5">
-        <app-volcamp-rate [currentNote]="currentNote" [noted]="vm.noted" (noteOutput)="vm.update($event)"></app-volcamp-rate>
+      
+      <!-- Bloc OpenFeedback -->
+      <mat-grid-tile [colspan]="5" [rowspan]="2" *ngIf="openFeedbackUrl">
+        <div class="openFeedbackContainer">
+          <a [href]="openFeedbackUrl" target="_blank" class="openFeedbackLink">
+            <img src="/assets/image/volcanNote/checked/5.png" alt="Volcan feedback" class="volcanoIcon">
+            <span class="f2">Laisser un commentaire sur Open Feedback</span>
+          </a>
+        </div>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="5" [rowspan]="2">
+      
+      <!-- Composant de notation - Temporairement désactivé -->
+      <!-- <mat-grid-tile [colspan]="5">
+        <app-volcamp-rate [currentNote]="currentNote" [noted]="vm.noted" (noteOutput)="vm.update($event)"></app-volcamp-rate>
+      </mat-grid-tile> -->
+      
+      <!-- Zone de commentaire - Temporairement désactivée -->
+      <!-- <mat-grid-tile [colspan]="5" [rowspan]="2">
         <form>
           <mat-form-field class="formNote accentLightBorder" color="accent">
             <mat-label>📝 Laissez un commentaire 😊</mat-label>
@@ -21,19 +35,20 @@
             <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
           </mat-form-field>
         </form>
-      </mat-grid-tile>
-      <mat-grid-tile colspan="3"/>
+      </mat-grid-tile> -->
+      <!-- Boutons d'action - Temporairement désactivés -->
+      <!-- <mat-grid-tile colspan="3"/>
       <mat-grid-tile colspan="2">
         <button class="actionButton" *ngIf="!vm.noted" mat-raised-button color="accent" (click)="vm.sendNote()"
                 [disabled]="vm.noted">
           <mat-icon class="icon" inline=true svgIcon="send" aria-hidden="false" *ngIf="!vm.noted"></mat-icon>
           Soumettre
         </button>
-<!--        <button class="actionButton" *ngIf="vm.noted" mat-raised-button color="warn" (click)="vm.deleteFeedback()" [disabled]="!vm.noted">-->
-<!--          <mat-icon class="icon" inline=true  aria-hidden="false" *ngIf="vm.noted">delete</mat-icon>-->
-<!--          Supprimer-->
-<!--        </button>-->
-      </mat-grid-tile>
+        <button class="actionButton" *ngIf="vm.noted" mat-raised-button color="warn" (click)="vm.deleteFeedback()" [disabled]="!vm.noted">
+          <mat-icon class="icon" inline=true  aria-hidden="false" *ngIf="vm.noted">delete</mat-icon>
+          Supprimer
+        </button>
+      </mat-grid-tile> -->
     </mat-grid-list>
   </div>
 

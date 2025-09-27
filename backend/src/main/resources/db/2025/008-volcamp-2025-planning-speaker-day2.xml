@@ -117,7 +117,7 @@
   </changeSet>
 
   <changeSet id="015" author="camille.petitalot@volcamp.io">
-    <comment>Talk Speakers - Multi-agents Flowise - Julien Mercier</comment>
+    <comment>Talk Speakers - Multi-agents Flowise - Laurent Grangeau</comment>
     <insert tableName="speakers_talk">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Libérer la puissance des systèmes multi-agents avec Flowise' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Laurent Grangeau' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
@@ -125,7 +125,7 @@
   </changeSet>
 
   <changeSet id="016" author="camille.petitalot@volcamp.io">
-    <comment>Talk Speakers - SSE Chronicles - David Pilato</comment>
+    <comment>Talk Speakers - SSE Chronicles - m4dz</comment>
     <insert tableName="speakers_talk">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'SSE Chronicles - Quand ton appli chuchote à ton navigateur' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'm4dz' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>

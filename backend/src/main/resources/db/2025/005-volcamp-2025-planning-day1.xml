@@ -50,7 +50,7 @@
   </changeSet>
 
   <changeSet id="006" author="camille.petitalot@volcamp.io">
-    <comment>Planning Jour 1 - 10h15 Slot 1 - Créativité</comment>
+    <comment>Planning Jour 1 - 10h15 Slot 1 - FABLAB</comment>
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Licence to Code' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'FABLAB' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
@@ -95,7 +95,7 @@
   </changeSet>
 
   <changeSet id="011" author="camille.petitalot@volcamp.io">
-    <comment>Planning Jour 1 - 11h30 Slot 2 - Créativité</comment>
+    <comment>Planning Jour 1 - 11h30 Slot 2 - FABLAB</comment>
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Se réapproprier Internet par les noms de domaine' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'FABLAB' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
@@ -176,7 +176,7 @@
   </changeSet>
 
   <changeSet id="020" author="camille.petitalot@volcamp.io">
-    <comment>Planning Jour 1 - 15h00 Slot 3 - Créativité</comment>
+    <comment>Planning Jour 1 - 15h00 Slot 3 - FABLAB</comment>
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = '⚔️ Le code dont vous êtes le héros ou l''héroïne +5 en agilité, +10 en fun !' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'FABLAB' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
@@ -212,7 +212,7 @@
   </changeSet>
 
   <changeSet id="024" author="camille.petitalot@volcamp.io">
-    <comment>Planning Jour 1 - 15h45 Slot 4 - Créativité</comment>
+    <comment>Planning Jour 1 - 15h45 Slot 4 - FABLAB</comment>
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Une architecture opensource moderne qui ne déraille pas' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'FABLAB' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
@@ -248,7 +248,7 @@
   </changeSet>
 
   <changeSet id="028" author="camille.petitalot@volcamp.io">
-    <comment>Planning Jour 1 - 17h00 Slot 5 - Créativité</comment>
+    <comment>Planning Jour 1 - 17h00 Slot 5 - FABLAB</comment>
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = '🎵​ Faire une virée à deux, Tous les deux sur les chemins 🎵​' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'FABLAB' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>

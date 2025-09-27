@@ -40,7 +40,7 @@
       <column name="description" value="Workshop sur l'IA avec Docker et les outils MCP"/>
       <column name="language" value="fr"/>
       <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
-      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DATA_AI')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
     </insert>
   </changeSet>
@@ -51,7 +51,7 @@
       <column name="description" value="Création d'un jeu de rôle utilisant l'IA agentique et MCP"/>
       <column name="language" value="fr"/>
       <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
-      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DATA_AI')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
     </insert>
   </changeSet>
@@ -72,7 +72,7 @@
       <column name="title" value="L'IOT pour 5 ans et + - Atelier d'initiation sur carte micro:bit"/>
       <column name="description" value="Atelier d'initiation à l'IoT pour enfants avec micro:bit"/>
       <column name="language" value="fr"/>
-      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_120MIN')"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_2H')"/>
       <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
     </insert>
@@ -92,7 +92,7 @@
       <column name="description" value="Démystification de Quarkus et réponses aux objections courantes"/>
       <column name="language" value="fr"/>
       <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
-      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANG_FRAMEWORKS')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
     </insert>
   </changeSet>
@@ -132,7 +132,7 @@
       <column name="title" value="Créer un browser from scratch, 1 an plus tard..."/>
       <column name="description" value="Retour d'expérience sur le développement d'un navigateur"/>
       <column name="language" value="fr"/>
-      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15MIN')"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
       <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
     </insert>
@@ -143,8 +143,8 @@
       <column name="title" value="T'as vu mes docs ? Je les fait avec typst !"/>
       <column name="description" value="Découverte de typst pour la documentation"/>
       <column name="language" value="fr"/>
-      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15MIN')"/>
-      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANG_FRAMEWORKS')"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'LANGUAGE_AND_FRAMEWORK')"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
     </insert>
   </changeSet>
@@ -154,7 +154,7 @@
       <column name="title" value="L'art du DeeJaying par la pratique"/>
       <column name="description" value="Découverte de l'art du DJ à travers la pratique"/>
       <column name="language" value="fr"/>
-      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15MIN')"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
       <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
     </insert>
@@ -165,8 +165,8 @@
       <column name="title" value="Démasquer les proxy par design"/>
       <column name="description" value="Comprendre et maîtriser les patterns proxy"/>
       <column name="language" value="fr"/>
-      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15MIN')"/>
-      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DATA_AI')"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
     </insert>
   </changeSet>
@@ -209,8 +209,8 @@
       <column name="title" value="Déploiement de clusters kubernetes à grande échelle, quels outils à utiliser et comment"/>
       <column name="description" value="Workshop sur le déploiement Kubernetes à grande échelle"/>
       <column name="language" value="fr"/>
-      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_120MIN')"/>
-      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_CLOUD')"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_2H')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
     </insert>
   </changeSet>
@@ -221,7 +221,7 @@
       <column name="description" value="GitOps et gestion de clusters avec ArgoCD"/>
       <column name="language" value="fr"/>
       <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
-      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_CLOUD')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
     </insert>
   </changeSet>
@@ -232,7 +232,7 @@
       <column name="description" value="Adoption du cloud dans le secteur de la santé"/>
       <column name="language" value="fr"/>
       <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
-      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DATA_AI')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
     </insert>
   </changeSet>
@@ -273,7 +273,7 @@
       <column name="description" value="Utilisation des graphes pour tracer la provenance des données"/>
       <column name="language" value="fr"/>
       <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
-      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DATA_AI')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
     </insert>
   </changeSet>
@@ -294,8 +294,8 @@
       <column name="title" value="Mission IApossible - Arrêtez le train Lego à temps grâce à l'IA et l'Edge"/>
       <column name="description" value="Workshop IA et edge computing avec Lego"/>
       <column name="language" value="fr"/>
-      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_120MIN')"/>
-      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DATA_AI')"/>
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_2H')"/>
+      <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
       <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
     </insert>
   </changeSet>

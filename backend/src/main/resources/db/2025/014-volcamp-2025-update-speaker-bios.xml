@@ -1,0 +1,407 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+  <!-- CORRECTION FINALE - Biographies CORRECTEMENT associées aux bons speakers -->
+  
+  <changeSet id="001" author="camille.petitalot@volcamp.io">
+    <comment>CORRECTION FINALE - Mise à jour des biographies avec les BONNES associations nom/biographie</comment>
+
+    <update tableName="speakers">
+      <column name="biography" value="Entrepreneur citoyen et visionnaire, Alexandre ZAPOLSKY défend depuis près de deux décennies l’idée d’une « 3ème Voie Numérique », respectueuse des droits des usagers, éthique, inclusive et durable, capable d’apporter une alternative aux géants américains (GAFAM) ou chinois (BATX) du numérique.Passionné par les enjeux de souveraineté numérique, il n’a de cesse de convaincre qu’un autre numérique est possible. Pour lui, il n’existe aucune fatalité : la France et l’Europe peuvent construire leur autonomie numérique. Pour ce faire, il participe à de nombreux séminaires et conférences en France et dans le monde, pour partager ses convictions et les solutions pour y parvenir.En France, Alexandre, est l’une des figures de la filière numérique. Il a été pendant près de 6 ans administrateur du principal syndicat professionnel de la profession, NUMEUM (anciennement Syntec Numérique). Il a également été membre du Conseil National du Numérique."/>
+      <column name="twitter" value="https://x.com/AlexZapolsky"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/alexandrezapolsky"/>
+      <where>name = 'Alexandre Zapolsky' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Chargée de mission d'enseignement scolaire chez Pix."/>
+      <column name="linkedin" value="https://www.linkedin.com/in/emilie-goubin-86b0a6251"/>
+      <where>name = 'Emilie Goubin' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Passionée par son métier de Product Manager, par l'UX (User eXpérience) et le GameStorming, Estelle aime participer à l'élaboration d'un produit en étant le lien entre les utilisateurs et les développeurs. Speakeuse en conférence tech, membre des Duchess France, de SunnyTech et du MeetUp UX Flupa Montpellier, elle continue à se perfectionner et à discuter de nouvelles méthodes ou technologies de l'IT."/>
+      <column name="twitter" value="https://x.com/estelandry"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/estelle-landry-61866b71"/>
+      <where>name = 'Estelle Landry' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Site Reliabilty Engineer, je travaille avec des systèmes distribués au quotidien.Je suis aussi co-organisateur de conférence (Sunny Tech) et de meetups sur Montpellier !."/>
+      <column name="linkedin" value="https://www.linkedin.com/in/alexandre-burgoni"/>
+      <where>name = 'Alexandre Burgoni' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="S'électrocuter en tentant de brancher un petit moteur 12V d'un jouet Happy Meal sur du 220V. Pimper tous les PC de la famille en les démontant pièce par pièce. Obliger son petit frère à tourner des vidéos de combat de sabre laser pour YouTube. Créer toute la communication visuelle et les affiches pour ses associations. Autant d'expériences qui m'ont naturellement conduit à me tourner vers l'électronique et l'informatique. Geek, curieux et passionné, j'ai évolué du développement web au design d'interface (UX/UI) en passant par le démontage, la programmation, le montage vidéo et l'infographie."/>
+      <column name="twitter" value="https://x.com/antoinecandy"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/antoinecandy"/>
+      <where>name = 'Antoine Candy' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Helping Devs build cool stuff, learn faster, and laugh along the way — one bug at a time."/>
+      <where>name = 'Arnaud Jean' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Je suis développeur web et Python et bash et SQL, administrateur GNU/Linux et fondateur d'Hashbang et de Gentils Nuages. Hashbang est une société coopérative de développement web (principalement Python) et Gentils Nuages propose des services d'hébergement informatique avec une faible empreinte environnementale. J'ai longtemps été actif dans l'Association Francophone Python, organisateur de rencontres Python à Lyon et de conférences Python nationales."/>
+      <where>name = 'Arthur Vuillard' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Benoît est diplômé en informatique avec une spécialisation en génie logiciel et systèmes informatiques de l'ISIMA à Clermont-Ferrand. Au cours de sa carrière, il a eu l'opportunité de travailler dans des grandes entreprises telles que le CNES, où il a passé plus de 5 ans à contribuer à l'ingénierie logicielle dans le domaine spatial. Son expérience lui a permis de développer une solide expertise en matière de développement logiciel, de coordination d'équipes et de mise en place de processus de génie logiciel. Il est ensuite devenu consultant, apportant son expertise en DevOps et Cloud. Il est motivé par l'opportunité de contribuer à diverses missions tout en soutenant l'impact positif de l'entreprise. Notre engagement envers les innovations sociales et la responsabilité sociétale lui inspire à créer un impact significatif dans le domaine de la technologie. Il est passionné par la résolution de problèmes complexes et l'innovation technologique. Il a toujours été motivé par le désir de repousser les limites de ses compétences et de contribuer à des projets d'envergure. En parallèle, il a également participé activement à des projets open source, ce qui lui a permis d'élargir son champ de connaissances et de collaborer avec une communauté dynamique. Il est enthousiaste à l'idée de partager son expérience et ses connaissances, dans le but d'inspirer d'autres professionnels et d'encourager l'échange d'idées et de bonnes pratiques dans le domaine de l'ingénierie logicielle et cloud. Aujourd'hui, il a sa propre société : La Formule Nuagique, grâce à laquelle il ambitionne de se lancer dans les projets les plus fous."/>
+      <column name="linkedin" value="https://www.linkedin.com/in/christophe-arguel-a47149186"/>
+      <where>name = 'Benoît Garçon' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Solution architect at Capgemini"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/christophe-arguel-a47149186"/>
+      <where>name = 'Christophe Arguel' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Développeur logiciel embarqué depuis 2013, j ai travaillé dans différents domaines de l embarqué : Linux embarqué, OS temps réel, baremetal, environnements normés… même sur FPGA et en co-design électronique."/>
+      <where>name = 'Damien Hackett' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Depuis 15 ans, je mélange expertise technique, données et innovation. J'ai rejoint Confluent en 2021 où j'aide mes clients à adopter le streaming processing grâce aux technologies qui gravitent autour d'Apache Kafka."/>
+      <column name="twitter" value="https://x.com/danielpetisme"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/danielpetisme"/>
+      <where>name = 'Daniel Petisme' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="David est évangéliste (devrel) chez Elastic depuis 2013. Mais son autre passion se situe au niveau du Deejaying qu'il a commencé à ses 12 ans, pour la radio locale de son collège et assez rapidement pour des soirées locales sur La Rochelle. DJ Elky 🎧 House • Funk • Electro Chic. Mascotte always on tour 🐻🔥 📍Private events + bars &amp; spots parisiens"/>
+      <column name="twitter" value="https://x.com/dadoonet"/>
+      <where>name = 'David Pilato' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Dev Java à mes débuts, j’ai laissé le monde du code après quelques années pour le monde des solutions propriétaires.Après être devenue experte sur un produit du marché, je me suis focalisée sur garantir l’architecture technique du produit par rapport aux différents enjeux (standardisation, évolutions fonctionnelles, qualité de code…)."/>
+      <column name="twitter" value="https://x.com/flzara"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/emilie-bisseriex-a5937340"/>
+      <where>name = 'Emilie Bisseriex' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Titulaire de diplômes d’ingénieur français et canadien, je suis impliqué dans la communauté du logiciel libre et open source depuis 1999. J’ai travaillé pendant près de 20 ans dans une société de conseil, d’abord en tant que consultant en qualité logicielle (en endossant des rôles de manager et de commercial), puis en tant que consultant Open Source pour de grandes entreprises, les aidant en matière de gouvernance, de licences, d’Innersource, de formation, ainsi que de gestion du changement. Aujourd’hui, en tant que responsable des Services Professionnels, j’aide les membres et projets de la fondation Eclipse à mieux comprendre, gérer et maîtriser tous les aspects touchant à l’Open Source, pour notamment favoriser la collaboration et l’émergence de projets. Je participe activement aux travaux de l’OSPO Alliance.D’un point de vue personnel, je suis administrateur et membre du conseil d’administration de LinuxFr.org, site web francophone de référence sur les logiciels libres et open source. Je participe activement aux travaux de l’OSPO Alliance. D’un point de vue personnel, je suis administrateur et membre du conseil d’administration de LinuxFr.org, site web francophone de référence sur les logiciels libres et open source."/>
+      <column name="twitter" value="https://x.com/flzara"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/florentzara"/>
+      <where>name = 'Florent Zara' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Consultant pour Zenika, je suis un passionné d'informatique depuis mes 11 ans, et ait effectué mes études au cœur de l'Auvergne, à l'Université Clermont-Auvergne. Curieux de l'ensemble des champs d'application de l'informatique, j'ai profité d'une expérience de 6 ans chez BeYs Cloud pour développer mes compétences notamment liées aux infrastructures cloud, l'écosystème Golang, et à la philosophie et méthodologies DevOps. En dehors de tout ça, je suis également enseignant à l'Université Clermont-Auvergne (sur des sujets variés allant du Génie Logiciel au Cloud Computing) ; et membre du bureau de Clermont'ech, association locale Clermontoise promouvant la tech au sens général."/>
+      <where>name = 'Florian Forestier' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="I have been working in the field of computer science for over 15 years. I am interested in all areas: DevSecOps, Software Craftmanship, Security, Agility, Method, Product etc… I gained extensive experience because I had the opportunity to work for thirty different organizations. In my last experiences, I was CTO, Coach, Head of a consulting department, speaker, trainer, facilitator and event organizer. I have been a speaker for 2 years (Voxxed Days, DevOxx, DevFest Agile Tour, MixIt, JugSummerCamp, Sunny Tech, BDX.io, etc.) Currently, I am passionate about speaking coaching. In 1 year and half, I have already accompanied several 32 people especially for the preparation of TEDX, School of Product, for the contest of Miss Aquitaine, Opening Keynotes and for the springboards of speakers of Craft Records. This year, I accompagny the Craft Records association and Women In Tech Bordeaux. Since May, I challenge myself to coach a team of coaches for speaking for the &quot;Tremplin des speakers Bordeaux&quot;"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/geoffrey-graveaud-033319b0"/>
+      <where>name = 'Geoffrey Graveaud' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Guenaelle De Julis est Lead Threat R&amp;D Engineer à DataDome depuis 2023. Elle se focalise sur des solutions long termes et automatisées pour bloquer les bots et les fraudes en ligne en étudiant les anomalies dans les empreintes de requêtes, le comportement des sessions de navigation, ainsi que la détection de proxy. Elle évolue dans la cybersécurité depuis 2011, d'abord au travers d'une thèse de doctorat sur l'évaluation de l'aléa dans les composants cryptographiques, puis en se spécialisant dans la réponse à incident, les investigations forensic, la surveillance des menaces et la détection d'anomalies."/>
+      <column name="linkedin" value="https://www.linkedin.com/in/guenaelle-de-julis-711414262"/>
+      <where>name = 'Guenaelle De Julis' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Passionné par l’accompagnement des équipes et la structuration des organisations, je suis convaincu que chaque collaborateur peut s’épanouir dans un cadre clair et propice à l’innovation.Avec plus de 15 années d’expérience dans la gestion de projets et le Delivery Management, j’ai développé une expertise en méthodologies agiles, en transformation organisationnelle, et en coaching d’équipes pluridisciplinaires. Je suis curieux et de ce fait je m’intéresse à pas mal de sujets en lien de près ou de loin avec mes activités opérationnelles : Product Management, Management, Delivery, Dynamique de groupe, systémique, et bien plus encore…Je tente à mon niveau de créer des environnements sains où les personnes pourront exprimer leur plein potentiel et depuis peu je partage mes idées, les sujets qui m’intéressent, ceux sur lesquels j’ai des convictions, d’autres sur lesquels mes convictions sont en construction. Passionné."/>
+      <column name="twitter" value="https://x.com/hgomez"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/guillaume-mathieu-537888154"/>
+      <where>name = 'Guillaume Mathieu' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Je travaille dans l’industrie logicielle depuis plus de 35 ans, 2/3 dans le développement, 1/3 coté Run. J’utilise aujourd’hui cette expérience pour apporter une vision 360, qui va de la tech à l’humain pour faire des choix éclairés.Il y a fort longtemps, je suis tombé dans l’OpenSource, par conviction et évidence.Pour me changer les idées, je file dans mon labo d’électronique pour réparer tout ce qui me tombe sous la main, mon observabilité se faisant avec un multimètre et un oscillo et mes fix via un fer à souder et beaucoup de patience.Je bichonne aussi tout un tas de consoles et ordinateurs des années 80/90, avec une affection toute particulière pour mes C64. J’utilise aujourd’hui cette expérience pour apporter une vision 360, qui va de la tech à l’humain pour faire des choix éclairés. Il y a fort longtemps, je suis tombé dans l’OpenSource, par conviction et évidence. Pour me changer les idées, je file dans mon labo d’électronique pour réparer tout ce qui me tombe sous la main, mon observabilité se faisant avec un multimètre et un oscillo et mes fix via un fer à souder et beaucoup de patience. Je bichonne aussi tout un tas de consoles et ordinateurs des années 80/90, avec une affection toute particulière pour mes C64."/>
+      <column name="twitter" value="https://x.com/hgomez"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/jean-eudes-couignoux"/>
+      <where>name = 'Henri Gomez' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Développeur java, je suis passionné par la création d’application, de la récupération du besoin à la mise en production.A la frontière entre dev et ops, je m’intéresse à la fois à l’écosystème de la JVM, aux problématiques de performance et de volumétrie, mais aussi aux outils permettant de faciliter le provisionning et le déploiement d’application."/>
+      <column name="twitter" value="https://x.com/jean-eudes"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/jean-eudes-couignoux"/>
+      <where>name = 'Jean-Eudes Couignoux' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Jean-Yves LAUGEL est CTO de Deeplink Medical depuis 2016 (éditeur lyonnais de solutions e-Santé) devenu IMADIS Groupe.Manager d’une équipe tech de 35 personnes, passionné par la tech, et plus spécifiquement par le produit, son code, les process de dev, et la scalabilité de l’ensemble."/>
+      <column name="twitter" value="https://x.com/jotitan"/>
+      <where>name = 'Jean-Yves Laugel' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Développeur depuis 20 ans, j’accompagne les développeuses et développeurs au sein de l’entité “Digital Factory” chez Talan. Mon objectif est de les aider à monter en compétence et s’épanouir sur leurs projets. Je pratique régulièrement Java, Go, React, divers Cloud… chez des clients.Peu adepte des réseaux sociaux, j’ai toutefois un compte github : github.com/jotitan Développeur depuis 20 ans, j’accompagne les développeuses et développeurs au sein de l’entité “Digital Factory” chez Talan. Je pratique régulièrement Java, Go, React, divers Cloud… chez des clients. Peu adepte des réseaux sociaux, j’ai toutefois un compte github : github.com/jotitan."/>
+      <column name="twitter" value="https://x.com/jotitan"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/julien-canon-☁%EF%B8%8F☸%EF%B8%8F-55853219a"/>
+      <where>name = 'Jonathan Baranzini' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Je suis architecte Cloud chez Sfeir avec 26 ans d’ancienneté. Tombé dès le plus jeune âge dans l’informatique avec le Basic sur Oric 1, j’ai eu la chance de vivre l’émergence d’Internet et les débuts de Linux ou encore de la virtualisation avec Xen.Je suis passionné d’automatisation, de l’informatique industrielle aux infrastructure d’entreprise, il était fatal et naturel de plonger dans le cloud, les orchestrateurs et l’infra as code.J’assume une approche Kiss et progressive, tout en conservant le bon vieux système D et un esprit geek des années 80. Tombé dès le plus jeune âge dans l’informatique avec le Basic sur Oric 1, j’ai eu la chance de vivre l’émergence d’Internet et les débuts de Linux ou encore de la virtualisation avec Xen. Je suis passionné d’automatisation, de l’informatique industrielle aux infrastructure d’entreprise, il était fatal et naturel de plonger dans le cloud, les orchestrateurs et l’infra as code. J’assume une approche Kiss et progressive, tout en conservant le bon vieux système D et un esprit geek des années 80. julien-canon-☁%EF%B8%8F☸%EF%B8%8F-55853219a."/>
+      <column name="twitter" value="https://x.com/jcognet1979"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/julien-canon-☁%EF%B8%8F☸%EF%B8%8F-55853219a"/>
+      <where>name = 'Julien Canon' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Julien est directeur technique de l'agence de CGI Grenoble et compte plus de 20 années d'expérience dans la mise en œuvre de solutions applicatives et d'architectures de traitements de flux de données. Il a travaillé en particulier sur des projets IoT, Machine To Machine et manufacturing avec une technicité importante et des volumétries conséquentes de données et de traitements à réaliser. Il est sensible en particulier aux problématiques de scalabilité, performance et robustesse des systèmes mis en place. Son expérience lui permet ainsi d'accompagner ses clients à la fois dans les choix de solutions, la définition de l'architecture applicatives et techniques ainsi que dans sa mise en œuvre. Son passé de chef de projet en contexte international lui permet d'envisager tous les pans d'un projet au-delà des aspects techniques. Par ailleurs, en tant que directeur technique de l'agence de Grenoble, Julien pilote les missions de suivi et sécurisation des projets, de veille technologique, définitions de stratégie technique et d'animation de la population technique locale."/>
+      <column name="twitter" value="https://x.com/jcognet1979"/>
+      <where>name = 'Julien Cognet' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Entre grand enfant et développeur passionné, je code, je teste, et je bricole des POCs."/>
+      <column name="twitter" value="https://x.com/jduraysseix"/>
+      <where>name = 'Julien Duraysseix' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Julien Ponge is a Senior Principal Software Engineer at Red Hat, based in Lyon, France. He is primarily contributing to the reactive technologies and the Eclipse Vert.x, Mutiny and Quarkus projects. He is the author of the reference book Vert.x in Action - Reactive Java published by Manning. Before joining Red Hat, he was an Associate Professor in computer science and engineering at INSA Lyon and the CITI Laboratory where he held various teaching, research, management and executive positions. His long-standing contributions to the Java community got him elected a Java Champion."/>
+      <column name="twitter" value="https://x.com/jponge"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/julienponge"/>
+      <where>name = 'Julien Ponge' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Diplômée de Polytech Lille (2022) en Informatique et mathématiques appliquées, j'ai enchaîné sur un master en management avant de me rendre compte que je préférais avoir les mains dans le code à la gestion d'équipe. Je travaille sur un projet IoT et je peux parler de traitement de données pendant des heures (et de livres aussi, mais ça c'est une autre histoire #influenceuse)."/>
+      <column name="twitter" value="https://x.com/juliettegrillere"/>
+      <where>name = 'Juliette Grillere' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="☁️🤖Developer and craftsman in the field of information technology 🚀☕️ - Microsoft MVP Azure. With more than 10 years of experience in software analysis and design in various industry sectors I have become an expert in implementing solutions based on .NET Azure Cloud and IoT technologies. I am also passionate about innovation, new technologies and technical challenges."/>
+      <column name="twitter" value="https://x.com/kbeaugrand"/>
+      <where>name = 'Kevin Beaugrand' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Laurent Grangeau is a Cloud Solution Architect with more than 10+ years of experience. Former Java developer, he has since developed in .NET, with Agile and DevOps mindsets. He has been experimenting with cloud providers for more than 5+ years. Docker enthusiast from the beginning, he has experienced with building microservices and distributed systems. He loves to automate things and run distributed applications at scale."/>
+      <column name="twitter" value="https://x.com/laurentgrangeau"/>
+      <where>name = 'Laurent Grangeau' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Passionné par les IT de manière générale, je me suis spécialisé dans le développement et le déploiement d'applications cloud (Spring Boot/Spring Cloud/Angular, Docker/Kubernetes, GitLab/Ansible/GitLab CI). Mon appétence pour le déploiement continu et les bonnes pratiques que cela impose m'a également poussé à développer une expertise dans le domaine de la qualité logicielle (tests unitaires, tests fonctionnels, tests d'intégration, Sonar, BDD). Aujourd'hui, devenu expert des technologies de développement au sein de la société Michelin, je participe au développement et au déploiement des outils indispensables aux pratiques de développement modernes tout en promouvant les bonnes pratiques."/>
+      <column name="twitter" value="https://x.com/ldrago63"/>
+      <where>name = 'Lucas Drago' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="m4dz est un animal curieux. Ancien Frontend Dev, passionné de Devtools, il a fait du Developer eXperience (DX) son sujet de prédilection. Toutes les technologies sont sous son radar pour rendre les choses toujours plus simples. Sa devise : « Les développeurs sont avant tout des utilisateurs ». Rêveur depuis toujours, son livre préféré restera toujours « Alice's Adventures in Wonderland »."/>
+      <column name="twitter" value="https://x.com/m4dz"/>
+      <where>name = 'm4dz' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Je suis enseignant-chercheur en informatique à l'Université Clermont Auvergne. J'ai travaillé quelques années dans le privé dans le domaine de la capture de mouvements, de la Réalité Virtuelle et de la Réalité Augmentée, dans des PME ou des grands groupes, en France et en Italie. Maintenant j'enseigne à l'IUT la programmation orientée objets et l'architecture logicielle, et je fais mes travaux de recherche en RV &amp; RA à l'Institut Pascal à Clermont-Ferrand. J'aime programmer (mobile, .NET, iOS…), lire de la SF, écouter du jazz, programmer, faire du vélo et du tennis, les chats, programmer, les jeux de société et l'histoire de l'informatique."/>
+      <column name="twitter" value="https://x.com/pardaillanLeRouge"/>
+      <where>name = 'Marc Chevaldonné' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Collégien. J'aime la conception 3D, faire du code et bidouiller de l'électronique avec mon père. Fan de Jeux-Vidéo, surtout Zelda et Minecraft."/>
+      <where>name = 'Matthias Gougouzian' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="20+ ans d'expérience produit dans la MedTech Ex-CPTO et membre du comité exécutif de Medexprim Co-founder Bttrways - Fractional CPO/CTPO Docteure en traitement du signal et de l'image Professeure en Product Management à l'université"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/montaine-marteau-5438692"/>
+      <where>name = 'Montaine Marteau' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Ce que j'aime par-dessus tout, c'est transformer les idées de mes clients en projet concret. Mon terrain de jeu principal, c'est le backend, Java principalement mais j'ai aussi exploré d'autres langages de programmation par le passé C, C++, TypeScript, .. etc. Ma dernière découverte est Rust, je passe pas mal de temps à comprendre la philosophie derrière ce language fascinant. Je prends beaucoup de plaisir à remettre du sens dans le code à travers le refactoring, à relever des défis de performance (usage des resources à disposition, délais de traitement etc) et à évangéliser tout ce qui touche au craftsmanship."/>
+      <column name="twitter" value="https://x.com/NaitYoussef"/>
+      <where>name = 'Nait Belkacem Youssef' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="En tant qu'UX/UI Designer freelance, je suis convaincue que le design doit avant tout être au service des utilisateurs. J'ai fondé le studio CRAAVY, où j'accompagne les entreprises dans la construction de leur image de marque et la conception de leurs produits digitaux afin de renforcer leur positionnement et leur impact, aussi bien en ligne que dans leur communication globale. Aujourd'hui, je mets à profit mon expertise en intégrant le motion design dans mes créations, afin de concevoir des interfaces fluides, engageantes et centrées sur l'expérience utilisateur — avec une attention particulière aux détails qui font la différence."/>
+      <column name="linkedin" value="https://www.linkedin.com/in/nancy-bonicel"/>
+      <where>name = 'Nancy Bonicel' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Nastasia Fouret est consultante Data indépendante, son parcours professionnel s'est façonné à travers diverses expériences significatives. Elle a débuté en tant que statisticienne, développant son expertise durant quatre années au sein d'un laboratoire de recherche affilié à un CHU, où elle a acquis une compréhension approfondie des concepts statistiques. Depuis sept ans, Nastasia accompagne de nombreux clients en tant que consultante Data, se spécialisant dans les domaines de la Business Intelligence et de la Data."/>
+      <where>name = 'Nastasia Fouret' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Passionné d'informatique depuis plus de quinze ans, Nathanaël a travaillé comme administrateur système et réseau, puis comme ingénieur DevOps. Depuis 2024, il travaille chez Vates une entreprise française qui fait de la virtualisation en open source. En parallèle de cela il a développé quelques applications Android et iOS comme contributeur, mainteneur sous status de freelance ou de bénévole (en Flutter). Convaincu par les enjeux de respect de la vie privée, il héberge des services en ligne pour son entourage, dans le mouvement chatons et les présente sur isidorus.fr"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/nathanaël"/>
+      <where>name = 'Nathanaël Hannebert' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Devops guru @ CGWire. Nicolas Ledez travaille comme administrateur système pour CGWire et dans le passé d'autres sociétés plus ou moins grosses. Et un peu de freelance à côté. Il aime bien définir son travail comme &quot;ingénieur Lego&quot;, d'autres personnes appellent ça devops. Après plusieurs années d'expérience, il est devenu devops fullstack aka sysadmin/dev back. Il a plutôt tendance à gérer les produits par lui-même plutôt qu'à faire de la glue avec différents SaaS. Il est aussi organisateur de Rennes devops, Python Rennes et au Breizhcamp."/>
+      <where>name = 'Nicolas Ledez' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Nicolas Massé a passé les 17 dernières années à explorer divers recoins de l'IT, avec une passion particulière pour la conteneurisation, le DevOps, la sécurité, et l'Edge Computing. Après un diplôme d'ingénieur et un master en informatique, il a travaillé pour des sociétés comme CA Technologies et OpenTrust (Atos), avant de rejoindre Red Hat en tant que Principal Solution Architect. Quand il n'est pas en train de bidouiller des clusters Kubernetes ou d'automatiser des pipelines CI/CD, Nicolas monte sur scène pour partager ses découvertes, que ce soit au Red Hat Summit, à Devoxx France, ou dans des articles sur le Red Hat Developers Blog. Il est aussi bien actif dans la communauté Open Source, notamment autour de Go et Fedora. Quand il n'est pas derrière son écran, il geek sur la transition énergétique, se défoule en VTT, ou grimpe des parois d'escalade. Vous pouvez suivre ses aventures sur son blog : www.itix.fr"/>
+      <where>name = 'Nicolas Massé' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Geek, ex-nerd repenti, je code, je teste, je bricole, je soude et parfois fait sauter les plombs. CTO et spécialiste du magiciel, je suis aussi libriste dans l’âme et très impliqué dans le mouvement des logiciels libres."/>
+      <column name="twitter" value="https://x.com/ponceto91"/>
+      <where>name = 'Olivier Poncet' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Je suis Lead Tech Backend et coordinateur de nos missions d’expertise à SII Atlantique (Nantes)Je suis aussi (et surtout !) un joueur au sens large : jeux de société, jeu de rôle (maitre du jeu depuis mes 15 ans), membre fondateur d’une association de création de jeux de société et d’animations ludiques, joueur et collectionneur de cartes à jouer."/>
+      <column name="twitter" value="https://x.com/Paulo_Del_Rey"/>
+      <where>name = 'Paul Roye' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Principal Solution Architect chez DockerPassionné par le développement en Go, JavaScript et Java (un peu de Rust et de Python)Une addiction forte à tout ce qui touche à WebAssembly et à l’IA générative"/>
+      <column name="twitter" value="https://x.com/k33g"/>
+      <where>name = 'Philippe Charrière' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Co-fondateur de Lightpanda, nous développons une alternative légère à Chrome headless pour les agents IA, le web automation et le scraping.J’ai aussi la chance d’être membre de Clermont’ech."/>
+      <column name="twitter" value="https://x.com/krichprollsch"/>
+      <where>name = 'Pierre Tachoire' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Bambin de la tech, je ne cesse d’apprendre chaque jour en portant la casquette de SRE chez Lucca.J’alimente cette passion au quotidien en partageant mes découvertes et mes inspirations sur mon petit blog “une-tasse-de.cafe”. Je suis toujours disponible pour blablater autour d’un bon café !."/>
+      <column name="twitter" value="https://x.com/thebidouilleur"/>
+      <where>name = 'Quentin Joly' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Rachid is a cloud expert involved in multiple opensource experts program Docker Captain, Microsoft MVP, Snyk ambassador, …and also an international speaker and trainer.In his previous roles as head of the infrastructure team for the French registry and C.I.O of a worldwide recognized CRM and E-COMMERCE agency, he recognized the need to bring the latest technology at a production level to businesses of all sizes and founded sevensphere.Through sevensphere, Rachid offers training and consultancy for companies striving to dive into microservices container based infrastructure.Husband and father, Rachid spends his spare time, participating in a number of OSS communities, teaching cloud computing architecture at a software engineering school."/>
+      <column name="twitter" value="https://x.com/Xinity"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/romuald-priol"/>
+      <where>name = 'Rachid Zarouali' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Passionné par les enjeux du numérique responsable, je travaille depuis plus de 7 ans à sensibiliser, former et accompagner autour de sujets qui me tiennent à cœur : performance web, écoconception, *accessibilité, éthique.Lead développeur, architecte et expert en performance applicative, je combine expertise technique et engagement pour rendre les services numériques plus sobres, plus inclusifs et plus respectueux de leurs utilisateurs et de leur environnement.Au-delà de mon activité professionnelle, je contribue également à faire avancer ces thématiques à travers des partages, des initiatives collectives et des contributions à des projets ou ressources autour du numérique responsable.J’interviens régulièrement auprès de grands groupes et lors de conférences, avec l’envie de démocratiser ces sujets et de donner à chacune et chacun des clés concrètes pour agir. Passionné."/>
+      <column name="linkedin" value="https://www.linkedin.com/in/romuald-priol"/>
+      <where>name = 'Romuald Priol' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="👨‍💻 Développeur d’applications Mobiles &amp; Web ( Kotlin - Java - Flutter )Bonjour 👋Je réalise des applications mobiles et web pour les clients de l’agence hmwk que j’ai co-fondé à Clermont"/>
+      <column name="twitter" value="https://x.com/rverchere"/>
+      <where>name = 'Rémi Leclere' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Consultant Cloud Native Infrastructure, j’aide les équipes dev à mettre en production leurs applications, sur des infrastructures cloud native.D’abord chez les devs sur des solutions embarquées, j’ai au fur et à mesure de mes postes basculé chez les ops sur des solutions d’infrastructure diverses et variées. Pendant plusieurs années, j’ai bossé avec les devs et les ops, affichant une volonté de proposer des choix autour des solutions Open Source. Je suis maintenant consultant, et apporte aux entreprises mon savoir-faire sur des sujets d’automatisation et observabilité, en tant qu’ops au service des devs. Consultant Cloud Native Infrastructure, j’aide les équipes dev à mettre en production leurs applications, sur des infrastructures cloud native. D’abord chez les devs sur des solutions embarquées, j’ai au fur et à mesure de mes postes basculé chez les ops sur des solutions d’infrastructure diverses et variées."/>
+      <column name="twitter" value="https://x.com/rverchere"/>
+      <where>name = 'Rémi Verchère' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Seifeddin is a Cloud Chief Technology Officer at Sfeir, leading the Cloud infrastructure, DevOps and Security activities and managing several teams of Cloud experts.He has actually many Cloud technical Certifications (GCP, AWS, Kubernetes) and is also an experienced Google Cloud and Kubernetes Trainer.He has also been recognized, since January 2022, as a Google Developer Expert (GDE) on Google Cloud technologies."/>
+      <where>name = 'Seifeddin Mansri' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Ingénieur informatique de formation, je me suis spécialisé dans la conception d’applications mobiles. Je me suis ensuite passionné pour la conception d’interface graphique et d’expérience utilisateur, c’est pourquoi je travaille maintenant en tant que designer UX/UI.Connaissant à la fois le monde du développement et le monde du design, j’aime vulgariser mes connaissances d’un côté et de l’autre, essayant de faciliter la collaboration entre les différentes parties prenantes du projet. Je me suis ensuite passionné pour la conception d’interface graphique et d’expérience utilisateur, c’est pourquoi je travaille maintenant en tant que designer UX/UI. Connaissant à la fois le monde du développement et le monde du design, j’aime vulgariser mes connaissances d’un côté et de l’autre, essayant de faciliter la collaboration entre les différentes parties prenantes du projet."/>
+      <column name="linkedin" value="https://www.linkedin.com/in/stephanecottin"/>
+      <where>name = 'Simon Mercier' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Architecte solution fullstack / Expert technique Fullstack / Cloud AWSCrafter @ Capgemini20 ans d’expérience en 2025.Forte expertise en: Java / Spring / Spring Boot / Angular / AWSCertifié AWS"/>
+      <column name="twitter" value="https://x.com/gouz"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/stephanecottin"/>
+      <where>name = 'Stéphane Cottin' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Dev / GreenIT, Speaker, Papa geek, Eleveur de GNUsPlus d’infos sur https://gouz.dev Dev / GreenIT, Speaker, Papa geek, Eleveur de GNUs Plus d’infos sur https://gouz.dev."/>
+      <column name="twitter" value="https://x.com/gouz"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/gouz"/>
+      <where>name = 'Sylvain Gougouzian' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Sébastien a rejoint Red Hat France il y a trois ans en tant qu’architecte solutions spécialisé dans l’expérience développeur et la sécurité dans OpenShift.Il travaille dans l’informatique depuis 25 ans dans différentes entreprises, mais toujours avec les technologies OpenSource et"/>
+      <column name="twitter" value="https://x.com/titimoby"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/sebastien-lallemand"/>
+      <where>name = 'Sébastien Lallemand' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Une passion née dans les lectures, le monde informatique et électronique m’a happé dès mon ZX Spectrum pour ne jamais me lâché. Développeur de métier, du jeu vidéo au monde du master data management, j’ai aussi touché aux univers de la QA et de la mise en production. Je suis maintenant Developer Advocate, chez Dataiku, jonglant entre technique, communauté et transmission de savoirs.Comme une passion mérite toujours qu’on la transmette, j’ai fondé Mixteen pour essayer d’aider les enfants à appréhender le monde numérique.Cette envie de transmettre c’est aussi manifestée en m’amenant à prendre part à l’organisation de plusieurs MiXiT puis à cofonder le GDG Lyon. De manière parallèle, j’essaie de partager également par le biais d’articles sur mon blog et de vidéos sur ma chaîne YouTube. Je suis maintenant Developer Advocate, chez Dataiku, jonglant entre technique, communauté et transmission de savoirs. Comme une passion mérite toujours qu’on la transmette, j’ai fondé Mixteen pour essayer d’aider les enfants à appréhender le monde numérique. Cette envie de transmettre c’est aussi manifestée en m’amenant à prendre part à l’organisation de plusieurs MiXiT puis à cofonder le GDG"/>
+      <column name="twitter" value="https://x.com/titimoby"/>
+      <where>name = 'Thierry Chantier' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Développeur curieux et touche à tout, doublé d’un musicien qui a abandonné la scène pour bidouiller des synthétiseurs à coup de Rust et de fer à souder."/>
+      <column name="twitter" value="https://x.com/tiffanysouterre"/>
+      <where>name = 'Thomas Cami' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="I love science and I love data! After finishing a PhD in genetic engineering, I continued my quest for discovering new patterns through data science and machine learning.I worked for 3 years as a Data/ML Engineer and I am currently DevRel at Microsoft.Someday, I wish to leverage artificial intelligence and genetics to improve people’s lives."/>
+      <column name="twitter" value="https://x.com/tiffanysouterre"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/tonyjarriault"/>
+      <where>name = 'Tiffany Souterre' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Depuis mes premier pas en informatique, j’ai toujours été fasciné par les enjeux liés à la sécurité numérique, je suis également cloud addict. Le cloud nous apporte une très grande agilité, pour nous donner accès à l’innovation !Responsable technique pour le build et le run de plateformes infogérées, j’ai participé au coaching d’équipes sur le volet technique, ce qui me permet de présenter les sujets qui me passionnent lors d’événements publiques (Ex : Devoxx / DevFest / ..) Aujourd’hui, j’accompagne les clients dans l’adoption du cloud publique, que ce soit pour des applications B2C ou B2B qui doivent relever les challenges suivants : Securité / Finops / Green afin de limiter l’empreinte carbone des applications. Le cloud nous apporte une très grande agilité, pour nous donner accès à l’innovation ! Responsable technique pour le build et le run de plateformes infogérées, j’ai participé au coaching d’équipes sur le volet technique, ce qui me permet de présenter les sujets qui me passionnent lors d’événements publiques (Ex : Devoxx / DevFest / ..) Aujourd’hui, j’accompagne les clients dans l’adoption du cloud publique, que ce soit pour des applications B2C ou B2B qui doivent relever les challenges suivants : Securité / Finops / Green afin de limiter l’empreinte carbone des applications."/>
+      <column name="twitter" value="https://x.com/JarriaultTony"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/tonyjarriault"/>
+      <where>name = 'Tony Jarriault' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Aujourd’hui, Tech Lead chez BPI, anciennement Staff Software Engineer chez ManoMano, j’ai aussi été Directeur technique pour la société Zenika ainsi que Consultant JavaConfluent Certified Trainer (Apache Kafka)Organisateur de la conférence AlpesCraft Aujourd’hui,."/>
+      <column name="linkedin" value="https://www.linkedin.com/in/vincent-a-3925a8191"/>
+      <where>name = 'Victor Gallet' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Après un début de carrière dans une banque et un virage vers les marketplace, j’officie désormais en tant que Staff Software Engineer sur la plateforme de paiement de ManoMano.Je suis très attaché a l’amélioration continue de notre travail et de nos methodologies, je suis partisant du commencer petit et grandissons ensuite."/>
+      <column name="twitter" value="https://x.com/La_Fee_Dragee"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/vincent-a-3925a8191"/>
+      <where>name = 'Vincent Aubrun' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Après avoir travaillé plus de 10 ans dans le secteur du paiement par carte bancaire depuis le développement jusqu’au support exploitant en passant par les tests, je suis aujourd’hui Customer Success dans le domaine de la cybersécurité.Couteau suisse de la tech, touche à tout et curieuse, j’aime apprendre mais aussi partager mes connaissances. Je suis également membre de l’équipe d’organisation de la conférence SnowCamp à Grenoble. Après avoir travaillé plus de 10 ans dans le secteur du paiement par carte bancaire depuis le développement jusqu’au support exploitant en passant par les tests, je suis aujourd’hui Customer Success dans le domaine de la cybersécurité. Couteau suisse de la tech, touche à tout et curieuse, j’aime apprendre mais aussi partager mes connaissances."/>
+      <column name="twitter" value="https://x.com/La_Fee_Dragee"/>
+      <column name="linkedin" value="https://www.linkedin.com/in/yulianna-khorolich"/>
+      <where>name = 'Virginie Pageaud' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Hi everyone! My name is Yulianna, and I am a Solutions Architect [Data &amp; ML] at SFEIR.Even though I’ve always had a soft spot for data, I got the chance to participate in all phases of the software development lifecycle in my career path.At the moment, I enable data-driven decision-making by creating simple solutions that are easily maintainable, cost-effective, well-documented and documented, and most importantly, documented."/>
+      <column name="linkedin" value="https://www.linkedin.com/in/yulianna-khorolich"/>
+      <where>name = 'Yulianna Khorolich' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+
+    <update tableName="speakers">
+      <column name="biography" value="Lead developer chez SensioLabs"/>
+      <where>name = 'Benjamin Georgeault' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+
+    <update tableName="speakers">
+      <column name="biography" value="Équipe organisatrice de Volcamp"/>
+      <where>name = 'Volcamp team' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+  </changeSet>
+
+</databaseChangeLog>

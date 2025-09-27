@@ -1,0 +1,83 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+  <changeSet id="001" author="camille.petitalot@volcamp.io">
+    <comment>Fix missing format_id for talks that were created without proper format references</comment>
+    
+    <!-- Workshop talks (2h format) -->
+    <update tableName="talks">
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_2H')"/>
+      <where>title = 'Créez votre premier microservices en Rust' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+    
+    <update tableName="talks">
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_2H')"/>
+      <where>title = 'L''IOT pour 5 ans et + - Atelier d''initiation sur carte micro:bit' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+    
+    <update tableName="talks">
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_1h45M')"/>
+      <where>title = 'Déploiement de clusters kubernetes à grande échelle, quels outils à utiliser et comment' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+    
+    <update tableName="talks">
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_1h45M')"/>
+      <where>title = 'Mission IApossible - Arrêtez le train Lego à temps grâce à l''IA et l''Edge' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+    
+    <update tableName="talks">
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_1h45M')"/>
+      <where>title = 'Quoi ? Vous n''utilisez pas Figma ?!?' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+    
+    <update tableName="talks">
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'WORKSHOP_1h45M')"/>
+      <where>title = 'Workshop async-profiler' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+    
+    <!-- Lightning talks (15 min format) -->
+    <update tableName="talks">
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <where>title = 'Créer un browser from scratch, 1 an plus tard...' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+    
+    <update tableName="talks">
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <where>title = 'T''as vu mes docs ? Je les fait avec typst !' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+    
+    <update tableName="talks">
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <where>title = 'L''art du DeeJaying par la pratique' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+    
+    <update tableName="talks">
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <where>title = 'Démasquer les proxy par design' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+    
+    <update tableName="talks">
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <where>title = 'Plan B activé - Gérer une panne régionale par IaC' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+    
+    <update tableName="talks">
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <where>title = 'Donjons et Pythons - la chevaleresse à la rescousse' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+    
+    <update tableName="talks">
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <where>title = 'Informatique quantique - Préparez vous à l''éruption !!!' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+    
+    <update tableName="talks">
+      <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'LIGHTNING_15M')"/>
+      <where>title = 'Ce projet né dans la chambre d''un enfant de 7 ans' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+    </update>
+    
+  </changeSet>
+</databaseChangeLog>

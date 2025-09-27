@@ -21,3 +21,36 @@
 .actionButton
   width: -webkit-fill-available
 
+.openFeedbackContainer
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  margin: 8px 8px
+
+.openFeedbackLink
+  display: flex
+  align-items: center
+  gap: 12px
+  text-decoration: none
+  color: inherit
+  padding: 16px 24px
+  border-radius: 12px
+  transition: all 0.3s ease
+  border: 2px solid
+  background: linear-gradient(135deg, rgba(111, 198, 96, 0.1) 0%, rgba(79, 153, 63, 0.1) 100%)
+  
+  // Utilisation des couleurs du thème Volcamp
+  border-color: #6fc660  // Couleur primaire (500)
+  
+  &:hover
+    background: linear-gradient(135deg, rgba(111, 198, 96, 0.2) 0%, rgba(79, 153, 63, 0.2) 100%)
+    border-color: #4f993f  // Couleur accent (500)
+    transform: translateY(-2px)
+    box-shadow: 0 4px 12px rgba(111, 198, 96, 0.3)
+
+.volcanoIcon
+  width: 32px
+  height: 32px
+  object-fit: contain
+

@@ -1,0 +1,329 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+  <!-- Correction des URLs des photos des speakers -->
+  
+  <changeSet id="001" author="camille.petitalot@volcamp.io">
+    <comment>Mise à jour des URLs des photos des speakers avec les vraies images du site Volcamp</comment>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/44.jpg"/>
+      <where>name = 'Alexandre Burgoni'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/AZ.jpg"/>
+      <where>name = 'Alexandre Zapolsky'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/2.jpg"/>
+      <where>name = 'Antoine Candy'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/34.jpg"/>
+      <where>name = 'Arnaud Jean'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/48.jpg"/>
+      <where>name = 'Arthur Vuillard'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/42.jpg"/>
+      <where>name = 'Benjamin Georgeault'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/14.jpg"/>
+      <where>name = 'Benoît Garçon'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/24.jpg"/>
+      <where>name = 'Christophe Arguel'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/15.jpg"/>
+      <where>name = 'Damien Hackett'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/56.jpg"/>
+      <where>name = 'Daniel Petisme'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/12.jpg"/>
+      <where>name = 'David Pilato'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/53.jpg"/>
+      <where>name = 'Emilie Bisseriex'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/EG.jpg"/>
+      <where>name = 'Emilie Goubin'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/EL.jpg"/>
+      <where>name = 'Estelle Landry'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/47.jpg"/>
+      <where>name = 'Florent Zara'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/20.jpg"/>
+      <where>name = 'Florian Forestier'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/32.jpg"/>
+      <where>name = 'Geoffrey Graveaud'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/13.jpg"/>
+      <where>name = 'Guenaelle De Julis'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/59.jpg"/>
+      <where>name = 'Guillaume Mathieu'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/23.jpg"/>
+      <where>name = 'Henri Gomez'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/8.jpg"/>
+      <where>name = 'Jean-Eudes Couignoux'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/52.jpg"/>
+      <where>name = 'Jean-Yves Laugel'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/6.jpg"/>
+      <where>name = 'Jonathan Baranzini'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/49.jpg"/>
+      <where>name = 'Julien Canon'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/50.jpg"/>
+      <where>name = 'Julien Cognet'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/17.jpg"/>
+      <where>name = 'Julien Duraysseix'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/19.jpg"/>
+      <where>name = 'Julien Ponge'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/16.jpg"/>
+      <where>name = 'Juliette Grillere'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/31.jpg"/>
+      <where>name = 'Kevin Beaugrand'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/29.jpg"/>
+      <where>name = 'Laurent Grangeau'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/30.jpg"/>
+      <where>name = 'Lucas Drago'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/43.jpg"/>
+      <where>name = 'm4dz'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/22.jpg"/>
+      <where>name = 'Marc Chevaldonné'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/54.jpg"/>
+      <where>name = 'Matthias Gougouzian'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/37.jpg"/>
+      <where>name = 'Montaine Marteau'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/9.jpg"/>
+      <where>name = 'Nait Belkacem Youssef'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/57.jpg"/>
+      <where>name = 'Nancy Bonicel'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/38.jpg"/>
+      <where>name = 'Nastasia Fouret'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/46.jpg"/>
+      <where>name = 'Nathanaël Hannebert'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/27.jpg"/>
+      <where>name = 'Nicolas Ledez'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/5.jpg"/>
+      <where>name = 'Nicolas Massé'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/26.jpg"/>
+      <where>name = 'Olivier Poncet'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/36.jpg"/>
+      <where>name = 'Paul Roye'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/18.jpg"/>
+      <where>name = 'Philippe Charrière'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/10.jpg"/>
+      <where>name = 'Pierre Tachoire'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/39.jpg"/>
+      <where>name = 'Quentin Joly'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/4.jpg"/>
+      <where>name = 'Rachid Zarouali'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/45.jpg"/>
+      <where>name = 'Romuald Priol'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/51.jpg"/>
+      <where>name = 'Rémi Leclere'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/21.jpg"/>
+      <where>name = 'Rémi Verchère'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/58.jpg"/>
+      <where>name = 'Seifeddin Mansri'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/3.jpg"/>
+      <where>name = 'Simon Mercier'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/25.jpg"/>
+      <where>name = 'Stéphane Cottin'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/55.jpg"/>
+      <where>name = 'Sylvain Gougouzian'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/60.jpg"/>
+      <where>name = 'Sébastien Lallemand'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/41.jpg"/>
+      <where>name = 'Thierry Chantier'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/7.jpg"/>
+      <where>name = 'Thomas Cami'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/33.jpg"/>
+      <where>name = 'Tiffany Souterre'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/28.jpg"/>
+      <where>name = 'Tony Jarriault'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/1.jpg"/>
+      <where>name = 'Victor Gallet'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/40.jpg"/>
+      <where>name = 'Vincent Aubrun'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/11.jpg"/>
+      <where>name = 'Virginie Pageaud'</where>
+    </update>
+    
+    <update tableName="speakers">
+      <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/35.jpg"/>
+      <where>name = 'Yulianna Khorolich'</where>
+    </update>
+    
+  </changeSet>
+
+</databaseChangeLog>

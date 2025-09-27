@@ -41,7 +41,7 @@
   </changeSet>
 
   <changeSet id="005" author="camille.petitalot@volcamp.io">
-    <comment>Planning Jour 2 - 10h15 Slot 1 - Créativité</comment>
+    <comment>Planning Jour 2 - 10h15 Slot 1 - FABLAB</comment>
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Intégration d''un produit du marché dans un écosystème d''entreprise - retour sur notre développeur expérience' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'FABLAB' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
@@ -86,7 +86,7 @@
   </changeSet>
 
   <changeSet id="010" author="camille.petitalot@volcamp.io">
-    <comment>Planning Jour 2 - 11h30 Slot 2 - Créativité</comment>
+    <comment>Planning Jour 2 - 11h30 Slot 2 - FABLAB</comment>
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Makers de Père en Fils' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'FABLAB' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
@@ -167,7 +167,7 @@
   </changeSet>
 
   <changeSet id="019" author="camille.petitalot@volcamp.io">
-    <comment>Planning Jour 2 - 14h45 Slot 3 - Créativité</comment>
+    <comment>Planning Jour 2 - 14h45 Slot 3 - FABLAB</comment>
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = '4 ans de télé-travail total. Retours d''expérience, défis et bonnes pratiques' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'FABLAB' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
@@ -203,7 +203,7 @@
   </changeSet>
 
   <changeSet id="023" author="camille.petitalot@volcamp.io">
-    <comment>Planning Jour 2 - 15h30 Slot 4 - Créativité</comment>
+    <comment>Planning Jour 2 - 15h30 Slot 4 - FABLAB</comment>
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Animer sans surcharger - le Motion Design au service de l''UX' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'FABLAB' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
@@ -239,7 +239,7 @@
   </changeSet>
 
   <changeSet id="027" author="camille.petitalot@volcamp.io">
-    <comment>Planning Jour 2 - 16h45 Slot 5 - Créativité</comment>
+    <comment>Planning Jour 2 - 16h45 Slot 5 - FABLAB</comment>
     <insert tableName="plannings">
       <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'État des Lieux de la Souveraineté du Cloud - Des Clouds Publics aux Clouds Confidentiels' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
       <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'FABLAB' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>

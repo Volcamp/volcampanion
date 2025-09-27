@@ -1,0 +1,194 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- TALK: Et si vous interrogiez le recruteur ? -->
+    <changeSet id="001" author="camille.petitalot@volcamp.io">
+        <comment>Ajout du talk "Et si vous interrogiez le recruteur ?" avec speakers et planning</comment>
+        <insert tableName="talks">
+            <column name="title" value="Et si vous interrogiez le recruteur ? - Les bonnes questions pour choisir votre prochaine aventure professionnelle"/>
+            <column name="description" value="Changer de poste ou d'entreprise est une décision majeure dans une carrière. Pourtant, lors des entretiens, les candidats se concentrent souvent sur leurs réponses plutôt que sur leurs questions. Et si vous utilisiez ce moment pour comprendre si l'entreprise répond vraiment à vos aspirations ? Explorons ensemble une démarche concrète et structurée pour poser les bonnes questions aux recruteurs. Vous découvrirez : Comment évaluer la culture d'entreprise, le management et les perspectives offertes. Une grille de lecture pour analyser les réponses obtenues. Les erreurs à éviter lors de ces échanges. Repartez avec des outils directement applicables pour choisir votre prochaine aventure professionnelle avec confiance et lucidité."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DISCOVERY')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+            <column name="open_feedback_url" value="https://openfeedback.io/ip5uawISaJ66uRrHB8L5/2025-10-02/d1t3s4"/>
+        </insert>
+        <insert tableName="speakers">
+            <column name="name" value="Henri Gomez"/>
+            <column name="email" value=" "/>
+            <column name="company" value=""/>
+            <column name="biography" value="Je travaille dans l'industrie logicielle depuis plus de 35 ans, 2/3 dans le développement, 1/3 coté Run. J'utilise aujourd'hui cette expérience pour apporter une vision 360, qui va de la tech à l'humain pour faire des choix éclairés. Il y a fort longtemps, je suis tombé dans l'OpenSource, par conviction et évidence. Pour me changer les idées, je file dans mon labo d'électronique pour réparer tout ce qui me tombe sous la main, mon observabilité se faisant avec un multimètre et un oscillo et mes fix via un fer à souder et beaucoup de patience. Je bichonne aussi tout un tas de consoles et ordinateurs des années 80/90, avec une affection toute particulière pour mes C64."/>
+            <column name="twitter" value="https://x.com/hgomez"/>
+            <column name="linkedin" value=""/>
+            <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/henri_gomez.jpg"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+        </insert>
+        <insert tableName="speakers">
+            <column name="name" value="Guillaume Mathieu"/>
+            <column name="email" value=" "/>
+            <column name="company" value=""/>
+            <column name="biography" value="Passionné par l'accompagnement des équipes et la structuration des organisations, je suis convaincu que chaque collaborateur peut s'épanouir dans un cadre clair et propice à l'innovation. Avec plus de 15 années d'expérience dans la gestion de projets et le Delivery Management, j'ai développé une expertise en méthodologies agiles, en transformation organisationnelle, et en coaching d'équipes pluridisciplinaires. Je suis curieux et de ce fait je m'intéresse à pas mal de sujets en lien de près ou de loin avec mes activités opérationnelles : Product Management, Management, Delivery, Dynamique de groupe, systémique, et bien plus encore… Je tente à mon niveau de créer des environnements sains où les personnes pourront exprimer leur plein potentiel et depuis peu je partage mes idées, les sujets qui m'intéressent, ceux sur lesquels j'ai des convictions, d'autres sur lesquels mes convictions sont en construction."/>
+            <column name="twitter" value=""/>
+            <column name="linkedin" value="https://www.linkedin.com/in/guillaume-mathieu-537888154"/>
+            <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/guillaume_mathieu.jpg"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+        </insert>
+        <insert tableName="speakers_talk">
+            <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Et si vous interrogiez le recruteur ? - Les bonnes questions pour choisir votre prochaine aventure professionnelle' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Henri Gomez' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+        </insert>
+        <insert tableName="speakers_talk">
+            <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Et si vous interrogiez le recruteur ? - Les bonnes questions pour choisir votre prochaine aventure professionnelle' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Guillaume Mathieu' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+        </insert>
+        <insert tableName="plannings">
+            <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Et si vous interrogiez le recruteur ? - Les bonnes questions pour choisir votre prochaine aventure professionnelle' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="schedule" value="2025-10-02 16:45"/>
+        </insert>
+    </changeSet>
+
+    <!-- TALK: IA Générative dans votre backend - Spring AI et MCP -->
+    <changeSet id="002" author="camille.petitalot@volcamp.io">
+        <comment>Ajout du talk "IA Générative dans votre backend - Spring AI et MCP" avec speakers et planning</comment>
+        <insert tableName="talks">
+            <column name="title" value="IA Générative dans votre backend - Simple et sans prise de tête avec Spring AI et MCP !"/>
+            <column name="description" value="L'intégration de l'intelligence artificielle générative dans un backend, autrefois perçue comme une chimère, est désormais une réalité étonnamment accessible, même pour les non-experts ! La clé de cette transformation ? Le Model Context Protocol (MCP), développé par Anthropic (Claude). Mais d'ailleurs, pourquoi mettre une IA dans son backend ou pourquoi mettre son backend dans une IA ? Ce talk vous propose d'y repondre avec une plongée concrète dans l'utilisation du MCP, en l'associant à la puissance du framework Spring avec son nouveau module &quot;AI&quot;. Celui-ci simplifie l'intégration de LLMs et d'autres services d'IA dans vos applications Spring Boot. Au cours de cette session, vous découvrirez comment : Démarrer rapidement avec un LLM local grâce à l'installation et l'utilisation d'Ollama ; Maîtriser les fondamentaux de Spring AI : architecture, connecteurs vers des LLM populaires (OpenAI, Ollama, etc.), techniques de prompting efficaces, du RAG avec des vector stores et utilisation des &quot;tools&quot; (rassurez-vous, ce n'est pas si effrayant !) ; Comprendre l'essentiel du Model Context Protocol (MCP) : sa définition et son rôle crucial dans des microservices boostés par l'IA ; Assister à une démonstration pratique d'un cas d'utilisation concret implémentant des serveurs et clients MCP : Et si on voulait des informations de son SI en temps réel provenant d'une IA ? On parie que ce soir, vous serez déjà en train de coder vos propres serveurs MCP ? 😉"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'BIGDATA_AND_AI')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+            <column name="open_feedback_url" value="https://openfeedback.io/ip5uawISaJ66uRrHB8L5/2025-10-02/d1t1s9"/>
+        </insert>
+        <insert tableName="speakers">
+            <column name="name" value="Stéphane Cottin"/>
+            <column name="email" value=" "/>
+            <column name="company" value=""/>
+            <column name="biography" value="Architecte solution fullstack / Expert technique Fullstack / Cloud AWS. Crafter @ Capgemini. 20 ans d'expérience en 2025. Forte expertise en: Java / Spring / Spring Boot / Angular / AWS. Certifié AWS Associate architecte 2024"/>
+            <column name="twitter" value="https://x.com/stephanecottin"/>
+            <column name="linkedin" value=""/>
+            <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/stephane_cottin.jpg"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+        </insert>
+        <insert tableName="speakers">
+            <column name="name" value="Christophe Arguel"/>
+            <column name="email" value=" "/>
+            <column name="company" value=""/>
+            <column name="biography" value="Solution architect at Capgemini"/>
+            <column name="twitter" value=""/>
+            <column name="linkedin" value="https://www.linkedin.com/in/christophe-arguel-a47149186"/>
+            <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/christophe_arguel.jpg"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+        </insert>
+        <insert tableName="speakers_talk">
+            <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'IA Générative dans votre backend - Simple et sans prise de tête avec Spring AI et MCP !' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Stéphane Cottin' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+        </insert>
+        <insert tableName="speakers_talk">
+            <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'IA Générative dans votre backend - Simple et sans prise de tête avec Spring AI et MCP !' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Christophe Arguel' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+        </insert>
+        <insert tableName="plannings">
+            <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'IA Générative dans votre backend - Simple et sans prise de tête avec Spring AI et MCP !' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'AUDITORIUM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="schedule" value="2025-10-02 17:45"/>
+        </insert>
+    </changeSet>
+
+    <!-- TALK: Les pires défaillances téléradiologie -->
+    <changeSet id="003" author="camille.petitalot@volcamp.io">
+        <comment>Ajout du talk "Les pires défaillances téléradiologie" avec speaker et planning</comment>
+        <insert tableName="talks">
+            <column name="title" value="Les pires défaillances (logicielles) en 10 ans de téléradiologie d'urgence"/>
+            <column name="description" value="Quand nos pires cauchemars se réalisent et qu'ils pénalisent les patients… En 10 ans nous sommes passés de 0 à 100 000 🚀 examens d'imagerie par mois (dont 50% d'urgences). Certains représentent des 🚨urgences vitales (AVC, trauma, etc). En tant qu'éditeur de logiciels, nous avions conscience de nos responsabilités, et pensions avoir tout fait pour minimiser les risques. Mais quand l'imprévisible se produit, il faut avoir les nerfs solides, et réagir au quart de tour. Retour sur nos expériences malheureuses, nos erreurs, et nos incidents les plus insolites. Vous verrez du code (pas beaucoup), des alignements de planètes malheureux (#pelleteuse), des heures qui n'existent pas, des blackout de datacenter, et des effets de bord dignes des plus obscurs côtés de l'informatique… Vous verrez comment on les a traité et quelles mesures correctives et préventives ont été prises. Accrochez-vous bien !"/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'ARCHI_PERF_AND_SECU')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+            <column name="open_feedback_url" value="https://openfeedback.io/ip5uawISaJ66uRrHB8L5/2025-10-02/d1t3s8"/>
+        </insert>
+        <insert tableName="speakers">
+            <column name="name" value="Jean-Yves Laugel"/>
+            <column name="email" value=" "/>
+            <column name="company" value=""/>
+            <column name="biography" value="Jean-Yves LAUGEL est CTO de Deeplink Medical depuis 2016 (éditeur lyonnais de solutions e-Santé) devenu IMADIS Groupe. Manager d'une équipe tech de 35 personnes, passionné par la tech, et plus spécifiquement par le produit, son code, les process de dev, et la scalabilité de l'ensemble."/>
+            <column name="twitter" value=""/>
+            <column name="linkedin" value=""/>
+            <column name="photo_link" value="https://www.volcamp.io/asset/images/speakers/jean_yves_laugel.jpg"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+        </insert>
+        <insert tableName="speakers_talk">
+            <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Les pires défaillances (logicielles) en 10 ans de téléradiologie d''urgence' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Jean-Yves Laugel' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+        </insert>
+        <insert tableName="plannings">
+            <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Les pires défaillances (logicielles) en 10 ans de téléradiologie d''urgence' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'FABLAB' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="schedule" value="2025-10-02 16:45"/>
+        </insert>
+    </changeSet>
+
+    <!-- TALK: Un cluster de production en un éclair avec Talos -->
+    <changeSet id="004" author="camille.petitalot@volcamp.io">
+        <comment>Ajout du talk "Un cluster de production en un éclair avec Talos" avec speaker et planning</comment>
+        <insert tableName="speakers">
+            <column name="name" value="Quentin Joly"/>
+            <column name="email" value=" "/>
+            <column name="biography" value="Bambin de la tech, je ne cesse d'apprendre chaque jour en portant la casquette de SRE chez Lucca. J'alimente cette passion au quotidien en partageant mes découvertes et mes inspirations sur mon petit blog &quot;une-tasse-de.cafe&quot;. Je suis toujours disponible pour blablater autour d'un bon café !"/>
+            <column name="twitter" value="https://x.com/thebidouilleur"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+        </insert>
+        <insert tableName="talks">
+            <column name="title" value="Un cluster de production en un éclair avec Talos ⚡️☸️"/>
+            <column name="description" value="Durant le déploiement de vos clusters, vous êtes-vous déjà posé les questions suivantes : Où j'installe mes nœuds ? Ai-je des dépendances liées à la plateforme utilisée ? (ex : VM, Kubernetes managés…) Comment bootstrap mon cluster (kOPS ? KubeSpray ? Kubeadm ?) ? Comment gérer proprement les mises à jour de mes nœuds ? En combien de temps puis-je recréer mon cluster (PRA) ? Comment mettre à jour mon cluster Kubernetes sans me prendre la tête ? De nombreuses questions dont la réponse est toujours &quot;ça dépend&quot; 🫠​. L'objectif de ce talk est alors de vous montrer comment nous avons réussi à répondre à la majorité de ces questions avec un seul et même outil : Talos. C'est une distribution minimaliste et immuable dédiée à la création de nœuds Kubernetes qui écourtera vos sessions de déploiement ⌛! Que vous soyez développeur, SRE, ou juste curieux : vous ne souffrirez plus de l'installation de vos clusters, qu'ils soient en dev, ou en production 🤩 Spoiler : votre RSSI va adorer."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+            <column name="open_feedback_url" value="https://openfeedback.io/ip5uawISaJ66uRrHB8L5/2025-10-02/d1t2s8"/>
+        </insert>
+        <insert tableName="speakers_talk">
+            <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Un cluster de production en un éclair avec Talos ⚡️☸️' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Quentin Joly' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+        </insert>
+        <insert tableName="plannings">
+            <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Un cluster de production en un éclair avec Talos ⚡️☸️' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'SHOWROOM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="schedule" value="2025-10-02 16:45"/>
+        </insert>
+    </changeSet>
+
+    <!-- TALK: Les métriques sont précieuses - REX monitoring -->
+    <changeSet id="005" author="camille.petitalot@volcamp.io">
+        <comment>Ajout du talk "Les métriques sont précieuses - REX monitoring" avec speaker et planning</comment>
+        <insert tableName="speakers">
+            <column name="name" value="Vincent Aubrun"/>
+            <column name="email" value=" "/>
+            <column name="biography" value="Après un début de carrière dans une banque et un virage vers les marketplace, j'officie désormais en tant que Staff Software Engineer sur la plateforme de paiement de ManoMano. Je suis très attaché a l'amélioration continue de notre travail et de nos methodologies, je suis partisant du commencer petit et grandissons ensuite."/>
+            <column name="linkedin" value="https://www.linkedin.com/in/vincent-a-3925a8191"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+        </insert>
+        <insert tableName="talks">
+            <column name="title" value="Les métriques sont précieuses, mais savoir quoi en faire l'est encore plus 💪 REX sur la construction d'un monitoring"/>
+            <column name="description" value="La collecte de métriques est devenue une habitude dans la mise en place de solutions logicielles, cependant, on se retrouve facilement noyé sous la variété et la quantité de données à disposition. Elles sont parfois difficiles à interpréter, à corréler et ne servent aussi bien souvent qu'a l'investigation après qu'un incident se soit déclaré. Et puis il y a aussi cette fameuse question &quot;Hey, comment ça se passe en production en ce moment ?&quot; à laquelle il est parfois compliqué de répondre. En sortie de covid, nous avons reconstruit tout le système de paiement de ManoMano, qui est une pièce essentielle pour une marketplace. Ainsi, en plus de concevoir le nouveau système, nous avons également consacré un temps considérable à concevoir et à mettre en œuvre l'observabilité et la surveillance de nos nouveaux microservices. Je vous propose d'explorer la méthodologie que nous avons suivis afin d'être en capacité de détecter les comportement anormaux de notre système, qu'il soit techniques ou fonctionnels."/>
+            <column name="language" value="fr"/>
+            <column name="format_id" valueComputed="(SELECT id FROM talk_formats WHERE name = 'CONFERENCE_45MIN')"/>
+            <column name="theme_id" valueComputed="(SELECT id FROM talk_themes WHERE name = 'DEVOPS_AND_CLOUD')"/>
+            <column name="conference_id" valueComputed="(SELECT id FROM conferences WHERE name = 'Volcamp 2025')"/>
+            <column name="open_feedback_url" value="https://openfeedback.io/ip5uawISaJ66uRrHB8L5/2025-10-02/d1t2s9"/>
+        </insert>
+        <insert tableName="speakers_talk">
+            <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Les métriques sont précieuses, mais savoir quoi en faire l''est encore plus 💪 REX sur la construction d''un monitoring' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="speaker_id" valueComputed="(SELECT id FROM speakers WHERE name = 'Vincent Aubrun' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+        </insert>
+        <insert tableName="plannings">
+            <column name="talk_id" valueComputed="(SELECT id FROM talks WHERE title = 'Les métriques sont précieuses, mais savoir quoi en faire l''est encore plus 💪 REX sur la construction d''un monitoring' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="room_id" valueComputed="(SELECT id FROM rooms WHERE name = 'SHOWROOM' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025'))"/>
+            <column name="schedule" value="2025-10-02 17:45"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

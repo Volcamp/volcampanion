@@ -18,6 +18,7 @@ public class TalkDTO {
     private TalkFormatDTO format;
     private List<SpeakerDTO> speakers;
     private UserFeedbackTalkDTO feedback;
+    private String openFeedbackUrl;
 
 }
 

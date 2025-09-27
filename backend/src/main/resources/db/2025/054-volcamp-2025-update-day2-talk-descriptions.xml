@@ -1,0 +1,81 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Mise à jour de toutes les descriptions de talks du jour 2 -->
+    
+    <changeSet id="001" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Another World architecture logicielle</comment>
+        <update tableName="talks">
+            <column name="description" value="Sorti il y a près de 35 ans, en 1991, le jeu Another World est bien plus qu'un jeu culte : c'est une prouesse tant technique qu'artistique. Portée par la vision singulière d'Éric Chahi, alors jeune développeur d'à peine 22 ans, sa réalisation cache une architecture logicielle très audacieuse et résolument moderne : une machine virtuelle sur mesure pensée pour contourner les limites matérielles de l'époque, faciliter le développement et le portage, tout en offrant une expérience de qualité cinématographique jusqu'alors inédite. Dans ce talk nous décortiquerons l'architecture logicielle de ce jeu vidéo culte, en explorant les choix de conception, sa machine virtuelle et son langage intermédiaire. Nous verrons comment cette approche visionnaire a permis à ce jeu culte d'être porté à travers les décennies, jusqu'à mon portage pour le faire fonctionner dans un navigateur web grâce au WebAssembly. Une belle leçon d'architecture logicielle qui pourrait vous inspirer pour vos développements …"/>
+            <where>title = 'Another World, une belle leçon d''architecture logicielle' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="002" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - TUI Terminal dévore UI</comment>
+        <update tableName="talks">
+            <column name="description" value="Lassé·es des interfaces graphiques gourmandes en ressources et complexes à utiliser ? Vous n'avez pas de temps à perdre entre votre terminal et un navigateur web ? Découvrez le pouvoir de l'interface utilisateur textuelle (Textual User Interface) ! Nous explorerons l'univers des TUI et leur potentiel pour enrichir les applications en ligne de commande. En partant d'une CLI simple, je vous montrerai comment intégrer des éléments de TUI pour créer une expérience utilisateur plus intuitive et interactive. Je vous proposerai un aperçu de quelques frameworks TUI populaires tels que Textual, BubbleTea et Ratatui, respectivement pour les langages Python, Golang et Rust. Que vous ayez une grande maîtrise du développement ou que vous soyez novice, ce talk vous montrera comment ces frameworks pourront vous aider à créer des interfaces utilisateur textuelles de nouvelle génération. Vous repartirez donc : en sachant ce que les TUI peuvent vous apporter, avec un tour d'horizon de solutions pour en développer vous même, avec des exemples concrets de code. Et n'oubliez pas : ne quittez plus le confort de votre terminal quand les TUI sont là pour vous !"/>
+            <where>title = 'Quand le Terminal dévore la UI - TUI pour tout le monde !' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="003" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Intégration produit marché écosystème entreprise</comment>
+        <update tableName="talks">
+            <column name="description" value="Dans ce retour d'expérience, je partagerai comment au sein d'un équipe en charge de la configuration d'un outil du marché nous avons intégré ce dernier dans notre écosystème d'entreprise en appliquant les pratiques software engineer. Explication du contexte organisationnel et technique. Dans cette partie, j'aborderai le contexte organisationnel de l'équipe ainsi que l'aspect technique de notre produit du marché: Squad build, Notre job pour paramétrer cet outil (config + code propriétaire), Macro build &amp; delivery model. Travail sur un socle autour du build &amp; delivery avec pour objectif principal l'amélioration du time to market : Code quality -&gt; Automatiser les revues de code et partager les métriques de projet avec des solutions basées sur du Python 🐍 et GitLab pages. Lib partagées -&gt; Comment nous avons su appliquer ce modèle à un produit du marché pour minimiser nos efforts de développement en appliquant un workflow git compatible avec notre produit et Docusaurus 🦖 pour une doc-as-code. Test automatisés -&gt; Squish + Python + Splunk : notre trio de choc pour des tests automatisés. Métriques d'usage -&gt; L'effet kiss-cool des bibliothèques partagées &gt; analyse croisée des usages de nos instances avec une heatmap dans Splunk."/>
+            <where>title = 'Intégration d''un produit du marché dans un écosystème d''entreprise - retour sur notre développeur expérience' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="004" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Microservices Rust</comment>
+        <update tableName="talks">
+            <column name="description" value="Rust est probablement le langage le plus excitant de ces dernières années. Il souffre toutefois d'une réputation qui le cantonne parfois aux outils bas niveau. Dans cette présentation, nous vous montrerons qu'en plus de répondre aux problématiques bas niveau, Rust se prête très bien à la création d'une application REST. Dans un premier temps, nous commencerons par une introduction à Rust (30 minutes) pour explorer les concepts de base : ownership, borrowing, structs, enums, traits… Ensuite, sous forme d'exercice, nous vous ferons créer pas à pas une application moderne : un modèle métier au cœur de l'architecture, la persistance dans une base de données SQL, l'exposition sous forme d'API REST, la collecte de logs et de métriques OTLP"/>
+            <where>title = 'Créez votre premier microservices en Rust' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="005" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - RFID MIFARE flipper0</comment>
+        <update tableName="talks">
+            <column name="description" value="Pas besoin d'être un génie du hacking ou de porter un sweat à capuche pour comprendre comment fonctionnent les badges MIFARE et autres périphériques RFID. Avec un peu de matériel – voire juste un smartphone – on peut en apprendre beaucoup… et faire bien plus que vous ne l'imaginez. Alors, comment ça marche ? Quels sont les risques ? Et surtout, comment se protéger efficacement ? Si vous développez des produits utilisant ces technologies, quelques bonnes pratiques peuvent faire toute la différence. Prêt à plonger dans les coulisses du RFID ? C'est parti. 🚀"/>
+            <where>title = '🔓 RFID, MIFARE, chambre d''hôtel et flipper0 - décryptage sans contact' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="006" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Dagger couteau suisse CI/CD</comment>
+        <update tableName="talks">
+            <column name="description" value="Les pipelines CI/CD sont souvent synonymes de fichiers YAML interminables, de configurations rigides et de débogages laborieux. Changeons de paradigme ! Conçu par les créateurs de Docker, Dagger propose d'écrire vos pipelines avec votre langage de prédilection : Go, TypeScript, PHP, Java, etc… et de les exécuter dans des conteneurs Docker. Fini les « ça marche chez moi » : lancer/testez votre CI/CD partout, même localement ! Venez découvrir comment cet outil peut simplifier vos processus CI/CD."/>
+            <where>title = 'Dagger, le couteau suisse de la CI/CD moderne ?' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="007" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Makers Père Fils</comment>
+        <update tableName="talks">
+            <column name="description" value="Transmettre sa passion n'est pas une obligation, mais quand votre enfant est curieux et veut faire &quot;comme Papa&quot;, alors pourquoi se brider ? Dans ce talk, Matthias, mon fils de 12 ans, et moi-même allons vous faire un retour d'expérience sur notre projet de 2025 : Kord. Ce projet a pour but de reproduire un équivalent aux Nabaztag, objets connectés de la fin des années 2000 avec une Raspberry Pico et de l'impression 3D. Nous vous expliquerons les différentes démarches, étapes, et points de discordes, … la vie d'un projet quoi ;) Nous vous ferrons également un retour tout du long sur comment partager sa passion autour du making (objets connectés, programmation, conception 3D, impression) et d'essayer d'éco-concevoir la solution."/>
+            <where>title = 'Makers de Père en Fils' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="008" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Plan B panne régionale IaC</comment>
+        <update tableName="talks">
+            <column name="description" value="Imaginez un instant : il est 3 heures du matin, votre infrastructure cloud fonctionne parfaitement, vos applications tournent sans accroc. Soudain, une panne régionale survient, rendant une partie de vos services inaccessibles. Comment réagir ? Comment garantir la continuité de vos opérations face à une telle situation ? Dans ce talk de 15 minutes, nous explorerons comment structurer votre Infrastructure as Code (IaC) pour assurer sa résilience face aux pannes régionales. Nous nous appuierons sur des outils tels que Terraform et Terragrunt pour mettre en place une architecture capable de s'adapter rapidement aux imprévus. Points clés abordés : Compréhension des pannes régionales : Analyse des causes potentielles et de leurs impacts sur les infrastructures cloud. Organisation modulaire par région : Mise en place de modules Terragrunt spécifiques à chaque région pour une gestion isolée et flexible. Gestion des états Terraform : Séparation des états par région afin de minimiser les risques lors des déploiements et des mises à jour. Scénarios de basculement : Démonstration de la désactivation d'une région et du basculement automatique vers une autre, sans interruption significative des services. À travers des exemples concrets et des démonstrations pratiques, vous découvrirez comment anticiper les pannes régionales et adapter votre IaC en conséquence. L'objectif est de vous fournir des stratégies efficaces pour maintenir la disponibilité de vos services, même en cas de défaillance majeure."/>
+            <where>title = 'Plan B activé - Gérer une panne régionale par IaC' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+    <changeSet id="009" author="camille.petitalot@volcamp.io">
+        <comment>Mise à jour description - Donjons Pythons chevaleresse</comment>
+        <update tableName="talks">
+            <column name="description" value="Il était une fois une équipe de chevaliers qui se lança dans une quête pour connecter des robots. Sur leur chemin, ils rencontrèrent un monstre terrible : un Python, long de 5000 lignes, qui les bloquait dans leur progression. Heureusement, la chevaleresse data était là ! Elle leur suggéra quelques techniques de combat… A partir d'une histoire vraie, je te raconte comment j'ai totalement changé la gestion de la data sur un projet, et les différentes façons de faire remonter des données ! Plutôt streaming ou batch ? Tu le sauras à la fin !"/>
+            <where>title = 'Donjons et Pythons - la chevaleresse à la rescousse' AND conference_id = (SELECT id FROM conferences WHERE name = 'Volcamp 2025')</where>
+        </update>
+    </changeSet>
+
+</databaseChangeLog>

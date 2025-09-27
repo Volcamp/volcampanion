@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {DividerPlanning} from "../data/dto/input/DividerPlanning";
+import {BehaviorSubject, Observable} from 'rxjs';
 
 export const storageKey: string = 'favorites';
 export const datesKey: string = 'dates';
@@ -9,6 +10,10 @@ export const daysKey: string = 'days';
   providedIn: 'root'
 })
 export class LocalStorageFavoriteService {
+  
+  // Observable pour notifier les changements dans les favoris
+  private favoritesChangedSubject = new BehaviorSubject<any[]>(this.getFavoriteListInternal());
+  public favoritesChanged$: Observable<any[]> = this.favoritesChangedSubject.asObservable();
 
   constructor() {
   }
@@ -46,15 +51,22 @@ export class LocalStorageFavoriteService {
   setFavoriteList(objectList: any[]): void {
     const serializedList = JSON.stringify(objectList); // Convertir la liste d'objets en JSON
     localStorage.setItem(storageKey, serializedList); // Stocker la liste dans le localStorage
+    // Notifier les changements
+    this.favoritesChangedSubject.next(objectList);
   }
 
-  // Méthode pour récupérer la liste d'objets depuis le localStorage
-  getFavoriteList(): any[] {
+  // Méthode interne pour récupérer la liste d'objets depuis le localStorage
+  private getFavoriteListInternal(): any[] {
     const serializedList = localStorage.getItem(storageKey); // Récupérer la liste depuis le localStorage
     if (serializedList) {
       return JSON.parse(serializedList); // Convertir le JSON en tableau d'objets
     }
     return []; // Retourne une liste vide si aucune donnée n'est trouvée
+  }
+
+  // Méthode publique pour récupérer la liste d'objets depuis le localStorage
+  getFavoriteList(): any[] {
+    return this.getFavoriteListInternal();
   }
 
   setDaysList(objectList: any[]): void {
