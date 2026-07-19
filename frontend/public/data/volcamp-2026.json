@@ -1,0 +1,1552 @@
+{
+  "edition": {
+    "name": "Volcamp",
+    "year": 2026,
+    "openFeedbackUrl": "https://openfeedback.io/ip5uawISaJ66uRrHB8L5",
+    "website": "https://www.volcamp.io",
+    "cfpUrl": "https://conference-hall.io/volcamp-2026",
+    "ticketUrl": "https://www.billetweb.fr/volcamp-2026",
+    "days": [
+      "2026-10-01",
+      "2026-10-02"
+    ]
+  },
+  "speakers": [
+    {
+      "id": "adrien-gooris",
+      "name": "Adrien Gooris",
+      "photoUrl": "img/speakers/adrien-gooris.webp",
+      "bioHtml": "<p>Développeur Java depuis le tout début, il s&#39;est de plus en plus rapproché de la ligne de commande jusqu&#39;à devenir admin Kubernetes, puis Architecte pour la Software Supply Chain chez Michelin.</p>\n<p>La dernière IHM digeste qu&#39;il a développée, c&#39;était en Java Swing.</p>\n<p>Sujets favoris : Containers, Cloud, CICD, IaC, Dev, IA</p>",
+      "twitter": "murdockk59"
+    },
+    {
+      "id": "alexandre-burgoni",
+      "name": "Alexandre Burgoni",
+      "photoUrl": "img/speakers/alexandre-burgoni.webp",
+      "bioHtml": "<p>Site Reliabilty Engineer, il travaille avec des systèmes distribués au quotidien.</p>\n<p>Il est aussi co-organisateur de conférence (Sunny Tech) et de meetups sur Montpellier.</p>",
+      "github": "AlexandreBrg",
+      "linkedin": "alexandre-burgoni"
+    },
+    {
+      "id": "alexandre-touret",
+      "name": "Alexandre Touret",
+      "photoUrl": "img/speakers/alexandre-touret.webp",
+      "bioHtml": "<p>Avec plus de vingt ans d&#39;expérience en tant qu&#39;architecte logiciel, il est passionné par la technologie, le Cloud computing et le développement logiciel.</p>\n<p>Tout au long de sa carrière, il a eu l&#39;occasion de concevoir, construire et gérer des systèmes de différentes tailles dans divers secteurs, comme l&#39;assurance, les services financiers et la mobilité.</p>\n<p>Il apprécie de partager ses connaissances et expériences à la communauté, que ce soit par l&#39;enseignement, les interventions lors de conférences, l&#39;organisation d&#39;ateliers pratiques ou la rédaction d&#39;articles.</p>\n<p>Blog: <a href=\"https://blog.touret.info\">https://blog.touret.info</a></p>",
+      "github": "alexandre-touret",
+      "linkedin": "atouret"
+    },
+    {
+      "id": "alicia-cheynoux",
+      "name": "Alicia Cheynoux",
+      "photoUrl": "img/speakers/alicia-cheynoux.webp",
+      "bioHtml": "<p>Delivery Leader chez Michelin.</p>",
+      "linkedin": "alicia-cheynoux-157ab815b"
+    },
+    {
+      "id": "alix-olphe-galliard",
+      "name": "Alix Olphe-Galliard",
+      "photoUrl": "img/speakers/alix-olphe-galliard.webp",
+      "bioHtml": "<p>Tombée dans la marmite du développement un peu par hasard il y a plus de 10 ans, elle est aujourd’hui Lead Développeuse Fullstack chez Tyredating.</p>\n<p>De fil en aiguille, les rencontres avec des personnes passionnées ont transformé ce hasard en une passion qu’elle n’avait pas prévue.</p>",
+      "linkedin": "alixolphegalliard"
+    },
+    {
+      "id": "anthony-pena",
+      "name": "Anthony Pena",
+      "photoUrl": "img/speakers/anthony-pena.webp",
+      "bioHtml": "<p>Codeur et blogueur le jour et dévoreur de manga la nuit, on le verra souvent parler de Java, JavaScript, Typescript, Rust ou de test, parfois un peu (beaucoup) de jeux-vidéos ou de bricolage de console.</p>",
+      "twitter": "_Anthony_Pena",
+      "github": "kuroidoruido"
+    },
+    {
+      "id": "antoine-sabot-durand",
+      "name": "Antoine Sabot-Durand",
+      "photoUrl": "img/speakers/antoine-sabot-durand.webp",
+      "bioHtml": "<p>Antoine est Java Champion et l’ancien spec lead de Jakarta EE CDI.</p>\n<p>Il a également fait partie de l’équipe de lancement de Quarkus chez Red Hat et a travaillé sur des specifications  MicroProfile majeures comme Fault Tolerance ou Health Check.</p>\n<p>Aujourd’hui, Antoine est architecte et expert technique chez  SCIAM.</p>\n<p>Il pilote des projets complexes en utilisant en grande partie les technologies qu’il a contribué à mette au point.</p>",
+      "github": "antoinesd",
+      "linkedin": "antoinesabotdurand"
+    },
+    {
+      "id": "arnaud-jean",
+      "name": "Arnaud Jean",
+      "photoUrl": "img/speakers/arnaud-jean.webp",
+      "bioHtml": "<p>Il aide les développeurs à construire des trucs cools, à apprendre plus vite et à rire en chemin — un bug à la fois.</p>",
+      "twitter": "TheWitcherish",
+      "github": "TheWitcherish",
+      "linkedin": "TheWitcherish"
+    },
+    {
+      "id": "aurelie-vache",
+      "name": "Aurélie Vache",
+      "photoUrl": "img/speakers/aurelie-vache.webp",
+      "bioHtml": "<p>Aurélie Vache est Developer Advocate chez OVHcloud à Toulouse, en France.</p>\n<p>Elle est reconnue comme Docker Captain, ambassadrice CNCF, Google Cloud Developer Expert et Women techmakers Ambassador.</p>\n<p>Elle travaille en tant que développeuse et Ops depuis plus de 20 ans.</p>\n<p>Passionnée de Cloud, elle promeut les bonnes pratiques DevOps/Cloud/Golang.</p>\n<p>Rédactrice technique (dev.to/aurelievache), autrice et relectrice de livres, sketchnoteuse et conférencière lors de conférences internationales.</p>\n<p>Créatrice et mainteneuse de <a href=\"https://developers.events/\">https://developers.events/</a>, une plateforme collaborative et open-source qui agrège et référence les conférences/événements et opportunités d&#39;appels à conférenciers (CFP) axés sur les développeurs et la tech à travers le monde, aidant les conférenciers, organisateurs, sponsors et participants.</p>\n<p>Elle a créé une nouvelle manière visuelle d&#39;apprendre et de comprendre les technologies Cloud : « Understanding Kubernetes/Istio/Docker/Kyverno in a visual way » sous forme de sketchnotes, de livres et de vidéos.</p>\n<p>Blog: <a href=\"https://dev.to/aurelievache/\">https://dev.to/aurelievache/</a> YouTube: <a href=\"https://www.youtube.com/c/AurelieVache\">https://www.youtube.com/c/AurelieVache</a></p>",
+      "twitter": "aurelievache",
+      "github": "scraly"
+    },
+    {
+      "id": "benjamin-georgeault",
+      "name": "Benjamin Georgeault",
+      "photoUrl": "img/speakers/benjamin-georgeault.webp",
+      "bioHtml": "<p>Lead developer chez SensioLabs</p>",
+      "twitter": "wedgesama",
+      "linkedin": "benjamin-georgeault-67212172"
+    },
+    {
+      "id": "brice-miard",
+      "name": "Brice Miard",
+      "photoUrl": "img/speakers/brice-miard.webp",
+      "bioHtml": "<p>Lead Tech Data au sein du département IoT chez Hager, il transforme depuis 10 ans la donnée en leviers opérationnels.</p>\n<p>Son expertise s&#39;est forgée dans les télécoms, l&#39;énergie et le transport, où il a dirigé des stratégies de connaissance client et de services.</p>\n<p>Sa priorité est de concevoir des solutions Data &amp; IA structurées dès le départ pour la production afin de garantir un impact métier réel et durable.</p>\n<p>Son approche combine une expertise dans les bonnes pratiques de développement (CI/CD) et une méthodologie centrée utilisateur pour extraire la valeur marketing des flux de données.</p>",
+      "linkedin": "brice-miard-6a659897"
+    },
+    {
+      "id": "charles-sabourdin",
+      "name": "Charles Sabourdin",
+      "photoUrl": "img/speakers/charles-sabourdin.webp",
+      "bioHtml": "<p>Charles Sabourdin  Investi depuis longtemps dans l’informatique, Linuxiens, Javaiste et viscéralement DevOps-iens, Charles Sabourdin est architecte indépendant.</p>\n<p>Régulièrement en charge de problématiques d’architecture, de sécurité et de production.</p>\n<p>Il travaille sur des missions agile et de production, d’assistance direction, de développement et d’opérations vers un but commun: l’amélioration du processus de delivery et l’expérience utilisateur.</p>\n<p>Depuis un certain temps il se focalise sur Kubernetes et Java</p>",
+      "linkedin": "charles-s-bb2737"
+    },
+    {
+      "id": "charles-meldhine-madi-mnemoi",
+      "name": "Charles-Meldhine Madi Mnemoi",
+      "photoUrl": "img/speakers/charles-meldhine-madi-mnemoi.webp",
+      "bioHtml": "<p>Charles-Meldhine est développeur IA freelance chez LexisNexis.</p>\n<p>Il a été le mainteneur principal du projet open-source eMush et contributeur occasionnel à l&#39;écosystème Python entre 2022 et 2025.</p>",
+      "github": "cmnemoi",
+      "linkedin": "madi-mnemoi-charles-meldhine-python"
+    },
+    {
+      "id": "coenen-benjamin",
+      "name": "Coenen Benjamin",
+      "photoUrl": "img/speakers/coenen-benjamin.webp",
+      "bioHtml": "<p>Software engineer @ Supabase.</p>\n<p>Il est tombé amoureux du développement informatique en écrivant de l&#39;assembleur sur des microcontrôleurs.</p>\n<p>Il a toujours principalement travaillé autour des dev tools.</p>\n<p>Toujours en recherche de comprendre ce qu&#39;il se passe sous le capot, il passe une bonne partie de son temps à écrire du Rust et optimiser les performances de son code.</p>\n<p>« Opensource everything » est son mantra.</p>\n<p>Il adore partager et contribuer dans la communauté tech et open source.</p>\n<p>Il a notamment beaucoup contribué à Rust analyzer qui est le LSP (language server protocol) officiel de Rust.</p>\n<p>Il a implémenté un runtime en Rust chez Apollo GraphQL (le Router) qui permet d&#39;exécuter du GraphQL (Federation) en mode micro service.</p>\n<p>Il contribue aussi activement à l&#39;éditeur de code Zed et différents projets Rust chez Supabase.</p>",
+      "twitter": "bnj25",
+      "github": "bnjjj"
+    },
+    {
+      "id": "cynthia-treger",
+      "name": "Cynthia Treger",
+      "photoUrl": "img/speakers/cynthia-treger.webp",
+      "bioHtml": "<p>Global Black Belt chez Microsoft, elle aide les équipes à y voir clair dans le cloud networking.</p>",
+      "twitter": "cynthiatreger",
+      "github": "cynthiatreger",
+      "linkedin": "cynthia-treger-6663402"
+    },
+    {
+      "id": "damien-hackett",
+      "name": "Damien Hackett",
+      "photoUrl": "img/speakers/damien-hackett.webp",
+      "bioHtml": "<p>Développeur logiciel embarqué depuis 2013, il a travaillé dans différents domaines de l&#39;embarqué : Linux embarqué, OS temps réel, baremetal, environnements normés... même sur FPGA et en co-design électronique.</p>",
+      "linkedin": "damien-hackett-34aa0662"
+    },
+    {
+      "id": "david-santiago",
+      "name": "David Santiago",
+      "photoUrl": "img/speakers/david-santiago.webp",
+      "bioHtml": "<p>Passionné de tech, il est spécialisé dans le Cloud Networking, l&#39;infrastructure et l&#39;automatisation.</p>\n<p>Cloud Solution Architect @Microsoft.</p>",
+      "twitter": "dawlysd",
+      "github": "davidsntg"
+    },
+    {
+      "id": "delphin-aubin",
+      "name": "Delphin Aubin",
+      "photoUrl": "img/speakers/delphin-aubin.webp",
+      "bioHtml": "<p>Fan de web, il développe avec passion depuis plus de 15 ans.</p>\n<p>Curieux de nature, il aime beaucoup savoir comment les choses fonctionnent et regarder sous le capot des outils que nous utilisons tous les jours.</p>\n<p>Enfin, comme il aime le partage, il est speaker et buveur de bière à ses heures perdues :)</p>",
+      "github": "delphinaubin",
+      "linkedin": "delphin-aubin-3858a243"
+    },
+    {
+      "id": "emmanuel-hugonnet",
+      "name": "Emmanuel Hugonnet",
+      "photoUrl": "img/speakers/emmanuel-hugonnet.webp",
+      "bioHtml": "<p>Emmanuel travaille chez IBM sur le projet WildFly.</p>\n<p>Il essaye de rendre la vie des développeurs plus simple que ca soit via des IDE (Apache NetBeans), Eclipse Che ou différents outils ou en organisant des conférences dans le cadre de l&#39;AlpesJUG.</p>\n<p>Il contribue à langchain4j-cdi, a2a-java (le SDK java pour le protocol A2A) et au WildFly AI Feature pack.</p>",
+      "twitter": "ehsavoie",
+      "github": "ehsavoie"
+    },
+    {
+      "id": "florent-zara",
+      "name": "Florent Zara",
+      "photoUrl": "img/speakers/florent-zara.webp",
+      "bioHtml": "<p>Titulaire de diplômes d&#39;ingénieur français et canadien, il est impliqué dans la communauté du logiciel libre et open source depuis 1999.</p>\n<p>Il a travaillé pendant près de 20 ans dans une société de conseil, d&#39;abord en tant que consultant en qualité logicielle (en endossant des rôles de manager et de commercial), puis en tant que consultant Open Source pour de grandes entreprises, les aidant en matière de gouvernance, de licences, d&#39;Innersource, de formation, ainsi que de gestion du changement.</p>\n<p>Aujourd&#39;hui, en tant qu&#39;Open Source Services Team Lead, il aide les membres et projets de la fondation Eclipse à mieux comprendre, gérer et maîtriser tous les aspects touchant à l&#39;Open Source, pour notamment favoriser la collaboration et l&#39;émergence de projets.</p>\n<p>Il participe activement aux travaux de l&#39;Open Source Alliance.</p>\n<p>D&#39;un point de vue personnel, il est administrateur et membre du conseil d&#39;administration de LinuxFr.org, site web francophone de référence sur les logiciels libres et open source.</p>",
+      "twitter": "flzara",
+      "linkedin": "florentzara"
+    },
+    {
+      "id": "florian-cahais",
+      "name": "Florian Cahais",
+      "photoUrl": "img/speakers/florian-cahais.webp",
+      "bioHtml": "<p>Tech Lead Backend &amp; DevOps consultant chez Sopra Steria, il a une dizaine d&#39;années d&#39;expérience dans l&#39;ingénierie logicielle.</p>\n<p>Il aime avoir une vision complète des systèmes du code jusqu&#39;à l&#39;infra et surtout résoudre de vrais problèmes avec des solutions concrètes. 🛠️</p>\n<p>La tech le passionne autant pour ce qu&#39;elle permet de construire que pour les casse-têtes qu&#39;elle impose. 🧠</p>\n<p>Crossfitteur et juge CrossFit certifié 🏋️, fier Cantalou et Auvergnat 🌋, il est aussi rarement le dernier à dire non à une petite bière 🍺</p>",
+      "linkedin": "florian-cahais-344860a6"
+    },
+    {
+      "id": "florian-leux",
+      "name": "Florian Leux",
+      "photoUrl": "img/speakers/florian-leux.webp",
+      "bioHtml": "<p>Florian Leux est ingénieur frontend depuis 2014 !</p>\n<p>Il travaille depuis 2022 chez BackMarket en tant que Senior Frontend Engineer.</p>\n<p>En dehors du code, il est illustrateur et aime inclure cette activité dans la création de présentations illustrées et immersives.</p>",
+      "linkedin": "florian-leux-255b9384"
+    },
+    {
+      "id": "guenaelle-de-julis",
+      "name": "Guenaelle De Julis",
+      "photoUrl": "img/speakers/guenaelle-de-julis.webp",
+      "bioHtml": "<p>Guenaelle De Julis est Lead Threat R&amp;D Engineer à DataDome depuis 2023.</p>\n<p>Elle se focalise sur des solutions long termes et automatisées pour bloquer les bots et les fraudes en ligne en étudiant les anomalies dans les empreintes de requêtes, le comportement des sessions de navigation, ainsi que la détection de proxy.</p>\n<p>Elle évolue dans la cybersécurité depuis 2011, d&#39;abord au travers d&#39;une thèse de doctorat sur l&#39;évaluation de l&#39;aléa dans les composants cryptographiques, puis en se spécialisant dans la réponse à incident, les investigations forensic, la THreat Intelligence et la détection d&#39;anomalies.</p>",
+      "linkedin": "guenaelle-de-julis-711414262"
+    },
+    {
+      "id": "helene-gebel",
+      "name": "Hélène Gebel",
+      "photoUrl": "img/speakers/helene-gebel.webp",
+      "bioHtml": "<p>Un peu touche à tout, parce que motivée par l&#39;envie d&#39;apprendre.</p>\n<p>Elle s&#39;est plongée dans l&#39;IT après avoir été dans la finance, la politique et la santé.</p>\n<p>Mais l&#39;éthique, c&#39;est sa colonne vertébrale depuis 15 ans, alors elle partage au maximum.</p>\n<p>Ses interventions ont pour objectifs de provoquer, stimuler et faire réagir en partant d&#39;exemples concrets.</p>",
+      "linkedin": "hélène-gebel-70875541"
+    },
+    {
+      "id": "horacio-gonzalez",
+      "name": "Horacio Gonzalez",
+      "photoUrl": "img/speakers/horacio-gonzalez.webp",
+      "bioHtml": "<p>Malgré ce que son accent espagnol bien prononcé peut suggérer, Horacio est arrivé en France il y a plus d&#39;une vingtaine d&#39;années.</p>\n<p>Passionné d&#39;informatique, dans laquelle il est tombé depuis tout petit, il a découvert le développement web en 1997 et depuis il n&#39;a pas arrêté de bosser autour.</p>\n<p>Horacio est VP de DevRel chez <a href=\"https://clever-cloud.com\">Clever Cloud</a>.</p>\n<p>Il est cofondateur du  <a href=\"https://twitter.com/finistdevs/\">FinistDevs</a>, et des <a href=\"https://twitter.com/RdvSpeakers\">Rdv des Speakers</a>.</p>\n<p>Passionné par le développement web et tout ce qui gravite autour des composants web et des standards web, Horacio aime aussi discuter de Kubernetes, AI et le cloud en général.</p>",
+      "twitter": "LostInBrittany",
+      "github": "LostInBrittany"
+    },
+    {
+      "id": "iuliia-mazur",
+      "name": "Iuliia Mazur",
+      "photoUrl": "img/speakers/iuliia-mazur.webp",
+      "bioHtml": "<p>Iuliia Mazur  est Data &amp; IA Engineer / Thélio</p>\n<p>Issue d&#39;un parcours scientifique (PhD), elle a opéré une transition vers la Data Science après 15 ans passés dans la recherche et l&#39;analyse de données complexes.</p>\n<p>Aujourd&#39;hui en mission chez Hager Group, elle se spécialise dans la conception d&#39;architectures Lakehouse et le développement de systèmes multi-agents (RAG, SQL agents) pour valoriser la télémétrie industrielle.</p>\n<p>Au quotidien sur l&#39;écosystème Databricks, elle intervient sur l&#39;ensemble du cycle de vie de la donnée : de l&#39;ingestion de séries temporelles complexes à l&#39;application de l&#39;IA générative pour l&#39;efficacité énergétique.</p>\n<p>Passionnée par les nouvelles technologies, elle aime partager ses retours d&#39;expérience sur l&#39;orchestration de pipelines et les agents intelligents, comme lors de ses récentes interventions en meetups techniques (MTG).</p>",
+      "linkedin": "iuliia-mazur"
+    },
+    {
+      "id": "jean-michel-doudoux",
+      "name": "Jean-Michel Doudoux",
+      "photoUrl": "img/speakers/jean-michel-doudoux.webp",
+      "bioHtml": "<p>Passionné par le développement de logiciels et par la veille technologique, il possède une longue expérience, en SSII/ESN et personnelle, dans l&#39;écriture d&#39;applications avec différents langages.</p>\n<p>Il est actuellement Directeur technique pour la société Sciam.</p>\n<p>Utilisant Java depuis sa version 1.0, il aime partager sa passion pour cette plateforme et son écosystème notamment en se consacrant, depuis presque vingt cinq années, à la rédaction de deux tutoriels, intitulés &quot;Développons en Java&quot;, diffusés sous licence GNU FDL.</p>\n<p>Ce travail lui a permis d&#39;être nommé Java Champion.</p>\n<p>Il est également un des cofondateurs du Lorraine JUG.</p>",
+      "twitter": "jmdoudoux",
+      "linkedin": "jmdoudoux"
+    },
+    {
+      "id": "jerome-masson",
+      "name": "Jérôme Masson",
+      "photoUrl": "img/speakers/jerome-masson.webp",
+      "bioHtml": "<p>Il est passionné par les pratiques cloud-native et DevOps, et possède plus de huit ans d&#39;expérience pratique dans les domaines de Kubernetes, de la conteneurisation, de l&#39;automatisation et de la sécurité.</p>\n<p>En tant que responsable technique et consultant, il conçoit et gère des plateformes Kubernetes sécurisées sur les clouds AWS, Azure, GCP et Flexible Engine.</p>\n<p>Il aime créer des environnements CI/CD évolutifs qui se transforment en plateformes Developer Experience (DevEx) fluides.</p>\n<p>Il est également fier de diriger des communautés Kubernetes dynamiques et de partager les meilleures pratiques pour aider les équipes à réussir leur transition DevOps.</p>\n<p>Fort d&#39;une expertise approfondie, il adore innover et résoudre des défis complexes.</p>\n<p>La formation et le mentorat d&#39;étudiants et de professionnels en informatique sont des domaines qui le passionnent particulièrement.</p>\n<p>Il intervient régulièrement lors de conférences sur des sujets tels que la sécurité Zero Trust, le DevSecOps et les outils cloud-native, animé par un engagement envers l&#39;apprentissage et l&#39;amélioration continus.</p>\n<p>Il se consacre à repousser les limites de la technologie et à aider les autres à évoluer en chemin.</p>",
+      "twitter": "sphinxgaiaone",
+      "github": "Sphinxgaia"
+    },
+    {
+      "id": "julien_briault",
+      "name": "Julien Briault",
+      "photoUrl": "img/speakers/julien_briault.webp",
+      "bioHtml": "<p>Ingénieur Réseau / SRE chez Deezer la journée, et manager d’infrastructure bénévole aux Restos du Cœur le soir, il est un peu le Batman de l’IT : un clavier pour le boulot, un autre pour les Restos.</p>\n<p>Passionné par l’informatique, il a décidé d&#39;ajouter un peu d’humanité sur un métier souvent déconnecté de la réalité … !</p>\n<p>À côté de ça, il est DJ et producteur de musique – donc si vous le croisez en festival, il ne déploie pas un serveur, il mixe.</p>",
+      "twitter": "ju_hnny5",
+      "linkedin": "julien-briault-441539137"
+    },
+    {
+      "id": "keurcien-luu",
+      "name": "Keurcien Luu",
+      "photoUrl": "img/speakers/keurcien-luu.webp",
+      "bioHtml": "<p>Il travaille depuis 8 ans chez Choose en tant que full stack data et travaille depuis 2 ans sur des problématiques d&#39;IA générative.</p>\n<p>Depuis un an, il cherche à progresser en prise de parole, même si cela fait bien longtemps qu&#39;il s&#39;est rendu compte que celle-ci lui fait grandement défaut au quotidien.</p>\n<p>Pendant sa thèse, il a eu l&#39;opportunité de faire du monitorat dans une prépa intégrée où il s&#39;est rendu compte que la forme desservait complètement le fond.</p>\n<p>Malgré une bonne formation scientifique, il pense avoir manqué de pratique sur la prise de parole en public.</p>",
+      "linkedin": "keurcien-luu-2569ba50?originalSubdomain=fr"
+    },
+    {
+      "id": "kevin-beaugrand",
+      "name": "Kévin Beaugrand",
+      "photoUrl": "img/speakers/kevin-beaugrand.webp",
+      "bioHtml": "<p>Expert IA et architecte logiciel chez CGI, Kevin Beaugrand accompagne depuis plus de 16 ans des organisations dans la conception, la modernisation et l’industrialisation de systèmes logiciels complexes.</p>\n<p>Spécialiste des technologies .NET, Azure et des architectures orientées IA, il intervient aujourd’hui sur des sujets mêlant modernisation applicative, agents IA, automatisation du développement logiciel et transformation des pratiques d’ingénierie.</p>\n<p>Au sein de la Business Unit Auvergne-Rhône-Alpes de CGI, il pilote des initiatives autour de l’IA générative et des systèmes autonomes appliqués au delivery logiciel : rétro-documentation de patrimoines legacy, migration de code, génération de tests, automatisation des corrections et mise en place de véritables “factories IA” intégrées dans les chaînes de production.</p>\n<p>Passionné par l’innovation et les défis techniques, Kevin travaille en étroite collaboration avec les grands éditeurs technologiques afin d’explorer les usages concrets et industriels de l’IA, avec une approche pragmatique centrée sur la qualité, la sécurité et la mise en production réelle.</p>\n<p>Reconnu par Microsoft depuis 2021 en tant que Microsoft Most Valuable Professional (MVP) dans la catégorie “Developper technologies”, il partage régulièrement ses retours d’expérience lors de conférences et accompagne également la montée en compétence des équipes à travers des programmes de formation dédiés à l’IA et aux nouvelles pratiques d’ingénierie logicielle.</p>",
+      "linkedin": "kbeaugrand"
+    },
+    {
+      "id": "laurent-picard",
+      "name": "Laurent Picard",
+      "photoUrl": "img/speakers/laurent-picard.webp",
+      "bioHtml": "<p>Il est un développeur passionné par tout ce qui façonne notre futur.</p>\n<p>Dans une vie antérieure, il a été pionnier de l&#39;industrie du livre numérique et cofondateur de Bookeen.</p>\n<p>Aujourd&#39;hui explorateur cloud chez Google Paris, il parcourt les frontières de l&#39;innovation et prend un plaisir fou à partager le monde des possibles.</p>",
+      "twitter": "PicardParis",
+      "linkedin": "PicardParis"
+    },
+    {
+      "id": "lionel-heymans",
+      "name": "Lionel Heymans",
+      "photoUrl": "img/speakers/lionel-heymans.webp",
+      "bioHtml": "<p>CTO hands‑on et architecte technique, il industrialise des produits tech exigeants pour les rendre plus rapides, plus fiables et moins dépendants de l’infrastructure.</p>\n<p>Avec presque 30 ans d’expérience entre startups, PME et grands comptes, il intervient quand il faut remettre de l’ordre, réduire les coûts et construire des systèmes qui tiennent dans la durée.</p>\n<p>Il a piloté des transformations majeures : performances multipliées ×18 pour un leader du retail sport, charge réseau divisée par 6 pour une grande maison française de sportswear, et division par 4 des besoins infra pour une administration.</p>\n<p>Sa méthode : souveraineté, sobriété, transmission.</p>\n<p>Membre du collectif The Green Compagnon, il défend une tech plus responsable, plus simple et plus robuste.</p>\n<p>Récompensé au CES 2017 pour 42tea et lauréat de plusieurs prix d’innovation, il place la performance durable au cœur de chaque projet.</p>",
+      "linkedin": "lionelheymans"
+    },
+    {
+      "id": "lucas-audart",
+      "name": "Lucas Audart",
+      "photoUrl": "img/speakers/lucas-audart.webp",
+      "bioHtml": "<p>Lucas Audart est développeur Frontend lyonnais, spécialisé dans l&#39;écosystème React / Next chez Kolecto.</p>\n<p>Passionné par son métier, il aime creuser les outils qui font son quotidien comme TanStack Query ou React, et partager ce qu&#39;il apprend en conférence.</p>\n<p>Speaker depuis plusieurs années, il a eu la chance de parler dans de nombreuses conférences comme le Devoxx, le DevFest Nantes ou encore le DevLille.</p>",
+      "linkedin": "lucas-audart"
+    },
+    {
+      "id": "lucas-drago",
+      "name": "Lucas Drago",
+      "photoUrl": "img/speakers/lucas-drago.webp",
+      "bioHtml": "<p>Passionné par les IT de manière générale, Lucas Drago s&#39;est spécialisé dans le développement et le déploiement d’applications cloud (Spring Boot/Spring Cloud/Angular, Docker/Kubernetes, GitLab/Ansible/GitLab CI).</p>\n<p>Son appétence pour le déploiement continu et les bonnes pratiques que cela impose l’a également poussé à développer une expertise dans le domaine de la qualité logicielle (tests unitaires, tests fonctionnels, tests d’intégration, Sonar, BDD).</p>\n<p>Aujourd’hui, devenu expert des technologies de développement au sein de la société Michelin, il participe au développement et au déploiement des outils indispensables aux pratiques de développement modernes tout en promouvant les bonnes pratiques.</p>",
+      "twitter": "ldrago63",
+      "github": "ldrago63",
+      "linkedin": "lucasdrago63"
+    },
+    {
+      "id": "lucie-termignon",
+      "name": "Lucie Termignon",
+      "photoUrl": "img/speakers/lucie-termignon.webp",
+      "bioHtml": "<p>Au sein de La Suite Numérique (DINUM), Lucie Termignon est Product Manager de Fichiers, la plateforme souveraine de stockage, partage et coédition de documents développée pour et utilisée quotidiennement par les agents de l’État.</p>\n<p>Auparavant, elle a travaillé sur les enjeux data et IA à la Bibliothèque nationale de France et au ministère de la Culture.</p>",
+      "linkedin": "lucie-termignon-b588b4119"
+    },
+    {
+      "id": "manuel-raynaud",
+      "name": "Manuel Raynaud",
+      "photoUrl": "img/speakers/manuel-raynaud.webp",
+      "bioHtml": "<p>Fondateur de la société Raysys, Manuel Raynaud accompagne la DINUM sur son projet de suite collaborative open source.</p>\n<p>Il a aussi la chance d’être membre de Clermont’ech.</p>",
+      "linkedin": "manuelraynaud"
+    },
+    {
+      "id": "marc-chevaldonne",
+      "name": "Marc Chevaldonné",
+      "photoUrl": "img/speakers/marc-chevaldonne.webp",
+      "bioHtml": "<p>Marc Chevaldonné est enseignant-chercheur en informatique à l’Université Clermont Auvergne.</p>\n<p>Il a travaillé quelques années dans le privé dans le domaine de la capture de mouvements, de la Réalité Virtuelle et de la Réalité Augmentée, dans des PME ou des grands groupes, en France et en Italie.</p>\n<p>Maintenant il enseigne à l’IUT la programmation orientée objets et l’architecture logicielle, et il fait ses travaux de recherche en RV &amp; RA à l’Institut Pascal à Clermont-Ferrand.</p>\n<p>Il aime programmer (mobile, .NET, iOS…), lire de la SF, écouter du jazz, programmer, faire du vélo et du tennis, les chats, programmer, les jeux de société et l’histoire de l’informatique.</p>",
+      "github": "pardaillanLeRouge",
+      "linkedin": "marc-chevaldonné-8902a0205"
+    },
+    {
+      "id": "marie-crappe",
+      "name": "Marie Crappe",
+      "photoUrl": "img/speakers/marie-crappe.webp",
+      "bioHtml": "<p>Marie Crappe évolue à la croisée de la data, de la finance et de l’IA.</p>\n<p>Après avoir obtenu des diplômes en management et en ingénierie, elle a mené plusieurs projets en tant que Data Scientist dans le domaine des transports publics.</p>\n<p>Elle est ensuite devenue CTO d’une startup dans le domaine du travail temporaire.</p>\n<p>Ces dernières années, elle s’est consacrée au pilotage d’équipes data et de projets d’IA, d’abord en tant que Head of Data Science &amp; Analytics chez Veepee, puis comme Head of Data &amp; Finance chez Choose.</p>\n<p>Également formatrice et conférencière, elle aime rendre accessibles les sujets complexes, avec un regard lucide sur les promesses technologiques comme sur les conditions concrètes de leur réussite.</p>",
+      "linkedin": "marie-crappe"
+    },
+    {
+      "id": "martin-bombardelli",
+      "name": "Martin Bombardelli",
+      "photoUrl": "img/speakers/martin-bombardelli.webp",
+      "bioHtml": "<p>Martin Bombardelli est actuellement doctorant en thèse CIFRE entre CGI, et deux laboratoires: le LIMOS et le LPCA de Clermont-Ferrand</p>\n<p>Son sujet est d&#39;étudier l&#39;impact de l&#39;informatique quantique sur des problématiques d&#39;optimisation de la supply chain.</p>",
+      "linkedin": "martin-bombardelli-852928259"
+    },
+    {
+      "id": "mathieu-mure",
+      "name": "Mathieu Mure",
+      "photoUrl": "img/speakers/mathieu-mure.webp",
+      "bioHtml": "<p>Staff engineer frontend @ Disneyland Paris.</p>\n<p>Président du LyonJS.</p>\n<p>Organisateur du Devfest Lyon.</p>\n<p>Mathieu Mure ❤️ le web et ❤️ encore plus lorsqu&#39;il peut partager ce qu&#39;il aime.</p>",
+      "twitter": "mathieumure",
+      "github": "mathieumure"
+    },
+    {
+      "id": "mickael-alves",
+      "name": "Mickael Alves",
+      "photoUrl": "img/speakers/mickael-alves.webp",
+      "bioHtml": "<p>Web Maker et speaker passionné par les technologies Frontend, le tooling et, plus particulièrement, la Developer Experience (DX). Il aime améliorer les workflows et concevoir des solutions qui rendent la vie des développeurs et des utilisateurs plus simple et plus agréable. 👨🏻💻</p>\n<p>Il est actuellement Tech Lead Frontend chez Zenika 🔴 et Bedrock Streaming 📺.</p>\n<p>Il aime également transmettre ses connaissances à travers des conférences et de la formation. Très impliqué dans les communautés tech, il est Président du DevFest Lyon et co-organisateur de LyonJS 🦁</p>",
+      "twitter": "mickaelalvs",
+      "github": "mickaelalvs",
+      "linkedin": "mickaelalves"
+    },
+    {
+      "id": "mickael-faust",
+      "name": "Mickael Faust",
+      "photoUrl": "img/speakers/mickael-faust.webp",
+      "bioHtml": "<p>C-AI Officer chez HIIT Consulting / Formateur référent IA chez Alyra</p>\n<p>Mickael Faust accompagne les entreprises dans leur adoption de l&#39;IA depuis plusieurs années, d&#39;abord comme développeur et architecte, puis aujourd&#39;hui comme C-AI Officer chez HIIT Consulting, une ESN lyonnaise</p>\n<p>Son quotidien : aider les équipes tech et les directions à passer de &quot;on devrait faire de l&#39;IA&quot; à &quot;on a un truc en prod qui marche&quot;.</p>\n<p>En parallèle, il est formateur référent IA chez Alyra</p>\n<p>Avant ça, il a bossé sur des projets data et dev entre autre chez ENEDIS et EDF, et il a co-fondé IKIGIA, une startup dijonaise qui accompagne les PME et ETI qui souhaitent engager une démarche d’adoption de l’IA, sans disposer des ressources internes nécessaires pour la mener seules</p>\n<p>Quand il n&#39;est pas en train d&#39;expliquer la différence entre un LLM et un perroquet stochastique, il écrit des articles de vulgarisation sur LinkedIn → du théorème de Kolmogorov-Arnold appliqué à la computer vision, en passant par l&#39;éthique de l&#39;IA</p>",
+      "linkedin": "mickael-faust-67a55768"
+    },
+    {
+      "id": "nastasia-fouret",
+      "name": "Nastasia Fouret",
+      "photoUrl": "img/speakers/nastasia-fouret.webp",
+      "bioHtml": "<p>Nastasia Fouret est consultante Data/IA indépendante.</p>\n<p>Dix ans à structurer des projets data dans l&#39;industrie, la réassurance, la cybersécurité ou la santé — d&#39;abord en ESN, puis en indépendante.</p>\n<p>Aujourd&#39;hui elle reprend des projets data dérivés et accompagne ses clients de la BI à la gouvernance.</p>",
+      "linkedin": "nastasia-fouret"
+    },
+    {
+      "id": "nicolas-foussard",
+      "name": "Nicolas Foussard",
+      "photoUrl": "img/speakers/nicolas-foussard.webp",
+      "bioHtml": "<p>Étudiant à l&#39;INSA Lyon et alternant au sein de la startup Alouette.IA, il est passionné d&#39;informatique depuis le lycée.</p>\n<p>Avec une expérience en alternance au sein du groupe Covéa, il s&#39;intéresse tout particulièrement à la Data et l&#39;IA depuis 2 ans maintenant, mais il reste curieux de tout ce qui existe et apprécie toujours explorer et partager ses découvertes !</p>\n<p>Il participe régulièrement à des concours de programmation : SWERC, 24H du Code, c0d1ngUP, 24H de l&#39;Info... Et sur son temps libre il fait du tennis, de la moto et s&#39;est mis depuis quelque temps au piano.</p>",
+      "github": "nirs123",
+      "linkedin": "nicolas-foussard-b60613229"
+    },
+    {
+      "id": "nirina-rabeson",
+      "name": "Nirina Rabeson",
+      "photoUrl": "img/speakers/nirina-rabeson.webp",
+      "bioHtml": "<p>Nirina adore résoudre des problèmes dans un rôle d&#39;ingénieur·e fullstack.</p>\n<p>En ce moment, Nirina réfléchit à des moyens de se remplacer par l&#39;IA 🤖 afin de pouvoir consacrer plus de temps au chant, à la musique et à son adorable chat 🐈‍⬛</p>\n<p>Dans son travail, Nirina s&#39;intéresse moins à l&#39;apparence des gens qu&#39;aux valeurs qu&#39;ils démontrent à travers leurs actions et leurs décisions.</p>",
+      "linkedin": "nirinarabeson"
+    },
+    {
+      "id": "olivier-poncet",
+      "name": "Olivier Poncet",
+      "photoUrl": "img/speakers/olivier-poncet.webp",
+      "bioHtml": "<p>Geek, ex-nerd repenti, il code, il teste, il bricole, il soude et parfois fait sauter les plombs.</p>\n<p>CTO et spécialiste du magiciel, il est aussi libriste dans l&#39;âme et très impliqué dans le mouvement des logiciels libres.</p>",
+      "twitter": "ponceto91",
+      "github": "ponceto"
+    },
+    {
+      "id": "ombeline-sotty",
+      "name": "Ombeline Sotty",
+      "photoUrl": "",
+      "bioHtml": ""
+    },
+    {
+      "id": "pierre-boissinot",
+      "name": "Pierre Boissinot",
+      "photoUrl": "img/speakers/pierre-boissinot.webp",
+      "bioHtml": "<p>Lead developer dans l&#39;agence web LE PHARE (Nantes), 7 ans d&#39;expérience, il a travaillé sur des moyens projets et depuis 5 ans sur des projets complexes (SOA) pour un client dont le domaine est  la télésurveillance/télé-assitance.</p>",
+      "github": "pierreboissinot",
+      "linkedin": "pierreboissinot"
+    },
+    {
+      "id": "pierre-fervel",
+      "name": "Pierre Fervel",
+      "photoUrl": "img/speakers/pierre-fervel.webp",
+      "bioHtml": "<p>Développeur web fullstack depuis maintenant 10 ans, il a eu l&#39;occasion de faire ses premières armes de speaker au sein de Max Digital Services.</p>\n<p>Une fois qu&#39;il s&#39;est senti prêt, il s&#39;est lancé dans le grand bain l&#39;année dernière (2025) avec deux conférences, l&#39;une au BreizhCamp de Rennes, l&#39;autre au DevFest de Strasbourg.</p>\n<p>Désormais il vole de ses propres ailes et continue à partager ses passions au sein de Code With Us</p>",
+      "linkedin": "pierrefervel"
+    },
+    {
+      "id": "pierre-raufast",
+      "name": "Pierre Raufast",
+      "photoUrl": "img/speakers/pierre-raufast.webp",
+      "bioHtml": "<p>Senior Fellow Cybersecurité chez Michelin et auteur de romans de Science Fiction (notamment La Trilogie Baryonique en poche chez Pocket)</p>",
+      "twitter": "pierreraufast"
+    },
+    {
+      "id": "pierre-tachoire",
+      "name": "Pierre Tachoire",
+      "photoUrl": "img/speakers/pierre-tachoire.webp",
+      "bioHtml": "<p>Co-fondateur et CTO de <a href=\"https://lightpanda.io/\">Lightpanda</a>, il développe une alternative légère à Chrome headless pour les agents IA, le web automation et le scraping.</p>\n<p>Il a aussi la chance d&#39;être membre de <a href=\"https://www.clermontech.org/\">Clermont&#39;ech</a>.</p>",
+      "twitter": "krichprollsch",
+      "github": "krichprollsch"
+    },
+    {
+      "id": "pierre-zemb",
+      "name": "Pierre Zemb",
+      "photoUrl": "",
+      "bioHtml": "<p>Pierre est Staff Engineer et construit de l&#39;infrastructure de données chez Clever Cloud.</p>\n<p>Il a conçu et opéré une grande variété de systèmes distribués à état tout au long de sa carrière.</p>\n<p>Il s&#39;intéresse aux systèmes distribués, aux magasins de données et à la compréhension du fonctionnement des choses en profondeur.</p>\n<p>Il aime faire partie des communautés open-source, à travers des conférences, des articles et des contributions à HBase, Kafka, Pulsar, ETCD, FoundationDB.</p>",
+      "twitter": "PierreZ",
+      "github": "PierreZ"
+    },
+    {
+      "id": "romain-pouillard",
+      "name": "Romain Pouillard",
+      "photoUrl": "img/speakers/romain-pouillard.webp",
+      "bioHtml": "<p>Romain Pouillard a obtenu son diplôme de Master à Université Clermont Auvergne en 2020.</p>\n<p>Il poursuit actuellement un doctorat à Institut Pascal ainsi qu’à Scuola Superiore Sant&#39;Anna.</p>\n<p>Ses travaux de recherche portent sur le calcul distribué, les caméras intelligentes et les applications embarquées.</p>",
+      "linkedin": "nropouillardone"
+    },
+    {
+      "id": "samuel_paccoud",
+      "name": "Samuel Paccoud",
+      "photoUrl": "img/speakers/samuel_paccoud.webp",
+      "bioHtml": "<p>Expert dans la constitution d&#39;équipes agiles et la création collaborative de services numériques efficaces au service de l&#39;intérêt général.</p>\n<p>Il développe actuellement, à partir de logiciels libres, la suite numérique interministérielle destinée aux fonctionnaires en France.</p>",
+      "linkedin": "spaccoud"
+    },
+    {
+      "id": "tbd",
+      "name": "TBD",
+      "photoUrl": "",
+      "bioHtml": ""
+    },
+    {
+      "id": "thierry-chantier",
+      "name": "Thierry Chantier",
+      "photoUrl": "img/speakers/thierry-chantier.webp",
+      "bioHtml": "<p>Une passion née dans les lectures, le monde informatique et électronique l&#39;a happé dès son ZX Spectrum pour ne jamais le lâcher.</p>\n<p>Développeur de métier, du jeu vidéo au monde du master data management, il a aussi touché aux univers de la QA et de la mise en production.</p>\n<p>Il est maintenant Developer Advocate, chez Dataiku, jonglant entre technique, communauté et transmission de savoirs.</p>\n<p>Comme une passion mérite toujours qu&#39;on la transmette, il a fondé Mixteen pour essayer d&#39;aider les enfants à appréhender le monde numérique.<br/></p>\n<p>Cette envie de transmettre s&#39;est aussi manifestée en l&#39;amenant à prendre part à l&#39;organisation de plusieurs MiXiT puis à rejoindre le comité directeur de l&#39;AFPy.<br/></p>\n<p>De manière parallèle, il essaie de partager également par le biais d&#39;articles sur son blog et de vidéos sur sa chaîne YouTube.<br/></p>\n<p>En résumé : <br/> <a href=\"https://calm.show/talks/\">https://calm.show/talks/</a></p>\n<p>Dans le détail : <br/> <a href=\"https://www.twitch.tv/titimoby\">https://www.twitch.tv/titimoby</a><br/> <a href=\"https://mixteen.org/\">https://mixteen.org/</a> <br/> <a href=\"https://tontoncodeur.fr/\">https://tontoncodeur.fr/</a> <br/> <a href=\"https://www.youtube.com/thierrychantier\">https://www.youtube.com/thierrychantier</a> <a href=\"https://www.afpy.org\">https://www.afpy.org</a><br/></p>",
+      "github": "titimoby",
+      "linkedin": "thierrychantier"
+    },
+    {
+      "id": "thomas-jouve",
+      "name": "Thomas Jouve",
+      "photoUrl": "img/speakers/thomas-jouve.webp",
+      "bioHtml": "<p>Développeur depuis ... longtemps, il est un peu touche à tout, de l&#39;infra à l&#39;algorithmie.</p>\n<p>Il adore bricoler, démonter, réparer des trucs, ce qui lui prend beaucoup de temps mais qui lui permet aussi de découvrir beaucoup de choses ;-)</p>\n<p>Comme l&#39;informatique est une passion pour lui, il aime beaucoup partager ce qu&#39;il a appris.</p>",
+      "github": "tJouve",
+      "linkedin": "thomas-jouve-723ba394"
+    },
+    {
+      "id": "veltin-dupont",
+      "name": "Veltin Dupont",
+      "photoUrl": "img/speakers/veltin-dupont.webp",
+      "bioHtml": "<p>Actuellement Head of Data chez Bigblue (startup logistique parisienne pour les marques e-commerce, plus de 100M€ de chiffre d&#39;affaires l&#39;an dernier), il était auparavant chez Alan (assurance santé) où il était lead data pour la partie B2B de l&#39;activité.</p>\n<p>Il a construit la première data stack de Bigblue, lançant leurs capacités d&#39;Analytics et de Data science.</p>\n<p>Il gère aujourd&#39;hui une équipe de 7 personnes qui livre à l&#39;entreprise des solutions d&#39;analytics et de data (comme des problèmes d&#39;optimisation, des prévisions et du ML appliqué).</p>\n<p>Diplômé d&#39;un Master of Engineering de l&#39;École Centrale Paris et d&#39;un Master of Engineering de l&#39;Université de Californie à Berkeley.</p>",
+      "linkedin": "veltin"
+    },
+    {
+      "id": "vincent-aubrun",
+      "name": "Vincent Aubrun",
+      "photoUrl": "img/speakers/vincent-aubrun.webp",
+      "bioHtml": "<p>Vincent est Staff Software Engineer chez ManoMano.</p>\n<p>Au quotidien, il jongle entre les sujets : l&#39;intégration des agents LLM et des outils AI dans les pratiques des développeurs, la devXP sur les application JVM.</p>\n<p>Il anime par ailleurs la communauté engineering interne, avec un focus sur l&#39;adoption outillée et les retours d&#39;expérience terrain.</p>\n<p>De formation Java, il croit à la boring tech bien maîtrisée plutôt qu&#39;aux architectures qui impressionnent les slides.</p>\n<p>Ce qui l&#39;intéresse, c&#39;est l&#39;amélioration continue, les systèmes qui durent, et garder l&#39;humain intelligemment dans les processus, y compris quand l&#39;IA entre dans la boucle.</p>\n<p>Quand il monte sur scène, il parle de ce qu&#39;il a cassé autant que de ce qui a marché.</p>\n<p><a href=\"http://www.linkedin.com/in/vincent-a-3925a8191\">www.linkedin.com/in/vincent-a-3925a8191</a></p>",
+      "linkedin": "vincent-a-3925a8191"
+    },
+    {
+      "id": "virgile-deville",
+      "name": "Virgile Deville",
+      "photoUrl": "img/speakers/virgile-deville.webp",
+      "bioHtml": "<p>Virgile Deville est un entrepreneur de la Civic Tech.</p>\n<p>Il a cofondé Open Source Politics, le principal intégrateur de Decidim, une plateforme de participation citoyenne open source.</p>\n<p>Depuis 2023, il accompagne la Direction interministérielle du numérique (DINUM) sur ses programmes de soutien à l&#39;open source et pilote le produit Docs, un éditeur de texte collaboratif faisant partie de LaSuite.</p>\n<p>Il enseigne « Introduction aux communs numériques et politiques publiques » à Sciences Po Paris.</p>",
+      "linkedin": "virgiledeville"
+    },
+    {
+      "id": "virginie-pageaud",
+      "name": "Virginie Pageaud",
+      "photoUrl": "img/speakers/virginie-pageaud.webp",
+      "bioHtml": "<p>Après avoir travaillé plus de 10 ans dans le secteur du paiement par carte bancaire depuis le développement jusqu&#39;au support exploitant en passant par les tests, Virginie est aujourd&#39;hui Customer Support Engineer dans le domaine de la cybersécurité.</p>\n<p>Couteau suisse de la tech, touche à tout et curieuse, elle aime apprendre mais aussi partager ses connaissances.</p>",
+      "github": "Fairy-wen",
+      "linkedin": "virginiecasavecchia"
+    },
+    {
+      "id": "volcamp",
+      "name": "Volcamp team",
+      "photoUrl": "img/speakers/volcamp.webp",
+      "bioHtml": "",
+      "twitter": "volcampio",
+      "linkedin": "volcampio"
+    },
+    {
+      "id": "xavier-gorse",
+      "name": "Xavier Gorse",
+      "photoUrl": "img/speakers/xavier-gorse.webp",
+      "bioHtml": "<p>Xavier a cofondé Elao avec une conviction simple : on fait du bon travail quand on y prend du plaisir.</p>\n<p>Ancré dans la technique et la culture produit, il aime construire des ponts entre les équipes, les métiers et les idées.</p>\n<p>Depuis quelque temps, il accompagne le virage qu’apporte l’IA dans nos pratiques de conception et de développement, sujet qu’il aborde avec le regard d’un praticien et d’un entrepreneur.</p>\n<p>Actif dans l’écosystème lyonnais, il anime la communauté des CTO de Lyon et pilote l’antenne lyonnaise de GenAI France, deux espaces dédiés au partage d’expériences entre pairs.</p>\n<p>Ancien président de l’AFUP et membre du comité éditorial technique du BlendWebMix, il reste guidé par la même envie : comprendre les évolutions du métier, et aider les équipes à y trouver du sens.</p>",
+      "twitter": "xgorse",
+      "github": "xgorse",
+      "linkedin": "xgorse"
+    },
+    {
+      "id": "xavier-nopre",
+      "name": "Xavier Nopre",
+      "photoUrl": "img/speakers/xavier-nopre.webp",
+      "bioHtml": "<p>Artisan-développeur, il est passionné par le dev, le code, la technique, le devops, et le craft.</p>\n<p>Il aime produire du code de qualité dont il est fier, pour un produit utile et utilisé, dans une équipe bienveillante qui aime s&#39;améliorer en continu.</p>\n<p>Il aime transmettre, partager et apprendre.</p>\n<p>Orateur en conférence et organisateur de coding-dojos.</p>\n<p>Co-fondateur et président d&#39;AlpesCraft.</p>\n<p>Fan de montagne, de vélo, de théâtre d&#39;impro et de batterie.</p>",
+      "linkedin": "xnopre"
+    },
+    {
+      "id": "yann-blazard",
+      "name": "Yann Blazart",
+      "photoUrl": "img/speakers/yann-blazard.webp",
+      "bioHtml": "<p>Dans le monde Java depuis plus de 25 ans, Yann Blazart est un passionné de Jakarta EE et plus particulièrement de CDI.</p>\n<p>Référent technique chez SCIAM, il a contribué à plusieurs projets open source.</p>\n<p>Après deux participations à Devoxx France sur Java EE et CDI, il a co-créé avec Emmanuel Hugonnet et Buhake Sindi le module LangChain4j-CDI, désormais projet officiel de l’organisation LangChain4j.</p>\n<p>Ce module apporte l’IA générative dans les applications Jakarta EE et MicroProfile de manière native, sans compromis sur les bonnes pratiques d’entreprise.</p>",
+      "twitter": "yblazart"
+    },
+    {
+      "id": "yann-gloriau",
+      "name": "Yann Gloriau",
+      "photoUrl": "img/speakers/yann-gloriau.webp",
+      "bioHtml": "<p>47 ans dont 40 à coder, ça donne une approche à l&#39;IT et au code assez différente.</p>\n<p>De l&#39;assembleur aux langages &quot;haut niveau&quot;, tout y passe.</p>\n<p>Au niveau pro, il a beaucoup d&#39;expérience sur des systèmes critiques à grand volume et fort trafic (vous avez déjà utilisé au moins une de ses applications sans le savoir ;), il vous le parie), et en contrepartie, il est habitué des problèmes complexes.</p>\n<p>Et sinon, c&#39;est un métalleux qui vient tous les ans se recueillir sur les terres de Clisson pour écouter de douces musiques à l&#39;occasion du solstice d&#39;été</p>",
+      "linkedin": "yann-gloriau-4b17b75"
+    },
+    {
+      "id": "yann-thomas-le-moigne",
+      "name": "Yann-Thomas Le Moigne",
+      "photoUrl": "img/speakers/yann-thomas-le-moigne.webp",
+      "bioHtml": "<p>Développeur informatique passionné par les technologies JavaScript, Angular, Svelte, Java, Spring, Quarkus...  Il est curieux et aime beaucoup ce qui peut lui faciliter la vie.</p>\n<p>C&#39;est pourquoi il propose de partager son expérience sur certains outils de développement.</p>\n<p>Il est également investi dans plusieurs associations : - Angular Devs France : Partage de contenu autour du framework Angular en francophone. - Ng Baguette Conf : Co organisateur de la conférence. - Ess 37 : Ecole de secours et de sauvetage - Formateur PSC - SPV : Sapeur Pompier Volontaire</p>",
+      "twitter": "Yatho91",
+      "github": "Yatho"
+    }
+  ],
+  "talks": [
+    {
+      "id": "d1t1k1",
+      "title": "Intro Volcamp 2026",
+      "format": "Keynote",
+      "category": "Keynote",
+      "room": "Auditorium",
+      "day": "2026-10-01",
+      "timeStart": "09h00",
+      "timeEnd": "09h15",
+      "startMinutes": 540,
+      "endMinutes": 555,
+      "abstractHtml": "<p>L’intro Volcamp 2026 par la team Geek&amp;Terrroir.</p>\n<p>Présentation de la conférence, du contenus, du programme et de nos sponsors.</p>",
+      "speakerIds": [
+        "volcamp"
+      ]
+    },
+    {
+      "id": "d1t1k2",
+      "title": "Keynote jour 1",
+      "format": "Conférence",
+      "category": "Keynote",
+      "room": "Auditorium",
+      "day": "2026-10-01",
+      "timeStart": "09h15",
+      "timeEnd": "10h00",
+      "startMinutes": 555,
+      "endMinutes": 600,
+      "abstractHtml": "",
+      "speakerIds": [
+        "samuel_paccoud"
+      ]
+    },
+    {
+      "id": "d1t1s1",
+      "title": "Bit Twiddling, Duff's Device ... Les optimisations extrêmes de code",
+      "format": "Conférence",
+      "category": "Lang & Frameworks",
+      "room": "Auditorium",
+      "day": "2026-10-01",
+      "timeStart": "10h15",
+      "timeEnd": "11h00",
+      "startMinutes": 615,
+      "endMinutes": 660,
+      "abstractHtml": "<p>Et si je vous disais qu&#39;il est possible d&#39;optimiser certaines opérations sans aucune condition, sans aucun branchement, sans aucune boucle, simplement avec quelques manipulations de bits ?</p>\n<p>Et qu&#39;un morceau de code écrit en 1983 chez Lucasfilm continue de fasciner des générations de développeurs par son ingéniosité ?</p>\n<p>Bienvenue dans le monde fascinant des optimisations extrêmes.</p>\n<p>Dans ce talk, je vous propose de partir à la découverte de l&#39;univers fascinant des optimisations extrêmes : en passant par bit twiddling, technique reposant sur des opérations binaires permettant de réaliser des optimisations performantes, souvent élégantes et parfois très surprenantes, mais aussi en passant par des constructions de code déroutantes comme le légendaire Duff&#39;s Device, imaginé par Tom Duff en 1983 au sein de Lucasfilm LTD.</p>\n<p>Au-delà de ces constructions parfois très étonnante, nous verrons ensemble pourquoi ces techniques peuvent encore être utiles, même de nos jours, même avec des langages et frameworks de haut niveau, et comment elles peuvent encore permettre de gagner de précieuses fractions de temps sur nos architectures modernes.</p>\n<p>Vous n&#39;êtes pas prêt·e·s !</p>",
+      "speakerIds": [
+        "olivier-poncet"
+      ]
+    },
+    {
+      "id": "d1t3s1",
+      "title": "Et si on ouvrait le capot de PostgreSQL ?",
+      "format": "Conférence",
+      "category": "Data & AI",
+      "room": "FabLab",
+      "day": "2026-10-01",
+      "timeStart": "10h15",
+      "timeEnd": "11h00",
+      "startMinutes": 615,
+      "endMinutes": 660,
+      "abstractHtml": "<p>PostgreSQL est une des bases de données les plus utilisées et les plus appréciées.</p>\n<p>Mais sait-on vraiment comment elle fonctionne ?</p>\n<p>Qu’est ce qui lui permet d’être à la fois performante, tolérante aux crashs et hautement disponible ?</p>\n<p>Je vous propose de découvrir ensemble les internals de Postgres et d&#39;apprendre comment sont stockées vos données sur celle-ci.</p>\n<p>En partant d’une simple requête sql et en passant par toutes les étapes pour récupérer la donnée que l&#39;on recherche, découvrons comment PG fonctionne.</p>\n<p>Nous aborderons les notions spécifiques aux implémentations de bases de données et plus spécifiquement celles de Postgres (query planner, write ahead log, mvcc, tuples, vacuum, …).</p>",
+      "speakerIds": [
+        "coenen-benjamin"
+      ]
+    },
+    {
+      "id": "d1t2s1",
+      "title": "Tic-Tac... 💣! Maîtrisez le temps et NTP avant qu'il ne soit trop tard",
+      "format": "Conférence",
+      "category": "Découverte",
+      "room": "Showroom",
+      "day": "2026-10-01",
+      "timeStart": "10h15",
+      "timeEnd": "11h00",
+      "startMinutes": 615,
+      "endMinutes": 660,
+      "abstractHtml": "<p>Quelle heure est-il vraiment ?</p>\n<p>De l&#39;ombre des cadrans solaires aux horloges atomiques des satellites GPS, la quête de la précision temporelle est un défi technique millénaire.</p>\n<p>En informatique, une dérive de quelques millisecondes peut pourtant ruiner vos transactions distribuées, briser vos authentifications ou rendre vos logs illisibles.</p>\n<p>Nous explorerons comment nos machines perçoivent le temps, de l&#39;oscillation du quartz au cœur de vos cartes mères jusqu&#39;à la hiérarchie de stratum NTP, et de comment les horloges de références structurent une synchronisation fiable.</p>\n<p>Cette session décortiquera les rouages internes du protocole (offset, jitter, leap seconds) pour comprendre comment il synchronise le monde malgré l&#39;instabilité des réseaux.</p>\n<p>Un talk mêlant histoire, anecdotes techniques et bonnes pratiques pour des systèmes fiables en production !</p>",
+      "speakerIds": [
+        "cynthia-treger",
+        "david-santiago"
+      ]
+    },
+    {
+      "id": "d1t4s1",
+      "title": "Vous croyez connaître Git ? Challenge Accepted",
+      "format": "Workshop",
+      "category": "Découverte",
+      "room": "Workshop",
+      "day": "2026-10-01",
+      "timeStart": "10h15",
+      "timeEnd": "12h15",
+      "startMinutes": 615,
+      "endMinutes": 735,
+      "abstractHtml": "<p>Vous pensiez maîtriser Git parce que vous savez faire un git commit -m fix ?</p>\n<p>Attendez de découvrir ce qui se cache dans les méandres de cet outil que tout le monde utilise... mais que personne ne comprend vraiment.</p>\n<p>Au programme :</p>\n<ul>\n<li>Apprendre à travailler sur 3 features en même temps sans devenir fou</li>\n<li>Retrouver CE commit que vous avez supprimé par erreur (et que vous juriez avoir perdu à jamais)</li>\n<li>Débusquer le bug introduit il y a 47 commits sans lire tout l&#39;historique comme un roman policier raté</li>\n<li>Comprendre les différents workflows et quand les utiliser : Gitflow, GitHub Flow...</li>\n</ul>\n<p>Tout ça sur un vrai projet, avec de vrais bugs, de vrais conflits, et de vraies solutions (pas juste des slides Powerpoint soporifiques).</p>\n<p>Repartez avec :</p>\n<ul>\n<li>Une boîte à outils qui vous fera gagner des heures chaque semaine</li>\n<li>Des bonnes pratiques qui éviteront à votre équipe de vous détester</li>\n<li>La satisfaction d&#39;enfin comprendre ce que fait git rebase (et de pouvoir l&#39;expliquer à votre petit frère)</li>\n<li>Accessoirement, le respect éternel de vos pairs</li>\n</ul>\n<p>⚠️ Attention : Ce workshop contient des révélations qui risquent de bouleverser votre vision de Git.</p>\n<p>Effets secondaires connus : addiction aux commits propres, refus catégorique de merger sans rebase, et tendance à évangéliser vos collègues sur git worktree.</p>\n<p>Prérequis : savoir ce qu&#39;est un commit (si vous tapez encore git add . les yeux fermés en priant, c&#39;est parfait, on est là pour ça).</p>",
+      "speakerIds": [
+        "anthony-pena",
+        "yann-thomas-le-moigne"
+      ]
+    },
+    {
+      "id": "d1t1s2",
+      "title": "J'ai packagé mon application en image Docker, et maintenant ?",
+      "format": "Conférence",
+      "category": "DevOps & Cloud",
+      "room": "Auditorium",
+      "day": "2026-10-01",
+      "timeStart": "11h30",
+      "timeEnd": "12h15",
+      "startMinutes": 690,
+      "endMinutes": 735,
+      "abstractHtml": "<p>Vous avez réussi à packager/builder votre application en image de conteneur, avec Docker ou Podman, et à la pusher dans un registre d&#39;images/d&#39;artefacts ?</p>\n<p>Félicitations... mais le travail n&#39;est pas terminé 🙂.</p>\n<p>Maintenant il est temps de mettre en place les bonnes pratiques de la Software Supply Chain Security !</p>\n<ul>\n<li>Pourquoi et comment signer une image ?</li>\n<li>Pourquoi et comment générer l&#39;inventaire de mon image ?</li>\n<li>Mon image a-t-elle des vulnérabilités ? Sont-elles exploitables ?</li>\n<li>Les attestations ça sert à quoi ?</li>\n<li>Comment automatiser tout cela ?</li>\n</ul>\n<p>Dans ce talk, étape par étapes, avec un mélange de slides et de live démos, nous verrons tout cela, et bien plus encore.</p>\n<p>Vous saurez comment mettre en place ces bonnes pratiques, en local et même dans vos pipelines CI/CD.</p>\n<p>Et bonus track, après ce talk des termes comme cosign, sbom, vex, in-toto... n&#39;auront plus de secret pour vous  !</p>",
+      "speakerIds": [
+        "aurelie-vache"
+      ]
+    },
+    {
+      "id": "d1t3s2",
+      "title": "Mes 1001 Heures avec Vault -  De Vault à OpenBao, récits de survie d'un SRE",
+      "format": "Conférence",
+      "category": "Archi, Perf et Sécu",
+      "room": "FabLab",
+      "day": "2026-10-01",
+      "timeStart": "11h30",
+      "timeEnd": "12h15",
+      "startMinutes": 690,
+      "endMinutes": 735,
+      "abstractHtml": "<p>Chaque jour, un SRE raconte une histoire pour que la production ne lui coupe pas la tête.</p>\n<p>Pendant plus 416 jours d&#39;engagement intensif répartis sur 2 années, j&#39;ai endossé le rôle de Schéhérazade pour sécuriser les secrets de plusieurs royaumes aux défis radicalement différents.</p>\n<p>Chacun m&#39;a enseigné une leçon technique et humaine que je viens partager avec vous.</p>\n<p>Dans cette session de 45 minutes, nous explorerons trois actes fondamentaux de la gestion des secrets, en passant du chaos à la gouvernance, jusqu&#39;aux alternatives open source.</p>\n<p>Vous repartirez avec</p>\n<ol>\n<li>Une matrice de décision pragmatique : Vault OSS vs Vault Enterprise vs OpenBao selon vos contraintes.</li>\n<li>Un Blueprint d&#39;Architecture : Les modèles de déploiement et les bases d&#39;automatisation (Terraform + Ansible).</li>\n<li>Un bon moment passé ensemble</li>\n</ol>",
+      "speakerIds": [
+        "jerome-masson"
+      ]
+    },
+    {
+      "id": "d1t2s2",
+      "title": "Lightpanda, le browser web headless, épisode 3",
+      "format": "Conférence",
+      "category": "Découverte",
+      "room": "Showroom",
+      "day": "2026-10-01",
+      "timeStart": "11h30",
+      "timeEnd": "12h15",
+      "startMinutes": 690,
+      "endMinutes": 735,
+      "abstractHtml": "<p>Lightpanda est un browser web headless, open source et développé from scratch en Zig.</p>\n<p>Il permet aux outils de web automation, de scraping et aux agents IA de naviguer sur Internet et  d’exécuter le Javascript sans la lourdeur de Chrome.</p>\n<p>Pour ce 3ème épisode à Volcamp, on fera le tour des améliorations du navigateur et de son support des API Web.</p>\n<p>On parlera de son intégration dans l&#39;écosystème IA via Vercel agent-browser et Hermes et de son adoption par la communauté.</p>\n<p>Enfin je présenterai les multiples impacts des agents de codage sur le projet, qu&#39;ils soient internes ou externes via les contributions, mais pas que...</p>\n<p>Le tout saupoudré de démos.</p>",
+      "speakerIds": [
+        "pierre-tachoire"
+      ]
+    },
+    {
+      "id": "d1t3s3",
+      "title": "Toi aussi lance toi et contribue à un projet open source !",
+      "format": "Lightning",
+      "category": "Découverte",
+      "room": "FabLab",
+      "day": "2026-10-01",
+      "timeStart": "12h30",
+      "timeEnd": "12h45",
+      "startMinutes": 750,
+      "endMinutes": 765,
+      "abstractHtml": "<p>A l&#39;occasion d&#39;une mise à jour de version, je tombe sur une incompatibilité avec un projet open source.</p>\n<p>Un ticket existe déjà, mais aucun correctif n’est encore disponible.</p>\n<p>Je décide de me lancer dans la contribution open source et de proposer une PR 💪.</p>\n<p>Je vous propose un retour d&#39;expérience sur cette aventure pleine de rebondissements.</p>\n<p>Dans ce talk, nous aborderons notamment :</p>\n<p>✅ Pourquoi et comment je me suis lancé dans cette contribution au projet ExternalDNS\n🛠️ Les étapes concrètes : de la prise en main du projet jusqu’à la validation de la PR\n⏳ Comment trouver le temps de contribuer quand on a déjà un quotidien chargé\n📝 Le fonctionnement du Contributor License Agreement (CLA)\n🤝 Le rôle des mainteneurs et le processus de code review\n🌍 Comment la communauté open source facilite… ou complique parfois ! la collaboration *\n💡 Quelques conseils pour débuter en douceur et se lancer quand on n’ose pas</p>\n<p>Un talk qui je l&#39;espere vous donnera envie de vous lancer dans la contribution open source 🙌.</p>",
+      "speakerIds": [
+        "thomas-jouve"
+      ]
+    },
+    {
+      "id": "d1t2s3",
+      "title": "Fichiers (LaSuite) - état des lieux, enjeux, perspectives",
+      "format": "Lightning",
+      "category": "Découverte",
+      "room": "Showroom",
+      "day": "2026-10-01",
+      "timeStart": "12h30",
+      "timeEnd": "12h45",
+      "startMinutes": 750,
+      "endMinutes": 765,
+      "abstractHtml": "<p>Et si l&#39;administration française arrêtait de dépendre de Nextcloud, Sharepoint voire Google Drive pour partager ses fichiers ?</p>\n<p>C&#39;est le pari de Fichiers, outil de partage, stockage et édition collaborative de LaSuite Numérique, développé par la DINUM pour les agents de la fonction publique d&#39;État.</p>\n<p>La présentation consiste en une démonstration rapide de ce projet open source (Django + React, licence MIT), déjà en production pour des milliers d&#39;agents.</p>\n<p>L&#39;occasion d&#39;expliquer les choix stratégiques et techniques qui ont conduit à la création de cette solution, les avancées et les perspectives.</p>\n<p>Ou comment concilier inter-opérabilité, sécurité et expérience utilisateur, pour répondre aux enjeux de souveraineté numérique du secteur public.</p>",
+      "speakerIds": [
+        "lucie-termignon"
+      ]
+    },
+    {
+      "id": "d1t3s4",
+      "title": "Sécurité des LLM - Comprendre les risques pour mieux s’en protéger",
+      "format": "Lightning",
+      "category": "Data & AI",
+      "room": "FabLab",
+      "day": "2026-10-01",
+      "timeStart": "13h00",
+      "timeEnd": "13h15",
+      "startMinutes": 780,
+      "endMinutes": 795,
+      "abstractHtml": "<p>Chaque jour, de nouveaux LLM apparaissent et par dessus se construisent des dizaines d’applications : chatbots, assistants spécialisés, outils de développement… les idées ne manquent pas.</p>\n<p>Pourtant un aspect reste souvent négligé par les personnes qui les conçoivent : la sécurité.</p>\n<p>Un LLM peut facilement halluciner : produire du contenu inapproprié, incorrect ou offensant.</p>\n<p>Mais vos propres applications peuvent également être la cible d’attaques qui contournent les consignes, pouvant alors entraîner de nombreux dommages : fuite de données, perte financière, atteinte à la réputation ou encore responsabilité pénale.</p>\n<p>Dans cette présentation, nous verrons plusieurs vulnérabilités auxquelles vos LLM sont exposés, et comment des attaquants peuvent exploiter ces failles pour détourner vos applications.</p>\n<p>Nous détaillerons ainsi les risques potentiels, et enfin nous verrons quelles techniques existent pour vous protéger afin d’utiliser vos LLM de façon sereine dans vos applications.</p>",
+      "speakerIds": [
+        "nicolas-foussard"
+      ]
+    },
+    {
+      "id": "d1t2s4",
+      "title": "Comment créer une extension de navigateur en 2026 ?",
+      "format": "Lightning",
+      "category": "Lang & Frameworks",
+      "room": "Showroom",
+      "day": "2026-10-01",
+      "timeStart": "13h00",
+      "timeEnd": "13h15",
+      "startMinutes": 780,
+      "endMinutes": 795,
+      "abstractHtml": "<p>Les extensions de navigateur, des outils bien pratiques dans notre quotidien !</p>\n<p>Bloqueurs de pubs, détecteurs de promos, gestionnaire de mots de passe, outils de développement... Les extensions sont devenues indispensables pour naviguer sur le web.</p>\n<p>Comment on en crée ?</p>\n<p>Ce n&#39;est manifestement pas simple : il faut penser à tous les types de navigateurs, s&#39;adapter à toutes les configurations possibles et réussir à passer les contraintes de sécurité du navigateur... Et comment on les déploie ?</p>\n<p>Comment on les teste automatiquement ?</p>\n<p>Par un retour d&#39;expérience, nous verrons ensemble comment j&#39;ai pu en créer une dans un contexte pro et voir comment nous avons créé, déployé et testé de bout en bout pour résoudre un problème du web bien épineux, avec des outils modernes comme WXT, des test containers et quelques scripts ansible.</p>\n<p>Nous verrons aussi quels sont les meilleurs cas d&#39;utilisation pour vos besoins utilisateurs.</p>\n<p>Après ce talk, vous aurez tout ce qu&#39;il faut pour créer une extension de navigateur !</p>",
+      "speakerIds": [
+        "nirina-rabeson"
+      ]
+    },
+    {
+      "id": "d1t1s5",
+      "title": "C'est qui le patron ? Comprendre la gouvernance des projets Open Source.",
+      "format": "Conférence",
+      "category": "Découverte",
+      "room": "Auditorium",
+      "day": "2026-10-01",
+      "timeStart": "13h30",
+      "timeEnd": "14h15",
+      "startMinutes": 810,
+      "endMinutes": 855,
+      "abstractHtml": "<p>Comprendre les différents modèles de gouvernance des projets open source est une compétence indispensable à tout développeur souhaitant évoluer efficacement dans l’écosystème open source.</p>\n<p>Cette présentation abordera les principaux modèles de gouvernance utilisés dans les projets open source : BDFL (« Dictateur Bienveillant à Vie »), méritocratie, contribution libérale, par consensus et éditeur open source.</p>\n<p>Chaque modèle sera analysé sous l’angle de son influence sur les décisions techniques, les contributions et la dynamique de la communauté.</p>\n<p>Les participants auront des repères concrets pour comprendre les règles implicites et explicites des projets auxquels dont ils dépendent et auxquels il peuvent ou doivent contribuer, ainsi que des bonnes pratiques pour interagir efficacement avec ces différentes communautés.</p>\n<p>Bonux, ils pourront s’inspirer de ces modèles pour choisir et appliquer celui qui conviendrait le mieux à la mise en open source d&#39;un de leur éventuel projet !</p>",
+      "speakerIds": [
+        "florent-zara"
+      ]
+    },
+    {
+      "id": "d1t3s5",
+      "title": "On a arrêté de bricoler nos specs - ce que l'IA a changé dans notre façon de travailler en petite équipe",
+      "format": "Conférence",
+      "category": "Lang & Frameworks",
+      "room": "FabLab",
+      "day": "2026-10-01",
+      "timeStart": "13h30",
+      "timeEnd": "14h15",
+      "startMinutes": 810,
+      "endMinutes": 855,
+      "abstractHtml": "<p>On a toujours écrit des specs.</p>\n<p>Mais un <strong>humain comblait les trous</strong> avec son contexte implicite, une conversation de couloir, son expérience dans un domaine, sa compréhension d’un métier, son bon sens.</p>\n<p><strong>Un agent IA ne comble rien, il amplifie ce qu&#39;il reçoit</strong>.</p>\n<p>Des specs floues donnaient des tickets mal estimés.</p>\n<p>Aujourd&#39;hui si on ne prend pas le temps de clarifier des specs pour un agent IA, elles donnent des centaines de lignes de code dans la mauvaise direction.</p>\n<p>Depuis 2025, une vague d’outils (Kiro, SpecKit, OpenSpec…) a remis le Spec-Driven Development sous le feu des projecteurs.</p>\n<p>Ce n’est pas une nouveauté,  c’est une exigence devenue visible.</p>\n<p>Dans ce talk, je présente la philosophie d’OpenSpec en illustrant avec un workflow en 4 étapes (Proposal, Design, Specs, Tasks) que nous utilisons depuis plusieurs mois dans mon équipe (6 devs, POs,PM,).</p>\n<p>Vous repartirez avec:</p>\n<ul>\n<li>un workflow concret et adaptable à votre contexte</li>\n<li>Les signaux d&#39;alerte qui indiquent qu&#39;une spec va générer du code inutilisable avant même de lancer un agent sur l’implémentation.</li>\n<li>une stratégie d’adoption progressive pour introduire cette rigueur sans friction dans une équipe existante.</li>\n</ul>\n<p>On parlera aussi des impacts humains, parce que le Spec Driven Development, c’est autant un changement de culture PM/PO/DEV qu’un changement d’outil.</p>",
+      "speakerIds": [
+        "pierre-boissinot"
+      ]
+    },
+    {
+      "id": "d1t2s5",
+      "title": "Mémoire à tores de ferrites - histoire et démonstration",
+      "format": "Conférence",
+      "category": "Découverte",
+      "room": "Showroom",
+      "day": "2026-10-01",
+      "timeStart": "13h30",
+      "timeEnd": "14h15",
+      "startMinutes": 810,
+      "endMinutes": 855,
+      "abstractHtml": "<p>Passionné par l&#39;histoire de l&#39;informatique, j&#39;aimerais vous parler d&#39;un type de mémoire vive qui a régné en maître sur le domaine des mémoires en informatique pendant plus de 20 ans : les mémoires à tores magnétiques ou à tores de ferrites.</p>\n<p>Ce type de mémoire a été étudié puis breveté dans les années 1940 pour être largement utilisé entre 1955 et 1975.</p>\n<p>Ces véritables œuvres d&#39;art, tissées à la main, rendait le rapport à la mémoire plus concret puisque chaque bit était stocké dans un tore magnétisé dans un sens ou dans l&#39;autre.</p>\n<p>Dans ma présentation, je souhaiterais aborder l&#39;histoire de ces mémoires (comment elles sont nées, comment elles ont vécu, comment elles ont disparu), les batailles autour de leurs brevets, leur fabrication.</p>\n<p>Je voudrais parler également de physique (électronique, électromagnétisme, et bien sûr informatique) pour vous expliquer leur fonctionnement.</p>\n<p>Pour illustrer le tout, je présenterai une petite mémoire à tores de ferrite faite maison et reliée à une Raspberry Pi pour stocker pas grand chose en mémoire.</p>\n<p>Émotions garanties !</p>",
+      "speakerIds": [
+        "marc-chevaldonne"
+      ]
+    },
+    {
+      "id": "d1t4s5",
+      "title": "Create Your Own Role-Playing Game with Agentic AI using Spring AI / Créer son propre Jeu de Rôle en Agentic AI avec Spring AI",
+      "format": "Workshop",
+      "category": "Lang & Frameworks",
+      "room": "Workshop",
+      "day": "2026-10-01",
+      "timeStart": "13h30",
+      "timeEnd": "15h15",
+      "startMinutes": 810,
+      "endMinutes": 915,
+      "abstractHtml": "<p>Venez coder un Maître du jeu (MJ) qui sera chargé d&#39;orchestrer plusieurs agents IA, chacun spécialisé dans une tâche particulière.</p>\n<p>On y verra des concepts comme les agent tools, le protocole MCP (Model Context Protocol), A2A (Agent to Agent) et RAG (Retrieval-augmented generation) afin de créer des agents et/ou serveurs MCP qui tirent les dés, vérifient les règles de DnD, et génèrent l&#39;histoire au fur et à mesure.</p>\n<p>Que tu sois fan de jeu de rôle ou non, il y aura des choses à apprendre pendant cette session :)</p>\n<p>P.S : Voici le contenu que j&#39;ai développé pour ma proposition de codelab / conference =&gt; <a href=\"https://github.com/aws-samples/sample-once-upon-spring-ai\">https://github.com/aws-samples/sample-once-upon-spring-ai</a></p>",
+      "speakerIds": [
+        "arnaud-jean"
+      ]
+    },
+    {
+      "id": "d1t1s6",
+      "title": "Ma plateforme DevOps est devenu intelligente - récit d'une agentification sur-mesure",
+      "format": "Conférence",
+      "category": "Archi, Perf et Sécu",
+      "room": "Auditorium",
+      "day": "2026-10-01",
+      "timeStart": "14h30",
+      "timeEnd": "15h15",
+      "startMinutes": 870,
+      "endMinutes": 915,
+      "abstractHtml": "<p>On a tous rêvé d&#39;un collègue qui adore faire les revues de MR à 18h, range le backlog avec passion et connaît les standards de l&#39;entreprise par cœur.</p>\n<p>Ce collègue, nous l&#39;avons buildé sans attendre les solutions sur étagère.</p>\n<p>Dans ce REX, nous racontons comment nous avons transformé notre GitLab en plateforme augmentée en orchestrant des agents directement dans nos pipelines.</p>\n<p>L’idée ?</p>\n<p>Ne pas subir l&#39;IA, mais l&#39;intégrer comme une brique de notre architecture logicielle.</p>\n<p>Au menu :</p>\n<ul>\n<li>L’orchestrateur : Faire tourner Codex, agent Open Source ultra-léger, sur des GitLab Runners éphémères.</li>\n<li>Le couteau suisse : Pourquoi le protocole MCP est la clé pour donner à l’IA les bons outils au bon moment.</li>\n<li>L&#39;agnosticisme technique : Azure OpenAI fournit la puissance, mais l&#39;architecture est 100% découplée.</li>\n</ul>\n<p>Changer de cerveau est une simple configuration.</p>\n<ul>\n<li>Workflows As-Code : Rendre le tout maintenable, versionné et scalable sans usine à gaz.</li>\n</ul>\n<p>Pas de slides marketing : architecture, secrets de prompting et Live Demo.</p>\n<p>Venez découvrir comment construire une solution IA sur-mesure, évolutive et dont vous gardez les clés !</p>",
+      "speakerIds": [
+        "adrien-gooris",
+        "lucas-drago"
+      ]
+    },
+    {
+      "id": "d1t3s6",
+      "title": "Ce que les développeurs haut niveau peuvent (re)apprendre des dev embarqués",
+      "format": "Conférence",
+      "category": "Découverte",
+      "room": "FabLab",
+      "day": "2026-10-01",
+      "timeStart": "14h30",
+      "timeEnd": "15h15",
+      "startMinutes": 870,
+      "endMinutes": 915,
+      "abstractHtml": "<p>Nous, développeurs embarqués sommes un peu ostracisés par les autres développeurs utilisant des langages plus haut niveau...</p>\n<p>Beaucoup se demandent encore pourquoi nous restons encore à l&#39;âge de pierre avec nos vieux outils et nos vieilles pratiques...</p>\n<p>Pourtant de nombreuses pratiques perçues comme nouvelles comme l&#39;écoconception, les principes de simplicité du design (KISS) et l&#39;optimisation/refactoring réguliers... sont des pratiques issues des nécessités des environnements contraints sur lesquels nous développons (et que les développeurs haut niveau ont malheureusement oubliées).</p>\n<p>Il est peut être temps de réapprendre de nos anciens certaines bonnes pratiques...</p>",
+      "speakerIds": [
+        "damien-hackett"
+      ]
+    },
+    {
+      "id": "d1t2s6",
+      "title": "MCP UI, React et LLM - comment créer son App dans Claude & ChatGPT",
+      "format": "Conférence",
+      "category": "Data & AI",
+      "room": "Showroom",
+      "day": "2026-10-01",
+      "timeStart": "14h30",
+      "timeEnd": "15h15",
+      "startMinutes": 870,
+      "endMinutes": 915,
+      "abstractHtml": "<p>Les agents conversationnels sont devenus bien plus qu’un jouet, c’est devenu un véritable assistant quotidien pour beaucoup d’entre nous.</p>\n<p>Au début limité à des données apprises lors de son entraînement, l’apparition des RAGs puis des serveurs MCPs ont permis de d’outrepasser ces limites.</p>\n<p>Une nouvelle limite vient d’être levée grâce à l’arrivée des <strong>MCP UI</strong>, qui permet maintenant d’intégrer vos <strong>composants front directement dans votre conversation</strong>.</p>\n<p>Vous pouvez maintenant ajouter votre wording, vos images et toute votre identité visuelle directement dans le fil d&#39;une conversation.</p>\n<p>Dans ce talk, nous allons vous montrer étape par étape, au travers d’un <strong>live coding</strong>, comment construire votre application MCP pour ajouter vos composants frontend dans votre agent conversationnel préféré.</p>",
+      "speakerIds": [
+        "mathieu-mure",
+        "mickael-alves"
+      ]
+    },
+    {
+      "id": "d1t1s7",
+      "title": "Java et Kubernetes - les conseils de l'oncle Charles (et Jean-Michel)",
+      "format": "Conférence",
+      "category": "DevOps & Cloud",
+      "room": "Auditorium",
+      "day": "2026-10-01",
+      "timeStart": "15h45",
+      "timeEnd": "16h30",
+      "startMinutes": 945,
+      "endMinutes": 990,
+      "abstractHtml": "<p>Une conférence dédiée aux développeurs souhaitant faire tourner leurs applications Java vers des architectures cloud natives.</p>\n<p>À travers des retours d’expériences concrets et des conseils pratiques, les intervenants partagent leurs points de vue pour containeriser, déployer et exploiter efficacement des applications Java dans  Kubernetes.</p>\n<p>La session met en lumière les enjeux de performance, de configuration et de layering dans un environnement distribué.</p>",
+      "speakerIds": [
+        "charles-sabourdin",
+        "jean-michel-doudoux"
+      ]
+    },
+    {
+      "id": "d1t3s7",
+      "title": "🎮 Les quêtes secondaires, ça n'est pas que dans les jeux vidéo !",
+      "format": "Conférence",
+      "category": "Découverte",
+      "room": "FabLab",
+      "day": "2026-10-01",
+      "timeStart": "15h45",
+      "timeEnd": "16h30",
+      "startMinutes": 945,
+      "endMinutes": 990,
+      "abstractHtml": "<p>Fallout, Elder Scrolls, The Witcher, Clair-Obscur ou Final Fantasy ; dans tous ces jeux de rôles nous incarnons des personnages investis d&#39;une grande mission, une quête principale comme fil rouge de notre aventure.</p>\n<p>Mais bien souvent apparaissent autour une multitude de quêtes secondaires, que l&#39;on s&#39;empresse parfois de réaliser afin de gagner en expérience et faciliter notre mission principale.</p>\n<p>Et s&#39;il était possible de faire de même dans la vie réelle ?</p>\n<p>Si à côté de la quête principale que pourrait constituer notre vie professionnelle se cachaient des quêtes annexes insoupçonnées ?</p>\n<p>A partir de mes quêtes secondaires personnelles, découvrez quels mécanismes permettent ce transfert d&#39;aptitudes, et comment vous aussi vous pouvez repérer ces objectifs cachés, voire en être à l&#39;initiative !</p>",
+      "speakerIds": [
+        "virginie-pageaud"
+      ]
+    },
+    {
+      "id": "d1t2s7",
+      "title": "IA souveraine - de la théorie DSI à la réalité du terrain avec Mistral",
+      "format": "Conférence",
+      "category": "Data & AI",
+      "room": "Showroom",
+      "day": "2026-10-01",
+      "timeStart": "15h45",
+      "timeEnd": "16h30",
+      "startMinutes": 945,
+      "endMinutes": 990,
+      "abstractHtml": "<p>En 2024, tout le monde parlait de ChatGPT.</p>\n<p>Depuis 2025, mes clients ont commencé à me poser LA question : Et la souveraineté des données, on en fait quoi ?</p>\n<p>Entre le Cloud Act qui permet aux US d&#39;accéder aux données hébergées par des boîtes américaines, l&#39;AI Act européen qui entre en vigueur progressivement, et les DSI qui ont la trouille (et à raison) à l&#39;idée de voir leurs données d&#39;entreprise partir entraîner GPT-5... le sujet n&#39;est plus juste un débat de comptoir</p>\n<p>Chez HIIT Consulting, j&#39;accompagne des entreprises dans leur adoption de l&#39;IA avec un choix de pousser Mistral comme alternative crédible aux géants américains.</p>\n<p>Pas par chauvinisme, mais parce que ça répond à des vrais problèmes concrets</p>\n<p>Dans ce talk, je vous propose un retour d&#39;expérience honnête :</p>\n<ul>\n<li>Pourquoi la souveraineté est devenue un vrai sujet business (spoiler : c&#39;est pas que pour faire plaisir au DPO)</li>\n<li>Ce que Mistral propose concrètement aux entreprises : Le Chat, l&#39;API, le on-premise, les coûts réels</li>\n<li>Comment on a déploie ça chez des clients, les galères qu&#39;on a eues, et ce qui a bien marché - Les limites et les points de vigilance (parce que non, Mistral n&#39;est pas la solution magique à tout)</li>\n</ul>\n<p>Pas de slide bullshit, pas de discours commercial.</p>\n<p>Juste du vécu, des chiffres, et des conseils pratiques pour ceux qui envisagent de sauter le pas, ou qui veulent au moins comprendre de quoi on parle quand on dit IA souveraine</p>",
+      "speakerIds": [
+        "mickael-faust"
+      ]
+    },
+    {
+      "id": "d1t4s7",
+      "title": "Atelier LLM - Générations avancées - Multimodalité & contexte étendu",
+      "format": "Workshop",
+      "category": "Data & AI",
+      "room": "Workshop",
+      "day": "2026-10-01",
+      "timeStart": "15h45",
+      "timeEnd": "17h30",
+      "startMinutes": 945,
+      "endMinutes": 1050,
+      "abstractHtml": "<p>L&#39;avènement des grands modèles de langage a radicalement transformé la résolution de problèmes complexes.</p>\n<p>Enrichissez votre boîte à outils en y intégrant la multimodalité et la gestion de contextes d&#39;un million de tokens, et accédez à un éventail inédit de possibilités.</p>\n<p>Cet atelier interactif vous fournira méthodes et techniques pour relever les défis suivants :</p>\n<ul>\n<li><strong>Transcription multimodale de vidéos :</strong> Transcrivez des vidéos et identifiez les locuteurs en un seul prompt.</li>\n<li><strong>Génération de graphes de connaissances :</strong> Extrayez des entités et leurs relations à partir d&#39;un corpus massif (1M de tokens) en une requête unique.</li>\n<li><strong>Automatisation de banques d&#39;images :</strong> Mettez en place un pipeline de génération d&#39;images cohérentes et faites revivre vos archives visuelles.</li>\n</ul>\n<p>Aucune expertise, préparation ou installation n’est nécessaire.</p>\n<p>Venez avec votre ordinateur, un navigateur et une bonne pincée de curiosité !</p>",
+      "speakerIds": [
+        "laurent-picard"
+      ]
+    },
+    {
+      "id": "d1t1s8",
+      "title": "Profiler les bots comme un ailier analyse une mêlée",
+      "format": "Conférence",
+      "category": "Data & AI",
+      "room": "Auditorium",
+      "day": "2026-10-01",
+      "timeStart": "16h45",
+      "timeEnd": "17h30",
+      "startMinutes": 1005,
+      "endMinutes": 1050,
+      "abstractHtml": "<p>Votre détection, c&#39;est une boîte noire.</p>\n<p>Cette frustration revient sans cesse dans l&#39;industrie de la sécurité, que ce soit des équipes SOC face à leurs alertes EDR/XDR  ou des responsables devant leur dashboard de protection.</p>\n<p>Les outils de détection bloquent les menaces, mais expliquent rarement ce qui est bloqué, à quel point l&#39;adversaire est sophistiqué, ou quel effort est nécessaire pour rester protégé.</p>\n<p>MITRE ATT&amp;CK est souvent présenté comme la réponse, le langage universel de la threat intelligence.</p>\n<p>En pratique, ses 200+ techniques, 680+ sous-techniques et sa taxonomie à trois niveaux tactique/technique/procédure forment une matrice si dense qu&#39;elle est devenue un framework que les éditeurs de sécurité citent mais que peu de clients utilisent réellement pour prendre leurs décisions.</p>\n<p>Mapper une alerte sur une technique MITRE ne dit pas à un responsable fraude s&#39;il doit durcir sa  protection, ni à un CISO comment prioriser son budget.</p>\n<p>Le framework a été conçu pour des kill chains d&#39;intrusion, par et pour des chercheurs en sécurité, pas pour  la fraude en ligne, où les adversaires partagent les mêmes réseaux de proxys, les mêmes kits d&#39;automatisation, et pivotent plus vite que n&#39;importe quel suivi basé sur des IOCs.</p>\n<p>Dans ce talk, nous présentons comment nous avons transformé notre moteur de détection boîte noire en source de threat intelligence actionnable, en développant un framework de threat markers, une taxonomie compacte et lisible qui caractérise les adversaires par les techniques qu&#39;ils utilisent plutôt que par les règles individuelles qu&#39;ils déclenchent.</p>\n<p>Avec moins de 40 marqueurs couvrant les dimensions réseau, client-side fingerprinting, server-side fingerpritning et comportementale, les threat markers fournissent un langage que les équipes sécurité peuvent réellement utiliser pour prendre des décisions : ai-je affaire à un adversaire sophistiqué ou à un script basique ?</p>\n<p>Le même acteur pivote-t-il et revient-il ?</p>\n<p>Mes concurrents sont-ils ciblés par les mêmes menaces ?</p>\n<p>Avec quelle agressivité dois-je régler ma protection ?</p>\n<p>Cette session se concentre sur la couche d&#39;intelligence construite par-dessus le moteur de détection pour expliquer ce qu&#39;elle permet:</p>\n<ul>\n<li>Des règles aux profils : Pourquoi les règles de détection individuelles ne suffisent pas pour comprendre les menaces</li>\n<li>Rendre la sophistication mesurable : Comment les profils de threat markers permettent de scorer les attaques selon des axes concrets: furtivité, distribution, échelle, évasion et adaptabilité, donnant aux clients une base tangible pour calibrer leur posture défensive plutôt que de se fier à leur intuition.</li>\n<li>Le profiling en action : nous prendront le cas d&#39;une attaque DDoS de 2 milliards de requêtes pour illustrer la valeur mesurable du profiling, aussi bien aux profils techniques qu&#39;aux décideurs.</li>\n<li>Cross-clients : Comment la comparaison des profils de threat markers entre clients et industries révèle si une attaque est ciblée ou fait partie d&#39;une campagne plus large, et aide à répondre à l&#39;éternelle question : « Suis-je particulièrement ciblé, ou tout le monde subit la même chose ? »</li>\n<li>Un outil pour être proactif en interne : Les adversaires les plus habiles parviennent parfois à bypasser la protection, ce sont les faux négatifs. Avec plus de 700 signaux disponibles, identifier où concentrer l&#39;effort de détection est un défi en soi. Les threat markers servent de digest pour comprendre quel arsenal est utilisé pour nous contourner, et orienter le travail de l&#39;équipe là où il aura le plus d&#39;impact.</li>\n<li>Scaler sans perdre en lisibilité : Comment le labeling automatisé maintient le framework à jour sur des centaines de milliers de règles de détection, y compris celles générées par des modèles de ML, pour que la couche d&#39;intelligence ne soit jamais en retard sur la couche de détection.</li>\n<li>Ce que les threat markers ne sont pas : Comme tout framework, il y a des limites. Les threat markers caractérisent des techniques observables dans le trafic HTTP et les signaux client-side, ils n&#39;identifient pas un individu, ne remplacent pas une investigation forensique complète. Nous aborderons les angles morts, et les compléments nécessaires pour une vision complète.</li>\n</ul>\n<p>L&#39;objectif de ce talk est pratique : les participants verront comment une taxonomie de menaces légère et spécifique à un domaine peut transformer un système de détection  d&#39;un verdict binaire en un outil qui raconte une histoire.</p>\n<p>Une histoire que les équipes sécurité et les clients peuvent utiliser pour prioriser, communiquer vers le haut, et prendre des décisions éclairées sur la protection dont elles ont besoin.</p>",
+      "speakerIds": [
+        "guenaelle-de-julis"
+      ]
+    },
+    {
+      "id": "d1t3s8",
+      "title": "La documentation, ce nouveau langage de programmation",
+      "format": "Conférence",
+      "category": "Data & AI",
+      "room": "FabLab",
+      "day": "2026-10-01",
+      "timeStart": "16h45",
+      "timeEnd": "17h30",
+      "startMinutes": 1005,
+      "endMinutes": 1050,
+      "abstractHtml": "<p>Après <strong>20 ans de développement d’applications sur mesure</strong>, nous venons de vivre notre plus grand virage : <strong>traiter la documentation comme un langage de programmation</strong>.</p>\n<p>La <strong>documentation</strong>, technique et fonctionnelle, versionnée en <strong>Markdown</strong>, devient la <strong>source de vérité</strong> qui guide la génération de code et sa mise à jour continue, en interaction et <strong>sous le contrôle</strong> des développeurs (CI, revues, règles).</p>\n<p>Avec des <strong>assistants IA</strong>, orchestrés avec <strong>Claude Code</strong>, nous avons avant tout gagné en <strong>qualité</strong> : <strong>ambiguïtés réduites</strong>, <strong>meilleure cohérence doc/code</strong>, <strong>traçabilité claire</strong>.</p>\n<p>Surtout, nous gardons <strong>le plaisir</strong> et <strong>la maîtrise</strong> de livrer des fonctionnalités, <strong>même si nous écrivons moins de code nous-mêmes</strong>.</p>\n<p>Nous viendrons partager un retour d’expérience concret et présenter le workflow complet de cette nouvelle démarche, de la documentation à la livraison.</p>",
+      "speakerIds": [
+        "xavier-gorse"
+      ]
+    },
+    {
+      "id": "d1t2s8",
+      "title": "Ethics as Code - Mettre l'éthique en prod",
+      "format": "Conférence",
+      "category": "Découverte",
+      "room": "Showroom",
+      "day": "2026-10-01",
+      "timeStart": "16h45",
+      "timeEnd": "17h30",
+      "startMinutes": 1005,
+      "endMinutes": 1050,
+      "abstractHtml": "<p>Regards croisés entre une référente éthique et 40 ans de code  Que se passe-t-il quand elle rencontre la réalité du code, des deadlines, des affaires, des contournements et l’ingéniosité des hackers ?</p>\n<p>Bref, le geek c&#39;est chic, mais combiné à l&#39;éthique ça devient épique :)</p>\n<p>Dans ce talk en duo, Hélène — spécialiste de l’éthique du numérique — et Yann — tech chevronné — confrontent deux mondes qui se parlent trop rarement.</p>\n<p>L’un pose les cadres, les principes, les responsabilités.</p>\n<p>L’autre vit les choix techniques, les compromis, et parfois les zones grises du terrain.</p>\n<p>Avant de travailler avec Hélène, face au dilemme classique de la voiture automatique qui doit choisir entre écraser un dev qui met les accolades à la ligne ou un dev qui met les accolades à la fin de la ligne, le  choix de Yann aurait été rapide et sans appel (mais qui met les accolades à la ligne ?????).</p>\n<p>À travers des situations concrètes (sécurité, IA, données, etc.), nous raconterons comment l’éthique devient un véritable outil de décision pour les équipes tech.</p>\n<p>Et aussi comment devenir (et rester) un hacker éthique.</p>\n<p>Avec humour et beaucoup d&#39;exemple nous allons mettre l&#39;éthique en prod et tenter de sauver quelques accolades à la ligne ... ou pas ....</p>\n<p>👉 Comment faire de l’éthique un réflexe de développeur, et non une contrainte imposée d’en haut ?</p>",
+      "speakerIds": [
+        "helene-gebel",
+        "yann-gloriau"
+      ]
+    },
+    {
+      "id": "d1t1s9",
+      "title": "Rejouer une partie, rejouer le système de la matrice - des replays de jeux vidéo à l’event sourcing",
+      "format": "Conférence",
+      "category": "Archi, Perf et Sécu",
+      "room": "Auditorium",
+      "day": "2026-10-01",
+      "timeStart": "17h45",
+      "timeEnd": "18h30",
+      "startMinutes": 1065,
+      "endMinutes": 1110,
+      "abstractHtml": "<p>Dans la plupart des jeux vidéo modernes, un “replay” n’est pas une vidéo mais une simple liste d’événements : les inputs des joueurs, quelques événements système et un état initial minimal.</p>\n<p>Pour revoir une partie, le moteur ne fait “que” tout rejouer dans l’ordre et reconstruit ainsi l’intégralité de la session.</p>\n<p>🎮📜  Côté backend, l’event sourcing applique exactement la même idée : au lieu de stocker uniquement l’état courant, on enregistre la chronologie des décisions métier (events) qui ont mené à cet état.</p>\n<p>On peut alors “remonter le temps” pour débuguer un bug tordu, auditer un comportement étrange, ou reconstruire un système sur une nouvelle architecture.</p>\n<p>Dans ce talk, on partira de cas concrets côté jeux (replays, rewind, killcams) pour expliquer pas à pas :</p>\n<ul>\n<li>comment fonctionne un système de replay basé sur un log d’événements,</li>\n<li>en quoi ce modèle diffère d’une approche CRUD classique,</li>\n<li>ce que l’event sourcing reprend de cette idée pour nos SI.</li>\n</ul>\n<p>Je montrerai un mini-système de replay dans un petit jeu ainsi qu’un exemple d’event store côté backend (Java/TypeScript), sans masquer les limites : coût de relecture, complexité, tooling…</p>",
+      "speakerIds": [
+        "pierre-fervel"
+      ]
+    },
+    {
+      "id": "d1t2s9",
+      "title": "Ils sont fous chez TanStack, ils ont mis une DB dans le front ! 🤯",
+      "format": "Conférence",
+      "category": "Découverte",
+      "room": "Showroom",
+      "day": "2026-10-01",
+      "timeStart": "17h45",
+      "timeEnd": "18h30",
+      "startMinutes": 1065,
+      "endMinutes": 1110,
+      "abstractHtml": "<p>Dans un monde où une seconde de chargement peut faire perdre des millions d’euros, on cherche tous les tricks pour avoir l’expérience la plus fluide possible.</p>\n<p>Imaginez que votre DB soit dans votre front, ça ne réglerait pas tous nos soucis ?</p>\n<p>Plus de gestion d’état de nos appels API, plus de latence réseau, plus de casse tête d’optimistic update. 🤯</p>\n<p>Tanstack DB apporte cette DevX tout en laissant au backend son rôle de backend et à la vrai DB son rôle de DB.</p>\n<p>Bref un tour de magie qui nous fait oublier la complexité de nos API.</p>\n<p>Et si vous n’êtes pas encore rassasié, ajoutez un sync-engine en quelques minutes pour voir votre front se mettre à jour en temps réel à chaque changement. ⚡</p>\n<p>Venez découvrir avec nous cette drôle d’idée de DB dans le front !</p>",
+      "speakerIds": [
+        "delphin-aubin",
+        "lucas-audart"
+      ]
+    },
+    {
+      "id": "d2t1k1",
+      "title": "L'intro Volcamp",
+      "format": "Keynote",
+      "category": "Keynote",
+      "room": "Auditorium",
+      "day": "2026-10-02",
+      "timeStart": "09h00",
+      "timeEnd": "09h15",
+      "startMinutes": 540,
+      "endMinutes": 555,
+      "abstractHtml": "",
+      "speakerIds": [
+        "volcamp"
+      ]
+    },
+    {
+      "id": "d2t1k2",
+      "title": "Keynote jour 2",
+      "format": "Conférence",
+      "category": "Keynote",
+      "room": "Auditorium",
+      "day": "2026-10-02",
+      "timeStart": "09h15",
+      "timeEnd": "10h00",
+      "startMinutes": 555,
+      "endMinutes": 600,
+      "abstractHtml": "",
+      "speakerIds": [
+        "julien_briault"
+      ]
+    },
+    {
+      "id": "d2t1s1",
+      "title": "Votre architecture cloud est en réalité un organigramme",
+      "format": "Conférence",
+      "category": "Archi, Perf et Sécu",
+      "room": "Auditorium",
+      "day": "2026-10-02",
+      "timeStart": "10h15",
+      "timeEnd": "11h00",
+      "startMinutes": 615,
+      "endMinutes": 660,
+      "abstractHtml": "<p>Chaque choix d’infrastructure est aussi un choix organisationnel.</p>\n<p>Quand votre équipe choisit Kubernetes, un PaaS, du serverless ou des VMs auto-gérées, elle ne choisit pas seulement une cible de déploiement.</p>\n<p>Elle choisit aussi qui sera réveillé à 3h du matin, combien de temps il faudra à une nouvelle recrue pour livrer en production, où se situent les frontières de responsabilité, et quels profils il faudra recruter.</p>\n<p>Pourtant, on continue à évaluer l’infrastructure avec des matrices de fonctionnalités plutôt qu’avec des matrices de modèle opérationnel.</p>\n<p>On compare l’autoscaling, les services managés et la flexibilité de déploiement, en ignorant la charge cognitive, la structure de l’équipe et les astreintes que chaque choix implique.</p>\n<p>Dans ce talk, je prendrai une application réaliste et je montrerai comment son déploiement sur quatre modèles d’infrastructure différents produit quatre organigrammes radicalement différents : des rôles différents, des modes de défaillance différents, des parcours d’intégration différents, et des coûts qui n’apparaissent jamais sur la facture cloud.</p>\n<p>Je proposerai ensuite un cadre pratique pour prendre des décisions d’infrastructure fondées sur l’équipe et le modèle opérationnel que vous voulez réellement, et pas seulement sur les fonctionnalités de la plateforme.</p>",
+      "speakerIds": [
+        "horacio-gonzalez"
+      ]
+    },
+    {
+      "id": "d2t3s1",
+      "title": "Archéologie logicielle - reconstruire un jeu sans son code source",
+      "format": "Conférence",
+      "category": "Découverte",
+      "room": "FabLab",
+      "day": "2026-10-02",
+      "timeStart": "10h15",
+      "timeEnd": "11h00",
+      "startMinutes": 615,
+      "endMinutes": 660,
+      "abstractHtml": "<p>En 2020, la communauté de Mush, un jeu web multijoueur menacé de disparition, décide de le reconstruire de zéro.</p>\n<p>Sans code source, sans spécifications, sans équipe produit.</p>\n<p>Juste un wiki, les souvenirs de joueurs expérimentés, des logs de milliers de parties, des screenshots et des vidéos.</p>\n<p>Ce talk raconte trois ans d&#39;archéologie logicielle : comment extraire des règles métier de sources hétérogènes et parfois contradictoires, et comment les tests automatisés sont devenus l&#39;endroit où cette connaissance a fini par se cristalliser.</p>\n<p>Si vous avez déjà repris un projet dont personne ne se souvient vraiment comment il fonctionne, certaines situations vous seront peut-être familières.</p>",
+      "speakerIds": [
+        "charles-meldhine-madi-mnemoi"
+      ]
+    },
+    {
+      "id": "d2t2s1",
+      "title": "Houston, on a un problème avec ETCD",
+      "format": "Conférence",
+      "category": "DevOps & Cloud",
+      "room": "Showroom",
+      "day": "2026-10-02",
+      "timeStart": "10h15",
+      "timeEnd": "11h00",
+      "startMinutes": 615,
+      "endMinutes": 660,
+      "abstractHtml": "<p>Derrière chaque cluster Kubernetes se cache le même composant critique : <strong>ETCD</strong>.</p>\n<p>Tout y passe : la configuration, l&#39;état des pods, les secrets, et la moindre seconde d&#39;indisponibilité fait vaciller le control-plane.</p>\n<p>Pourtant, quand on opère du Kubernetes managé à grande échelle, ce data-store peut rapidement devenir un goulot d&#39;étranglement.</p>\n<p>Après des années à opérer ETCD chez différents cloud providers, nous nous sommes rendus à l&#39;évidence : on ne peut pas se contenter d&#39;empiler des clusters standalones.</p>\n<p><strong>Plutôt que de continuer à contourner ses limites, nous avons choisi chez Clever Cloud de le réécrire</strong>.</p>\n<p>Plus précisément, construire une couche stateless compatible avec son protocole, en s&#39;appuyant sur FoundationDB pour le stockage, le Key-Value distribué transactionnel utilisé par Apple pour iCloud et OpenAI.</p>\n<p>Lors de ce deep-dive, nous partagerons notre retour d&#39;expérience : pourquoi ETCD nous a poussés à le réécrire, ce qu&#39;on découvre quand on plonge dans ses internals (watchers, révisions, ce qui se passe à chaque <code>kubectl apply</code>), et comment cette réécriture en couche stateless au-dessus de FoundationDB change la donne pour servir du Kubernetes à grande échelle.</p>",
+      "speakerIds": [
+        "alexandre-burgoni",
+        "pierre-zemb"
+      ]
+    },
+    {
+      "id": "d2t4s1",
+      "title": "🚀 De Java à l'IA - Construisez Votre Premier Système d'Agents Intelligents !",
+      "format": "Workshop",
+      "category": "Data & AI",
+      "room": "Workshop",
+      "day": "2026-10-02",
+      "timeStart": "10h15",
+      "timeEnd": "12h15",
+      "startMinutes": 615,
+      "endMinutes": 735,
+      "abstractHtml": "<p>🎯 Révolutionnez votre vision du développement Java avec l&#39;IA !</p>\n<p>Vous maîtrisez Java ?</p>\n<p>Vous détenez déjà 80 % des clés pour bâtir des systèmes d&#39;IA sophistiqués.</p>\n<p>Ne laissez pas Python monopoliser l&#39;innovation : avec LangChain4j, Java devient le langage roi pour l&#39;IA de production.</p>\n<p>Au programme de cet atelier intensif :</p>\n<p>🧱 Partie 1 : L&#39;IA comme un service.</p>\n<p>Apprenez à injecter l&#39;intelligence via CDI comme n&#39;importe quel Bean.</p>\n<p>Gérez la mémoire contextuelle avec les scopes (@SessionScoped) et donnez des bras à vos agents grâce au Function Calling.</p>\n<p>🏗️ Partie 2 : L&#39;Architecte d&#39;Agents.</p>\n<p>Allez au-delà du simple chat.</p>\n<p>Concevez des workflows déclaratifs complexes (séquence, parallèle) et maîtrisez le Pattern Superviseur : une IA capable de planifier et manager d&#39;autres agents de manière autonome.</p>\n<p>🚀 Pourquoi venir ?</p>\n<p>Repartez avec des patterns prêts à l&#39;emploi, une maîtrise des protocoles MCP/A2A et la capacité d&#39;intégrer des agents robustes dans vos architectures d&#39;entreprise.</p>\n<p>Passez de spectateur à architecte de l&#39;IA ! 🚀</p>",
+      "speakerIds": [
+        "antoine-sabot-durand",
+        "emmanuel-hugonnet",
+        "yann-blazard"
+      ]
+    },
+    {
+      "id": "d2t1s2",
+      "title": "Le Terminal Contre-Attaque - TUI 2 le retour !",
+      "format": "Conférence",
+      "category": "UX/UI",
+      "room": "Auditorium",
+      "day": "2026-10-02",
+      "timeStart": "11h30",
+      "timeEnd": "12h15",
+      "startMinutes": 690,
+      "endMinutes": 735,
+      "abstractHtml": "<p>Lorsque j’ai commencé à partager ma passion pour les TUI (Textual User Interface), j’étais loin de me douter que ce domaine allait connaître une telle évolution.</p>\n<p>Comme moi, il semblerait que le monde des assistants de code et des agents se soit lassé des interfaces graphiques gourmandes en ressources et complexes à utiliser.</p>\n<p>Je vous emmène donc à la découverte de l&#39;univers des TUI et leur potentiel pour enrichir les applications en ligne de commande.</p>\n<p>En partant d&#39;une CLI simple, je vous montrerai comment intégrer des éléments de TUI pour créer une expérience utilisateur plus intuitive et interactive.</p>\n<p>Après un aperçu de quelques frameworks TUI populaires tels que Textual, BubbleTea ou Ratatui, nous irons à la rencontre de langages autres que Python, Go ou Rust.</p>\n<p>Laissez-vous surprendre par ce que les écosystèmes PHP et Java peuvent apporter à la galaxie TUI.</p>\n<p>Vous repartirez donc :  en sachant ce que les TUI peuvent vous apporter avec un tour d&#39;horizon de solutions pour en développer vous-même avec des exemples concrets de code</p>\n<p>Vers l’infini et au-delà, le tout depuis le confort de votre terminal et de ses TUI ! 💞</p>",
+      "speakerIds": [
+        "thierry-chantier"
+      ]
+    },
+    {
+      "id": "d2t3s2",
+      "title": "Kafka pour les Paiements - De la Théorie à la Pratique – Résilience, Tests et Bonnes Pratiques",
+      "format": "Conférence",
+      "category": "Lang & Frameworks",
+      "room": "FabLab",
+      "day": "2026-10-02",
+      "timeStart": "11h30",
+      "timeEnd": "12h15",
+      "startMinutes": 690,
+      "endMinutes": 735,
+      "abstractHtml": "<p>Opérer une <strong>architecture event-driven</strong> pour un système de paiement exige une attention particulière à la résilience et à la testabilité.</p>\n<p>Chez Manomano, nous avons appris à :</p>\n<ul>\n<li>Rendre les consommateurs Kafka robustes : Implémentation de <strong>retries synchrones/asynchrones</strong>, gestion des <strong>DLT</strong>, et classification des erreurs pour éviter les reprocessings inutiles ou les blocages.</li>\n<li>Simplifier les tests d’intégration : Abandon des consommateurs Kafka au profit de <strong>Producer Listeners</strong>, permettant des tests 5 fois plus rapides, parallélisables et <strong>fiables, même en CI</strong>.</li>\n<li>Équilibrer les trade-offs : Quand utiliser du <strong>blocking vs. non-blocking</strong>, et comment concilier idempotence, ordre des messages et performances.</li>\n</ul>\n<p>Une session technique avec des <strong>démos en Java/Spring</strong>, des benchmarks, et des recommandations actionnables pour vos propres architectures Kafka.</p>",
+      "speakerIds": [
+        "vincent-aubrun"
+      ]
+    },
+    {
+      "id": "d2t2s2",
+      "title": "Modéliser pour un commun numérique - retour d'expérience sur l'Observatoire de l'ESS numérique",
+      "format": "Conférence",
+      "category": "Sustainable IT",
+      "room": "Showroom",
+      "day": "2026-10-02",
+      "timeStart": "11h30",
+      "timeEnd": "12h15",
+      "startMinutes": 690,
+      "endMinutes": 735,
+      "abstractHtml": "<p>Combien de strucuture de l&#39;économie sociale et solidaires (ESS) font du numérique en France ?</p>\n<p>Personne ne sait rééllement : Pas de liste, pas de base, pas de définition stabilisée.</p>\n<p>Ce secteur est en partie invisible : beaucoup d&#39;acteurs — coopératives, associations, tiers-lieux, fournisseurs d&#39;accès associatifs — ne se reconnaissent pas toujours dans les catégories « ESS » ou « numérique », faute de cadre partagé.</p>\n<p>Au sein de Social Good Accelerator, nous construisons la première base de référence du secteur, qualifiée scientifiquement, à partir des 30 millions d&#39;entités SIRENE pour aboutir à une estimation de 300 organisations référencées.</p>\n<p>Nous ne construisons pas un observatoire descendant qui classifie à la place du secteur, mais une gouvernance destinée à permettre dès sa conception son auto-détermination.</p>\n<p>Ce talk raconte les choix d&#39;architecture et de gouvernance que cela impose.</p>",
+      "speakerIds": [
+        "nastasia-fouret"
+      ]
+    },
+    {
+      "id": "d2t3s3",
+      "title": "Du chaos à la confiance - Dompter un legacy complexe, test après test",
+      "format": "Lightning",
+      "category": "Sustainable IT",
+      "room": "FabLab",
+      "day": "2026-10-02",
+      "timeStart": "12h30",
+      "timeEnd": "12h45",
+      "startMinutes": 750,
+      "endMinutes": 765,
+      "abstractHtml": "<p>Imaginez un projet de près de 500 000 lignes de code, où chaque déploiement est une aventure périlleuse et où tester est douté.</p>\n<p>Nous étions là, face à cette montagne de legacy, sans savoir par quel versant l’attaquer.</p>\n<p>La seule chose qui se creusait aussi rapidement que nos cernes c’était notre perte de confiance.</p>\n<p>Dans ce talk, je vous raconte comment j’ai structuré une stratégie de tests progressive, transformant un chaos technique en un territoire maîtrisé.</p>\n<p>Comment j’ai retrouvé le plaisir de livrer.</p>\n<p>Que vous soyez dev, QA ou lead, venez découvrir comment nous avons repris le contrôle de notre production.</p>\n<p>Spoiler : il n’y a pas de magie.</p>\n<p>Juste des choix, des compromis… et une stratégie.</p>",
+      "speakerIds": [
+        "alix-olphe-galliard"
+      ]
+    },
+    {
+      "id": "d2t2s3",
+      "title": "Girouette ou boussole — lire ses métriques sans perdre le nord",
+      "format": "Lightning",
+      "category": "Data & AI",
+      "room": "Showroom",
+      "day": "2026-10-02",
+      "timeStart": "12h30",
+      "timeEnd": "12h45",
+      "startMinutes": 750,
+      "endMinutes": 765,
+      "abstractHtml": "<p>Lundi matin, 9h.</p>\n<p>Les métriques de la semaine viennent de tomber.</p>\n<p>Le taux de conversion au checkout a baissé de 12%.</p>\n<p>Tout le monde a une explication, mais au fond, personne n&#39;est franchement convaincu.</p>\n<p>La plupart de nos dashboards sont des girouettes : ils tournent à chaque coup de vent et nous entraînent dans des réunions entières à expliquer... du bruit.</p>\n<p>Ce que l&#39;on voudrait c&#39;est une boussole: un outil qui nous donne une réelle direction business.</p>\n<p>Dans ce talk, on verra pourquoi notre cerveau est câblé pour sur-interpréter les variations, et comment un outil très simple — issu du contrôle statistique des procédés — permet de distinguer ce qui mérite votre attention de ce qui ne mérite pas une réunion.</p>\n<p>Vous repartirez avec une intuition claire sur signal vs bruit, une demo concrète sur des métriques métier, et un outil utilisable dès le lendemain.</p>",
+      "speakerIds": [
+        "veltin-dupont"
+      ]
+    },
+    {
+      "id": "d2t3s4",
+      "title": "Un capteur de distance pour donner la température",
+      "format": "Lightning",
+      "category": "Découverte",
+      "room": "FabLab",
+      "day": "2026-10-02",
+      "timeStart": "13h00",
+      "timeEnd": "13h15",
+      "startMinutes": 780,
+      "endMinutes": 795,
+      "abstractHtml": "<p>Et si un simple capteur ultrasonique pouvait devenir un instrument météorologique ?</p>\n<p>Dans cette présentation, je montre comment détourner un capteur de distance sonar classique pour mesurer la température de l’air, sans utiliser de capteur thermique ou dédié.</p>\n<p>En exploitant les variations de vitesse du son dans l’air et quelques modèles physiques simples, ce prototype low-cost transforme un composant banal en outil de mesure environnementale.</p>\n<p>Le projet mêle électronique minimaliste, expérimentation, traitement du signal et approche “maker” inventive.</p>\n<p>Une démonstration concrète de la manière dont on peut extraire beaucoup d’informations d’un capteur apparemment limité, simplement en regardant la physique autrement.</p>",
+      "speakerIds": [
+        "romain-pouillard"
+      ]
+    },
+    {
+      "id": "d2t2s4",
+      "title": "Refondre une expérience e-commerce grâce au Design Thinking et au Lean Startup",
+      "format": "Lightning",
+      "category": "Découverte",
+      "room": "Showroom",
+      "day": "2026-10-02",
+      "timeStart": "13h00",
+      "timeEnd": "13h15",
+      "startMinutes": 780,
+      "endMinutes": 795,
+      "abstractHtml": "<p>Un e-shop, c’est simple… jusqu’à ce qu’on le repense vraiment.</p>\n<p>Tout le monde sait utiliser un e-shop.</p>\n<p>Commander un produit, payer, se faire livrer : rien de plus banal.</p>\n<p>Et pourtant… lorsque nous avons dû refondre un e-shop existant, nous avons rapidement réalisé à quel point ce “sujet simple” est en réalité un problème profondément complexe.</p>\n<p>Dans ce retour d’expérience, nous raconterons comment nous avons abordé la refonte complète d’un e-shop en combinant Design Thinking et Lean Startup.</p>\n<p>Pas pour “faire plus joli”, mais pour concevoir une expérience réellement différenciante, centrée sur les usages, les frustrations réelles et les attentes implicites des utilisateurs.</p>\n<p>En 15 minutes, nous montrerons :</p>\n<ul>\n<li>pourquoi un e-shop est un faux sujet “évident”,</li>\n<li>comment le Design Thinking nous a permis de déconstruire les certitudes initiales,</li>\n<li>comment le Lean Startup nous a aidés à tester rapidement des hypothèses,</li>\n<li>et ce que cette approche nous a appris sur l’innovation produit… même sur un domaine ultra connu.</li>\n</ul>\n<p>Un talk concret, sans bullshit, illustré d’exemples terrain, destiné à toutes les personnes qui pensent que l’innovation ne se cache pas forcément dans des sujets complexes, mais dans des problèmes que l’on croit trop bien connaître.</p>",
+      "speakerIds": [
+        "alicia-cheynoux",
+        "ombeline-sotty"
+      ]
+    },
+    {
+      "id": "d2t1s5",
+      "title": "Les cyberattaques dans les films de Science-Fiction",
+      "format": "Conférence",
+      "category": "Archi, Perf et Sécu",
+      "room": "Auditorium",
+      "day": "2026-10-02",
+      "timeStart": "13h30",
+      "timeEnd": "14h15",
+      "startMinutes": 810,
+      "endMinutes": 855,
+      "abstractHtml": "<p>R2D2 est-il un hacker génial ou un simple droïde de maintenance ?</p>\n<p>Ce talk atypique utilise des extraits de classiques de SF pour expliquer le concept de Cyber Kill Chain (et Framework MITRE)  Une cyber attaque obéit à différentes étapes (reconnaissance, premiere intrusion, élevation de privilèges, etc) : quels sont les films sérieux qui respectent la CKC et les autres.</p>\n<p>On parle de Starwars, Wargames, Matrix, BattleStar Gallactica, ...</p>",
+      "speakerIds": [
+        "pierre-raufast"
+      ]
+    },
+    {
+      "id": "d2t3s5",
+      "title": "🤖 Assistant IA pour le code - comment ça marche ? J'en ai codé un ! 😎",
+      "format": "Conférence",
+      "category": "Data & AI",
+      "room": "FabLab",
+      "day": "2026-10-02",
+      "timeStart": "13h30",
+      "timeEnd": "14h15",
+      "startMinutes": 810,
+      "endMinutes": 855,
+      "abstractHtml": "<p>Les assistants IA pour le code (Claude Code, Codex, OpenCode, GitHub Copilot, Cursor...) ont émergé et envahi l&#39;écosystème de notre métier en développement logiciel.</p>\n<p>Mais comment ça marche ?</p>\n<p>Quelle est la magie qui permet de créer et de modifier mon code, d&#39;exécuter des commandes, etc...</p>\n<p>Je me posais la question.</p>\n<p>Alors j&#39;ai creusé le sujet et j&#39;ai développé mon propre assistant IA.... du moins, un début de mini assistant 😉.</p>\n<p>Je vous partagerai mon REX sur ce projet : les principes de base (LLM, tools, historique), des démos pour voir si ça marche (analyse, création de code, correction de bug, skill, MCP), les difficultés que j&#39;ai rencontrées, les choses que j&#39;ai apprises, et les bonnes surprises.</p>",
+      "speakerIds": [
+        "xavier-nopre"
+      ]
+    },
+    {
+      "id": "d2t2s5",
+      "title": "Oops, we did it again! Comment la GenAI nous fait répéter les erreurs du passé",
+      "format": "Conférence",
+      "category": "Data & AI",
+      "room": "Showroom",
+      "day": "2026-10-02",
+      "timeStart": "13h30",
+      "timeEnd": "14h15",
+      "startMinutes": 810,
+      "endMinutes": 855,
+      "abstractHtml": "<p>Tout semble devoir être repensé à l&#39;heure de la GenAI : nos entreprises, nos métiers, notre valeur sur le marché du travail.</p>\n<p>La transformation est réelle... et l’anxiété aussi.</p>\n<p>Au milieu de la FOMO et des discours de rupture, on peut oublier ce qui ne change pas.</p>\n<p>Et pourtant, les fondamentaux n’ont pas disparu.</p>\n<p>Des agents IA alimentés par une documentation obsolète sont rarement utiles.</p>\n<p>Des cas d’usage mal définis ne deviennent pas pertinents parce qu’on leur ajoute un LLM.</p>\n<p>Des expérimentations sans gouvernance, sans évaluation ni responsabilité claire finissent toujours par produire de la déception.</p>\n<p>Mon constat aujourd&#39;hui c&#39;est que beaucoup d’entreprises sont en train de répéter avec la GenAI les erreurs déjà commises avec le Machine Learning classique : fascination pour la technologie, sous-estimation du travail requis sur les données, POC en rafale qui ne deviennent jamais des produits, promesses sans métriques, gouvernance repoussée à plus tard...  <em>Oops, we did it again.</em></p>\n<p>Dans ce talk, je tenterai une lecture pragmatique et j&#39;espère rassurante de la vague GenAI : ce qui change vraiment, ce qui perdure, et ce que les entreprises doivent garder en tête avant de reconstruire un cimetière de POC.</p>",
+      "speakerIds": [
+        "marie-crappe"
+      ]
+    },
+    {
+      "id": "d2t4s5",
+      "title": "Maîtrisez vos déploiements avec OpenFeature et les Feature Flags",
+      "format": "Workshop",
+      "category": "Lang & Frameworks",
+      "room": "Workshop",
+      "day": "2026-10-02",
+      "timeStart": "13h30",
+      "timeEnd": "15h15",
+      "startMinutes": 810,
+      "endMinutes": 915,
+      "abstractHtml": "<p>Livrer du code, c’est bien.</p>\n<p>Livrer une fonctionnalité sans casser le reste du système, c’est mieux !</p>\n<p>Aujourd’hui, chaque nouvelle release expose aux risques de régression ou de mauvaises interactions entre les fonctionnalités existantes et les nouvelles.</p>\n<p>Et quand il s’agit de déployer pour un sous-ensemble d’utilisateurs ?</p>\n<p>C&#39;est encore plus délicat.</p>\n<p>Le Feature Flagging permet de décorréler la mise en production du code de l’activation des fonctionnalités, en offrant la possibilité d’activer ou désactiver des blocs à chaud, sans redéployer.</p>\n<p>Heureusement, depuis quelques années cette pratique se développe de plus en plus au travers d&#39;outils open-source et de pratiques logicielles.</p>\n<p>Pourtant, au-delà du simple <code>if-then-else</code> la plupart des solutions disponibles restent propriétaires, lourdes ou coûteuses à mettre en oeuvre.</p>\n<p>OpenFeature, projet de la CNCF, propose une spécification ouverte pour un feature flagging unifié, utilisable aussi bien côté serveur que client, quel que soit le backend de gestion.</p>\n<p>Au cours de ce workshop, nous implémenterons une nouvelle fonctionnalité sur une application existante basée sur Java et Angular.</p>\n<p>Puis nous piloterons son activation au travers du feature flagging.</p>\n<p>En chemin, nous aborderons les sujets clés : gestion des erreurs, tests A/B, déploiement progressif, ciblage et observabilité.</p>\n<p>À la fin, nous saurons comment livrer plus vite, plus sûr, et avec confiance.</p>",
+      "speakerIds": [
+        "alexandre-touret"
+      ]
+    },
+    {
+      "id": "d2t1s6",
+      "title": "Full Agentic ou rien - quand une équipe confie son legacy à une factory d’agents IA",
+      "format": "Conférence",
+      "category": "Lang & Frameworks",
+      "room": "Auditorium",
+      "day": "2026-10-02",
+      "timeStart": "14h30",
+      "timeEnd": "15h15",
+      "startMinutes": 870,
+      "endMinutes": 915,
+      "abstractHtml": "<p>Et si l’IA ne se contentait plus d’être un copilote… mais devenait une vraie force de production logicielle ?</p>\n<p>Pas juste quelques suggestions dans un IDE.</p>\n<p>Ici, des agents IA analysent un patrimoine legacy, génèrent de la rétro-documentation, préparent une sortie d’Oracle, migrent du vieux Java, corrigent des bugs, implémentent des évolutions métier, ouvrent des pull requests, produisent des preuves de non-régression — sous supervision humaine.</p>\n<p>Mais ce talk n’est pas une démo miracle.</p>\n<p>Nous parlerons surtout de la réalité du terrain : documentation absente, dette technique abyssale, contextes applicatifs incomplets, tests insuffisants, données impossibles à rejouer, hallucinations, agents trop autonomes, arbitrages permanents entre vitesse, coût et sécurité.</p>\n<p>À travers un retour d’expérience concret de modernisation applicative à grande échelle, nous montrerons comment nous avons structuré une véritable “factory IA” composée d’agents spécialisés : analyse du patrimoine, rétro-spécification, génération de tests, migration, correction, revue de code, documentation, évaluation de qualité.</p>\n<p>L’objectif : réussir à faire cohabiter deux combats habituellement incompatibles — transformer profondément un legacy massif tout en continuant à assurer la maintenance corrective et évolutive du quotidien.</p>\n<p>Au-delà de la technique, cette approche transforme aussi le rôle des développeurs.</p>\n<p>Moins de tâches répétitives.</p>\n<p>Plus d’orchestration, de cadrage, de revue critique, de testabilité et de pensée système.</p>\n<p>Le développeur devient un ingénieur de l’intention et des garde-fous : il pilote l’autonomie plutôt qu’il n’écrit chaque ligne.</p>\n<p>Un talk sans bullshit sur ce qu’il se passe après Copilot : quand l’IA n’assiste plus seulement les développeurs… mais entre réellement dans la chaîne de production logicielle.</p>",
+      "speakerIds": [
+        "kevin-beaugrand"
+      ]
+    },
+    {
+      "id": "d2t3s6",
+      "title": "Low tech appliqué à la high tech",
+      "format": "Conférence",
+      "category": "Sustainable IT",
+      "room": "FabLab",
+      "day": "2026-10-02",
+      "timeStart": "14h30",
+      "timeEnd": "15h15",
+      "startMinutes": 870,
+      "endMinutes": 915,
+      "abstractHtml": "<p>Dans un monde technique où la complexité est souvent valorisée, cette présentation propose un retour d&#39;expérience concret sur l’application des principes low tech aux pratiques high tech.</p>\n<p>L’objectif n’est pas de faire moins de tech, mais de faire mieux de tech.</p>",
+      "speakerIds": [
+        "lionel-heymans"
+      ]
+    },
+    {
+      "id": "d2t2s6",
+      "title": "A l'abordage du score Lighthouse !",
+      "format": "Conférence",
+      "category": "Archi, Perf et Sécu",
+      "room": "Showroom",
+      "day": "2026-10-02",
+      "timeStart": "14h30",
+      "timeEnd": "15h15",
+      "startMinutes": 870,
+      "endMinutes": 915,
+      "abstractHtml": "<p>Cette présentation interactive propose d&#39;explorer les différentes facettes du score Lighthouse et de la performance web, en utilisant la métaphore d&#39;un équipage pirate construisant un phare, étage par étage.</p>\n<p>Pour chaque métrique composant Lighthouse (CLS, FCP, LCP, TBT et SI), le public choisira directement via une application de vote dédiée quel patch appliquer à BlackMarket, un site parodique de vente d&#39;accessoires pirates reconditionnés, pour améliorer cette métrique.</p>\n<p>En fonction du résultat, le contenu de la présentation changera, se concentrant sur leur choix pour les expliquer en détail.</p>\n<p>Visuellement, le phare se construit aussi dynamiquement en fonction des votes dans les slides sous leurs yeux.</p>\n<p>À la fin de la présentation, ils découvrent l&#39;impact de leur choix sur les différentes métriques et le score Lighthouse de BlackMarket Ce qui change par rapport à un talk classique : la salle est embarquée dans une aventure et doit faire des choix réellement décisifs sur le contenu de la présentation.</p>\n<p>À chaque étape, le public vote entre deux options crédibles dans un temps limité ; le fil de la démo et le récit d&#39;optimisation suivent le résultat.</p>\n<p>L&#39;idée est de mettre en avant le besoin de priorisation, et parfois même de renoncement, inhérents à toute initiative d&#39;amélioration des performances.</p>\n<p>Les votes on un réel impact, chaque session est unique, sur le fond comme sur la forme!</p>\n<p>Le tout s&#39;inscrit dans un univers fort — illustrations faites main spécialement, métaphore pirate filée tout le long de la présentation, transitions invisibles de slides en slide.</p>\n<p>L&#39;immersion visuelle, thématique et l&#39;interactivité renforcent l&#39;implication du public et la rétention des informations.</p>",
+      "speakerIds": [
+        "florian-leux"
+      ]
+    },
+    {
+      "id": "d2t1s7",
+      "title": "Spring Modulith en vrai - REX d'une migration, arbitrages et limites",
+      "format": "Conférence",
+      "category": "Lang & Frameworks",
+      "room": "Auditorium",
+      "day": "2026-10-02",
+      "timeStart": "15h45",
+      "timeEnd": "16h30",
+      "startMinutes": 945,
+      "endMinutes": 990,
+      "abstractHtml": "<p>Spring Modulith propose un compromis séduisant 🧩 : la modularité d&#39;une architecture découpée, sans l&#39;enfer opérationnel des microservices.</p>\n<p>Reste à voir ce que ça donne sur un monolithe existant, en production, avec une équipe qui doit aussi livrer des features.</p>\n<p>Ce talk est un retour d&#39;expérience d&#39;un an de migration d&#39;un backend Spring Boot vers Spring Modulith : 8 modules, une cinquantaine d&#39;endpoints, une équipe de 4 personnes, et un double run permanent entre l&#39;ancien et le nouveau backend.</p>\n<p>On y parle des décisions qui ont structuré le projet, des moments où Modulith seul ne suffit pas, et de ce qu&#39;on a appris à ses dépens.</p>\n<p>L&#39;objectif n&#39;est pas de vendre Modulith ni de le condamner.</p>\n<p>C&#39;est de partager ce qui a marché, ce qu&#39;on a sous-estimé, et les signaux qu&#39;on aurait dû voir plus tôt 👀.</p>",
+      "speakerIds": [
+        "florian-cahais"
+      ]
+    },
+    {
+      "id": "d2t3s7",
+      "title": "Les formats office nuisent gravement à votre productivité",
+      "format": "Conférence",
+      "category": "UX/UI",
+      "room": "FabLab",
+      "day": "2026-10-02",
+      "timeStart": "15h45",
+      "timeEnd": "16h30",
+      "startMinutes": 945,
+      "endMinutes": 990,
+      "abstractHtml": "<p>Imaginez si votre client email ressemblait encore à un télécopieur.</p>\n<p>C’est pourtant le cas de Word en 2026 : une interface conçue pour le papier il y a 35 ans, aujourd’hui surchargée d’options de mise en forme qui nuisent à la productivité.</p>\n<p>A travers cette présentation, nous allons explorer les limites des outils traditionnels de bureautique comme Word, conçus à l&#39;ère du papier et mal adaptés aux besoins modernes de collaboration en temps réel, de mobilité et d&#39;intégration avec l&#39;IA.</p>\n<p>Nous analyserons les problèmes liés aux formats hérités (OOXML, ODT) et les solutions techniques mises en place par Microsoft 365, libreoffice puis Collabora pour contourner ces limitations pour essayer de s&#39;adapter aux usages modernes.</p>\n<p>Nous vous présenterons ce qu&#39;est une stack moderne permettant une édition collaborative en temps réel en s&#39;appuyant sur le protocole ouvert CRDT, une de ses implémentations Yjs et une librairie de mise en forme BlockNote à travers l&#39;application communautaire Docs qui rassemble tous ces outils et dont nous vous ferons la démonstration.</p>",
+      "speakerIds": [
+        "manuel-raynaud",
+        "virgile-deville"
+      ]
+    },
+    {
+      "id": "d2t2s7",
+      "title": "Quantique - entre réalités et discours commerciaux",
+      "format": "Conférence",
+      "category": "Découverte",
+      "room": "Showroom",
+      "day": "2026-10-02",
+      "timeStart": "15h45",
+      "timeEnd": "16h30",
+      "startMinutes": 945,
+      "endMinutes": 990,
+      "abstractHtml": "<p>Informatique Quantique cas d&#39;utilisations et maturité actuelle.</p>\n<p>Rapide Introduction à l&#39;informatique quantique et son fonctionnement Découvrez la notion de qubits, de superposition, d&#39;intrication. découvrez d&#39;où peut venir l&#39;avantage des ordinateurs quantiques</p>\n<p>Use cases envisagés pour l&#39;informatique quantique L&#39;informatique quantique ne remplacera pas nos ordinateurs actuels.</p>\n<p>Découvrez les principaux domaines pour lesquels on espère obtenir des accélérations.</p>\n<p>Maturité du hardware et grandes étapes</p>\n<ul>\n<li>Quelles sont les grandes étapes à passer avant d&#39;avoir des machines utiles ?</li>\n<li>Quels sont les principaux acteurs et leur maturité ?</li>\n<li>Le nombre de qubits est-il un bon critère de comparaison?</li>\n</ul>",
+      "speakerIds": [
+        "martin-bombardelli"
+      ]
+    },
+    {
+      "id": "d2t4s7",
+      "title": "Deepagents et Opensandbox - déployer des coding agents dans votre propre infrastructure",
+      "format": "Workshop",
+      "category": "Data & AI",
+      "room": "Workshop",
+      "day": "2026-10-02",
+      "timeStart": "15h45",
+      "timeEnd": "17h30",
+      "startMinutes": 945,
+      "endMinutes": 1050,
+      "abstractHtml": "<p>Pendant plusieurs mois, j&#39;ai développé auxilia, une plateforme d&#39;agents MCP.</p>\n<p>En l&#39;utilisant chez Choose, je suis tombé sur une limite du protocole MCP, toute la donnée transite par le contexte du modèle.</p>\n<p>Dès qu&#39;on touche à de vrais volumes, un résultat BigQuery, un Google Sheets de quelques milliers de lignes, un fichier intermédiaire à rapprocher d&#39;un autre, on sature rapidement le contexte.</p>\n<p>C&#39;est ce qui m&#39;a poussé à regarder du côté des coding agents.</p>\n<p>Et à constater au passage un malentendu : coding agent ne veut pas dire agent qui code à la place du dev.</p>\n<p>Un coding agent, c&#39;est d&#39;abord un agent avec un environnement d&#39;exécution.</p>\n<p>C&#39;est ça qui débloque les cas d&#39;usage métiers — extraire, transformer, recouper, rapprocher — toutes ces tâches qui demandent un peu d&#39;intelligence (mais pas trop) et beaucoup de données.</p>\n<p>Aujourd&#39;hui, la plupart des équipes utilise Claude Code en assistant local.</p>\n<p>Or ce qu&#39;on veut souvent en entreprise, c&#39;est l&#39;inverse : des agents partagés, scopés à une tâche métier précise, déclenchables par n&#39;importe qui dans l&#39;équipe.</p>\n<p>Pas un agent généraliste qui fait tout (nanobot, openclaw, et compagnie), mais des agents au périmètre étroit, qui font une chose qu&#39;aucun script déterministe ne saurait gérer proprement.</p>\n<p>Cette année, deux briques ont rendu ça réaliste à mettre en prod : DeepAgents et OpenSandbox.</p>\n<p>Pour exécuter du code en environnement isolé, sur votre propre infra, sans dépendre d&#39;un SaaS externe.</p>\n<p>Combinées, elles permettent de construire des systèmes agentiques au niveau des meilleurs outils de coding agentique du marché, tout en gardant la donnée chez soi.</p>",
+      "speakerIds": [
+        "keurcien-luu"
+      ]
+    },
+    {
+      "id": "d2t1s8",
+      "title": "Zero Trust - Pourquoi (et comment) chiffrer vos données avant de les envoyer au SGBD",
+      "format": "Conférence",
+      "category": "Data & AI",
+      "room": "Auditorium",
+      "day": "2026-10-02",
+      "timeStart": "16h45",
+      "timeEnd": "17h30",
+      "startMinutes": 1005,
+      "endMinutes": 1050,
+      "abstractHtml": "<p>Une semaine ne se passe pas sans qu’une nouvelle <strong>fuite de données massive</strong> ne fasse la une des médias.</p>\n<p>Face à des attaquants de plus en plus ingénieux et des infrastructures cloud mouvantes, une certitude s&#39;impose : <strong>la question n&#39;est plus de savoir si votre base de données sera compromise, mais quand</strong>.</p>\n<p>Et si la solution consistait tout simplement à <strong>ne plus faire confiance à votre propre SGBD</strong> ?</p>\n<p>C’est tout le paradigme du <strong>Client-Side Encryption (CSE)</strong>.</p>\n<p>En chiffrant les données sensibles avant leur transfert, votre base de données ne stocke plus que des suites d&#39;octets parfaitement inutilisables pour un intrus.</p>\n<p>Même avec un accès administrateur complet au SGBD ou une faille zero-day, vos données restent à l&#39;abri.</p>\n<p>Derrière la promesse théorique, la réalité du terrain soulève de vrais défis d&#39;implémentation.</p>\n<p>Durant ce talk, nous décortiquerons concrètement comment sauter le pas :</p>\n<ul>\n<li>Focus rapide sur les <strong>solutions intégrées des SGBD</strong> modernes (comme le Client-Side Field Level Encryption).</li>\n<li>Le <strong>dilemme de la recherche</strong> : Comment indexer, requêter ou trier des données dont le serveur ne comprend pas la substance ?</li>\n<li><strong>Comment l&#39;implémenter avec Postgres &amp; PHP</strong></li>\n</ul>\n<p>Que vous soyez développeur ou architecte, vous repartirez de cette session avec les clés pour mettre en place une <strong>stratégie Zero Trust</strong>.</p>",
+      "speakerIds": [
+        "benjamin-georgeault"
+      ]
+    },
+    {
+      "id": "d2t2s8",
+      "title": "Quand la data prend la parole - du notebook incompris au service IA en production",
+      "format": "Conférence",
+      "category": "Data & AI",
+      "room": "Showroom",
+      "day": "2026-10-02",
+      "timeStart": "16h45",
+      "timeEnd": "17h30",
+      "startMinutes": 1005,
+      "endMinutes": 1050,
+      "abstractHtml": "<p>Nos notebooks étaient incompris.</p>\n<p>Notre Power BI, ignoré.</p>\n<p>Alors on a changé de stratégie : plutôt que d&#39;expliquer la donnée, on a construit quelque chose que tout le monde pouvait toucher.</p>\n<p>Ce talk raconte comment une équipe data en deux a transformé des mesures électriques brutes — puissance, facteur de puissance, harmoniques — en un service IA complet, convainquant et itérable, entièrement sur Databricks.</p>\n<p><strong>L&#39;Exposition</strong> Notre entreprise lance un produit capable de mesurer en temps réel l&#39;âme électrique d&#39;un bâtiment : puissance, harmoniques, facteur de puissance, tensions… Une matière première extraordinaire.</p>\n<p>Pourtant, au moment de présenter nos premières analyses, c&#39;est le silence.</p>\n<p>Les notebooks laissent la direction de marbre.</p>\n<p>Power BI évoque le reporting trimestriel, pas un service.</p>\n<p>La donnée est là, dense, vivante — mais personne ne la voit.</p>\n<p><strong>Le Nœud</strong> Nous en tirons la conclusion qui s&#39;impose : ce n&#39;est pas la donnée qui manque, c&#39;est le langage.</p>\n<p>Nous construisons une interface interactive avec Dash, hébergée directement dans Databricks — une plateforme unique qui centralise l&#39;ingestion IoT, le graphe CosmosDB, le calcul des KPIs et l&#39;exposition du dashboard, le tout dans un environnement sécurisé.</p>\n<p>Les parties prenantes peuvent enfin toucher la donnée.</p>\n<p>Les critiques fusent, nous itérons, l&#39;alignement s&#39;installe.</p>\n<p>Nous poussons plus loin : deux agents IA viennent compléter l&#39;arsenal — l&#39;un génère des rapports de bâtiment contextualisés par RAG sur les normes officielles, l&#39;autre répond en langage naturel aux questions des gestionnaires de site.</p>\n<p>MLflow avec LLM judges et guardrails veillent à la qualité, la sécurité et la confidentialité des données.</p>\n<p><strong>Le Dénouement</strong> La bataille de l&#39;adoption de la data ne se gagne pas dans un notebook.</p>\n<p>Elle se gagne avec un outil que les décideurs peuvent tenir entre leurs mains.</p>\n<p>Un prototype fonctionnel sur une plateforme unifiée vaut mieux que dix slides d&#39;architecture : il raccourcit les cycles de feedback, révèle les vrais besoins du terrain, et transforme une conviction en trajectoire produit.</p>\n<p>Désormais, la donnée parle.</p>",
+      "speakerIds": [
+        "brice-miard",
+        "iuliia-mazur"
+      ]
+    },
+    {
+      "id": "d2t1k3",
+      "title": "Cloture",
+      "format": "Conférence",
+      "category": "Découverte",
+      "room": "Auditorium",
+      "day": "2026-10-02",
+      "timeStart": "17h35",
+      "timeEnd": "17h45",
+      "startMinutes": 1055,
+      "endMinutes": 1065,
+      "abstractHtml": "",
+      "speakerIds": [
+        "volcamp"
+      ]
+    }
+  ],
+  "breaks": [
+    {
+      "id": "break-2026-10-01-08h00",
+      "day": "2026-10-01",
+      "title": "Accueil Café",
+      "kind": "welcome",
+      "timeStart": "08h00",
+      "timeEnd": "09h00",
+      "startMinutes": 480,
+      "endMinutes": 540
+    },
+    {
+      "id": "break-2026-10-01-11h00",
+      "day": "2026-10-01",
+      "title": "Pause",
+      "kind": "pause",
+      "timeStart": "11h00",
+      "timeEnd": "11h30",
+      "startMinutes": 660,
+      "endMinutes": 690
+    },
+    {
+      "id": "break-2026-10-01-12h15",
+      "day": "2026-10-01",
+      "title": "Pause déjeuner & Lightning",
+      "kind": "lunch",
+      "timeStart": "12h15",
+      "timeEnd": "12h30",
+      "startMinutes": 735,
+      "endMinutes": 750
+    },
+    {
+      "id": "break-2026-10-01-13h15",
+      "day": "2026-10-01",
+      "title": "Pause",
+      "kind": "pause",
+      "timeStart": "13h15",
+      "timeEnd": "13h30",
+      "startMinutes": 795,
+      "endMinutes": 810
+    },
+    {
+      "id": "break-2026-10-01-15h15",
+      "day": "2026-10-01",
+      "title": "Pause",
+      "kind": "pause",
+      "timeStart": "15h15",
+      "timeEnd": "15h45",
+      "startMinutes": 915,
+      "endMinutes": 945
+    },
+    {
+      "id": "break-2026-10-01-18h30",
+      "day": "2026-10-01",
+      "title": "Soirée",
+      "kind": "party",
+      "timeStart": "18h30",
+      "timeEnd": "",
+      "startMinutes": 1110,
+      "endMinutes": 1110
+    },
+    {
+      "id": "break-2026-10-02-08h30",
+      "day": "2026-10-02",
+      "title": "Accueil Café",
+      "kind": "welcome",
+      "timeStart": "08h30",
+      "timeEnd": "09h00",
+      "startMinutes": 510,
+      "endMinutes": 540
+    },
+    {
+      "id": "break-2026-10-02-11h00",
+      "day": "2026-10-02",
+      "title": "Pause",
+      "kind": "pause",
+      "timeStart": "11h00",
+      "timeEnd": "11h30",
+      "startMinutes": 660,
+      "endMinutes": 690
+    },
+    {
+      "id": "break-2026-10-02-12h15",
+      "day": "2026-10-02",
+      "title": "Pause déjeuner & Lightning",
+      "kind": "lunch",
+      "timeStart": "12h15",
+      "timeEnd": "12h30",
+      "startMinutes": 735,
+      "endMinutes": 750
+    },
+    {
+      "id": "break-2026-10-02-13h15",
+      "day": "2026-10-02",
+      "title": "Pause",
+      "kind": "pause",
+      "timeStart": "13h15",
+      "timeEnd": "13h30",
+      "startMinutes": 795,
+      "endMinutes": 810
+    },
+    {
+      "id": "break-2026-10-02-15h15",
+      "day": "2026-10-02",
+      "title": "Pause",
+      "kind": "pause",
+      "timeStart": "15h15",
+      "timeEnd": "15h45",
+      "startMinutes": 915,
+      "endMinutes": 945
+    }
+  ]
+}

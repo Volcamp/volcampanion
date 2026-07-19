@@ -1,13 +1,6 @@
-# Compiled output
-/.angular
-/dist
-/tmp
-/out-tsc
-/bazel-out
-
-# Node
-/node_modules
-npm-debug.log
-yarn-error.log
-
-Dockerfile
+node_modules
+dist
+.vite
+.git
+.DS_Store
+*.local
