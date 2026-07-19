@@ -1,5 +1,0 @@
-<app-speakers-list  *ngIf="vm.speakers!==undefined" [speakers]="vm.speakers"></app-speakers-list>
-<app-loader *ngIf="vm.speakers===undefined && vm.noConnection !== true"></app-loader>
-<div *ngIf="vm.noConnection === true">
-  <app-no-connection></app-no-connection>
-</div>
