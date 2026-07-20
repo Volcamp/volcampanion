@@ -23,6 +23,13 @@ const TREE_API = `https://api.github.com/repos/${REPO}/git/trees/${BRANCH}?recur
 const IMAGE_BASE = 'https://www.volcamp.io/asset/images/speakers'
 
 const EDITION_YEAR = 2026
+
+/**
+ * OpenFeedback project for this edition. The upstream `_config.yml` still
+ * carries a previous edition's project id, so we pin it here. Drop this once
+ * `openfeedback-url` upstream points at the 2026 project.
+ */
+const OPENFEEDBACK_URL = 'https://openfeedback.io/3BjZiGRMgbjj33n7WPf5'
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const OUT = resolve(ROOT, 'public', 'data', 'volcamp-2026.json')
 const SPEAKER_IMG_DIR = resolve(ROOT, 'public', 'img', 'speakers')
@@ -224,7 +231,7 @@ async function main() {
   const edition = {
     name: readConfigValue(configYaml, 'name') || `Volcamp ${EDITION_YEAR}`,
     year: EDITION_YEAR,
-    openFeedbackUrl: readConfigValue(configYaml, 'openfeedback-url') || '',
+    openFeedbackUrl: OPENFEEDBACK_URL,
     website: readConfigValue(configYaml, 'url') || 'https://www.volcamp.io',
     cfpUrl: readConfigValue(configYaml, 'cfp-url') || '',
     ticketUrl: readConfigValue(configYaml, 'ticket-url') || '',
