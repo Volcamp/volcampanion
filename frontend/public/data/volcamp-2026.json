@@ -75,14 +75,6 @@
       "linkedin": "TheWitcherish"
     },
     {
-      "id": "aurelie-vache",
-      "name": "Aurélie Vache",
-      "photoUrl": "img/speakers/aurelie-vache.webp",
-      "bioHtml": "<p>Aurélie Vache est Developer Advocate chez OVHcloud à Toulouse, en France.</p>\n<p>Elle est reconnue comme Docker Captain, ambassadrice CNCF, Google Cloud Developer Expert et Women techmakers Ambassador.</p>\n<p>Elle travaille en tant que développeuse et Ops depuis plus de 20 ans.</p>\n<p>Passionnée de Cloud, elle promeut les bonnes pratiques DevOps/Cloud/Golang.</p>\n<p>Rédactrice technique (dev.to/aurelievache), autrice et relectrice de livres, sketchnoteuse et conférencière lors de conférences internationales.</p>\n<p>Créatrice et mainteneuse de <a href=\"https://developers.events/\">https://developers.events/</a>, une plateforme collaborative et open-source qui agrège et référence les conférences/événements et opportunités d&#39;appels à conférenciers (CFP) axés sur les développeurs et la tech à travers le monde, aidant les conférenciers, organisateurs, sponsors et participants.</p>\n<p>Elle a créé une nouvelle manière visuelle d&#39;apprendre et de comprendre les technologies Cloud : « Understanding Kubernetes/Istio/Docker/Kyverno in a visual way » sous forme de sketchnotes, de livres et de vidéos.</p>\n<p>Blog: <a href=\"https://dev.to/aurelievache/\">https://dev.to/aurelievache/</a> YouTube: <a href=\"https://www.youtube.com/c/AurelieVache\">https://www.youtube.com/c/AurelieVache</a></p>",
-      "twitter": "aurelievache",
-      "github": "scraly"
-    },
-    {
       "id": "benjamin-georgeault",
       "name": "Benjamin Georgeault",
       "photoUrl": "img/speakers/benjamin-georgeault.webp",
@@ -188,6 +180,12 @@
       "photoUrl": "img/speakers/guenaelle-de-julis.webp",
       "bioHtml": "<p>Guenaelle De Julis est Lead Threat R&amp;D Engineer à DataDome depuis 2023.</p>\n<p>Elle se focalise sur des solutions long termes et automatisées pour bloquer les bots et les fraudes en ligne en étudiant les anomalies dans les empreintes de requêtes, le comportement des sessions de navigation, ainsi que la détection de proxy.</p>\n<p>Elle évolue dans la cybersécurité depuis 2011, d&#39;abord au travers d&#39;une thèse de doctorat sur l&#39;évaluation de l&#39;aléa dans les composants cryptographiques, puis en se spécialisant dans la réponse à incident, les investigations forensic, la THreat Intelligence et la détection d&#39;anomalies.</p>",
       "linkedin": "guenaelle-de-julis-711414262"
+    },
+    {
+      "id": "guillaume-rossignol",
+      "name": "Guillaume Rossignol",
+      "photoUrl": "img/speakers/guillaume-rossignol.webp",
+      "bioHtml": "<p>Software Engineer at sunday since 2022, building the fastest way to pay in restaurants!</p>"
     },
     {
       "id": "helene-gebel",
@@ -356,6 +354,13 @@
       "linkedin": "nicolas-foussard-b60613229"
     },
     {
+      "id": "nicolas-raymond",
+      "name": "Nicolas Raymond",
+      "photoUrl": "img/speakers/nicolas-raymond.webp",
+      "bioHtml": "<p>Tech Lead chez CGI à Clermont-Ferrand</p>\n<p>Passionné par le développement, j’aime transmettre et fédérer autour des bonnes pratiques</p>",
+      "linkedin": "nicolas-raymond-061aa2145"
+    },
+    {
       "id": "nirina-rabeson",
       "name": "Nirina Rabeson",
       "photoUrl": "img/speakers/nirina-rabeson.webp",
@@ -373,7 +378,7 @@
     {
       "id": "ombeline-sotty",
       "name": "Ombeline Sotty",
-      "photoUrl": "",
+      "photoUrl": "img/speakers/ombeline-sotty.webp",
       "bioHtml": ""
     },
     {
@@ -383,13 +388,6 @@
       "bioHtml": "<p>Lead developer dans l&#39;agence web LE PHARE (Nantes), 7 ans d&#39;expérience, il a travaillé sur des moyens projets et depuis 5 ans sur des projets complexes (SOA) pour un client dont le domaine est  la télésurveillance/télé-assitance.</p>",
       "github": "pierreboissinot",
       "linkedin": "pierreboissinot"
-    },
-    {
-      "id": "pierre-fervel",
-      "name": "Pierre Fervel",
-      "photoUrl": "img/speakers/pierre-fervel.webp",
-      "bioHtml": "<p>Développeur web fullstack depuis maintenant 10 ans, il a eu l&#39;occasion de faire ses premières armes de speaker au sein de Max Digital Services.</p>\n<p>Une fois qu&#39;il s&#39;est senti prêt, il s&#39;est lancé dans le grand bain l&#39;année dernière (2025) avec deux conférences, l&#39;une au BreizhCamp de Rennes, l&#39;autre au DevFest de Strasbourg.</p>\n<p>Désormais il vole de ses propres ailes et continue à partager ses passions au sein de Code With Us</p>",
-      "linkedin": "pierrefervel"
     },
     {
       "id": "pierre-raufast",
@@ -409,10 +407,18 @@
     {
       "id": "pierre-zemb",
       "name": "Pierre Zemb",
-      "photoUrl": "",
+      "photoUrl": "img/speakers/pierre-zemb.webp",
       "bioHtml": "<p>Pierre est Staff Engineer et construit de l&#39;infrastructure de données chez Clever Cloud.</p>\n<p>Il a conçu et opéré une grande variété de systèmes distribués à état tout au long de sa carrière.</p>\n<p>Il s&#39;intéresse aux systèmes distribués, aux magasins de données et à la compréhension du fonctionnement des choses en profondeur.</p>\n<p>Il aime faire partie des communautés open-source, à travers des conférences, des articles et des contributions à HBase, Kafka, Pulsar, ETCD, FoundationDB.</p>",
       "twitter": "PierreZ",
       "github": "PierreZ"
+    },
+    {
+      "id": "rafik-ferroukh",
+      "name": "Rafik Ferroukh",
+      "photoUrl": "img/speakers/rafik-ferroukh.webp",
+      "bioHtml": "<p>Rafik Ferroukh est architecte de solutions et compte plus de 20 ans d’expérience dans le secteur informatique.</p>\n<p>Il élabore des solutions pragmatiques à la croisée de Java, des API, de l’IA et du cloud, en suivant une règle simple : privilégier les résultats vérifiables plutôt que le battage médiatique.</p>\n<p>Intervenant régulier lors de conférences internationales, il est réputé pour sa capacité à transformer des sujets complexes en workflows clairs, en lignes directrices et en démonstrations qui fonctionnent réellement.</p>\n<p>Basé à Paris, il partage également du contenu technologique sur sa chaîne YouTube The UnBullshIT, et des recettes de cuisine sur Instagram @raf_cooking.</p>",
+      "twitter": "airFerroukh",
+      "linkedin": "rafik-ferroukh"
     },
     {
       "id": "romain-pouillard",
@@ -456,13 +462,6 @@
       "photoUrl": "img/speakers/veltin-dupont.webp",
       "bioHtml": "<p>Actuellement Head of Data chez Bigblue (startup logistique parisienne pour les marques e-commerce, plus de 100M€ de chiffre d&#39;affaires l&#39;an dernier), il était auparavant chez Alan (assurance santé) où il était lead data pour la partie B2B de l&#39;activité.</p>\n<p>Il a construit la première data stack de Bigblue, lançant leurs capacités d&#39;Analytics et de Data science.</p>\n<p>Il gère aujourd&#39;hui une équipe de 7 personnes qui livre à l&#39;entreprise des solutions d&#39;analytics et de data (comme des problèmes d&#39;optimisation, des prévisions et du ML appliqué).</p>\n<p>Diplômé d&#39;un Master of Engineering de l&#39;École Centrale Paris et d&#39;un Master of Engineering de l&#39;Université de Californie à Berkeley.</p>",
       "linkedin": "veltin"
-    },
-    {
-      "id": "vincent-aubrun",
-      "name": "Vincent Aubrun",
-      "photoUrl": "img/speakers/vincent-aubrun.webp",
-      "bioHtml": "<p>Vincent est Staff Software Engineer chez ManoMano.</p>\n<p>Au quotidien, il jongle entre les sujets : l&#39;intégration des agents LLM et des outils AI dans les pratiques des développeurs, la devXP sur les application JVM.</p>\n<p>Il anime par ailleurs la communauté engineering interne, avec un focus sur l&#39;adoption outillée et les retours d&#39;expérience terrain.</p>\n<p>De formation Java, il croit à la boring tech bien maîtrisée plutôt qu&#39;aux architectures qui impressionnent les slides.</p>\n<p>Ce qui l&#39;intéresse, c&#39;est l&#39;amélioration continue, les systèmes qui durent, et garder l&#39;humain intelligemment dans les processus, y compris quand l&#39;IA entre dans la boucle.</p>\n<p>Quand il monte sur scène, il parle de ce qu&#39;il a cassé autant que de ce qui a marché.</p>\n<p><a href=\"http://www.linkedin.com/in/vincent-a-3925a8191\">www.linkedin.com/in/vincent-a-3925a8191</a></p>",
-      "linkedin": "vincent-a-3925a8191"
     },
     {
       "id": "virgile-deville",
@@ -627,18 +626,18 @@
     },
     {
       "id": "d1t1s2",
-      "title": "J'ai packagé mon application en image Docker, et maintenant ?",
+      "title": "Le Terminal Contre-Attaque - TUI 2 le retour !",
       "format": "Conférence",
-      "category": "DevOps & Cloud",
+      "category": "UX/UI",
       "room": "Auditorium",
       "day": "2026-10-01",
       "timeStart": "11h30",
       "timeEnd": "12h15",
       "startMinutes": 690,
       "endMinutes": 735,
-      "abstractHtml": "<p>Vous avez réussi à packager/builder votre application en image de conteneur, avec Docker ou Podman, et à la pusher dans un registre d&#39;images/d&#39;artefacts ?</p>\n<p>Félicitations... mais le travail n&#39;est pas terminé 🙂.</p>\n<p>Maintenant il est temps de mettre en place les bonnes pratiques de la Software Supply Chain Security !</p>\n<ul>\n<li>Pourquoi et comment signer une image ?</li>\n<li>Pourquoi et comment générer l&#39;inventaire de mon image ?</li>\n<li>Mon image a-t-elle des vulnérabilités ? Sont-elles exploitables ?</li>\n<li>Les attestations ça sert à quoi ?</li>\n<li>Comment automatiser tout cela ?</li>\n</ul>\n<p>Dans ce talk, étape par étapes, avec un mélange de slides et de live démos, nous verrons tout cela, et bien plus encore.</p>\n<p>Vous saurez comment mettre en place ces bonnes pratiques, en local et même dans vos pipelines CI/CD.</p>\n<p>Et bonus track, après ce talk des termes comme cosign, sbom, vex, in-toto... n&#39;auront plus de secret pour vous  !</p>",
+      "abstractHtml": "<p>Lorsque j’ai commencé à partager ma passion pour les TUI (Textual User Interface), j’étais loin de me douter que ce domaine allait connaître une telle évolution.</p>\n<p>Comme moi, il semblerait que le monde des assistants de code et des agents se soit lassé des interfaces graphiques gourmandes en ressources et complexes à utiliser.</p>\n<p>Je vous emmène donc à la découverte de l&#39;univers des TUI et leur potentiel pour enrichir les applications en ligne de commande.</p>\n<p>En partant d&#39;une CLI simple, je vous montrerai comment intégrer des éléments de TUI pour créer une expérience utilisateur plus intuitive et interactive.</p>\n<p>Après un aperçu de quelques frameworks TUI populaires tels que Textual, BubbleTea ou Ratatui, nous irons à la rencontre de langages autres que Python, Go ou Rust.</p>\n<p>Laissez-vous surprendre par ce que les écosystèmes PHP et Java peuvent apporter à la galaxie TUI.</p>\n<p>Vous repartirez donc :  en sachant ce que les TUI peuvent vous apporter avec un tour d&#39;horizon de solutions pour en développer vous-même avec des exemples concrets de code</p>\n<p>Vers l’infini et au-delà, le tout depuis le confort de votre terminal et de ses TUI ! 💞</p>",
       "speakerIds": [
-        "aurelie-vache"
+        "thierry-chantier"
       ]
     },
     {
@@ -755,7 +754,7 @@
     },
     {
       "id": "d1t3s5",
-      "title": "On a arrêté de bricoler nos specs - ce que l'IA a changé dans notre façon de travailler en petite équipe",
+      "title": "Votre back-office vous ment. Le nôtre dit la vérité avec Compose Multiplatform.",
       "format": "Conférence",
       "category": "Lang & Frameworks",
       "room": "FabLab",
@@ -764,9 +763,9 @@
       "timeEnd": "14h15",
       "startMinutes": 810,
       "endMinutes": 855,
-      "abstractHtml": "<p>On a toujours écrit des specs.</p>\n<p>Mais un <strong>humain comblait les trous</strong> avec son contexte implicite, une conversation de couloir, son expérience dans un domaine, sa compréhension d’un métier, son bon sens.</p>\n<p><strong>Un agent IA ne comble rien, il amplifie ce qu&#39;il reçoit</strong>.</p>\n<p>Des specs floues donnaient des tickets mal estimés.</p>\n<p>Aujourd&#39;hui si on ne prend pas le temps de clarifier des specs pour un agent IA, elles donnent des centaines de lignes de code dans la mauvaise direction.</p>\n<p>Depuis 2025, une vague d’outils (Kiro, SpecKit, OpenSpec…) a remis le Spec-Driven Development sous le feu des projecteurs.</p>\n<p>Ce n’est pas une nouveauté,  c’est une exigence devenue visible.</p>\n<p>Dans ce talk, je présente la philosophie d’OpenSpec en illustrant avec un workflow en 4 étapes (Proposal, Design, Specs, Tasks) que nous utilisons depuis plusieurs mois dans mon équipe (6 devs, POs,PM,).</p>\n<p>Vous repartirez avec:</p>\n<ul>\n<li>un workflow concret et adaptable à votre contexte</li>\n<li>Les signaux d&#39;alerte qui indiquent qu&#39;une spec va générer du code inutilisable avant même de lancer un agent sur l’implémentation.</li>\n<li>une stratégie d’adoption progressive pour introduire cette rigueur sans friction dans une équipe existante.</li>\n</ul>\n<p>On parlera aussi des impacts humains, parce que le Spec Driven Development, c’est autant un changement de culture PM/PO/DEV qu’un changement d’outil.</p>",
+      "abstractHtml": "<p>Marre de configurer des écrans à l&#39;aveugle dans un back-office qui ne qui ne reflète pas votre application mobile ?</p>\n<p>Dans ce talk, nous montrerons comment Compose Multiplatform et Kotlin peuvent être utilisés au-delà des applications mobiles natives.\nL’idée : fournir aux équipes opérationnelles des previews fidèles, directement construites à partir des composants partagés de l’app.</p>\n<p>Nous verrons, à travers un retour d’expérience concret, comment cette utilisation de Compose Multiplatform permet d’unifier le rendu, de réduire l’écart entre configuration et expérience utilisateur, et de concevoir un back-office plus lisible, plus fiable et plus fidèle à votre application native.</p>",
       "speakerIds": [
-        "pierre-boissinot"
+        "guillaume-rossignol"
       ]
     },
     {
@@ -967,18 +966,18 @@
     },
     {
       "id": "d1t1s9",
-      "title": "Rejouer une partie, rejouer le système de la matrice - des replays de jeux vidéo à l’event sourcing",
+      "title": "On a arrêté de bricoler nos specs - ce que l'IA a changé dans notre façon de travailler en petite équipe",
       "format": "Conférence",
-      "category": "Archi, Perf et Sécu",
+      "category": "Lang & Frameworks",
       "room": "Auditorium",
       "day": "2026-10-01",
       "timeStart": "17h45",
       "timeEnd": "18h30",
       "startMinutes": 1065,
       "endMinutes": 1110,
-      "abstractHtml": "<p>Dans la plupart des jeux vidéo modernes, un “replay” n’est pas une vidéo mais une simple liste d’événements : les inputs des joueurs, quelques événements système et un état initial minimal.</p>\n<p>Pour revoir une partie, le moteur ne fait “que” tout rejouer dans l’ordre et reconstruit ainsi l’intégralité de la session.</p>\n<p>🎮📜  Côté backend, l’event sourcing applique exactement la même idée : au lieu de stocker uniquement l’état courant, on enregistre la chronologie des décisions métier (events) qui ont mené à cet état.</p>\n<p>On peut alors “remonter le temps” pour débuguer un bug tordu, auditer un comportement étrange, ou reconstruire un système sur une nouvelle architecture.</p>\n<p>Dans ce talk, on partira de cas concrets côté jeux (replays, rewind, killcams) pour expliquer pas à pas :</p>\n<ul>\n<li>comment fonctionne un système de replay basé sur un log d’événements,</li>\n<li>en quoi ce modèle diffère d’une approche CRUD classique,</li>\n<li>ce que l’event sourcing reprend de cette idée pour nos SI.</li>\n</ul>\n<p>Je montrerai un mini-système de replay dans un petit jeu ainsi qu’un exemple d’event store côté backend (Java/TypeScript), sans masquer les limites : coût de relecture, complexité, tooling…</p>",
+      "abstractHtml": "<p>On a toujours écrit des specs.</p>\n<p>Mais un <strong>humain comblait les trous</strong> avec son contexte implicite, une conversation de couloir, son expérience dans un domaine, sa compréhension d’un métier, son bon sens.</p>\n<p><strong>Un agent IA ne comble rien, il amplifie ce qu&#39;il reçoit</strong>.</p>\n<p>Des specs floues donnaient des tickets mal estimés.</p>\n<p>Aujourd&#39;hui si on ne prend pas le temps de clarifier des specs pour un agent IA, elles donnent des centaines de lignes de code dans la mauvaise direction.</p>\n<p>Depuis 2025, une vague d’outils (Kiro, SpecKit, OpenSpec…) a remis le Spec-Driven Development sous le feu des projecteurs.</p>\n<p>Ce n’est pas une nouveauté,  c’est une exigence devenue visible.</p>\n<p>Dans ce talk, je présente la philosophie d’OpenSpec en illustrant avec un workflow en 4 étapes (Proposal, Design, Specs, Tasks) que nous utilisons depuis plusieurs mois dans mon équipe (6 devs, POs,PM,).</p>\n<p>Vous repartirez avec:</p>\n<ul>\n<li>un workflow concret et adaptable à votre contexte</li>\n<li>Les signaux d&#39;alerte qui indiquent qu&#39;une spec va générer du code inutilisable avant même de lancer un agent sur l’implémentation.</li>\n<li>une stratégie d’adoption progressive pour introduire cette rigueur sans friction dans une équipe existante.</li>\n</ul>\n<p>On parlera aussi des impacts humains, parce que le Spec Driven Development, c’est autant un changement de culture PM/PO/DEV qu’un changement d’outil.</p>",
       "speakerIds": [
-        "pierre-fervel"
+        "pierre-boissinot"
       ]
     },
     {
@@ -1099,34 +1098,34 @@
     },
     {
       "id": "d2t1s2",
-      "title": "Le Terminal Contre-Attaque - TUI 2 le retour !",
+      "title": "Pendant que je dors, mon agent livre. Retour sur 80+ features en 5 semaines",
       "format": "Conférence",
-      "category": "UX/UI",
+      "category": "Data & AI",
       "room": "Auditorium",
       "day": "2026-10-02",
       "timeStart": "11h30",
       "timeEnd": "12h15",
       "startMinutes": 690,
       "endMinutes": 735,
-      "abstractHtml": "<p>Lorsque j’ai commencé à partager ma passion pour les TUI (Textual User Interface), j’étais loin de me douter que ce domaine allait connaître une telle évolution.</p>\n<p>Comme moi, il semblerait que le monde des assistants de code et des agents se soit lassé des interfaces graphiques gourmandes en ressources et complexes à utiliser.</p>\n<p>Je vous emmène donc à la découverte de l&#39;univers des TUI et leur potentiel pour enrichir les applications en ligne de commande.</p>\n<p>En partant d&#39;une CLI simple, je vous montrerai comment intégrer des éléments de TUI pour créer une expérience utilisateur plus intuitive et interactive.</p>\n<p>Après un aperçu de quelques frameworks TUI populaires tels que Textual, BubbleTea ou Ratatui, nous irons à la rencontre de langages autres que Python, Go ou Rust.</p>\n<p>Laissez-vous surprendre par ce que les écosystèmes PHP et Java peuvent apporter à la galaxie TUI.</p>\n<p>Vous repartirez donc :  en sachant ce que les TUI peuvent vous apporter avec un tour d&#39;horizon de solutions pour en développer vous-même avec des exemples concrets de code</p>\n<p>Vers l’infini et au-delà, le tout depuis le confort de votre terminal et de ses TUI ! 💞</p>",
+      "abstractHtml": "<p>Les coding assistants IA ont transformé notre façon d&#39;écrire du code. Mais entre un copilot qui complète des lignes et un agent qui livre des features en autonomie, il y a un gouffre que peu de développeurs ont franchi. Le principal obstacle : le contexte sature, et l&#39;agent déraille. Comment passer du &quot;vibe coding&quot; assisté à une véritable industrialisation du développement sur un projet en production ?</p>\n<p>Cette session démontre une approche concrète à travers AmanaRoo, une plateforme communautaire Spring Boot + Angular. En adaptant Ralph, un orchestrateur open-source, pour Claude Code, et en intégrant rtk, un proxy CLI qui réduit de 87% le bruit terminal envoyé au LLM, un backlog de 80+ features a été transformé en tâches exécutables par un agent autonome : PRD (Product Requirements Document) structuré en JSON, boucle itérative, tests, commit, sans intervention humaine.</p>\n<p>Ralph contourne la saturation du contexte en lançant une instance fraîche par itération, la mémoire persiste dans le code committé et un fichier de progression spécifique, pas dans le contexte du LLM.</p>\n<p>Ce qui nous a fait réaliser 70% du backlog livré en 5 semaines, à raison de 2h max par jour d&#39;implication humaine.</p>\n<p>Démo live en production : une nouvelle feature préparée ou au choix du public, l&#39;agent Ralph l&#39;implémente et la valide devant vous. Vous repartirez avec un pipeline reproductible, PRD, agent, optimisation tokens, applicable à vos propres projets.</p>",
       "speakerIds": [
-        "thierry-chantier"
+        "rafik-ferroukh"
       ]
     },
     {
       "id": "d2t3s2",
-      "title": "Kafka pour les Paiements - De la Théorie à la Pratique – Résilience, Tests et Bonnes Pratiques",
+      "title": "OpenTelemetry - La fondation indispensable pour vos architectures IA",
       "format": "Conférence",
-      "category": "Lang & Frameworks",
+      "category": "Archi, Perf et Sécu",
       "room": "FabLab",
       "day": "2026-10-02",
       "timeStart": "11h30",
       "timeEnd": "12h15",
       "startMinutes": 690,
       "endMinutes": 735,
-      "abstractHtml": "<p>Opérer une <strong>architecture event-driven</strong> pour un système de paiement exige une attention particulière à la résilience et à la testabilité.</p>\n<p>Chez Manomano, nous avons appris à :</p>\n<ul>\n<li>Rendre les consommateurs Kafka robustes : Implémentation de <strong>retries synchrones/asynchrones</strong>, gestion des <strong>DLT</strong>, et classification des erreurs pour éviter les reprocessings inutiles ou les blocages.</li>\n<li>Simplifier les tests d’intégration : Abandon des consommateurs Kafka au profit de <strong>Producer Listeners</strong>, permettant des tests 5 fois plus rapides, parallélisables et <strong>fiables, même en CI</strong>.</li>\n<li>Équilibrer les trade-offs : Quand utiliser du <strong>blocking vs. non-blocking</strong>, et comment concilier idempotence, ordre des messages et performances.</li>\n</ul>\n<p>Une session technique avec des <strong>démos en Java/Spring</strong>, des benchmarks, et des recommandations actionnables pour vos propres architectures Kafka.</p>",
+      "abstractHtml": "<p>L’ère des monolithes est loin, celle des microservices est mature, mais celle des agents IA commence à peine. Avec l&#39;émergence du protocole MCP et des workflows agentiques, nos systèmes deviennent non-déterministes : l&#39;IA décide de ses propres appels d&#39;outils. Comment garder le contrôle ?</p>\n<p>Dans ce talk, nous explorerons pourquoi OpenTelemetry n&#39;est plus une simple option de monitoring, mais la fondation indispensable de toute stack IA moderne. Nous aborderons deux axes :</p>\n<p>L&#39;observabilité de l&#39;exécution : Comment utiliser OTEL pour la GenAI afin de tracer les appels aux LLM, la consommation de tokens et les chaînes de décisions de manière uniforme</p>\n<p>La télémétrie comme interface : Pourquoi l&#39;instrumentation des systèmes classiques est la méthode la plus fiable pour exposer l&#39;état d&#39;une infrastructure à un agent. En utilisant OTel comme langage commun, vous permettez à l&#39;IA de s&#39;appuyer sur des données de santé réelles et structurées pour orienter ses actions</p>\n<p>L&#39;objectif est de démontrer qu&#39;avant d&#39;implémenter des couches d&#39;IA complexes, la mise en place d&#39;une base de télémétrie standardisée est la condition nécessaire pour garantir la maintenabilité et l&#39;auditabilité de vos systèmes.</p>",
       "speakerIds": [
-        "vincent-aubrun"
+        "nicolas-raymond"
       ]
     },
     {
