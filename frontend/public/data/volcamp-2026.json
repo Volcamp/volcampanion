@@ -113,28 +113,11 @@
       "github": "bnjjj"
     },
     {
-      "id": "cynthia-treger",
-      "name": "Cynthia Treger",
-      "photoUrl": "img/speakers/cynthia-treger.webp",
-      "bioHtml": "<p>Global Black Belt chez Microsoft, elle aide les équipes à y voir clair dans le cloud networking.</p>",
-      "twitter": "cynthiatreger",
-      "github": "cynthiatreger",
-      "linkedin": "cynthia-treger-6663402"
-    },
-    {
       "id": "damien-hackett",
       "name": "Damien Hackett",
       "photoUrl": "img/speakers/damien-hackett.webp",
       "bioHtml": "<p>Développeur logiciel embarqué depuis 2013, il a travaillé dans différents domaines de l&#39;embarqué : Linux embarqué, OS temps réel, baremetal, environnements normés... même sur FPGA et en co-design électronique.</p>",
       "linkedin": "damien-hackett-34aa0662"
-    },
-    {
-      "id": "david-santiago",
-      "name": "David Santiago",
-      "photoUrl": "img/speakers/david-santiago.webp",
-      "bioHtml": "<p>Passionné de tech, il est spécialisé dans le Cloud Networking, l&#39;infrastructure et l&#39;automatisation.</p>\n<p>Cloud Solution Architect @Microsoft.</p>",
-      "twitter": "dawlysd",
-      "github": "davidsntg"
     },
     {
       "id": "delphin-aubin",
@@ -575,11 +558,11 @@
       ]
     },
     {
-      "id": "d1t3s1",
+      "id": "d1t2s1",
       "title": "Et si on ouvrait le capot de PostgreSQL ?",
       "format": "Conférence",
       "category": "Data & AI",
-      "room": "FabLab",
+      "room": "Showroom",
       "day": "2026-10-01",
       "timeStart": "10h15",
       "timeEnd": "11h00",
@@ -588,23 +571,6 @@
       "abstractHtml": "<p>PostgreSQL est une des bases de données les plus utilisées et les plus appréciées.</p>\n<p>Mais sait-on vraiment comment elle fonctionne ?</p>\n<p>Qu’est ce qui lui permet d’être à la fois performante, tolérante aux crashs et hautement disponible ?</p>\n<p>Je vous propose de découvrir ensemble les internals de Postgres et d&#39;apprendre comment sont stockées vos données sur celle-ci.</p>\n<p>En partant d’une simple requête sql et en passant par toutes les étapes pour récupérer la donnée que l&#39;on recherche, découvrons comment PG fonctionne.</p>\n<p>Nous aborderons les notions spécifiques aux implémentations de bases de données et plus spécifiquement celles de Postgres (query planner, write ahead log, mvcc, tuples, vacuum, …).</p>",
       "speakerIds": [
         "coenen-benjamin"
-      ]
-    },
-    {
-      "id": "d1t2s1",
-      "title": "Tic-Tac... 💣! Maîtrisez le temps et NTP avant qu'il ne soit trop tard",
-      "format": "Conférence",
-      "category": "Découverte",
-      "room": "Showroom",
-      "day": "2026-10-01",
-      "timeStart": "10h15",
-      "timeEnd": "11h00",
-      "startMinutes": 615,
-      "endMinutes": 660,
-      "abstractHtml": "<p>Quelle heure est-il vraiment ?</p>\n<p>De l&#39;ombre des cadrans solaires aux horloges atomiques des satellites GPS, la quête de la précision temporelle est un défi technique millénaire.</p>\n<p>En informatique, une dérive de quelques millisecondes peut pourtant ruiner vos transactions distribuées, briser vos authentifications ou rendre vos logs illisibles.</p>\n<p>Nous explorerons comment nos machines perçoivent le temps, de l&#39;oscillation du quartz au cœur de vos cartes mères jusqu&#39;à la hiérarchie de stratum NTP, et de comment les horloges de références structurent une synchronisation fiable.</p>\n<p>Cette session décortiquera les rouages internes du protocole (offset, jitter, leap seconds) pour comprendre comment il synchronise le monde malgré l&#39;instabilité des réseaux.</p>\n<p>Un talk mêlant histoire, anecdotes techniques et bonnes pratiques pour des systèmes fiables en production !</p>",
-      "speakerIds": [
-        "cynthia-treger",
-        "david-santiago"
       ]
     },
     {
@@ -770,7 +736,7 @@
     },
     {
       "id": "d1t2s5",
-      "title": "Mémoire à tores de ferrites - histoire et démonstration",
+      "title": "Mémoire à tores de ferrites",
       "format": "Conférence",
       "category": "Découverte",
       "room": "Showroom",
@@ -779,7 +745,7 @@
       "timeEnd": "14h15",
       "startMinutes": 810,
       "endMinutes": 855,
-      "abstractHtml": "<p>Passionné par l&#39;histoire de l&#39;informatique, j&#39;aimerais vous parler d&#39;un type de mémoire vive qui a régné en maître sur le domaine des mémoires en informatique pendant plus de 20 ans : les mémoires à tores magnétiques ou à tores de ferrites.</p>\n<p>Ce type de mémoire a été étudié puis breveté dans les années 1940 pour être largement utilisé entre 1955 et 1975.</p>\n<p>Ces véritables œuvres d&#39;art, tissées à la main, rendait le rapport à la mémoire plus concret puisque chaque bit était stocké dans un tore magnétisé dans un sens ou dans l&#39;autre.</p>\n<p>Dans ma présentation, je souhaiterais aborder l&#39;histoire de ces mémoires (comment elles sont nées, comment elles ont vécu, comment elles ont disparu), les batailles autour de leurs brevets, leur fabrication.</p>\n<p>Je voudrais parler également de physique (électronique, électromagnétisme, et bien sûr informatique) pour vous expliquer leur fonctionnement.</p>\n<p>Pour illustrer le tout, je présenterai une petite mémoire à tores de ferrite faite maison et reliée à une Raspberry Pi pour stocker pas grand chose en mémoire.</p>\n<p>Émotions garanties !</p>",
+      "abstractHtml": "<p>Passionné par l’histoire de l’informatique, j’aimerais vous parler d’un type de mémoire vive qui a régné en maître sur le domaine des mémoires en informatique pendant plus de 20 ans : les mémoires à tores magnétiques ou à tores de ferrites.</p>\n<p>Ce type de mémoire a été étudié puis breveté dans les années 1940 et 1950 pour être largement utilisé entre 1955 et 1975.</p>\n<p>Ces véritables œuvres d’art, tissées à la main, rendait le rapport à la mémoire plus concret puisque chaque bit était stocké dans un tore magnétisé dans un sens ou dans l’autre.</p>\n<p>Dans ma présentation, je souhaiterais aborder l’histoire de ces mémoires (comment elles sont nées, comment elles ont vécu, comment elles ont disparu), les batailles autour de leurs brevets, leur fabrication.</p>\n<p>Je voudrais parler également de physique (électronique, électromagnétisme, et bien sûr informatique) pour vous expliquer leur fonctionnement.</p>",
       "speakerIds": [
         "marc-chevaldonne"
       ]
@@ -933,18 +899,18 @@
     },
     {
       "id": "d1t3s8",
-      "title": "La documentation, ce nouveau langage de programmation",
+      "title": "OpenTelemetry - La fondation indispensable pour vos architectures IA",
       "format": "Conférence",
-      "category": "Data & AI",
+      "category": "Archi, Perf et Sécu",
       "room": "FabLab",
       "day": "2026-10-01",
       "timeStart": "16h45",
       "timeEnd": "17h30",
       "startMinutes": 1005,
       "endMinutes": 1050,
-      "abstractHtml": "<p>Après <strong>20 ans de développement d’applications sur mesure</strong>, nous venons de vivre notre plus grand virage : <strong>traiter la documentation comme un langage de programmation</strong>.</p>\n<p>La <strong>documentation</strong>, technique et fonctionnelle, versionnée en <strong>Markdown</strong>, devient la <strong>source de vérité</strong> qui guide la génération de code et sa mise à jour continue, en interaction et <strong>sous le contrôle</strong> des développeurs (CI, revues, règles).</p>\n<p>Avec des <strong>assistants IA</strong>, orchestrés avec <strong>Claude Code</strong>, nous avons avant tout gagné en <strong>qualité</strong> : <strong>ambiguïtés réduites</strong>, <strong>meilleure cohérence doc/code</strong>, <strong>traçabilité claire</strong>.</p>\n<p>Surtout, nous gardons <strong>le plaisir</strong> et <strong>la maîtrise</strong> de livrer des fonctionnalités, <strong>même si nous écrivons moins de code nous-mêmes</strong>.</p>\n<p>Nous viendrons partager un retour d’expérience concret et présenter le workflow complet de cette nouvelle démarche, de la documentation à la livraison.</p>",
+      "abstractHtml": "<p>L’ère des monolithes est loin, celle des microservices est mature, mais celle des agents IA commence à peine. Avec l&#39;émergence du protocole MCP et des workflows agentiques, nos systèmes deviennent non-déterministes : l&#39;IA décide de ses propres appels d&#39;outils. Comment garder le contrôle ?</p>\n<p>Dans ce talk, nous explorerons pourquoi OpenTelemetry n&#39;est plus une simple option de monitoring, mais la fondation indispensable de toute stack IA moderne. Nous aborderons deux axes :</p>\n<p>L&#39;observabilité de l&#39;exécution : Comment utiliser OTEL pour la GenAI afin de tracer les appels aux LLM, la consommation de tokens et les chaînes de décisions de manière uniforme</p>\n<p>La télémétrie comme interface : Pourquoi l&#39;instrumentation des systèmes classiques est la méthode la plus fiable pour exposer l&#39;état d&#39;une infrastructure à un agent. En utilisant OTel comme langage commun, vous permettez à l&#39;IA de s&#39;appuyer sur des données de santé réelles et structurées pour orienter ses actions</p>\n<p>L&#39;objectif est de démontrer qu&#39;avant d&#39;implémenter des couches d&#39;IA complexes, la mise en place d&#39;une base de télémétrie standardisée est la condition nécessaire pour garantir la maintenabilité et l&#39;auditabilité de vos systèmes.</p>",
       "speakerIds": [
-        "xavier-gorse"
+        "nicolas-raymond"
       ]
     },
     {
@@ -1114,18 +1080,18 @@
     },
     {
       "id": "d2t3s2",
-      "title": "OpenTelemetry - La fondation indispensable pour vos architectures IA",
+      "title": "La documentation, ce nouveau langage de programmation",
       "format": "Conférence",
-      "category": "Archi, Perf et Sécu",
+      "category": "Data & AI",
       "room": "FabLab",
       "day": "2026-10-02",
       "timeStart": "11h30",
       "timeEnd": "12h15",
       "startMinutes": 690,
       "endMinutes": 735,
-      "abstractHtml": "<p>L’ère des monolithes est loin, celle des microservices est mature, mais celle des agents IA commence à peine. Avec l&#39;émergence du protocole MCP et des workflows agentiques, nos systèmes deviennent non-déterministes : l&#39;IA décide de ses propres appels d&#39;outils. Comment garder le contrôle ?</p>\n<p>Dans ce talk, nous explorerons pourquoi OpenTelemetry n&#39;est plus une simple option de monitoring, mais la fondation indispensable de toute stack IA moderne. Nous aborderons deux axes :</p>\n<p>L&#39;observabilité de l&#39;exécution : Comment utiliser OTEL pour la GenAI afin de tracer les appels aux LLM, la consommation de tokens et les chaînes de décisions de manière uniforme</p>\n<p>La télémétrie comme interface : Pourquoi l&#39;instrumentation des systèmes classiques est la méthode la plus fiable pour exposer l&#39;état d&#39;une infrastructure à un agent. En utilisant OTel comme langage commun, vous permettez à l&#39;IA de s&#39;appuyer sur des données de santé réelles et structurées pour orienter ses actions</p>\n<p>L&#39;objectif est de démontrer qu&#39;avant d&#39;implémenter des couches d&#39;IA complexes, la mise en place d&#39;une base de télémétrie standardisée est la condition nécessaire pour garantir la maintenabilité et l&#39;auditabilité de vos systèmes.</p>",
+      "abstractHtml": "<p>Après <strong>20 ans de développement d’applications sur mesure</strong>, nous venons de vivre notre plus grand virage : <strong>traiter la documentation comme un langage de programmation</strong>.</p>\n<p>La <strong>documentation</strong>, technique et fonctionnelle, versionnée en <strong>Markdown</strong>, devient la <strong>source de vérité</strong> qui guide la génération de code et sa mise à jour continue, en interaction et <strong>sous le contrôle</strong> des développeurs (CI, revues, règles).</p>\n<p>Avec des <strong>assistants IA</strong>, orchestrés avec <strong>Claude Code</strong>, nous avons avant tout gagné en <strong>qualité</strong> : <strong>ambiguïtés réduites</strong>, <strong>meilleure cohérence doc/code</strong>, <strong>traçabilité claire</strong>.</p>\n<p>Surtout, nous gardons <strong>le plaisir</strong> et <strong>la maîtrise</strong> de livrer des fonctionnalités, <strong>même si nous écrivons moins de code nous-mêmes</strong>.</p>\n<p>Nous viendrons partager un retour d’expérience concret et présenter le workflow complet de cette nouvelle démarche, de la documentation à la livraison.</p>",
       "speakerIds": [
-        "nicolas-raymond"
+        "xavier-gorse"
       ]
     },
     {
@@ -1381,7 +1347,7 @@
       "timeEnd": "17h30",
       "startMinutes": 945,
       "endMinutes": 1050,
-      "abstractHtml": "<p>Pendant plusieurs mois, j&#39;ai développé auxilia, une plateforme d&#39;agents MCP.</p>\n<p>En l&#39;utilisant chez Choose, je suis tombé sur une limite du protocole MCP, toute la donnée transite par le contexte du modèle.</p>\n<p>Dès qu&#39;on touche à de vrais volumes, un résultat BigQuery, un Google Sheets de quelques milliers de lignes, un fichier intermédiaire à rapprocher d&#39;un autre, on sature rapidement le contexte.</p>\n<p>C&#39;est ce qui m&#39;a poussé à regarder du côté des coding agents.</p>\n<p>Et à constater au passage un malentendu : coding agent ne veut pas dire agent qui code à la place du dev.</p>\n<p>Un coding agent, c&#39;est d&#39;abord un agent avec un environnement d&#39;exécution.</p>\n<p>C&#39;est ça qui débloque les cas d&#39;usage métiers — extraire, transformer, recouper, rapprocher — toutes ces tâches qui demandent un peu d&#39;intelligence (mais pas trop) et beaucoup de données.</p>\n<p>Aujourd&#39;hui, la plupart des équipes utilise Claude Code en assistant local.</p>\n<p>Or ce qu&#39;on veut souvent en entreprise, c&#39;est l&#39;inverse : des agents partagés, scopés à une tâche métier précise, déclenchables par n&#39;importe qui dans l&#39;équipe.</p>\n<p>Pas un agent généraliste qui fait tout (nanobot, openclaw, et compagnie), mais des agents au périmètre étroit, qui font une chose qu&#39;aucun script déterministe ne saurait gérer proprement.</p>\n<p>Cette année, deux briques ont rendu ça réaliste à mettre en prod : DeepAgents et OpenSandbox.</p>\n<p>Pour exécuter du code en environnement isolé, sur votre propre infra, sans dépendre d&#39;un SaaS externe.</p>\n<p>Combinées, elles permettent de construire des systèmes agentiques au niveau des meilleurs outils de coding agentique du marché, tout en gardant la donnée chez soi.</p>",
+      "abstractHtml": "<p>Pendant plusieurs mois, j&#39;ai développé auxilia, une plateforme d&#39;agents MCP.</p>\n<p>En l&#39;utilisant chez Choose, je suis tombé sur une limite du protocole MCP, toute la donnée transite par le contexte du modèle.</p>\n<p>Dès qu&#39;on touche à de vrais volumes, un résultat BigQuery, un Google Sheets de quelques milliers de lignes, un fichier intermédiaire à rapprocher d&#39;un autre, on sature rapidement le contexte.</p>\n<p>C&#39;est ce qui m&#39;a poussé à regarder du côté des coding agents.</p>\n<p>Et à constater au passage un malentendu : coding agent ne veut pas dire agent qui code à la place du dev.</p>\n<p>Un coding agent, c&#39;est d&#39;abord un agent avec un environnement d&#39;exécution.</p>\n<p>C&#39;est ça qui débloque les cas d&#39;usage métiers — extraire, transformer, recouper, rapprocher — toutes ces tâches qui demandent un peu d&#39;intelligence (mais pas trop) et beaucoup de données.</p>\n<p>Aujourd&#39;hui, la plupart des équipes utilise Claude Code en assistant local.</p>\n<p>Or ce qu&#39;on veut souvent en entreprise, c&#39;est l&#39;inverse : des agents partagés, scopés à une tâche métier précise, déclenchables par n&#39;importe qui dans l&#39;équipe.</p>\n<p>Pas un agent généraliste qui fait tout (nanobot, openclaw, et compagnie), mais des agents au périmètre étroit, qui font une chose qu&#39;aucun script déterministe ne saurait gérer proprement.</p>\n<p>Cette année, deux briques ont rendu ça réaliste à mettre en prod : DeepAgents et OpenSandbox.</p>\n<p>Pour exécuter du code en environnement isolé, sur votre propre infra, sans dépendre d&#39;un SaaS externe.</p>\n<p>Combinées, elles permettent de construire des systèmes agentiques au niveau des meilleurs outils de coding agentique du marché, tout en gardant la donnée chez soi.</p>\n<p>Quelques prérequis :</p>\n<ul>\n<li>uv : <a href=\"https://docs.astral.sh/uv/\">https://docs.astral.sh/uv/</a></li>\n<li>Docker</li>\n</ul>",
       "speakerIds": [
         "keurcien-luu"
       ]
