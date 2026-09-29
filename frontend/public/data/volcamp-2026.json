@@ -315,13 +315,6 @@
       "linkedin": "mickaelalves"
     },
     {
-      "id": "mickael-faust",
-      "name": "Mickael Faust",
-      "photoUrl": "img/speakers/mickael-faust.webp",
-      "bioHtml": "<p>C-AI Officer chez HIIT Consulting / Formateur référent IA chez Alyra</p>\n<p>Mickael Faust accompagne les entreprises dans leur adoption de l&#39;IA depuis plusieurs années, d&#39;abord comme développeur et architecte, puis aujourd&#39;hui comme C-AI Officer chez HIIT Consulting, une ESN lyonnaise</p>\n<p>Son quotidien : aider les équipes tech et les directions à passer de &quot;on devrait faire de l&#39;IA&quot; à &quot;on a un truc en prod qui marche&quot;.</p>\n<p>En parallèle, il est formateur référent IA chez Alyra</p>\n<p>Avant ça, il a bossé sur des projets data et dev entre autre chez ENEDIS et EDF, et il a co-fondé IKIGIA, une startup dijonaise qui accompagne les PME et ETI qui souhaitent engager une démarche d’adoption de l’IA, sans disposer des ressources internes nécessaires pour la mener seules</p>\n<p>Quand il n&#39;est pas en train d&#39;expliquer la différence entre un LLM et un perroquet stochastique, il écrit des articles de vulgarisation sur LinkedIn → du théorème de Kolmogorov-Arnold appliqué à la computer vision, en passant par l&#39;éthique de l&#39;IA</p>",
-      "linkedin": "mickael-faust-67a55768"
-    },
-    {
       "id": "nastasia-fouret",
       "name": "Nastasia Fouret",
       "photoUrl": "img/speakers/nastasia-fouret.webp",
@@ -556,6 +549,20 @@
       "speakerIds": [
         "olivier-poncet"
       ]
+    },
+    {
+      "id": "d1t3s1",
+      "title": "",
+      "format": "Conférence",
+      "category": "",
+      "room": "FabLab",
+      "day": "2026-10-01",
+      "timeStart": "10h15",
+      "timeEnd": "11h00",
+      "startMinutes": 615,
+      "endMinutes": 660,
+      "abstractHtml": "",
+      "speakerIds": []
     },
     {
       "id": "d1t2s1",
@@ -851,18 +858,18 @@
     },
     {
       "id": "d1t2s7",
-      "title": "IA souveraine - de la théorie DSI à la réalité du terrain avec Mistral",
+      "title": "OpenTelemetry - La fondation indispensable pour vos architectures IA",
       "format": "Conférence",
-      "category": "Data & AI",
+      "category": "Archi, Perf et Sécu",
       "room": "Showroom",
       "day": "2026-10-01",
       "timeStart": "15h45",
       "timeEnd": "16h30",
       "startMinutes": 945,
       "endMinutes": 990,
-      "abstractHtml": "<p>En 2024, tout le monde parlait de ChatGPT.</p>\n<p>Depuis 2025, mes clients ont commencé à me poser LA question : Et la souveraineté des données, on en fait quoi ?</p>\n<p>Entre le Cloud Act qui permet aux US d&#39;accéder aux données hébergées par des boîtes américaines, l&#39;AI Act européen qui entre en vigueur progressivement, et les DSI qui ont la trouille (et à raison) à l&#39;idée de voir leurs données d&#39;entreprise partir entraîner GPT-5... le sujet n&#39;est plus juste un débat de comptoir</p>\n<p>Chez HIIT Consulting, j&#39;accompagne des entreprises dans leur adoption de l&#39;IA avec un choix de pousser Mistral comme alternative crédible aux géants américains.</p>\n<p>Pas par chauvinisme, mais parce que ça répond à des vrais problèmes concrets</p>\n<p>Dans ce talk, je vous propose un retour d&#39;expérience honnête :</p>\n<ul>\n<li>Pourquoi la souveraineté est devenue un vrai sujet business (spoiler : c&#39;est pas que pour faire plaisir au DPO)</li>\n<li>Ce que Mistral propose concrètement aux entreprises : Le Chat, l&#39;API, le on-premise, les coûts réels</li>\n<li>Comment on a déploie ça chez des clients, les galères qu&#39;on a eues, et ce qui a bien marché - Les limites et les points de vigilance (parce que non, Mistral n&#39;est pas la solution magique à tout)</li>\n</ul>\n<p>Pas de slide bullshit, pas de discours commercial.</p>\n<p>Juste du vécu, des chiffres, et des conseils pratiques pour ceux qui envisagent de sauter le pas, ou qui veulent au moins comprendre de quoi on parle quand on dit IA souveraine</p>",
+      "abstractHtml": "<p>L’ère des monolithes est loin, celle des microservices est mature, mais celle des agents IA commence à peine. Avec l&#39;émergence du protocole MCP et des workflows agentiques, nos systèmes deviennent non-déterministes : l&#39;IA décide de ses propres appels d&#39;outils. Comment garder le contrôle ?</p>\n<p>Dans ce talk, nous explorerons pourquoi OpenTelemetry n&#39;est plus une simple option de monitoring, mais la fondation indispensable de toute stack IA moderne. Nous aborderons deux axes :</p>\n<p>L&#39;observabilité de l&#39;exécution : Comment utiliser OTEL pour la GenAI afin de tracer les appels aux LLM, la consommation de tokens et les chaînes de décisions de manière uniforme</p>\n<p>La télémétrie comme interface : Pourquoi l&#39;instrumentation des systèmes classiques est la méthode la plus fiable pour exposer l&#39;état d&#39;une infrastructure à un agent. En utilisant OTel comme langage commun, vous permettez à l&#39;IA de s&#39;appuyer sur des données de santé réelles et structurées pour orienter ses actions</p>\n<p>L&#39;objectif est de démontrer qu&#39;avant d&#39;implémenter des couches d&#39;IA complexes, la mise en place d&#39;une base de télémétrie standardisée est la condition nécessaire pour garantir la maintenabilité et l&#39;auditabilité de vos systèmes.</p>",
       "speakerIds": [
-        "mickael-faust"
+        "nicolas-raymond"
       ]
     },
     {
@@ -899,19 +906,17 @@
     },
     {
       "id": "d1t3s8",
-      "title": "OpenTelemetry - La fondation indispensable pour vos architectures IA",
+      "title": "",
       "format": "Conférence",
-      "category": "Archi, Perf et Sécu",
+      "category": "",
       "room": "FabLab",
       "day": "2026-10-01",
       "timeStart": "16h45",
       "timeEnd": "17h30",
       "startMinutes": 1005,
       "endMinutes": 1050,
-      "abstractHtml": "<p>L’ère des monolithes est loin, celle des microservices est mature, mais celle des agents IA commence à peine. Avec l&#39;émergence du protocole MCP et des workflows agentiques, nos systèmes deviennent non-déterministes : l&#39;IA décide de ses propres appels d&#39;outils. Comment garder le contrôle ?</p>\n<p>Dans ce talk, nous explorerons pourquoi OpenTelemetry n&#39;est plus une simple option de monitoring, mais la fondation indispensable de toute stack IA moderne. Nous aborderons deux axes :</p>\n<p>L&#39;observabilité de l&#39;exécution : Comment utiliser OTEL pour la GenAI afin de tracer les appels aux LLM, la consommation de tokens et les chaînes de décisions de manière uniforme</p>\n<p>La télémétrie comme interface : Pourquoi l&#39;instrumentation des systèmes classiques est la méthode la plus fiable pour exposer l&#39;état d&#39;une infrastructure à un agent. En utilisant OTel comme langage commun, vous permettez à l&#39;IA de s&#39;appuyer sur des données de santé réelles et structurées pour orienter ses actions</p>\n<p>L&#39;objectif est de démontrer qu&#39;avant d&#39;implémenter des couches d&#39;IA complexes, la mise en place d&#39;une base de télémétrie standardisée est la condition nécessaire pour garantir la maintenabilité et l&#39;auditabilité de vos systèmes.</p>",
-      "speakerIds": [
-        "nicolas-raymond"
-      ]
+      "abstractHtml": "",
+      "speakerIds": []
     },
     {
       "id": "d1t2s8",
