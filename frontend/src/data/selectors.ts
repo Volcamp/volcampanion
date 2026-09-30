@@ -104,18 +104,21 @@ export function talksForSpeaker(speakerId: string, talks: Talk[]): Talk[] {
     .sort((a, b) => a.day.localeCompare(b.day) || a.startMinutes - b.startMinutes)
 }
 
-/** Deterministic colour per talk category (drives the agenda accent stripe). */
+/**
+ * Colour per talk category (drives the agenda accent stripe).
+ * Must match the planning on volcamp.io/talks and the room posters.
+ */
 const CATEGORY_COLORS: Record<string, string> = {
-  Keynote: '#f4a259',
-  'Lang & Frameworks': '#6fc660',
-  'Data & AI': '#4c9be6',
-  'DevOps & Cloud': '#5b8def',
-  'Archi, Perf et Sécu': '#e05a76',
-  'UX/UI': '#c06fd4',
-  'Sustainable IT': '#2fb28a',
-  Découverte: '#f0c419',
+  Keynote: '#ef4444',
+  'Lang & Frameworks': '#f59e0b',
+  'Data & AI': '#22c55e',
+  'DevOps & Cloud': '#a855f7',
+  'Archi, Perf et Sécu': '#6366f1',
+  'UX/UI': '#f43f5e',
+  'Sustainable IT': '#14b8a6',
+  Découverte: '#78716c',
 }
-const FALLBACK_COLORS = ['#6fc660', '#5b8def', '#f4a259', '#c06fd4', '#e05a76', '#2fb28a']
+const FALLBACK_COLORS = ['#22c55e', '#6366f1', '#f59e0b', '#a855f7', '#f43f5e', '#14b8a6']
 
 export function categoryColor(category: string): string {
   if (CATEGORY_COLORS[category]) return CATEGORY_COLORS[category]
