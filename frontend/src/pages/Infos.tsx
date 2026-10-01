@@ -60,6 +60,51 @@ export function Infos() {
         ))}
       </div>
 
+      {/* Truffade Quest — the mini-game on the Volcamp booth */}
+      <section className="card info-card game-card">
+        <img
+          className="game-card__mascot"
+          src={`${import.meta.env.BASE_URL}img/volcampanion-truffade.webp`}
+          alt="Le Volcampanion et sa truffade"
+          loading="lazy"
+        />
+        <div className="info-card__head">
+          <span className="info-card__emoji" aria-hidden="true">
+            🎮
+          </span>
+          <div>
+            <h2 className="info-card__title">Truffade Quest</h2>
+            <p className="info-card__subtitle">Le mini-jeu du stand Volcamp</p>
+          </div>
+        </div>
+        <p className="game-card__pitch">
+          Aide le Volcampanion à récolter les 8 ingrédients de la truffade dans la chaîne des
+          Puys, puis passe à la poêle. Une partie dure 3 à 4 minutes.
+        </p>
+        <ul className="game-card__prizes">
+          <li>
+            <span className="game-card__rank game-card__rank--gold">1er</span>
+            <span>
+              <strong>2 places pour Volcamp 2027</strong> + 1 magnet
+              <span className="game-card__byof">BYOF · Bring Your Own Friend</span>
+            </span>
+          </li>
+          <li>
+            <span className="game-card__rank game-card__rank--silver">2e</span>
+            <span>
+              <strong>1 place pour Volcamp 2027</strong> + 1 magnet
+            </span>
+          </li>
+          <li>
+            <span className="game-card__rank game-card__rank--bronze">3→5</span>
+            <span>
+              <strong>1 magnet collector</strong>
+            </span>
+          </li>
+        </ul>
+        <p className="game-card__ceremony">🏆 Remise des prix chaque jour à 15h30</p>
+      </section>
+
       {/* Venue / room plan */}
       <section className="card info-card">
         <div className="info-card__head">

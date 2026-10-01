@@ -732,6 +732,82 @@
   line-height: 1.5;
 }
 
+/* Truffade Quest — booth mini-game, warm lava tones from the game's palette */
+.game-card {
+  position: relative;
+  overflow: hidden;
+  border-color: #ffd7b0;
+  background: linear-gradient(160deg, #fff7ec 0%, #ffffff 60%);
+}
+.game-card .info-card__emoji {
+  background: #ffe8d1;
+}
+.game-card__mascot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 70px;
+  height: auto;
+  pointer-events: none;
+}
+.game-card .info-card__head {
+  padding-right: 72px;
+}
+.game-card__pitch {
+  font-size: 0.9rem;
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+.game-card__prizes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.game-card__prizes li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+.game-card__rank {
+  flex: 0 0 auto;
+  min-width: 42px;
+  padding: 4px 6px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #2c1a11;
+}
+.game-card__rank--gold {
+  background: #ffd23f;
+}
+.game-card__rank--silver {
+  background: #e4ddd4;
+}
+.game-card__rank--bronze {
+  background: #f0a46a;
+}
+.game-card__byof {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+.game-card__ceremony {
+  margin: 14px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #e0431a;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
 .info-footnote {
   font-size: 0.8rem;
   color: var(--muted);
