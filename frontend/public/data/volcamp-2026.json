@@ -552,17 +552,19 @@
     },
     {
       "id": "d1t3s1",
-      "title": "",
+      "title": "Wrap, Reshape, or Redesign - adapter vos APIs existantes à un monde d’agents",
       "format": "Conférence",
-      "category": "",
+      "category": "Découverte",
       "room": "FabLab",
       "day": "2026-10-01",
       "timeStart": "10h15",
       "timeEnd": "11h00",
       "startMinutes": 615,
       "endMinutes": 660,
-      "abstractHtml": "",
-      "speakerIds": []
+      "abstractHtml": "<p>Pendant vingt ans, nous avons conçu des APIs pour des développeurs\nhumains. Et ça marchait, parce que les humains compensent : ils lisent\nla doc, déduisent les conventions, repèrent les opérations dangereuses\net comblent ce que l’interface n’a jamais rendu explicite.\nAujourd’hui, ces mêmes APIs ont un deuxième consommateur : des agents\nbasés sur des LLMs, des copilotes et des workflows pilotés par des\nagents. Ce nouveau consommateur ne compense pas de manière fiable. Il\ninterprète les descriptions au pied de la lettre, choisit la mauvaise\naction avec assurance et ne peut pas deviner les limites\nopérationnelles que votre API n’a jamais déclarées.\nLa réponse naïve consiste à exposer les APIs existantes avec quelques\ndescriptions d’outils et à considérer le travail comme fait. En\npratique, certaines capacités peuvent être exposées telles quelles,\nd’autres doivent être remodelées en outils plus étroits, orientés\nintention, et d’autres encore révèlent des défauts de conception plus\nprofonds qui nécessitent une vraie refonte.\nDans ce talk, je partagerai un framework pratique pour adapter des\nAPIs et des capacités de plateforme existantes à la consommation par\ndes agents, à partir d’exemples concrets issus d’une plateforme en\nproduction. Nous verrons des cas avant/après, nous discuterons des\ncompromis de chaque stratégie, et nous verrons pourquoi concevoir pour\nles agents améliore souvent la plateforme pour les humains aussi.</p>",
+      "speakerIds": [
+        "horacio-gonzalez"
+      ]
     },
     {
       "id": "d1t2s1",
